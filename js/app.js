@@ -610,9 +610,7 @@ class ReportReader {
                             <h3>Fase ${phase.num}: ${phase.name}</h3>
                             <div class="phase-subtitle">${phase.subtitle}</div>
                         </div>
-                        ${phase.interventions.map(int => {
-            const tag = generateTag(int.tensao);
-            return `
+                        ${phase.interventions.map(int => `
                             <div class="board-card" 
                                  data-id="${int.id}" 
                                  data-title="${int.title.replace(/"/g, '&quot;')}"
@@ -623,9 +621,8 @@ class ReportReader {
                                  data-impacto="${int.impacto.replace(/"/g, '&quot;')}">
                                 <div class="card-id">${int.id}</div>
                                 <div class="card-title">${int.title}</div>
-                                ${tag ? `<div class="card-tags"><span class="card-tag">${tag}</span></div>` : ''}
                             </div>
-                        `}).join('')}
+                        `).join('')}
                     </div>
                 `).join('')}
             </div>
