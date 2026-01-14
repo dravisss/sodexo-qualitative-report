@@ -2,8 +2,7 @@
 
 ---
 
-## Resumo Executivo
-Este documento detalha a realidade operacional de cada unidade, não como relatório de RH, mas como **mapeamento de risco contratual**. As três operações (Alimentação Cajamar, Alimentação Guarulhos e Limpeza Industrial Guarulhos) compartilham certas raízes sistêmicas, mas apresentam manifestações distintas.
+Este documento detalha a realidade operacional de cada unidade, não como relatório de RH, mas como **mapeamento de risco contratual**. As três operações (FOOD Cajamar, FOOD Guarulhos e  FM Guarulhos) compartilham certas raízes sistêmicas, mas apresentam manifestações distintas.
 
 As falhas aqui documentadas não são problemas de gestão local; são sintomas de uma estrutura de incentivos que está consumindo a capacidade de entrega.
 

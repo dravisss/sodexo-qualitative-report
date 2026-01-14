@@ -1,8 +1,6 @@
 # Análise de Gestão de Pessoas: O Ciclo do Travamento Rescisório
 
 ---
-
-## Resumo Executivo
 A operação está pagando salário integral para funcionários que entregam fração de produtividade, e não consegue desligá-los porque a rescisão comprometeria a margem. Este estudo documenta o **travamento rescisório**: um impasse estrutural onde empresa e trabalhador estão "presos" por incentivos que nenhum dos dois desenhou. O resultado é um ciclo onde funcionários insatisfeitos permanecem na operação contra sua vontade, deteriorando o clima organizacional e a qualidade do serviço.
 
 ---
@@ -15,7 +13,7 @@ Se uma rescisão custa R$ 15.000 ou R$ 20.000, esse valor sai diretamente do res
 
 Além do custo financeiro direto, o ato de demitir aumenta o índice de rotatividade, que funciona como "deflator" na bonificação da liderança. Mesmo que a meta de lucro seja atingida, uma rotatividade alta resulta em desconto no bônus (por exemplo, 10%).
 
-**Resultado:** A liderança local é duplamente penalizada por realizar desligamentos, ainda que necessários.
+A liderança local é duplamente penalizada por realizar desligamentos, ainda que necessários.
 
 ---
 
@@ -29,7 +27,7 @@ Colaboradores com anos de casa (5, 10, até 20 anos) desejam sair devido às con
 
 Em termos de teoria dos jogos, o travamento rescisório representa um **equilíbrio de Nash negativo**: uma situação estável onde nenhum ator consegue melhorar sua posição agindo unilateralmente. A empresa não demite (porque o custo sai da margem); o trabalhador não pede demissão (porque perde direitos). Ambos estão "presos" em uma configuração que nenhum dos dois escolheu, e que só pode ser quebrada por uma mudança no desenho do jogo, não por esforço individual.
 
-**Resultado:** O funcionário fica "preso" na operação contra sua vontade.
+O funcionário fica "preso" na operação contra sua vontade.
 
 ---
 
@@ -39,7 +37,7 @@ A combinação das restrições orçamentárias (que impedem demissões) com a n
 
 Colaboradores percebem que a empresa evita demitir. Isso gera uma sensação de que há pouco ou nenhum risco em reduzir o esforço ou descumprir orientações.
 
-O que se observa a seguir não é "má vontade" ou "sabotagem". Trata-se de **comportamento adaptativo**. Dado que o trabalhador percebe (corretamente) que a empresa evita demitir, e dado que ele precisa acessar direitos acumulados, a estratégia de forçar o desligamento é a única saída racional disponível. Culpar o indivíduo é ignorar o sistema que o produziu.
+Dado que o trabalhador percebe (corretamente) que a empresa evita demitir, e dado que ele precisa acessar direitos acumulados, a estratégia de forçar o desligamento é a única saída racional disponível. Culpar o indivíduo é ignorar o sistema que o produziu.
 
 ### Fase 1: A Negociação Frustrada
 O ciclo inicia quando o colaborador manifesta o desejo de sair, mas esbarra na inviabilidade financeira de pedir demissão (perda de FGTS e multa). Ele tenta um "acordo" com a liderança, que é negado devido às restrições orçamentárias da unidade.

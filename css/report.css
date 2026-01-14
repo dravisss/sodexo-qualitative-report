@@ -1042,6 +1042,175 @@ body {
     color: var(--color-text-secondary);
 }
 
+/* === STRATEGY MATRIX (IMPACTO x ESFORÇO) === */
+
+.strategy-matrix {
+    margin-bottom: var(--spacing-xl);
+}
+
+.matrix-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.matrix-header h2 {
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs) 0;
+    font-weight: var(--font-weight-bold);
+}
+
+.matrix-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 1fr 30px;
+    gap: var(--spacing-sm);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.matrix-axis-y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+}
+
+.matrix-axis-y .axis-label-high,
+.matrix-axis-y .axis-label-low {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.matrix-quadrants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.matrix-quadrant {
+    padding: var(--spacing-md);
+    min-height: 120px;
+}
+
+/* Quadrant Colors - Very low opacity for premium look */
+.matrix-quadrant.q1 {
+    background: rgba(16, 185, 129, 0.04);
+}
+
+.matrix-quadrant.q2 {
+    background: rgba(122, 181, 188, 0.04);
+}
+
+.matrix-quadrant.q3 {
+    background: rgba(145, 114, 206, 0.04);
+}
+
+.matrix-quadrant.q4 {
+    background: rgba(239, 68, 68, 0.04);
+}
+
+.quadrant-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.quadrant-emoji {
+    font-size: 1rem;
+}
+
+.quadrant-label {
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+}
+
+.quadrant-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.matrix-chip {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-teal-dark);
+    background: rgba(122, 181, 188, 0.12);
+    border: 1px solid transparent;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.matrix-chip:hover {
+    background: var(--color-teal);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-sm);
+}
+
+.matrix-axis-x {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--spacing-md);
+}
+
+.matrix-axis-x .axis-label-low,
+.matrix-axis-x .axis-label-high {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+/* Hide matrix on mobile */
+@media (max-width: 768px) {
+    .strategy-matrix {
+        display: none;
+    }
+}
+
+/* === SPOTLIGHT EFFECT === */
+
+.war-room-board.spotlight-active .board-card {
+    opacity: 0.35;
+    filter: grayscale(40%);
+    transition: all 0.3s ease;
+}
+
+.war-room-board.spotlight-active .board-card.spotlight-target {
+    opacity: 1;
+    filter: none;
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    position: relative;
+    border-color: var(--color-teal);
+    background: var(--color-teal-light);
+}
+
 /* === WAR ROOM DASHBOARD (ARTICLE 08) === */
 
 /* Dashboard Intro */

@@ -91,6 +91,7 @@ class ReportReader {
             // Setup interactions based on article type
             if (article.id === '08') {
                 this.setupWarRoomModal();
+                this.setupMatrixSpotlight();
             } else {
                 this.setupInterventionToggles();
             }
@@ -473,6 +474,92 @@ class ReportReader {
         const title = h1 ? h1.textContent : 'Plano de Intervenção';
         if (h1) h1.remove();
 
+        // Matrix Classification Data
+        const MATRIX_DATA = {
+            quickWins: {
+                label: 'Quick Wins',
+                emoji: '💎',
+                desc: 'Alto Impacto / Baixo Esforço',
+                ids: ['I-01', 'I-02', 'I-06', 'I-08', 'I-11', 'I-22', 'I-23', 'I-26']
+            },
+            transformational: {
+                label: 'Transformacionais',
+                emoji: '🚀',
+                desc: 'Alto Impacto / Alto Esforço',
+                ids: ['I-03', 'I-14', 'I-15', 'I-16', 'I-17', 'I-18', 'I-21', 'I-24', 'I-25', 'I-27']
+            },
+            tactical: {
+                label: 'Táticas',
+                emoji: '🔧',
+                desc: 'Baixo Impacto / Baixo Esforço',
+                ids: ['I-05', 'I-07', 'I-10', 'I-12', 'I-13', 'I-19', 'I-20']
+            },
+            complex: {
+                label: 'Ingratas',
+                emoji: '⚠️',
+                desc: 'Baixo Impacto / Alto Esforço',
+                ids: ['I-04', 'I-09']
+            }
+        };
+
+        // Build Matrix HTML
+        const matrixHtml = `
+            <div class="strategy-matrix">
+                <div class="matrix-header">
+                    <h2>Matriz de Priorização</h2>
+                    <p class="matrix-subtitle">Passe o mouse sobre uma intervenção para localizá-la no plano abaixo</p>
+                </div>
+                <div class="matrix-grid">
+                    <div class="matrix-axis-y">
+                        <span class="axis-label-high">Alto<br>Impacto</span>
+                        <span class="axis-label-low">Baixo<br>Impacto</span>
+                    </div>
+                    <div class="matrix-quadrants">
+                        <div class="matrix-quadrant q1">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.quickWins.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.quickWins.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.quickWins.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant q2">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.transformational.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.transformational.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.transformational.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant q3">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.tactical.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.tactical.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.tactical.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant q4">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.complex.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.complex.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.complex.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matrix-axis-x">
+                        <span class="axis-label-low">Baixo Esforço</span>
+                        <span class="axis-label-high">Alto Esforço</span>
+                    </div>
+                </div>
+            </div>
+        `;
+
         // Phase configuration
         const phases = [
             { num: 1, name: 'TORNIQUETE', subtitle: 'Imediato', class: 'phase-1' },
@@ -583,6 +670,7 @@ class ReportReader {
 
         const boardHtml = `
             <h1>${title}</h1>
+            ${matrixHtml}
             <div class="war-room-intro">
                 ${introHtml || '<p>Este documento organiza todas as intervenções em uma jornada cronológica de recuperação.</p>'}
                 <p style="margin-top: var(--spacing-sm); font-size: var(--font-size-xs); color: var(--color-text-muted);">
@@ -686,6 +774,48 @@ class ReportReader {
                 header.className = 'board-modal-header phase-' + phase;
 
                 overlay.classList.add('active');
+            });
+        });
+    }
+
+    /**
+     * Setup Matrix Spotlight effect
+     * Highlights corresponding Kanban card when hovering matrix chips
+     */
+    setupMatrixSpotlight() {
+        const chips = document.querySelectorAll('.matrix-chip');
+        const board = document.querySelector('.war-room-board');
+
+        if (!chips.length || !board) return;
+
+        chips.forEach(chip => {
+            // Hover: Highlight card in Kanban
+            chip.addEventListener('mouseenter', () => {
+                const id = chip.dataset.id;
+                const targetCard = document.querySelector(`.board-card[data-id="${id}"]`);
+
+                if (targetCard) {
+                    board.classList.add('spotlight-active');
+                    targetCard.classList.add('spotlight-target');
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+
+            // Mouse leave: Remove highlight
+            chip.addEventListener('mouseleave', () => {
+                board.classList.remove('spotlight-active');
+                document.querySelectorAll('.spotlight-target').forEach(el =>
+                    el.classList.remove('spotlight-target')
+                );
+            });
+
+            // Click: Open modal directly
+            chip.addEventListener('click', () => {
+                const id = chip.dataset.id;
+                const targetCard = document.querySelector(`.board-card[data-id="${id}"]`);
+                if (targetCard) {
+                    targetCard.click();
+                }
             });
         });
     }

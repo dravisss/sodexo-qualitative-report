@@ -58,7 +58,7 @@ O cenário macroeconômico é hostil — isso é verdade. Mas a resposta interna
 
 O diagnóstico acima não é o fim do trabalho. Foi elaborado um **Plano de Intervenção Estratégica** detalhado, contendo 27 ações práticas para estancar a sangria e recuperar a operação.
 
-👉 **[Acesse aqui o Plano de Intervenção "Estancamento de Sangria" (Doc 08)](#08)**
+👉 **[Acesse aqui o Plano de Intervenção Estratégica](#08)**
 
 ---
 

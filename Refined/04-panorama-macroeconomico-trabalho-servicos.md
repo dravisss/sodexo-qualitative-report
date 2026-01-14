@@ -2,8 +2,7 @@
 
 ---
 
-## Resumo Executivo
-O cenário macroeconômico é hostil. Isso é verdade. Mas a narrativa de que "o mercado nos obriga a precarizar" é conveniente e incompleta. Este estudo distingue as **forças externas** (sobre as quais a organização tem pouco controle) das **escolhas internas** (que são decisões de gestão). Os desafios operacionais observados (dificuldade de contratação, alta rotatividade, insatisfação com a escala de trabalho) refletem uma transformação estrutural no mercado de trabalho brasileiro. A diferença entre forças externas e escolhas internas é crucial: forças externas são desafios; escolhas internas são responsabilidades.
+Este estudo distingue as **forças externas** (sobre as quais a organização tem pouco controle) das **escolhas internas** (que são decisões de gestão). Os desafios operacionais observados (dificuldade de contratação, alta rotatividade, insatisfação com a escala de trabalho) refletem uma transformação estrutural no mercado de trabalho brasileiro. A diferença entre forças externas e escolhas internas é o cerne do estudo: forças externas são desafios; escolhas internas são responsabilidades.
 
 ---
 
@@ -20,7 +19,7 @@ O Brasil viveu um crescimento expressivo no número de trabalhadores por aplicat
 
 Colaboradores explicitam que "é melhor ser pedreiro" ou ir para a logística do que trabalhar na cozinha industrial. Os aplicativos oferecem uma percepção de "autonomia" (ainda que precária) que compete com a rigidez de uma hierarquia operacional.
 
-**Consequência:** A vaga de auxiliar, que paga o piso salarial, concorre com o trabalho informal que paga à vista ou com o galpão logístico vizinho. Isso gera um déficit crônico de funcionários.
+A vaga de auxiliar, que paga o piso salarial, concorre com o trabalho informal que paga à vista ou com o galpão logístico vizinho. Isso gera um déficit crônico de funcionários.
 
 ---
 

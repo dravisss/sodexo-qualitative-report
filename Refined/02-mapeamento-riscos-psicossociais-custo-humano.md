@@ -160,16 +160,11 @@ Para fundamentar cientificamente os fenômenos observados, recomenda-se investig
 
 ## 6. Síntese
 
-O modelo observado transfere o custo da operação para o corpo e a mente dos trabalhadores. A busca pela margem de lucro:
-- Remove recursos que protegeriam o trabalhador (máquinas, pessoas, tempo de recuperação)
-- Penaliza financeiramente quem adoece
-- Sobrecarrega a liderança local com funções além de sua formação
-- Gera um ciclo de adoecimento que se retroalimenta
+O modelo observado evidencia uma transferência dos desafios operacionais para a saúde física e mental dos trabalhadores. A priorização de resultados financeiros imediatos muitas vezes:
+- Reduz a disponibilidade de recursos preventivos e de suporte (infraestrutura, dimensionamento de equipe e tempos de pausa)
+- Desestimula o autocuidado através de mecanismos que impactam a remuneração em casos de adoecimento
+- Sobrecarrega a liderança local com demandas que excedem suas competências técnicas e de gestão
+- Estabelece um ciclo de desgaste que compromete a sustentabilidade humana do negócio
 
-O corpo do colaborador tornou-se a ferramenta de ajuste financeiro da operação. A liderança local, por sua vez, é consumida tentando manter a operação funcionando sem os recursos necessários.
+Nesse cenário, a integridade do colaborador acaba funcionando como uma variável de ajuste para a viabilidade da operação. Paralelamente, a liderança local enfrenta o desgaste de sustentar a produtividade sem o suporte organizacional necessário.
 
----
-
-**Nota sobre documentação:**
-
-Os testemunhos e padrões documentados neste estudo constituem evidência de que as condições de trabalho são conhecidas ou conhecíveis pela organização. O "Refúgio Farmacológico" não é metáfora literária; é documentação de um padrão sistêmico que pode ter implicações jurídicas em caso de fiscalização ou litígio.
