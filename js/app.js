@@ -345,12 +345,6 @@ class ReportReader {
                     'O Que Mudou': '🔄', 'Consequência': '🚨', 'O Incentivo Estrutural': '⚖️', 'O Corte do "Invisível"': '✂️'
                 }
             },
-            '06': {
-                cardSelector: 'h2',
-                idPrefixes: ['Os Cinco Mecanismos', 'Os Contratos em Risco', 'A Multicausalidade'],
-                sectionLabelMap: { 'Os Cinco': 'Dinâmica', 'Os Contratos': 'Unidade', 'A Multicausalidade': 'Análise' },
-                iconMap: { 'Retenção Forçada': '⛓️', 'Presenteísmo Destrutivo': '💊', 'Sucateamento': '🏚️', 'Seleção Adversa': '📉' }
-            },
             '07': {
                 cardSelector: 'h3',
                 idPrefixes: ['🔴', '🟠', '🟡'],
@@ -523,6 +517,13 @@ class ReportReader {
         });
 
         return div.innerHTML;
+    }
+
+    findArticleIdByPath(path) {
+        if (!path) return null;
+        // Extracts the ID (e.g., '01') from paths like 'Refined/01-...'
+        const match = path.match(/(\d\d)-/);
+        return match ? match[1] : null;
     }
 
     /**
