@@ -1,53 +1,51 @@
-# 🗺️ Relatório Preliminar: Análise Turnover Sodexo
-
-Este documento serve como índice central para os artigos de análise qualitativa refinados e consolidados da pesquisa realizada na Sodexo. Os materiais foram revisados seguindo critérios de linguagem acessível para públicos executivos e de RH, mantendo a profundidade das análises originais.
+# Análise Qualitativa de Dinâmicas Sistêmicas e Turnover
 
 ---
 
-## 📋 Documentos Estratégicos (Leitura Prioritária)
+## Apresentação
+
+Este documento consolida a análise qualitativa conduzida com colaboradores e gestores de unidades operacionais do Cluster Cajamar. O estudo foi desenhado para ir além das métricas de rotatividade, investigando as **dinâmicas sistêmicas** que sustentam ciclos de desgaste, desengajamento e saída.
+
+O material aqui reunido não se limita a diagnosticar problemas. Ele mapeia as interdependências entre políticas de incentivo, condições de trabalho, gestão de pessoas e o contexto macroeconômico da região — e propõe um **plano de intervenção faseado** para estabilizar a operação e reconstruir a capacidade de retenção.
+
+A leitura pode ser feita de forma modular. Os documentos estão organizados abaixo por finalidade, permitindo que cada perfil de leitor encontre rapidamente o que precisa.
+
+---
+
+## Núcleo de Decisão
+
+Documentos síntese para leitura executiva e tomada de decisão imediata.
 
 ### [Resumo Executivo para o Board](#06)
 Síntese de 2 páginas traduzindo os achados qualitativos em linguagem de risco financeiro e contratual. Ideal para apresentação à diretoria.
 
 ### [Painel de Risco Consolidado](#07)
-Matriz de probabilidade x impacto para os riscos identificados, com priorização de intervenções.
+Matriz de probabilidade × impacto para os riscos identificados, com priorização de intervenções.
+
+### [Plano de Intervenção Estratégica](#08)
+O plano tático e executável para reverter os ciclos viciosos identificados. Organizado em 4 fases cronológicas (Torniquete → Descompressão → Reestruturação → Reposicionamento), contendo 27 intervenções específicas.
 
 ---
 
-## 📚 Artigos de Análise Qualitativa (Curados e Detalhados)
+## Fundamentação Analítica
 
-### 01 — [Sodexo: Arquitetura de Incentivos e o Impacto Operacional](#01)
-Investigação profunda sobre como a estrutura de metas financeiras (GM) e o gatilho binário da PLR geram precarização sistêmica. Analisa a "cadeia de pressão" da Gerência de Operações (GO) até a base, detalhando o impacto em clientes como **Leroy Merlin** e **União Química**.
-*   **Destaques:** Análise hierárquica (GO/GCE/GU), a "Tirania do GM" e o custo invisível do desvio de função.
+Artigos que detalham as dinâmicas sistêmicas encontradas em campo. Recomendados para quem deseja compreender o "porquê" por trás dos números.
 
----
+### 01 — [Arquitetura de Incentivos e o Impacto Operacional](#01)
+Investigação sobre como a estrutura de metas financeiras (GM) e o gatilho binário da PLR geram precarização sistêmica. Analisa a cadeia de pressão da Gerência de Operações (GO) até a base.
 
 ### 02 — [Mapeamento de Riscos Psicossociais e Custo Humano](#02)
-Mapeamento do desgaste físico e mental provocado pelo subdimensionamento e falhas de infraestrutura. Explora o fenômeno do **"Refúgio Farmacológico"** (uso transversal de Sertralina e Lexotan) e a armadilha do presenteísmo gerada pelo bônus de assiduidade.
-*   **Destaques:** Cadeia de causalidade do adoecimento e a "automedicação como estratégia de sobrevivência".
+Mapeamento do desgaste físico e mental provocado pelo subdimensionamento e falhas de infraestrutura. Explora o fenômeno do "Refúgio Farmacológico" e a armadilha do presenteísmo.
+
+### 03 — [Gestão de Pessoas: O Ciclo do Travamento Rescisório](#03)
+Documentação do impasse gerado pela política de proibição de demissões para proteção de caixa. Analisa a "Armadilha do FGTS" e seus efeitos no clima organizacional.
+
+### 04 — [Panorama Macroeconômico e Forças Externas](#04)
+Contextualização da crise de atratividade frente ao polo logístico de Cajamar e à "Uberização". Explora o Mecanismo de Autofagia e a competição com o salário de reserva.
+
+### 05 — [Dossiês Operacionais: Estudo Comparativo por Unidade](#05)
+Relato detalhado da realidade operacional em cada planta. Recupera traumas culturais, condições de trabalho e padrões de gestão específicos de cada unidade visitada.
 
 ---
 
-### 03 — [Análise de Gestão de Pessoas: O Ciclo do Travamento Rescisório](#03)
-Documentação do impasse gerado pela política de proibição de demissões para proteção de caixa. Analisa a **"Armadilha do FGTS"**, onde o colaborador busca a capitalização rescisória através do desengajamento tático, sabotagem ou "corpo mole".
-*   **Destaques:** Casos de transferência punitiva e a contaminação do clima organizacional.
-
----
-
-### 04 — [Panorama Macroeconômico: Forças Externas e o Mercado de Trabalho](#04)
-Contextualização da crise de atratividade da Sodexo frente ao polo logístico de **Cajamar** e à "Uberização". Explora o **Mecanismo de Autofagia**, onde a organização consome sua própria infraestrutura e capital humano para bater metas financeiras de curto prazo sob a pressão da escala 6x1.
-*   **Destaques:** Movimento VAT (Vida Além do Trabalho) e a competição com o salário de reserva/benefícios.
-
----
-
-### 05 — [Dossiês Operacionais: Curadoria de Traumas e Desafios por Unidade](#05)
-Relato exaustivo e sem resumos da realidade operacional em cada planta. Recupera traumas culturais como o zeramento de banco de horas, a exaustão física da "velha guarda" em Guarulhos (**"Burros de Carroça"**) e a invisibilidade extrema no setor de FM.
-*   **Destaques:** Lavagem manual de 1300 pratos, falta de EPIs básicos e a segregação de insumos.
-
----
-
-### 08 — [Plano de Intervenção Estratégica: "Estancamento de Sangria"](#08)
-O plano tático e executável para reverter os ciclos viciosos identificados. Organizado em 4 fases cronológicas (Torniquete → Descompressão → Reestruturação → Reposicionamento), contendo 27 intervenções específicas (I-01 a I-27) com objetivos, impactos esperados e priorização.
-*   **Destaques:** Fundo Centralizado de Rescisões, Compra Emergencial de EPIs e Redimensionamento de Quadro.
-
----
+<sub>Análise conduzida por Target Teal · Janeiro 2026</sub>
