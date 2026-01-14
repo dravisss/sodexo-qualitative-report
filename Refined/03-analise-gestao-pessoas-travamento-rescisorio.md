@@ -88,26 +88,3 @@ O "travamento rescisório" não é uma falha pontual de gestão, mas uma **conse
 - O colaborador insatisfeito é incentivado a forçar uma demissão para acessar seus direitos.
 
 O resultado é um ambiente de **retenção forçada**, onde a organização mantém funcionários improdutivos porque o custo de desligá-los é maior do que o custo (aparente) de mantê-los. Contudo, os custos ocultos (clima deteriorado, queda de qualidade, sobrecarga dos comprometidos, adoecimento) podem superar significativamente a economia de curto prazo.
-
----
-
-## 6. Caminhos para Intervenção e Experimentos
-
-A liderança operacional reconhece o problema e identifica a causa na estrutura orçamentária. As GOs relatam: "Tudo isso eu já sei. Vivo isso todo dia. O problema é que a conta não fecha. Me pedem para entregar a margem, mas não me dão flexibilidade para demitir quem precisa sair."
-
-Com base nessa escuta, identificamos três experimentos possíveis:
-
-### 6.1 Fundo Centralizado de Renovação de Equipes
-**Hipótese:** Separar as verbas rescisórias do orçamento operacional da unidade permitirá decisões de gestão de pessoas sem penalização financeira imediata.
-
-**Métrica de sucesso:** Redução do tempo médio de permanência de colaboradores desengajados; melhora em indicadores de clima.
-
-### 6.2 Revisão dos Deflatores de Rotatividade
-**Hipótese:** Diferenciar rotatividade "saudável" (renovação necessária) de rotatividade problemática (perda de talentos) permitirá à liderança renovar equipes sem punição na PLR.
-
-**Métrica de sucesso:** Manutenção de talentos-chave; aumento da rotatividade voluntária de baixa performance.
-
-### 6.3 Programa de Desligamento Voluntário Incentivado
-**Hipótese:** Oferecer acordos de desligamento que atendam às necessidades financeiras do trabalhador (antecipação parcial de FGTS, por exemplo) pode reduzir o custo total de rescisão e eliminar o impasse.
-
-**Métrica de sucesso:** Adesão voluntária de colaboradores que desejam sair; custo médio de rescisão inferior ao modelo tradicional.

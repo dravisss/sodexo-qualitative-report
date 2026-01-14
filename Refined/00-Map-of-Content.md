@@ -4,7 +4,7 @@
 
 ## Apresentação
 
-Este documento consolida a análise qualitativa conduzida com colaboradores e gestores de unidades operacionais do Cluster Cajamar. O estudo foi desenhado para ir além das métricas de rotatividade, investigando as **dinâmicas sistêmicas** que sustentam ciclos de desgaste, desengajamento e saída.
+Este documento consolida a análise qualitativa conduzida com colaboradores e gestores de unidades operacionais de Cajamar (Leroy Merlin) e Guarulhos (União Química) nos setores FOOD e FM. O estudo foi desenhado para ir além das métricas de rotatividade, investigando as **dinâmicas sistêmicas** que sustentam ciclos de desgaste, desengajamento e saída.
 
 O material aqui reunido não se limita a diagnosticar problemas. Ele mapeia as interdependências entre políticas de incentivo, condições de trabalho, gestão de pessoas e o contexto macroeconômico da região — e propõe um **plano de intervenção faseado** para estabilizar a operação e reconstruir a capacidade de retenção.
 

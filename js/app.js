@@ -88,8 +88,12 @@ class ReportReader {
             this.renderBreadcrumbs(article);
             this.scrollToTop();
 
-            // Setup intervention toggles
-            this.setupInterventionToggles();
+            // Setup interactions based on article type
+            if (article.id === '08') {
+                this.setupWarRoomModal();
+            } else {
+                this.setupInterventionToggles();
+            }
 
         } catch (error) {
             console.error('Error loading article:', error);
@@ -457,6 +461,185 @@ class ReportReader {
     }
 
     /**
+     * Render War Room Dashboard (Article 08)
+     * Transforms intervention plan into a Kanban-style board
+     */
+    renderWarRoom(html) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+
+        // Extract title from H1
+        const h1 = div.querySelector('h1');
+        const title = h1 ? h1.textContent : 'Plano de Intervenção';
+        if (h1) h1.remove();
+
+        // Phase configuration
+        const phases = [
+            { num: 1, name: 'TORNIQUETE', subtitle: 'Imediato & Dignidade', class: 'phase-1' },
+            { num: 2, name: 'DESCOMPRESSÃO', subtitle: 'Curto Prazo & Clima', class: 'phase-2' },
+            { num: 3, name: 'REESTRUTURAÇÃO', subtitle: 'Médio Prazo & Regras', class: 'phase-3' },
+            { num: 4, name: 'REPOSICIONAMENTO', subtitle: 'Longo Prazo & Futuro', class: 'phase-4' }
+        ];
+
+        // Parse interventions by phase
+        const phaseData = phases.map(p => ({ ...p, interventions: [] }));
+        let currentPhase = null;
+
+        // Find all H2s (phases) and H4s (interventions)
+        const h2s = Array.from(div.querySelectorAll('h2'));
+        h2s.forEach(h2 => {
+            const phaseMatch = h2.textContent.match(/FASE\s*(\d)/i);
+            if (phaseMatch) {
+                currentPhase = parseInt(phaseMatch[1]) - 1;
+            }
+        });
+
+        // Now parse H4s for interventions
+        const h4s = Array.from(div.querySelectorAll('h4'));
+        h4s.forEach(h4 => {
+            const match = h4.textContent.match(/^(I-\d+)\s*[—|-]\s*(.*)$/);
+            if (match) {
+                // Find which phase this belongs to by looking at previous H2
+                let phaseIndex = 0;
+                let el = h4.previousElementSibling;
+                while (el) {
+                    if (el.tagName === 'H2') {
+                        const pm = el.textContent.match(/FASE\s*(\d)/i);
+                        if (pm) {
+                            phaseIndex = parseInt(pm[1]) - 1;
+                            break;
+                        }
+                    }
+                    el = el.previousElementSibling;
+                }
+
+                // Extract fields
+                const fields = { tensao: '', descricao: '', objetivo: '', impacto: '' };
+                let next = h4.nextElementSibling;
+                while (next && !['H1', 'H2', 'H3', 'H4', 'HR'].includes(next.tagName)) {
+                    const text = next.textContent;
+                    if (text.includes('Tensão:')) fields.tensao = text.split('Tensão:')[1]?.trim() || '';
+                    if (text.includes('Descrição:')) fields.descricao = text.split('Descrição:')[1]?.trim() || '';
+                    if (text.includes('Objetivo:')) fields.objetivo = text.split('Objetivo:')[1]?.trim() || '';
+                    if (text.includes('Impacto:')) fields.impacto = text.split('Impacto:')[1]?.trim() || '';
+                    next = next.nextElementSibling;
+                }
+
+                if (phaseData[phaseIndex]) {
+                    phaseData[phaseIndex].interventions.push({
+                        id: match[1],
+                        title: match[2],
+                        ...fields
+                    });
+                }
+            }
+        });
+
+        // Build the board HTML
+        const boardHtml = `
+            <h1>${title}</h1>
+            <p style="margin-bottom: var(--spacing-lg); color: var(--color-text-secondary);">
+                Clique em uma intervenção para ver os detalhes.
+            </p>
+            <div class="war-room-board">
+                ${phaseData.map(phase => `
+                    <div class="board-column ${phase.class}">
+                        <div class="board-column-header">
+                            <h3>Fase ${phase.num}: ${phase.name}</h3>
+                            <div class="phase-subtitle">${phase.subtitle}</div>
+                        </div>
+                        ${phase.interventions.map(int => `
+                            <div class="board-card" 
+                                 data-id="${int.id}" 
+                                 data-title="${int.title.replace(/"/g, '&quot;')}"
+                                 data-phase="${phase.num}"
+                                 data-tensao="${int.tensao.replace(/"/g, '&quot;')}"
+                                 data-descricao="${int.descricao.replace(/"/g, '&quot;')}"
+                                 data-objetivo="${int.objetivo.replace(/"/g, '&quot;')}"
+                                 data-impacto="${int.impacto.replace(/"/g, '&quot;')}">
+                                <div class="card-id">${int.id}</div>
+                                <div class="card-title">${int.title}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `).join('')}
+            </div>
+            <div class="board-modal-overlay" id="board-modal-overlay">
+                <div class="board-modal">
+                    <div class="board-modal-header" id="board-modal-header">
+                        <div>
+                            <div class="modal-id" id="modal-id"></div>
+                            <h3 class="modal-title" id="modal-title"></h3>
+                        </div>
+                        <button class="board-modal-close" id="board-modal-close">×</button>
+                    </div>
+                    <div class="board-modal-body">
+                        <div class="board-modal-section">
+                            <div class="section-label">📍 Tensão</div>
+                            <div class="section-content" id="modal-tensao"></div>
+                        </div>
+                        <div class="board-modal-section">
+                            <div class="section-label">📝 Descrição</div>
+                            <div class="section-content" id="modal-descricao"></div>
+                        </div>
+                        <div class="board-modal-section">
+                            <div class="section-label">🎯 Objetivo</div>
+                            <div class="section-content" id="modal-objetivo"></div>
+                        </div>
+                        <div class="board-modal-section">
+                            <div class="section-label">⚡ Impacto</div>
+                            <div class="section-content" id="modal-impacto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        return boardHtml;
+    }
+
+    /**
+     * Setup War Room modal interactions
+     */
+    setupWarRoomModal() {
+        const overlay = document.getElementById('board-modal-overlay');
+        if (!overlay) return;
+
+        const closeBtn = document.getElementById('board-modal-close');
+        const header = document.getElementById('board-modal-header');
+        const idEl = document.getElementById('modal-id');
+        const titleEl = document.getElementById('modal-title');
+        const tensaoEl = document.getElementById('modal-tensao');
+        const descricaoEl = document.getElementById('modal-descricao');
+        const objetivoEl = document.getElementById('modal-objetivo');
+        const impactoEl = document.getElementById('modal-impacto');
+
+        // Close handlers
+        closeBtn?.addEventListener('click', () => overlay.classList.remove('active'));
+        overlay?.addEventListener('click', (e) => {
+            if (e.target === overlay) overlay.classList.remove('active');
+        });
+
+        // Card click handlers
+        document.querySelectorAll('.board-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const phase = card.dataset.phase;
+                idEl.textContent = card.dataset.id;
+                titleEl.textContent = card.dataset.title;
+                tensaoEl.textContent = card.dataset.tensao || '-';
+                descricaoEl.textContent = card.dataset.descricao || '-';
+                objetivoEl.textContent = card.dataset.objetivo || '-';
+                impactoEl.textContent = card.dataset.impacto || '-';
+
+                // Set phase class
+                header.className = 'board-modal-header phase-' + phase;
+
+                overlay.classList.add('active');
+            });
+        });
+    }
+
+    /**
      * Post-process HTML to wrap incentives and hierarchy in Article 01
      */
     renderIncentives(html) {
@@ -478,10 +661,11 @@ class ReportReader {
      * Fix relative image paths and process interventions
      */
     fixImagePaths(html, articlePath) {
-        // First, transform interventions if this is the intervention plan
+        // First, transform content based on article type
         let processedHtml = html;
         if (articlePath.includes('08-plano-de-intervencao-estrategica')) {
-            processedHtml = this.renderInterventions(html);
+            // War Room Dashboard for Article 08
+            processedHtml = this.renderWarRoom(html);
         } else {
             // Unify logic for 01-07
             const articleId = this.findArticleIdByPath(articlePath);
