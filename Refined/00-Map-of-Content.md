@@ -6,7 +6,7 @@
 
 <div class="executive-alert">
 
-## 🚨 A Tese Central
+## 🎯 A Tese Central
 
 A análise indica que a **estrutura de incentivos financeiros** está gerando passivos ocultos que superam a margem de lucro reportada. Estamos trocando sustentabilidade de contrato por economia de curto prazo, criando vulnerabilidade jurídica e operacional ativa.
 
@@ -32,24 +32,24 @@ Selecione a questão estratégica para acessar a evidência detalhada:
 <div class="nav-card finance">
 <h3>Financeiro & Risco</h3>
 <ul>
-<li><a href="#01"><strong>Por que a conta da margem não fecha?</strong></a><br>Entenda como economia em manutenção vira passivo trabalhista.</li>
-<li><a href="#02"><strong>Qual o tamanho do passivo oculto?</strong></a><br>Mapeamento de riscos de processos coletivos e afastamentos.</li>
+<li><a href="#01"><strong>Por que a conta da margem não fecha?</strong><span class="nav-desc">Entenda como economia em manutenção vira passivo trabalhista.</span></a></li>
+<li><a href="#02"><strong>Qual o tamanho do passivo oculto?</strong><span class="nav-desc">Mapeamento de riscos de processos coletivos e afastamentos.</span></a></li>
 </ul>
 </div>
 
 <div class="nav-card management">
 <h3>Gestão & Pessoas</h3>
 <ul>
-<li><a href="#03"><strong>Por que não conseguimos demitir?</strong></a><br>A análise do "travamento rescisório" e a armadilha do FGTS.</li>
-<li><a href="#04"><strong>O mercado é o único culpado?</strong></a><br>O que é pressão externa vs. o que é escolha interna de gestão.</li>
+<li><a href="#03"><strong>Por que não conseguimos demitir?</strong><span class="nav-desc">A análise do "travamento rescisório" e a armadilha do FGTS.</span></a></li>
+<li><a href="#04"><strong>O mercado é o único culpado?</strong><span class="nav-desc">O que é pressão externa vs. o que é escolha interna de gestão.</span></a></li>
 </ul>
 </div>
 
 <div class="nav-card operations">
 <h3>Operação & Cliente</h3>
 <ul>
-<li><a href="#05"><strong>Qual a situação real das unidades?</strong></a><br>Dossiê comparativo: O trauma de Cajamar vs. Exaustão de Guarulhos.</li>
-<li><a href="#08"><strong>Como estancar a sangria?</strong></a><br>O Plano de Intervenção Estratégica (Torniquete a Reposicionamento).</li>
+<li><a href="#05"><strong>Qual a situação real das unidades?</strong><span class="nav-desc">Dossiê comparativo: O trauma de Cajamar vs. Exaustão de Guarulhos.</span></a></li>
+<li><a href="#08"><strong>Como estancar a sangria?</strong><span class="nav-desc">O Plano de Intervenção Estratégica (Torniquete a Reposicionamento).</span></a></li>
 </ul>
 </div>
 

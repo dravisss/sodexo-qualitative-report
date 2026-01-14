@@ -303,6 +303,43 @@ body {
     margin-bottom: var(--spacing-sm);
 }
 
+/* Interactive Link Block */
+.nav-card a {
+    display: block;
+    padding: var(--spacing-sm);
+    margin: calc(var(--spacing-sm) * -1);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    text-decoration: none !important;
+    transition: background 0.2s ease;
+}
+
+.nav-card a:hover {
+    background: #f8f9fa;
+    /* Subtle hover state */
+}
+
+.nav-card a strong {
+    font-size: 1.1rem;
+    color: var(--color-teal-darker);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+}
+
+.nav-card a:hover strong {
+    color: var(--color-teal);
+}
+
+.nav-desc {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
 .sin-prose p {
     margin-bottom: var(--spacing-md);
 }
@@ -820,115 +857,162 @@ body {
 
 /* === HOME PAGE REDESIGN (00-MAP-OF-CONTENT) === */
 
+/* Executive Alert - Premium Editorial Style */
 .executive-alert {
-    background: #fff5f5;
-    /* Light red/warning bg */
-    border-left: 6px solid var(--color-error);
+    background: linear-gradient(to bottom, #fafafa, #ffffff);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-teal-dark);
+    /* Subtle branding accent */
     padding: var(--spacing-xl);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
+    /* Sharper corners */
     margin: var(--spacing-xl) 0;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
+    /* Very subtle depth */
+    position: relative;
+    /* Optional: Subtle top accent line instead of full border */
+    /* border-top: 1px solid var(--color-teal-light); */
 }
 
 .executive-alert h2 {
-    color: var(--color-error);
+    color: var(--color-teal-darker);
     margin-top: 0;
-    font-size: var(--font-size-xl);
-}
-
-.cta-button-container {
-    margin-top: var(--spacing-lg);
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--color-error);
-    color: white !important;
-    /* Force override markdown link style */
-    padding: var(--spacing-md) var(--spacing-xl);
-    border-radius: var(--radius-md);
-    font-weight: var(--font-weight-bold);
-    text-decoration: none !important;
-    transition: background var(--transition-fast), transform var(--transition-fast);
-    box-shadow: var(--shadow-sm);
-}
-
-.cta-button:hover {
-    background: #c53030;
-    /* Darker red */
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.nav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-}
-
-.nav-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-lg);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    box-shadow: var(--shadow-sm);
-}
-
-.nav-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-teal);
-}
-
-.nav-card h3 {
-    margin-top: 0;
-    font-size: var(--font-size-lg);
-    color: var(--color-teal-dark);
-    border-bottom: 2px solid var(--color-teal-light);
-    padding-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+    /* Larger, more editorial */
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    border-bottom: none !important;
+    /* Remove standard markdown underline */
     margin-bottom: var(--spacing-md);
 }
 
+/* Sophisticated CTA Button */
+.cta-button-container {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    color: var(--color-teal-dark) !important;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: 1px solid var(--color-teal);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cta-button:hover {
+    background: var(--color-teal);
+    color: #fff !important;
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
+
+/* Navigation Grid - Clean & Flat */
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    /* More breathing room */
+    margin-top: var(--spacing-xl);
+}
+
+.nav-card {
+    background: #fff;
+    border: 1px solid transparent;
+    /* Hidden border normally */
+    border-radius: var(--radius-sm);
+    padding: 0;
+    /* Let content breathe but aligned */
+    transition: all 0.3s ease;
+}
+
+/* Sections headers inside cards */
+.nav-card h3 {
+    margin-top: 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    font-weight: 700;
+}
+
+/* Specific accents on H3 underline only */
+.nav-card.finance h3 {
+    border-bottom-color: var(--color-error);
+    color: var(--color-error-dark);
+}
+
+.nav-card.management h3 {
+    border-bottom-color: var(--color-purple);
+    color: var(--color-purple-dark);
+}
+
+.nav-card.operations h3 {
+    border-bottom-color: var(--color-teal);
+    color: var(--color-teal-dark);
+}
+
+/* Remove old list styles */
 .nav-card ul {
     list-style: none;
+    /* No bullets */
     padding: 0;
     margin: 0;
 }
 
 .nav-card li {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-left: 0;
 }
 
-.nav-card li:last-child {
-    margin-bottom: 0;
-}
-
+/* Interactive Link Block */
 .nav-card a {
-    color: var(--color-teal-dark);
-    text-decoration: none;
-    font-size: var(--font-size-md);
     display: block;
-    margin-bottom: 4px;
+    padding: var(--spacing-sm);
+    margin: calc(var(--spacing-sm) * -1);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    text-decoration: none !important;
+    transition: background 0.2s ease;
 }
 
 .nav-card a:hover {
+    background: #f8f9fa;
+    /* Subtle hover state */
+}
+
+.nav-card a strong {
+    font-size: 1.1rem;
+    color: var(--color-teal-darker);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+}
+
+.nav-card a:hover strong {
     color: var(--color-teal);
-    text-decoration: underline;
 }
 
-/* Specific Card Accents */
-.nav-card.finance {
-    border-top: 4px solid var(--color-error);
-}
-
-.nav-card.management {
-    border-top: 4px solid var(--color-purple);
-}
-
-.nav-card.operations {
-    border-top: 4px solid var(--color-teal);
+.nav-desc {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
 }
 
 /* === WAR ROOM DASHBOARD (ARTICLE 08) === */
