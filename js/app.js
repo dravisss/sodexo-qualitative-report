@@ -11,14 +11,19 @@ class ReportReader {
         this.contentEl = document.getElementById('content');
         this.navListEl = document.getElementById('nav-list');
         this.progressBarEl = document.getElementById('progress-bar');
+        this.breadcrumbEl = document.getElementById('breadcrumb-container');
+        this.sidebarEl = document.querySelector('.sin-sidebar');
+        this.overlayEl = document.getElementById('sidebar-overlay');
 
         this.init();
     }
 
     init() {
+        this.initializeSidebarState();
         this.renderNavigation();
         this.setupScrollProgress();
         this.handleHashChange();
+        this.setupGeneralEvents();
 
         // Listen for hash changes
         window.addEventListener('hashchange', () => this.handleHashChange());
@@ -64,6 +69,9 @@ class ReportReader {
         this.updateActiveNav(article.id);
         this.showLoading();
 
+        // Close mobile drawer on navigation
+        this.toggleMobileMenu(false);
+
         try {
             const response = await fetch(article.path);
 
@@ -76,6 +84,7 @@ class ReportReader {
             const fixedHtml = this.fixImagePaths(html, article.path);
 
             this.contentEl.innerHTML = `<article class="sin-prose">${fixedHtml}</article>`;
+            this.renderBreadcrumbs(article);
             this.scrollToTop();
 
             // Setup intervention toggles
@@ -95,7 +104,7 @@ class ReportReader {
     }
 
     /**
-     * Setup click listeners for intervention cards
+     * Setup click listeners for intervention cards and sidebar
      */
     setupInterventionToggles() {
         document.querySelectorAll('.intervention-header').forEach(header => {
@@ -104,6 +113,63 @@ class ReportReader {
                 card.classList.toggle('collapsed');
             });
         });
+    }
+
+    /**
+     * Setup general UI event listeners (sidebar, mobile menu)
+     */
+    setupGeneralEvents() {
+        // Desktop Sidebar Toggle
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', () => this.toggleSidebar());
+        }
+
+        // Mobile Menu Trigger
+        const mobileToggle = document.getElementById('mobile-toggle');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => this.toggleMobileMenu());
+        }
+
+        // Overlay Click (close drawer)
+        if (this.overlayEl) {
+            this.overlayEl.addEventListener('click', () => this.toggleMobileMenu(false));
+        }
+    }
+
+    /**
+     * Initial sidebars state from localStorage
+     */
+    initializeSidebarState() {
+        const isCollapsed = localStorage.getItem('sidebar-collapsed') === 'true';
+        if (isCollapsed) {
+            this.sidebarEl.classList.add('collapsed');
+        }
+    }
+
+    /**
+     * Toggle desktop sidebar slim/full mode
+     */
+    toggleSidebar() {
+        const isCollapsed = this.sidebarEl.classList.toggle('collapsed');
+        localStorage.setItem('sidebar-collapsed', isCollapsed);
+    }
+
+    /**
+     * Toggle mobile drawer
+     */
+    toggleMobileMenu(forceState) {
+        const isOpen = typeof forceState === 'boolean' ? forceState : !this.sidebarEl.classList.contains('mobile-open');
+
+        if (isOpen) {
+            this.sidebarEl.classList.add('mobile-open');
+            this.overlayEl.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        } else {
+            this.sidebarEl.classList.remove('mobile-open');
+            this.overlayEl.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     }
 
     /**
@@ -302,6 +368,27 @@ class ReportReader {
         }
 
         return result.join('/');
+    }
+
+    /**
+     * Render breadcrumbs based on current article
+     */
+    renderBreadcrumbs(article) {
+        if (!this.breadcrumbEl) return;
+
+        if (article.id === '00') {
+            this.breadcrumbEl.innerHTML = `
+                <span class="breadcrumb-item">Relatório</span>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-active">${article.title}</span>
+            `;
+        } else {
+            this.breadcrumbEl.innerHTML = `
+                <a href="#00" class="breadcrumb-item">Relatório</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-active">${article.title}</span>
+            `;
+        }
     }
 
     /**

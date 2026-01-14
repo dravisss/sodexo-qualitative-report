@@ -24,6 +24,14 @@
 </head>
 
 <body>
+  <!-- Mobile Menu Button -->
+  <button id="mobile-toggle" class="mobile-menu-trigger" aria-label="Abrir menu">
+    <span class="hamburger-icon"></span>
+  </button>
+
+  <!-- Overlay for Mobile Drawer -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
   <div class="sin-shell">
     <!-- Sidebar Navigation -->
     <aside class="sin-sidebar">
@@ -38,6 +46,12 @@
           <!-- Populated by JavaScript -->
         </ul>
       </nav>
+
+      <footer class="sidebar-footer">
+        <button id="sidebar-toggle" class="sidebar-toggle" title="Recolher Menu">
+          <span class="toggle-arrow">◀</span>
+        </button>
+      </footer>
     </aside>
 
     <!-- Main Content -->
@@ -46,6 +60,9 @@
       <div class="reading-progress">
         <div id="progress-bar" class="reading-progress-bar"></div>
       </div>
+
+      <!-- Breadcrumbs -->
+      <nav id="breadcrumb-container" class="breadcrumb-container"></nav>
 
       <!-- Article Content -->
       <div class="content-wrapper">
