@@ -181,21 +181,37 @@ body {
     border: 1px solid var(--color-border-teal);
     color: var(--color-teal-dark);
     cursor: pointer;
-    width: 32px;
+    min-width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    font-size: var(--font-size-sm);
+    gap: var(--spacing-sm);
+    padding: 0 var(--spacing-sm);
+    border-radius: 16px;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
     transition: all var(--transition-fast);
     box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .sidebar-toggle:hover {
     background: var(--color-teal);
     color: #fff;
-    transform: scale(1.1);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.collapsed .sidebar-toggle {
+    width: 32px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.collapsed .toggle-text {
+    display: none;
 }
 
 .collapsed .toggle-arrow {
