@@ -535,16 +535,41 @@ class ReportReader {
             }
         });
 
+        // Extract intro paragraph (first P after H1)
+        let introHtml = '';
+        const firstP = div.querySelector('p');
+        if (firstP) {
+            introHtml = firstP.outerHTML;
+        }
+
+        // Extract summary table (last table in document)
+        let summaryHtml = '';
+        const tables = Array.from(div.querySelectorAll('table'));
+        if (tables.length > 0) {
+            const lastTable = tables[tables.length - 1];
+            // Check if it's the priority table (contains "Priorização")
+            const prevH2 = lastTable.previousElementSibling;
+            if (prevH2 && prevH2.textContent.includes('Resumo')) {
+                summaryHtml = `<h2>${prevH2.textContent}</h2>${lastTable.outerHTML}`;
+            } else {
+                summaryHtml = lastTable.outerHTML;
+            }
+        }
+
         // Build the board HTML
         const boardHtml = `
             <h1>${title}</h1>
-            <p style="margin-bottom: var(--spacing-lg); color: var(--color-text-secondary);">
-                Clique em uma intervenção para ver os detalhes.
-            </p>
+            <div class="war-room-intro">
+                ${introHtml || '<p>Este documento organiza todas as intervenções em uma jornada cronológica de recuperação.</p>'}
+                <p style="margin-top: var(--spacing-sm); font-size: var(--font-size-xs); color: var(--color-text-muted);">
+                    👆 Clique em uma intervenção para ver os detalhes completos.
+                </p>
+            </div>
             <div class="war-room-board">
                 ${phaseData.map(phase => `
                     <div class="board-column ${phase.class}">
                         <div class="board-column-header">
+                            <span class="phase-count">${phase.interventions.length}</span>
                             <h3>Fase ${phase.num}: ${phase.name}</h3>
                             <div class="phase-subtitle">${phase.subtitle}</div>
                         </div>
@@ -564,6 +589,7 @@ class ReportReader {
                     </div>
                 `).join('')}
             </div>
+            ${summaryHtml ? `<div class="sin-prose" style="margin-top: var(--spacing-xl);">${summaryHtml}</div>` : ''}
             <div class="board-modal-overlay" id="board-modal-overlay">
                 <div class="board-modal">
                     <div class="board-modal-header" id="board-modal-header">
