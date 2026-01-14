@@ -299,88 +299,124 @@ class ReportReader {
     }
 
     /**
-     * Post-process HTML to wrap incentives and hierarchy in Article 01
+     * Unified processor for all Articles (01-07) to apply consistent card structure
      */
-    renderIncentives(html) {
+    processArticleContent(html, articleId) {
         const div = document.createElement('div');
         div.innerHTML = html;
 
-        // Process sections 2, 3 and 4 (H3 headers)
-        const headers = Array.from(div.querySelectorAll('h3'));
-        headers.forEach(header => {
-            const match = header.textContent.match(/^(\d+\.\d+)\s*(.*)$/);
-            if (match) {
-                const id = match[1];
-                const title = match[2];
+        // Config Mapping for all articles
+        const config = {
+            '01': {
+                cardSelector: 'h3',
+                idPrefixes: ['2.', '3.', '4.'],
+                sectionLabelMap: { '2': 'Mecanismo', '3': 'Nível', '4': 'Dinâmica' },
+                iconMap: {
+                    'Como funciona': '🔍', 'Consequências observadas': '🚨',
+                    'A Interdependência': '🔗', 'O Efeito cascata': '🌊', 'Variações Não Planejadas': '📈', 'O Gatilho Binário': '⚖️', 'Voz da Gestão Local': '🗣️', 'Dilema do Incentivo': '🤔', 'Barreira de Gestão': '🚫', 'Ajuste Funcional': '⚙️',
+                    'O Conflito': '⚔️', 'Segurança e Acidentes': '⚠️', 'Auditorias (Regra de Ouro)': '📜'
+                }
+            },
+            '02': {
+                cardSelector: 'h3',
+                idPrefixes: ['2.', '3.', '4.'],
+                sectionLabelMap: { '2': 'Cadeia', '3': 'Perfil', '4': 'Dinâmica' },
+                iconMap: {
+                    'Etapa 1': '1️⃣', 'Etapa 2': '2️⃣', 'Etapa 3': '3️⃣', 'Etapa 4': '4️⃣', 'Etapa 5': '5️⃣', 'Este ciclo': '🔄',
+                    'A Interdependência': '🔗', 'O Efeito cascata': '🌊', 'Variações Não Planejadas': '📈', 'O Gatilho Binário': '⚖️', 'Voz da Gestão Local': '🗣️', 'Dilema do Incentivo': '🤔', 'Barreira de Gestão': '🚫', 'Ajuste Funcional': '⚙️', 'Instabilidade': '⚠️', 'Percepção': '📉', 'Gestão': '🚨', 'Sobrecarga': '🧗', 'Pressão': '💣', 'Isolamento': '🏚️', 'Medicação': '💊', 'Dificuldade': '🛑', 'Cultura': '🧪',
+                    'O Mecanismo': '⚙️', 'As Consequências': '🚨', 'O Cálculo Oculto': '🧮'
+                }
+            },
+            '03': {
+                cardSelector: 'h2, h3',
+                idPrefixes: ['1.', '2.', '3.'],
+                sectionLabelMap: { '1': 'Mecanismo', '2': 'Perspectiva', '3': 'Ciclo', 'Fase': 'Etapa' },
+                iconMap: {
+                    'Resultado': '📊', 'Nota': '💡',
+                    'Fase 1': '💬', 'Fase 2': '🎢', 'Fase 3': '☣️', 'Fase 4': '🔄',
+                    'Dimensão': '📐', 'Impacto Observado': '💥', 'Estimativa de custo': '💰'
+                }
+            },
+            '04': {
+                cardSelector: 'h2, h3',
+                idPrefixes: ['1.', '2.', '3.', '4.', '5.'],
+                sectionLabelMap: { '1': 'Competição', '2': 'Armadilha', '3': 'Crise', '4': 'Pressão', '5': 'Competição' },
+                iconMap: {
+                    'O Que Mudou': '🔄', 'Consequência': '🚨', 'O Incentivo Estrutural': '⚖️', 'O Corte do "Invisível"': '✂️'
+                }
+            },
+            '06': {
+                cardSelector: 'h2',
+                idPrefixes: ['Os Cinco Mecanismos', 'Os Contratos em Risco', 'A Multicausalidade'],
+                sectionLabelMap: { 'Os Cinco': 'Dinâmica', 'Os Contratos': 'Unidade', 'A Multicausalidade': 'Análise' },
+                iconMap: { 'Retenção Forçada': '⛓️', 'Presenteísmo Destrutivo': '💊', 'Sucateamento': '🏚️', 'Seleção Adversa': '📉' }
+            },
+            '07': {
+                cardSelector: 'h3',
+                idPrefixes: ['🔴', '🟠', '🟡'],
+                sectionLabelMap: { '🔴': 'Crítico', '🟠': 'Alto', '🟡': 'Médio' },
+                iconMap: { 'O que é': '❓', 'Exposição estimada': '💰', 'Multicausalidade': '🧬' }
+            }
+        };
 
+        const artConfig = config[articleId];
+        if (!artConfig) return div.innerHTML;
+
+        // Process cards
+        const headers = Array.from(div.querySelectorAll(artConfig.cardSelector));
+        headers.forEach(header => {
+            const text = header.textContent.trim();
+            let match = null;
+
+            // Try to find a match in idPrefixes
+            for (const prefix of artConfig.idPrefixes) {
+                if (text.startsWith(prefix)) {
+                    match = { prefix: prefix.replace('.', ''), label: text.replace(prefix, '').trim() };
+                    break;
+                }
+            }
+
+            if (match) {
                 const card = document.createElement('div');
                 card.className = 'intervention-card collapsed';
 
-                // Determine context based on the ID (2.x, 3.x, 4.x)
-                let sectionLabel = 'Mecanismo';
-                let iconMap = {};
+                const sectionLabel = artConfig.sectionLabelMap[match.prefix] || artConfig.sectionLabelMap[match.prefix.charAt(0)] || 'Analise';
 
-                if (id.startsWith('2')) {
-                    if (id === '2.1') {
-                        sectionLabel = 'Cadeia';
-                        iconMap = { 'Etapa 1': '1️⃣', 'Etapa 2': '2️⃣', 'Etapa 3': '3️⃣', 'Etapa 4': '4️⃣', 'Etapa 5': '5️⃣', 'Este ciclo': '🔄' };
-                    } else {
-                        sectionLabel = 'Mecanismo';
-                        iconMap = { 'Como funciona': '🔍', 'Consequências observadas': '🚨' };
-                    }
-                } else if (id.startsWith('3')) {
-                    sectionLabel = 'Perfil';
-                    iconMap = { 'A Interdependência': '🔗', 'O Efeito cascata': '🌊', 'Variações Não Planejadas': '📈', 'O Gatilho Binário': '⚖️', 'Voz da Gestão Local': '🗣️', 'Dilema do Incentivo': '🤔', 'Barreira de Gestão': '🚫', 'Ajuste Funcional': '⚙️', 'Instabilidade': '⚠️', 'Percepção': '📉', 'Gestão': '🚨', 'Sobrecarga': '🧗', 'Pressão': '💣', 'Isolamento': '🏚️', 'Medicação': '💊', 'Dificuldade': '🛑', 'Cultura': '🧪' };
-                } else if (id.startsWith('4')) {
-                    sectionLabel = 'Dinâmica';
-                    iconMap = { 'O Conflito': '⚔️', 'Segurança e Acidentes': '⚠️', 'Auditorias (Regra de Ouro)': '📜', 'O Mecanismo': '⚙️', 'As Consequências': '🚨', 'O Cálculo Oculto': '🧮' };
-                }
-
-                // Capture all content and identify fields
                 const fields = [];
                 let currentField = null;
-
                 let next = header.nextElementSibling;
-                while (next && !['H1', 'H2', 'H3', 'H4', 'HR'].includes(next.tagName)) {
+
+                while (next && !['H1', 'H2', 'H3', 'HR'].includes(next.tagName)) {
                     const sibling = next;
                     next = sibling.nextElementSibling;
 
-                    // Check if this sibling starts a new field (e.g. <p><strong>Label:</strong> ...</p>)
                     const strong = sibling.querySelector('strong');
                     const isNewField = strong && (sibling.tagName === 'P' || sibling.tagName === 'LI') &&
                         (sibling.textContent.trim().startsWith(strong.textContent.trim()));
 
                     if (isNewField) {
                         const labelText = strong.textContent.replace(/[:]$|$/, '').trim();
-                        const icon = iconMap[labelText] || '•';
-
-                        // Create new field
-                        // Content is the sibling's innerHTML minus the label
-                        const content = sibling.innerHTML.replace(strong.outerHTML, '').replace(/^\s*[:]?\s*/, '').trim();
-
                         currentField = {
                             label: labelText,
-                            icon: icon,
-                            content: content ? `<p>${content}</p>` : ''
+                            icon: artConfig.iconMap[labelText] || '•',
+                            content: sibling.innerHTML.replace(strong.outerHTML, '').replace(/^\s*[:]?\s*/, '').trim()
                         };
+                        if (currentField.content) currentField.content = `<p>${currentField.content}</p>`;
                         fields.push(currentField);
                     } else if (currentField) {
-                        // Append to existing field
                         currentField.content += sibling.outerHTML;
                     } else {
-                        // Content before any field or if no fields detected
                         fields.push({ label: 'Detalhes', icon: '📝', content: sibling.outerHTML });
                         currentField = fields[fields.length - 1];
                     }
-
                     sibling.remove();
                 }
 
                 card.innerHTML = `
                   <div class="intervention-header">
                     <div class="action-info">
-                      <span class="action-id">${sectionLabel} ${id}</span>
-                      <h4 class="action-title">${title}</h4>
+                      <span class="action-id">${sectionLabel} ${match.prefix.includes('.') ? match.prefix : ''}</span>
+                      <h4 class="action-title">${match.label}</h4>
                     </div>
                     <div class="toggle-icon">▼</div>
                   </div>
@@ -395,17 +431,19 @@ class ReportReader {
                     </div>
                   </div>
                 `;
-
                 header.parentNode.replaceChild(card, header);
             }
         });
 
-        // Special treatment for Section 5 (Synthesis)
-        const synthesisHeader = Array.from(div.querySelectorAll('h2')).find(h => h.textContent.includes('6. Síntese') || h.textContent.includes('5. A Síntese'));
+        // Add callout for Synthesis (H2 with "Síntese")
+        const synthesisHeader = Array.from(div.querySelectorAll('h2')).find(h =>
+            h.textContent.toLowerCase().includes('síntese') ||
+            h.textContent.toLowerCase().includes('considerações finais')
+        );
+
         if (synthesisHeader) {
             const box = document.createElement('div');
-            box.className = 'callout important'; // Use the already defined alert/callout style
-
+            box.className = 'callout important';
             let contentHtml = '';
             let next = synthesisHeader.nextElementSibling;
             while (next && !['H1', 'H2', 'H3', 'HR'].includes(next.tagName)) {
@@ -414,7 +452,6 @@ class ReportReader {
                 contentHtml += sibling.outerHTML;
                 sibling.remove();
             }
-
             box.innerHTML = `
                 <div class="callout-title">🎯 Síntese Estratégica</div>
                 <div class="callout-content">${contentHtml}</div>
@@ -423,6 +460,14 @@ class ReportReader {
         }
 
         return div.innerHTML;
+    }
+
+    /**
+     * Post-process HTML to wrap incentives and hierarchy in Article 01
+     */
+    renderIncentives(html) {
+        // Obsolete but kept for reference if needed, use processArticleContent
+        return html;
     }
 
     slugify(text) {
@@ -443,10 +488,12 @@ class ReportReader {
         let processedHtml = html;
         if (articlePath.includes('08-plano-de-intervencao-estrategica')) {
             processedHtml = this.renderInterventions(html);
-        } else if (articlePath.includes('01-analise-sistemica-incentivos-lucro')) {
-            processedHtml = this.renderIncentives(html);
-        } else if (articlePath.includes('02-mapeamento-riscos-psicossociais-custo-humano')) {
-            processedHtml = this.renderIncentives(html);
+        } else {
+            // Unify logic for 01-07
+            const articleId = this.findArticleIdByPath(articlePath);
+            if (articleId) {
+                processedHtml = this.processArticleContent(html, articleId);
+            }
         }
 
         const div = document.createElement('div');
