@@ -513,15 +513,37 @@ class ReportReader {
                     el = el.previousElementSibling;
                 }
 
-                // Extract fields
+                // Extract fields - look for bold labels pattern
                 const fields = { tensao: '', descricao: '', objetivo: '', impacto: '' };
                 let next = h4.nextElementSibling;
+                let currentField = null;
+
                 while (next && !['H1', 'H2', 'H3', 'H4', 'HR'].includes(next.tagName)) {
-                    const text = next.textContent;
-                    if (text.includes('Tensão:')) fields.tensao = text.split('Tensão:')[1]?.trim() || '';
-                    if (text.includes('Descrição:')) fields.descricao = text.split('Descrição:')[1]?.trim() || '';
-                    if (text.includes('Objetivo:')) fields.objetivo = text.split('Objetivo:')[1]?.trim() || '';
-                    if (text.includes('Impacto:')) fields.impacto = text.split('Impacto:')[1]?.trim() || '';
+                    const html = next.innerHTML || '';
+                    const text = next.textContent || '';
+
+                    // Check for field labels (bold text followed by colon)
+                    if (html.includes('<strong>Tensão')) {
+                        currentField = 'tensao';
+                        const content = text.replace(/^.*Tensão[:]?\s*/, '').trim();
+                        if (content) fields.tensao = content;
+                    } else if (html.includes('<strong>Descrição')) {
+                        currentField = 'descricao';
+                        const content = text.replace(/^.*Descrição[:]?\s*/, '').trim();
+                        if (content) fields.descricao = content;
+                    } else if (html.includes('<strong>Objetivo')) {
+                        currentField = 'objetivo';
+                        const content = text.replace(/^.*Objetivo[:]?\s*/, '').trim();
+                        if (content) fields.objetivo = content;
+                    } else if (html.includes('<strong>Impacto')) {
+                        currentField = 'impacto';
+                        const content = text.replace(/^.*Impacto[:]?\s*/, '').trim();
+                        if (content) fields.impacto = content;
+                    } else if (currentField && text.trim()) {
+                        // Append to current field if no new label found
+                        fields[currentField] += ' ' + text.trim();
+                    }
+
                     next = next.nextElementSibling;
                 }
 
@@ -556,7 +578,21 @@ class ReportReader {
             }
         }
 
-        // Build the board HTML
+        // Build the board HTML with tooltips
+        const phaseTooltips = {
+            1: 'Ações imediatas para estancar hemorragia operacional e restaurar dignidade básica.',
+            2: 'Intervenções de curto prazo para aliviar pressão e melhorar o clima.',
+            3: 'Mudanças estruturais de médio prazo nas regras e processos.',
+            4: 'Transformações de longo prazo para reposicionamento estratégico.'
+        };
+
+        // Generate tag from tensão (first 2-3 significant words)
+        const generateTag = (tensao) => {
+            if (!tensao) return '';
+            const words = tensao.split(/\s+/).slice(0, 3).join(' ');
+            return words.length > 25 ? words.substring(0, 22) + '...' : words;
+        };
+
         const boardHtml = `
             <h1>${title}</h1>
             <div class="war-room-intro">
@@ -569,11 +605,14 @@ class ReportReader {
                 ${phaseData.map(phase => `
                     <div class="board-column ${phase.class}">
                         <div class="board-column-header">
+                            <span class="phase-tooltip">${phaseTooltips[phase.num]}</span>
                             <span class="phase-count">${phase.interventions.length}</span>
                             <h3>Fase ${phase.num}: ${phase.name}</h3>
                             <div class="phase-subtitle">${phase.subtitle}</div>
                         </div>
-                        ${phase.interventions.map(int => `
+                        ${phase.interventions.map(int => {
+            const tag = generateTag(int.tensao);
+            return `
                             <div class="board-card" 
                                  data-id="${int.id}" 
                                  data-title="${int.title.replace(/"/g, '&quot;')}"
@@ -584,8 +623,9 @@ class ReportReader {
                                  data-impacto="${int.impacto.replace(/"/g, '&quot;')}">
                                 <div class="card-id">${int.id}</div>
                                 <div class="card-title">${int.title}</div>
+                                ${tag ? `<div class="card-tags"><span class="card-tag">${tag}</span></div>` : ''}
                             </div>
-                        `).join('')}
+                        `}).join('')}
                     </div>
                 `).join('')}
             </div>
