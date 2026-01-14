@@ -475,10 +475,10 @@ class ReportReader {
 
         // Phase configuration
         const phases = [
-            { num: 1, name: 'TORNIQUETE', subtitle: 'Imediato & Dignidade', class: 'phase-1' },
-            { num: 2, name: 'DESCOMPRESSÃO', subtitle: 'Curto Prazo & Clima', class: 'phase-2' },
-            { num: 3, name: 'REESTRUTURAÇÃO', subtitle: 'Médio Prazo & Regras', class: 'phase-3' },
-            { num: 4, name: 'REPOSICIONAMENTO', subtitle: 'Longo Prazo & Futuro', class: 'phase-4' }
+            { num: 1, name: 'TORNIQUETE', subtitle: 'Imediato', class: 'phase-1' },
+            { num: 2, name: 'DESCOMPRESSÃO', subtitle: 'Curto Prazo', class: 'phase-2' },
+            { num: 3, name: 'REESTRUTURAÇÃO', subtitle: 'Médio Prazo', class: 'phase-3' },
+            { num: 4, name: 'REPOSICIONAMENTO', subtitle: 'Longo Prazo', class: 'phase-4' }
         ];
 
         // Parse interventions by phase
@@ -513,39 +513,27 @@ class ReportReader {
                     el = el.previousElementSibling;
                 }
 
-                // Extract fields - look for bold labels pattern
+                // Extract fields - collect all text then parse with regex
                 const fields = { tensao: '', descricao: '', objetivo: '', impacto: '' };
                 let next = h4.nextElementSibling;
-                let currentField = null;
+                let fullText = '';
 
                 while (next && !['H1', 'H2', 'H3', 'H4', 'HR'].includes(next.tagName)) {
-                    const html = next.innerHTML || '';
-                    const text = next.textContent || '';
-
-                    // Check for field labels (bold text followed by colon)
-                    if (html.includes('<strong>Tensão')) {
-                        currentField = 'tensao';
-                        const content = text.replace(/^.*Tensão[:]?\s*/, '').trim();
-                        if (content) fields.tensao = content;
-                    } else if (html.includes('<strong>Descrição')) {
-                        currentField = 'descricao';
-                        const content = text.replace(/^.*Descrição[:]?\s*/, '').trim();
-                        if (content) fields.descricao = content;
-                    } else if (html.includes('<strong>Objetivo')) {
-                        currentField = 'objetivo';
-                        const content = text.replace(/^.*Objetivo[:]?\s*/, '').trim();
-                        if (content) fields.objetivo = content;
-                    } else if (html.includes('<strong>Impacto')) {
-                        currentField = 'impacto';
-                        const content = text.replace(/^.*Impacto[:]?\s*/, '').trim();
-                        if (content) fields.impacto = content;
-                    } else if (currentField && text.trim()) {
-                        // Append to current field if no new label found
-                        fields[currentField] += ' ' + text.trim();
-                    }
-
+                    fullText += ' ' + (next.textContent || '');
                     next = next.nextElementSibling;
                 }
+
+                // Use regex to extract each field
+                // Pattern: Label: content (until next label or end)
+                const tensaoMatch = fullText.match(/Tensão:\s*([\s\S]*?)(?=Descrição:|$)/i);
+                const descricaoMatch = fullText.match(/Descrição:\s*([\s\S]*?)(?=Objetivo:|$)/i);
+                const objetivoMatch = fullText.match(/Objetivo:\s*([\s\S]*?)(?=Impacto:|$)/i);
+                const impactoMatch = fullText.match(/Impacto:\s*([\s\S]*?)$/i);
+
+                if (tensaoMatch) fields.tensao = tensaoMatch[1].trim();
+                if (descricaoMatch) fields.descricao = descricaoMatch[1].trim();
+                if (objetivoMatch) fields.objetivo = objetivoMatch[1].trim();
+                if (impactoMatch) fields.impacto = impactoMatch[1].trim();
 
                 if (phaseData[phaseIndex]) {
                     phaseData[phaseIndex].interventions.push({

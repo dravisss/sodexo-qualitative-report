@@ -867,14 +867,12 @@ body {
 }
 
 .board-column-header h3 {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
     margin: 0;
     color: #fff;
-    word-break: break-word;
-    hyphens: auto;
 }
 
 .board-column-header .phase-subtitle {
