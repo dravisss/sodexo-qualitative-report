@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Análise Turnover Sodexo - Relatório Preliminar">
+  <meta name="author" content="Target Teal">
+
+  <title>Análise Turnover Sodexo | Relatório Preliminar</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/report.css">
+
+  <!-- Favicon (teal circle) -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237ab5bc'/></svg>">
+</head>
+
+<body>
+  <div class="sin-shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sin-sidebar">
+      <header class="sidebar-header">
+        <h1 class="sidebar-logo">📊 Análise Sodexo</h1>
+        <p class="sidebar-subtitle">Relatório Preliminar</p>
+      </header>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">Artigos do Relatório</span>
+        <ul id="nav-list" class="nav-list">
+          <!-- Populated by JavaScript -->
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="sin-main">
+      <!-- Reading Progress Bar -->
+      <div class="reading-progress">
+        <div id="progress-bar" class="reading-progress-bar"></div>
+      </div>
+
+      <!-- Article Content -->
+      <div class="content-wrapper">
+        <div id="content" class="loading">
+          Carregando
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Application -->
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

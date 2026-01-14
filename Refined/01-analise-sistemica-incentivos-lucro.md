@@ -1,0 +1,186 @@
+# Sodexo: Arquitetura de Incentivos e o Impacto Operacional
+
+---
+
+## Resumo Executivo
+A margem de lucro reportada trimestralmente pela operação Sodexo não captura os passivos que estão sendo acumulados. Este estudo revela como a estrutura de metas financeiras, desenhada para maximizar retorno de curto prazo, está gerando custos ocultos que ameaçam a sustentabilidade contratual e a continuidade dos serviços para clientes como **Leroy Merlin** e **União Química**. Identificamos uma cadeia de incentivos que, embora focada na margem de lucro, acaba gerando precarização, adoecimento e deterioração do clima organizacional.
+
+---
+
+![Arquitetura de Incentivos e Impactos](../Intervencoes/image.png)
+
+
+## O Custo Invisível da Margem
+
+Antes de detalhar os mecanismos, é fundamental traduzir os achados qualitativos em linguagem de **risco financeiro**. A margem de lucro reportada mensalmente não captura os passivos que estão sendo acumulados:
+
+| Mecanismo Identificado | Passivo Oculto Correspondente |
+|------------------------|-------------------------------|
+| **Bloqueio de demissões** | Produtividade perdida por funcionários desengajados; custo de oportunidade de não renovar equipes |
+| **Presenteísmo forçado** | Afastamentos INSS prolongados (custo médio de R$ 8.000 a R$ 15.000 por caso); risco de ações por condições de trabalho |
+| **Desvio de função** | Passivo trabalhista estimado em 5 a 7 anos de diferenças salariais por funcionário; risco de ação coletiva |
+| **Sucateamento de infraestrutura** | Acidentes de trabalho com afastamento (deflator na PLR + indenizações); falhas de segurança alimentar (multas contratuais) |
+| **Rotatividade alta** | Custo de recrutamento e treinamento (estimado em 2 a 3 salários por vaga reposta) |
+
+> **Nota para a alta gestão:** A economia de curto prazo em manutenção, pessoal e rescisões está sendo paga com passivos trabalhistas, operacionais e contratuais que não aparecem no resultado mensal. A margem reportada mascara sua própria insustentabilidade.
+
+Os custos listados acima não são projeções especulativas. São passivos documentados em análises jurídicas de empresas do setor, com precedentes de ações coletivas e individuais. A questão não é *se* esses custos serão cobrados, mas *quando*.
+
+---
+
+## 1. A Tensão Central: Metas de Lucro versus Sustentabilidade Operacional
+
+A margem bruta de lucro (referida internamente como **Gross Margin - GM**) funciona como o principal indicador de desempenho das operações. No modelo da Sodexo, este número é definido anualmente pela diretoria e cascateado para as Gerências de Unidade (GUs). O orçamento é estático: uma vez definido, não há flexibilidade para remanejamento de verbas entre unidades, mesmo diante de colapsos estruturais.
+
+A remuneração variável (PLR) das lideranças da Sodexo está diretamente atrelada ao atingimento dessa meta de GM. O modelo opera em uma lógica de "gatilho binário": se a meta financeira não for batida, a bonificação é zerada; se for atingida, a liderança pode receber até dois salários extras.
+
+Além do gatilho financeiro, existem "deflatores" que penalizam a bonificação mesmo quando a meta de lucro é alcançada:
+- Índices de rotatividade acima do esperado
+- Ocorrências de segurança alimentar ou acidentes de trabalho
+
+Este modelo cria um conflito de interesses estrutural. Para garantir sua própria remuneração, as lideranças locais são incentivadas a cortar custos operacionais, incluindo aqueles considerados essenciais para a segurança e qualidade.
+
+---
+
+## 2. Os Cinco Incentivos que Operam Contra a Organização
+
+A análise das entrevistas revelou cinco mecanismos distintos que geram comportamentos destrutivos:
+
+### 2.1 A Armadilha Orçamentária
+**Como funciona:** Cada despesa da unidade (manutenção, compras, rescisões) é debitada diretamente do centro de custo local e afeta a margem de lucro.
+
+**Consequências observadas:**
+- Manutenções críticas são adiadas (fornos quebrados há mais de dois anos, ar-condicionado defeituoso)
+- Equipamentos básicos não são repostos (liquidificadores, batedeiras, facas)
+- A equipe é forçada a improvisar soluções manuais, aumentando o esforço físico
+
+### 2.2 O Bloqueio das Demissões
+**Como funciona:** As verbas rescisórias (multa do FGTS, aviso prévio) saem do orçamento da unidade. Não existe um fundo centralizado para desligamentos.
+
+**Consequências observadas:**
+- Funcionários insatisfeitos ou improdutivos são mantidos no quadro porque desligá-los comprometeria a meta de lucro
+- Colaboradores que desejam sair percebem que a empresa evita demitir; alguns passam a adotar comportamentos de baixa produtividade para forçar o desligamento
+- A permanência de pessoas desengajadas contamina o clima e sobrecarrega quem trabalha
+
+É importante notar: o comportamento de baixa produtividade observado não é uma "falha de caráter" individual. Trata-se de uma **resposta racional a um sistema de incentivos**. Quando o trabalhador percebe que a empresa não o demitirá (por restrições orçamentárias) e que pedir demissão significa perder anos de FGTS acumulado, a estratégia de forçar o desligamento se torna lógica dentro das opções disponíveis. A responsabilidade pela disfunção é do desenho do sistema, não do indivíduo.
+
+### 2.3 A Penalização da Saúde (Cesta Assiduidade)
+**Como funciona:** O bônus de assiduidade (denominado "Cesta", no valor aproximado de **R$ 300,00**) é condicionado à frequência perfeita. Na Sodexo, a regra é rigorosa: uma única falta ou mesmo a apresentação de atestado médico no mês resulta na perda integral do benefício.
+
+**Consequências observadas:**
+- Colaboradores vão trabalhar doentes para não perder parte significativa da renda
+- Lesões tratáveis se tornam crônicas por falta de repouso (tendinites, problemas de coluna)
+- Em operações de alimentação, pessoas doentes manipulando alimentos representa risco sanitário
+
+### 2.4 A Hierarquia de Recursos ("O Almoço é Rei")
+**Como funciona:** Para garantir a satisfação da diretoria dos clientes (neste caso a **Leroy Merlin**), a gestão da Sodexo prioriza insumos e recursos para o turno do almoço. Identificamos a prática de **trancar estoques** de itens melhores para evitar o consumo pelos outros turnos.
+
+**Consequências observadas:**
+- Turnos da tarde e noite operam com recursos reduzidos
+- A escassez gera sentimento de desvalorização entre os colaboradores desses turnos
+- O atrito entre equipes aumenta quando um turno "sequestra" insumos do outro
+
+### 2.5 O Desvio de Função Estrutural
+**Como funciona:** Para reduzir custos com folha de pagamento, a maioria é contratada como "Auxiliar de Serviços Gerais", mas executa tarefas de cozinheiro, estoquista ou açougueiro.
+
+**Consequências observadas:**
+- O colaborador percebe que faz trabalho qualificado por salário mínimo
+- A empresa se torna um "bico" temporário até surgir oportunidade melhor
+- A falta de especialização leva a erros de produção e desperdício de insumos
+
+---
+
+## 3. A Cadeia de Pressão: Interdependência Hierárquica
+
+O sistema de metas da Sodexo cria uma "pressão cruzada" que atravessa todos os níveis, onde a volatilidade do mercado é repassada para a ponta sem a flexibilidade correspondente:
+
+### 3.1 Nível Estratégico: Gerência de Operações (GO)
+Representado pela gestão de portfólio (ex: 38 unidades), este nível atua sob a métrica de resultado agregado.
+*   **A Interdependência:** Quando ocorre a perda de um contrato por decisões estratégicas do cliente ou concorrência, a meta financeira global permanece inalterada. 
+*   **O Efeito cascata:** Isso gera uma necessidade reativa de buscar margem adicional nas unidades remanescentes (como Cajamar e Guarulhos), pressionando por orçamentos ainda mais restritivos para compensar o portfólio.
+
+### 3.2 Nível Tático: Gerência de Contas Estratégicas (GCE)
+As GCEs funcionam como o filtro entre as demandas voláteis do cliente (**União Química** e **Leroy Merlin**) e a rigidez do orçamento interno.
+*   **Variações Não Planejadas:** O volume de serviços é definido pela demanda do cliente (ex: picos de refeições), mas o orçamento é estático. 
+*   **Dilema do Incentivo:** Medida pela retenção, a GCE tende a absorver novas demandas sem aporte imediato de recursos, impactando diretamente o *Gross Margin* (GM) que a unidade precisa entregar.
+
+### 3.3 Nível Operacional-Gestor: Gerente de Unidade (GU)
+O ponto mais crítico da cadeia devido à natureza binária de sua PLR e à alocação de custos rescisórios. **É fundamental reconhecer que a GU não é a autora deste sistema — ela é sua vítima mais visível.** A liderança local opera sob um desenho de incentivos que a coloca em constante conflito ético: para garantir sua própria remuneração, precisa tomar decisões que prejudicam sua equipe.
+*   **O Gatilho Binário:** A PLR é condicionada ao atingimento estrito da margem (ex: 7,9% vs 8% zera o bônus). Isso gera um estado de alerta permanente e sofrimento ético.
+*   **Barreira de Gestão:** Os custos de demissão debitados na unidade e o **deflator de rotatividade** na PLR incentivam a "retenção involuntária" de funcionários desengajados para proteger o resultado do mês.
+*   **Voz da Gestão Local:** As GUs relatam: "Sei do problema, mas não tenho ferramentas. Se liberassem um fundo centralizado para rescisões, eu resolveria metade dessas crises em três meses. Mas enquanto cada demissão sair do meu resultado, vou continuar segurando funcionário-problema."
+
+A liderança local identifica a solução, mas não dispõe de autonomia para implementá-la. A criação de um fundo centralizado para rescisões é uma mudança que requer decisão em nível de diretoria, não de gestão de unidade.
+
+### 3.4 Nível de Execução: Colaboradores
+A ponta responde à necessidade de economia superior para sustentar as metas.
+*   **Ajuste Funcional:** Uso de bônus de assiduidade (presenteísmo) e desvio de função (ASGs executando tarefas de cozinheiro) como variáveis para manter a folha dentro do orçamento.
+
+---
+
+## 4. Dinâmica da PLR Operacional e Deflatores
+
+A "cadeia de pressão" se completa nos mecanismos de bonificação da base e nas penalidades coletivas:
+
+### 4.1 PLR da Ponta: A Economia como Métrica
+Diferente das lideranças, o incentivo para cozinheiros e auxiliares está atrelado à capacidade da unidade de economizar recursos.
+*   **O Conflito:** Isso pode incentivar a restrição no uso de materiais básicos e EPIs (ex: luvas, panos) para não onerar as despesas e proteger o bônus, gerando improvisos perigosos.
+
+### 4.2 Os Deflatores: Subtração do Resultado
+O sistema possui "travas" que reduzem o montante a ser recebido por fatores sistêmicos:
+*   **Segurança e Acidentes:** Acidentes com afastamento são deflatores críticos. Aqui reside uma contradição: o bônus de assiduidade força o trabalho doente, o que eleva o risco de acidentes, que por sua vez penaliza a PLR de toda a equipe e da gestão.
+*   **Auditorias (Regra de Ouro):** Falhas em auditorias de qualidade e segurança resultam em multas contratuais que impactam diretamente o valor distribuído.
+
+---
+
+## 5. A Síntese do Problema: Pressão Cruzada
+
+A estrutura observada opera como um sistema de **extrativis mo**: retira valor do capital humano e da infraestrutura para entregar margem imediata, comprometendo a capacidade futura de geração de valor. A pergunta não é "quanto custa humanizar o orçamento", mas "quanto está custando não fazê-lo". O sistema gera uma pressão cruzada onde:
+1.  A **GO/GCE** repassa a volatilidade do mercado para a unidade sem flexibilidade orçamentária.
+2.  A **GU** racionaliza recursos básicos e restringe renovações para proteger o gatilho financeiro binário.
+3.  O **Colaborador** responde à sobrecarga e à punição da doença com desengajamento ou afastamento médico.
+
+---
+
+## 6. Caminhos para Intervenção
+
+Com base na análise, identificamos pontos onde a Sodexo pode promover mudanças:
+
+### 6.1 Experimento: Fundo Centralizado
+**Hipótese:** Separar rescisões e manutenções emergenciais do orçamento da unidade reduzirá o medo de comprometimento da PLR local e permitirá renovação saudável de equipes.
+
+**Métrica de sucesso:** Redução do tempo médio de permanência de funcionários desengajados; melhora em indicadores de clima.
+
+- **Desvinculação de EPIs/Saúde da PLR:** Garantir que itens de segurança não sejam vistos como "gastos a evitar" para proteger o bônus operacional.
+
+### 6.2 Experimento: Assiduidade Escalonada
+**Hipótese:** Migrar o bônus de assiduidade de perda total para perda escalonada reduzirá o incentivo ao trabalho doente sem eliminar o estímulo à frequência.
+
+**Métrica de sucesso:** Redução de afastamentos INSS prolongados; redução de acidentes de trabalho.
+
+- **Ajustar Deflatores de Rotatividade:** Diferenciar rotatividade saudável de perda de talentos, especialmente em polos logísticos competitivos como Cajamar.
+
+### 6.3 Experimento: Adequação de Quadro
+**Hipótese:** Calcular quadros com base na realidade física e volume de rampa das plantas reduzirá o desvio de função sistemático.
+
+**Métrica de sucesso:** Redução de passivo trabalhista por desvio de função; melhora em indicadores de qualidade.
+
+---
+
+## Considerações Finais
+
+A organização está tentando combater problemas estruturais de atratividade do setor (como a competição com aplicativos e logística) com ferramentas de gestão financeira rígida. Esta abordagem, embora compreensível no curto prazo, pode ser insuficiente para garantir a sustentabilidade.
+
+Para romper o ciclo, uma alternativa seria **humanizar o orçamento**: revisar a forma como demissões e afastamentos impactam a gestão local. Enquanto a estrutura de incentivos permanecer inalterada, a operação tende a continuar desgastando pessoas para entregar uma margem financeira que mascara sua própria insustentabilidade.
+
+---
+
+## Os Caminhos Possíveis
+
+A análise apresentada sugere dois cenários distintos para consideração:
+
+**Cenário A (Manter a estrutura atual):** A margem continua sendo reportada nos níveis atuais. Os passivos (trabalhistas, operacionais, contratuais) continuam se acumulando de forma invisível. O capital humano e a infraestrutura continuam sendo consumidos. O resultado provável é um desgaste gradual da capacidade de entrega.
+
+**Cenário B (Experimentar ajustes):** Implementar as intervenções propostas como pilotos controlados. Aceitar ajuste temporário de margem em unidades específicas para testar hipóteses. Monitorar indicadores de clima, rotatividade e absenteismo. O resultado possível é a ruptura dos ciclos viciosos e a reconstrução da capacidade operacional.
+
+Este estudo documenta as evidências que fundamentam essa escolha estratégica.
