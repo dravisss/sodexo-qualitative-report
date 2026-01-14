@@ -1,50 +1,59 @@
-# Análise Qualitativa de Dinâmicas Sistêmicas e Turnover
+# Relatório de Diagnóstico Sistêmico e Risco Operacional
+**Unidades:** Cajamar (Leroy Merlin) e Guarulhos (União Química)
+**Data:** Janeiro 2026
 
 ---
 
-## Apresentação
+<div class="executive-alert">
 
-Este documento consolida a análise qualitativa conduzida com colaboradores e gestores de unidades operacionais de Cajamar (Leroy Merlin) e Guarulhos (União Química) nos setores FOOD e FM. O estudo foi desenhado para ir além das métricas de rotatividade, investigando as **dinâmicas sistêmicas** que sustentam ciclos de desgaste, desengajamento e saída.
+## 🚨 A Tese Central
 
-O material aqui reunido não se limita a diagnosticar problemas. Ele mapeia as interdependências entre políticas de incentivo, condições de trabalho, gestão de pessoas e o contexto macroeconômico da região — e propõe um **plano de intervenção faseado** para estabilizar a operação e reconstruir a capacidade de retenção.
+A análise indica que a **estrutura de incentivos financeiros** está gerando passivos ocultos que superam a margem de lucro reportada. Estamos trocando sustentabilidade de contrato por economia de curto prazo, criando vulnerabilidade jurídica e operacional ativa.
 
-A leitura pode ser feita de forma modular. Os documentos estão organizados abaixo por finalidade, permitindo que cada perfil de leitor encontre rapidamente o que precisa.
+**Principais Alertas de Curto Prazo:**
+*   **Risco Crítico:** Passivo trabalhista acumulado por desvio de função estrutural.
+*   **Risco Operacional:** Colapso iminente de entrega na unidade União Química por sobrecarga.
+*   **Travamento:** O ciclo de "retenção forçada" impede a renovação saudável das equipes.
 
----
+<div class="cta-button-container">
+<a href="#06" class="cta-button">Ler Resumo Executivo para o Board (2 min) →</a>
+</div>
 
-## Núcleo de Decisão
-
-Documentos síntese para leitura executiva e tomada de decisão imediata.
-
-### [Resumo Executivo para o Board](#06)
-Síntese de 2 páginas traduzindo os achados qualitativos em linguagem de risco financeiro e contratual. Ideal para apresentação à diretoria.
-
-### [Painel de Risco Consolidado](#07)
-Matriz de probabilidade × impacto para os riscos identificados, com priorização de intervenções.
-
-### [Plano de Intervenção Estratégica](#08)
-O plano tático e executável para reverter os ciclos viciosos identificados. Organizado em 4 fases cronológicas (Torniquete → Descompressão → Reestruturação → Reposicionamento), contendo 27 intervenções específicas.
+</div>
 
 ---
 
-## Fundamentação Analítica
+## 🧭 O que você precisa responder hoje?
 
-Artigos que detalham as dinâmicas sistêmicas encontradas em campo. Recomendados para quem deseja compreender o "porquê" por trás dos números.
+Selecione a questão estratégica para acessar a evidência detalhada:
 
-### 01 — [Arquitetura de Incentivos e o Impacto Operacional](#01)
-Investigação sobre como a estrutura de metas financeiras (GM) e o gatilho binário da PLR geram precarização sistêmica. Analisa a cadeia de pressão da Gerência de Operações (GO) até a base.
+<div class="nav-grid">
 
-### 02 — [Mapeamento de Riscos Psicossociais e Custo Humano](#02)
-Mapeamento do desgaste físico e mental provocado pelo subdimensionamento e falhas de infraestrutura. Explora o fenômeno do "Refúgio Farmacológico" e a armadilha do presenteísmo.
+<div class="nav-card finance">
+<h3>Financeiro & Risco</h3>
+<ul>
+<li><a href="#01"><strong>Por que a conta da margem não fecha?</strong></a><br>Entenda como economia em manutenção vira passivo trabalhista.</li>
+<li><a href="#02"><strong>Qual o tamanho do passivo oculto?</strong></a><br>Mapeamento de riscos de processos coletivos e afastamentos.</li>
+</ul>
+</div>
 
-### 03 — [Gestão de Pessoas: O Ciclo do Travamento Rescisório](#03)
-Documentação do impasse gerado pela política de proibição de demissões para proteção de caixa. Analisa a "Armadilha do FGTS" e seus efeitos no clima organizacional.
+<div class="nav-card management">
+<h3>Gestão & Pessoas</h3>
+<ul>
+<li><a href="#03"><strong>Por que não conseguimos demitir?</strong></a><br>A análise do "travamento rescisório" e a armadilha do FGTS.</li>
+<li><a href="#04"><strong>O mercado é o único culpado?</strong></a><br>O que é pressão externa vs. o que é escolha interna de gestão.</li>
+</ul>
+</div>
 
-### 04 — [Panorama Macroeconômico e Forças Externas](#04)
-Contextualização da crise de atratividade frente ao polo logístico de Cajamar e à "Uberização". Explora o Mecanismo de Autofagia e a competição com o salário de reserva.
+<div class="nav-card operations">
+<h3>Operação & Cliente</h3>
+<ul>
+<li><a href="#05"><strong>Qual a situação real das unidades?</strong></a><br>Dossiê comparativo: O trauma de Cajamar vs. Exaustão de Guarulhos.</li>
+<li><a href="#08"><strong>Como estancar a sangria?</strong></a><br>O Plano de Intervenção Estratégica (Torniquete a Reposicionamento).</li>
+</ul>
+</div>
 
-### 05 — [Dossiês Operacionais: Estudo Comparativo por Unidade](#05)
-Relato detalhado da realidade operacional em cada planta. Recupera traumas culturais, condições de trabalho e padrões de gestão específicos de cada unidade visitada.
+</div>
 
 ---
 
