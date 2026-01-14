@@ -56,7 +56,7 @@ Artigo 01, após a tabela de passivos ocultos (linha 21), ou no Resumo Executivo
 
 ---
 
-## 3. Loop Causal: Armadilha Orçamentária (Loop Causal)
+## 3. Loop Causal: Sucateamento da Infraestrutura
 **Descrição:** Diagrama circular mostrando o ciclo vicioso do orçamento.
 **Por que é relevante:** Explica o ciclo vicioso com rigor sistêmico para públicos técnicos.
 
@@ -84,11 +84,10 @@ ARROW (+) pointing to →
 NODE 8: "PRESSÃO SOBRE META" with pressure gauge icon
 ARROW (+) returning to NODE 1
 
-In the center of the circle: A large "R" symbol (reinforcing loop) in turquoise, with the text "CICLO VICIOSO" below it.
+In the center of the circle: A large "R" symbol (reinforcing loop) in turquoise, with the text "INFRAESTRUTURA" below it.
 
-One node (NODE 2: "CORTE DE MANUTENÇÃO") is highlighted with a turquoise background and a small wrench icon, indicating the potential "ALAVANCA DE RUPTURA" (breaking point).
 
-Title at top: "ARMADILHA ORÇAMENTÁRIA"
+Title at top: "Sucateamento da Infraestrutura"
 Subtitle at bottom: "Todo corte de curto prazo retorna como custo ampliado"
 
 Clean, professional systems thinking diagram suitable for executive presentations. Clear hierarchy, readable text, no clutter.
@@ -143,7 +142,7 @@ Artigo 01, seção 3 "A Cadeia de Pressão" (após linha 97).
 
 ---
 
-## 5. Loop Causal: Presenteísmo Destrutivo (Loop Causal)
+## 5. Loop Causal: Presenteísmo Danoso (Loop Causal)
 **Descrição:** Ciclo do presenteísmo que leva ao adoecimento.
 **Por que é relevante:** Diagrama de sistemas que demonstra como a política de benefícios gera o adoecimento.
 
@@ -169,13 +168,7 @@ ARROW (+) returning to NODE 1
 
 In the center: Large "R" symbol (reinforcing) in turquoise with "CICLO DO PRESENTEÍSMO" below.
 
-Side panel on the right showing the math:
-"O CÁLCULO OCULTO"
-"Custo evitado: R$ 400 (substituto)"
-"Custo gerado: R$ 15.000 (INSS)"
-"Resultado: 37x mais caro"
-
-Title at top: "PRESENTEÍSMO DESTRUTIVO"
+Title at top: "PRESENTEÍSMO DANOSO"
 Subtitle at bottom: "A política de assiduidade está adoecendo a operação"
 
 Clean systems diagram with clear cause-effect relationships.
@@ -332,7 +325,7 @@ ARROW (+) returning to NODE 1
 
 Center of circle: Large "R" (reinforcing) symbol with "RETENÇÃO FORÇADA" below.
 
-Title at top: "O TRAVAMENTO RESCISÓRIO"
+Title at top: "A RETENÇÃO FORÇADA"
 Subtitle: "Um equilíbrio negativo onde ninguém consegue melhorar sua posição"
 
 
@@ -492,7 +485,7 @@ Small icons showing alternatives:
 - "Bolsa Família + Bico" with money
 Arrow pointing away from "VAGA SODEXO" toward these alternatives.
 
-Title at top: "O CICLO DA PORTA GIRATÓRIA"
+Title at top: "O CICLO DA SELEÇÃO ADVERSA"
 Subtitle: "Por que a vaga não atrai e não retém"
 
 
@@ -571,7 +564,7 @@ A mini-loop with 4 nodes in a circle:
 Icon: Handcuffs
 Color accent: Turquoise border
 
-LOOP B (TOP RIGHT - "PRESENTEÍSMO DESTRUTIVO"):
+LOOP B (TOP RIGHT - "PRESENTEÍSMO DANOSO"):
 A mini-loop with 4 nodes:
 "Bônus Assiduidade" → "Trabalhar Doente" → "Agrava Lesão" → "Aumenta faltas" → "Sobrecarrega Colegas" → back to center
 Icon: Pill/medicine

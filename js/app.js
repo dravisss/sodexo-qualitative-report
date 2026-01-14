@@ -84,6 +84,7 @@ class ReportReader {
             const fixedHtml = this.fixImagePaths(html, article.path);
 
             this.contentEl.innerHTML = `<article class="sin-prose">${fixedHtml}</article>`;
+            this.contentEl.classList.remove('loading');
             this.renderBreadcrumbs(article);
             this.scrollToTop();
 
@@ -92,6 +93,7 @@ class ReportReader {
 
         } catch (error) {
             console.error('Error loading article:', error);
+            this.contentEl.classList.remove('loading');
             this.contentEl.innerHTML = `
         <div class="error-message">
           <h2>Erro ao carregar artigo</h2>
@@ -296,6 +298,156 @@ class ReportReader {
         return div.innerHTML;
     }
 
+    /**
+     * Post-process HTML to wrap incentives and hierarchy in Article 01
+     */
+    renderIncentives(html) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+
+        // Process sections 2, 3 and 4 (H3 headers)
+        const headers = Array.from(div.querySelectorAll('h3'));
+        headers.forEach(header => {
+            const match = header.textContent.match(/^(\d+\.\d+)\s*(.*)$/);
+            if (match) {
+                const id = match[1];
+                const title = match[2];
+
+                const card = document.createElement('div');
+                card.className = 'intervention-card collapsed';
+
+                // Determine context based on the ID (2.x, 3.x, 4.x)
+                let sectionLabel = 'Mecanismo';
+                let iconMap = {};
+
+                if (id.startsWith('2')) {
+                    if (id === '2.1') {
+                        sectionLabel = 'Cadeia';
+                        iconMap = { 'Etapa 1': '1️⃣', 'Etapa 2': '2️⃣', 'Etapa 3': '3️⃣', 'Etapa 4': '4️⃣', 'Etapa 5': '5️⃣', 'Este ciclo': '🔄' };
+                    } else {
+                        sectionLabel = 'Mecanismo';
+                        iconMap = { 'Como funciona': '🔍', 'Consequências observadas': '🚨' };
+                    }
+                } else if (id.startsWith('3')) {
+                    sectionLabel = 'Perfil';
+                    iconMap = { 'A Interdependência': '🔗', 'O Efeito cascata': '🌊', 'Variações Não Planejadas': '📈', 'O Gatilho Binário': '⚖️', 'Voz da Gestão Local': '🗣️', 'Dilema do Incentivo': '🤔', 'Barreira de Gestão': '🚫', 'Ajuste Funcional': '⚙️', 'Instabilidade': '⚠️', 'Percepção': '📉', 'Gestão': '🚨', 'Sobrecarga': '🧗', 'Pressão': '💣', 'Isolamento': '🏚️', 'Medicação': '💊', 'Dificuldade': '🛑', 'Cultura': '🧪' };
+                } else if (id.startsWith('4')) {
+                    sectionLabel = 'Dinâmica';
+                    iconMap = { 'O Conflito': '⚔️', 'Segurança e Acidentes': '⚠️', 'Auditorias (Regra de Ouro)': '📜', 'O Mecanismo': '⚙️', 'As Consequências': '🚨', 'O Cálculo Oculto': '🧮' };
+                }
+
+                // Capture all content and identify fields
+                const fields = [];
+                let currentField = null;
+
+                let next = header.nextElementSibling;
+                while (next && !['H1', 'H2', 'H3', 'H4', 'HR'].includes(next.tagName)) {
+                    const sibling = next;
+                    next = sibling.nextElementSibling;
+
+                    // Check if this sibling starts a new field (e.g. <p><strong>Label:</strong> ...</p>)
+                    const strong = sibling.querySelector('strong');
+                    const isNewField = strong && (sibling.tagName === 'P' || sibling.tagName === 'LI') &&
+                        (sibling.textContent.trim().startsWith(strong.textContent.trim()));
+
+                    if (isNewField) {
+                        const labelText = strong.textContent.replace(/[:]$|$/, '').trim();
+                        const icon = iconMap[labelText] || '•';
+
+                        // Create new field
+                        // Content is the sibling's innerHTML minus the label
+                        const content = sibling.innerHTML.replace(strong.outerHTML, '').replace(/^\s*[:]?\s*/, '').trim();
+
+                        currentField = {
+                            label: labelText,
+                            icon: icon,
+                            content: content ? `<p>${content}</p>` : ''
+                        };
+                        fields.push(currentField);
+                    } else if (currentField) {
+                        // Append to existing field
+                        currentField.content += sibling.outerHTML;
+                    } else {
+                        // Content before any field or if no fields detected
+                        fields.push({ label: 'Detalhes', icon: '📝', content: sibling.outerHTML });
+                        currentField = fields[fields.length - 1];
+                    }
+
+                    sibling.remove();
+                }
+
+                card.innerHTML = `
+                  <div class="intervention-header">
+                    <div class="action-info">
+                      <span class="action-id">${sectionLabel} ${id}</span>
+                      <h4 class="action-title">${title}</h4>
+                    </div>
+                    <div class="toggle-icon">▼</div>
+                  </div>
+                  <div class="intervention-body">
+                    <div class="intervention-stack">
+                      ${fields.map(f => `
+                        <div class="intervention-field">
+                          <span class="field-label">${f.icon} ${f.label}</span>
+                          <div class="field-content">${f.content}</div>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                `;
+
+                // Special handling for 3.3 - wrap the whole card in a warning callout style if it's pharmacological
+                if (id === '3.3') {
+                    const warningBox = document.createElement('div');
+                    warningBox.className = 'callout caution';
+                    warningBox.style.marginTop = 'var(--spacing-md)';
+
+                    const titleDiv = document.createElement('div');
+                    titleDiv.className = 'callout-title';
+                    titleDiv.innerHTML = '🛑 ALERTA DE RISCO CRÍTICO';
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'callout-content';
+
+                    // Add the card to the warning box
+                    card.classList.remove('collapsed'); // Pharmaco should be visible
+                    contentDiv.appendChild(card);
+
+                    warningBox.appendChild(titleDiv);
+                    warningBox.appendChild(contentDiv);
+
+                    header.parentNode.replaceChild(warningBox, header);
+                } else {
+                    header.parentNode.replaceChild(card, header);
+                }
+            }
+        });
+
+        // Special treatment for Section 5 (Synthesis)
+        const synthesisHeader = Array.from(div.querySelectorAll('h2')).find(h => h.textContent.includes('6. Síntese') || h.textContent.includes('5. A Síntese'));
+        if (synthesisHeader) {
+            const box = document.createElement('div');
+            box.className = 'callout important'; // Use the already defined alert/callout style
+
+            let contentHtml = '';
+            let next = synthesisHeader.nextElementSibling;
+            while (next && !['H1', 'H2', 'H3', 'HR'].includes(next.tagName)) {
+                const sibling = next;
+                next = sibling.nextElementSibling;
+                contentHtml += sibling.outerHTML;
+                sibling.remove();
+            }
+
+            box.innerHTML = `
+                <div class="callout-title">🎯 Síntese Estratégica</div>
+                <div class="callout-content">${contentHtml}</div>
+            `;
+            synthesisHeader.parentNode.insertBefore(box, synthesisHeader.nextSibling);
+        }
+
+        return div.innerHTML;
+    }
+
     slugify(text) {
         return text.toString().toLowerCase()
             .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -314,6 +466,10 @@ class ReportReader {
         let processedHtml = html;
         if (articlePath.includes('08-plano-de-intervencao-estrategica')) {
             processedHtml = this.renderInterventions(html);
+        } else if (articlePath.includes('01-analise-sistemica-incentivos-lucro')) {
+            processedHtml = this.renderIncentives(html);
+        } else if (articlePath.includes('02-mapeamento-riscos-psicossociais-custo-humano')) {
+            processedHtml = this.renderIncentives(html);
         }
 
         const div = document.createElement('div');
@@ -405,7 +561,8 @@ class ReportReader {
      * Show loading indicator
      */
     showLoading() {
-        this.contentEl.innerHTML = '<div class="loading">Carregando</div>';
+        this.contentEl.classList.add('loading');
+        this.contentEl.innerHTML = 'Carregando';
     }
 
     /**

@@ -1,8 +1,5 @@
-# Sodexo: Arquitetura de Incentivos e o Impacto Operacional
+# Arquitetura de Incentivos e o Impacto Operacional
 
----
-
-## Resumo Executivo
 A margem de lucro reportada trimestralmente pela operação Sodexo não captura os passivos que estão sendo acumulados. Este estudo revela como a estrutura de metas financeiras, desenhada para maximizar retorno de curto prazo, está gerando custos ocultos que ameaçam a sustentabilidade contratual e a continuidade dos serviços para clientes como **Leroy Merlin** e **União Química**. Identificamos uma cadeia de incentivos que, embora focada na margem de lucro, acaba gerando precarização, adoecimento e deterioração do clima organizacional.
 
 ---
@@ -42,9 +39,9 @@ Este modelo cria um conflito de interesses estrutural. Para garantir sua própri
 
 ---
 
-## 2. Os Cinco Incentivos que Operam Contra a Organização
+## 2. Os quatro Incentivos que Operam Contra a Organização
 
-A análise das entrevistas revelou cinco mecanismos distintos que geram comportamentos destrutivos:
+A análise das entrevistas revelou quatro mecanismos distintos que geram comportamentos destrutivos:
 
 ### 2.1 A Armadilha Orçamentária
 **Como funciona:** Cada despesa da unidade (manutenção, compras, rescisões) é debitada diretamente do centro de custo local e afeta a margem de lucro.
@@ -72,15 +69,7 @@ A análise das entrevistas revelou cinco mecanismos distintos que geram comporta
 - Lesões tratáveis se tornam crônicas por falta de repouso (tendinites, problemas de coluna)
 - Em operações de alimentação, pessoas doentes manipulando alimentos representa risco sanitário
 
-### 2.4 A Hierarquia de Recursos ("O Almoço é Rei")
-**Como funciona:** Para garantir a satisfação da diretoria dos clientes (neste caso a **Leroy Merlin**), a gestão da Sodexo prioriza insumos e recursos para o turno do almoço. Identificamos a prática de **trancar estoques** de itens melhores para evitar o consumo pelos outros turnos.
-
-**Consequências observadas:**
-- Turnos da tarde e noite operam com recursos reduzidos
-- A escassez gera sentimento de desvalorização entre os colaboradores desses turnos
-- O atrito entre equipes aumenta quando um turno "sequestra" insumos do outro
-
-### 2.5 O Desvio de Função Estrutural
+### 2.4 O Desvio de Função Estrutural
 **Como funciona:** Para reduzir custos com folha de pagamento, a maioria é contratada como "Auxiliar de Serviços Gerais", mas executa tarefas de cozinheiro, estoquista ou açougueiro.
 
 **Consequências observadas:**
@@ -135,35 +124,10 @@ O sistema possui "travas" que reduzem o montante a ser recebido por fatores sist
 
 ## 5. A Síntese do Problema: Pressão Cruzada
 
-A estrutura observada opera como um sistema de **extrativis mo**: retira valor do capital humano e da infraestrutura para entregar margem imediata, comprometendo a capacidade futura de geração de valor. A pergunta não é "quanto custa humanizar o orçamento", mas "quanto está custando não fazê-lo". O sistema gera uma pressão cruzada onde:
+A estrutura observada retira valor do capital humano e da infraestrutura para entregar margem imediata, comprometendo a capacidade futura de geração de valor. A pergunta não é "quanto custa humanizar o orçamento", mas "quanto está custando não fazê-lo". O sistema gera uma pressão cruzada onde:
 1.  A **GO/GCE** repassa a volatilidade do mercado para a unidade sem flexibilidade orçamentária.
 2.  A **GU** racionaliza recursos básicos e restringe renovações para proteger o gatilho financeiro binário.
 3.  O **Colaborador** responde à sobrecarga e à punição da doença com desengajamento ou afastamento médico.
-
----
-
-## 6. Caminhos para Intervenção
-
-Com base na análise, identificamos pontos onde a Sodexo pode promover mudanças:
-
-### 6.1 Experimento: Fundo Centralizado
-**Hipótese:** Separar rescisões e manutenções emergenciais do orçamento da unidade reduzirá o medo de comprometimento da PLR local e permitirá renovação saudável de equipes.
-
-**Métrica de sucesso:** Redução do tempo médio de permanência de funcionários desengajados; melhora em indicadores de clima.
-
-- **Desvinculação de EPIs/Saúde da PLR:** Garantir que itens de segurança não sejam vistos como "gastos a evitar" para proteger o bônus operacional.
-
-### 6.2 Experimento: Assiduidade Escalonada
-**Hipótese:** Migrar o bônus de assiduidade de perda total para perda escalonada reduzirá o incentivo ao trabalho doente sem eliminar o estímulo à frequência.
-
-**Métrica de sucesso:** Redução de afastamentos INSS prolongados; redução de acidentes de trabalho.
-
-- **Ajustar Deflatores de Rotatividade:** Diferenciar rotatividade saudável de perda de talentos, especialmente em polos logísticos competitivos como Cajamar.
-
-### 6.3 Experimento: Adequação de Quadro
-**Hipótese:** Calcular quadros com base na realidade física e volume de rampa das plantas reduzirá o desvio de função sistemático.
-
-**Métrica de sucesso:** Redução de passivo trabalhista por desvio de função; melhora em indicadores de qualidade.
 
 ---
 
@@ -171,13 +135,7 @@ Com base na análise, identificamos pontos onde a Sodexo pode promover mudanças
 
 A organização está tentando combater problemas estruturais de atratividade do setor (como a competição com aplicativos e logística) com ferramentas de gestão financeira rígida. Esta abordagem, embora compreensível no curto prazo, pode ser insuficiente para garantir a sustentabilidade.
 
-Para romper o ciclo, uma alternativa seria **humanizar o orçamento**: revisar a forma como demissões e afastamentos impactam a gestão local. Enquanto a estrutura de incentivos permanecer inalterada, a operação tende a continuar desgastando pessoas para entregar uma margem financeira que mascara sua própria insustentabilidade.
-
----
-
-## Os Caminhos Possíveis
-
-A análise apresentada sugere dois cenários distintos para consideração:
+A análise sugere dois cenários distintos para consideração:
 
 **Cenário A (Manter a estrutura atual):** A margem continua sendo reportada nos níveis atuais. Os passivos (trabalhistas, operacionais, contratuais) continuam se acumulando de forma invisível. O capital humano e a infraestrutura continuam sendo consumidos. O resultado provável é um desgaste gradual da capacidade de entrega.
 

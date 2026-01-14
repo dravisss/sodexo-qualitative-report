@@ -1,8 +1,5 @@
-# Mapeamento de Riscos Psicossociais e Custo Humano
+# Mapeamento de Riscos Psicossociais
 
----
-
-## Resumo Executivo
 As condições de trabalho documentadas neste estudo configuram **exposição ativa a ações trabalhistas** individuais e coletivas. O cenário de adoecimento sistêmico, que atravessa todos os níveis hierárquicos (da base operacional à liderança local), não é acidental: é resultado direto de políticas de incentivos financeiros que penalizam a doença e recompensam o presenteísmo. A análise abrange operações de alimentação e limpeza industrial.
 
 ---
@@ -37,7 +34,7 @@ As unidades operacionais apresentam um quadro de **risco psicossocial elevado**,
 
 ---
 
-## 2. O Custo Físico: Como o Corpo Paga a Conta
+## 2. O Custo Físico
 
 ### 2.1 A Cadeia de Causalidade do Adoecimento Físico
 

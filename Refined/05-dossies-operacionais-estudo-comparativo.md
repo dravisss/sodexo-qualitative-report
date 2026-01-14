@@ -92,13 +92,20 @@ A análise sistêmica revela quatro mecanismos de retroalimentação que perpetu
 Os quatro ciclos abaixo não são problemas separados: são **manifestações do mesmo sistema de incentivos**. Cada ciclo alimenta os outros. A retenção forçada sobrecarrega os comprometidos, que adoecem (presenteísmo destrutivo), que são substituídos por equipamentos que quebram (sucateamento), que afasta novos candidatos (seleção adversa). Intervir em um ciclo sem considerar os outros pode ter efeito limitado.
 
 ### Ciclo 1: Retenção Forçada
+
+![alt text](image.png)
+
+
 ```
 Meta GM → Bloqueio de Demissões → Funcionário retido → Baixa Produtividade → Custos Sobem → (reinicia)
 ```
 
 **🔧 Alavanca de Ruptura:** Criar **fundo centralizado para rescisões** que retire o custo de desligamento do orçamento da unidade. Isso libera a liderança para renovar equipes sem penalização financeira imediata.
 
-### Ciclo 2: Presenteísmo Destrutivo
+### Ciclo 2: Presenteísmo Danoso
+
+![alt text](image-1.png)
+
 ```
 Bônus Assiduidade → Trabalhar Doente → Agrava Lesão → Aumenta faltas → Sobrecarrega Colegas → (reinicia)
 ```
@@ -106,6 +113,9 @@ Bônus Assiduidade → Trabalhar Doente → Agrava Lesão → Aumenta faltas →
 **🔧 Alavanca de Ruptura:** Migrar o bônus de assiduidade de **perda total para perda escalonada** (ex: 1 falta = 30% de desconto, não 100%). Isso reduz o incentivo ao presenteísmo sem eliminar o estímulo à frequência.
 
 ### Ciclo 3: Sucateamento da Infraestrutura
+
+![alt text](image-3.png)
+
 ```
 Corte de Manutenção → Equipamentos Quebrados → Esforço Manual → Lesões → Afastamento → (reinicia)
 ```
@@ -113,6 +123,9 @@ Corte de Manutenção → Equipamentos Quebrados → Esforço Manual → Lesões
 **🔧 Alavanca de Ruptura:** Criar **orçamento protegido para manutenção preventiva** que não seja discricionário da GU. Manutenções críticas devem ser auditadas e não podem ser adiadas para proteger margem.
 
 ### Ciclo 4: Seleção Adversa
+
+![alt text](image-2.png)
+
 ```
 Condições Precárias → Perda de Atratividade → Contratação de Emergência → Sobrecarga Veteranos → (reinicia)
 ```
