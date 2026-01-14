@@ -396,30 +396,7 @@ class ReportReader {
                   </div>
                 `;
 
-                // Special handling for 3.3 - wrap the whole card in a warning callout style if it's pharmacological
-                if (id === '3.3') {
-                    const warningBox = document.createElement('div');
-                    warningBox.className = 'callout caution';
-                    warningBox.style.marginTop = 'var(--spacing-md)';
-
-                    const titleDiv = document.createElement('div');
-                    titleDiv.className = 'callout-title';
-                    titleDiv.innerHTML = '🛑 ALERTA DE RISCO CRÍTICO';
-
-                    const contentDiv = document.createElement('div');
-                    contentDiv.className = 'callout-content';
-
-                    // Add the card to the warning box
-                    card.classList.remove('collapsed'); // Pharmaco should be visible
-                    contentDiv.appendChild(card);
-
-                    warningBox.appendChild(titleDiv);
-                    warningBox.appendChild(contentDiv);
-
-                    header.parentNode.replaceChild(warningBox, header);
-                } else {
-                    header.parentNode.replaceChild(card, header);
-                }
+                header.parentNode.replaceChild(card, header);
             }
         });
 
