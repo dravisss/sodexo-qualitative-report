@@ -675,13 +675,13 @@ class ReportReader {
 
         const boardHtml = `
             <h1>${title}</h1>
-            ${matrixHtml}
             <div class="war-room-intro">
                 ${introHtml || '<p>Este documento organiza todas as intervenções em uma jornada cronológica de recuperação.</p>'}
                 <p style="margin-top: var(--spacing-sm); font-size: var(--font-size-xs); color: var(--color-text-muted);">
                     👆 Clique em uma intervenção para ver os detalhes completos.
                 </p>
             </div>
+            ${matrixHtml}
             <div class="war-room-board">
                 ${phaseData.map(phase => `
                     <div class="board-column ${phase.class}">
