@@ -919,4 +919,4 @@ Documento 08 (Resumo Executivo) como peça central, ou impressão separada para 
 
 ---
 
-*Documento atualizado em Janeiro 2026 para o projeto de Análise Qualitativa Sodexo.*
+Relatório Sodexo Frontline | Target Teal | 2026

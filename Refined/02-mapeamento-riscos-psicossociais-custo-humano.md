@@ -168,3 +168,5 @@ O modelo observado evidencia uma transferência dos desafios operacionais para a
 
 Nesse cenário, a integridade do colaborador acaba funcionando como uma variável de ajuste para a viabilidade da operação. Paralelamente, a liderança local enfrenta o desgaste de sustentar a produtividade sem o suporte organizacional necessário.
 
+---
+Relatório Sodexo Frontline | Target Teal | 2026

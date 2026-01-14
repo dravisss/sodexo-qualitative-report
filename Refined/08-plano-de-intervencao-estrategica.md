@@ -200,11 +200,4 @@ Este documento organiza todas as intervenções em uma jornada cronológica de r
 
 ---
 
-## Resumo da Priorização (Visão Executiva)
-
-| Fase | Ação Principal | Tensão Resolvida | Prioridade |
-|---|---|---|---|
-| **1. Torniquete** | **I-01 (EPIs) + I-02 (Atestado)** | Indignidade e Risco Sanitário | 🔴 Crítica |
-| **2. Descompressão** | **I-07 (Cartões) + I-10 (Rituais)** | Injustiça e Baixo Clima | 🟠 Alta |
-| **3. Reestruturação** | **I-14 (Fundo Rescisão) + I-16 (Redimensionamento)** | Travamento de Saída e Sobrecarga | 🔴 Crítica |
-| **4. Reposicionamento** | **I-24 (Transporte) + I-26 (Carreira)** | Baixa Atratividade de Vaga | 🟡 Média (Longo Prazo) |
+Relatório Sodexo Frontline | Target Teal | 2026

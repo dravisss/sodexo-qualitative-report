@@ -142,3 +142,7 @@ A análise sugere dois cenários distintos para consideração:
 **Cenário B (Experimentar ajustes):** Implementar as intervenções propostas como pilotos controlados. Aceitar ajuste temporário de margem em unidades específicas para testar hipóteses. Monitorar indicadores de clima, rotatividade e absenteismo. O resultado possível é a ruptura dos ciclos viciosos e a reconstrução da capacidade operacional.
 
 Este estudo documenta as evidências que fundamentam essa escolha estratégica.
+
+---
+
+Relatório Sodexo Frontline | Target Teal | 2026

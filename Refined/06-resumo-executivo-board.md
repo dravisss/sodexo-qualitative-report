@@ -62,4 +62,4 @@ O diagnóstico acima não é o fim do trabalho. Foi elaborado um **Plano de Inte
 
 ---
 
-*Este documento é um resumo executivo. Para a fundamentação completa, vide os artigos 01-05 e a Matriz de Risco (07).*
+Relatório Sodexo Frontline | Target Teal | 2026

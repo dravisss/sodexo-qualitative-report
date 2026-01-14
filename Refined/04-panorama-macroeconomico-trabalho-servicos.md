@@ -124,3 +124,7 @@ A narrativa de que "todos enfrentam o mesmo cenário" é verdadeira, mas ignora 
 4. **Infraestrutura:** Quanto está sendo economizado em manutenção, e quanto está sendo perdido em afastamentos, acidentes e rotatividade?
 
 Estas perguntas não têm respostas únicas. Mas respondê-las explicitamente permite uma avaliação mais precisa do custo real de cada escolha.
+
+---
+
+Relatório Sodexo Frontline | Target Teal | 2026

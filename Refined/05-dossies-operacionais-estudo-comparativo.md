@@ -155,6 +155,4 @@ Todas as unidades compartilham:
 
 ---
 
-**Nota Final:**
-
-Os dossiês acima não são "problemas locais" que a gestão de unidade precisa resolver. São sintomas de um sistema que está funcionando exatamente como foi desenhado, e esse funcionamento está consumindo a capacidade de entrega. A liderança local (Carol, Vanessa, Gilberto, Rosângela) está fazendo o possível com as ferramentas que tem. Mas as ferramentas são insuficientes. A mudança requer ajustes no desenho do sistema, não apenas esforço local.
+Relatório Sodexo Frontline | Target Teal | 2026
