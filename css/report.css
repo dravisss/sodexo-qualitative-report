@@ -926,12 +926,10 @@ body {
 }
 
 .nav-card {
-    background: #fff;
-    border: 1px solid transparent;
-    /* Hidden border normally */
-    border-radius: var(--radius-sm);
+    background: transparent;
+    /* Transparent as requested */
+    border: none;
     padding: 0;
-    /* Let content breathe but aligned */
     transition: all 0.3s ease;
 }
 
@@ -939,16 +937,16 @@ body {
 .nav-card h3 {
     margin-top: 0;
     font-size: 0.75rem;
-    /* Smaller, sharper */
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--color-text-muted);
-    border-bottom: 1px solid var(--color-border);
-    /* Thinner border */
+    border-bottom: 2px solid var(--color-border);
+    /* Slightly thicker definition */
     padding-bottom: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
     font-weight: 700;
     line-height: 1.4;
+    opacity: 0.8;
 }
 
 /* Specific accents on H3 underline only */
@@ -979,7 +977,8 @@ body {
 .nav-card li {
     list-style: none !important;
     padding: 0 !important;
-    margin: 0 0 var(--spacing-sm) 0 !important;
+    margin: 0 0 var(--spacing-md) 0 !important;
+    /* More spacing between items */
     position: relative;
     background: transparent;
 }
@@ -991,25 +990,35 @@ body {
     display: none !important;
 }
 
-/* Interactive Link Block */
+/* Interactive Link Block - CLEAN & TRANSPARENT */
 .nav-card a {
     display: block;
-    padding: var(--spacing-md);
+    padding: 0;
+    /* Align with text */
     margin: 0;
-    border: 1px solid var(--color-border-light);
-    /* Subtle frame */
-    border-radius: var(--radius-sm);
+    border: none;
+    border-bottom: 1px dotted var(--color-border);
+    /* Subtle separation line */
+    padding-bottom: var(--spacing-md);
+    border-radius: 0;
     color: var(--color-text);
     text-decoration: none !important;
     transition: all 0.2s ease;
-    background: #fff;
+    background: transparent !important;
+    /* Force transparent */
+}
+
+.nav-card li:last-child a {
+    border-bottom: none;
 }
 
 .nav-card a:hover {
-    background: #fcfcfc;
+    background: transparent;
+    opacity: 0.8;
+    transform: translateX(4px);
+    /* Simple nudge instead of lift */
+    box-shadow: none;
     border-color: var(--color-teal);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-sm);
 }
 
 .nav-card a strong {
