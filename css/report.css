@@ -938,14 +938,17 @@ body {
 /* Sections headers inside cards */
 .nav-card h3 {
     margin-top: 0;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    /* Smaller, sharper */
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     color: var(--color-text-muted);
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    /* Thinner border */
     padding-bottom: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
     font-weight: 700;
+    line-height: 1.4;
 }
 
 /* Specific accents on H3 underline only */
@@ -964,41 +967,56 @@ body {
     color: var(--color-teal-dark);
 }
 
-/* Remove old list styles */
+/* Force Reset List Styles (Override .sin-prose specificity) */
+.sin-prose .nav-card ul,
 .nav-card ul {
-    list-style: none;
-    /* No bullets */
-    padding: 0;
-    margin: 0;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
+.sin-prose .nav-card li,
 .nav-card li {
-    margin-bottom: var(--spacing-lg);
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 var(--spacing-sm) 0 !important;
     position: relative;
-    padding-left: 0;
+    background: transparent;
+}
+
+/* Kill the markers */
+.sin-prose .nav-card li::marker,
+.nav-card li::marker {
+    content: none !important;
+    display: none !important;
 }
 
 /* Interactive Link Block */
 .nav-card a {
     display: block;
-    padding: var(--spacing-sm);
-    margin: calc(var(--spacing-sm) * -1);
+    padding: var(--spacing-md);
+    margin: 0;
+    border: 1px solid var(--color-border-light);
+    /* Subtle frame */
     border-radius: var(--radius-sm);
     color: var(--color-text);
     text-decoration: none !important;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
+    background: #fff;
 }
 
 .nav-card a:hover {
-    background: #f8f9fa;
-    /* Subtle hover state */
+    background: #fcfcfc;
+    border-color: var(--color-teal);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-card a strong {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--color-teal-darker);
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-weight: 600;
     letter-spacing: -0.01em;
     transition: color 0.2s ease;
