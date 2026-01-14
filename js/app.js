@@ -474,91 +474,6 @@ class ReportReader {
         const title = h1 ? h1.textContent : 'Plano de Intervenção';
         if (h1) h1.remove();
 
-        // Matrix Classification Data
-        const MATRIX_DATA = {
-            quickWins: {
-                label: 'Quick Wins',
-                emoji: '💎',
-                desc: 'Alto Impacto / Baixo Esforço',
-                ids: ['I-01', 'I-02', 'I-06', 'I-08', 'I-11', 'I-22', 'I-23', 'I-26']
-            },
-            transformational: {
-                label: 'Transformacionais',
-                emoji: '🚀',
-                desc: 'Alto Impacto / Alto Esforço',
-                ids: ['I-03', 'I-14', 'I-15', 'I-16', 'I-17', 'I-18', 'I-21', 'I-24', 'I-25', 'I-27']
-            },
-            tactical: {
-                label: 'Táticas',
-                emoji: '🔧',
-                desc: 'Baixo Impacto / Baixo Esforço',
-                ids: ['I-05', 'I-07', 'I-10', 'I-12', 'I-13', 'I-19', 'I-20']
-            },
-            complex: {
-                label: 'Ingratas',
-                emoji: '⚠️',
-                desc: 'Baixo Impacto / Alto Esforço',
-                ids: ['I-04', 'I-09']
-            }
-        };
-
-        // Build Matrix HTML
-        const matrixHtml = `
-            <div class="strategy-matrix">
-                <div class="matrix-header">
-                    <h2>Matriz de Priorização</h2>
-                    <p class="matrix-subtitle">Passe o mouse sobre uma intervenção para localizá-la no plano abaixo</p>
-                </div>
-                <div class="matrix-grid">
-                    <div class="matrix-axis-y">
-                        <span class="axis-label-high">Alto<br>Impacto</span>
-                        <span class="axis-label-low">Baixo<br>Impacto</span>
-                    </div>
-                    <div class="matrix-quadrants">
-                        <div class="matrix-quadrant q1">
-                            <div class="quadrant-header">
-                                <span class="quadrant-emoji">${MATRIX_DATA.quickWins.emoji}</span>
-                                <span class="quadrant-label">${MATRIX_DATA.quickWins.label}</span>
-                            </div>
-                            <div class="quadrant-chips">
-                                ${MATRIX_DATA.quickWins.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="matrix-quadrant q2">
-                            <div class="quadrant-header">
-                                <span class="quadrant-emoji">${MATRIX_DATA.transformational.emoji}</span>
-                                <span class="quadrant-label">${MATRIX_DATA.transformational.label}</span>
-                            </div>
-                            <div class="quadrant-chips">
-                                ${MATRIX_DATA.transformational.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="matrix-quadrant q3">
-                            <div class="quadrant-header">
-                                <span class="quadrant-emoji">${MATRIX_DATA.tactical.emoji}</span>
-                                <span class="quadrant-label">${MATRIX_DATA.tactical.label}</span>
-                            </div>
-                            <div class="quadrant-chips">
-                                ${MATRIX_DATA.tactical.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="matrix-quadrant q4">
-                            <div class="quadrant-header">
-                                <span class="quadrant-emoji">${MATRIX_DATA.complex.emoji}</span>
-                                <span class="quadrant-label">${MATRIX_DATA.complex.label}</span>
-                            </div>
-                            <div class="quadrant-chips">
-                                ${MATRIX_DATA.complex.ids.map(id => `<span class="matrix-chip" data-id="${id}">${id}</span>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="matrix-axis-x">
-                        <span class="axis-label-low">Baixo Esforço</span>
-                        <span class="axis-label-high">Alto Esforço</span>
-                    </div>
-                </div>
-            </div>
-        `;
 
         // Phase configuration
         const phases = [
@@ -583,9 +498,13 @@ class ReportReader {
 
         // Now parse H4s for interventions
         const h4s = Array.from(div.querySelectorAll('h4'));
+        const interventionMap = {}; // Store titles for matrix tooltips
+
         h4s.forEach(h4 => {
             const match = h4.textContent.match(/^(I-\d+)\s*[—|-]\s*(.*)$/);
             if (match) {
+                interventionMap[match[1]] = match[2]; // Save title to map
+
                 // Find which phase this belongs to by looking at previous H2
                 let phaseIndex = 0;
                 let el = h4.previousElementSibling;
@@ -667,6 +586,92 @@ class ReportReader {
             const words = tensao.split(/\s+/).slice(0, 3).join(' ');
             return words.length > 25 ? words.substring(0, 22) + '...' : words;
         };
+
+        // Matrix Classification Data
+        const MATRIX_DATA = {
+            quickWins: {
+                label: 'Quick Wins',
+                emoji: '💎',
+                desc: 'Alto Impacto / Baixo Esforço',
+                ids: ['I-01', 'I-02', 'I-06', 'I-08', 'I-11', 'I-22', 'I-23', 'I-26']
+            },
+            transformational: {
+                label: 'Transformacionais',
+                emoji: '🚀',
+                desc: 'Alto Impacto / Alto Esforço',
+                ids: ['I-03', 'I-14', 'I-15', 'I-16', 'I-17', 'I-18', 'I-21', 'I-24', 'I-25', 'I-27']
+            },
+            tactical: {
+                label: 'Táticas',
+                emoji: '🔧',
+                desc: 'Baixo Impacto / Baixo Esforço',
+                ids: ['I-05', 'I-07', 'I-10', 'I-12', 'I-13', 'I-19', 'I-20']
+            },
+            complex: {
+                label: 'Ingratas',
+                emoji: '⚠️',
+                desc: 'Baixo Impacto / Alto Esforço',
+                ids: ['I-04', 'I-09']
+            }
+        };
+
+        // Build Matrix HTML
+        const matrixHtml = `
+            <div class="strategy-matrix">
+                <div class="matrix-header">
+                    <h2>Matriz de Priorização</h2>
+                    <p class="matrix-subtitle">Passe o mouse sobre uma intervenção para localizá-la no plano abaixo</p>
+                </div>
+                <div class="matrix-grid">
+                    <div class="matrix-axis-y">
+                        <span class="axis-label-high">Alto<br>Impacto</span>
+                        <span class="axis-label-low">Baixo<br>Impacto</span>
+                    </div>
+                    <div class="matrix-quadrants">
+                        <div class="matrix-quadrant q1">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.quickWins.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.quickWins.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.quickWins.ids.map(id => `<span class="matrix-chip" data-id="${id}" title="${id}: ${interventionMap[id] || ''}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant q2">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.transformational.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.transformational.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.transformational.ids.map(id => `<span class="matrix-chip" data-id="${id}" title="${id}: ${interventionMap[id] || ''}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant q3">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.tactical.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.tactical.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.tactical.ids.map(id => `<span class="matrix-chip" data-id="${id}" title="${id}: ${interventionMap[id] || ''}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="matrix-quadrant q4">
+                            <div class="quadrant-header">
+                                <span class="quadrant-emoji">${MATRIX_DATA.complex.emoji}</span>
+                                <span class="quadrant-label">${MATRIX_DATA.complex.label}</span>
+                            </div>
+                            <div class="quadrant-chips">
+                                ${MATRIX_DATA.complex.ids.map(id => `<span class="matrix-chip" data-id="${id}" title="${id}: ${interventionMap[id] || ''}">${id}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matrix-axis-x">
+                        <span class="axis-label-low">Baixo Esforço</span>
+                        <span class="axis-label-high">Alto Esforço</span>
+                    </div>
+                </div>
+            </div>
+        `;
 
         const boardHtml = `
             <h1>${title}</h1>
@@ -797,7 +802,7 @@ class ReportReader {
                 if (targetCard) {
                     board.classList.add('spotlight-active');
                     targetCard.classList.add('spotlight-target');
-                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Removed automatic scroll per user request
                 }
             });
 
