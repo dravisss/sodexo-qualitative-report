@@ -1,6 +1,25 @@
 # Plano de Intervenção Consolidado
 
+
+Esta abordagem, embora compreensível no curto prazo, pode ser insuficiente para garantir a sustentabilidade.
+
+A análise sugere dois cenários distintos para consideração:
+
+<div class="callout warning">
+
+**Cenário A (Manter a estrutura atual):** A margem continua sendo reportada nos níveis atuais. Os passivos (trabalhistas, operacionais, contratuais) continuam se acumulando de forma invisível. O capital humano e a infraestrutura continuam sendo consumidos. O resultado provável é um desgaste gradual da capacidade de entrega.
+
+</div>
+
+<div class="callout intervention">
+
+**Cenário B (Experimentar ajustes):** Implementar as intervenções propostas como pilotos controlados. Aceitar ajuste temporário de margem em unidades específicas para testar hipóteses. Monitorar indicadores de clima, rotatividade e absenteismo. O resultado possível é a quebra dos ciclos viciosos e a reconstrução da capacidade operacional.
+
+</div>
+
 Este documento organiza todas as intervenções em uma jornada cronológica de recuperação, focada em estancar a crise imediata antes de construir o futuro.
+
+> **Nota:** As intervenções serão priorizadas e desenhadas em profundidade com o time de design formado juntamente com especialistas e colaboradores das unidades.
 
 ---
 

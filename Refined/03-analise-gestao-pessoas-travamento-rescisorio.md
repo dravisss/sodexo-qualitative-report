@@ -25,7 +25,12 @@ Colaboradores com anos de casa (5, 10, até 20 anos) desejam sair devido às con
 
 > **Nota:** o comportamento do trabalhador que busca forçar sua demissão não é uma "falha de caráter" ou "má-fé". Trata-se de uma **resposta racional a um sistema de incentivos**. Dado o desenho da legislação trabalhista e as restrições orçamentárias internas, o trabalhador está maximizando seu bem-estar dentro das opções disponíveis. A responsabilidade pela disfunção é do sistema, não do indivíduo.
 
-Em termos de teoria dos jogos, o travamento rescisório representa um **equilíbrio de Nash negativo**: uma situação estável onde nenhum ator consegue melhorar sua posição agindo unilateralmente. A empresa não demite (porque o custo sai da margem); o trabalhador não pede demissão (porque perde direitos). Ambos estão "presos" em uma configuração que nenhum dos dois escolheu, e que só pode ser quebrada por uma mudança no desenho do jogo, não por esforço individual.
+Em termos de teoria dos jogos, o travamento rescisório representa um **equilíbrio de Nash negativo**: uma situação estável onde nenhum ator consegue melhorar sua posição agindo unilateralmente.
+
+> **A "Imunidade Sistêmica" (Evidência de 2024):**
+> O "travamento" não é teórico; ele foi testado na prática. A tentativa de introduzir novas práticas de gestão de pessoas através da CoP em 2024 enfrentou o que chamamos de **imunidade sistêmica**. O sistema operacional, otimizado para a eficiência de custos, naturalmente "expeliu" intervenções que demandavam tempo ou atenção da liderança local sem oferecer alívio imediato na meta. O travamento rescisório atual é a manifestação mais aguda dessa mesma mecânica: o sistema protege o orçamento de curto prazo, mesmo que isso signifique reter ineficiência.
+
+A empresa não demite (porque o custo sai da margem); o trabalhador não pede demissão (porque perde direitos). Ambos estão "presos" em uma configuração que nenhum dos dois escolheu, e que só pode ser quebrada por uma mudança no desenho do jogo.
 
 O funcionário fica "preso" na operação contra sua vontade.
 
@@ -39,11 +44,11 @@ Colaboradores percebem que a empresa evita demitir. Isso gera uma sensação de 
 
 Dado que o trabalhador percebe (corretamente) que a empresa evita demitir, e dado que ele precisa acessar direitos acumulados, a estratégia de forçar o desligamento é a única saída racional disponível. Culpar o indivíduo é ignorar o sistema que o produziu.
 
-### Fase 1: A Negociação Frustrada
+#### Fase 1: A Negociação Frustrada
 O ciclo inicia quando o colaborador manifesta o desejo de sair, mas esbarra na inviabilidade financeira de pedir demissão (perda de FGTS e multa). Ele tenta um "acordo" com a liderança, que é negado devido às restrições orçamentárias da unidade.
 Diante da negativa ("Se quiser sair, peça as contas"), o colaborador realiza que está financeiramente "preso" à empresa. O sentimento de impotência vira ressentimento.
 
-### Fase 2: Estratégias para Forçar o Desligamento
+#### Fase 2: Estratégias para Forçar o Desligamento
 Alguns colaboradores passam a adotar comportamentos destinados a forçar uma demissão sem justa causa:
 - Redução deliberada da produtividade
 - Faltas sem justificativa
@@ -51,14 +56,14 @@ Alguns colaboradores passam a adotar comportamentos destinados a forçar uma dem
 - Recusa em seguir orientações
 - Prolongamento de afastamentos médicos
 
-### Fase 3: Contaminação do Ambiente
+#### Fase 3: Contaminação do Ambiente
 A permanência de pessoas desengajadas afeta quem permanece comprometido:
 - Sobrecarga de trabalho nos demais
 - Sentimento de injustiça ("por que eu me esforço se ele não faz nada?")
 - Deterioração do clima organizacional
 - Aumento do desejo coletivo de sair
 
-### Fase 4: O Ciclo se Retroalimenta
+#### Fase 4: O Ciclo se Retroalimenta
 A queda de produtividade e o clima deteriorado pressionam ainda mais os resultados financeiros, tornando a liderança ainda menos propensa a arcar com custos de rescisão, perpetuando o impasse.
 
 ---

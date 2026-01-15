@@ -49,6 +49,22 @@ Este documento apresenta uma visão consolidada dos riscos identificados na aná
 
 ---
 
+## Exposição Jurídica e Fiscal
+
+| Risco Identificado | Norma Aplicável | Consequência Potencial |
+|--------------------|-----------------|-------------------------|
+| **Presenteísmo forçado** | NR-17 (Ergonomia), NR-7 (PCMSO) | Ações por assédio moral e condições de trabalho; fiscalização do MTE |
+| **Sobrecarga física** | NR-17 (limites de peso, esforço repetitivo) | Afastamentos INSS com possível nexo causal; ações de reparação |
+| **Uso de medicação controlada** | CLT Art. 157 (dever de zelar pela saúde) | Configuração de ambiente insalubre; pot. ação coletiva do MPT |
+| **Falta de EPIs/uniformes** | NR-6 (EPIs), NR-24 (Condições Sanitárias) | Multas administrativas; agravamento de penas em caso de acidente |
+
+> **Nota para a alta gestão:** O cenário descrito configura exposição ativa a ações trabalhistas individuais e coletivas. A fiscalização do trabalho tem intensificado atuação em setores de alimentação coletiva e limpeza industrial após a atualização da NR-1 (2024) que inclui riscos psicossociais no PGR.
+
+**Precedentes relevantes:**
+Em 2023, o MPT ajuizou ação coletiva contra empresa de alimentação coletiva por configuração de ambiente de trabalho patogênico, com pedido de danos morais coletivos superior a R$ 5 milhões. Empresas do setor têm sido condenadas por presenteísmo forçado com base na NR-17 atualizada e no nexo causal entre condições de trabalho e afastamentos psiquiátricos. O cenário descrito neste estudo replica os padrões observados nesses casos.
+
+---
+
 ## Mapa Visual de Risco
 
 ```
@@ -83,4 +99,4 @@ Para cada risco crítico identificado, existe um conjunto de intervenções plan
 
 ---
 
-
+Relatório Sodexo Frontline | Target Teal | 2026

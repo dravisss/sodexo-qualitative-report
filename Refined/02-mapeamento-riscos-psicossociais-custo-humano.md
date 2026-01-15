@@ -1,26 +1,10 @@
 # Mapeamento de Riscos Psicossociais
 
-As condições de trabalho documentadas neste estudo configuram **exposição ativa a ações trabalhistas** individuais e coletivas. O cenário de adoecimento sistêmico, que atravessa todos os níveis hierárquicos (da base operacional à liderança local), não é acidental: é resultado direto de políticas de incentivos financeiros que penalizam a doença e recompensam o presenteísmo. A análise abrange operações de alimentação e limpeza industrial.
+O cenário de adoecimento sistêmico, que atravessa todos os níveis hierárquicos (da base operacional à liderança local), não é acidental: é resultado direto de políticas de incentivos financeiros que penalizam a doença e recompensam o presenteísmo. A análise abrange operações de alimentação e limpeza industrial.
 
 ---
 
-## Exposição Jurídica e Fiscal
 
-Antes de detalhar os achados, é necessário traduzir o risco psicossocial em **exposição legal e trabalhista**:
-
-| Risco Identificado | Norma Aplicável | Consequência Potencial |
-|--------------------|-----------------|-------------------------|
-| **Presenteísmo forçado** | NR-17 (Ergonomia), NR-7 (PCMSO) | Ações por assédio moral e condições de trabalho; fiscalização do MTE |
-| **Sobrecarga física** | NR-17 (limites de peso, esforço repetitivo) | Afastamentos INSS com possível nexo causal; ações de reparação |
-| **Uso de medicação controlada** | CLT Art. 157 (dever de zelar pela saúde) | Configuração de ambiente insalubre; pot. ação coletiva do MPT |
-| **Falta de EPIs/uniformes** | NR-6 (EPIs), NR-24 (Condições Sanitárias) | Multas administrativas; agravamento de penas em caso de acidente |
-
-> **Nota para a alta gestão:** O cenário descrito configura exposição ativa a ações trabalhistas individuais e coletivas. A fiscalização do trabalho tem intensificado atuação em setores de alimentação coletiva e limpeza industrial após a atualização da NR-1 (2024) que inclui riscos psicossociais no PGR.
-
-**Precedentes relevantes:**
-Em 2023, o MPT ajuizou ação coletiva contra empresa de alimentação coletiva por configuração de ambiente de trabalho patogênico, com pedido de danos morais coletivos superior a R$ 5 milhões. Empresas do setor têm sido condenadas por presenteísmo forçado com base na NR-17 atualizada e no nexo causal entre condições de trabalho e afastamentos psiquiátricos. O cenário descrito neste estudo replica os padrões observados nesses casos.
-
----
 
 ## 1. Panorama Geral: O Cenário de Risco Elevado
 
@@ -69,9 +53,6 @@ Este ciclo não é um acidente. É o resultado previsível de um sistema que:
 - Recompensa quem trabalha doente (manutenção do bônus)
 
 A pergunta não é "por que o trabalhador adoece", mas "por que o sistema está desenhado para adoecê-lo".
-
-### 2.2 A Automedicação como Estratégia de Sobrevivência
-O uso rotineiro de analgésicos e anti-inflamatórios se tornou parte do cotidiano operacional. Colaboradores relatam usar medicamentos para dor antes e durante os turnos para conseguir trabalhar.
 
 ---
 
@@ -130,8 +111,8 @@ A política de assiduidade cria uma ilusão de economia. O RH reporta "absentís
 - Contaminação de colegas quando a doença é infecciosa
 - Lesões agravadas que se tornam afastamentos INSS de meses
 
-### O Cálculo Oculto
-A economia aparente do presenteísmo (menos faltas = menos substitutos) é uma ilusão quando contabilizados os custos reais:
+## O Cálculo Oculto
+⚠️ *Nota: Os valores apresentados abaixo são estimativas ilustrativas baseadas em padrões de mercado, aguardando dados oficiais da organização para cálculo preciso.*
 
 | Custo Evitado (Curto Prazo) | Custo Gerado (Médio Prazo) |
 |----------------------------|----------------------------|
@@ -146,7 +127,7 @@ A percepção da equipe é de que o sistema de benefícios não acolhe suas nece
 
 ## 5. Linhas de Pesquisa para Aprofundamento
 
-Para fundamentar cientificamente os fenômenos observados, recomenda-se investigar:
+Para fundamentar cientificamente os fenômenos observados e desenhar as intervenções necessárias, recomendamos investigar:
 
 | Tema | Questões-Chave |
 |------|----------------|

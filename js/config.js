@@ -47,6 +47,13 @@ const ARTICLES = [
         icon: '🏭'
     },
     {
+        id: '11',
+        title: 'Visão Sistêmica',
+        subtitle: 'A dinâmica oculta dos ciclos',
+        path: './Refined/11-visao-sistemica-dos-ciclos.md',
+        icon: '🔄'
+    },
+    {
         id: '06',
         title: 'Resumo Executivo',
         subtitle: 'Para o Board',

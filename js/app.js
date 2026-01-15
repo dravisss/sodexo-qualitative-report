@@ -551,11 +551,14 @@ class ReportReader {
             }
         });
 
-        // Extract intro paragraph (first P after H1)
+        // Extract intro content (everything before the first H2)
+        // Note: H1 was removed at the start of the function, so we start at the top
         let introHtml = '';
-        const firstP = div.querySelector('p');
-        if (firstP) {
-            introHtml = firstP.outerHTML;
+        let nextEl = div.firstElementChild;
+
+        while (nextEl && nextEl.tagName !== 'H2') {
+            introHtml += nextEl.outerHTML;
+            nextEl = nextEl.nextElementSibling;
         }
 
         // Extract summary table (last table in document)

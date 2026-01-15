@@ -950,9 +950,10 @@ body {
 }
 
 /* Specific accents on H3 underline only */
+/* Specific accents on H3 underline only */
 .nav-card.finance h3 {
     border-bottom-color: var(--color-error);
-    color: var(--color-error-dark);
+    color: var(--color-error);
 }
 
 .nav-card.management h3 {
@@ -964,6 +965,23 @@ body {
     border-bottom-color: var(--color-teal);
     color: var(--color-teal-dark);
 }
+
+.nav-card.risk h3 {
+    border-bottom-color: var(--color-warning);
+    color: var(--color-warning);
+    /* Using base color as dark is undefined */
+}
+
+.nav-card.market h3 {
+    border-bottom-color: var(--color-info);
+    color: var(--color-info);
+}
+
+.nav-card.intervention h3 {
+    border-bottom-color: var(--color-success);
+    color: var(--color-success);
+}
+
 
 /* Force Reset List Styles (Override .sin-prose specificity) */
 .sin-prose .nav-card ul,

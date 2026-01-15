@@ -21,6 +21,13 @@ Antes de detalhar os mecanismos, é fundamental traduzir os achados qualitativos
 
 > **Nota para a alta gestão:** A economia de curto prazo em manutenção, pessoal e rescisões está sendo paga com passivos trabalhistas, operacionais e contratuais que não aparecem no resultado mensal. A margem reportada mascara sua própria insustentabilidade.
 
+
+> **Nota de Contexto Histórico (O Aprendizado de 2024):**
+> Em 2024, a organização realizou um esforço robusto através de uma **Comunidade de Prática (CoP)**, mobilizando cerca de 60 agentes de mudança voluntários para atuar no tema. O engajamento inicial foi alto, mas a iniciativa sofreu uma redução natural para cerca de 20 participantes ativos ao longo do ano.
+>
+> **O que isso nos ensinou?**
+> A experiência validou que iniciativas baseadas em voluntarismo ou tempo extra concorrem desfavoravelmente com a pressão das metas operacionais imediatas (GM). O sistema de incentivos atual é **eficiente** em priorizar o resultado financeiro de curto prazo, o que acaba, involuntariamente, repelindo iniciativas de longo prazo que não tenham blindagem orçamentária ou estrutura dedicada. Esta análise não é uma crítica à gestão, mas um reconhecimento de que mudanças sustentáveis neste ambiente exigem estrutura, não apenas engajamento.
+
 Os custos listados acima não são projeções especulativas. São passivos documentados em análises jurídicas de empresas do setor, com precedentes de ações coletivas e individuais. A questão não é *se* esses custos serão cobrados, mas *quando*.
 
 ---
@@ -39,7 +46,7 @@ Este modelo cria um conflito de interesses estrutural. Para garantir sua própri
 
 ---
 
-## 2. Os quatro Incentivos que Operam Contra a Organização
+## 2. Os Incentivos que operam Contra a Organização
 
 A análise das entrevistas revelou quatro mecanismos distintos que geram comportamentos destrutivos:
 
@@ -77,11 +84,20 @@ A análise das entrevistas revelou quatro mecanismos distintos que geram comport
 - A empresa se torna um "bico" temporário até surgir oportunidade melhor
 - A falta de especialização leva a erros de produção e desperdício de insumos
 
+### 2.5 PLR da Ponta: A Economia como Métrica
+**Detalhes:** Diferente das lideranças, o incentivo para cozinheiros e auxiliares está atrelado à capacidade da unidade de economizar recursos.
+- **O Conflito:** Isso pode incentivar a restrição no uso de materiais básicos e EPIs (ex: luvas, panos) para não onerar as despesas e proteger o bônus, gerando improvisos perigosos.
+
+### 2.6 Os Deflatores: Subtração do Resultado
+**Detalhes:** O sistema possui "travas" que reduzem o montante a ser recebido por fatores sistêmicos:
+- **Segurança e Acidentes:** Acidentes com afastamento são deflatores críticos. Aqui reside uma contradição: o bônus de assiduidade força o trabalho doente, o que eleva o risco de acidentes, que por sua vez penaliza a PLR de toda a equipe e da gestão.
+- **Auditorias (Regra de Ouro):** Falhas em auditorias de qualidade e segurança resultam em multas contratuais que impactam diretamente o valor distribuído.
+
 ---
 
-## 3. A Cadeia de Pressão: Interdependência Hierárquica
+## 3. A pressão do sistema de metas
 
-O sistema de metas da Sodexo cria uma "pressão cruzada" que atravessa todos os níveis, onde a volatilidade do mercado é repassada para a ponta sem a flexibilidade correspondente:
+O sistema de metas de proteção a margem da Sodexo cria uma "pressão cruzada" que atravessa todos os níveis, onde a volatilidade do mercado é repassada para a ponta sem a flexibilidade correspondente:
 
 ### 3.1 Nível Estratégico: Gerência de Operações (GO)
 Representado pela gestão de portfólio (ex: 38 unidades), este nível atua sob a métrica de resultado agregado.
@@ -107,20 +123,7 @@ A ponta responde à necessidade de economia superior para sustentar as metas.
 
 ---
 
-## 4. Dinâmica da PLR Operacional e Deflatores
 
-A "cadeia de pressão" se completa nos mecanismos de bonificação da base e nas penalidades coletivas:
-
-### 4.1 PLR da Ponta: A Economia como Métrica
-Diferente das lideranças, o incentivo para cozinheiros e auxiliares está atrelado à capacidade da unidade de economizar recursos.
-*   **O Conflito:** Isso pode incentivar a restrição no uso de materiais básicos e EPIs (ex: luvas, panos) para não onerar as despesas e proteger o bônus, gerando improvisos perigosos.
-
-### 4.2 Os Deflatores: Subtração do Resultado
-O sistema possui "travas" que reduzem o montante a ser recebido por fatores sistêmicos:
-*   **Segurança e Acidentes:** Acidentes com afastamento são deflatores críticos. Aqui reside uma contradição: o bônus de assiduidade força o trabalho doente, o que eleva o risco de acidentes, que por sua vez penaliza a PLR de toda a equipe e da gestão.
-*   **Auditorias (Regra de Ouro):** Falhas em auditorias de qualidade e segurança resultam em multas contratuais que impactam diretamente o valor distribuído.
-
----
 
 ## 5. A Síntese do Problema: Pressão Cruzada
 
@@ -131,18 +134,6 @@ A estrutura observada retira valor do capital humano e da infraestrutura para en
 
 ---
 
-## Considerações Finais
 
-A organização está tentando combater problemas estruturais de atratividade do setor (como a competição com aplicativos e logística) com ferramentas de gestão financeira rígida. Esta abordagem, embora compreensível no curto prazo, pode ser insuficiente para garantir a sustentabilidade.
-
-A análise sugere dois cenários distintos para consideração:
-
-**Cenário A (Manter a estrutura atual):** A margem continua sendo reportada nos níveis atuais. Os passivos (trabalhistas, operacionais, contratuais) continuam se acumulando de forma invisível. O capital humano e a infraestrutura continuam sendo consumidos. O resultado provável é um desgaste gradual da capacidade de entrega.
-
-**Cenário B (Experimentar ajustes):** Implementar as intervenções propostas como pilotos controlados. Aceitar ajuste temporário de margem em unidades específicas para testar hipóteses. Monitorar indicadores de clima, rotatividade e absenteismo. O resultado possível é a ruptura dos ciclos viciosos e a reconstrução da capacidade operacional.
-
-Este estudo documenta as evidências que fundamentam essa escolha estratégica.
-
----
 
 Relatório Sodexo Frontline | Target Teal | 2026
