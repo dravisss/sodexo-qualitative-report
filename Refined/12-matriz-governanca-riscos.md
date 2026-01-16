@@ -30,7 +30,7 @@ Nossa tese é pragmática: num mercado precarizado, **oferecer condições opera
 
 > "Gastamos pouco na Comunidade de Prática, ok. Mas entregamos zero resultado financeiro. O 'sucesso' do ano foi descobrir que não conseguimos mudar? Isso soa como tentar vender o fracasso como 'aprendizado estratégico'."
 
-Para uma organização de 76 mil pessoas enfrentando 40% de turnover, o investimento na CoP custou **centavos para proteger milhões**.
+Para uma organização de 47 mil pessoas enfrentando 40% de turnover, o investimento na CoP custou **centavos para proteger milhões**.
 
 Investigar profundamente um problema que consome quase metade da nossa força de trabalho não é custo, é **P&D Operacional essencial**. A evidência completa da falha do voluntarismo está no **[Catálogo de Experimentos](#10)**.
 

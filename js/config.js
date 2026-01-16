@@ -68,6 +68,13 @@ const ARTICLES = [
         icon: '🎯'
     },
     {
+        id: '14',
+        title: 'Lista de Intervenções',
+        subtitle: 'Organizada por fases',
+        path: './Refined/14-lista-de-intervencoes-por-fases.md',
+        icon: '📋'
+    },
+    {
         id: '13',
         title: 'Nota de ROI',
         subtitle: 'Memo de Valor Estratégico',

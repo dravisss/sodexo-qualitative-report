@@ -63,7 +63,7 @@ A permanência de pessoas desengajadas afeta quem permanece comprometido:
 - Deterioração do clima organizacional
 - Aumento do desejo coletivo de sair
 
-Este ambiente tóxico é um dos fatores que impulsionam a **[perda de atratividade frente à Amazon e Logística](#04)**.
+Este ambiente tóxico é um dos fatores que impulsionam a **[perda de atratividade frente ao Mercado Livre e outros concorrentes](#04)**.
 
 #### Fase 4: O Ciclo se Retroalimenta
 A queda de produtividade e o clima deteriorado pressionam ainda mais os resultados financeiros, tornando a liderança ainda menos propensa a arcar com custos de rescisão, perpetuando o impasse.
