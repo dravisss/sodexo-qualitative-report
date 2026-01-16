@@ -2,7 +2,7 @@
 
 ## Contexto
 
-Este documento detalha a realidade operacional do frontline da Sodexo a partir de um estudo de campo realizado nas unidades de Cajamar (Leroy Merlin) e Guarulhos (União Química), com base nas entrevistas realizadas em Dezembro de 2026 com todos os colaboradores de cada unidade.
+Este documento detalha a realidade operacional do frontline da Sodexo a partir de um estudo de campo realizado nas unidades de Cajamar (Leroy Merlin) e Guarulhos (União Química), com base nas entrevistas realizadas em Dezembro de 2025 com todos os colaboradores de cada unidade.
 
 A investigação foi conduzida para compreender as dinâmicas envolvidas no fenômeno de alta rotatividade na organização, incluindo os cenários macroeconômicos em que a Sodexo está inserida.
 
