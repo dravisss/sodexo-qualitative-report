@@ -4,7 +4,7 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 
 ---
 
-## FASE 1: TORNIQUETE (Imediato)
+## FRENTE 1: TORNIQUETE (Imediato)
 *Foco: Estancar a sangria, garantir a dignidade básica e mitigar riscos legais/sanitários urgentes.*
 
 ### I-01 — Compra centralizada de uniformes e proteção
@@ -45,7 +45,7 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 
 ---
 
-## FASE 2: DESCOMPRESSÃO (Curto Prazo)
+## FRENTE 2: DESCOMPRESSÃO (Curto Prazo)
 *Foco: Aliviar a pressão física e psicológica, restaurando a sensação de justiça e o clima da unidade.*
 
 ### I-07 — Rodízio de tarefas pesadas
@@ -92,7 +92,7 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 
 ---
 
-## FASE 3: REESTRUTURAÇÃO (Médio Prazo)
+## FRENTE 3: REESTRUTURAÇÃO (Médio Prazo)
 *Foco: Mudar os incentivos sistêmicos e processos que geram os ciclos viciosos.*
 
 ### I-14 — Verba corporativa para renovação de equipe
@@ -157,7 +157,7 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 
 ---
 
-## FASE 4: REPOSICIONAMENTO (Longo Prazo)
+## FRENTE 4: REPOSICIONAMENTO (Longo Prazo)
 *Foco: Tornar a empresa atraente novamente no mercado, competindo de igual para igual com logística e apps.*
 
 ### I-24 — Fretado e escalas competitivas

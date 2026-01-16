@@ -26,7 +26,7 @@ A primeira imersão profunda ocorreu na unidade de Food em Usiminas (Ipatinga).
 
 ### Fevereiro - Dezembro 2024: A comunidade de prática (CoP)
 Para responder aos achados de Ipatinga, lançou-se a CoP de Agentes de Mudança. O objetivo era criar soluções via inteligência coletiva e voluntariado interno.
-*   **O Esforço:** Mobilização de **60 colaboradores** de diversas áreas e s.
+*   **O Esforço:** Mobilização de **60 colaboradores** de diversas áreas e unidades.
 *   **O Resultado:** Ao longo do ano, a participação ativa caiu para **20 pessoas**.
 *   **O Aprendizado (As 3 Barreiras Estruturais):** A CoP falhou em gerar mudanças estruturais, mas a análise dos motivos dessa falha gerou o mapa do tesouro para o futuro. Os detalhes do que foi testado e por que falhou estão catalogados no **[Catálogo de Experimentos 2024](#10)**. Identificamos três travas sistêmicas:
     1.  **Insustentabilidade do Voluntarismo:** A dependência de "tempo livre" e boa vontade, sem alocação formal de horas ou metas, mostrou-se incapaz de sustentar um esforço complexo de longo prazo.
@@ -62,9 +62,9 @@ Sem o orçamento para a estrutura completa, focamos a intervenção em **2 unida
 
 Deste esforço nasceu o **Plano de Intervenção Consolidado** (objeto de aprovação deste relatório), organizado em 4 fases evolutivas para recuperação da operação sem quebrar o caixa:
 
-*   **Fase 1: Torniquete (Imediato & Dignidade):** Estancar a sangria e garantir o básico (EPIs, fim de punições injustas).
-*   **Fase 2: Descompressão (Curto Prazo & Clima):** Aliviar a tensão da equipe e da gestão com recursos de baixo custo (e.g. escalas justas).
-*   **Fase 3: Reestruturação (Médio Prazo & Regras):** Alterar a arquitetura de incentivos (Fundo de Rescisão, Deflatores de PLR).
-*   **Fase 4: Reposicionamento (Longo Prazo & Futuro):** Tornar a vaga atrativa novamente frente ao mercado.
+*   **Frente 1: Torniquete (Imediato & Dignidade):** Estancar a sangria e garantir o básico (EPIs, fim de punições injustas).
+*   **Frente 2: Descompressão (Curto Prazo & Clima):** Aliviar a tensão da equipe e da gestão com recursos de baixo custo (e.g. escalas justas).
+*   **Frente 3: Reestruturação (Médio Prazo & Regras):** Alterar a arquitetura de incentivos (Fundo de Rescisão, Deflatores de PLR).
+*   **Frente 4: Reposicionamento (Longo Prazo & Futuro):** Tornar a vaga atrativa novamente frente ao mercado.
 
 Este plano consolidado é a aplicação prática e viável das hipóteses originais, demonstrando que é possível gerar impacto sistêmico começando pequeno.
