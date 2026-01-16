@@ -101,7 +101,7 @@ Para quebrar esses ciclos, o **[Plano de Intervenção Estratégica](#08)** prop
 
 ### **[Frente 2: Descompressão (Recuperar o clima)](#08)**
 *   **Ação:** Escalas justas e rituais de dignidade.
-*   **Meta:** Reduzir o turnover voluntário em 30%.
+*   **Meta:** Recuperar a confiança dos trabalhadores na liderança.
 
 ### **[Frente 3: Reestruturação (Quebrar a trava)](#08)**
 *   **Ação:** Fundo de rescisão centralizado e PDV.
