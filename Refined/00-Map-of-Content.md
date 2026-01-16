@@ -18,7 +18,7 @@ A análise indica que a **estrutura de incentivos financeiros** gera passivos oc
 
 Esses passivos ocultos se traduzem em **riscos trabalhistas**, **colapsos operacionais**, **impasses estruturais** e uma **deterioração contínua da marca empregadora**.
 
-Para melhor navegar este mapeamento, dividimos a análise em **5 grandes blocos**, seguidos de um plano de intervenção.
+Para melhor navegar este mapeamento, dividimos a análise em **8 grandes blocos**, incluindo um [plano de intervenção](#08) e um [dossiê operacional de cada unidade investigada](#05).
 
 <div class="cta-button-container">
     <a href="#06" class="cta-button">📑 Ler Resumo Executivo</a>
@@ -99,7 +99,5 @@ Use as seções abaixo para navegar pelo relatório.
 
 </div>
 </div>
-
----
 
 

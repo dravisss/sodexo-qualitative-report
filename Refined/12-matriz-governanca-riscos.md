@@ -1,6 +1,6 @@
-# Desafios à Tese (Q&A)
+# Perguntas Frequentes
 
-Este documento antecipa os questionamentos estratégicos que o Board fará sobre a tese do "Custo Oculto". O objetivo é oferecer respostas diretas e tecnicamente embasadas para as dúvidas naturais que surgem ao propormos uma mudança na lógica de incentivos.
+Este documento busca responder os questionamentos frequentes sobre o projeto de reestruturação do plano de incentivos e a atuação que viemos fazendo no frontline da Sodexo. O objetivo é oferecer respostas diretas para as dúvidas naturais que surgem ao propormos uma mudança tão impactante na organização.
 
 ---
 
