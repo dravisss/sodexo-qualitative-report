@@ -1927,3 +1927,97 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* === EXECUTIVE FAQ ACCORDION (Investigative Briefing) === */
+details.executive-qa {
+    margin: var(--spacing-xl) 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: #fff;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+details.executive-qa[open] {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-teal);
+}
+
+details.executive-qa summary {
+    background: var(--color-bg-secondary);
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--color-teal-dark);
+    cursor: pointer;
+    list-style: none;
+    /* Hide default arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    /* Smooth border transition */
+}
+
+details.executive-qa[open] summary {
+    background: var(--color-teal);
+    color: #fff;
+    border-bottom: 2px solid var(--color-teal-darker);
+}
+
+details.executive-qa summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+details.executive-qa[open] summary::after {
+    transform: rotate(45deg);
+    content: '+';
+    /* Or change to minus if preferred, but rotation is classic */
+}
+
+/* Custom content styling */
+details.executive-qa .qa-content {
+    padding: var(--spacing-lg);
+    background: #fffcf5;
+    /* Paper cream feeling */
+    border-top: 1px solid var(--color-border-light);
+}
+
+details.executive-qa .qa-section-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border-light);
+    padding-bottom: 4px;
+}
+
+details.executive-qa .qa-section-title:first-child {
+    margin-top: 0;
+}
+
+details.executive-qa .qa-pair {
+    margin-bottom: var(--spacing-md);
+}
+
+details.executive-qa .qa-question {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 4px;
+    display: block;
+}
+
+details.executive-qa .qa-answer {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-left: var(--spacing-md);
+    border-left: 2px solid var(--color-teal-light);
+}
