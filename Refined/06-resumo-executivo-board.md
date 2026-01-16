@@ -96,20 +96,12 @@ Quando a pressão por margem bloqueia a renovação da equipe (Travamento Rescis
 Para quebrar esses ciclos, o **[Plano de Intervenção Estratégica](#08)** propõe 4 frentes, desenhadas para financiar a própria recuperação:
 
 ### **[Frente 1: Torniquete (Estancar a sangria)](#08)**
-*   **Ação:** Compra emergencial de EPIs e fim da punição por atestado.
-*   **Meta:** Parar de gerar passivo trabalhista hoje.
 
 ### **[Frente 2: Descompressão (Recuperar o clima)](#08)**
-*   **Ação:** Escalas justas e rituais de dignidade.
-*   **Meta:** Recuperar a confiança dos trabalhadores na liderança.
 
 ### **[Frente 3: Reestruturação (Quebrar a trava)](#08)**
-*   **Ação:** Fundo de rescisão centralizado e PDV.
-*   **Meta:** Adequar a equipe à demanda real.
 
 ### **[Frente 4: Reposicionamento (Competir com o mercado)](#08)**
-*   *O Problema:* A perda de atratividade para Amazon/Apps.
-*   *A Ação:* Novas trilhas de carreira e especialização técnica. Transforma a vaga de "bico" em "profissão".
 
 > **A margem de curto prazo está consumindo a sustentabilidade de longo prazo** e é financiada pelo consumo do nosso ativo humano e da nossa marca. O plano propõe parar de pagar juros (passivos) e começar a amortizar a dívida operacional.
 
