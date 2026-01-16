@@ -12,7 +12,7 @@ A investigação focou em duas unidades críticas que servem como arquétipos do
 | **Guarulhos (Food)** | União Química | Explosão de volume sem ajuste de estrutura; colapsos diários na entrega |
 | **Guarulhos (FM)** | União Química | Exposição jurídica por insalubridade; inconsistência na qualidade do serviço |
 
-<details class="executive-qa">
+<details class="executive-qa" open>
 <summary>📂 PERGUNTAS ESTRATÉGICAS QUE ESTE RELATÓRIO RESPONDE</summary>
 <div class="qa-content">
 
