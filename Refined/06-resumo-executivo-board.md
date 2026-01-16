@@ -16,7 +16,7 @@ A investigação focou em duas unidades críticas que servem como arquétipos do
 <summary>📂 PERGUNTAS ESTRATÉGICAS QUE ESTE RELATÓRIO RESPONDE</summary>
 <div class="qa-content">
 
-<div class="qa-section-title">1. Diagnóstico (O que está acontecendo?)</div>
+<div class="qa-section-title">1. Cenário (O que está acontecendo?)</div>
 
 <div class="qa-pair">
 <span class="qa-question">"Por que não conseguimos contratar e reter gente na ponta?"</span>

@@ -2,6 +2,8 @@
 
 A análise revela quatro mecanismos de retroalimentação que perpetuam os problemas de turnover. Os quatro ciclos abaixo não são problemas separados: são **manifestações do mesmo sistema de incentivos**. Cada ciclo alimenta os outros. A retenção forçada sobrecarrega os comprometidos, que adoecem (presenteísmo destrutivo), que são substituídos por equipamentos que quebram (sucateamento), que afasta novos candidatos (seleção adversa). Intervir em um ciclo sem considerar os outros pode ter efeito limitado.
 
+![alt text](image-5.png)
+
 Todos os ciclos convergem para um ponto comum: **a proteção de indicadores financeiros de curto prazo na Sodexo consome o capital humano da operação**, gerando uma estrutura insustentável sustentada por trabalhadores adoecidos e retidos contra sua vontade.
 
 ---
