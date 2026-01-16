@@ -92,6 +92,8 @@ class ReportReader {
             if (article.id === '08') {
                 this.setupWarRoomModal();
                 this.setupMatrixSpotlight();
+            } else if (article.id === '05') {
+                this.setupCaseFilesTabs();
             } else {
                 this.setupInterventionToggles();
             }
@@ -118,6 +120,29 @@ class ReportReader {
             header.addEventListener('click', () => {
                 const card = header.closest('.intervention-card');
                 card.classList.toggle('collapsed');
+            });
+        });
+    }
+
+    /**
+     * Setup tab switching for Article 05 Case Files
+     */
+    setupCaseFilesTabs() {
+        const tabs = document.querySelectorAll('.dossier-tab');
+        const panes = document.querySelectorAll('.dossier-pane');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.dataset.target;
+
+                // Active Tab state
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Active Pane state
+                panes.forEach(p => p.classList.remove('active'));
+                const targetPane = document.getElementById(targetId);
+                if (targetPane) targetPane.classList.add('active');
             });
         });
     }
@@ -322,6 +347,17 @@ class ReportReader {
                     'O Conflito': '⚔️', 'Segurança e Acidentes': '⚠️', 'Auditorias (Regra de Ouro)': '📜'
                 }
             },
+            '05': {
+                cardSelector: 'h3',
+                useCaseFiles: true,
+                iconMap: {
+                    'Cenário': '🏙️', 'Liderança Rotativa': '🔄', 'O Trauma de Gestão': '👻', 'Segregação de Insumos': '🔒',
+                    'Infraestrutura no Limite': '🏚️', 'Acúmulo de Funções': '🏋️', 'Liderança Estável, mas Impotente': '🛑',
+                    'Adoecimento da "Velha Guarda"': '👴', 'Falha Sistêmica de Equipamentos': '⚙️', 'Explosão de Volume sem Aviso': '💥',
+                    'Falta de Especialização': '🔪', 'A Armadilha da Assiduidade': '🎣', 'Dimensionamento Crítico': '📉',
+                    'A Controvérsia da Insalubridade': '☣️', 'Privação de Recursos Básicos': '👕', 'Liderança Local': '🗣️'
+                }
+            },
             '02': {
                 cardSelector: 'h3',
                 idPrefixes: ['2.', '3.', '4.'],
@@ -461,6 +497,11 @@ class ReportReader {
         // Special Lab Archive Processing for Article 10
         if (artConfig.useLabArchive) {
             return this.renderLabArchive(div, artConfig);
+        }
+
+        // Special Case Files Processing for Article 05
+        if (artConfig.useCaseFiles) {
+            return this.renderCaseFiles(div, artConfig);
         }
 
         // Add callout for Synthesis (H2 with "Síntese")
@@ -1074,6 +1115,124 @@ class ReportReader {
         div.innerHTML = '';
         introElements.forEach(el => div.appendChild(el));
         div.appendChild(archiveContainer);
+
+        return div.innerHTML;
+    }
+
+    /**
+     * Render Article 05 as Case Files (Tabbed Interface)
+     */
+    renderCaseFiles(div, config) {
+        // Find the "Parte I" header
+        const part1Header = Array.from(div.querySelectorAll('h2')).find(h => h.textContent.includes('Parte I'));
+        if (!part1Header) return div.innerHTML;
+
+        // Create Container
+        const container = document.createElement('div');
+        container.className = 'dossier-tabs-container';
+
+        // Create Tabs Wrapper
+        const tabsWrapper = document.createElement('div');
+        tabsWrapper.className = 'dossier-tabs';
+
+        // Content Area
+        const contentArea = document.createElement('div');
+        contentArea.className = 'dossier-case-content';
+
+        container.appendChild(tabsWrapper);
+        container.appendChild(contentArea);
+
+        // Find h3s after Part I
+        const cases = [];
+        let next = part1Header.nextElementSibling;
+
+        // Remove Part I header as it becomes implicit in the tabs
+        part1Header.remove();
+
+        while (next && next.tagName !== 'H2') {
+            if (next.tagName === 'H3') {
+                const header = next;
+                let title = header.textContent.replace(/^\d+\.\s*/, '').trim();
+
+                // Extract specific labels per user request
+                let shortTitle = title;
+                if (title.toLowerCase().includes('cajamar')) {
+                    shortTitle = 'FOOD Leroy Merlin';
+                } else if (title.toLowerCase().includes('guarulhos') && title.toLowerCase().includes('food')) {
+                    shortTitle = 'FOOD União Química';
+                } else if (title.toLowerCase().includes('guarulhos') && (title.toLowerCase().includes('fm') || title.toLowerCase().includes('limpeza'))) {
+                    shortTitle = 'FM União Química';
+                }
+
+                const caseObj = {
+                    id: `case-${cases.length}`,
+                    title: title,
+                    tabLabel: shortTitle,
+                    contentNodes: []
+                };
+
+                // Add Title as a clean header inside the pane
+                const paneTitle = document.createElement('h3');
+                paneTitle.textContent = title;
+                paneTitle.style.marginTop = '0';
+                paneTitle.style.color = 'var(--color-teal-dark)';
+                caseObj.contentNodes.push(paneTitle);
+
+                let contentNext = header.nextElementSibling;
+                while (contentNext && contentNext.tagName !== 'H3' && contentNext.tagName !== 'H2') {
+                    // Just clone the content nodes without any icon processing
+                    caseObj.contentNodes.push(contentNext.cloneNode(true));
+                    const toRemove = contentNext;
+                    contentNext = contentNext.nextElementSibling;
+                    toRemove.remove();
+                }
+
+                cases.push(caseObj);
+                header.remove(); // Remove the H3
+                next = contentNext; // Continue from where we left off
+            } else {
+                next = next.nextElementSibling;
+            }
+        }
+
+        // Build Tabs and Content
+        cases.forEach((c, index) => {
+            // Tab
+            const tab = document.createElement('button');
+            tab.className = `dossier-tab ${index === 0 ? 'active' : ''}`;
+            tab.textContent = c.tabLabel;
+            tab.dataset.target = c.id;
+
+            tab.onclick = () => {
+                // Switch Active Tab
+                container.querySelectorAll('.dossier-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Switch Active Content
+                container.querySelectorAll('.dossier-pane').forEach(p => p.classList.remove('active'));
+                const targetPane = container.querySelector(`#${c.id}`);
+                if (targetPane) targetPane.classList.add('active');
+            };
+
+            tabsWrapper.appendChild(tab);
+
+            // Pane
+            const pane = document.createElement('div');
+            pane.id = c.id;
+            pane.className = `dossier-pane ${index === 0 ? 'active' : ''}`;
+
+            // Clean content without any metadata stamps
+            c.contentNodes.forEach(node => pane.appendChild(node));
+            contentArea.appendChild(pane);
+        });
+
+        // Insert container where Part I was
+        const part2Header = Array.from(div.querySelectorAll('h2')).find(h => h.textContent.includes('Parte II'));
+        if (part2Header) {
+            div.insertBefore(container, part2Header);
+        } else {
+            div.appendChild(container); // Fallback
+        }
 
         return div.innerHTML;
     }

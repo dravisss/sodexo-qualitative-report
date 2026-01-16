@@ -1973,10 +1973,129 @@ details.executive-qa summary::after {
     transition: transform 0.2s;
 }
 
-details.executive-qa[open] summary::after {
-    transform: rotate(45deg);
-    content: '+';
-    /* Or change to minus if preferred, but rotation is classic */
+/* === DOSSIER CASE FILES (ARTICLE 05) === */
+.dossier-tabs-container {
+    margin: var(--spacing-xl) 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.dossier-tabs {
+    display: flex;
+    gap: 0;
+    /* Glue them together */
+    padding: 0;
+    border-bottom: 2px solid var(--color-border);
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+.dossier-tabs::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
+}
+
+.dossier-tab {
+    flex: 1;
+    /* Occupy full width */
+    text-align: center;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-bottom: none;
+    margin-left: -1px;
+    /* Glue tabs together */
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    position: relative;
+    top: 2px;
+    /* Push down to overlap border */
+    font-family: 'Fira Code', monospace;
+    text-transform: uppercase;
+}
+
+.dossier-tab:hover {
+    background: #fff;
+    color: var(--color-teal);
+}
+
+.dossier-tab.active {
+    background: #fff;
+    border-color: var(--color-border);
+    border-top: 3px solid var(--color-teal);
+    color: var(--color-teal-dark);
+    z-index: 10;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.dossier-case-content {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-top: none;
+    padding: var(--spacing-2xl);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    min-height: 400px;
+    background-image:
+        repeating-linear-gradient(#fff 0 1px, transparent 1px 100%),
+        repeating-linear-gradient(90deg, #fff 0 1px, transparent 1px 100%);
+    background-size: 20px 20px;
+}
+
+/* Hide non-active tabs content */
+.dossier-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.dossier-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Case File Headers */
+.case-header {
+    border-bottom: 2px solid var(--color-teal-light);
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.case-id {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    font-weight: 800;
+}
+
+.case-stamp {
+    border: 2px solid var(--color-error);
+    color: var(--color-error);
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+    opacity: 0.8;
 }
 
 /* Custom content styling */

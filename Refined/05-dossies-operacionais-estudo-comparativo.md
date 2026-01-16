@@ -70,5 +70,3 @@ A falta de adicional de insalubridade e a privação de EPIs configuram exposiç
 | **Ponto crítico** | Acúmulo de funções sem remuneração adequada | Ausência de função especializada para cortes | Exposição a riscos sem adicional de insalubridade |
 | **Relação com liderança local** | Desconfiança devido a traumas de gestões anteriores | Respeito, mas percepção de impotência | Acessibilidade, mas sem capacidade de resolver problemas estruturais |
 | **Escala de trabalho** | 6x1 universalmente rejeitada | Conflito entre quem conseguiu acordos diferenciados | Preferência por 12x36, mas com exaustão extrema |
-
----
