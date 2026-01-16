@@ -26,7 +26,7 @@ A primeira imersão profunda ocorreu na unidade de Food em Usiminas (Ipatinga).
 
 ### Fevereiro - Dezembro 2024: A comunidade de prática (CoP)
 Para responder aos achados de Ipatinga, lançou-se a CoP de Agentes de Mudança. O objetivo era criar soluções via inteligência coletiva e voluntariado interno.
-*   **O Esforço:** Mobilização de **60 colaboradores** de diversas áreas e uniodades.
+*   **O Esforço:** Mobilização de **60 colaboradores** de diversas áreas e s.
 *   **O Resultado:** Ao longo do ano, a participação ativa caiu para **20 pessoas**.
 *   **O Aprendizado (As 3 Barreiras Estruturais):** A CoP falhou em gerar mudanças estruturais, mas a análise dos motivos dessa falha gerou o mapa do tesouro para o futuro. Os detalhes do que foi testado e por que falhou estão catalogados no **[Catálogo de Experimentos 2024](#10)**. Identificamos três travas sistêmicas:
     1.  **Insustentabilidade do Voluntarismo:** A dependência de "tempo livre" e boa vontade, sem alocação formal de horas ou metas, mostrou-se incapaz de sustentar um esforço complexo de longo prazo.
