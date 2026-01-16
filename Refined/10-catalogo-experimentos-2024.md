@@ -4,7 +4,6 @@ Este documento cataloga alguns dos vários micro-experimentos desenhados e pilot
 
 Cada experimento tentou resolver uma dor do *frontline* via "mudança de processo" ou "boa vontade", muitas vezes colidindo com barreiras estruturais.
 
----
 
 ## 1. Sobrecarga e Dimensionamento
 **O Sintoma:** Capacidade produtiva insuficiente; GUs sobrecarregados com escopo amplo (Operação, Financeiro, RH, Cliente).
@@ -15,7 +14,7 @@ Cada experimento tentou resolver uma dor do *frontline* via "mudança de process
 *   **Barreira Encontrada:**
     *   **Budget:** Dificuldade de aprovação de investimento (budget) na virada de ano fiscal.
     *   **Crise Cliente:** Em unidades onde o cliente entrou em reestruturação (Goiânia), o time não conseguiu engajar.
-    *   **Aprendizado:** A "inteligência da liderança" local é crucial, mas é varrida por crises financeiras ou contratuais externas.
+    *   **Aprendizado:** A "inteligência da liderança" local é decisiva, mas é varrida por crises financeiras ou contratuais externas.
 
 ### Exp: "Redesenho do Papel do GU"
 *   **A Ideia:** Retirar atividades administrativas/financeiras do GU para ele focar na operação e pessoas.

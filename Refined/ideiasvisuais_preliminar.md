@@ -1,4 +1,4 @@
-# Ideias Visuais Preliminares: Brainstorming Exaustivo
+# Ideias visuais preliminares: Brainstorming exaustivo
 
 Este documento contém o brainstorming completo de artefatos visuais para os 5 artigos de análise qualitativa da Sodexo, organizados por categoria de risco criativo.
 
@@ -243,7 +243,7 @@ Este documento contém o brainstorming completo de artefatos visuais para os 5 a
 
 ---
 
-## Artefatos Transversais (Podem Servir a Múltiplos Artigos)
+## Artefatos transversais (Podem servir a múltiplos artigos)
 
 ### 🟢 Criativas
 1. **Mapa Sistêmico Integrado (Diagrama de Sistemas)**

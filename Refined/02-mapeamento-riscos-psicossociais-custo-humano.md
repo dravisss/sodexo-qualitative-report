@@ -6,7 +6,7 @@ O cenário de adoecimento sistêmico, que atravessa todos os níveis hierárquic
 
 
 
-## 1. Panorama Geral: O Cenário de Risco Elevado
+## 1. Panorama geral: O cenário de risco elevado
 
 As unidades operacionais apresentam um quadro de **risco psicossocial elevado**, caracterizado por fatores estressores que impactam simultaneamente a base operacional e a gestão local. Os principais elementos identificados incluem:
 
@@ -18,25 +18,25 @@ As unidades operacionais apresentam um quadro de **risco psicossocial elevado**,
 
 ---
 
-## 2. O Custo Físico
+## 2. O custo físico
 
-### 2.1 A Cadeia de Causalidade do Adoecimento Físico
+### 2.1 A cadeia de causalidade do adoecimento físico
 
 A busca pela margem de lucro cria uma sequência de eventos que culmina no desgaste físico dos colaboradores:
 
-**Etapa 1: Restrição Orçamentária**
-Para garantir as metas financeiras, a gestão evita contratações e posterga manutenções. Esses custos sairiam do resultado da unidade e comprometeriam a bonificação.
+**Etapa 1: Restrição orçamentária**
+Para garantir as metas financeiras, a gestão evita contratações e posterga manutenções. Esses custos sairiam do resultado da unidade e comprometeriam a bonificação. Essa restrição não é acidental; é um subproduto direto da **[Arquitetura de Incentivos e Metas](#01)** da organização.
 
-**Etapa 2: Subdimensionamento e Acúmulo de Funções**
+**Etapa 2: Subdimensionamento e acúmulo de funções**
 A eliminação de funções especializadas (como açougueiro) obriga colaboradores a assumirem tarefas que não são suas. Cozinheiros cortam grandes volumes de carne (80kg ou mais) além de cozinhar, gerando esforço repetitivo intenso.
 
-**Etapa 3: Compensação Humana pela Falha de Máquina**
+**Etapa 3: Compensação humana pela falha de máquina**
 Com equipamentos quebrados ou inexistentes, o corpo humano passa a compensar:
 - Confeiteiros batem massas na mão porque as batedeiras não funcionam
 - Auxiliares carregam pilhas de pratos manualmente por falta de carrinhos
 - Cozinheiros alternam entre o fogão quente e a câmara fria, sem estoquistas para buscar insumos
 
-**Etapa 4: Lesões e Cronificação**
+**Etapa 4: Lesões e cronificação**
 A combinação de sobrecarga, esforço repetitivo e falta de ergonomia produz um padrão de adoecimento. As patologias mais frequentes incluem:
 - Tendinites e bursites
 - Dores crônicas na coluna
@@ -44,7 +44,7 @@ A combinação de sobrecarga, esforço repetitivo e falta de ergonomia produz um
 - Ruptura de tendões
 - Perda de força nos membros superiores
 
-**Etapa 5: O Ciclo se Fecha**
+**Etapa 5: O ciclo se fecha**
 A política de benefícios fecha o ciclo: o bônus de assiduidade (aproximadamente R$ 300) é perdido integralmente se o colaborador faltar, mesmo com atestado médico. Para não perder essa renda, o trabalhador vai trabalhar doente, impedindo a recuperação e transformando lesões tratáveis em condições crônicas.
 
 Este ciclo não é um acidente. É o resultado previsível de um sistema que:
@@ -56,9 +56,9 @@ A pergunta não é "por que o trabalhador adoece", mas "por que o sistema está 
 
 ---
 
-## 3. O Custo Mental: Ansiedade, Exaustão e Desamparo
+## 3. O custo mental: Ansiedade, exaustão e desamparo
 
-### 3.1 Na Base Operacional
+### 3.1 Na base operacional
 Os colaboradores da cozinha e limpeza vivem sob um quadro de **ansiedade crônica** derivado de:
 
 - **Instabilidade de equipamentos:** Falhas recorrentes em fornos, processadores e máquinas de lavar obrigam a equipe a adotar processos manuais exaustivos, gerando receio constante de não cumprir os horários de entrega.
@@ -67,7 +67,7 @@ Os colaboradores da cozinha e limpeza vivem sob um quadro de **ansiedade crônic
 
 - **Gestão de crise diária:** A falta de ferramentas adequadas transforma a rotina em gerenciamento constante de emergências, elevando níveis de estresse e frustração.
 
-### 3.2 Na Liderança Local
+### 3.2 Na liderança local
 A média gerência apresenta um nível crítico de exaustão, com indicadores claros de risco para esgotamento:
 
 **Sobrecarga e acúmulo de funções:**
@@ -79,12 +79,12 @@ A estrutura de bonificação "tudo ou nada" gera um estado de alerta permanente.
 **Isolamento institucional:**
 A falta de suporte efetivo da manutenção e do RH corporativo amplifica a sensação de desamparo das gestoras locais.
 
-### 3.3 O Refúgio Farmacológico: Um Sintoma Transversal
+### 3.3 O refúgio farmacológico: Um sintoma transversal
 O uso de medicação controlada para suportar a carga emocional do ambiente de trabalho não é um fato isolado, mas um sintoma sistêmico:
 
 - **Medicação Psiquiátrica:** Relatos de uso recorrente de **Sertralina, Clonazepam, Lexotan e estabilizadores de humor** por colaboradores da Sodexo para lidar com a ansiedade e pressão.
 - **Dificuldade de Suspensão:** Há casos de pessoas que tentam "desmamar" da medicação, mas recuam devido ao retorno imediato de crises de pânico ao entrar no ambiente de trabalho.
-- **Cultura da Automedicação:** Além do suporte psiquiátrico, a equipe utiliza analgésicos pesados para suportar as dores físicas, criando uma dependência química para conseguir cumprir a escala 6x1.
+- **Cultura da Automedicação:** Além do suporte psiquiátrico, a equipe utiliza analgésicos pesados para suportar as dores físicas, criando uma dependência química para conseguir cumprir a escala 6x1. O uso de medicação é a única forma encontrada para suportar a **[sobrecarga física gerada pelo sucateamento](#11)**.
 
 Quando múltiplos colaboradores (de diferentes unidades, níveis hierárquicos, idades e perfis) apresentam o mesmo padrão de adoecimento (ansiedade, uso de Sertralina/Lexotan, crises de pânico), o problema não é individual. O ambiente de trabalho está **produzindo** o adoecimento. Os testemunhos abaixo não são casos isolados; são amostras de um padrão transversal.
 
@@ -95,15 +95,17 @@ Quando múltiplos colaboradores (de diferentes unidades, níveis hierárquicos, 
 
 ---
 
-## 4. O Fenômeno do Presenteísmo
+## 4. O fenômeno do presenteísmo
 
-### O Mecanismo
+### O mecanismo
 A política de benefícios cria uma armadilha: a bonificação por assiduidade é condicionada à frequência perfeita. Uma única ausência, mesmo justificada por atestado médico, resulta na perda integral do benefício.
 
-### As Consequências
+### As consequências
 - **No curto prazo:** Redução do absenteísmo formal.
 - **No médio prazo:** Agravamento de quadros clínicos, aumento do risco de afastamentos prolongados pelo INSS, e maior probabilidade de acidentes de trabalho.
 - **No ambiente:** Contaminação de colegas quando o presenteísmo envolve doenças transmissíveis. Em operações de alimentação, pessoas doentes manipulando alimentos representam risco sanitário.
+
+Para reverter este quadro, a **[Frente 1: Torniquete](#08)** propõe o fim imediato da punição por atestado.
 
 A política de assiduidade cria uma ilusão de economia. O RH reporta "absentísmo controlado"; a operação reporta "equipe completa". Mas o que não aparece no relatório:
 - Trabalhadores produzindo em 60% da capacidade porque estão doentes
@@ -111,7 +113,7 @@ A política de assiduidade cria uma ilusão de economia. O RH reporta "absentís
 - Contaminação de colegas quando a doença é infecciosa
 - Lesões agravadas que se tornam afastamentos INSS de meses
 
-## O Cálculo Oculto
+## O cálculo oculto
 ⚠️ *Nota: Os valores apresentados abaixo são estimativas ilustrativas baseadas em padrões de mercado, aguardando dados oficiais da organização para cálculo preciso.*
 
 | Custo Evitado (Curto Prazo) | Custo Gerado (Médio Prazo) |
@@ -120,12 +122,12 @@ A política de assiduidade cria uma ilusão de economia. O RH reporta "absentís
 | Perda de produtividade de 1 dia | Perda de produtividade crônica por trabalhador doente |
 | Zero | Ação trabalhista por condições de trabalho: R$ 20.000+ |
 
-### O Sentimento Resultante
+### O sentimento resultante
 A percepção da equipe é de que o sistema de benefícios não acolhe suas necessidades de saúde. Isso gera desgaste na relação de confiança com a organização.
 
 ---
 
-## 5. Linhas de Pesquisa para Aprofundamento
+## 5. Linhas de pesquisa para aprofundamento
 
 Para fundamentar cientificamente os fenômenos observados e desenhar as intervenções necessárias, recomendamos investigar:
 
@@ -150,4 +152,3 @@ O modelo observado evidencia uma transferência dos desafios operacionais para a
 Nesse cenário, a integridade do colaborador acaba funcionando como uma variável de ajuste para a viabilidade da operação. Paralelamente, a liderança local enfrenta o desgaste de sustentar a produtividade sem o suporte organizacional necessário.
 
 ---
-Relatório Sodexo Frontline | Target Teal | 2026

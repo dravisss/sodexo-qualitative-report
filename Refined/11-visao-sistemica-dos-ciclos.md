@@ -12,7 +12,7 @@ Todos os ciclos convergem para um ponto comum: **a proteção de indicadores fin
 
 `Meta GM → Bloqueio de Demissões → Funcionário retido → Baixa Produtividade → Custos Sobem → (reinicia)`
 
-O ciclo da Retenção Forçada inicia com a pressão por metas de Margem Bruta (GM), o que leva ao bloqueio de demissões para evitar gastos imediatos com rescisões. Isso cria o funcionário retido, que permanece desmotivado para não perder benefícios como o FGTS, resultando em baixa produtividade e um clima organizacional deteriorado. Consequentemente, os custos operacionais sobem devido à ineficiência, o que reduz as margens e gera uma pressão ainda maior sobre as metas, reiniciando o ciclo e aprisionando a empresa em um equilíbrio negativo de curto prazo.
+O ciclo da Retenção Forçada inicia com a pressão por metas de Margem Bruta (GM), o que leva ao bloqueio de demissões para evitar gastos imediatos com rescisões. Isso cria o funcionário retido, que permanece desmotivado para não perder benefícios como o FGTS, resultando em baixa produtividade e um clima organizacional deteriorado. Consequentemente, os custos operacionais sobem devido à ineficiência, o que reduz as margens e gera uma pressão ainda maior sobre as metas, reiniciando o ciclo e aprisionando a empresa em um equilíbrio negativo de curto prazo. Veja a análise profunda deste mecanismo em **[Travamento Rescisório](#03)**.
 
 
 
@@ -36,7 +36,7 @@ O ciclo do **Presenteísmo Danoso** inicia com a implementação de um **Bônus 
 
 `Corte de Manutenção → Equipamentos Quebrados → Esforço Manual → Lesões → Afastamento → (reinicia)`
 
-O ciclo do **Sucateamento da Infraestrutura** demonstra que o **Corte de Manutenção** para redução imediata de despesas gera **Equipamentos Quebrados**, obrigando os colaboradores a um **Esforço Manual** excessivo para compensar a falta de maquinário funcional. Esse desgaste físico causa **Lesões**, resultando no **Afastamento** de profissionais e, consequentemente, fazendo com que os **Custos Sobem** devido a ineficiências operacionais e encargos trabalhistas. Com a lucratividade comprometida pelo aumento desses custos, surge uma nova **Pressão Sobre Meta** de Margem Bruta (Meta GM), que incentiva novos cortes de curto prazo e reinicia o processo de degradação estrutural e humana.
+O ciclo do **Sucateamento da Infraestrutura** demonstra que o **Corte de Manutenção** para redução imediata de despesas gera **Equipamentos Quebrados**, obrigando os colaboradores a um **Esforço Manual** excessivo para compensar a falta de maquinário funcional. Esse desgaste físico causa **Lesões**, resultando no **Afastamento** de profissionais e, consequentemente, fazendo com que os **Custos Sobem** devido a ineficiências operacionais e encargos trabalhistas. Com a lucratividade comprometida pelo aumento desses custos, surge uma nova **Pressão Sobre Meta** de Margem Bruta (Meta GM), que incentiva novos cortes de curto prazo e reinicia o processo de degradação estrutural e humana. Este ciclo é alimentado diretamente pelas decisões descritas na **[Arquitetura de Incentivos](#01)**.
 
 
 

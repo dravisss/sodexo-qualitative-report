@@ -1,12 +1,10 @@
-# Panorama Macroeconômico: Forças Externas e o Mercado de Trabalho
-
----
+# Panorama macroeconômico: Forças externas e o mercado de trabalho
 
 Este estudo distingue as **forças externas** (sobre as quais a organização tem pouco controle) das **escolhas internas** (que são decisões de gestão). Os desafios operacionais observados (dificuldade de contratação, alta rotatividade, insatisfação com a escala de trabalho) refletem uma transformação estrutural no mercado de trabalho brasileiro. A diferença entre forças externas e escolhas internas é o cerne do estudo: forças externas são desafios; escolhas internas são responsabilidades.
 
 ---
 
-## 1. A Nova Competição: Plataformas e Logística
+## A Nova Competição: Plataformas e Logística
 
 O Brasil viveu um crescimento expressivo no número de trabalhadores por aplicativo (um aumento de cerca de 170% em dez anos). A região de Cajamar, especificamente, tornou-se um polo logístico de comércio eletrônico que absorve a mesma mão de obra operacional.
 
@@ -19,11 +17,11 @@ O Brasil viveu um crescimento expressivo no número de trabalhadores por aplicat
 
 Colaboradores explicitam que "é melhor ser pedreiro" ou ir para a logística do que trabalhar na cozinha industrial. Os aplicativos oferecem uma percepção de "autonomia" (ainda que precária) que compete com a rigidez de uma hierarquia operacional.
 
-A vaga de auxiliar, que paga o piso salarial, concorre com o trabalho informal que paga à vista ou com o galpão logístico vizinho. Isso gera um déficit crônico de funcionários.
+A vaga de auxiliar, que paga o piso salarial, concorre com o trabalho informal que paga à vista ou com o galpão logístico vizinho. Isso gera um déficit crônico de funcionários. Enquanto a logística investe em automação, nossa operação sofre com o **[Ciclo de Sucateamento e esforço manual](#11)**.
 
 ---
 
-## 2. A Armadilha das Verbas Rescisórias
+## A Armadilha das Verbas Rescisórias
 
 ### O Incentivo Estrutural
 O modelo brasileiro de proteção ao desemprego (multa de 40% do FGTS + acesso ao saldo + seguro-desemprego) cria um incentivo financeiro para a demissão sem justa causa. Para um trabalhador de baixa renda, a rescisão representa uma capitalização que ele não conseguiria poupando salários.
@@ -52,7 +50,8 @@ A inflação de alimentos, que atingiu dois dígitos em vários momentos recente
 
 A inflação de insumos pressiona as margens do *food service*. Ao mesmo tempo, a gestão exige resultados de curto prazo para acionistas, transferindo a pressão de custo para a ponta operacional.
 
-### O Corte do "Invisível"
+**O Corte do "Invisível"**
+
 Para atingir metas de lucro, a liderança local corta itens que não são imediatamente visíveis:
 - Manutenção preventiva
 - Reposição de utensílios
@@ -72,7 +71,7 @@ O pacote de remuneração é visto como insuficiente para o nível de esforço f
 
 ---
 
-## 6. O Cenário Consolidado
+## O Cenário Consolidado
 
 | Força Externa | Efeito na Operação |
 |---------------|-------------------|
@@ -84,7 +83,7 @@ O pacote de remuneração é visto como insuficiente para o nível de esforço f
 
 ---
 
-## 7. Síntese
+## Síntese
 
 A operação está inserida em um **cenário hostil**. O mercado de trabalho atual oferece alternativas ao trabalhador de base (aplicativos, logística, benefícios sociais) que tornam o emprego em serviços de alimentação ou limpeza industrial (pesado, escala 6x1, baixo salário relativo) cada vez menos atrativo.
 
@@ -92,7 +91,7 @@ Internamente, quando a resposta a esse cenário é intensificar a pressão finan
 
 ---
 
-## 7.1 Escolhas Internas: O Cenário Externo Não Justifica a Resposta Interna
+## Escolhas Internas: O Cenário Externo Não Justifica a Resposta Interna
 
 É fundamental distinguir entre **forças externas** (sobre as quais a organização tem pouco controle) e **escolhas internas** (que são decisões de gestão). O cenário macroeconômico hostil é real, mas a resposta a ele não é determinada por fatalidade.
 
@@ -113,9 +112,11 @@ Internamente, quando a resposta a esse cenário é intensificar a pressão finan
 A narrativa de que "todos enfrentam o mesmo cenário" é verdadeira, mas ignora que diferentes empresas fazem diferentes escolhas. Concorrentes que investem em proposta de valor (benefícios, ambiente, jornada flexível) estão capturando talentos que a operação atual não consegue reter. A precarização não é "resposta ao mercado"; é um **posicionamento competitivo de baixo custo** que funciona apenas enquanto houver trabalhadores sem alternativa. E essa condição está mudando.
 
 ---
-## 8. Perguntas Estratégicas
+## Perguntas Estratégicas
 
 1. **Proposta de valor:** Se a vaga paga o piso e exige esforço físico intenso, o que está sendo oferecido que os concorrentes não oferecem?
+    
+    A resposta para essa competição passa pelo **[Reposicionamento da Proposta de Valor](#08)** descrito na Frente 4 do plano.
 
 2. **Escala de trabalho:** Qual é o custo real (em rotatividade, adoecimento, passivo trabalhista) de manter a escala 6x1 rígida?
 
@@ -126,5 +127,3 @@ A narrativa de que "todos enfrentam o mesmo cenário" é verdadeira, mas ignora 
 Estas perguntas não têm respostas únicas. Mas respondê-las explicitamente permite uma avaliação mais precisa do custo real de cada escolha.
 
 ---
-
-Relatório Sodexo Frontline | Target Teal | 2026

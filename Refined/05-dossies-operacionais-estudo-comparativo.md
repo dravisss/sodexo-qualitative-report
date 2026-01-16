@@ -1,8 +1,6 @@
-# Dossiês Operacionais por Unidade: Estudo Comparativo
+# Dossiês operacionais por unidade: Estudo comparativo
 
----
-
-Este documento detalha a realidade operacional de cada unidade, não como relatório de RH, mas como **mapeamento operacional**. As três operações (Alimentação Cajamar, Alimentação Guarulhos e Limpeza Industrial Guarulhos) compartilham certas raízes sistêmicas, mas apresentam manifestações distintas.
+Este documento detalha a realidade operacional de cada unidade, não como relatório de RH, mas como **mapeamento operacional**. As três operações (Alimentação Cajamar, Alimentação Guarulhos e Limpeza Industrial Guarulhos) compartilham certas raízes sistêmicas, mas apresentam manifestações distintas. Estas unidades servem como arquétipos dos **[Ciclos Viciosos Sistêmicos](#11)** que operam em toda a rede.
 
 As falhas aqui documentadas não são problemas de gestão local; são sintomas de uma estrutura de incentivos que está consumindo a capacidade de entrega.
 
@@ -15,7 +13,7 @@ As falhas aqui documentadas não são problemas de gestão local; são sintomas 
 
 **Cenário:** Esta unidade é caracterizada por uma instabilidade crônica de liderança e um profundo **trauma organizacional**. O clima é de guerra e sabotagem. Funcionários admitem reduzir a produtividade deliberadamente ou deixar faltar itens de propósito para forçar a demissão e acessar direitos trabalhistas. A liderança é vista como "inimiga" ou "incompetente" devido ao histórico de abandono.
 
-**Síntese de Risco:** O clima de hostilidade combinado com infraestrutura precária cria ambiente propício a incidentes que podem afetar diretamente a percepção da Leroy Merlin. A instabilidade de liderança impede a construção de relação de confiança duradoura com o cliente.
+O clima de hostilidade combinado com infraestrutura precária cria ambiente propício a incidentes que podem afetar diretamente a percepção da Leroy Merlin. A instabilidade de liderança impede a construção de relação de confiança duradoura com o cliente.
 
 - **Liderança Rotativa:** A unidade sofre com um histórico de alta rotatividade. Estima-se que mais de 10 ou até 20 gerentes passaram por lá em poucos anos. Isso criou um "vácuo de autoridade" e desconfiança crônica.
 - **O Trauma de Gestão:** A equipe vive assombrada por gestões passadas, como a história de uma gestora que "zerou o banco de horas" dos funcionários, quebrando a confiança na empresa de forma duradoura (não conseguimos verificar se a história é real ou não). A nova gestão é recebida com ceticismo.
@@ -23,10 +21,9 @@ As falhas aqui documentadas não são problemas de gestão local; são sintomas 
 - **Infraestrutura no Limite:** A operação física é sustentada por "gambiarras". O forno combinado maior está quebrado há meses. Sem liquidificador industrial, a equipe usa mixers manuais para volumes imensos. Há relatos de cozinheiros que trazem **facas de casa** para conseguir trabalhar.
 - **Acúmulo de Funções:** Auxiliares de Serviços Gerais (ASG) executam tarefas de cozinheiros e estoquistas sem remuneração adequada, sentindo-se explorados pelo desvio de função estrutural.
 
-**Dinâmica de Clima:** 
-O clima é de **guerra e sabotagem**. Funcionários admitem reduzir a produtividade deliberadamente ou deixar faltar itens de propósito para forçar a demissão e acessar direitos trabalhistas. A liderança é vista como "inimiga" ou "incompetente" devido ao histórico de abandono.
+Funcionários admitem reduzir a produtividade deliberadamente ou deixar faltar itens de propósito para forçar a demissão e acessar direitos trabalhistas. A liderança é vista como "inimiga" ou "incompetente" devido ao histórico de abandono.
 
-**Síntese de Risco:** O clima de hostilidade combinado com infraestrutura precária cria ambiente propício a incidentes que podem afetar diretamente a percepção da Leroy Merlin. A instabilidade de liderança impede a construção de relação de confiança duradoura com o cliente.
+O clima de hostilidade combinado com infraestrutura precária cria ambiente propício a incidentes que podem afetar diretamente a percepção da Leroy Merlin. A instabilidade de liderança impede a construção de relação de confiança duradoura com o cliente.
 
 ---
 
@@ -34,7 +31,7 @@ O clima é de **guerra e sabotagem**. Funcionários admitem reduzir a produtivid
 
 **Cenário:** União em torno do sofrimento compartilhado. Há uma profunda mágoa com a Sodexo por não reconhecer o tempo de casa e o desgaste físico acumulado dos colaboradores veteranos.
 
-**Síntese de Risco:** A explosão de volume sem ajuste de estrutura indica descompasso entre a demanda do cliente e a capacidade operacional. Colapsos diários na entrega geram acumulação de insatisfação que pode resultar em renegociação forçada ou redução de escopo.
+A explosão de volume sem ajuste de estrutura indica descompasso entre a demanda do cliente e a capacidade operacional. Colapsos diários na entrega geram acumulação de insatisfação que pode resultar em renegociação forçada ou redução de escopo.
 
 - **Liderança Estável, mas Impotente:** A gestão local (Gu e o Chefe) é respeitada e vista como parceira da equipe. No entanto, são percebidos como "de mãos atadas" pelo sistema financeiro da Sodexo.
 - **Adoecimento da "Velha Guarda":** A equipe tem funcionários com 10, 15, até 27 anos de casa. Estão fisicamente destruídos (tendinites, bursites, problemas de coluna). A gestão descreve a equipe como **"burros de carroça"**, simbolizando a sobrecarga sobre corpos exaustos.
@@ -48,7 +45,7 @@ O clima é de **guerra e sabotagem**. Funcionários admitem reduzir a produtivid
 
 **Cenário:** Equipe composta majoritariamente por mulheres, operando em uma planta industrial farmacêutica vasta e lidando com a percepção de serem a "base da pirâmide". Resignação e sobrevivência por necessidade extrema. A rotatividade é uma "porta giratória": novos contratados desistem em semanas pela carga pesada, enquanto os veteranos ficam "presos" pelo medo de perder direitos acumulados.
 
-**Síntese de Risco:** A falta de adicional de insalubridade e a privação de EPIs configuram exposição jurídica que pode respingar no cliente (correspondência). A inconsistência na qualidade do serviço causada pela "porta giratória" representa risco à satisfação da União Química.
+A falta de adicional de insalubridade e a privação de EPIs configuram exposição jurídica que pode respingar no cliente (correspondência). A inconsistência na qualidade do serviço causada pela "porta giratória" representa risco à satisfação da União Química.
 
 - **A Armadilha da Assiduidade:** A política de zerar o bônus de **R$ 300,00** por qualquer falta ou atestado médico força o **presenteísmo**. Colaboradoras relatam trabalhar à base de antidepressivos e ansiolíticos (Sertralina, Lexotan) e ter crises de pânico, mas sem faltar para não perder a verba essencial.
 - **Dimensionamento Crítico:** A equipe de aproximadamente 53 pessoas é insuficiente para a metragem da planta. Quando há rotatividade ou faltas, as colaboradoras restantes "dobram" setores, limpando múltiplos laboratórios ou banheiros distantes sozinhas.
@@ -75,5 +72,3 @@ O clima é de **guerra e sabotagem**. Funcionários admitem reduzir a produtivid
 | **Escala de trabalho** | 6x1 universalmente rejeitada | Conflito entre quem conseguiu acordos diferenciados | Preferência por 12x36, mas com exaustão extrema |
 
 ---
-
-Relatório Sodexo Frontline | Target Teal | 2026

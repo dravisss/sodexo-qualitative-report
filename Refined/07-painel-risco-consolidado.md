@@ -49,7 +49,7 @@ Este documento apresenta uma visão consolidada dos riscos identificados na aná
 
 ---
 
-## Exposição Jurídica e Fiscal
+## Exposição jurídica e fiscal
 
 | Risco Identificado | Norma Aplicável | Consequência Potencial |
 |--------------------|-----------------|-------------------------|
@@ -65,7 +65,7 @@ Em 2023, o MPT ajuizou ação coletiva contra empresa de alimentação coletiva 
 
 ---
 
-## Mapa Visual de Risco
+## Mapa visual de risco
 
 ```
                         IMPACTO
@@ -83,7 +83,7 @@ PROBABIL.  ├─────────┼─────────┼──
 
 ---
 
-## Resposta Tática 
+## Resposta tática 
 
 Para cada risco crítico identificado, existe um conjunto de intervenções planejadas no **[Plano Estratégico (08)](file:///Users/Ravi/Apps/Qualitative%20Analyst/docs/Analise%20Geral/Refined/08-plano-de-intervencao-estrategica.md)**:
 
@@ -99,4 +99,4 @@ Para cada risco crítico identificado, existe um conjunto de intervenções plan
 
 ---
 
-Relatório Sodexo Frontline | Target Teal | 2026
+

@@ -1,4 +1,4 @@
-# Especificações Finais de Artefatos Visuais (Nano Banana)
+# Especificações finais de artefatos visuais (Nano Banana)
 
 Este documento contém os prompts detalhados para geração de infográficos, diagramas e loops causais usando a IA Nano Banana. Todos os artefatos seguem o estilo visual padronizado.
 
@@ -745,7 +745,7 @@ Artigo 05, dossiê de Cajamar (após linha 37).
 
 ---
 
-## 19. Bifurcação Estratégica: Cenário A vs. B (Infográfico)
+## 19. Bifurcação estratégica: Cenário A vs. B (Infográfico)
 **Descrição:** Estrada que se divide — a escolha estratégica final.
 **Por que é relevante:** Comunica a escolha estratégica de forma visual impactante.
 
@@ -841,7 +841,7 @@ Resumo Executivo (08), ou como imagem de capa/abertura.
 
 ---
 
-## 21. Mapa Sistêmico Integrado: Visão de Helicóptero (Diagrama Master Expandido)
+## 21. Mapa sistêmico integrado: Visão de helicóptero (Diagrama master expandido)
 **Descrição:** Versão expandida com TODOS os loops e conexões.
 **Por que é relevante:** Argumento holístico final para o board — visão completa do sistema disfuncional.
 
@@ -918,5 +918,3 @@ Documento 08 (Resumo Executivo) como peça central, ou impressão separada para 
 5. **Idioma:** Prompts em inglês, mas todos os textos visíveis nas imagens devem estar em **português**.
 
 ---
-
-Relatório Sodexo Frontline | Target Teal | 2026

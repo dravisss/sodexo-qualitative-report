@@ -344,8 +344,8 @@ class ReportReader {
             },
             '04': {
                 cardSelector: 'h2, h3',
-                idPrefixes: ['1.', '2.', '3.', '4.', '5.'],
-                sectionLabelMap: { '1': 'Competição', '2': 'Armadilha', '3': 'Crise', '4': 'Pressão', '5': 'Competição' },
+                idPrefixes: ['3.', '4.', '5.'],
+                sectionLabelMap: { '3': 'Crise', '4': 'Pressão', '5': 'Competição' },
                 iconMap: {
                     'O Que Mudou': '🔄', 'Consequência': '🚨', 'O Incentivo Estrutural': '⚖️', 'O Corte do "Invisível"': '✂️'
                 }
@@ -355,6 +355,23 @@ class ReportReader {
                 idPrefixes: ['🔴', '🟠', '🟡'],
                 sectionLabelMap: { '🔴': 'Crítico', '🟠': 'Alto', '🟡': 'Médio' },
                 iconMap: { 'O que é': '❓', 'Exposição estimada': '💰', 'Multicausalidade': '🧬' }
+            },
+            '09': {
+                cardSelector: 'h2',
+                useTimeline: true,
+                iconMap: {
+                    'Marco': '📑', 'A Descoberta': '🔍', 'O Consenso': '🤝', 'Ação': '⚡', 'O Achado': '🕵️',
+                    'Impacto': '💥', 'O Esforço': '💪', 'O Resultado': '📊', 'O Aprendizado': '💡',
+                    'A Descoberta Chave': '🔑', 'A Conclusão': '🏁', 'Hipótese': '🧪'
+                }
+            },
+            '10': {
+                cardSelector: 'h3',
+                useLabArchive: true,
+                iconMap: {
+                    'A Ideia': '💡', 'Hipótese': '🧪', 'Barreira Encontrada': '🛑',
+                    'Barreira/Status': '⚠️', 'Aprendizado': '🧠', 'O Sintoma': '🩺'
+                }
             }
         };
 
@@ -368,10 +385,12 @@ class ReportReader {
             let match = null;
 
             // Try to find a match in idPrefixes
-            for (const prefix of artConfig.idPrefixes) {
-                if (text.startsWith(prefix)) {
-                    match = { prefix: prefix.replace('.', ''), label: text.replace(prefix, '').trim() };
-                    break;
+            if (artConfig.idPrefixes) {
+                for (const prefix of artConfig.idPrefixes) {
+                    if (text.startsWith(prefix)) {
+                        match = { prefix: prefix.replace('.', ''), label: text.replace(prefix, '').trim() };
+                        break;
+                    }
                 }
             }
 
@@ -434,6 +453,16 @@ class ReportReader {
             }
         });
 
+        // Special Timeline Processing for Article 09
+        if (artConfig.useTimeline) {
+            return this.renderTimeline(div, artConfig);
+        }
+
+        // Special Lab Archive Processing for Article 10
+        if (artConfig.useLabArchive) {
+            return this.renderLabArchive(div, artConfig);
+        }
+
         // Add callout for Synthesis (H2 with "Síntese")
         const synthesisHeader = Array.from(div.querySelectorAll('h2')).find(h =>
             h.textContent.toLowerCase().includes('síntese') ||
@@ -490,7 +519,7 @@ class ReportReader {
         // Find all H2s (phases) and H4s (interventions)
         const h2s = Array.from(div.querySelectorAll('h2'));
         h2s.forEach(h2 => {
-            const phaseMatch = h2.textContent.match(/FASE\s*(\d)/i);
+            const phaseMatch = h2.textContent.match(/(?:FASE|FRENTE)\s*(\d)/i);
             if (phaseMatch) {
                 currentPhase = parseInt(phaseMatch[1]) - 1;
             }
@@ -510,7 +539,7 @@ class ReportReader {
                 let el = h4.previousElementSibling;
                 while (el) {
                     if (el.tagName === 'H2') {
-                        const pm = el.textContent.match(/FASE\s*(\d)/i);
+                        const pm = el.textContent.match(/(?:FASE|FRENTE)\s*(\d)/i);
                         if (pm) {
                             phaseIndex = parseInt(pm[1]) - 1;
                             break;
@@ -678,12 +707,8 @@ class ReportReader {
 
         const boardHtml = `
             <h1>${title}</h1>
-            <div class="war-room-intro">
-                ${introHtml || '<p>Este documento organiza todas as intervenções em uma jornada cronológica de recuperação.</p>'}
-                <p style="margin-top: var(--spacing-sm); font-size: var(--font-size-xs); color: var(--color-text-muted);">
-                    👆 Clique em uma intervenção para ver os detalhes completos.
-                </p>
-            </div>
+            ${introHtml || '<p>Este documento organiza todas as intervenções em uma jornada cronológica de recuperação.</p>'}
+            
             ${matrixHtml}
             <div class="war-room-board">
                 ${phaseData.map(phase => `
@@ -691,9 +716,10 @@ class ReportReader {
                         <div class="board-column-header">
                             <span class="phase-tooltip">${phaseTooltips[phase.num]}</span>
                             <span class="phase-count">${phase.interventions.length}</span>
-                            <h3>Fase ${phase.num}: ${phase.name}</h3>
+                            <h3>Frente ${phase.num}: ${phase.name}</h3>
                             <div class="phase-subtitle">${phase.subtitle}</div>
                         </div>
+                            <div class="board-column-content">
                         ${phase.interventions.map(int => `
                             <div class="board-card" 
                                  data-id="${int.id}" 
@@ -708,6 +734,7 @@ class ReportReader {
                             </div>
                         `).join('')}
                     </div>
+                </div>
                 `).join('')}
             </div>
             ${summaryHtml ? `<div class="sin-prose" style="margin-top: var(--spacing-xl);">${summaryHtml}</div>` : ''}
@@ -826,6 +853,229 @@ class ReportReader {
                 }
             });
         });
+    }
+
+    /**
+     * Render Article 09 as a Dossier Timeline (Investigation Files)
+     */
+    renderTimeline(div, config) {
+        // Capture intro (everything before the first H2)
+        const introElements = [];
+        let firstH2 = div.querySelector('h2');
+        let current = div.firstElementChild;
+        while (current && current !== firstH2) {
+            introElements.push(current.cloneNode(true));
+            current = current.nextElementSibling;
+        }
+
+        const headers = Array.from(div.querySelectorAll('h2'));
+        const timelineContainer = document.createElement('div');
+        timelineContainer.className = 'dossier-timeline';
+
+        headers.forEach(header => {
+            const yearMatch = header.textContent.match(/(\d{4})/);
+            const year = yearMatch ? yearMatch[1] : '';
+            const title = header.textContent.replace(year, '').replace(/^[:\s-]+|[:\s-]+$/g, '').trim();
+
+            const card = document.createElement('div');
+            card.className = 'dossier-card';
+            card.innerHTML = `
+                <div class="dossier-year">${year}</div>
+                <div class="dossier-content">
+                    <h3 class="dossier-title">${title}</h3>
+                    <div class="dossier-body"></div>
+                </div>
+            `;
+
+            const body = card.querySelector('.dossier-body');
+            let next = header.nextElementSibling;
+            while (next && next.tagName !== 'H2' && next.tagName !== 'HR') {
+                const sibling = next;
+                next = sibling.nextElementSibling;
+
+                // Transform specific elements into "Investigation Items"
+                const strong = sibling.querySelector('strong');
+                const label = strong ? strong.textContent.replace(':', '').trim() : null;
+
+                // Only create investigation-item if label is in iconMap
+                if (sibling.tagName === 'P' && label && config.iconMap[label]) {
+                    const icon = config.iconMap[label] || '📄';
+
+                    const item = document.createElement('div');
+                    item.className = 'investigation-item';
+                    item.innerHTML = `
+                        <span class="item-label">${icon} ${label}</span>
+                        <div class="item-text">${sibling.innerHTML.replace(strong.outerHTML, '').replace(/^[:\s-]+/, '').trim()}</div>
+                    `;
+                    body.appendChild(item);
+                } else if (sibling.tagName === 'UL') {
+                    // Turn lists into bulleted investigation steps
+                    sibling.classList.add('investigation-list');
+                    body.appendChild(sibling);
+                } else {
+                    body.appendChild(sibling);
+                }
+            }
+            timelineContainer.appendChild(card);
+        });
+
+        // Clear and rebuild
+        div.innerHTML = '';
+        introElements.forEach(el => div.appendChild(el));
+        div.appendChild(timelineContainer);
+
+        return div.innerHTML;
+    }
+
+    /**
+     * Render Article 10 as a Lab Archive (Investigation Slides)
+     */
+    renderLabArchive(div, config) {
+        // Capture intro (everything before the first H2)
+        const introElements = [];
+        let firstH2 = div.querySelector('h2');
+        let current = div.firstElementChild;
+        while (current && current !== firstH2) {
+            introElements.push(current.cloneNode(true));
+            current = current.nextElementSibling;
+        }
+
+        const sections = Array.from(div.querySelectorAll('h2'));
+        const archiveContainer = document.createElement('div');
+        archiveContainer.className = 'lab-archive';
+
+        sections.forEach(section => {
+            const isLabSection = /^\d+\./.test(section.textContent);
+            const sectionTitle = section.textContent.replace(/^\d+\.\s*/, '').trim();
+            const symptomEl = section.nextElementSibling;
+            const symptomText = symptomEl && symptomEl.tagName === 'P' ? symptomEl.innerHTML : '';
+            if (symptomEl && symptomEl.tagName === 'P') symptomEl.remove();
+
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'archive-section';
+
+            // Clean symptom text (remove the initial label)
+            const cleanSymptom = symptomText.replace(/<strong>.*?<\/strong>\s*/i, '').replace(/^[:\s-]+/, '').trim();
+
+            sectionDiv.innerHTML = `
+                <div class="archive-section-header">
+                    <span class="section-badge">${isLabSection ? 'Área de Investigação' : 'Análise Geral'}</span>
+                    <h2 class="section-title">${sectionTitle}</h2>
+                    ${isLabSection ? `<div class="section-symptom"><strong>Sintoma Mapeado:</strong> ${cleanSymptom}</div>` : ''}
+                </div>
+                <div class="archive-content-body"></div>
+                <div class="archive-grid"></div>
+            `;
+
+            const grid = sectionDiv.querySelector('.archive-grid');
+            const contentBody = sectionDiv.querySelector('.archive-content-body');
+            let next = section.nextElementSibling;
+            while (next && next.tagName !== 'H2') {
+                if (next.tagName === 'H3') {
+                    const header = next;
+                    const expTitle = header.textContent.replace(/^Exp:\s*|"/g, '').trim();
+                    const card = document.createElement('div');
+                    card.className = 'lab-card';
+                    card.innerHTML = `
+                        <div class="lab-card-header">
+                            <span class="lab-id">EXP-${Math.floor(Math.random() * 900) + 100}</span>
+                            <h3 class="lab-title">${expTitle}</h3>
+                        </div>
+                        <div class="lab-card-body"></div>
+                        <div class="lab-stamp">BARRADO</div>
+                    `;
+
+                    const body = card.querySelector('.lab-card-body');
+                    let subNext = header.nextElementSibling;
+                    let barrierText = '';
+
+                    while (subNext && !['H2', 'H3', 'HR'].includes(subNext.tagName)) {
+                        const sibling = subNext;
+                        subNext = sibling.nextElementSibling;
+
+                        const processItem = (el) => {
+                            const strong = el.querySelector('strong');
+                            const label = strong ? strong.textContent.replace(':', '').trim() : null;
+                            if (label && config.iconMap[label]) {
+                                const icon = config.iconMap[label];
+                                const content = el.innerHTML.replace(strong.outerHTML, '').replace(/^[:\s-]+/, '').trim();
+
+                                if (label.includes('Barreira')) {
+                                    barrierText = content;
+                                }
+
+                                const item = document.createElement('div');
+                                item.className = `lab-item ${label.includes('Barreira') ? 'barrier' : ''}`;
+                                item.innerHTML = `
+                                    <span class="item-label">${icon} ${label}</span>
+                                    <div class="item-text">${content}</div>
+                                `;
+                                body.appendChild(item);
+                                return true;
+                            }
+                            return false;
+                        };
+
+                        if (sibling.tagName === 'P') {
+                            if (!processItem(sibling)) {
+                                body.appendChild(sibling.cloneNode(true));
+                            }
+                        } else if (sibling.tagName === 'UL') {
+                            const lis = Array.from(sibling.querySelectorAll('li'));
+                            let processedAny = false;
+                            lis.forEach(li => {
+                                if (processItem(li)) processedAny = true;
+                            });
+
+                            if (!processedAny) {
+                                const listClone = sibling.cloneNode(true);
+                                listClone.classList.add('lab-list');
+                                body.appendChild(listClone);
+                            }
+                        } else {
+                            body.appendChild(sibling.cloneNode(true));
+                        }
+                    }
+
+                    // Determine Stamp Text based on barrier content
+                    const stamp = card.querySelector('.lab-stamp');
+                    const lowerBarrier = barrierText.toLowerCase();
+                    if (lowerBarrier.includes('budget') || lowerBarrier.includes('custo') || lowerBarrier.includes('investimento')) {
+                        stamp.textContent = 'FALTA DE BUDGET';
+                        stamp.classList.add('stamp-error');
+                    } else if (lowerBarrier.includes('voluntar') || lowerBarrier.includes('tempo') || lowerBarrier.includes('evasão')) {
+                        stamp.textContent = 'EVASÃO / TEMPO';
+                        stamp.classList.add('stamp-warning');
+                    } else if (lowerBarrier.includes('mindset') || lowerBarrier.includes('cultura') || lowerBarrier.includes('tabu')) {
+                        stamp.textContent = 'IMUNIDADE CULTURAL';
+                        stamp.classList.add('stamp-info');
+                    } else if (lowerBarrier.includes('paralisado') || lowerBarrier.includes('concorrentes')) {
+                        stamp.textContent = 'PARALISADO';
+                        stamp.classList.add('stamp-muted');
+                    }
+
+                    grid.appendChild(card);
+
+                    // Advance 'next' to the 'subNext' result (the next section or experiment)
+                    next = subNext;
+                    header.remove();
+                } else {
+                    if (next.tagName !== 'HR') {
+                        contentBody.appendChild(next.cloneNode(true));
+                    }
+                    next = next.nextElementSibling;
+                }
+            }
+            archiveContainer.appendChild(sectionDiv);
+            section.remove();
+        });
+
+        // Clear and rebuild
+        div.innerHTML = '';
+        introElements.forEach(el => div.appendChild(el));
+        div.appendChild(archiveContainer);
+
+        return div.innerHTML;
     }
 
     /**

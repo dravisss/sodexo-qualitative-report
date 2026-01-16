@@ -13,7 +13,7 @@ Se uma rescisão custa R$ 15.000 ou R$ 20.000, esse valor sai diretamente do res
 
 Além do custo financeiro direto, o ato de demitir aumenta o índice de rotatividade, que funciona como "deflator" na bonificação da liderança. Mesmo que a meta de lucro seja atingida, uma rotatividade alta resulta em desconto no bônus (por exemplo, 10%).
 
-A liderança local é duplamente penalizada por realizar desligamentos, ainda que necessários.
+A liderança local é duplamente penalizada por realizar desligamentos, ainda que necessários. Novamente, vemos a **[pressão por Margem Bruta (GM)](#01)** atuando contra a renovação necessária da equipe.
 
 ---
 
@@ -63,6 +63,8 @@ A permanência de pessoas desengajadas afeta quem permanece comprometido:
 - Deterioração do clima organizacional
 - Aumento do desejo coletivo de sair
 
+Este ambiente tóxico é um dos fatores que impulsionam a **[perda de atratividade frente à Amazon e Logística](#04)**.
+
 #### Fase 4: O Ciclo se Retroalimenta
 A queda de produtividade e o clima deteriorado pressionam ainda mais os resultados financeiros, tornando a liderança ainda menos propensa a arcar com custos de rescisão, perpetuando o impasse.
 
@@ -92,6 +94,6 @@ O "travamento rescisório" não é uma falha pontual de gestão, mas uma **conse
 
 O resultado é um ambiente de **retenção forçada**, onde a organização mantém funcionários improdutivos porque o custo de desligá-los é maior do que o custo (aparente) de mantê-los. Contudo, os custos ocultos (clima deteriorado, queda de qualidade, sobrecarga dos comprometidos, adoecimento) podem superar significativamente a economia de curto prazo.
 
----
+A solução estrutural para este impasse é a criação do **[Fundo Centralizado de Rescisões](#08)** detalhado no plano de intervenção.
 
-Relatório Sodexo Frontline | Target Teal | 2026
+---
