@@ -94,6 +94,38 @@
     gap: var(--spacing-sm);
 }
 
+/* Updated Toolbar Layout */
+.toolbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.toolbar-left,
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* Status Indicator States */
+.toolbar-status.status-saving {
+    color: var(--color-teal);
+}
+
+.toolbar-status.status-saved {
+    color: var(--color-success);
+}
+
+.toolbar-status.status-offline {
+    color: var(--color-warning, #f59e0b);
+}
+
+.toolbar-status.status-error {
+    color: var(--color-error);
+}
+
 .btn-primary,
 .btn-secondary,
 .btn-danger {

@@ -4,6 +4,7 @@
  */
 
 import { ARTICLES, REPORT_META } from './config.js';
+import { AutoSaveManager } from './autosave.js';
 
 class ReportReader {
     constructor() {
@@ -672,9 +673,10 @@ class ReportReader {
         toolbar.className = 'form-toolbar';
         toolbar.innerHTML = `
             <div class="toolbar-content">
-                <span class="toolbar-status" id="form-save-status">Autosalvo</span>
-                <div class="toolbar-actions">
-                    <button class="btn-primary" id="btn-submit-netlify">💾 Salvar</button>
+                <div class="toolbar-left">
+                    <span class="toolbar-status" id="form-save-status">☁️ Pronto</span>
+                </div>
+                <div class="toolbar-right">
                     <button class="btn-danger" id="btn-clear-data">🗑️ Limpar</button>
                 </div>
             </div>
@@ -842,23 +844,53 @@ class ReportReader {
      * Setup event listeners for the Investigation Form
      */
     setupInvestigationForm() {
+        // Initialize AutoSaveManager
+        this.autoSave = new AutoSaveManager({
+            debounceMs: 2000,
+            unitSlug: 'general'
+        });
+
+        // Load answers from localStorage into form fields
         this.loadFormAnswers();
 
-        // Autosave listeners
-        const inputs = this.contentEl.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
+        // Text inputs: save to localStorage + trigger cloud sync
+        const textInputs = this.contentEl.querySelectorAll('input[type="text"], textarea');
+        textInputs.forEach(input => {
             input.addEventListener('input', (e) => {
-                this.saveFormAnswer(e.target.id, e.target.value);
-                this.updateSaveStatus('Salvando...');
-                clearTimeout(this.saveTimeout);
-                this.saveTimeout = setTimeout(() => {
-                    this.updateSaveStatus('Salvo');
-                }, 1000);
+                this.autoSave.saveAnswer(e.target.id, e.target.value);
             });
         });
 
+        // Unit selector (if any)
+        const unitSelector = this.contentEl.querySelector('#unit-selector'); // Assuming an element with id 'unit-selector'
+        if (unitSelector) {
+            unitSelector.addEventListener('change', (e) => {
+                this.autoSave.setUnit(e.target.value);
+            });
+        }
+
+        // Listen for cloud data load
+        window.addEventListener('form-data-loaded', (e) => {
+            this.loadFormAnswers(e.detail);
+        });
+
+        // File inputs: upload to Blob storage
+        const fileInputs = this.contentEl.querySelectorAll('input[type="file"]');
+        fileInputs.forEach(input => {
+            input.addEventListener('change', async (e) => {
+                const blobKey = await this.autoSave.uploadFile(e.target);
+                if (blobKey) {
+                    // Update file name display
+                    const nameDisplay = document.getElementById(`${e.target.id}_name`);
+                    if (nameDisplay) {
+                        nameDisplay.textContent = `✅ ${e.target.files[0].name}`;
+                    }
+                }
+            });
+        });
+
+
         // Tab Switching Logic
-        // Initialize Visibility
         this.contentEl.querySelectorAll('.tab-pane')[0]?.classList.add('active');
 
         // Logic to show/hide nested navigation arrows based on overflow
@@ -869,14 +901,13 @@ class ReportReader {
                 const btnNext = wrapper.querySelector('.nested-nav-btn.next');
 
                 if (bar && btnPrev && btnNext) {
-                    const hasOverflow = bar.scrollWidth > bar.clientWidth + 5; // Small buffer
+                    const hasOverflow = bar.scrollWidth > bar.clientWidth + 5;
                     btnPrev.style.display = hasOverflow ? 'flex' : 'none';
                     btnNext.style.display = hasOverflow ? 'flex' : 'none';
                 }
             });
         };
 
-        // Run after a short delay to ensure rendering matches DOM dimensions
         setTimeout(checkArrows, 100);
         window.addEventListener('resize', checkArrows);
 
@@ -885,21 +916,16 @@ class ReportReader {
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Active Tab
                 tabs.forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
 
-                // Active Pane
                 const targetId = tab.dataset.target;
                 panes.forEach(p => {
                     p.classList.remove('active');
                     if (p.id === targetId) p.classList.add('active');
                 });
 
-                // Scroll to top of content (below toolbar)
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                // Recalculate arrow visibility for newly shown panes
                 setTimeout(checkArrows, 100);
             });
         });
@@ -911,18 +937,15 @@ class ReportReader {
                 const container = tab.closest('.nested-tabs-container');
                 if (!container) return;
 
-                // Active nested tab button
                 container.querySelectorAll('.nested-tab').forEach(t => t.classList.remove('active'));
                 tab.classList.add('active');
 
-                // Active nested pane
                 const targetId = tab.dataset.target;
                 container.querySelectorAll('.nested-pane').forEach(p => {
                     p.classList.remove('active');
                     if (p.id === targetId) p.classList.add('active');
                 });
 
-                // Hypothesis 2: Center active tab in the scrollable bar
                 const bar = tab.closest('.nested-tabs-bar');
                 if (bar) {
                     const barRect = bar.getBoundingClientRect();
@@ -933,18 +956,16 @@ class ReportReader {
             });
         });
 
-        // Button listeners
-        const btnSubmit = this.contentEl.querySelector('#btn-submit-netlify');
+        // Clear button
         const btnClear = this.contentEl.querySelector('#btn-clear-data');
-
-        if (btnSubmit) btnSubmit.addEventListener('click', () => this.submitToNetlify());
-
-        if (btnClear) btnClear.addEventListener('click', () => {
-            if (confirm('Tem certeza que deseja apagar todas as respostas e começar do zero?')) {
-                localStorage.removeItem('investigation_form_data');
-                location.reload();
-            }
-        });
+        if (btnClear) {
+            btnClear.addEventListener('click', () => {
+                if (confirm('Tem certeza que deseja apagar todas as respostas e começar do zero?')) {
+                    this.autoSave.clearData();
+                    location.reload();
+                }
+            });
+        }
     }
 
     updateSaveStatus(msg) {
@@ -952,14 +973,20 @@ class ReportReader {
     }
 
     /**
-     * Load answers from localStorage
+     * Load answers from localStorage or provided data
      */
-    loadFormAnswers() {
-        const data = JSON.parse(localStorage.getItem('investigation_form_data') || '{}');
+    loadFormAnswers(externalData = null) {
+        const data = externalData || JSON.parse(localStorage.getItem('investigation_form_data') || '{}');
         Object.entries(data).forEach(([id, value]) => {
             const el = document.getElementById(id);
-            if (el && el.type !== 'file') {
-                el.value = value;
+            if (el) {
+                if (el.type !== 'file') {
+                    el.value = value;
+                } else {
+                    // It's a file input. Check if we have a recorded blob for it
+                    // The filenames and checkmarks are handled by AutoSaveManager.updateFileUI
+                    // during the cloud sync, but for local-only load we might need a fallback.
+                }
             }
         });
     }
