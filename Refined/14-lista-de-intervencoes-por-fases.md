@@ -43,6 +43,12 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 **Objetivo:** Criar um mecanismo local de afastamento remunerado para casos agudos enquanto a regra sistêmica não muda.
 **Impacto:** Permitindo que o doente vá para casa sem punição, protege-se a equipe do contágio e demonstra-se humanidade, reduzindo a tensão com a chefia.
 
+### I-30 — Chave Mestra de Insumos
+**Tensão:** Acesso bloqueado a insumos e produtos de limpeza para turnos da noite, forçando improviso e falta de higiene.
+**Descrição:** Eliminar a concentração de chaves no turno do almoço. Criar cópia de chaves (almoxarifado/frigorífico) para líderes de cada turno, com sistema de log de retirada.
+**Objetivo:** Garantir dignidade e condições de trabalho iguais para todos os turnos.
+**Impacto:** Elimina a competição destrutiva entre turnos e permite execução correta das tarefas no jantar/ceia.
+
 ---
 
 ## FRENTE 2: DESCOMPRESSÃO (Curto Prazo)
@@ -90,6 +96,36 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 **Objetivo:** Compartilhar o dilema orçamentário com a equipe para alinhar expectativas.
 **Impacto:** Ao expor a regra do jogo, desloca-se a raiva da equipe do "Gerente Mau" para o "Sistema Difícil", unindo o time.
 
+### I-29 — Protocolo de Passagem de Turno
+**Tensão:** "Herança" de cozinha suja e problemas entre turnos, gerando conflito diário.
+**Descrição:** Checklist físico de passagem de turno (cozinha limpa, insumos ok) com assinatura de quem sai e quem entra. Reprovação gera registro.
+**Objetivo:** Criar responsabilidade compartilhada e fim da "bagunça herdada".
+**Impacto:** Reduz o atrito interpessoal e garante início de turno produtivo.
+
+### I-31 — Reserva Carimbada por Turno
+**Tensão:** "Roubo" de ingredientes entre turnos para cobrir falhas, gerando falta de insumo no jantar.
+**Descrição:** Separação física de insumos em containers etiquetados por turno na chegada. Uso cruzado só com autorização formal.
+**Objetivo:** Garantir que o planejamento do jantar seja respeitado.
+**Impacto:** Fim da improvisação forçada no jantar e da "guerra" por insumos.
+
+### I-32 — Turno de Pré-Preparo (Mise en Place)
+**Tensão:** Preparação feita "no calor da hora", gerando atraso e estresse.
+**Descrição:** Designar responsável/turno focado em descongelamento e pré-preparo (mise en place) para o dia seguinte.
+**Objetivo:** Desacoplar preparação de execução.
+**Impacto:** Redução drástica do estresse no pico e melhoria na qualidade da comida (carnes marinadas, etc).
+
+### I-37 — Improviso como Alerta de Falha Sistêmica
+**Tensão:** O "dar um jeito" é visto como heroísmo, escondendo a falta crônica de recursos.
+**Descrição:** Inverter a lógica: todo improviso deve gerar um ticket de "falha sistêmica". Mutirão de limpeza aciona revisão de quadro.
+**Objetivo:** Parar de normalizar a precariedade com "resiliência".
+**Impacto:** Força a resolução da causa raiz (falta de gente/material) ao invés de depender do esforço extra.
+
+### I-28 — Fundo de alimentação do time e autorregulação de estoque
+**Tensão:** Ocorrência de furtos de alimentos (estoque/frigorífico) que persistem apesar da vigilância, indicando ruptura no contrato social ou carências básicas.
+**Descrição:** Criação de um fundo gerido pela GU para aquisição de itens extras de alimentação para o time (ex: café da manhã reforçado, frutas, lanches). O fundo é abastecido pela redução de perdas de estoque: se a perda por furto/desperdício cai, o fundo aumenta. Se há furto detectado, a verba do fundo é usada para cobrir o prejuízo, gerando transparência e responsabilidade coletiva entre os colaboradores.
+**Objetivo:** Transformar o furto individual em um "custo compartilhado", incentivando a proteção coletiva do estoque.
+**Impacto:** Redução de perdas, fortalecimento da integridade do grupo e eliminação de vigilância agressiva.
+
 ---
 
 ## FRENTE 3: REESTRUTURAÇÃO (Médio Prazo)
@@ -131,11 +167,11 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 **Objetivo:** Achatamento da pirâmide hierárquica para reduzir custos e dar autonomia a quem põe a mão na massa.
 **Impacto:** Trocando supervisão cara por autogestão gratificada, economiza-se recurso e empodera-se tecnicamente a equipe de produção.
 
-### I-20 — Fim do cargo de faz-tudo ASG
-**Tensão:** A função de ASG é desenhada como "faz tudo" repetitivo, levando a LER e sensação de exploração.
-**Descrição:** Dividir o papel de ASG em especialidades rotativas ou níveis claros, evitando que o ASG fique preso na mesma função repetitiva (lesiva) para sempre. Incluir rodízio programado de funções.
-**Objetivo:** Enriquecer o cargo de ASG para reduzir a carga ergonômica e a monotonia.
-**Impacto:** Rotacionando as funções, dilui-se o risco ergonômico específico e aumenta-se a polivalência e interesse do colaborador.
+### I-20 — Políticas de rotatividade e definição de papéis (ASG)
+**Tensão:** A função de ASG é tratada como "faz tudo", gerando sobrecarga ergonômica e percepção de exploração em tarefas repetitivas.
+**Descrição:** Estabelecer políticas internas de rotatividade de tarefas entre a equipe de ASG, focando em diluir atividades de alta carga física. Definição clara de sub-papéis operacionais (ex: limpeza pesada, conservação, apoio) dentro da mesma nomenclatura homologada, garantindo que nenhum colaborador fique fixo em tarefas críticas.
+**Objetivo:** Organizar a carga de trabalho de ASG para reduzir desgaste físico e aumentar a previsibilidade operacional.
+**Impacto:** Rotacionando as funções internamente, dilui-se o risco ergonômico e melhora-se a percepção de justiça sem necessidade de alteração formal de cargo.
 
 ### I-21 — Revisão dos deflatores de rotatividade na PLR
 **Tensão:** Gerentes são punidos na PLR por qualquer turnover, inclusive o necessário, levando à retenção de maus profissionais.
@@ -154,6 +190,24 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 **Descrição:** Migrar a política de perda total para perda escalonada proporcional: 1 falta = 30% de desconto (não 100%), etc.
 **Objetivo:** Manter o incentivo à presença mesmo após uma ocorrência de falta.
 **Impacto:** Reduzindo a punição binária, mantém-se o colaborador engajado em vir trabalhar nos demais dias, reduzindo o absenteísmo total.
+
+### I-33 — SLA de Atendimento para Solicitações de RH
+**Tensão:** Sensação de que o RH "enrola" ou "esconde" problemas de pagamento e benefícios.
+**Descrição:** Publicar e cumprir prazos (SLA) para processos chaves: reembolso (5 dias), correção de folha (3 dias).
+**Objetivo:** Restaurar a confiança nos processos administrativos.
+**Impacto:** Reduz a ansiedade financeira e a percepção de descaso.
+
+### I-34 — Auditoria de Folha Trimestral
+**Tensão:** Desconfiança crônica sobre "roubo" de horas e descontos indevidos.
+**Descrição:** Auditoria por amostragem dos holerites vs ponto trimestralmente, com resultados abertos.
+**Objetivo:** Transparência total na remuneração.
+**Impacto:** Elimina a narrativa de exploração financeira oculta.
+
+### I-35 — Processo Seletivo com Período de Experiência Real
+**Tensão:** Contratação "às cegas" gera turnover imediato e sobrecarga de treinamento.
+**Descrição:** Incluir dia de "job shadow" (acompanhamento) antes da contratação e feedback estruturado nos primeiros 15 dias.
+**Objetivo:** Validar o fit cultural e operacional antes da efetivação.
+**Impacto:** Reduz o "turnover de berçário" e poupa energia da equipe com treinamentos inúteis.
 
 ---
 
@@ -183,3 +237,9 @@ Este documento apresenta a lista completa e detalhada das 27 intervenções estr
 **Descrição:** Realizar benchmark salarial territorial (Cajamar/Guarulhos) e reposicionar a proposta de valor: ajuste salarial, benefícios diferenciados, crescimento interno.
 **Objetivo:** Ajustar a oferta financeira à realidade de mercado da região.
 **Impacto:** Pagando o preço justo de mercado, a empresa volta a ter poder de escolha na seleção, elevando a qualidade técnica da equipe.
+
+### I-36 — Processo de Equalização Próprios vs Terceirizados
+**Tensão:** Tratamento de "segunda classe" para terceirizados ou próprios, fragmentando o time.
+**Descrição:** Mapear e equalizar progressivamente regras, benefícios "morais" (festas, brindes) e rituais entre CLT Sodexo e Terceiros.
+**Objetivo:** Criar uma cultura de "Time Único" independente do crachá.
+**Impacto:** Reduz o atrito operacional e melhora a cooperação em tarefas conjuntas.

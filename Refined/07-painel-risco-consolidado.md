@@ -89,7 +89,7 @@ Para cada risco crítico identificado, existe um conjunto de intervenções plan
 
 | Risco Crítico | Intervenções de Mitigação (Ver doc 08) |
 |---|---|
-| **Ação Coletiva (Desvio de Função)** | **I-16** (Redimensionamento Zero-Based) + **I-20** (Redesenho ASG) |
+| **Ação Coletiva (Desvio de Função)** | **I-16** (Redimensionamento Zero-Based) + **I-20** (Políticas Rotatividade ASG) |
 | **Afastamentos INSS / Presenteísmo** | **I-02** (Fim Punição Atestado) + **I-06** (Protocolo Sem Perda) + **I-23** (Assiduidade Escalonada) |
 | **Perda de Contrato (Clima/Greve)** | **I-01** (EPIs Emergenciais) + **I-07** (Cartões de Escala) + **I-12** (Roda de Conversa) |
 | **Travamento de Saída (Passivo)** | **I-14** (Fundo de Rescisão Centralizado) + **I-15** (PDV Protegido) |
