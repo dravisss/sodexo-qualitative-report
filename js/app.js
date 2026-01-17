@@ -94,6 +94,8 @@ class ReportReader {
                 this.setupMatrixSpotlight();
             } else if (article.id === '05') {
                 this.setupCaseFilesTabs();
+            } else if (article.id === '15') {
+                this.setupInvestigationForm();
             } else {
                 this.setupInterventionToggles();
             }
@@ -529,6 +531,452 @@ class ReportReader {
         }
 
         return div.innerHTML;
+    }
+
+    /**
+     * Render Investigation Form (Article 15)
+     * Converts '?' in tables to inputs and adds textareas for questions
+     */
+    /**
+     * Render Investigation Form (Article 15)
+     * Refactored to use TABS based on H2 headers
+     */
+    renderInvestigationForm(html) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+
+        // 1. Setup Data Processing (Inputs)
+        // Process Tables
+        div.querySelectorAll('table').forEach((table, tIndex) => {
+            const rows = table.querySelectorAll('tr');
+            rows.forEach((row, rIndex) => {
+                if (rIndex === 0) return;
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, cIndex) => {
+                    const cleanText = cell.textContent.trim();
+                    if (cleanText === '?' || cleanText === '') {
+                        const fieldId = `table_${tIndex}_row_${rIndex}_col_${cIndex}`;
+                        cell.innerHTML = `
+                            <input type="text" 
+                                   class="form-input" 
+                                   id="${fieldId}" 
+                                   data-type="table-cell"
+                                   placeholder="Inserir dado..." />
+                        `;
+                    } else if (cleanText === '[Anexar]') {
+                        const fieldId = `table_${tIndex}_row_${rIndex}_col_${cIndex}_file`;
+                        cell.innerHTML = `
+                            <div class="file-upload-wrapper">
+                                <label for="${fieldId}" class="custom-file-upload">
+                                    <span class="icon">📎</span> Anexar
+                                </label>
+                                <input type="file" class="form-attachment" id="${fieldId}" data-context="Table ${tIndex} Row ${rIndex}" hidden onchange="document.getElementById('${fieldId}_name').textContent = this.files.length > 0 ? this.files[0].name : ''" />
+                                <div id="${fieldId}_name" class="file-name-display"></div>
+                            </div>
+                         `;
+                    }
+                });
+            });
+        });
+
+        // Process Questions
+        // Process Questions
+        div.querySelectorAll('li').forEach((li, index) => {
+            // Check for tags and clean text
+            const textContent = li.textContent;
+            const hasAttachment = textContent.includes('[Anexar]');
+            const noField = textContent.includes('[Sem Campo]');
+
+            // Helper to safely remove tag from direct text nodes or formatting elements, WITHOUT destroying children ULs
+            const cleanTagSafe = (element, tag) => {
+                element.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.includes(tag)) {
+                        node.textContent = node.textContent.replace(tag, '');
+                    } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'UL' && node.tagName !== 'OL') {
+                        // Recurse into formatting tags (strong, em, etc) but skip lists
+                        cleanTagSafe(node, tag);
+                    }
+                });
+            };
+
+            if (hasAttachment) cleanTagSafe(li, '[Anexar]');
+            if (noField) cleanTagSafe(li, '[Sem Campo]');
+
+            const fieldId = `question_${index}`;
+            const inputContainer = document.createElement('div');
+            inputContainer.className = 'answer-container';
+
+            // Only render textarea if NOT marked as [Sem Campo]
+            if (!noField) {
+                inputContainer.innerHTML = `
+                    <textarea class="form-textarea" 
+                              id="${fieldId}" 
+                              data-type="question-answer"
+                              rows="3" 
+                              placeholder="Sua resposta..."></textarea>
+                `;
+            }
+
+            // Add file upload button if needed
+            if (hasAttachment) {
+                const fileId = `question_${index}_file`;
+                const fileUploadHtml = `
+                    <div class="file-upload-wrapper" style="margin-top: 8px;">
+                        <label for="${fileId}" class="custom-file-upload">
+                            <span class="icon">📎</span> Anexar Evidência
+                        </label>
+                        <input type="file" class="form-attachment" id="${fileId}" data-context="Question ${index}" hidden onchange="document.getElementById('${fileId}_name').textContent = this.files.length > 0 ? this.files[0].name : ''" />
+                        <div id="${fileId}_name" class="file-name-display"></div>
+                    </div>
+                `;
+                inputContainer.insertAdjacentHTML('beforeend', fileUploadHtml);
+            }
+
+            // Append container LAST, ensuring it persists
+            if (inputContainer.hasChildNodes()) {
+                // If the LI has children (like a nested UL), insert BEFORE the nested list
+                const nestedList = li.querySelector('ul, ol');
+                if (nestedList) {
+                    li.insertBefore(inputContainer, nestedList);
+                } else {
+                    li.appendChild(inputContainer);
+                }
+            }
+        });
+
+        // 2. Build Tab Structure
+        const sections = [];
+        const h2s = div.querySelectorAll('h2');
+        let currentSection = null;
+
+        // Map long titles to short tab labels
+        const labelMap = {
+            'DUE DILIGENCE': 'Operacional',
+            'RELAÇÕES SINDICAIS': 'Sindical',
+            'COMERCIAL': 'Comercial',
+            'REMUNERAÇÃO': 'Remuneração',
+            'REVISÃO': 'Revisão',
+            'RISCOS': 'Riscos'
+        };
+
+        // Extract content into sections
+        // Strategy: Iterate through children. When H2 is found, start new section.
+        // Everything before first H2 is "Intro".
+
+        // We need to re-traverse div.childNodes to group them
+        const newContainer = document.createElement('div');
+
+        // Toolbar
+        const toolbar = document.createElement('div');
+        toolbar.className = 'form-toolbar';
+        toolbar.innerHTML = `
+            <div class="toolbar-content">
+                <span class="toolbar-status" id="form-save-status">Autosalvo</span>
+                <div class="toolbar-actions">
+                    <button class="btn-primary" id="btn-submit-netlify">💾 Salvar</button>
+                    <button class="btn-danger" id="btn-clear-data">🗑️ Limpar</button>
+                </div>
+            </div>
+            <div class="form-tabs" id="form-tabs">
+                <!-- Javascript populates this -->
+            </div>
+        `;
+        newContainer.appendChild(toolbar);
+
+        // Content Wrapper
+        const contentWrapper = document.createElement('div');
+        contentWrapper.className = 'form-content-wrapper';
+        newContainer.appendChild(contentWrapper);
+
+        // Parsing logic
+        let currentWrapper = document.createElement('div');
+        currentWrapper.className = 'tab-pane active'; // Start with Intro active
+        currentWrapper.id = 'pane-intro';
+        contentWrapper.appendChild(currentWrapper);
+
+        const tabData = [{ id: 'pane-intro', label: 'Introdução' }];
+
+        // Nested Tabs state
+        let nestedTabsContainer = null;
+        let nestedTabsBar = null;
+        let nestedTabsContent = null;
+        let currentNestedPane = null;
+        let nestedTabData = [];
+        let isFirstH3InSection = true;
+
+        Array.from(div.children).forEach(child => {
+            if (child.tagName === 'H2') {
+                // Close any open nested tabs structure
+                if (nestedTabsContainer && nestedTabData.length > 0) {
+                    // Render nested tab buttons
+                    nestedTabData.forEach((nt, idx) => {
+                        const btn = document.createElement('button');
+                        btn.className = `nested-tab ${idx === 0 ? 'active' : ''}`;
+                        btn.dataset.target = nt.id;
+                        btn.textContent = nt.label;
+                        nestedTabsBar.appendChild(btn);
+                    });
+                    currentWrapper.appendChild(nestedTabsContainer);
+                }
+                nestedTabsContainer = null;
+                nestedTabsBar = null;
+                nestedTabsContent = null;
+                currentNestedPane = null;
+                nestedTabData = [];
+                isFirstH3InSection = true;
+
+                // New Section
+                const title = child.textContent;
+                const key = Object.keys(labelMap).find(k => title.toUpperCase().includes(k));
+                const label = key ? labelMap[key] : title.substring(0, 15);
+                const id = 'pane-' + this.slugify(label);
+
+                currentWrapper = document.createElement('div');
+                currentWrapper.className = 'tab-pane';
+                currentWrapper.id = id;
+                contentWrapper.appendChild(currentWrapper);
+                tabData.push({ id: id, label: label });
+
+            } else if (child.tagName === 'H3') {
+                const h3Text = child.textContent.trim();
+
+                // First H3 is usually "Contexto" - render it as intro text, not a tab
+                if (isFirstH3InSection && h3Text.toLowerCase().includes('contexto')) {
+                    isFirstH3InSection = false;
+                    // Just append the H3 as-is (intro heading)
+                    currentWrapper.appendChild(child);
+                } else {
+                    // This is a sub-tab category
+                    if (!nestedTabsContainer) {
+                        // Initialize nested tabs structure
+                        nestedTabsContainer = document.createElement('div');
+                        nestedTabsContainer.className = 'nested-tabs-container';
+
+                        nestedTabsBar = document.createElement('div');
+                        nestedTabsBar.className = 'nested-tabs-bar';
+                        nestedTabsContainer.appendChild(nestedTabsBar);
+
+                        nestedTabsContent = document.createElement('div');
+                        nestedTabsContent.className = 'nested-tabs-content';
+                        nestedTabsContainer.appendChild(nestedTabsContent);
+                    }
+
+                    // Create new nested pane
+                    const nestedId = 'nested-' + this.slugify(h3Text);
+                    currentNestedPane = document.createElement('div');
+                    currentNestedPane.className = `nested-pane ${nestedTabData.length === 0 ? 'active' : ''}`;
+                    currentNestedPane.id = nestedId;
+                    nestedTabsContent.appendChild(currentNestedPane);
+
+                    nestedTabData.push({ id: nestedId, label: h3Text.replace('Perguntas sobre ', '').replace('Perguntas ', '') });
+                    isFirstH3InSection = false;
+                }
+            } else {
+                // Append content to the appropriate container
+                if (currentNestedPane) {
+                    currentNestedPane.appendChild(child);
+                } else {
+                    currentWrapper.appendChild(child);
+                }
+            }
+        });
+
+        // Close final nested tabs if any
+        if (nestedTabsContainer && nestedTabData.length > 0) {
+            nestedTabData.forEach((nt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `nested-tab ${idx === 0 ? 'active' : ''}`;
+                btn.dataset.target = nt.id;
+                btn.textContent = nt.label;
+                nestedTabsBar.appendChild(btn);
+            });
+            currentWrapper.appendChild(nestedTabsContainer);
+        }
+
+        // 3. Render Tabs Buttons
+        const tabsContainer = toolbar.querySelector('#form-tabs');
+        tabData.forEach((tab, index) => {
+            const btn = document.createElement('button');
+            btn.className = `form-tab ${index === 0 ? 'active' : ''}`;
+            btn.dataset.target = tab.id;
+            btn.textContent = tab.label;
+            tabsContainer.appendChild(btn);
+        });
+
+        return newContainer.innerHTML;
+    }
+
+    /**
+     * Setup event listeners for the Investigation Form
+     */
+    setupInvestigationForm() {
+        this.loadFormAnswers();
+
+        // Autosave listeners
+        const inputs = this.contentEl.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('input', (e) => {
+                this.saveFormAnswer(e.target.id, e.target.value);
+                this.updateSaveStatus('Salvando...');
+                clearTimeout(this.saveTimeout);
+                this.saveTimeout = setTimeout(() => {
+                    this.updateSaveStatus('Salvo');
+                }, 1000);
+            });
+        });
+
+        // Tab Switching Logic
+        const tabs = this.contentEl.querySelectorAll('.form-tab');
+        const panes = this.contentEl.querySelectorAll('.tab-pane');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Active Tab
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Active Pane
+                const targetId = tab.dataset.target;
+                panes.forEach(p => {
+                    p.classList.remove('active');
+                    if (p.id === targetId) p.classList.add('active');
+                });
+
+                // Scroll to top of content (below toolbar)
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Nested Tab Switching Logic (Fichário)
+        const nestedTabs = this.contentEl.querySelectorAll('.nested-tab');
+        nestedTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const container = tab.closest('.nested-tabs-container');
+                if (!container) return;
+
+                // Active nested tab button
+                container.querySelectorAll('.nested-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Active nested pane
+                const targetId = tab.dataset.target;
+                container.querySelectorAll('.nested-pane').forEach(p => {
+                    p.classList.remove('active');
+                    if (p.id === targetId) p.classList.add('active');
+                });
+            });
+        });
+
+        // Button listeners
+        const btnSubmit = this.contentEl.querySelector('#btn-submit-netlify');
+        const btnClear = this.contentEl.querySelector('#btn-clear-data');
+
+        if (btnSubmit) btnSubmit.addEventListener('click', () => this.submitToNetlify());
+
+        if (btnClear) btnClear.addEventListener('click', () => {
+            if (confirm('Tem certeza que deseja apagar todas as respostas e começar do zero?')) {
+                localStorage.removeItem('investigation_form_data');
+                location.reload();
+            }
+        });
+    }
+
+    updateSaveStatus(msg) {
+        document.querySelectorAll('#form-save-status').forEach(el => el.textContent = msg);
+    }
+
+    /**
+     * Load answers from localStorage
+     */
+    loadFormAnswers() {
+        const data = JSON.parse(localStorage.getItem('investigation_form_data') || '{}');
+        Object.entries(data).forEach(([id, value]) => {
+            const el = document.getElementById(id);
+            if (el) el.value = value;
+        });
+    }
+
+    /**
+     * Save single answer to localStorage
+     */
+    saveFormAnswer(id, value) {
+        const data = JSON.parse(localStorage.getItem('investigation_form_data') || '{}');
+        data[id] = value;
+        localStorage.setItem('investigation_form_data', JSON.stringify(data));
+    }
+
+
+
+    /**
+     * Submit data to Netlify Forms
+     */
+    async submitToNetlify() {
+        const btn = this.contentEl.querySelector('#btn-submit-netlify');
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Enviando...';
+        this.updateSaveStatus('Enviando...');
+
+        try {
+            const data = JSON.parse(localStorage.getItem('investigation_form_data') || '{}');
+            const contextInfo = `Data: ${new Date().toLocaleString()} | UserAgent: ${navigator.userAgent}`;
+
+            // Prepare FormData for Netlify
+            const formData = new FormData();
+            formData.append('form-name', 'investigation-data');
+            formData.append('context_info', contextInfo);
+
+            // Handle Attachments
+            const fileInputs = this.contentEl.querySelectorAll('.form-attachment');
+            const attachmentMap = {};
+            let fileCount = 0;
+
+            fileInputs.forEach((input) => {
+                if (input.files.length > 0 && fileCount < 10) {
+                    const file = input.files[0];
+                    const fieldName = `attachment_${fileCount}`;
+
+                    // Append file to FormData
+                    formData.append(fieldName, file);
+
+                    // Record metadata
+                    attachmentMap[fieldName] = {
+                        originalName: file.name,
+                        fieldId: input.id,
+                        context: input.dataset.context || 'Unknown'
+                    };
+
+                    fileCount++;
+                }
+            });
+
+            // Add attachments map to payload
+            data._attachments_map = attachmentMap;
+
+            // Add main payload
+            formData.append('payload', JSON.stringify(data, null, 2));
+
+            // Send via Fetch (Content-Type is set automatically for FormData)
+            const response = await fetch('/', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                alert('✅ Dados e arquivos enviados com sucesso para a nuvem!');
+                this.updateSaveStatus('Enviado para Nuvem');
+            } else {
+                throw new Error('Erro na resposta do servidor');
+            }
+
+        } catch (error) {
+            console.error('Netlify Submit Error:', error);
+            alert('❌ Erro ao enviar dados. Verifique sua conexão.');
+            this.updateSaveStatus('Erro no envio');
+        } finally {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
     }
 
     /**
@@ -1264,6 +1712,8 @@ class ReportReader {
         if (articlePath.includes('08-plano-de-intervencao-estrategica')) {
             // War Room Dashboard for Article 08
             processedHtml = this.renderWarRoom(html);
+        } else if (articlePath.includes('roteiro-investigacao-unidades')) {
+            processedHtml = this.renderInvestigationForm(html);
         } else {
             // Unify logic for 01-07
             const articleId = this.findArticleIdByPath(articlePath);

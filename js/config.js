@@ -94,6 +94,13 @@ const ARTICLES = [
         subtitle: 'Catálogo CoP 2024',
         path: './Refined/10-catalogo-experimentos-2024.md',
         icon: '🧪'
+    },
+    {
+        id: '15',
+        title: 'Roteiro de Investigação',
+        subtitle: 'Due Diligence & Coleta',
+        path: './Refined/roteiro-investigacao-unidades.md',
+        icon: '📝'
     }
 ];
 

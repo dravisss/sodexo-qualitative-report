@@ -1,0 +1,356 @@
+/* Form styles for Investigation Script */
+
+.form-input {
+    width: 100%;
+    min-width: 120px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    transition: var(--transition-fast);
+    background: var(--color-bg-card-alt);
+    color: var(--color-text);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 2px var(--color-teal-light);
+    background: var(--color-bg-card);
+}
+
+.form-textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    resize: vertical;
+    transition: var(--transition-fast);
+    background: var(--color-bg-card-alt);
+    color: var(--color-text);
+    margin-top: var(--spacing-xs);
+}
+
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 2px var(--color-teal-light);
+    background: var(--color-bg-card);
+}
+
+.answer-container {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Toolbar */
+.form-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: center;
+    border-radius: var(--radius-md);
+}
+
+.toolbar-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.toolbar-status {
+    color: var(--color-success);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.toolbar-status::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: currentColor;
+    border-radius: 50%;
+}
+
+.toolbar-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-fast);
+    font-size: var(--font-size-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-primary {
+    background: var(--color-teal);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--color-teal-dark);
+}
+
+.btn-secondary {
+    background: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background: var(--color-border-light);
+}
+
+.btn-danger {
+    background: transparent;
+    color: var(--color-error);
+    border: 1px solid var(--color-error-light);
+}
+
+.btn-danger:hover {
+    background: var(--color-error-light);
+}
+
+/* Custom File Upload */
+.file-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.custom-file-upload {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    transition: var(--transition-fast);
+    white-space: nowrap;
+}
+
+.custom-file-upload:hover {
+    background-color: var(--color-bg-subtle);
+    border-color: var(--color-teal);
+    color: var(--color-teal);
+}
+
+.custom-file-upload .icon {
+    font-size: 1.1em;
+}
+
+.file-name-display {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    word-break: break-all;
+    max-width: 100%;
+    margin-top: 2px;
+}
+
+/* Tabs Navigation */
+.form-tabs {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 var(--page-padding);
+    margin-bottom: 0;
+    border-bottom: none;
+    gap: var(--spacing-lg);
+    background: var(--color-bg-card);
+}
+
+.form-tab {
+    padding: var(--spacing-md) 0;
+    /* Top/Bottom padding only */
+    border-bottom: 2px solid transparent;
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent !important;
+    /* No background pills */
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-fast);
+}
+
+.form-tab:hover {
+    color: var(--color-teal);
+    background: transparent !important;
+}
+
+.form-tab.active {
+    color: var(--color-teal);
+    border-bottom-color: var(--color-teal);
+    font-weight: 600;
+    background: transparent !important;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Override Toolbar for cleaner look */
+.form-toolbar {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 0;
+    margin-bottom: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin-left: calc(var(--page-padding) * -1);
+    margin-right: calc(var(--page-padding) * -1);
+    padding: 0;
+    /* Remove padding from container, move to children */
+    width: calc(100% + var(--page-padding) * 2);
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    /* STACK THEM */
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Table specific adjustments */
+.tab-pane table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tab-pane td {
+    white-space: normal;
+    word-wrap: break-word;
+    padding: var(--spacing-sm);
+    vertical-align: top;
+}
+
+/* Adjust input in tables */
+.tab-pane td .form-input {
+    min-width: 0;
+    /* Allow shrinking */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Label column width */
+.tab-pane td:first-child {
+    width: 30%;
+    /* Give more space to label */
+    font-weight: 500;
+}
+
+.toolbar-content {
+    padding: var(--spacing-md) var(--page-padding);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Accordion Styles (H3) */
+.form-accordion {
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-card);
+    overflow: hidden;
+}
+
+.form-accordion summary {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-subtle);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    list-style: none;
+    /* Hide default marker in some browsers */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color var(--transition-fast);
+}
+
+.form-accordion summary:hover {
+    background: var(--color-border);
+    /* Slightly darker */
+}
+
+/* Custom Marker */
+.form-accordion summary::after {
+    content: '+';
+    font-weight: bold;
+    color: var(--color-text-muted);
+}
+
+.form-accordion[open] summary::after {
+    content: '-';
+}
+
+/* Hide default marker for webkit */
+.form-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.form-accordion[open] summary {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.form-accordion[open]>*:not(summary) {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Content padding */
+.form-accordion>*:not(summary) {
+    padding: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+}
