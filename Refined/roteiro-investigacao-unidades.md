@@ -9,9 +9,9 @@ Este documento consolida as lacunas identificadas no relatório e as traduz em p
 ### Contexto
 Para calcular o ROI real das intervenções e justificar investimentos ao Board, precisamos de dados financeiros e operacionais granulares de cada unidade estudada. Sem esses números, as propostas ficam abstratas.
 
-### Dados Necessários por Unidade (Cajamar, Guarulhos FOOD, Guarulhos FM)
+**Dados Necessários por Unidade (Cajamar, Guarulhos FOOD, Guarulhos FM)**
 
-#### A. Quadro de Pessoal e Salários
+### A. Quadro de Pessoal e Salários
 
 | Dado | Cajamar | GRU FOOD | GRU FM |
 |------|---------|----------|--------|
@@ -35,7 +35,7 @@ Para calcular o ROI real das intervenções e justificar investimentos ao Board,
 
 ---
 
-#### B. Custos Operacionais e Insumos
+### B. Custos Operacionais e Insumos
 
 | Dado | Cajamar | GRU FOOD | GRU FM |
 |------|---------|----------|--------|
@@ -57,7 +57,7 @@ Para calcular o ROI real das intervenções e justificar investimentos ao Board,
 
 ---
 
-#### C. Faturamento e Margem de Lucro
+### C. Faturamento e Margem de Lucro
 
 | Dado | Cajamar | GRU FOOD | GRU FM |
 |------|---------|----------|--------|
@@ -78,7 +78,7 @@ Para calcular o ROI real das intervenções e justificar investimentos ao Board,
 
 ---
 
-#### D. Volumetria e Capacidade
+### D. Volumetria e Capacidade
 
 | Dado | Cajamar | GRU FOOD | GRU FM |
 |------|---------|----------|--------|
@@ -96,7 +96,7 @@ Para calcular o ROI real das intervenções e justificar investimentos ao Board,
 
 ---
 
-#### E. Passivos e Provisões
+### E. Passivos e Provisões
 
 | Dado | Cajamar | GRU FOOD | GRU FM |
 |------|---------|----------|--------|
@@ -115,7 +115,7 @@ Para calcular o ROI real das intervenções e justificar investimentos ao Board,
 
 ---
 
-#### F. Processos e Escalas
+### F. Processos e Escalas
 
 34. **Novas Intervenções (Turnos e Processos):** [Sem Campo]
     - **Turno de Pré-Preparo (I-32):** Existe viabilidade de alterar a escala para ter uma equipe entrando 2 horas antes apenas para mise en place? Qual seria o impacto na folha?

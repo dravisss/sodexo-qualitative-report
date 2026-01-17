@@ -297,60 +297,77 @@
     border-bottom: 1px solid var(--color-border-light);
 }
 
-/* Accordion Styles (H3) */
-.form-accordion {
-    margin-bottom: var(--spacing-sm);
+/* Nested Tabs (Fichário) */
+.nested-tabs-container {
+    margin-top: var(--spacing-md);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     background: var(--color-bg-card);
     overflow: hidden;
 }
 
-.form-accordion summary {
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--color-bg-subtle);
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--color-text-primary);
-    list-style: none;
-    /* Hide default marker in some browsers */
+.nested-tabs-bar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: background-color var(--transition-fast);
-}
-
-.form-accordion summary:hover {
-    background: var(--color-border);
-    /* Slightly darker */
-}
-
-/* Custom Marker */
-.form-accordion summary::after {
-    content: '+';
-    font-weight: bold;
-    color: var(--color-text-muted);
-}
-
-.form-accordion[open] summary::after {
-    content: '-';
-}
-
-/* Hide default marker for webkit */
-.form-accordion summary::-webkit-details-marker {
-    display: none;
-}
-
-.form-accordion[open] summary {
+    gap: 0;
+    background: var(--color-bg-subtle);
     border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Fix unwanted vertical scrollbar */
+    -webkit-overflow-scrolling: touch;
 }
 
-.form-accordion[open]>*:not(summary) {
-    animation: fadeIn 0.3s ease;
+/* Hide scrollbar track for a cleaner look in the header if desired */
+.nested-tabs-bar::-webkit-scrollbar {
+    height: 4px;
+    /* Thin scrollbar for x */
 }
 
-/* Content padding */
-.form-accordion>*:not(summary) {
+.nested-tabs-bar::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
+}
+
+.nested-tab {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-right: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-fast);
+}
+
+.nested-tab:last-child {
+    border-right: none;
+}
+
+.nested-tab:hover {
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--color-text-primary);
+}
+
+.nested-tab.active {
+    background: var(--color-bg-card);
+    color: var(--color-teal);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-teal);
+    margin-bottom: -1px;
+}
+
+.nested-tabs-content {
     padding: var(--spacing-md);
-    padding-top: var(--spacing-sm);
+}
+
+.nested-pane {
+    display: none;
+    animation: fadeIn 0.25s ease;
+}
+
+.nested-pane.active {
+    display: block;
 }

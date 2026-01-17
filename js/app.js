@@ -655,6 +655,7 @@ class ReportReader {
             'RELAÇÕES SINDICAIS': 'Sindical',
             'COMERCIAL': 'Comercial',
             'REMUNERAÇÃO': 'Remuneração',
+            'INTERVENÇÕES': 'Intervenções',
             'REVISÃO': 'Revisão',
             'RISCOS': 'Riscos'
         };
