@@ -14,7 +14,8 @@ export class AutoSaveManager {
         this.metaKey = options.metaKey || 'investigation_form_meta';
 
         this.submissionId = null;
-        this.unitSlug = options.unitSlug || 'general'; // Default unit
+        this.submissionId = null;
+        this.unitSlug = 'master'; // Enforce single master unit (Unified Form)
         this.syncTimer = null;
         this.isSyncing = false;
         this.isOnline = navigator.onLine;
@@ -22,9 +23,12 @@ export class AutoSaveManager {
         // Load existing submission ID from localStorage
         this.loadMeta();
 
-        // Initial sync from cloud if we have an ID
+        // Initial sync from cloud
         if (this.submissionId) {
             this.fetchFromCloud();
+        } else {
+            // If no ID, try to fetch the latest for the current unit (Login behavior)
+            this.fetchLatestForUnit(this.unitSlug);
         }
 
         // Online/Offline detection
@@ -37,9 +41,29 @@ export class AutoSaveManager {
      */
     loadMeta() {
         try {
+            // Priority: URL Search Param > LocalStorage
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlId = urlParams.get('id');
+
             const meta = JSON.parse(localStorage.getItem(this.metaKey) || '{}');
-            this.submissionId = meta.submissionId || null;
-            this.unitSlug = meta.unitSlug || this.unitSlug;
+
+            if (urlId) {
+                this.submissionId = urlId;
+            } else {
+                this.submissionId = meta.submissionId || null;
+
+                // Update URL if ID found in storage
+                if (this.submissionId) {
+                    const currentUrl = new URL(window.location);
+                    if (currentUrl.searchParams.get('id') !== this.submissionId) {
+                        currentUrl.searchParams.set('id', this.submissionId);
+                        window.history.replaceState({}, '', currentUrl);
+                    }
+                }
+            }
+
+            // FORCE MASTER SLUG
+            this.unitSlug = 'master';
         } catch (e) {
             console.warn('Failed to load form meta:', e);
         }
@@ -161,6 +185,13 @@ export class AutoSaveManager {
                 this.submissionId = result.submission_id;
                 this.saveMeta();
                 this.updateStatus('Salvo na nuvem', 'saved');
+
+                // Update URL for sharing/resuming
+                const currentUrl = new URL(window.location);
+                if (currentUrl.searchParams.get('id') !== this.submissionId) {
+                    currentUrl.searchParams.set('id', this.submissionId);
+                    window.history.replaceState({}, '', currentUrl);
+                }
             } else {
                 throw new Error(result.error || 'Sync failed');
             }
@@ -329,8 +360,34 @@ export class AutoSaveManager {
     updateFileUI(fieldId, fileName) {
         const nameDisplay = document.getElementById(`${fieldId}_name`);
         if (nameDisplay) {
-            nameDisplay.textContent = `✅ ${fileName}`;
+            nameDisplay.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="file-success" style="color: var(--color-success);">✅ ${fileName}</span>
+                    <button type="button" class="btn-icon remove-file-btn" data-field="${fieldId}" title="Remover arquivo" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
+                        ❌
+                    </button>
+                </div>
+            `;
         }
+    }
+
+    /**
+     * Remove an answer and its associated blob
+     */
+    removeAnswer(fieldId) {
+        const answers = this.getAnswers();
+
+        // Remove text answer if any
+        if (answers[fieldId]) delete answers[fieldId];
+
+        // Remove blob reference
+        if (answers[`${fieldId}_blob`]) delete answers[`${fieldId}_blob`];
+
+        this.saveMeta(); // Save to local storage
+        this.updateStatus('Arquivo removido', 'saved');
+
+        // Trigger sync to cloud
+        this.syncToCloud();
     }
 
     /**
@@ -344,8 +401,75 @@ export class AutoSaveManager {
     /**
      * Set the unit slug (called from unit selector UI)
      */
+    /**
+     * Set the unit slug - DEPRECATED / NO-OP
+     * Keeping method signature to prevent crashes if called, but does nothing.
+     */
     setUnit(slug) {
-        this.unitSlug = slug;
-        this.saveMeta();
+        console.log('Unit switching disabled. Using master form.');
+    }
+
+    /**
+     * Fetch latest submission for a specific unit (Login behavior)
+     */
+    async fetchLatestForUnit(slug) {
+        if (!navigator.onLine) return;
+
+        this.updateStatus('Buscando dados...', 'saving');
+
+        try {
+            const response = await fetch(`${this.apiBase}/api/get-submission?unit=${slug}`);
+            if (!response.ok) throw new Error('Fetch failed'); // 404 is handled inside
+
+            const result = await response.json();
+
+            // Clear current data first (in case we switch to empty unit)
+            let merged = {};
+            this.submissionId = null;
+
+            if (result.success && result.submission) {
+                this.submissionId = result.submission.id;
+                const cloudAnswers = result.submission.answers || {};
+
+                // For unit switch, cloud data overwrites local completely (fresh start)
+                // OR we can keep local? No, simpler to load fresh.
+                merged = cloudAnswers;
+
+                // Update URL
+                const currentUrl = new URL(window.location);
+                if (currentUrl.searchParams.get('id') !== this.submissionId) {
+                    currentUrl.searchParams.set('id', this.submissionId);
+                    window.history.replaceState({}, '', currentUrl);
+                }
+            } else {
+                // No submission found for this unit. Start fresh.
+                // Clear URL ID if present
+                const currentUrl = new URL(window.location);
+                currentUrl.searchParams.delete('id');
+                window.history.replaceState({}, '', currentUrl);
+            }
+
+            // Update Storage
+            localStorage.setItem(this.storageKey, JSON.stringify(merged));
+            this.saveMeta();
+
+            // Setup UI for files (if any in result)
+            if (result.success && result.submission && result.submission.attachments) {
+                // Clear all old file UIs first? No easy way. 
+                // But updateFileUI updates specific IDs.
+                result.submission.attachments.forEach(att => {
+                    this.updateFileUI(att.field_id, att.file_name);
+                });
+            }
+
+            this.updateStatus('Dados carregados', 'saved');
+
+            // Dispatch event to update Form
+            window.dispatchEvent(new CustomEvent('form-data-loaded', { detail: merged }));
+
+        } catch (e) {
+            console.error('Fetch unit error:', e);
+            this.updateStatus('Erro ao buscar unidade', 'error');
+        }
     }
 }

@@ -571,7 +571,7 @@ class ReportReader {
                                 <label for="${fieldId}" class="custom-file-upload">
                                     <span class="icon">📎</span> Anexar
                                 </label>
-                                <input type="file" class="form-attachment" id="${fieldId}" data-context="Table ${tIndex} Row ${rIndex}" hidden onchange="document.getElementById('${fieldId}_name').textContent = this.files.length > 0 ? this.files[0].name : ''" />
+                                <input type="file" class="form-attachment" id="${fieldId}" data-context="Table ${tIndex} Row ${rIndex}" hidden />
                                 <div id="${fieldId}_name" class="file-name-display"></div>
                             </div>
                          `;
@@ -626,7 +626,7 @@ class ReportReader {
                         <label for="${fileId}" class="custom-file-upload">
                             <span class="icon">📎</span> Anexar Evidência
                         </label>
-                        <input type="file" class="form-attachment" id="${fileId}" data-context="Question ${index}" hidden onchange="document.getElementById('${fileId}_name').textContent = this.files.length > 0 ? this.files[0].name : ''" />
+                        <input type="file" class="form-attachment" id="${fileId}" data-context="Question ${index}" hidden />
                         <div id="${fileId}_name" class="file-name-display"></div>
                     </div>
                 `;
@@ -862,12 +862,7 @@ class ReportReader {
         });
 
         // Unit selector (if any)
-        const unitSelector = this.contentEl.querySelector('#unit-selector'); // Assuming an element with id 'unit-selector'
-        if (unitSelector) {
-            unitSelector.addEventListener('change', (e) => {
-                this.autoSave.setUnit(e.target.value);
-            });
-        }
+        // Unit selector (removed)
 
         // Listen for cloud data load
         window.addEventListener('form-data-loaded', (e) => {
@@ -880,14 +875,30 @@ class ReportReader {
             input.addEventListener('change', async (e) => {
                 const blobKey = await this.autoSave.uploadFile(e.target);
                 if (blobKey) {
-                    // Update file name display
-                    const nameDisplay = document.getElementById(`${e.target.id}_name`);
-                    if (nameDisplay) {
-                        nameDisplay.textContent = `✅ ${e.target.files[0].name}`;
-                    }
+                    this.autoSave.updateFileUI(e.target.id, e.target.files[0].name);
                 }
             });
         });
+
+        // Remove button handler (delegated)
+        if (!this.hasRemoveListener) {
+            this.contentEl.addEventListener('click', (e) => {
+                const btn = e.target.closest('.remove-file-btn');
+                if (btn) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const fieldId = btn.dataset.field;
+                    // Clear input
+                    const input = document.getElementById(fieldId);
+                    if (input) input.value = '';
+                    // Clear UI
+                    document.getElementById(`${fieldId}_name`).innerHTML = '';
+                    // Remove from storage
+                    this.autoSave.removeAnswer(fieldId);
+                }
+            });
+            this.hasRemoveListener = true;
+        }
 
 
         // Tab Switching Logic
