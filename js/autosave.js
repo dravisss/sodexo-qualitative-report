@@ -132,11 +132,13 @@ export class AutoSaveManager {
 
         try {
             const answers = this.getAnswers();
+            const answersMetadata = this.collectFieldMetadata();
 
             const payload = {
                 submission_id: this.submissionId,
                 unit_slug: this.unitSlug,
                 answers: answers,
+                answers_metadata: answersMetadata,
                 respondent_info: {
                     userAgent: navigator.userAgent,
                     timestamp: new Date().toISOString()
@@ -156,7 +158,6 @@ export class AutoSaveManager {
             const result = await response.json();
 
             if (result.success) {
-                // Store the submission ID for future updates
                 this.submissionId = result.submission_id;
                 this.saveMeta();
                 this.updateStatus('Salvo na nuvem', 'saved');
@@ -170,6 +171,65 @@ export class AutoSaveManager {
         } finally {
             this.isSyncing = false;
         }
+    }
+
+    /**
+     * Collect metadata for each field from the DOM
+     */
+    collectFieldMetadata() {
+        const metadata = {};
+
+        // Find all form inputs and extract their context
+        document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
+            const fieldId = input.id;
+            if (!fieldId) return;
+
+            // Find section (tab content container)
+            const tabContent = input.closest('.tab-content');
+            const sectionName = tabContent?.dataset?.tabLabel || 'Geral';
+
+            // Find subsection (h3)
+            const subsection = input.closest('div')?.previousElementSibling;
+            let subsectionName = null;
+            let el = input.parentElement;
+            while (el && !subsectionName) {
+                const h3 = el.querySelector('h3') || el.previousElementSibling;
+                if (h3?.tagName === 'H3') {
+                    subsectionName = h3.textContent.trim();
+                    break;
+                }
+                el = el.parentElement;
+            }
+
+            // Find question text (parent li or label)
+            let questionText = null;
+            const li = input.closest('li');
+            if (li) {
+                // Get text content before the input
+                const clone = li.cloneNode(true);
+                clone.querySelectorAll('input, textarea, .input-container, .file-upload-wrapper').forEach(e => e.remove());
+                questionText = clone.textContent.trim().substring(0, 500);
+            }
+
+            // For table cells, build context
+            if (fieldId.startsWith('table_')) {
+                const table = input.closest('table');
+                const row = input.closest('tr');
+                const headerRow = table?.querySelector('tr');
+                const headers = headerRow ? Array.from(headerRow.querySelectorAll('th, td')).map(th => th.textContent.trim()) : [];
+                const firstCell = row?.querySelector('td')?.textContent.trim() || '';
+                questionText = `Tabela: ${headers.join(' | ')} | Linha: ${firstCell}`;
+            }
+
+            metadata[fieldId] = {
+                section: sectionName,
+                subsection: subsectionName,
+                question_text: questionText,
+                field_type: input.tagName === 'TEXTAREA' ? 'textarea' : (fieldId.includes('table_') ? 'table_cell' : 'text')
+            };
+        });
+
+        return metadata;
     }
 
     /**

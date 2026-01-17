@@ -1,18 +1,18 @@
 import { sql } from './lib/db.mjs';
 
 /**
- * Sync Submissions - Upsert Logic
+ * Sync Submissions - Upsert Logic with Individual Answers
  * POST /api/sync-submissions
  * 
  * Body: {
  *   submission_id?: string (UUID) - If provided, UPDATE. Otherwise INSERT.
  *   unit_slug: string,
  *   answers: object,
+ *   answers_metadata?: object - { field_id: { section, subsection, question_text, field_type } }
  *   respondent_info?: object
  * }
  */
 export default async (req, context) => {
-    // CORS headers for browser requests
     const headers = {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
@@ -20,7 +20,6 @@ export default async (req, context) => {
         'Access-Control-Allow-Headers': 'Content-Type'
     };
 
-    // Handle preflight
     if (req.method === 'OPTIONS') {
         return new Response(null, { status: 204, headers });
     }
@@ -39,7 +38,7 @@ export default async (req, context) => {
 
     try {
         const body = await req.json();
-        const { submission_id, unit_slug, answers, respondent_info } = body;
+        const { submission_id, unit_slug, answers, answers_metadata, respondent_info } = body;
 
         if (!unit_slug || !answers) {
             return new Response(JSON.stringify({
@@ -48,9 +47,10 @@ export default async (req, context) => {
         }
 
         let result;
+        let finalSubmissionId = submission_id;
 
+        // Upsert submission (keep JSONB answers for backward compatibility)
         if (submission_id) {
-            // UPDATE existing submission
             result = await sql`
                 UPDATE submissions 
                 SET 
@@ -63,7 +63,6 @@ export default async (req, context) => {
             `;
 
             if (result.length === 0) {
-                // ID not found, INSERT instead
                 result = await sql`
                     INSERT INTO submissions (unit_slug, answers, respondent_info)
                     VALUES (${unit_slug}, ${JSON.stringify(answers)}::jsonb, ${respondent_info ? JSON.stringify(respondent_info) : null}::jsonb)
@@ -71,7 +70,6 @@ export default async (req, context) => {
                 `;
             }
         } else {
-            // INSERT new submission
             result = await sql`
                 INSERT INTO submissions (unit_slug, answers, respondent_info)
                 VALUES (${unit_slug}, ${JSON.stringify(answers)}::jsonb, ${respondent_info ? JSON.stringify(respondent_info) : null}::jsonb)
@@ -79,9 +77,40 @@ export default async (req, context) => {
             `;
         }
 
+        finalSubmissionId = result[0].id;
+
+        // Upsert individual answers with metadata
+        if (answers_metadata) {
+            for (const [fieldId, value] of Object.entries(answers)) {
+                if (fieldId.endsWith('_blob')) continue; // Skip blob refs
+
+                const meta = answers_metadata[fieldId] || {};
+
+                await sql`
+                    INSERT INTO answers (submission_id, field_id, field_type, section_name, subsection_name, question_text, answer_value)
+                    VALUES (
+                        ${finalSubmissionId}::uuid,
+                        ${fieldId},
+                        ${meta.field_type || 'text'},
+                        ${meta.section || null},
+                        ${meta.subsection || null},
+                        ${meta.question_text || null},
+                        ${value}
+                    )
+                    ON CONFLICT (submission_id, field_id) 
+                    DO UPDATE SET 
+                        answer_value = EXCLUDED.answer_value,
+                        section_name = COALESCE(EXCLUDED.section_name, answers.section_name),
+                        subsection_name = COALESCE(EXCLUDED.subsection_name, answers.subsection_name),
+                        question_text = COALESCE(EXCLUDED.question_text, answers.question_text),
+                        updated_at = NOW()
+                `;
+            }
+        }
+
         return new Response(JSON.stringify({
             success: true,
-            submission_id: result[0].id,
+            submission_id: finalSubmissionId,
             synced_at: result[0].last_synced_at
         }), { status: 200, headers });
 

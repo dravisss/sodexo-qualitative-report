@@ -29,6 +29,21 @@ CREATE TABLE IF NOT EXISTS attachments (
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- New: Individual answers table with question metadata
+CREATE TABLE IF NOT EXISTS answers (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    submission_id UUID REFERENCES submissions(id) ON DELETE CASCADE,
+    field_id TEXT NOT NULL,
+    field_type TEXT DEFAULT 'text', -- 'text', 'file', 'table_cell'
+    section_name TEXT,              -- 'Operacional', 'Sindical', etc.
+    subsection_name TEXT,           -- 'A. Quadro de Pessoal e Salários'
+    question_text TEXT,             -- Full question text for easy interpretation
+    answer_value TEXT,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(submission_id, field_id)
+);
+
 -- Seed initial units
 INSERT INTO units (slug, name) VALUES
     ('general', 'Relatório Geral'),
@@ -41,3 +56,6 @@ ON CONFLICT (slug) DO NOTHING;
 CREATE INDEX IF NOT EXISTS idx_submissions_unit ON submissions(unit_slug);
 CREATE INDEX IF NOT EXISTS idx_submissions_status ON submissions(status);
 CREATE INDEX IF NOT EXISTS idx_attachments_submission ON attachments(submission_id);
+CREATE INDEX IF NOT EXISTS idx_answers_submission ON answers(submission_id);
+CREATE INDEX IF NOT EXISTS idx_answers_field ON answers(field_id);
+CREATE INDEX IF NOT EXISTS idx_answers_section ON answers(section_name);
