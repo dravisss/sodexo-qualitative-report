@@ -749,13 +749,44 @@ class ReportReader {
                 } else {
                     // This is a sub-tab category
                     if (!nestedTabsContainer) {
-                        // Initialize nested tabs structure
+                        // Initialize nested tabs structure with navigation wrapper
                         nestedTabsContainer = document.createElement('div');
                         nestedTabsContainer.className = 'nested-tabs-container';
 
+                        const navWrapper = document.createElement('div');
+                        navWrapper.className = 'nested-tabs-nav-wrapper';
+
+                        const btnPrev = document.createElement('button');
+                        btnPrev.className = 'nested-nav-btn prev';
+                        btnPrev.innerHTML = '&larr;';
+                        btnPrev.style.display = 'none';
+                        btnPrev.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const wrapper = btnPrev.closest('.nested-tabs-nav-wrapper');
+                            const bar = wrapper.querySelector('.nested-tabs-bar');
+                            bar.scrollBy({ left: -240, behavior: 'smooth' });
+                        });
+
+                        const btnNext = document.createElement('button');
+                        btnNext.className = 'nested-nav-btn next';
+                        btnNext.innerHTML = '&rarr;';
+                        btnNext.style.display = 'none';
+                        btnNext.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const wrapper = btnNext.closest('.nested-tabs-nav-wrapper');
+                            const bar = wrapper.querySelector('.nested-tabs-bar');
+                            bar.scrollBy({ left: 240, behavior: 'smooth' });
+                        });
+
                         nestedTabsBar = document.createElement('div');
                         nestedTabsBar.className = 'nested-tabs-bar';
-                        nestedTabsContainer.appendChild(nestedTabsBar);
+
+                        navWrapper.appendChild(btnPrev);
+                        navWrapper.appendChild(nestedTabsBar);
+                        navWrapper.appendChild(btnNext);
+                        nestedTabsContainer.appendChild(navWrapper);
 
                         nestedTabsContent = document.createElement('div');
                         nestedTabsContent.className = 'nested-tabs-content';
@@ -827,6 +858,28 @@ class ReportReader {
         });
 
         // Tab Switching Logic
+        // Initialize Visibility
+        this.contentEl.querySelectorAll('.tab-pane')[0]?.classList.add('active');
+
+        // Logic to show/hide nested navigation arrows based on overflow
+        const checkArrows = () => {
+            this.contentEl.querySelectorAll('.nested-tabs-nav-wrapper').forEach(wrapper => {
+                const bar = wrapper.querySelector('.nested-tabs-bar');
+                const btnPrev = wrapper.querySelector('.nested-nav-btn.prev');
+                const btnNext = wrapper.querySelector('.nested-nav-btn.next');
+
+                if (bar && btnPrev && btnNext) {
+                    const hasOverflow = bar.scrollWidth > bar.clientWidth + 5; // Small buffer
+                    btnPrev.style.display = hasOverflow ? 'flex' : 'none';
+                    btnNext.style.display = hasOverflow ? 'flex' : 'none';
+                }
+            });
+        };
+
+        // Run after a short delay to ensure rendering matches DOM dimensions
+        setTimeout(checkArrows, 100);
+        window.addEventListener('resize', checkArrows);
+
         const tabs = this.contentEl.querySelectorAll('.form-tab');
         const panes = this.contentEl.querySelectorAll('.tab-pane');
 
@@ -845,6 +898,9 @@ class ReportReader {
 
                 // Scroll to top of content (below toolbar)
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                // Recalculate arrow visibility for newly shown panes
+                setTimeout(checkArrows, 100);
             });
         });
 
@@ -865,6 +921,15 @@ class ReportReader {
                     p.classList.remove('active');
                     if (p.id === targetId) p.classList.add('active');
                 });
+
+                // Hypothesis 2: Center active tab in the scrollable bar
+                const bar = tab.closest('.nested-tabs-bar');
+                if (bar) {
+                    const barRect = bar.getBoundingClientRect();
+                    const tabRect = tab.getBoundingClientRect();
+                    const offset = tabRect.left - barRect.left - (barRect.width / 2) + (tabRect.width / 2);
+                    bar.scrollBy({ left: offset, behavior: 'smooth' });
+                }
             });
         });
 
@@ -893,7 +958,9 @@ class ReportReader {
         const data = JSON.parse(localStorage.getItem('investigation_form_data') || '{}');
         Object.entries(data).forEach(([id, value]) => {
             const el = document.getElementById(id);
-            if (el) el.value = value;
+            if (el && el.type !== 'file') {
+                el.value = value;
+            }
         });
     }
 

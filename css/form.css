@@ -297,7 +297,7 @@
     border-bottom: 1px solid var(--color-border-light);
 }
 
-/* Nested Tabs (Fichário) */
+/* Nested Tabs (Fichário: Snap Navigation) */
 .nested-tabs-container {
     margin-top: var(--spacing-md);
     border: 1px solid var(--color-border);
@@ -306,31 +306,95 @@
     overflow: hidden;
 }
 
+.nested-tabs-nav-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg-subtle);
+    border-bottom: 1px solid var(--color-border);
+    pointer-events: none;
+    /* Allow clicks through empty space */
+}
+
 .nested-tabs-bar {
     display: flex;
     gap: 0;
-    background: var(--color-bg-subtle);
-    border-bottom: 1px solid var(--color-border);
     overflow-x: auto;
     overflow-y: hidden;
-    /* Fix unwanted vertical scrollbar */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
     -webkit-overflow-scrolling: touch;
+    flex: 1;
+    justify-content: center;
+    /* Center when few tabs */
+    pointer-events: auto;
+    /* Capture clicks in bar */
 }
 
-/* Hide scrollbar track for a cleaner look in the header if desired */
+/* Ensure centering works even with scroll-snap */
+.nested-tabs-bar::before,
+.nested-tabs-bar::after {
+    content: '';
+    flex: 1 0 0;
+}
+
+.nested-tabs-bar:has(.nested-tab:nth-child(5)) {
+    justify-content: flex-start;
+    /* If many tabs, start from left */
+}
+
+.nested-tabs-bar:has(.nested-tab:nth-child(5))::before,
+.nested-tabs-bar:has(.nested-tab:nth-child(5))::after {
+    display: none;
+}
+
 .nested-tabs-bar::-webkit-scrollbar {
-    height: 4px;
-    /* Thin scrollbar for x */
+    display: none;
+    /* Chrome/Safari */
 }
 
-.nested-tabs-bar::-webkit-scrollbar-thumb {
-    background: var(--color-border);
-    border-radius: 10px;
+.nested-nav-btn {
+    width: 44px;
+    /* Larger click target */
+    height: 100%;
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    /* More opaque */
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    color: var(--color-text-muted);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+    z-index: 100;
+    /* Higher z-index */
+    pointer-events: auto;
+    /* Explicitly capture clicks */
+}
+
+.nested-nav-btn:hover {
+    background: var(--color-teal-light);
+    color: var(--color-teal);
+}
+
+.nested-nav-btn.prev {
+    border-right: 1px solid var(--color-border);
+}
+
+.nested-nav-btn.next {
+    border-left: 1px solid var(--color-border);
 }
 
 .nested-tab {
-    flex: 1;
-    padding: var(--spacing-sm) var(--spacing-md);
+    flex: 0 0 auto;
+    /* Don't shrink, allow overflow */
+    padding: var(--spacing-sm) var(--spacing-lg);
     border: none;
     border-right: 1px solid var(--color-border);
     background: transparent;
@@ -340,6 +404,7 @@
     cursor: pointer;
     white-space: nowrap;
     transition: var(--transition-fast);
+    scroll-snap-align: center;
 }
 
 .nested-tab:last-child {
@@ -360,12 +425,13 @@
 }
 
 .nested-tabs-content {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--color-bg-card);
 }
 
 .nested-pane {
     display: none;
-    animation: fadeIn 0.25s ease;
+    animation: fadeIn 0.2s ease;
 }
 
 .nested-pane.active {

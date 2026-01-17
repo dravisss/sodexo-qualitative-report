@@ -196,7 +196,7 @@ O relatório levanta a hipótese de que alguns contratos são "vendidos errados"
 ### Contexto
 O relatório identifica a estrutura de PLR (gatilho binário, deflatores) e a política de benefícios (cesta assiduidade) como motores centrais dos ciclos viciosos. Precisamos entender os detalhes técnicos dessas regras para propor ajustes viáveis.
 
-### Perguntas sobre a Estrutura da PLR
+### Perguntas sobre Estrutura da PLR
 
 28. **O Gatilho Binário:** [Sem Campo]
     - Qual é a fórmula exata da PLR das lideranças (GU, GO, GCE)? Confirmar se o gatilho é realmente binário (0% abaixo da meta, 100%+ acima) ou se existe algum escalonamento.
