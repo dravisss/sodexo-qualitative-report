@@ -13,6 +13,10 @@ As falhas aqui documentadas não são problemas de gestão local; são sintomas 
 
 **Cenário:** Esta unidade é caracterizada por uma instabilidade crônica de liderança e um profundo **trauma organizacional**. O clima é de guerra e sabotagem. Funcionários admitem reduzir a produtividade deliberadamente ou deixar faltar itens de propósito para forçar a demissão e acessar direitos trabalhistas. A liderança é vista como "inimiga" ou "incompetente" devido ao histórico de abandono.
 
+> **Relato do Frontline:**
+> "O esgoto também entupido, teve um dia que não tinha nem como praticamente andar na cozinha, porque a água tava voltando tudo, o resíduo de frango, tudo, foi até os banheiros..."
+> — Colaboradora, Auxiliar de Serviços Gerais
+
 O clima de hostilidade combinado com infraestrutura precária cria ambiente propício a incidentes que podem afetar diretamente a percepção da Leroy Merlin. A instabilidade de liderança impede a construção de relação de confiança duradoura com o cliente.
 
 - **Liderança Rotativa:** A unidade sofre com um histórico de alta rotatividade. Estima-se que mais de 10 ou até 20 gerentes passaram por lá em poucos anos. Isso criou um "vácuo de autoridade" e desconfiança crônica.
@@ -31,6 +35,10 @@ O clima de hostilidade combinado com infraestrutura precária cria ambiente prop
 
 **Cenário:** União em torno do sofrimento compartilhado. Há uma profunda mágoa com a Sodexo por não reconhecer o tempo de casa e o desgaste físico acumulado dos colaboradores veteranos.
 
+> **Relato do Frontline:**
+> "A gestora disse que é mais fácil eu pedir demissão daqui do que eu sair com meus benefícios. Ela não pode nem pensar em me mandar para outro lugar. Os outros funcionários, quando saem de férias, ficam duas ou três pessoas no meu lugar. Eu já estou com mais de 60 anos, faltam dois anos para me aposentar."
+> — Colaboradora, Cozinheira
+
 A explosão de volume sem ajuste de estrutura indica descompasso entre a demanda do cliente e a capacidade operacional. Colapsos diários na entrega geram acumulação de insatisfação que pode resultar em renegociação forçada ou redução de escopo.
 
 - **Liderança Estável, mas Impotente:** A gestão local (Gu e o Chefe) é respeitada e vista como parceira da equipe. No entanto, são percebidos como "de mãos atadas" pelo sistema financeiro da Sodexo.
@@ -44,6 +52,12 @@ A explosão de volume sem ajuste de estrutura indica descompasso entre a demanda
 ### 3. Unidade de FM Sodexo — Guarulhos (União Química)
 
 **Cenário:** Equipe composta majoritariamente por mulheres, operando em uma planta industrial farmacêutica vasta e lidando com a percepção de serem a "base da pirâmide". Resignação e sobrevivência por necessidade extrema. A rotatividade é uma "porta giratória": novos contratados desistem em semanas pela carga pesada, enquanto os veteranos ficam "presos" pelo medo de perder direitos acumulados.
+
+> **Relato do Frontline:**
+> "Falta bastante. No momento, estão faltando luvas. Faltam os produtos certos para fazer as coisas certas, faltam meus equipamentos para o meu trabalho. Isso ocorre desde que cheguei. Não é que nunca tenha, às vezes tem, mas acaba muito rápido."
+> — Colaboradora, Limpeza Industrial
+> "Os materiais de limpeza são diluídos, chegando a ser apenas água em alguns casos. A gente vai limpar uma coisa só com água. Dentro da fábrica os produtos são todos bonitinhos, concentrados. Mas aqui fora eles dão um pouco pra gente diluir."
+> — Colaboradora, Limpeza Industrial
 
 A falta de adicional de insalubridade e a privação de EPIs configuram exposição jurídica que pode respingar no cliente (correspondência). A inconsistência na qualidade do serviço causada pela "porta giratória" representa risco à satisfação da União Química.
 

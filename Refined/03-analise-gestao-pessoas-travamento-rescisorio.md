@@ -25,6 +25,10 @@ Colaboradores com anos de casa (5, 10, até 20 anos) desejam sair devido às con
 
 > **Nota:** o comportamento do trabalhador que busca forçar sua demissão não é uma "falha de caráter" ou "má-fé". Trata-se de uma **resposta racional a um sistema de incentivos**. Dado o desenho da legislação trabalhista e as restrições orçamentárias internas, o trabalhador está maximizando seu bem-estar dentro das opções disponíveis. A responsabilidade pela disfunção é do sistema, não do indivíduo.
 
+> **Relato do Frontline:**
+> "É triste ver que permanecem, não porque querem, mas porque não podem se dar ao luxo de pedir demissão e perder seus direitos. (...) É quase um pedido desesperado do funcionário: 'Me demitam, por favor!'."
+> — Liderança local (anonimizado)
+
 Em termos de teoria dos jogos, o travamento rescisório representa um **equilíbrio de Nash negativo**: uma situação estável onde nenhum ator consegue melhorar sua posição agindo unilateralmente.
 
 > **A "Imunidade Sistêmica" (Evidência de 2024):**
@@ -62,6 +66,10 @@ A permanência de pessoas desengajadas afeta quem permanece comprometido:
 - Sentimento de injustiça ("por que eu me esforço se ele não faz nada?")
 - Deterioração do clima organizacional
 - Aumento do desejo coletivo de sair
+
+> **Relato do Frontline:**
+> "Aqui não existe advertência, até bêbado o povo vem trabalhar... E quem trabalha bem fica sozinho e sobrecarregado. E acaba pedindo para sair porque não aguenta."
+> — Colaboradora, Cozinheira
 
 Este ambiente tóxico é um dos fatores que impulsionam a **[perda de atratividade frente ao Mercado Livre e outros concorrentes](#04)**.
 

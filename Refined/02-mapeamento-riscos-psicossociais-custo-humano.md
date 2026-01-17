@@ -20,6 +20,11 @@ As unidades operacionais apresentam um quadro de **risco psicossocial elevado**,
 
 ## 2. O custo físico
 
+> **Relato do Frontline:**
+> "Tenho 51 anos, mas me sinto com 80 devido ao desgaste contínuo, ao esgotamento e ao estresse. As panelas de inox são as mais pesadas e são elas que me causam a dor na mão."
+> — Colaboradora anônima
+
+
 ### 2.1 A cadeia de causalidade do adoecimento físico
 
 A busca pela margem de lucro cria uma sequência de eventos que culmina no desgaste físico dos colaboradores:
@@ -92,6 +97,14 @@ Quando múltiplos colaboradores (de diferentes unidades, níveis hierárquicos, 
 > "Uso Sertralina para aguentar a semana. Se eu parar, não consigo entrar na cozinha." (Colaboradora, Guarulhos)
 
 > "Tomo Lexotan e mesmo assim tenho crise. Mas não posso faltar, senão perco a cesta." (Auxiliar de Limpeza, União Química)
+
+> **Relato do Frontline:**
+> "Eu já tenho esse problema grave, que é de ansiedade. Eu tomava um comprimido e já estou tomando quatro. Porque eu não consigo dormir. Quando eu venho para cá já é passando mal."
+> — Colaboradora, Auxiliar de Serviços Gerais
+
+> **Relato do Frontline:**
+> "Medo de ir embora, um medo de vir. Eu chegava ali e não queria entrar... tive síndrome do pânico."
+> — Colaboradora, Encarregada
 
 ---
 

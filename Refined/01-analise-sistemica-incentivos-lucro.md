@@ -49,6 +49,12 @@ A análise das entrevistas revelou quatro mecanismos distintos que geram comport
 - Manutenções críticas são adiadas (fornos quebrados há mais de dois anos, ar-condicionado defeituoso)
 - Equipamentos básicos não são repostos (liquidificadores, batedeiras, facas)
 - A equipe é forçada a improvisar soluções manuais, aumentando o esforço físico
+- Falta EPI básico (máscaras, luvas, botas, uniformes e sapatos)
+
+> **Relato do Frontline:**
+> "Eu peguei essa camiseta esses dias porque eu estava usando uma camiseta de homem, sabe? Aí eu pedi e a supervisora me deu. Ela não falou nada, só perguntou se eu não tinha e me deu. Porque eu acho que estava precisando mesmo de outra. Esse sapato que já está molhando por dentro, foi uma colega que me deu o dela. A maioria das colegas compra os próprios sapatos, né?"
+> Colaborador anônimo
+
 
 ### 2.2 O bloqueio das demissões
 **Como funciona:** As verbas rescisórias (multa do FGTS, aviso prévio) saem do orçamento da unidade. Não existe um fundo centralizado para desligamentos.
@@ -84,6 +90,10 @@ A análise das entrevistas revelou quatro mecanismos distintos que geram comport
 **Detalhes:** Diferente das lideranças, o incentivo para cozinheiros e auxiliares está atrelado à capacidade da unidade de economizar recursos.
 - **O Conflito:** Isso pode incentivar a restrição no uso de materiais básicos e EPIs (ex: luvas, panos) para não onerar as despesas e proteger o bônus, gerando improvisos perigosos.
 
+> **Relato do Frontline:**
+> "Você pede um pano para limpar as coisas, e trazem dois pedacinhos de papel toalha desse tamanho. Imagina o quanto de sujeira você limpa com papel. Eles ganham por nossa causa! No final do ano o que recebemos? Um panetone e pronto."
+> — Colaborador anônimo
+
 ### 2.6 Os deflatores: Subtração do resultado
 **Detalhes:** O sistema possui "travas" que reduzem o montante a ser recebido por fatores sistêmicos:
 - **Segurança e Acidentes:** Acidentes com afastamento são deflatores críticos. Aqui reside uma contradição: o bônus de assiduidade força o trabalho doente, o que eleva o risco de acidentes, que por sua vez penaliza a PLR de toda a equipe e da gestão.
@@ -118,6 +128,10 @@ A liderança local identifica a solução, mas não dispõe de autonomia para im
 ### 3.4 Nível de Execução: Colaboradores
 A ponta responde à necessidade de economia superior para sustentar as metas.
 *   **Ajuste Funcional:** Uso de bônus de assiduidade (presenteísmo) e desvio de função (ASGs executando tarefas de cozinheiro) como variáveis para manter a folha dentro do orçamento.
+
+> **Relato do Frontline:**
+> "Tenho o pulso quebrado, mas parece que não adianta ir ao médico. (...) Quer dizer que se eu estiver de cadeira de rodas, vou ter que vir trabalhar?"
+> — Colaboradora anônima
 
 ---
 
