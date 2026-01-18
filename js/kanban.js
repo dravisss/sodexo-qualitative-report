@@ -8,6 +8,7 @@ import { ARTICLES } from './config.js';
 class KanbanManager {
     constructor() {
         this.boardEl = document.getElementById('kanban-board');
+        this.timelineEl = document.getElementById('kanban-timeline');
         this.sidebarEl = document.querySelector('.sin-sidebar');
         this.overlayEl = document.getElementById('sidebar-overlay');
 
@@ -17,9 +18,17 @@ class KanbanManager {
         this.editorForm = document.getElementById('card-edit-form');
         this.tagsContainer = document.getElementById('tags-container');
         this.tagsInput = document.getElementById('edit-tags');
+        this.startDateInput = document.getElementById('edit-startdate');
+        this.endDateInput = document.getElementById('edit-enddate');
+        this.substatusGroup = document.getElementById('substatus-group');
+        this.substatusSelect = document.getElementById('edit-substatus');
+        this.attachmentsListEl = document.getElementById('attachments-list');
+        this.addAttachmentBtn = document.getElementById('add-attachment-btn');
+        this.attachmentFileInput = document.getElementById('attachment-file-input');
         this.currentEditingCardId = null;
         this.currentEditingTags = []; // Track tags being edited
         this.currentEditingStakeholders = []; // Track stakeholders being edited
+        this.currentEditingAttachments = []; // Track attachments being edited
 
         // Search Elements
         this.searchInput = document.getElementById('kanban-search');
@@ -31,6 +40,13 @@ class KanbanManager {
         this.selectedTagsChips = document.getElementById('selected-tags-chips');
         this.clearFiltersBtn = document.getElementById('clear-filters-btn');
         this.selectedFilterTags = []; // Tags selected for filtering
+
+        // View + Mobile Tabs
+        this.viewBoardBtn = document.getElementById('view-board');
+        this.viewTimelineBtn = document.getElementById('view-timeline');
+        this.mobileTabsEl = document.getElementById('kanban-mobile-tabs');
+        this.activeMobileStatus = 'backlog';
+        this.currentView = 'board';
 
         // Stakeholder Editor Elements
         this.stakeholdersList = document.getElementById('stakeholders-list');
@@ -59,8 +75,21 @@ class KanbanManager {
 
         // API Endpoint
         this.API_URL = '/api/kanban-state';
+        this.ATTACHMENT_API_URL = '/api/kanban-attachment';
 
         this.init();
+    }
+
+    loadLocalStateFallback() {
+        try {
+            return JSON.parse(localStorage.getItem('kanban_state') || '{}');
+        } catch {
+            return {};
+        }
+    }
+
+    isEmptyObject(obj) {
+        return !!obj && typeof obj === 'object' && !Array.isArray(obj) && Object.keys(obj).length === 0;
     }
 
     async init() {
@@ -75,6 +104,7 @@ class KanbanManager {
         ]);
 
         this.renderBoard();
+        this.applyFilters();
         this.setupDragAndDrop();
         this.startPolling();
 
@@ -92,13 +122,31 @@ class KanbanManager {
         try {
             const response = await fetch(this.API_URL);
             if (response.ok) {
-                this.kanbanState = await response.json();
-                console.log('Remote state loaded:', this.kanbanState);
+                try {
+                    const remote = await response.json();
+                    const local = this.loadLocalStateFallback();
+
+                    // If remote is empty but local has content, prefer local (common in local dev)
+                    if (this.isEmptyObject(remote) && !this.isEmptyObject(local)) {
+                        this.kanbanState = local;
+                        console.log('Remote state empty; using localStorage state instead.');
+                        return;
+                    }
+
+                    this.kanbanState = remote;
+                    console.log('Remote state loaded:', this.kanbanState);
+                    return;
+                } catch (parseError) {
+                    console.warn('Remote state response was not valid JSON; falling back to localStorage.', parseError);
+                }
             }
+
+            // Non-2xx or invalid JSON: fall back to local state
+            this.kanbanState = this.loadLocalStateFallback();
         } catch (error) {
             console.error('Error loading remote state:', error);
             // Fallback to local storage if available or empty
-            this.kanbanState = JSON.parse(localStorage.getItem('kanban_state') || '{}');
+            this.kanbanState = this.loadLocalStateFallback();
         }
     }
 
@@ -200,6 +248,11 @@ class KanbanManager {
             if (!response.ok) return;
 
             const remoteState = await response.json();
+
+            // Avoid overwriting a non-empty local state with an empty remote response
+            if (this.isEmptyObject(remoteState) && !this.isEmptyObject(this.kanbanState)) {
+                return;
+            }
 
             // Compare states to avoid unnecessary re-renders
             if (JSON.stringify(remoteState) !== JSON.stringify(this.kanbanState)) {
@@ -504,6 +557,9 @@ class KanbanManager {
 
         // Update counts
         this.updateCounts();
+
+        // Apply mobile visibility (if needed)
+        this.applyMobileColumnVisibility();
     }
 
     createCardElement(card, originalStatus = null) {
@@ -515,10 +571,11 @@ class KanbanManager {
         const state = this.kanbanState[card.id];
         let substatusLabel = null;
         if (originalStatus) {
-            const labels = { 'todo': 'A Fazer', 'doing': 'Em Andamento' };
+            const labels = { 'todo': 'A fazer', 'doing': 'Fazendo' };
             substatusLabel = labels[originalStatus];
-        } else if (state && typeof state === 'object' && state.substatusLabel) {
-            substatusLabel = state.substatusLabel;
+        } else if (state && typeof state === 'object') {
+            if (state.substatus === 'todo') substatusLabel = 'A fazer';
+            if (state.substatus === 'doing') substatusLabel = 'Fazendo';
         }
 
         const substatusHtml = substatusLabel
@@ -534,16 +591,26 @@ class KanbanManager {
             ? `<span class="card-stakeholders-badge" title="${stakeholders.map(s => this.escapeHtml(s.name)).join(', ')}">👥${stakeholders.length}</span>`
             : '';
 
+        // Get attachments from state for badge
+        const attachments = (state && typeof state === 'object' && Array.isArray(state.attachments)) ? state.attachments : [];
+        const attachmentsBadgeHtml = attachments.length > 0
+            ? `<span class="card-attachments-badge" title="${attachments.length} anexo(s)">📎${attachments.length}</span>`
+            : '';
+
+        const datesHtml = this.getCardDatesHtml(state);
+
         el.innerHTML = `
             <div class="card-header">
                 <div class="card-id">${card.id}</div>
                 ${substatusHtml}
                 ${stakeholdersBadgeHtml}
+                ${attachmentsBadgeHtml}
             </div>
             <div class="card-title">${card.title}</div>
             <div class="card-tags">
                 ${this.generateCardTagsHtml(card, userTags)}
             </div>
+            ${datesHtml}
         `;
 
         // Click to open editor instead of direct navigation
@@ -617,14 +684,14 @@ class KanbanManager {
 
         // Set default substatus when moving to 'doing' (Em andamento)
         if (newStatus === 'doing') {
-            this.kanbanState[cardId].substatus = 'todo';
-            this.kanbanState[cardId].substatusLabel = 'A Fazer';
-            // Update the card's substatus badge in the DOM
-            this.updateCardSubstatus(cardId, 'A Fazer');
+            if (!this.kanbanState[cardId].substatus) {
+                this.kanbanState[cardId].substatus = 'todo';
+            }
+            const label = this.kanbanState[cardId].substatus === 'doing' ? 'Fazendo' : 'A fazer';
+            this.updateCardSubstatus(cardId, label);
         } else {
             // Clear substatus when moving to other columns
             delete this.kanbanState[cardId].substatus;
-            delete this.kanbanState[cardId].substatusLabel;
             this.updateCardSubstatus(cardId, null);
         }
 
@@ -638,6 +705,10 @@ class KanbanManager {
 
         // Trigger save
         this.saveState();
+
+        if (this.currentView === 'timeline') {
+            this.renderTimeline();
+        }
     }
 
     /**
@@ -715,20 +786,18 @@ class KanbanManager {
         }
 
         const substatusLabels = {
-            'todo': 'A Fazer',
-            'doing': 'Em Andamento'
+            'todo': 'A fazer',
+            'doing': 'Fazendo'
         };
 
         if (typeof currentState === 'object' && currentState !== null) {
             this.kanbanState[cardId].status = newStatus;
             this.kanbanState[cardId].substatus = originalStatus;
-            this.kanbanState[cardId].substatusLabel = substatusLabels[originalStatus] || originalStatus;
             this.kanbanState[cardId].migratedAt = new Date().toISOString();
         } else {
             this.kanbanState[cardId] = {
                 status: newStatus,
                 substatus: originalStatus,
-                substatusLabel: substatusLabels[originalStatus] || originalStatus,
                 migratedAt: new Date().toISOString()
             };
         }
@@ -818,6 +887,105 @@ class KanbanManager {
         if (this.clearFiltersBtn) {
             this.clearFiltersBtn.addEventListener('click', () => this.clearAllFilters());
         }
+
+        // View toggle
+        if (this.viewBoardBtn && this.viewTimelineBtn) {
+            this.viewBoardBtn.addEventListener('click', () => this.setView('board'));
+            this.viewTimelineBtn.addEventListener('click', () => this.setView('timeline'));
+        }
+
+        // Mobile tabs
+        if (this.mobileTabsEl) {
+            this.mobileTabsEl.querySelectorAll('.mobile-tab').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    this.setActiveMobileStatus(btn.dataset.status);
+                });
+            });
+            window.addEventListener('resize', () => this.applyMobileColumnVisibility());
+        }
+
+        // Attachments
+        if (this.addAttachmentBtn && this.attachmentFileInput) {
+            this.addAttachmentBtn.addEventListener('click', () => {
+                if (!this.currentEditingCardId) return;
+                this.attachmentFileInput.click();
+            });
+            this.attachmentFileInput.addEventListener('change', async () => {
+                await this.handleAttachmentFilesSelected();
+            });
+        }
+    }
+
+    setView(view) {
+        if (view !== 'board' && view !== 'timeline') return;
+        this.currentView = view;
+
+        if (this.viewBoardBtn && this.viewTimelineBtn) {
+            const isBoard = view === 'board';
+            this.viewBoardBtn.classList.toggle('active', isBoard);
+            this.viewTimelineBtn.classList.toggle('active', !isBoard);
+            this.viewBoardBtn.setAttribute('aria-selected', isBoard ? 'true' : 'false');
+            this.viewTimelineBtn.setAttribute('aria-selected', !isBoard ? 'true' : 'false');
+        }
+
+        if (this.boardEl) {
+            this.boardEl.style.display = view === 'board' ? '' : 'none';
+        }
+        if (this.timelineEl) {
+            this.timelineEl.style.display = view === 'timeline' ? '' : 'none';
+        }
+
+        if (this.mobileTabsEl) {
+            this.mobileTabsEl.style.display = (view === 'board') ? '' : 'none';
+        }
+
+        if (view === 'timeline') {
+            this.renderTimeline();
+        } else {
+            this.applyFilters();
+            this.applyMobileColumnVisibility();
+        }
+    }
+
+    setActiveMobileStatus(status) {
+        if (!status) return;
+        this.activeMobileStatus = status;
+        if (this.mobileTabsEl) {
+            this.mobileTabsEl.querySelectorAll('.mobile-tab').forEach(btn => {
+                const isActive = btn.dataset.status === status;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+        }
+        this.applyMobileColumnVisibility();
+    }
+
+    applyMobileColumnVisibility() {
+        if (!this.mobileTabsEl) return;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+        if (this.currentView !== 'board') {
+            // Ensure columns are visible when leaving board
+            this.columns.forEach(col => {
+                const colEl = document.getElementById(`col-${col.id}`);
+                if (colEl) colEl.style.display = '';
+            });
+            return;
+        }
+
+        if (!isMobile) {
+            this.columns.forEach(col => {
+                const colEl = document.getElementById(`col-${col.id}`);
+                if (colEl) colEl.style.display = '';
+            });
+            return;
+        }
+
+        this.columns.forEach(col => {
+            const colEl = document.getElementById(`col-${col.id}`);
+            if (!colEl) return;
+            colEl.style.display = (col.id === this.activeMobileStatus) ? '' : 'none';
+        });
     }
 
     /**
@@ -828,7 +996,10 @@ class KanbanManager {
         if (!card) return;
 
         this.currentEditingCardId = cardId;
-        const state = this.kanbanState[cardId] || {};
+        let state = this.kanbanState[cardId] || {};
+        if (typeof state === 'string') {
+            state = { status: state };
+        }
 
         // Populate Read-Only Fields
         document.getElementById('editor-card-id').textContent = card.id;
@@ -846,8 +1017,18 @@ class KanbanManager {
 
         // Populate Editable Fields
         document.getElementById('edit-responsible').value = state.responsible || '';
-        document.getElementById('edit-duedate').value = state.dueDate || '';
+        if (this.startDateInput) this.startDateInput.value = state.startDate || '';
+        if (this.endDateInput) this.endDateInput.value = state.endDate || '';
         document.getElementById('edit-updates').value = state.updates || '';
+
+        // Substatus only relevant in 'doing'
+        if (this.substatusGroup && this.substatusSelect) {
+            const isDoing = (state && typeof state === 'object' && state.status === 'doing');
+            this.substatusGroup.style.display = isDoing ? '' : 'none';
+            if (isDoing) {
+                this.substatusSelect.value = state.substatus === 'doing' ? 'doing' : 'todo';
+            }
+        }
 
         // Populate Tags
         this.currentEditingTags = Array.isArray(state.tags) ? [...state.tags] : [];
@@ -857,6 +1038,10 @@ class KanbanManager {
         this.currentEditingStakeholders = Array.isArray(state.stakeholders) ? [...state.stakeholders] : [];
         this.renderEditorStakeholders();
         this.hideStakeholderForm();
+
+        // Populate Attachments
+        this.currentEditingAttachments = Array.isArray(state.attachments) ? [...state.attachments] : [];
+        this.renderEditorAttachments();
 
         // Show Editor
         this.editorEl.classList.add('active');
@@ -892,6 +1077,11 @@ class KanbanManager {
         this.currentEditingCardId = null;
         this.currentEditingTags = [];
         this.currentEditingStakeholders = [];
+        this.currentEditingAttachments = [];
+
+        if (this.attachmentFileInput) {
+            this.attachmentFileInput.value = '';
+        }
 
         // Reset status message
         const statusEl = document.getElementById('editor-save-status');
@@ -1074,6 +1264,171 @@ class KanbanManager {
         return div.innerHTML;
     }
 
+    renderEditorAttachments() {
+        if (!this.attachmentsListEl) return;
+
+        if (!this.currentEditingAttachments || this.currentEditingAttachments.length === 0) {
+            this.attachmentsListEl.innerHTML = '';
+            return;
+        }
+
+        this.attachmentsListEl.innerHTML = this.currentEditingAttachments.map(att => {
+            const name = this.escapeHtml(att?.name || 'arquivo');
+            const size = (typeof att?.size === 'number') ? this.formatBytes(att.size) : '';
+            const blobKey = String(att?.blobKey || '');
+            const downloadUrl = `${this.ATTACHMENT_API_URL}?key=${encodeURIComponent(blobKey)}`;
+
+            return `
+                <div class="attachment-item" data-blobkey="${this.escapeHtml(blobKey)}">
+                    <div class="attachment-meta">
+                        <div class="attachment-name">${name}</div>
+                        <div class="attachment-submeta">${this.escapeHtml(size)}</div>
+                    </div>
+                    <div class="attachment-actions">
+                        <a class="attachment-action" href="${downloadUrl}" target="_blank" rel="noopener">Download</a>
+                        <button type="button" class="attachment-action danger" data-action="remove" data-blobkey="${this.escapeHtml(blobKey)}">Remover</button>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        this.attachmentsListEl.querySelectorAll('button[data-action="remove"]').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const blobKey = btn.dataset.blobkey;
+                if (!blobKey) return;
+                await this.removeAttachment(blobKey);
+            });
+        });
+    }
+
+    formatBytes(bytes) {
+        if (typeof bytes !== 'number' || Number.isNaN(bytes)) return '';
+        if (bytes < 1024) return `${bytes} B`;
+        if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+        return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+    }
+
+    async handleAttachmentFilesSelected() {
+        if (!this.currentEditingCardId || !this.attachmentFileInput) return;
+        const files = Array.from(this.attachmentFileInput.files || []);
+        if (files.length === 0) return;
+
+        const allowedExt = ['pdf', 'csv', 'xls', 'xlsx', 'docx', 'pptx', 'png', 'jpg', 'jpeg'];
+        const maxFileBytes = 10 * 1024 * 1024;
+        const maxCardBytes = 50 * 1024 * 1024;
+
+        const currentTotal = (this.currentEditingAttachments || []).reduce((sum, a) => sum + (a?.size || 0), 0);
+        const selectedTotal = files.reduce((sum, f) => sum + (f?.size || 0), 0);
+
+        if (currentTotal + selectedTotal > maxCardBytes) {
+            this.showError('Limite de 50MB por card excedido.');
+            this.attachmentFileInput.value = '';
+            return;
+        }
+
+        for (const file of files) {
+            const ext = (file.name.split('.').pop() || '').toLowerCase();
+            if (!allowedExt.includes(ext)) {
+                this.showError(`Tipo de arquivo não suportado: ${file.name}`);
+                continue;
+            }
+            if (file.size > maxFileBytes) {
+                this.showError(`Arquivo maior que 10MB: ${file.name}`);
+                continue;
+            }
+
+            await this.uploadAttachment(file);
+        }
+
+        this.attachmentFileInput.value = '';
+    }
+
+    async uploadAttachment(file) {
+        const cardId = this.currentEditingCardId;
+        if (!cardId) return;
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('cardId', cardId);
+
+        try {
+            this.showSaving(true);
+            const response = await fetch(this.ATTACHMENT_API_URL, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error(`Upload failed: ${response.status}`);
+            }
+
+            const payload = await response.json();
+            if (!payload || !payload.blobKey) {
+                throw new Error('Invalid upload response');
+            }
+
+            if (!this.kanbanState[cardId]) {
+                this.kanbanState[cardId] = { status: 'backlog' };
+            }
+            if (typeof this.kanbanState[cardId] === 'string') {
+                this.kanbanState[cardId] = { status: this.kanbanState[cardId] };
+            }
+
+            const state = this.kanbanState[cardId];
+            state.attachments = Array.isArray(state.attachments) ? state.attachments : [];
+            state.attachments.push({
+                id: payload.id,
+                name: payload.name,
+                mime: payload.mime,
+                size: payload.size,
+                blobKey: payload.blobKey,
+                createdAt: payload.createdAt
+            });
+            state.updatedAt = new Date().toISOString();
+
+            this.currentEditingAttachments = [...state.attachments];
+            this.renderEditorAttachments();
+            this.updateCardAttachmentsBadge(cardId, state.attachments);
+
+            await this.saveState();
+        } catch (err) {
+            console.error('Attachment upload error:', err);
+            this.showError('Erro ao enviar anexo.');
+        } finally {
+            this.showSaving(false);
+        }
+    }
+
+    async removeAttachment(blobKey) {
+        const cardId = this.currentEditingCardId;
+        if (!cardId) return;
+
+        try {
+            this.showSaving(true);
+            await fetch(`${this.ATTACHMENT_API_URL}?key=${encodeURIComponent(blobKey)}`, { method: 'DELETE' });
+
+            const state = this.kanbanState[cardId];
+            if (state && typeof state === 'object') {
+                if (Array.isArray(state.attachments)) {
+                    state.attachments = state.attachments.filter(a => a?.blobKey !== blobKey);
+                }
+                state.updatedAt = new Date().toISOString();
+            }
+
+            this.currentEditingAttachments = Array.isArray(state?.attachments) ? [...state.attachments] : [];
+            this.renderEditorAttachments();
+            this.updateCardAttachmentsBadge(cardId, this.currentEditingAttachments);
+
+            await this.saveState();
+        } catch (err) {
+            console.error('Attachment remove error:', err);
+            this.showError('Erro ao remover anexo.');
+        } finally {
+            this.showSaving(false);
+        }
+    }
+
     /**
      * Update card tags display in the DOM
      */
@@ -1118,6 +1473,68 @@ class KanbanManager {
         }
     }
 
+    updateCardAttachmentsBadge(cardId, attachments) {
+        const cardEl = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+        if (!cardEl) return;
+
+        const headerEl = cardEl.querySelector('.card-header');
+        if (!headerEl) return;
+
+        const existingBadge = headerEl.querySelector('.card-attachments-badge');
+        if (existingBadge) {
+            existingBadge.remove();
+        }
+
+        if (attachments && attachments.length > 0) {
+            const badgeEl = document.createElement('span');
+            badgeEl.className = 'card-attachments-badge';
+            badgeEl.textContent = `📎${attachments.length}`;
+            badgeEl.title = `${attachments.length} anexo(s)`;
+            headerEl.appendChild(badgeEl);
+        }
+    }
+
+    updateCardDatesDisplay(cardId) {
+        const cardEl = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+        if (!cardEl) return;
+
+        const existing = cardEl.querySelector('.card-dates');
+        if (existing) {
+            existing.remove();
+        }
+
+        const state = this.kanbanState[cardId];
+        const datesHtml = this.getCardDatesHtml(state);
+        if (!datesHtml) return;
+
+        cardEl.insertAdjacentHTML('beforeend', datesHtml);
+    }
+
+    getCardDatesHtml(state) {
+        if (!state || typeof state !== 'object') return '';
+        const start = state.startDate || '';
+        const end = state.endDate || '';
+        if (!start && !end) return '';
+
+        const startFmt = start ? this.formatDateBR(start) : '';
+        const endFmt = end ? this.formatDateBR(end) : '';
+
+        let text = '';
+        if (startFmt && endFmt) {
+            text = `📅 ${startFmt} → ${endFmt}`;
+        } else {
+            text = `📅 ${startFmt || endFmt}`;
+        }
+
+        return `<div class="card-dates">${text}</div>`;
+    }
+
+    formatDateBR(yyyyMmDd) {
+        const m = String(yyyyMmDd || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!m) return yyyyMmDd;
+        return `${m[3]}/${m[2]}`;
+    }
+
     /**
      * Generate HTML for card tags (article source + user tags with +N indicator)
      */
@@ -1152,10 +1569,24 @@ class KanbanManager {
 
         const id = this.currentEditingCardId;
         const responsible = document.getElementById('edit-responsible').value;
-        const dueDate = document.getElementById('edit-duedate').value;
+        const startDate = this.startDateInput ? this.startDateInput.value : '';
+        const endDate = this.endDateInput ? this.endDateInput.value : '';
         const updates = document.getElementById('edit-updates').value;
         const tags = [...this.currentEditingTags]; // Copy current tags
         const stakeholders = [...this.currentEditingStakeholders]; // Copy current stakeholders
+
+        if (startDate && endDate) {
+            const start = new Date(`${startDate}T00:00:00`);
+            const end = new Date(`${endDate}T00:00:00`);
+            if (end < start) {
+                const statusEl = document.getElementById('editor-save-status');
+                if (statusEl) {
+                    statusEl.textContent = 'Data final não pode ser anterior à Data de início.';
+                    statusEl.style.color = 'var(--color-error)';
+                }
+                return;
+            }
+        }
 
         // Update local state
         if (!this.kanbanState[id]) {
@@ -1170,18 +1601,30 @@ class KanbanManager {
         this.kanbanState[id] = {
             ...this.kanbanState[id],
             responsible,
-            dueDate,
+            startDate: startDate || '',
+            endDate: endDate || '',
             updates,
             tags,
             stakeholders,
             updatedAt: new Date().toISOString()
         };
 
+        // Substatus editing (only for cards in 'doing')
+        if (this.substatusSelect && this.kanbanState[id].status === 'doing') {
+            const value = this.substatusSelect.value;
+            this.kanbanState[id].substatus = (value === 'doing') ? 'doing' : 'todo';
+            const label = this.kanbanState[id].substatus === 'doing' ? 'Fazendo' : 'A fazer';
+            this.updateCardSubstatus(id, label);
+        }
+
         // Update the card's tags display in the DOM
         this.updateCardTagsDisplay(id, tags);
 
         // Update the card's stakeholders badge in the DOM
         this.updateCardStakeholdersBadge(id, stakeholders);
+
+        // Update the card's dates display
+        this.updateCardDatesDisplay(id);
 
         // Show saving feedback in the form
         const statusEl = document.getElementById('editor-save-status');
@@ -1192,6 +1635,10 @@ class KanbanManager {
 
         // Trigger global save
         await this.saveState();
+
+        if (this.currentView === 'timeline') {
+            this.renderTimeline();
+        }
 
         // Update feedback
         if (statusEl) {
@@ -1545,6 +1992,148 @@ class KanbanManager {
 
         // Update column counts
         this.updateCounts();
+
+        if (this.currentView === 'timeline') {
+            this.renderTimeline();
+        }
+    }
+
+    getFilteredCards() {
+        const searchQuery = this.searchInput ? this.searchInput.value.trim().toLowerCase() : '';
+        return this.interventions.filter(card => {
+            let matchesSearch = true;
+            if (searchQuery) {
+                matchesSearch = this.cardMatchesQuery(card, searchQuery);
+            }
+            let matchesTags = true;
+            if (this.selectedFilterTags.length > 0) {
+                matchesTags = this.cardHasAllTags(card.id, this.selectedFilterTags);
+            }
+            return matchesSearch && matchesTags;
+        });
+    }
+
+    renderTimeline() {
+        if (!this.timelineEl) return;
+
+        const cards = this.getFilteredCards();
+        const withDates = [];
+        const withoutDates = [];
+
+        cards.forEach(card => {
+            const state = this.kanbanState[card.id];
+            const startDate = state && typeof state === 'object' ? state.startDate : '';
+            const endDate = state && typeof state === 'object' ? state.endDate : '';
+            if (startDate && endDate) {
+                withDates.push({ card, startDate, endDate, status: (state.status || 'backlog') });
+            } else {
+                withoutDates.push({ card, status: (state && typeof state === 'object' && state.status) ? state.status : 'backlog' });
+            }
+        });
+
+        if (withDates.length === 0) {
+            this.timelineEl.innerHTML = `
+                <div class="timeline-no-dates">Nenhum card com datas definidas. Defina Data de início e Data final no editor.</div>
+                ${withoutDates.length > 0 ? this.renderTimelineNoDatesList(withoutDates) : ''}
+            `;
+            this.bindTimelineClicks();
+            return;
+        }
+
+        const starts = withDates.map(x => new Date(`${x.startDate}T00:00:00`));
+        const ends = withDates.map(x => new Date(`${x.endDate}T00:00:00`));
+        const minStart = new Date(Math.min(...starts.map(d => d.getTime())));
+        const maxEnd = new Date(Math.max(...ends.map(d => d.getTime())));
+
+        const rangeDays = Math.max(1, Math.round((maxEnd - minStart) / 86400000) + 1);
+
+        const tickMode = rangeDays > 180 ? 'month' : 'week';
+        const ticks = this.buildTimelineTicks(minStart, maxEnd, tickMode);
+
+        const axisHtml = `
+            <div class="timeline-header">
+                <div class="timeline-axis" style="grid-auto-columns: minmax(90px, 1fr);">
+                    ${ticks.map(t => `<div class="timeline-tick">${this.escapeHtml(t.label)}</div>`).join('')}
+                </div>
+            </div>
+        `;
+
+        const rowsHtml = withDates.map(x => {
+            const start = new Date(`${x.startDate}T00:00:00`);
+            const end = new Date(`${x.endDate}T00:00:00`);
+            const left = ((start - minStart) / (rangeDays * 86400000)) * 100;
+            const width = (Math.max(1, (end - start) / 86400000 + 1) / rangeDays) * 100;
+            const statusClass = `status-${this.escapeHtml(x.status)}`;
+            const label = `${x.card.id} — ${x.card.title}`;
+
+            return `
+                <div class="timeline-row" data-cardid="${this.escapeHtml(x.card.id)}">
+                    <div class="timeline-row-label" data-action="open" data-cardid="${this.escapeHtml(x.card.id)}">${this.escapeHtml(label)}</div>
+                    <div class="timeline-row-track">
+                        <div class="timeline-bar ${statusClass}" data-action="open" data-cardid="${this.escapeHtml(x.card.id)}" style="left:${left}%; width:${width}%;"></div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        this.timelineEl.innerHTML = `
+            <div class="timeline-scroll">
+                ${axisHtml}
+                <div class="timeline-rows">
+                    ${rowsHtml}
+                </div>
+                ${withoutDates.length > 0 ? this.renderTimelineNoDatesList(withoutDates) : ''}
+            </div>
+        `;
+
+        this.bindTimelineClicks();
+    }
+
+    renderTimelineNoDatesList(items) {
+        const list = items.map(x => {
+            const label = `${x.card.id} — ${x.card.title}`;
+            return `<div class="timeline-no-dates" data-action="open" data-cardid="${this.escapeHtml(x.card.id)}">${this.escapeHtml(label)}</div>`;
+        }).join('');
+
+        return `
+            <div class="timeline-no-dates">
+                <strong>Sem datas</strong>
+            </div>
+            ${list}
+        `;
+    }
+
+    bindTimelineClicks() {
+        if (!this.timelineEl) return;
+        this.timelineEl.querySelectorAll('[data-action="open"]').forEach(el => {
+            el.addEventListener('click', () => {
+                const cardId = el.dataset.cardid;
+                if (cardId) this.openEditor(cardId);
+            });
+        });
+    }
+
+    buildTimelineTicks(minStart, maxEnd, mode) {
+        const ticks = [];
+        const cursor = new Date(minStart.getTime());
+
+        if (mode === 'month') {
+            cursor.setDate(1);
+            while (cursor <= maxEnd) {
+                const label = cursor.toLocaleDateString('pt-BR', { month: 'short', year: '2-digit' });
+                ticks.push({ date: new Date(cursor.getTime()), label });
+                cursor.setMonth(cursor.getMonth() + 1);
+            }
+            return ticks;
+        }
+
+        // week
+        while (cursor <= maxEnd) {
+            const label = cursor.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+            ticks.push({ date: new Date(cursor.getTime()), label });
+            cursor.setDate(cursor.getDate() + 7);
+        }
+        return ticks;
     }
 
     /**

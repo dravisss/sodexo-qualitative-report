@@ -10,7 +10,7 @@ class ReportReader {
     constructor() {
         this.currentArticle = null;
         this.contentEl = document.getElementById('content');
-        this.navListEl = document.getElementById('nav-list');
+        this.navGroupsEl = document.getElementById('nav-groups');
         this.progressBarEl = document.getElementById('progress-bar');
         this.breadcrumbEl = document.getElementById('breadcrumb-container');
         this.sidebarEl = document.querySelector('.sin-sidebar');
@@ -34,7 +34,52 @@ class ReportReader {
      * Render sidebar navigation from ARTICLES config
      */
     renderNavigation() {
-        this.navListEl.innerHTML = ARTICLES.map(article => `
+        if (!this.navGroupsEl) return;
+
+        const byId = new Map(ARTICLES.map(a => [a.id, a]));
+
+        const groups = [
+            {
+                id: 'geral',
+                title: 'Visão Geral',
+                articleIds: ['00', '06', '08', '13', '12']
+            },
+            {
+                id: 'artigos',
+                title: 'Artigos',
+                articleIds: ['11', '01', '02', '03', '04']
+            },
+            {
+                id: 'evidencias',
+                title: 'Evidências',
+                articleIds: ['05']
+            },
+            {
+                id: 'memoria',
+                title: 'Memória',
+                articleIds: ['09', '10']
+            },
+            {
+                id: 'campo',
+                title: 'Campo',
+                articleIds: ['15']
+            },
+            {
+                id: 'ferramentas',
+                title: 'Ferramentas',
+                tools: [
+                    {
+                        href: 'kanban.html',
+                        title: 'Gestão de Intervenções',
+                        icon: '📋',
+                        label: 'Gestão de Intervenções'
+                    }
+                ]
+            }
+        ];
+
+        const renderArticleLink = (article) => {
+            return `
       <li class="nav-item">
         <a href="#${article.id}"
            class="nav-link"
@@ -44,17 +89,92 @@ class ReportReader {
           <span class="nav-title">${article.title}</span>
         </a>
       </li>
-    `).join('') + `
+    `;
+        };
+
+        const renderToolLink = (tool) => {
+            return `
       <li class="nav-item">
-        <div style="height: 1px; background: var(--color-border); margin: 8px 16px; opacity: 0.5;"></div>
-      </li>
-      <li class="nav-item">
-        <a href="kanban.html" class="nav-link" title="Gestão de Intervenções">
-          <span class="nav-number">📋</span>
-          <span class="nav-title">Gestão de Intervenções</span>
+        <a href="${tool.href}" class="nav-link" title="${tool.title}">
+          <span class="nav-number">${tool.icon}</span>
+          <span class="nav-title">${tool.label}</span>
         </a>
       </li>
     `;
+        };
+
+        this.navGroupsEl.innerHTML = groups.map(group => {
+            const itemsHtml = (group.articleIds || [])
+                .map(id => byId.get(id))
+                .filter(Boolean)
+                .map(renderArticleLink)
+                .join('');
+
+            const toolsHtml = (group.tools || [])
+                .map(renderToolLink)
+                .join('');
+
+            return `
+      <section class="nav-group" data-group="${group.id}">
+        <button class="nav-group-header" type="button" data-action="toggle-group" data-group="${group.id}">
+          <span class="nav-group-title">${group.title}</span>
+          <span class="nav-group-chevron">▾</span>
+        </button>
+        <ul class="nav-list">
+          ${itemsHtml}${toolsHtml}
+        </ul>
+      </section>
+    `;
+        }).join('');
+
+        this.restoreNavGroupsState();
+        this.setupNavGroupsEvents();
+    }
+
+    restoreNavGroupsState() {
+        if (!this.navGroupsEl) return;
+
+        let state = null;
+        try {
+            state = JSON.parse(localStorage.getItem('sidebar-open-groups'));
+        } catch {
+            state = null;
+        }
+
+        const defaultOpen = { executive: true };
+        const finalState = (state && typeof state === 'object') ? state : defaultOpen;
+
+        this.navGroupsEl.querySelectorAll('.nav-group').forEach(groupEl => {
+            const id = groupEl.dataset.group;
+            const isOpen = !!finalState[id];
+            groupEl.classList.toggle('collapsed', !isOpen);
+        });
+    }
+
+    saveNavGroupsState() {
+        if (!this.navGroupsEl) return;
+
+        const state = {};
+        this.navGroupsEl.querySelectorAll('.nav-group').forEach(groupEl => {
+            const id = groupEl.dataset.group;
+            state[id] = !groupEl.classList.contains('collapsed');
+        });
+
+        localStorage.setItem('sidebar-open-groups', JSON.stringify(state));
+    }
+
+    setupNavGroupsEvents() {
+        if (!this.navGroupsEl) return;
+
+        this.navGroupsEl.querySelectorAll('[data-action="toggle-group"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const groupId = btn.dataset.group;
+                const groupEl = this.navGroupsEl.querySelector(`.nav-group[data-group="${groupId}"]`);
+                if (!groupEl) return;
+                groupEl.classList.toggle('collapsed');
+                this.saveNavGroupsState();
+            });
+        });
     }
 
     /**

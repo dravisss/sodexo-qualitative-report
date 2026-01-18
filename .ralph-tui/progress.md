@@ -9,62 +9,75 @@ after each iteration and included in agent prompts for context.
 
 ---
 
-## ✓ Iteration 1 - US-001: Estrutura da Página Kanban
-*2026-01-18T02:33:16.832Z (177s)*
+## ✓ Iteration 1 - US-001: Board com 4 Colunas
+*2026-01-18T04:33:10.295Z (246s)*
 
 **Status:** Completed
 
 **Notes:**
-to move forward.\n\n\n"}],"model":"gemini-3-pro-high","stop_reason":null,"stop_sequence":null,"usage":{"input_tokens":63954,"output_tokens":0,"cache_read_input_tokens":0,"cache_creation_input_tokens":0},"context_management":null},"parent_tool_use_id":null,"session_id":"d5c9cabf-2a88-4ca2-9c30-dc52f97de622","uuid":"688d40ad-8621-48b4-9c17-7d6642c6aa8a"}
-{"type":"assistant","message":{"id":"msg_c602097d47a359ce5081109982bd3264","type":"message","role":"assistant","content":[{"type":"text","text":"
+yles as the column no longer exists\n\n### Acceptance Criteria Verification\n- [x] Board displays exactly 4 columns: Backlog, Em andamento, Bloqueado, Concluído\n- [x] No horizontal scroll on desktop (≥1024px)\n- [x] Columns 'A Fazer' and 'Em Andamento' from V1 consolidated into 'Em andamento'\n- [x] Migrated cards from 'todo' appear in 'Em andamento' with substatus badge\n- [x] Each column has equal width (25% of available space)\n\nCommitted as: `8ce20c3 feat: US-001 - Board com 4 Colunas`\n\n
 
 ---
-## ✓ Iteration 2 - US-002: Extração de Intervenções
-*2026-01-18T02:41:58.500Z (521s)*
+## ✓ Iteration 2 - US-002: Arrastar Cards entre Colunas
+*2026-01-18T04:36:15.517Z (184s)*
 
 **Status:** Completed
 
 **Notes:**
-nal completion.\n\n\n"}],"model":"gemini-3-pro-high","stop_reason":null,"stop_sequence":null,"usage":{"input_tokens":110134,"output_tokens":0,"cache_read_input_tokens":0,"cache_creation_input_tokens":0},"context_management":null},"parent_tool_use_id":null,"session_id":"001afb43-12b1-40b1-9b29-394c1617a9da","uuid":"f942a2db-9dac-4f1c-862f-050fed1634bc"}
-{"type":"assistant","message":{"id":"msg_104d1679149628d5b607ead5d18dac62","type":"message","role":"assistant","content":[{"type":"text","text":"
+rotate(2deg)`), and teal border for semi-transparent visual indicator\n\n### Acceptance Criteria Met\n- [x] Drag-and-drop funciona entre todas as 4 colunas\n- [x] Ao mover para 'Em andamento', substatus é definido como 'todo' por padrão\n- [x] Estado é salvo automaticamente no Netlify Blobs após cada movimento\n- [x] Ordem dos cards dentro da coluna é preservada\n- [x] Indicador visual durante o arraste (card semi-transparente)\n\nCommit: `f877cf2 feat: US-002 - Arrastar Cards entre Colunas`\n\n
 
 ---
-## ✓ Iteration 3 - US-003: Integração com Netlify Blobs (Persistência)
-*2026-01-18T02:46:26.768Z (267s)*
+## ✓ Iteration 3 - US-003: Editar Tags no Editor
+*2026-01-18T04:39:22.712Z (186s)*
 
 **Status:** Completed
 
 **Notes:**
-t fails.\n    *   **Visual Feedback:** Added a \"Toast\" notification system to show \"Salvando...\" (Saving), \"Salvo\" (Saved), or error messages.\n\n3.  **Styles (`css/kanban.css`):**\n    *   Added styles for drag-and-drop feedback (opacity changes, dashed borders on drop zones) to improve user experience.\n\n4.  **Verification:**\n    *   Verified code syntax with `node --check`.\n    *   Ensured code follows the project's ES Module structure.\n\nThe solution is now committed and ready.\n\n
+`removeTag()` - removes a tag from the current editing list\n- Added `escapeHtml()` - prevents XSS when rendering tag content\n- Added `updateCardTagsDisplay()` - updates card DOM when tags are saved\n- Added `generateCardTagsHtml()` - generates tag HTML with up to 2 visible tags + \"+N\" indicator\n- Updated `createCardElement()` - includes user tags when rendering cards\n- Updated `handleEditorSave()` - persists tags to state\n- Updated `openEditor()` - loads existing tags into the editor\n\n
 
 ---
-## ✓ Iteration 4 - US-004: Quadro Interativo com SortableJS
-*2026-01-18T02:49:39.819Z (192s)*
+## ✓ Iteration 4 - US-004: Campo Envolver (Stakeholders)
+*2026-01-18T04:44:28.274Z (304s)*
 
 **Status:** Completed
 
 **Notes:**
-ign off on this.\n\n\n"}],"model":"gemini-3-pro-high","stop_reason":null,"stop_sequence":null,"usage":{"input_tokens":49159,"output_tokens":0,"cache_read_input_tokens":0,"cache_creation_input_tokens":0},"context_management":null},"parent_tool_use_id":null,"session_id":"042ffab7-e10b-4404-a748-81351811bce1","uuid":"6d7c2637-da0c-4dcf-8863-c2c162d10039"}
-{"type":"assistant","message":{"id":"msg_6fe5c3b083ccbfada54a63b829522a85","type":"message","role":"assistant","content":[{"type":"text","text":"
+ge on initial render\n   - Updated `handleEditorSave()` to persist stakeholders\n\n**Acceptance Criteria Status:**\n- [x] Editor lateral exibe seção 'Envolver' com lista de pessoas\n- [x] Botão 'Adicionar pessoa' abre formulário com campos: Nome (obrigatório), Área (opcional), Contato (opcional)\n- [x] Cada pessoa na lista tem botão para remover\n- [x] Card exibe badge 👥 com contagem de pessoas (ex: 👥3)\n- [x] Badge não aparece se contagem é 0\n- [x] Dados são persistidos no estado do card\n\n
 
 ---
-## ✓ Iteration 5 - US-005: Edição de Detalhes do Card
-*2026-01-18T02:55:07.690Z (327s)*
+## ✓ Iteration 5 - US-005: Busca por ID/Título/Tag/Envolver
+*2026-01-18T04:47:22.329Z (173s)*
 
 **Status:** Completed
 
 **Notes:**
-gnal completion.\n\n\n"}],"model":"gemini-3-pro-high","stop_reason":null,"stop_sequence":null,"usage":{"input_tokens":59310,"output_tokens":0,"cache_read_input_tokens":0,"cache_creation_input_tokens":0},"context_management":null},"parent_tool_use_id":null,"session_id":"2957709c-89fa-4ea0-809e-6af062ce484b","uuid":"64f62784-73f4-4810-a551-e89238740ed1"}
-{"type":"assistant","message":{"id":"msg_01ddb901ef1f0fe39bd0d2ea1fd5dc3f","type":"message","role":"assistant","content":[{"type":"text","text":"
+e, tags, and stakeholders\n   - Updated `updateCounts()` to count only visible cards\n\n3. **css/kanban.css** - Added styles for search input with responsive design\n\n**Acceptance Criteria Met:**\n- Topbar displays search input with placeholder 'Buscar...'\n- Search filters cards in real-time with 300ms debounce\n- Matches: ID (I-XX), title, any tag, stakeholder name/area/contact\n- Case-insensitive search\n- Non-matching cards are hidden (display: none)\n- Clearing input restores all cards\n\n
 
 ---
-## ✓ Iteration 6 - US-006: Sincronização em Tempo Real (Polling)
-*2026-01-18T02:59:45.500Z (277s)*
+## ✓ Iteration 6 - US-006: Filtro por Múltiplas Tags (AND)
+*2026-01-18T04:51:47.544Z (264s)*
 
 **Status:** Completed
 
 **Notes:**
-good to proceed.\n\n\n"}],"model":"gemini-3-pro-high","stop_reason":null,"stop_sequence":null,"usage":{"input_tokens":45922,"output_tokens":0,"cache_read_input_tokens":0,"cache_creation_input_tokens":0},"context_management":null},"parent_tool_use_id":null,"session_id":"f468731b-9772-462c-bbe8-c7bd9093b403","uuid":"82c02a1d-f797-437e-8700-c3177462e40a"}
-{"type":"assistant","message":{"id":"msg_b8fdb58183f2b661fffa5db334aa0930","type":"message","role":"assistant","content":[{"type":"text","text":"
+lect()` for tag selection/deselection\n- Added `renderSelectedTagsChips()` to display selected tags in topbar\n- Added `removeFilterTag()` to remove individual filter tags\n- Added `clearAllFilters()` to clear both search and tags\n- Added `applyFilters()` combining text search AND tag filters\n- Added `cardHasAllTags()` for AND logic on tag matching\n- Added `refreshTagPicker()` for dynamic updates when new tags are created\n- Modified `handleEditorSave()` to refresh tag picker after saving\n\n
+
+---
+## ✗ Iteration 7 - US-007: Detalhes Completos no Editor
+*2026-01-18T04:55:54.118Z (246s)*
+
+**Status:** Failed/Incomplete
+
+---
+## ✗ Iteration 8 - US-008: Anexar Arquivos
+*2026-01-18T04:55:58.263Z (3s)*
+
+**Status:** Failed/Incomplete
+
+---
+## ✗ Iteration 9 - US-010: Datas de Início e Final
+*2026-01-18T04:56:02.665Z (3s)*
+
+**Status:** Failed/Incomplete
 
 ---

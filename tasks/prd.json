@@ -1,43 +1,39 @@
 {
-  "name": "Relatório Sodexo - Kanban de Intervenções",
-  "branchName": "ralph/kanban-intervencoes",
+  "name": "Kanban Upgrade (Sodexo Report)",
+  "description": "Evolve the existing Kanban into a premium governance tool with 4 columns, tags, stakeholder tracking, file attachments, and Gantt-style timeline view.",
+  "branchName": "feature/kanban-upgrade-sodexo",
   "userStories": [
     {
       "id": "US-001",
-      "title": "Estrutura da Página Kanban",
-      "description": "Como usuário, quero acessar uma página dedicada ao Kanban através de um link na navegação principal, para que eu possa gerenciar as intervenções sem sair do contexto do aplicativo.",
+      "title": "Board com 4 Colunas",
+      "description": "Como usuário, quero ver o board com 4 colunas (Backlog, Em andamento, Bloqueado, Concluído) sem scroll horizontal, para acompanhar o todo de forma executiva.",
       "acceptanceCriteria": [
-        "Criar `kanban.html` com a estrutura base (header, container do board).",
-        "Criar `css/kanban.css` seguindo as variáveis de estilo do SIN Design System.",
-        "Criar `js/kanban.js` como módulo ES6.",
-        "Adicionar link \"Gestão de Intervenções\" no menu principal da aplicação existente.",
-        "A página deve carregar corretamente e exibir o layout vazio das colunas fixas: Backlog, A Fazer, Em Andamento, Bloqueado, Concluído.",
-        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
-        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
-        "Console: Garantir que não há erros de JavaScript no console do navegador",
-        "Responsividade: O layout deve funcionar em desktop e mobile"
+        "Board exibe exatamente 4 colunas: Backlog, Em andamento, Bloqueado, Concluído",
+        "Não há scroll horizontal em desktop (≥1024px)",
+        "Colunas 'A Fazer' e 'Em Andamento' do V1 são consolidadas em 'Em andamento'",
+        "Cards migrados de 'todo' e 'doing' aparecem em 'Em andamento' com substatus correspondente",
+        "Cada coluna tem largura igual (25% do espaço disponível)"
       ],
       "priority": 1,
       "passes": true,
+      "notes": "",
       "dependsOn": [],
       "completionNotes": "Completed by agent"
     },
     {
       "id": "US-002",
-      "title": "Extração de Intervenções",
-      "description": "Como usuário, quero que o sistema identifique automaticamente as intervenções descritas nos arquivos Markdown do relatório, para que eu não precise cadastrá-las manualmente.",
+      "title": "Arrastar Cards entre Colunas",
+      "description": "Como usuário, quero mover cards entre colunas arrastando, para atualizar o status das intervenções.",
       "acceptanceCriteria": [
-        "Implementar função para varrer os arquivos na pasta `Refined/` (utilizando a lista do `js/config.js`).",
-        "Extrair seções identificadas como \"Intervenção\" ou padrões definidos nos Markdowns.",
-        "Gerar uma lista de objetos JSON contendo: ID único (hash do título/conteúdo), Título, Descrição resumida e Link de origem (para abrir o relatório original).",
-        "Exibir os cards extraídos na coluna \"Backlog\" (se ainda não tiverem estado salvo).",
-        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
-        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
-        "Console: Garantir que não há erros de JavaScript no console do navegador",
-        "Responsividade: O layout deve funcionar em desktop e mobile"
+        "Drag-and-drop funciona entre todas as 4 colunas",
+        "Ao mover para 'Em andamento', substatus é definido como 'todo' por padrão",
+        "Estado é salvo automaticamente no Netlify Blobs após cada movimento",
+        "Ordem dos cards dentro da coluna é preservada",
+        "Indicador visual durante o arraste (card semi-transparente)"
       ],
       "priority": 2,
       "passes": true,
+      "notes": "",
       "dependsOn": [
         "US-001"
       ],
@@ -45,91 +41,194 @@
     },
     {
       "id": "US-003",
-      "title": "Integração com Netlify Blobs (Persistência)",
-      "description": "Como usuário, quero que as alterações que faço no quadro sejam salvas na nuvem, para que meus colegas possam ver o status atualizado das tarefas.",
+      "title": "Editar Tags no Editor",
+      "description": "Como usuário, quero editar tags no editor lateral, para categorizar as intervenções.",
       "acceptanceCriteria": [
-        "Criar/Ajustar Netlify Function para leitura e escrita em um store dedicado do Netlify Blobs (ex: `sodexo-kanban-state`).",
-        "Ao carregar a página, mesclar as intervenções extraídas (US-002) com o estado salvo no Blob (coluna atual, responsável, etc).",
-        "Implementar salvamento automático ao mover cards ou editar dados.",
-        "Tratamento de erro: Exibir alerta caso a conexão falhe.",
-        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
-        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
-        "Console: Garantir que não há erros de JavaScript no console do navegador",
-        "Responsividade: O layout deve funcionar em desktop e mobile"
+        "Editor lateral exibe seção 'Tags' com input de texto",
+        "Usuário pode adicionar tag pressionando Enter ou vírgula",
+        "Tags aparecem como chips com botão ✕ para remover",
+        "Tags são normalizadas: trim, lowercase para comparação, sem duplicatas",
+        "Card exibe até 2 tags como chips + indicador '+N' se houver mais",
+        "Tags são persistidas no estado do card"
       ],
       "priority": 3,
       "passes": true,
+      "notes": "",
       "dependsOn": [
-        "US-002"
+        "US-001"
       ],
       "completionNotes": "Completed by agent"
     },
     {
       "id": "US-004",
-      "title": "Quadro Interativo com SortableJS",
-      "description": "Como usuário, quero mover os cards entre as colunas arrastando e soltando, para atualizar o status das intervenções de forma intuitiva.",
+      "title": "Campo Envolver (Stakeholders)",
+      "description": "Como usuário, quero editar o campo 'Envolver' (Nome/Área/Contato) no editor, para saber quem contatar sobre cada intervenção.",
       "acceptanceCriteria": [
-        "Importar biblioteca SortableJS (via CDN ou vendor).",
-        "Tornar as colunas do Kanban áreas de drop ativas.",
-        "Ao soltar um card, atualizar visualmente a posição.",
-        "Disparar evento de salvamento (US-003) imediatamente após o movimento.",
-        "Animações suaves de drag & drop.",
-        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
-        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
-        "Console: Garantir que não há erros de JavaScript no console do navegador",
-        "Responsividade: O layout deve funcionar em desktop e mobile"
+        "Editor lateral exibe seção 'Envolver' com lista de pessoas",
+        "Botão 'Adicionar pessoa' abre formulário com campos: Nome (obrigatório), Área (opcional), Contato (opcional)",
+        "Cada pessoa na lista tem botão para remover",
+        "Card exibe badge 👥 com contagem de pessoas (ex: 👥3)",
+        "Badge não aparece se contagem é 0",
+        "Dados são persistidos no estado do card"
       ],
       "priority": 4,
       "passes": true,
+      "notes": "",
       "dependsOn": [
-        "US-003"
+        "US-001"
       ],
       "completionNotes": "Completed by agent"
     },
     {
       "id": "US-005",
-      "title": "Edição de Detalhes do Card",
-      "description": "Como usuário, quero clicar em um card para adicionar informações de gestão (responsável, data, atualizações), para detalhar o andamento da intervenção.",
+      "title": "Busca por ID/Título/Tag/Envolver",
+      "description": "Como usuário, quero buscar por id/título/tag/envolver, para encontrar intervenções rapidamente.",
       "acceptanceCriteria": [
-        "Ao clicar no card, abrir um Modal ou Painel Lateral.",
-        "Exibir dados estáticos (vindos do Markdown) como somente leitura.",
-        "Exibir campos editáveis: Responsável (texto simples), Data Limite, Últimas Atualizações (campo de texto multilinhas).",
-        "Botão \"Salvar\" que persiste os dados no Netlify Blob associado ao ID do card.",
-        "Utilizar a identificação de usuário existente (localStorage/Session) para preencher logs de autoria se disponível.",
-        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
-        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
-        "Console: Garantir que não há erros de JavaScript no console do navegador",
-        "Responsividade: O layout deve funcionar em desktop e mobile"
+        "Topbar exibe input de busca com placeholder 'Buscar...'",
+        "Busca filtra cards em tempo real (debounce 300ms)",
+        "Match em: ID (I-XX), título, qualquer tag, nome/área/contato de envolver",
+        "Busca é case-insensitive",
+        "Cards não correspondentes ficam ocultos (não apenas esmaecidos)",
+        "Limpar input restaura todos os cards"
       ],
       "priority": 5,
       "passes": true,
+      "notes": "",
       "dependsOn": [
+        "US-003",
         "US-004"
       ],
       "completionNotes": "Completed by agent"
     },
     {
       "id": "US-006",
-      "title": "Sincronização em Tempo Real (Polling)",
-      "description": "Como usuário, quero ver atualizações feitas por outros usuários sem precisar recarregar a página manualmente o tempo todo.",
+      "title": "Filtro por Múltiplas Tags (AND)",
+      "description": "Como usuário, quero filtrar por múltiplas tags em modo AND, para refinar a visualização.",
       "acceptanceCriteria": [
-        "Implementar mecanismo de *polling* que consulta o Netlify Blob a cada X segundos (ex: 30s).",
-        "Atualizar a posição dos cards e dados se houver mudança no servidor.",
-        "Evitar sobrescrever se o usuário estiver arrastando um card no momento da atualização.",
-        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
-        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
-        "Console: Garantir que não há erros de JavaScript no console do navegador",
-        "Responsividade: O layout deve funcionar em desktop e mobile"
+        "Topbar exibe tag picker (dropdown multi-select) com todas as tags únicas",
+        "Tags selecionadas aparecem como chips na topbar com ✕ para remover",
+        "Filtro é AND: card deve conter TODAS as tags selecionadas",
+        "Filtro combina com busca textual: resultado = (match busca) AND (todas tags)",
+        "Botão 'Limpar' remove busca + tags selecionadas",
+        "Tag picker atualiza dinamicamente quando novas tags são criadas"
       ],
       "priority": 6,
       "passes": true,
+      "notes": "",
       "dependsOn": [
+        "US-003",
         "US-005"
       ],
       "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-007",
+      "title": "Detalhes Completos no Editor",
+      "description": "Como usuário, quero ver Tensão/Descrição/Objetivo/Impacto completos no editor, para ter o contexto integral da intervenção.",
+      "acceptanceCriteria": [
+        "Editor exibe 4 seções colapsáveis: Tensão, Descrição, Objetivo, Impacto",
+        "Seções são read-only (conteúdo vem do Markdown)",
+        "Por padrão, seções estão expandidas",
+        "Parser extrai conteúdo do Markdown por label (case-insensitive)",
+        "Se label não existir no Markdown, exibe '—'",
+        "Conteúdo preserva formatação (negrito, listas, etc.)"
+      ],
+      "priority": 7,
+      "passes": true,
+      "notes": "",
+      "dependsOn": [
+        "US-001"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-008",
+      "title": "Anexar Arquivos",
+      "description": "Como usuário, quero anexar arquivos e baixar/remover anexos, para centralizar evidências.",
+      "acceptanceCriteria": [
+        "Editor exibe seção 'Anexos' com botão 'Adicionar arquivo'",
+        "Upload aceita: pdf, csv, xls, xlsx, docx, pptx, png, jpg, jpeg",
+        "Limite: 10MB por arquivo, 50MB total por card",
+        "Lista de anexos exibe: nome, tamanho, botão download, botão remover",
+        "Arquivos são armazenados em Netlify Blobs via '/api/kanban-attachment'",
+        "Card exibe badge 📎 com contagem de anexos",
+        "Badge não aparece se contagem é 0",
+        "Remoção deleta do Blobs e atualiza estado"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": "",
+      "dependsOn": [
+        "US-001"
+      ]
+    },
+    {
+      "id": "US-009",
+      "title": "Visual Premium",
+      "description": "Como usuário, quero que a UI tenha visual premium e consistente com o relatório, para uma experiência profissional.",
+      "acceptanceCriteria": [
+        "Cores seguem variáveis CSS do SIN Design System",
+        "Transições suaves em hover, drag, abrir/fechar editor (200-300ms)",
+        "Sombras e bordas consistentes com o relatório principal",
+        "Tipografia hierárquica (títulos, labels, conteúdo)",
+        "Estados de loading com skeleton ou spinner",
+        "Responsivo: mobile com tabs para colunas"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": "",
+      "dependsOn": [
+        "US-001",
+        "US-002",
+        "US-003",
+        "US-004",
+        "US-005",
+        "US-006",
+        "US-007",
+        "US-008"
+      ]
+    },
+    {
+      "id": "US-010",
+      "title": "Datas de Início e Final",
+      "description": "Como usuário, quero definir Data de início e Data final e vê-las no card, para fazer gestão de prazos.",
+      "acceptanceCriteria": [
+        "Editor exibe campos 'Data de início' e 'Data final' com date pickers",
+        "Formato de armazenamento: YYYY-MM-DD",
+        "Card exibe datas no formato compacto: '📅 15/01 → 28/02'",
+        "Se apenas uma data definida, exibe só ela",
+        "Se nenhuma data, não exibe linha de datas",
+        "Validação: Data final não pode ser anterior à Data de início"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": "",
+      "dependsOn": [
+        "US-001"
+      ]
+    },
+    {
+      "id": "US-011",
+      "title": "View Timeline (Gantt)",
+      "description": "Como usuário, quero alternar entre view Board e Timeline, para acompanhar cronograma e sobreposições.",
+      "acceptanceCriteria": [
+        "Topbar exibe toggle [Board] [Timeline]",
+        "Timeline exibe eixo horizontal com semanas/meses",
+        "Cards com startDate/endDate aparecem como barras horizontais",
+        "Cor da barra indica status: cinza=backlog, azul=andamento, vermelho=bloqueado, verde=concluído",
+        "Cards sem datas agrupados em seção 'Sem datas' abaixo do gráfico",
+        "Click na barra abre editor do card",
+        "Timeline usa mesmo filtro/busca aplicado ao Board"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": "",
+      "dependsOn": [
+        "US-010"
+      ]
     }
   ],
   "metadata": {
-    "updatedAt": "2026-01-18T02:59:45.463Z"
+    "updatedAt": "2026-01-18T05:35:39.821Z"
   }
 }
