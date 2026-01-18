@@ -104,24 +104,29 @@ export default async (req, context) => {
 
         finalSubmissionId = result[0].id;
 
-        // Upsert individual answers with metadata
-        if (answers_metadata) {
+        // Upsert individual answers with metadata (BATCH OPTIMIZATION)
+        if (answers_metadata && Object.keys(answers).length > 0) {
+            const rowsToInsert = [];
+
             for (const [fieldId, value] of Object.entries(answers)) {
                 if (fieldId.endsWith('_blob')) continue; // Skip blob refs
 
                 const meta = answers_metadata[fieldId] || {};
 
+                rowsToInsert.push({
+                    submission_id: finalSubmissionId,
+                    field_id: fieldId,
+                    field_type: meta.field_type || 'text',
+                    section_name: meta.section || null,
+                    subsection_name: meta.subsection || null,
+                    question_text: meta.question_text || null,
+                    answer_value: String(value) // Ensure text
+                });
+            }
+
+            if (rowsToInsert.length > 0) {
                 await sql`
-                    INSERT INTO answers (submission_id, field_id, field_type, section_name, subsection_name, question_text, answer_value)
-                    VALUES (
-                        ${finalSubmissionId}::uuid,
-                        ${fieldId},
-                        ${meta.field_type || 'text'},
-                        ${meta.section || null},
-                        ${meta.subsection || null},
-                        ${meta.question_text || null},
-                        ${value}
-                    )
+                    INSERT INTO answers ${sql(rowsToInsert)}
                     ON CONFLICT (submission_id, field_id) 
                     DO UPDATE SET 
                         answer_value = EXCLUDED.answer_value,
