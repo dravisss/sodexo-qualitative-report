@@ -302,8 +302,11 @@ export class AutoSaveManager {
             const result = await response.json();
 
             if (result.success) {
-                // Store blob key in answers
+                // Store filename as the answer value
+                this.saveAnswer(fieldId, file.name);
+                // Store blob key reference
                 this.saveAnswer(`${fieldId}_blob`, result.blob_key);
+                this.updateFileUI(fieldId, file.name);
                 this.updateStatus('Arquivo enviado', 'saved');
                 return result.blob_key;
             } else {
