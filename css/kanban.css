@@ -31,7 +31,7 @@
 
 .kanban-board-container {
   flex: 1;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   padding: var(--spacing-lg) var(--page-padding);
   background-color: var(--color-bg);
@@ -41,19 +41,19 @@
   display: flex;
   gap: var(--spacing-md);
   height: 100%;
-  min-width: fit-content;
+  width: 100%;
 }
 
 /* === COLUMNS === */
 .kanban-column {
-  width: 300px;
+  flex: 1 1 25%;
+  min-width: 0;
   background: var(--color-bg-card-alt);
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   height: 100%;
   border: 1px solid var(--color-border);
-  flex-shrink: 0;
 }
 
 .kanban-column-header {
@@ -92,15 +92,13 @@
   gap: var(--spacing-sm);
 }
 
-/* === STATUS COLORS === */
+/* === STATUS COLORS (V2: 4 columns) === */
 .status-backlog .column-title { color: var(--color-text-muted); }
-.status-todo .column-title { color: var(--color-info); }
 .status-doing .column-title { color: var(--color-warning); }
 .status-blocked .column-title { color: var(--color-error); }
 .status-done .column-title { color: var(--color-success); }
 
 .status-backlog { border-top: 3px solid var(--color-text-light); }
-.status-todo { border-top: 3px solid var(--color-info); }
 .status-doing { border-top: 3px solid var(--color-warning); }
 .status-blocked { border-top: 3px solid var(--color-error); }
 .status-done { border-top: 3px solid var(--color-success); }
@@ -157,6 +155,27 @@
   margin-bottom: var(--spacing-xs);
 }
 
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+}
+
+.card-header .card-id {
+  margin-bottom: 0;
+}
+
+.card-substatus {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--color-info-light, rgba(33, 150, 243, 0.1));
+  color: var(--color-info, #2196f3);
+  border: 1px solid var(--color-info, #2196f3);
+  font-weight: var(--font-weight-medium);
+}
+
 .card-title {
   font-size: var(--font-size-sm);
   color: var(--color-text);
@@ -209,13 +228,43 @@
 }
 
 /* === RESPONSIVE === */
+
+/* Desktop: 4 columns, no horizontal scroll */
+@media (min-width: 1024px) {
+    .kanban-board-container {
+        overflow-x: hidden;
+    }
+
+    .kanban-column {
+        flex: 1 1 25%;
+        min-width: 200px;
+    }
+}
+
+/* Tablet and smaller: horizontal scroll enabled */
+@media (max-width: 1023px) {
+    .kanban-board-container {
+        overflow-x: auto;
+    }
+
+    .kanban-board {
+        min-width: fit-content;
+    }
+
+    .kanban-column {
+        flex: 0 0 280px;
+        min-width: 280px;
+    }
+}
+
 @media (max-width: 768px) {
     .kanban-board-container {
         padding: var(--spacing-md);
     }
 
     .kanban-column {
-        width: 260px;
+        flex: 0 0 260px;
+        min-width: 260px;
     }
 }
 

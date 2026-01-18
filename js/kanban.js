@@ -17,14 +17,19 @@ class KanbanManager {
         this.editorForm = document.getElementById('card-edit-form');
         this.currentEditingCardId = null;
 
-        // Fixed columns definition
+        // Fixed columns definition (V2: 4 columns)
         this.columns = [
             { id: 'backlog', title: 'Backlog', class: 'status-backlog', icon: '📥' },
-            { id: 'todo', title: 'A Fazer', class: 'status-todo', icon: '📋' },
-            { id: 'doing', title: 'Em Andamento', class: 'status-doing', icon: '🚧' },
+            { id: 'doing', title: 'Em andamento', class: 'status-doing', icon: '🚧' },
             { id: 'blocked', title: 'Bloqueado', class: 'status-blocked', icon: '⛔' },
             { id: 'done', title: 'Concluído', class: 'status-done', icon: '✅' }
         ];
+
+        // Legacy status mapping (V1 -> V2)
+        // Only 'todo' needs migration to 'doing'
+        this.legacyStatusMap = {
+            'todo': 'doing'      // "A Fazer" -> "Em andamento"
+        };
 
         // State
         this.interventions = [];
@@ -52,6 +57,12 @@ class KanbanManager {
         this.renderBoard();
         this.setupDragAndDrop();
         this.startPolling();
+
+        // Save any pending migrations from V1 -> V2
+        if (this._hasPendingMigration) {
+            this._hasPendingMigration = false;
+            await this.saveState();
+        }
     }
 
     /**
@@ -327,6 +338,7 @@ class KanbanManager {
             // Support both string (legacy) and object formats
             const state = this.kanbanState[card.id];
             let status = 'backlog';
+            let originalStatus = null;
 
             if (state) {
                 if (typeof state === 'string') {
@@ -336,9 +348,18 @@ class KanbanManager {
                 }
             }
 
+            // V2 Migration: Map legacy statuses to new column structure
+            if (this.legacyStatusMap[status]) {
+                originalStatus = status;  // Preserve original for substatus
+                status = this.legacyStatusMap[status];
+
+                // Update state to persist the migration with substatus
+                this.migrateCardStatus(card.id, status, originalStatus);
+            }
+
             const colBody = document.querySelector(`#col-${status} .kanban-column-body`);
             if (colBody) {
-                const cardEl = this.createCardElement(card);
+                const cardEl = this.createCardElement(card, originalStatus);
                 colBody.appendChild(cardEl);
             }
         });
@@ -347,13 +368,30 @@ class KanbanManager {
         this.updateCounts();
     }
 
-    createCardElement(card) {
+    createCardElement(card, originalStatus = null) {
         const el = document.createElement('div');
         el.className = 'kanban-card';
         el.dataset.id = card.id;
 
+        // Get substatus from state if not passed directly
+        const state = this.kanbanState[card.id];
+        let substatusLabel = null;
+        if (originalStatus) {
+            const labels = { 'todo': 'A Fazer', 'doing': 'Em Andamento' };
+            substatusLabel = labels[originalStatus];
+        } else if (state && typeof state === 'object' && state.substatusLabel) {
+            substatusLabel = state.substatusLabel;
+        }
+
+        const substatusHtml = substatusLabel
+            ? `<span class="card-substatus">${substatusLabel}</span>`
+            : '';
+
         el.innerHTML = `
-            <div class="card-id">${card.id}</div>
+            <div class="card-header">
+                <div class="card-id">${card.id}</div>
+                ${substatusHtml}
+            </div>
             <div class="card-title">${card.title}</div>
             <div class="card-tags">
                 <span class="card-tag" title="${card.articleTitle}">${card.articleTitle}</span>
@@ -443,6 +481,42 @@ class KanbanManager {
                 countEl.textContent = colBody.children.length;
             }
         });
+    }
+
+    /**
+     * Migrate card from legacy status to new status (V1 -> V2)
+     * Persists substatus for cards migrated from 'todo' or 'doing'
+     */
+    migrateCardStatus(cardId, newStatus, originalStatus) {
+        const currentState = this.kanbanState[cardId];
+
+        // Only migrate if not already migrated
+        if (currentState && typeof currentState === 'object' && currentState.substatus) {
+            return; // Already has substatus, skip migration
+        }
+
+        const substatusLabels = {
+            'todo': 'A Fazer',
+            'doing': 'Em Andamento'
+        };
+
+        if (typeof currentState === 'object' && currentState !== null) {
+            this.kanbanState[cardId].status = newStatus;
+            this.kanbanState[cardId].substatus = originalStatus;
+            this.kanbanState[cardId].substatusLabel = substatusLabels[originalStatus] || originalStatus;
+            this.kanbanState[cardId].migratedAt = new Date().toISOString();
+        } else {
+            this.kanbanState[cardId] = {
+                status: newStatus,
+                substatus: originalStatus,
+                substatusLabel: substatusLabels[originalStatus] || originalStatus,
+                migratedAt: new Date().toISOString()
+            };
+        }
+
+        // Note: We don't save immediately here to avoid multiple saves during render.
+        // The state will be saved when the user makes the next interaction.
+        this._hasPendingMigration = true;
     }
 
     /**
