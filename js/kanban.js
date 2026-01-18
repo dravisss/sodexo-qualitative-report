@@ -299,7 +299,6 @@ class KanbanManager {
     createCardElement(card) {
         const el = document.createElement('div');
         el.className = 'kanban-card';
-        el.draggable = true;
         el.dataset.id = card.id;
 
         el.innerHTML = `
@@ -310,24 +309,10 @@ class KanbanManager {
             </div>
         `;
 
-        // Drag events
-        el.addEventListener('dragstart', (e) => {
-            e.dataTransfer.setData('text/plain', card.id);
-            e.dataTransfer.effectAllowed = 'move';
-            el.classList.add('dragging');
-        });
-
-        el.addEventListener('dragend', () => {
-            el.classList.remove('dragging');
-            // Remove drop targets highlights
-            document.querySelectorAll('.kanban-column-body').forEach(col => {
-                col.classList.remove('drag-over');
-            });
-        });
-
         // Click to navigate to source
         el.addEventListener('click', (e) => {
-            // Prevent navigation if we are dragging (though click usually doesn't fire on drag)
+            // Prevent navigation if we are dragging (Sortable handles this via delay/filter if needed,
+            // but usually click fires. We might need to check if a drag happened, but for now standard click)
              window.location.href = card.link;
         });
 
@@ -335,28 +320,39 @@ class KanbanManager {
     }
 
     setupDragAndDrop() {
+        // Check if Sortable is loaded
+        if (typeof Sortable === 'undefined') {
+            console.error('SortableJS not loaded');
+            return;
+        }
+
         this.columns.forEach(col => {
             const colBody = document.querySelector(`#col-${col.id} .kanban-column-body`);
             if (!colBody) return;
 
-            colBody.addEventListener('dragover', (e) => {
-                e.preventDefault(); // Allow drop
-                e.dataTransfer.dropEffect = 'move';
-                colBody.classList.add('drag-over');
-            });
+            new Sortable(colBody, {
+                group: 'kanban', // Allow dragging between columns
+                animation: 150,  // Smooth animation
+                ghostClass: 'sortable-ghost', // Class for the drop placeholder
+                dragClass: 'sortable-drag',   // Class for the dragging item
+                delay: 100, // Delay to prevent accidental drags on touch
+                delayOnTouchOnly: true,
+                onEnd: (evt) => {
+                    const itemEl = evt.item;
+                    const newStatus = evt.to.dataset.status;
+                    const oldStatus = evt.from.dataset.status;
+                    const cardId = itemEl.dataset.id;
 
-            colBody.addEventListener('dragleave', () => {
-                colBody.classList.remove('drag-over');
-            });
+                    // Update state if moved to a different column or reordered (though reorder in same column doesn't change status, we might want to save order eventually. For now US says update status)
+                    // Even if reordered in same column, we might want to save state if we were tracking order.
+                    // But current requirement is "update status".
+                    // However, we should always update counts and save if anything changed?
+                    // If moved to same column, status is same.
 
-            colBody.addEventListener('drop', (e) => {
-                e.preventDefault();
-                colBody.classList.remove('drag-over');
-
-                const cardId = e.dataTransfer.getData('text/plain');
-                const newStatus = colBody.dataset.status;
-
-                this.handleCardMove(cardId, newStatus);
+                    if (newStatus !== oldStatus) {
+                         this.handleCardMove(cardId, newStatus);
+                    }
+                }
             });
         });
     }
@@ -376,17 +372,11 @@ class KanbanManager {
             };
         }
 
-        // Move element in DOM for immediate feedback
-        const cardEl = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
-        const targetColBody = document.querySelector(`#col-${newStatus} .kanban-column-body`);
+        // DOM is already updated by SortableJS
+        this.updateCounts();
 
-        if (cardEl && targetColBody) {
-            targetColBody.appendChild(cardEl);
-            this.updateCounts();
-
-            // Trigger save
-            this.saveState();
-        }
+        // Trigger save
+        this.saveState();
     }
 
     updateCounts() {

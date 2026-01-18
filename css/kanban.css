@@ -129,6 +129,21 @@
   border: 1px dashed var(--color-teal);
 }
 
+/* SortableJS Classes */
+.sortable-ghost {
+  opacity: 0.4;
+  background-color: var(--color-bg-subtle);
+  border: 1px dashed var(--color-teal);
+}
+
+.sortable-drag {
+  cursor: grabbing;
+  opacity: 1;
+  background: var(--color-bg-card);
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.02);
+}
+
 .kanban-column-body.drag-over {
   background: rgba(0, 150, 136, 0.1); /* Teal tint */
   border: 2px dashed var(--color-teal);
