@@ -15,7 +15,10 @@ class KanbanManager {
         this.editorEl = document.getElementById('card-editor');
         this.editorOverlayEl = document.getElementById('card-editor-overlay');
         this.editorForm = document.getElementById('card-edit-form');
+        this.tagsContainer = document.getElementById('tags-container');
+        this.tagsInput = document.getElementById('edit-tags');
         this.currentEditingCardId = null;
+        this.currentEditingTags = []; // Track tags being edited
 
         // Fixed columns definition (V2: 4 columns)
         this.columns = [
@@ -422,6 +425,9 @@ class KanbanManager {
             ? `<span class="card-substatus">${substatusLabel}</span>`
             : '';
 
+        // Get user tags from state
+        const userTags = (state && typeof state === 'object' && Array.isArray(state.tags)) ? state.tags : [];
+
         el.innerHTML = `
             <div class="card-header">
                 <div class="card-id">${card.id}</div>
@@ -429,7 +435,7 @@ class KanbanManager {
             </div>
             <div class="card-title">${card.title}</div>
             <div class="card-tags">
-                <span class="card-tag" title="${card.articleTitle}">${card.articleTitle}</span>
+                ${this.generateCardTagsHtml(card, userTags)}
             </div>
         `;
 
@@ -654,6 +660,11 @@ class KanbanManager {
         if (this.editorForm) {
             this.editorForm.addEventListener('submit', (e) => this.handleEditorSave(e));
         }
+
+        // Tags Input Events
+        if (this.tagsInput) {
+            this.tagsInput.addEventListener('keydown', (e) => this.handleTagInput(e));
+        }
     }
 
     /**
@@ -680,6 +691,10 @@ class KanbanManager {
         document.getElementById('edit-duedate').value = state.dueDate || '';
         document.getElementById('edit-updates').value = state.updates || '';
 
+        // Populate Tags
+        this.currentEditingTags = Array.isArray(state.tags) ? [...state.tags] : [];
+        this.renderEditorTags();
+
         // Show Editor
         this.editorEl.classList.add('active');
         this.editorOverlayEl.classList.add('active');
@@ -694,10 +709,139 @@ class KanbanManager {
         this.editorOverlayEl.classList.remove('active');
         document.body.style.overflow = '';
         this.currentEditingCardId = null;
+        this.currentEditingTags = [];
 
         // Reset status message
         const statusEl = document.getElementById('editor-save-status');
         if (statusEl) statusEl.textContent = '';
+    }
+
+    /**
+     * Render tags in the editor as chips
+     */
+    renderEditorTags() {
+        if (!this.tagsContainer) return;
+
+        this.tagsContainer.innerHTML = this.currentEditingTags.map(tag => `
+            <span class="tag-chip" data-tag="${this.escapeHtml(tag)}">
+                ${this.escapeHtml(tag)}
+                <button type="button" class="tag-chip-remove" aria-label="Remover tag">×</button>
+            </span>
+        `).join('');
+
+        // Add click handlers for remove buttons
+        this.tagsContainer.querySelectorAll('.tag-chip-remove').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const chip = btn.closest('.tag-chip');
+                const tag = chip.dataset.tag;
+                this.removeTag(tag);
+            });
+        });
+    }
+
+    /**
+     * Handle tag input (Enter or comma)
+     */
+    handleTagInput(e) {
+        if (e.key === 'Enter' || e.key === ',') {
+            e.preventDefault();
+            const value = this.tagsInput.value.trim();
+
+            // Handle comma-separated input
+            if (e.key === ',') {
+                // Remove trailing comma from input
+                const cleanValue = value.replace(/,+$/, '').trim();
+                if (cleanValue) {
+                    this.addTag(cleanValue);
+                }
+            } else if (value) {
+                this.addTag(value);
+            }
+
+            this.tagsInput.value = '';
+        }
+    }
+
+    /**
+     * Add a tag with normalization and duplicate prevention
+     */
+    addTag(rawTag) {
+        // Normalize: trim whitespace
+        const tag = rawTag.trim();
+        if (!tag) return;
+
+        // Check for duplicates (case-insensitive)
+        const tagLower = tag.toLowerCase();
+        const exists = this.currentEditingTags.some(t => t.toLowerCase() === tagLower);
+
+        if (!exists) {
+            this.currentEditingTags.push(tag);
+            this.renderEditorTags();
+        }
+    }
+
+    /**
+     * Remove a tag
+     */
+    removeTag(tag) {
+        const index = this.currentEditingTags.indexOf(tag);
+        if (index > -1) {
+            this.currentEditingTags.splice(index, 1);
+            this.renderEditorTags();
+        }
+    }
+
+    /**
+     * Escape HTML for safe rendering
+     */
+    escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    /**
+     * Update card tags display in the DOM
+     */
+    updateCardTagsDisplay(cardId, tags) {
+        const cardEl = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+        if (!cardEl) return;
+
+        const tagsEl = cardEl.querySelector('.card-tags');
+        if (!tagsEl) return;
+
+        // Find the card data to get article title
+        const card = this.interventions.find(c => c.id === cardId);
+        if (!card) return;
+
+        // Generate tags HTML
+        tagsEl.innerHTML = this.generateCardTagsHtml(card, tags);
+    }
+
+    /**
+     * Generate HTML for card tags (article source + user tags with +N indicator)
+     */
+    generateCardTagsHtml(card, userTags = []) {
+        const tagsHtml = [];
+
+        // Always show article origin tag first
+        tagsHtml.push(`<span class="card-tag" title="${this.escapeHtml(card.articleTitle)}">${this.escapeHtml(card.articleTitle)}</span>`);
+
+        // Show up to 2 user tags
+        const visibleTags = userTags.slice(0, 2);
+        const remainingCount = userTags.length - 2;
+
+        visibleTags.forEach(tag => {
+            tagsHtml.push(`<span class="card-tag user-tag">${this.escapeHtml(tag)}</span>`);
+        });
+
+        // Show +N indicator if more than 2 tags
+        if (remainingCount > 0) {
+            tagsHtml.push(`<span class="card-tag more-tags">+${remainingCount}</span>`);
+        }
+
+        return tagsHtml.join('');
     }
 
     /**
@@ -711,6 +855,7 @@ class KanbanManager {
         const responsible = document.getElementById('edit-responsible').value;
         const dueDate = document.getElementById('edit-duedate').value;
         const updates = document.getElementById('edit-updates').value;
+        const tags = [...this.currentEditingTags]; // Copy current tags
 
         // Update local state
         if (!this.kanbanState[id]) {
@@ -727,8 +872,12 @@ class KanbanManager {
             responsible,
             dueDate,
             updates,
+            tags,
             updatedAt: new Date().toISOString()
         };
+
+        // Update the card's tags display in the DOM
+        this.updateCardTagsDisplay(id, tags);
 
         // Show saving feedback in the form
         const statusEl = document.getElementById('editor-save-status');
