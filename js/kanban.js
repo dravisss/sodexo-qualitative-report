@@ -308,13 +308,18 @@ class KanbanManager {
                 const id = match[1];
                 const title = match[2].trim();
 
-                // Extract content until next header
+                // Extract content HTML until next header
+                let contentHtml = '';
                 let contentText = '';
                 let next = header.nextElementSibling;
                 while (next && !['H1', 'H2', 'H3', 'H4', 'HR'].includes(next.tagName)) {
+                    contentHtml += next.outerHTML;
                     contentText += next.textContent + ' ';
                     next = next.nextElementSibling;
                 }
+
+                // Extract the 4 fields from HTML content (case-insensitive)
+                const fields = this.extractInterventionFields(contentHtml);
 
                 // Try to find "Tensão" or "Descrição" for a summary
                 // Pattern: **Label:** Content
@@ -334,12 +339,90 @@ class KanbanManager {
                     description,
                     articleId: article.id,
                     articleTitle: article.title,
-                    link: `index.html#${article.id}`
+                    link: `index.html#${article.id}`,
+                    // Full content fields for editor details
+                    tensao: fields.tensao,
+                    descricao: fields.descricao,
+                    objetivo: fields.objetivo,
+                    impacto: fields.impacto
                 });
             }
         });
 
         return found;
+    }
+
+    /**
+     * Extract Tensão, Descrição, Objetivo, Impacto fields from HTML content
+     * Returns HTML content preserving formatting (bold, lists, etc.)
+     */
+    extractInterventionFields(html) {
+        // Default fallback value
+        const fallback = '—';
+        const labels = ['Tensão', 'Descrição', 'Objetivo', 'Impacto'];
+        const result = {
+            tensao: fallback,
+            descricao: fallback,
+            objetivo: fallback,
+            impacto: fallback
+        };
+
+        // Helper to find label matches
+        const matches = [];
+        labels.forEach(label => {
+            // Match: <strong>Label:</strong> or <strong>Label</strong>: or <b>...
+            // We use a simplified regex to find the start position
+            // We look for <strong/b> followed by the label
+            const regex = new RegExp(`<[sb](?:trong)?>\\s*${label}`, 'gi');
+            let match;
+            while ((match = regex.exec(html)) !== null) {
+                matches.push({
+                    label: label,
+                    index: match.index
+                });
+            }
+        });
+
+        // Sort matches by index to process in order
+        matches.sort((a, b) => a.index - b.index);
+
+        matches.forEach((m, i) => {
+            const nextMatch = matches[i + 1];
+            const startIndex = m.index;
+            const endIndex = nextMatch ? nextMatch.index : html.length;
+
+            // Extract the chunk
+            let chunk = html.substring(startIndex, endIndex);
+
+            // Remove the label itself from the beginning of the chunk
+            // Regex to match the full label tag: <strong>Label:?</strong>:?
+            const labelStripRegex = new RegExp(`^<[sb](?:trong)?>\\s*${m.label}:?\\s*<\\/[sb](?:trong)?>:?`, 'i');
+            chunk = chunk.replace(labelStripRegex, '');
+
+            // Clean up leading artifacts
+            // If extracting from <p><strong>Label:</strong> Content</p>, we have " Content</p>"
+            // If extracting from <p><strong>Label:</strong></p><ul>... we have "</p><ul>..."
+
+            // Remove leading </p> if it was a standalone label line
+            chunk = chunk.replace(/^\s*<\/[pP]>\s*/, '');
+
+            // Clean up trailing artifacts
+            // If the chunk ends where the next label starts, and the next label is in a new <p>,
+            // the chunk might end with <p> (start of next paragraph).
+            chunk = chunk.replace(/\s*<[pP]>\s*$/, '');
+
+            // Trim whitespace
+            chunk = chunk.trim();
+
+            if (chunk && chunk.length > 0) {
+                const key = m.label.toLowerCase()
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, ''); // Remove accents
+                result[key] = chunk;
+            }
+        });
+
+        return result;
     }
 
     /**
@@ -751,7 +834,12 @@ class KanbanManager {
         document.getElementById('editor-card-id').textContent = card.id;
         document.getElementById('editor-card-title').textContent = card.title;
         document.getElementById('editor-article-source').textContent = `${card.articleTitle} (Artigo ${card.articleId})`;
-        document.getElementById('editor-description').textContent = card.description;
+
+        // Populate the 4 collapsible detail sections
+        this.populateDetailSection('editor-tensao', card.tensao);
+        this.populateDetailSection('editor-descricao', card.descricao);
+        this.populateDetailSection('editor-objetivo', card.objetivo);
+        this.populateDetailSection('editor-impacto', card.impacto);
 
         const viewSourceBtn = document.getElementById('editor-view-source');
         viewSourceBtn.href = card.link;
@@ -774,6 +862,24 @@ class KanbanManager {
         this.editorEl.classList.add('active');
         this.editorOverlayEl.classList.add('active');
         document.body.style.overflow = 'hidden';
+    }
+
+    /**
+     * Populate a detail section with HTML content
+     * Preserves formatting and shows fallback for empty content
+     */
+    populateDetailSection(elementId, content) {
+        const el = document.getElementById(elementId);
+        if (!el) return;
+
+        const fallback = '—';
+        if (!content || content === fallback) {
+            el.textContent = fallback;
+            el.classList.add('empty-content');
+        } else {
+            el.innerHTML = content;
+            el.classList.remove('empty-content');
+        }
     }
 
     /**
