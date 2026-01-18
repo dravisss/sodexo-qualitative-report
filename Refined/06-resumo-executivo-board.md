@@ -8,9 +8,9 @@ A investigação focou em duas unidades críticas que servem como arquétipos do
 
 | Unidade | Cliente | Risco Operacional |
 |---------|---------|-------------------|
-| **Cajamar (Food)** | Leroy Merlin | Clima de "guerra e sabotagem"; instabilidade de liderança; falhas no atendimento à diretoria |
-| **Guarulhos (Food)** | União Química | Explosão de volume sem ajuste de estrutura; colapsos diários na entrega |
-| **Guarulhos (FM)** | União Química | Exposição jurídica por insalubridade; inconsistência na qualidade do serviço |
+| **Cajamar (Food)** | Leroy Merlin | Clima de "guerra e sabotagem"; instabilidade de liderança; condições precárias de trabalho |
+| **Guarulhos (Food)** | União Química | Explosão de volume sem ajuste de estrutura; equipe de veteranos sobrecarregados|
+| **Guarulhos (FM)** | União Química | Alta rotatividade; falta de EPIs básicos; inconsistência na qualidade do serviço |
 
 <details class="executive-qa" open>
 <summary>📂 PERGUNTAS ESTRATÉGICAS QUE ESTE RELATÓRIO RESPONDE</summary>

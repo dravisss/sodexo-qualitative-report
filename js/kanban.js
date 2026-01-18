@@ -2022,10 +2022,14 @@ class KanbanManager {
 
         cards.forEach(card => {
             const state = this.kanbanState[card.id];
-            const startDate = state && typeof state === 'object' ? state.startDate : '';
-            const endDate = state && typeof state === 'object' ? state.endDate : '';
-            if (startDate && endDate) {
-                withDates.push({ card, startDate, endDate, status: (state.status || 'backlog') });
+            const startDate = state && typeof state === 'object' ? (state.startDate || '') : '';
+            const endDate = state && typeof state === 'object' ? (state.endDate || '') : '';
+
+            // Timeline should render even if only one date exists (milestone)
+            if (startDate || endDate) {
+                const start = startDate || endDate;
+                const end = endDate || startDate;
+                withDates.push({ card, startDate: start, endDate: end, status: (state && typeof state === 'object' && state.status) ? state.status : 'backlog' });
             } else {
                 withoutDates.push({ card, status: (state && typeof state === 'object' && state.status) ? state.status : 'backlog' });
             }
