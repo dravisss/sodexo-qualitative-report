@@ -81,6 +81,22 @@
               <div class="search-container">
                   <input type="text" id="kanban-search" class="search-input" placeholder="Buscar...">
               </div>
+              <div class="tag-filter-container">
+                  <div class="tag-picker-wrapper">
+                      <button type="button" id="tag-picker-toggle" class="tag-picker-btn" aria-haspopup="listbox" aria-expanded="false">
+                          🏷️ Tags <span class="tag-picker-caret">▼</span>
+                      </button>
+                      <div id="tag-picker-dropdown" class="tag-picker-dropdown" role="listbox" aria-multiselectable="true">
+                          <div class="tag-picker-empty">Nenhuma tag disponível</div>
+                      </div>
+                  </div>
+                  <div id="selected-tags-chips" class="selected-tags-chips">
+                      <!-- Selected tag chips will be rendered here -->
+                  </div>
+              </div>
+              <button type="button" id="clear-filters-btn" class="clear-filters-btn" style="display: none;">
+                  ✕ Limpar
+              </button>
           </div>
       </header>
 

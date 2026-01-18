@@ -25,6 +25,13 @@ class KanbanManager {
         this.searchInput = document.getElementById('kanban-search');
         this.searchDebounceTimer = null;
 
+        // Tag Filter Elements
+        this.tagPickerToggle = document.getElementById('tag-picker-toggle');
+        this.tagPickerDropdown = document.getElementById('tag-picker-dropdown');
+        this.selectedTagsChips = document.getElementById('selected-tags-chips');
+        this.clearFiltersBtn = document.getElementById('clear-filters-btn');
+        this.selectedFilterTags = []; // Tags selected for filtering
+
         // Stakeholder Editor Elements
         this.stakeholdersList = document.getElementById('stakeholders-list');
         this.stakeholderForm = document.getElementById('stakeholder-form');
@@ -706,6 +713,28 @@ class KanbanManager {
         if (this.searchInput) {
             this.searchInput.addEventListener('input', () => this.handleSearchInput());
         }
+
+        // Tag Filter Events
+        if (this.tagPickerToggle) {
+            this.tagPickerToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleTagPicker();
+            });
+        }
+
+        // Close tag picker when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.tagPickerDropdown &&
+                !this.tagPickerDropdown.contains(e.target) &&
+                !this.tagPickerToggle.contains(e.target)) {
+                this.closeTagPicker();
+            }
+        });
+
+        // Clear filters button
+        if (this.clearFiltersBtn) {
+            this.clearFiltersBtn.addEventListener('click', () => this.clearAllFilters());
+        }
     }
 
     /**
@@ -1066,6 +1095,12 @@ class KanbanManager {
                 statusEl.textContent = '';
             }, 3000);
         }
+
+        // Refresh tag picker in case new tags were added
+        this.refreshTagPicker();
+
+        // Re-apply filters in case tags were modified
+        this.applyFilters();
     }
 
     /**
@@ -1109,36 +1144,18 @@ class KanbanManager {
     handleSearchInput() {
         clearTimeout(this.searchDebounceTimer);
         this.searchDebounceTimer = setTimeout(() => {
-            this.filterCards(this.searchInput.value);
+            this.applyFilters();
+            this.updateClearFiltersVisibility();
         }, 300);
     }
 
     /**
-     * Filter cards based on search query
-     * Matches: ID (I-XX), title, any tag, stakeholder name/area/contact
+     * Filter cards based on search query (legacy method, now uses applyFilters)
+     * @deprecated Use applyFilters() instead
      */
     filterCards(query) {
-        const normalizedQuery = query.trim().toLowerCase();
-        const allCards = document.querySelectorAll('.kanban-card');
-
-        allCards.forEach(cardEl => {
-            const cardId = cardEl.dataset.id;
-            const card = this.interventions.find(c => c.id === cardId);
-            if (!card) return;
-
-            // If query is empty, show all cards
-            if (!normalizedQuery) {
-                cardEl.style.display = '';
-                return;
-            }
-
-            // Check for match
-            const isMatch = this.cardMatchesQuery(card, normalizedQuery);
-            cardEl.style.display = isMatch ? '' : 'none';
-        });
-
-        // Update column counts after filtering
-        this.updateCounts();
+        // For backwards compatibility, just apply all filters
+        this.applyFilters();
     }
 
     /**
@@ -1183,6 +1200,274 @@ class KanbanManager {
         }
 
         return false;
+    }
+
+    /**
+     * Get all unique tags from all cards
+     */
+    getAllUniqueTags() {
+        const tagsSet = new Set();
+
+        for (const cardId in this.kanbanState) {
+            if (cardId.startsWith('_')) continue; // Skip metadata like _columnOrder
+
+            const state = this.kanbanState[cardId];
+            if (state && typeof state === 'object' && Array.isArray(state.tags)) {
+                state.tags.forEach(tag => tagsSet.add(tag));
+            }
+        }
+
+        return Array.from(tagsSet).sort((a, b) =>
+            a.toLowerCase().localeCompare(b.toLowerCase())
+        );
+    }
+
+    /**
+     * Toggle the tag picker dropdown
+     */
+    toggleTagPicker() {
+        const isOpen = this.tagPickerDropdown.classList.contains('open');
+        if (isOpen) {
+            this.closeTagPicker();
+        } else {
+            this.openTagPicker();
+        }
+    }
+
+    /**
+     * Open the tag picker dropdown
+     */
+    openTagPicker() {
+        this.renderTagPicker();
+        this.tagPickerDropdown.classList.add('open');
+        this.tagPickerToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    /**
+     * Close the tag picker dropdown
+     */
+    closeTagPicker() {
+        this.tagPickerDropdown.classList.remove('open');
+        this.tagPickerToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    /**
+     * Render the tag picker dropdown with all available tags
+     */
+    renderTagPicker() {
+        const allTags = this.getAllUniqueTags();
+
+        if (allTags.length === 0) {
+            this.tagPickerDropdown.innerHTML = `
+                <div class="tag-picker-empty">Nenhuma tag disponível</div>
+            `;
+            return;
+        }
+
+        this.tagPickerDropdown.innerHTML = allTags.map(tag => {
+            const isSelected = this.selectedFilterTags.includes(tag);
+            return `
+                <div class="tag-picker-item ${isSelected ? 'selected' : ''}"
+                     data-tag="${this.escapeHtml(tag)}"
+                     role="option"
+                     aria-selected="${isSelected}">
+                    <span class="tag-picker-checkbox"></span>
+                    <span class="tag-picker-label">${this.escapeHtml(tag)}</span>
+                </div>
+            `;
+        }).join('');
+
+        // Add click handlers
+        this.tagPickerDropdown.querySelectorAll('.tag-picker-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const tag = item.dataset.tag;
+                this.handleTagPickerSelect(tag);
+            });
+        });
+    }
+
+    /**
+     * Handle selecting/deselecting a tag in the picker
+     */
+    handleTagPickerSelect(tag) {
+        const index = this.selectedFilterTags.indexOf(tag);
+
+        if (index > -1) {
+            // Remove tag from filter
+            this.selectedFilterTags.splice(index, 1);
+        } else {
+            // Add tag to filter
+            this.selectedFilterTags.push(tag);
+        }
+
+        // Re-render picker to update selection state
+        this.renderTagPicker();
+
+        // Update chips display
+        this.renderSelectedTagsChips();
+
+        // Apply filter
+        this.applyFilters();
+
+        // Update clear button visibility
+        this.updateClearFiltersVisibility();
+    }
+
+    /**
+     * Render selected filter tags as chips in the topbar
+     */
+    renderSelectedTagsChips() {
+        if (!this.selectedTagsChips) return;
+
+        if (this.selectedFilterTags.length === 0) {
+            this.selectedTagsChips.innerHTML = '';
+            return;
+        }
+
+        this.selectedTagsChips.innerHTML = this.selectedFilterTags.map(tag => `
+            <span class="filter-tag-chip" data-tag="${this.escapeHtml(tag)}">
+                ${this.escapeHtml(tag)}
+                <button type="button" class="filter-tag-remove" aria-label="Remover tag ${this.escapeHtml(tag)}">×</button>
+            </span>
+        `).join('');
+
+        // Add click handlers for remove buttons
+        this.selectedTagsChips.querySelectorAll('.filter-tag-remove').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const chip = btn.closest('.filter-tag-chip');
+                const tag = chip.dataset.tag;
+                this.removeFilterTag(tag);
+            });
+        });
+    }
+
+    /**
+     * Remove a tag from the filter
+     */
+    removeFilterTag(tag) {
+        const index = this.selectedFilterTags.indexOf(tag);
+        if (index > -1) {
+            this.selectedFilterTags.splice(index, 1);
+            this.renderSelectedTagsChips();
+            this.applyFilters();
+            this.updateClearFiltersVisibility();
+
+            // Update picker if it's open
+            if (this.tagPickerDropdown.classList.contains('open')) {
+                this.renderTagPicker();
+            }
+        }
+    }
+
+    /**
+     * Clear all filters (search + tags)
+     */
+    clearAllFilters() {
+        // Clear search
+        if (this.searchInput) {
+            this.searchInput.value = '';
+        }
+
+        // Clear selected tags
+        this.selectedFilterTags = [];
+        this.renderSelectedTagsChips();
+
+        // Update picker if open
+        if (this.tagPickerDropdown.classList.contains('open')) {
+            this.renderTagPicker();
+        }
+
+        // Apply filters (will show all cards)
+        this.applyFilters();
+
+        // Hide clear button
+        this.updateClearFiltersVisibility();
+    }
+
+    /**
+     * Update visibility of the clear filters button
+     */
+    updateClearFiltersVisibility() {
+        if (!this.clearFiltersBtn) return;
+
+        const hasSearchQuery = this.searchInput && this.searchInput.value.trim().length > 0;
+        const hasSelectedTags = this.selectedFilterTags.length > 0;
+
+        if (hasSearchQuery || hasSelectedTags) {
+            this.clearFiltersBtn.style.display = '';
+        } else {
+            this.clearFiltersBtn.style.display = 'none';
+        }
+    }
+
+    /**
+     * Apply combined filters (search + tags with AND logic)
+     */
+    applyFilters() {
+        const searchQuery = this.searchInput ? this.searchInput.value.trim().toLowerCase() : '';
+        const allCards = document.querySelectorAll('.kanban-card');
+
+        allCards.forEach(cardEl => {
+            const cardId = cardEl.dataset.id;
+            const card = this.interventions.find(c => c.id === cardId);
+            if (!card) return;
+
+            // If no filters, show all
+            if (!searchQuery && this.selectedFilterTags.length === 0) {
+                cardEl.style.display = '';
+                return;
+            }
+
+            // Check search match (if search query exists)
+            let matchesSearch = true;
+            if (searchQuery) {
+                matchesSearch = this.cardMatchesQuery(card, searchQuery);
+            }
+
+            // Check tags match (AND logic - card must have ALL selected tags)
+            let matchesTags = true;
+            if (this.selectedFilterTags.length > 0) {
+                matchesTags = this.cardHasAllTags(cardId, this.selectedFilterTags);
+            }
+
+            // Combined filter: search AND tags
+            cardEl.style.display = (matchesSearch && matchesTags) ? '' : 'none';
+        });
+
+        // Update column counts
+        this.updateCounts();
+    }
+
+    /**
+     * Check if a card has ALL the specified tags (AND logic)
+     */
+    cardHasAllTags(cardId, requiredTags) {
+        const state = this.kanbanState[cardId];
+        if (!state || !Array.isArray(state.tags) || state.tags.length === 0) {
+            return requiredTags.length === 0;
+        }
+
+        const cardTagsLower = state.tags.map(t => t.toLowerCase());
+
+        for (const tag of requiredTags) {
+            if (!cardTagsLower.includes(tag.toLowerCase())) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Refresh the tag picker dropdown (call after new tags are created)
+     */
+    refreshTagPicker() {
+        if (this.tagPickerDropdown.classList.contains('open')) {
+            this.renderTagPicker();
+        }
     }
 }
 
