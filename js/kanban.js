@@ -74,8 +74,8 @@ class KanbanManager {
         this.isDragging = false;
 
         // API Endpoint
-        this.API_URL = '/api/kanban-state';
-        this.ATTACHMENT_API_URL = '/api/kanban-attachment';
+        this.API_URL = '/.netlify/functions/kanban-state';
+        this.ATTACHMENT_API_URL = '/.netlify/functions/kanban-attachment';
 
         this.init();
     }
