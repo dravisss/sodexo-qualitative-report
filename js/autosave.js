@@ -15,7 +15,7 @@ export class AutoSaveManager {
 
         this.submissionId = null;
         this.submissionId = null;
-        this.unitSlug = 'master'; // Enforce single master unit (Unified Form)
+        this.unitSlug = 'general'; // Enforce 'general' as the master unit (Unified Form)
         this.syncTimer = null;
         this.isSyncing = false;
         this.isOnline = navigator.onLine;
@@ -24,12 +24,9 @@ export class AutoSaveManager {
         this.loadMeta();
 
         // Initial sync from cloud
-        if (this.submissionId) {
-            this.fetchFromCloud();
-        } else {
-            // If no ID, try to fetch the latest for the current unit (Login behavior)
-            this.fetchLatestForUnit(this.unitSlug);
-        }
+        // Initial sync: ALWAYS fetch latest for master unit (Unified Form Mode)
+        // This ensures we sync to the global state regardless of what ID is in local storage or URL
+        this.fetchLatestForUnit(this.unitSlug);
 
         // Online/Offline detection
         window.addEventListener('online', () => this.handleOnline());
@@ -41,29 +38,25 @@ export class AutoSaveManager {
      */
     loadMeta() {
         try {
-            // Priority: URL Search Param > LocalStorage
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlId = urlParams.get('id');
+            // Unified Mode: Ignore URL ID. We always want the master record.
+            // Also ignore local storage ID for the purpose of initial connection (we want latest from server)
+            // But we keep local storage loaded just in case we are offline (constructor handles this)
 
+            // If we are online, fetchLatestForUnit will overwrite this.submissionId
+            // Restore definition of meta
             const meta = JSON.parse(localStorage.getItem(this.metaKey) || '{}');
+            this.submissionId = meta.submissionId || null;
 
-            if (urlId) {
-                this.submissionId = urlId;
-            } else {
-                this.submissionId = meta.submissionId || null;
-
-                // Update URL if ID found in storage
-                if (this.submissionId) {
-                    const currentUrl = new URL(window.location);
-                    if (currentUrl.searchParams.get('id') !== this.submissionId) {
-                        currentUrl.searchParams.set('id', this.submissionId);
-                        window.history.replaceState({}, '', currentUrl);
-                    }
-                }
+            // Clean URL if it has an ID, to avoid confusion
+            const currentUrl = new URL(window.location);
+            if (currentUrl.searchParams.has('id')) {
+                currentUrl.searchParams.delete('id');
+                window.history.replaceState({}, '', currentUrl);
             }
 
             // FORCE MASTER SLUG
-            this.unitSlug = 'master';
+            // FORCE GENERAL SLUG
+            this.unitSlug = 'general';
         } catch (e) {
             console.warn('Failed to load form meta:', e);
         }
@@ -85,7 +78,9 @@ export class AutoSaveManager {
      */
     getAnswers() {
         try {
-            return JSON.parse(localStorage.getItem(this.storageKey) || '{}');
+            const val = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
+            // Safeguard against double-stringification
+            return typeof val === 'string' ? JSON.parse(val) : val;
         } catch (e) {
             return {};
         }
@@ -383,7 +378,9 @@ export class AutoSaveManager {
         // Remove blob reference
         if (answers[`${fieldId}_blob`]) delete answers[`${fieldId}_blob`];
 
-        this.saveMeta(); // Save to local storage
+        // Save updated answers to localStorage
+        localStorage.setItem(this.storageKey, JSON.stringify(answers));
+
         this.updateStatus('Arquivo removido', 'saved');
 
         // Trigger sync to cloud
@@ -431,14 +428,14 @@ export class AutoSaveManager {
                 this.submissionId = result.submission.id;
                 const cloudAnswers = result.submission.answers || {};
 
-                // For unit switch, cloud data overwrites local completely (fresh start)
-                // OR we can keep local? No, simpler to load fresh.
-                merged = cloudAnswers;
+                // For unit switch, cloud data overwrites local completely
+                // Safeguard: Ensure cloudAnswers is an object matches local expectation
+                merged = typeof cloudAnswers === 'string' ? JSON.parse(cloudAnswers) : cloudAnswers;
 
-                // Update URL
+                // Unified Mode: Ensure clean URL (do not expose ID)
                 const currentUrl = new URL(window.location);
-                if (currentUrl.searchParams.get('id') !== this.submissionId) {
-                    currentUrl.searchParams.set('id', this.submissionId);
+                if (currentUrl.searchParams.has('id')) {
+                    currentUrl.searchParams.delete('id');
                     window.history.replaceState({}, '', currentUrl);
                 }
             } else {

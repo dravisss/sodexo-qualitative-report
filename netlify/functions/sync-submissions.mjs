@@ -38,12 +38,37 @@ export default async (req, context) => {
 
     try {
         const body = await req.json();
-        const { submission_id, unit_slug, answers, answers_metadata, respondent_info } = body;
+        let { submission_id, unit_slug, answers, answers_metadata, respondent_info } = body;
+
+        // Safeguard: Ensure answers is an object
+        if (typeof answers === 'string') {
+            try {
+                answers = JSON.parse(answers);
+            } catch (e) {
+                answers = {};
+            }
+        }
+        if (typeof answers !== 'object' || answers === null) {
+            answers = {};
+        }
 
         if (!unit_slug || !answers) {
             return new Response(JSON.stringify({
                 error: 'Missing required fields: unit_slug, answers'
             }), { status: 400, headers });
+        }
+
+        // Ensure unit exists to prevent Foreign Key errors (auto-provisioning)
+        try {
+            await sql`
+                INSERT INTO units (slug, name) 
+                VALUES (${unit_slug}, ${unit_slug.charAt(0).toUpperCase() + unit_slug.slice(1)})
+                ON CONFLICT (slug) DO NOTHING
+            `;
+        } catch (e) {
+            console.warn('Unit auto-provisioning failed:', e);
+            // Proceed, as it might be a race condition or read-only issue, 
+            // but usually this fixes the missing FK.
         }
 
         let result;
