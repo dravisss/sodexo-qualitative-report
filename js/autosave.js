@@ -377,11 +377,11 @@ export class AutoSaveManager {
     removeAnswer(fieldId) {
         const answers = this.getAnswers();
 
-        // Remove text answer if any
-        if (answers[fieldId]) delete answers[fieldId];
+        // Remove text answer if any (Mark for deletion)
+        answers[fieldId] = null;
 
         // Remove blob reference
-        if (answers[`${fieldId}_blob`]) delete answers[`${fieldId}_blob`];
+        if (answers[`${fieldId}_blob`]) answers[`${fieldId}_blob`] = null;
 
         // Save updated answers to localStorage
         localStorage.setItem(this.storageKey, JSON.stringify(answers));

@@ -104,26 +104,31 @@ export default async (req, context) => {
 
         finalSubmissionId = result[0].id;
 
-        // Upsert individual answers with metadata (BATCH OPTIMIZATION)
+        // Upsert individual answers with metadata (BATCH OPTIMIZATION + DELETION)
         if (answers_metadata && Object.keys(answers).length > 0) {
             const rowsToInsert = [];
+            const idsToDelete = [];
 
             for (const [fieldId, value] of Object.entries(answers)) {
                 if (fieldId.endsWith('_blob')) continue; // Skip blob refs
 
-                const meta = answers_metadata[fieldId] || {};
-
-                rowsToInsert.push({
-                    submission_id: finalSubmissionId,
-                    field_id: fieldId,
-                    field_type: meta.field_type || 'text',
-                    section_name: meta.section || null,
-                    subsection_name: meta.subsection || null,
-                    question_text: meta.question_text || null,
-                    answer_value: String(value) // Ensure text
-                });
+                if (value === null) {
+                    idsToDelete.push(fieldId);
+                } else {
+                    const meta = answers_metadata[fieldId] || {};
+                    rowsToInsert.push({
+                        submission_id: finalSubmissionId,
+                        field_id: fieldId,
+                        field_type: meta.field_type || 'text',
+                        section_name: meta.section || null,
+                        subsection_name: meta.subsection || null,
+                        question_text: meta.question_text || null,
+                        answer_value: String(value) // Ensure text
+                    });
+                }
             }
 
+            // Execute Batched Inserts
             if (rowsToInsert.length > 0) {
                 // Batch process in chunks to avoid MAX_PARAMETERS_EXCEEDED (Postgres limit ~65535 parameters)
                 const CHUNK_SIZE = 2000; // 2000 rows * 7 columns = 14,000 params (safe)
@@ -144,6 +149,14 @@ export default async (req, context) => {
                         `;
                     }
                 }
+            }
+
+            // Execute Deletes
+            if (idsToDelete.length > 0) {
+                await sql`
+                    DELETE FROM answers 
+                    WHERE submission_id = ${finalSubmissionId} AND field_id = ANY(${idsToDelete})
+                `;
             }
         }
 
