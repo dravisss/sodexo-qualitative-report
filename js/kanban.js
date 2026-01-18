@@ -332,7 +332,12 @@ class KanbanManager {
             if (colBody) colBody.innerHTML = '';
         });
 
-        // Distribute cards
+        // Group cards by status
+        const cardsByStatus = {};
+        this.columns.forEach(col => {
+            cardsByStatus[col.id] = [];
+        });
+
         this.interventions.forEach(card => {
             // Check saved state, default to backlog
             // Support both string (legacy) and object formats
@@ -357,11 +362,41 @@ class KanbanManager {
                 this.migrateCardStatus(card.id, status, originalStatus);
             }
 
-            const colBody = document.querySelector(`#col-${status} .kanban-column-body`);
-            if (colBody) {
+            if (cardsByStatus[status]) {
+                cardsByStatus[status].push({ card, originalStatus });
+            }
+        });
+
+        // Render cards in each column, respecting saved order
+        this.columns.forEach(col => {
+            const colBody = document.querySelector(`#col-${col.id} .kanban-column-body`);
+            if (!colBody) return;
+
+            let cardsToRender = cardsByStatus[col.id];
+
+            // Apply saved order if available
+            const savedOrder = this.kanbanState._columnOrder?.[col.id];
+            if (savedOrder && savedOrder.length > 0) {
+                // Sort cards based on saved order
+                const orderMap = new Map(savedOrder.map((id, idx) => [id, idx]));
+                cardsToRender.sort((a, b) => {
+                    const orderA = orderMap.has(a.card.id) ? orderMap.get(a.card.id) : Infinity;
+                    const orderB = orderMap.has(b.card.id) ? orderMap.get(b.card.id) : Infinity;
+                    // Cards not in saved order go to the end, sorted by ID
+                    if (orderA === Infinity && orderB === Infinity) {
+                        const numA = parseInt(a.card.id.replace('I-', ''));
+                        const numB = parseInt(b.card.id.replace('I-', ''));
+                        return numA - numB;
+                    }
+                    return orderA - orderB;
+                });
+            }
+
+            // Render the cards
+            cardsToRender.forEach(({ card, originalStatus }) => {
                 const cardEl = this.createCardElement(card, originalStatus);
                 colBody.appendChild(cardEl);
-            }
+            });
         });
 
         // Update counts
@@ -425,6 +460,7 @@ class KanbanManager {
                 animation: 150,  // Smooth animation
                 ghostClass: 'sortable-ghost', // Class for the drop placeholder
                 dragClass: 'sortable-drag',   // Class for the dragging item
+                chosenClass: 'sortable-chosen', // Class for the chosen item (before drag starts)
                 delay: 100, // Delay to prevent accidental drags on touch
                 delayOnTouchOnly: true,
                 onStart: () => {
@@ -437,21 +473,21 @@ class KanbanManager {
                     const oldStatus = evt.from.dataset.status;
                     const cardId = itemEl.dataset.id;
 
-                    // Update state if moved to a different column or reordered (though reorder in same column doesn't change status, we might want to save order eventually. For now US says update status)
-                    // Even if reordered in same column, we might want to save state if we were tracking order.
-                    // But current requirement is "update status".
-                    // However, we should always update counts and save if anything changed?
-                    // If moved to same column, status is same.
-
                     if (newStatus !== oldStatus) {
-                         this.handleCardMove(cardId, newStatus);
+                        // Moved to a different column - update status and save order
+                        this.handleCardMove(cardId, newStatus, evt.to);
+                        // Also save the order of the source column
+                        this.saveColumnOrder(evt.from);
+                    } else {
+                        // Reordered within the same column - just save order
+                        this.handleCardReorder(evt.to);
                     }
                 }
             });
         });
     }
 
-    handleCardMove(cardId, newStatus) {
+    handleCardMove(cardId, newStatus, newColumn) {
         // Update state - preserve other properties if any
         const currentState = this.kanbanState[cardId];
 
@@ -466,10 +502,76 @@ class KanbanManager {
             };
         }
 
+        // Set default substatus when moving to 'doing' (Em andamento)
+        if (newStatus === 'doing') {
+            this.kanbanState[cardId].substatus = 'todo';
+            this.kanbanState[cardId].substatusLabel = 'A Fazer';
+            // Update the card's substatus badge in the DOM
+            this.updateCardSubstatus(cardId, 'A Fazer');
+        } else {
+            // Clear substatus when moving to other columns
+            delete this.kanbanState[cardId].substatus;
+            delete this.kanbanState[cardId].substatusLabel;
+            this.updateCardSubstatus(cardId, null);
+        }
+
+        // Save column order
+        if (newColumn) {
+            this.saveColumnOrder(newColumn);
+        }
+
         // DOM is already updated by SortableJS
         this.updateCounts();
 
         // Trigger save
+        this.saveState();
+    }
+
+    /**
+     * Update card substatus badge in the DOM
+     */
+    updateCardSubstatus(cardId, label) {
+        const cardEl = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+        if (!cardEl) return;
+
+        const headerEl = cardEl.querySelector('.card-header');
+        if (!headerEl) return;
+
+        // Remove existing substatus badge
+        const existingBadge = headerEl.querySelector('.card-substatus');
+        if (existingBadge) {
+            existingBadge.remove();
+        }
+
+        // Add new badge if label provided
+        if (label) {
+            const badgeEl = document.createElement('span');
+            badgeEl.className = 'card-substatus';
+            badgeEl.textContent = label;
+            headerEl.appendChild(badgeEl);
+        }
+    }
+
+    /**
+     * Save the order of cards in a column
+     */
+    saveColumnOrder(columnEl) {
+        const status = columnEl.dataset.status;
+        const cardIds = Array.from(columnEl.querySelectorAll('.kanban-card'))
+            .map(card => card.dataset.id);
+
+        // Store order in global state
+        if (!this.kanbanState._columnOrder) {
+            this.kanbanState._columnOrder = {};
+        }
+        this.kanbanState._columnOrder[status] = cardIds;
+    }
+
+    /**
+     * Handle reordering within the same column
+     */
+    handleCardReorder(columnEl) {
+        this.saveColumnOrder(columnEl);
         this.saveState();
     }
 

@@ -131,15 +131,20 @@
 .sortable-ghost {
   opacity: 0.4;
   background-color: var(--color-bg-subtle);
-  border: 1px dashed var(--color-teal);
+  border: 2px dashed var(--color-teal);
+}
+
+.sortable-chosen {
+  cursor: grabbing;
 }
 
 .sortable-drag {
   cursor: grabbing;
-  opacity: 1;
+  opacity: 0.85;
   background: var(--color-bg-card);
   box-shadow: var(--shadow-lg);
-  transform: scale(1.02);
+  transform: rotate(2deg) scale(1.02);
+  border: 2px solid var(--color-teal);
 }
 
 .kanban-column-body.drag-over {
