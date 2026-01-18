@@ -36,15 +36,25 @@ class ReportReader {
     renderNavigation() {
         this.navListEl.innerHTML = ARTICLES.map(article => `
       <li class="nav-item">
-        <a href="#${article.id}" 
-           class="nav-link" 
+        <a href="#${article.id}"
+           class="nav-link"
            data-id="${article.id}"
            title="${article.title}: ${article.subtitle}">
           <span class="nav-number">${article.icon}</span>
           <span class="nav-title">${article.title}</span>
         </a>
       </li>
-    `).join('');
+    `).join('') + `
+      <li class="nav-item">
+        <div style="height: 1px; background: var(--color-border); margin: 8px 16px; opacity: 0.5;"></div>
+      </li>
+      <li class="nav-item">
+        <a href="kanban.html" class="nav-link" title="Gestão de Intervenções">
+          <span class="nav-number">📋</span>
+          <span class="nav-title">Gestão de Intervenções</span>
+        </a>
+      </li>
+    `;
     }
 
     /**
