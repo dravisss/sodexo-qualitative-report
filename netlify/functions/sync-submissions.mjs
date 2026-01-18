@@ -157,6 +157,12 @@ export default async (req, context) => {
                     DELETE FROM answers 
                     WHERE submission_id = ${finalSubmissionId} AND field_id = ANY(${idsToDelete})
                 `;
+
+                // Also delete from attachments to prevent "zombie files" reappearing
+                await sql`
+                    DELETE FROM attachments 
+                    WHERE submission_id = ${finalSubmissionId} AND field_id = ANY(${idsToDelete})
+                `;
             }
         }
 
