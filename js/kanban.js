@@ -29,6 +29,8 @@ class KanbanManager {
         // State
         this.interventions = [];
         this.kanbanState = {}; // Will be loaded from Blob
+        this.isSaving = false;
+        this.isDragging = false;
 
         // API Endpoint
         this.API_URL = '/api/kanban-state';
@@ -49,6 +51,7 @@ class KanbanManager {
 
         this.renderBoard();
         this.setupDragAndDrop();
+        this.startPolling();
     }
 
     /**
@@ -72,6 +75,7 @@ class KanbanManager {
      * Save state to Netlify Blob
      */
     async saveState() {
+        this.isSaving = true;
         // Optimistic update locally
         localStorage.setItem('kanban_state', JSON.stringify(this.kanbanState));
 
@@ -93,6 +97,8 @@ class KanbanManager {
             console.error('Error saving state:', error);
             this.showError('Erro ao salvar na nuvem. Verifique sua conexão.');
             setTimeout(() => this.showSaving(false), 3000);
+        } finally {
+            this.isSaving = false;
         }
     }
 
@@ -136,6 +142,45 @@ class KanbanManager {
             statusEl.style.color = 'var(--color-error)';
         } else {
             alert(msg);
+        }
+    }
+
+    /**
+     * Start polling for updates
+     */
+    startPolling() {
+        // Poll every 30 seconds
+        setInterval(() => this.checkForUpdates(), 30000);
+    }
+
+    /**
+     * Check for remote updates
+     */
+    async checkForUpdates() {
+        // Don't update if user is dragging or saving
+        // We allow updates during editing (editor is overlay), but dragging needs stability
+        if (this.isDragging || this.isSaving) {
+            console.log('Skipping poll due to user interaction');
+            return;
+        }
+
+        try {
+            const response = await fetch(this.API_URL);
+            if (!response.ok) return;
+
+            const remoteState = await response.json();
+
+            // Compare states to avoid unnecessary re-renders
+            if (JSON.stringify(remoteState) !== JSON.stringify(this.kanbanState)) {
+                console.log('Remote changes detected, updating board...');
+                this.kanbanState = remoteState;
+                this.renderBoard();
+
+                // Update local storage
+                localStorage.setItem('kanban_state', JSON.stringify(this.kanbanState));
+            }
+        } catch (error) {
+            console.error('Error polling for updates:', error);
         }
     }
 
@@ -344,7 +389,11 @@ class KanbanManager {
                 dragClass: 'sortable-drag',   // Class for the dragging item
                 delay: 100, // Delay to prevent accidental drags on touch
                 delayOnTouchOnly: true,
+                onStart: () => {
+                    this.isDragging = true;
+                },
                 onEnd: (evt) => {
+                    this.isDragging = false;
                     const itemEl = evt.item;
                     const newStatus = evt.to.dataset.status;
                     const oldStatus = evt.from.dataset.status;
