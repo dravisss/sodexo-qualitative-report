@@ -139,6 +139,23 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Envolver</label>
+                    <div id="stakeholders-list" class="stakeholders-list">
+                        <!-- Stakeholder items will be rendered here -->
+                    </div>
+                    <div id="stakeholder-form" class="stakeholder-form" style="display: none;">
+                        <input type="text" id="stakeholder-name" class="form-input" placeholder="Nome *" required>
+                        <input type="text" id="stakeholder-area" class="form-input" placeholder="Área (opcional)">
+                        <input type="text" id="stakeholder-contact" class="form-input" placeholder="Contato (opcional)">
+                        <div class="stakeholder-form-actions">
+                            <button type="button" id="stakeholder-save" class="btn-sm btn-primary">Adicionar</button>
+                            <button type="button" id="stakeholder-cancel" class="btn-sm btn-secondary">Cancelar</button>
+                        </div>
+                    </div>
+                    <button type="button" id="add-stakeholder-btn" class="btn-add-stakeholder">+ Adicionar pessoa</button>
+                </div>
+
+                <div class="form-group">
                     <label for="edit-updates">Últimas Atualizações / Log</label>
                     <textarea id="edit-updates" class="form-input form-textarea" rows="6" placeholder="Registre o progresso, bloqueios ou decisões..."></textarea>
                 </div>

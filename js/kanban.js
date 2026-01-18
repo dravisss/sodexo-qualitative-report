@@ -19,6 +19,12 @@ class KanbanManager {
         this.tagsInput = document.getElementById('edit-tags');
         this.currentEditingCardId = null;
         this.currentEditingTags = []; // Track tags being edited
+        this.currentEditingStakeholders = []; // Track stakeholders being edited
+
+        // Stakeholder Editor Elements
+        this.stakeholdersList = document.getElementById('stakeholders-list');
+        this.stakeholderForm = document.getElementById('stakeholder-form');
+        this.addStakeholderBtn = document.getElementById('add-stakeholder-btn');
 
         // Fixed columns definition (V2: 4 columns)
         this.columns = [
@@ -428,10 +434,17 @@ class KanbanManager {
         // Get user tags from state
         const userTags = (state && typeof state === 'object' && Array.isArray(state.tags)) ? state.tags : [];
 
+        // Get stakeholders from state for badge
+        const stakeholders = (state && typeof state === 'object' && Array.isArray(state.stakeholders)) ? state.stakeholders : [];
+        const stakeholdersBadgeHtml = stakeholders.length > 0
+            ? `<span class="card-stakeholders-badge" title="${stakeholders.map(s => this.escapeHtml(s.name)).join(', ')}">👥${stakeholders.length}</span>`
+            : '';
+
         el.innerHTML = `
             <div class="card-header">
                 <div class="card-id">${card.id}</div>
                 ${substatusHtml}
+                ${stakeholdersBadgeHtml}
             </div>
             <div class="card-title">${card.title}</div>
             <div class="card-tags">
@@ -665,6 +678,21 @@ class KanbanManager {
         if (this.tagsInput) {
             this.tagsInput.addEventListener('keydown', (e) => this.handleTagInput(e));
         }
+
+        // Stakeholder Events
+        if (this.addStakeholderBtn) {
+            this.addStakeholderBtn.addEventListener('click', () => this.showStakeholderForm());
+        }
+
+        const stakeholderSaveBtn = document.getElementById('stakeholder-save');
+        if (stakeholderSaveBtn) {
+            stakeholderSaveBtn.addEventListener('click', () => this.saveStakeholder());
+        }
+
+        const stakeholderCancelBtn = document.getElementById('stakeholder-cancel');
+        if (stakeholderCancelBtn) {
+            stakeholderCancelBtn.addEventListener('click', () => this.hideStakeholderForm());
+        }
     }
 
     /**
@@ -695,6 +723,11 @@ class KanbanManager {
         this.currentEditingTags = Array.isArray(state.tags) ? [...state.tags] : [];
         this.renderEditorTags();
 
+        // Populate Stakeholders
+        this.currentEditingStakeholders = Array.isArray(state.stakeholders) ? [...state.stakeholders] : [];
+        this.renderEditorStakeholders();
+        this.hideStakeholderForm();
+
         // Show Editor
         this.editorEl.classList.add('active');
         this.editorOverlayEl.classList.add('active');
@@ -710,6 +743,7 @@ class KanbanManager {
         document.body.style.overflow = '';
         this.currentEditingCardId = null;
         this.currentEditingTags = [];
+        this.currentEditingStakeholders = [];
 
         // Reset status message
         const statusEl = document.getElementById('editor-save-status');
@@ -793,6 +827,97 @@ class KanbanManager {
     }
 
     /**
+     * Show the stakeholder add form
+     */
+    showStakeholderForm() {
+        if (this.stakeholderForm) {
+            this.stakeholderForm.style.display = 'flex';
+            this.addStakeholderBtn.style.display = 'none';
+            document.getElementById('stakeholder-name').focus();
+        }
+    }
+
+    /**
+     * Hide the stakeholder add form
+     */
+    hideStakeholderForm() {
+        if (this.stakeholderForm) {
+            this.stakeholderForm.style.display = 'none';
+            this.addStakeholderBtn.style.display = 'block';
+            // Clear form inputs
+            document.getElementById('stakeholder-name').value = '';
+            document.getElementById('stakeholder-area').value = '';
+            document.getElementById('stakeholder-contact').value = '';
+        }
+    }
+
+    /**
+     * Save a new stakeholder from the form
+     */
+    saveStakeholder() {
+        const name = document.getElementById('stakeholder-name').value.trim();
+        const area = document.getElementById('stakeholder-area').value.trim();
+        const contact = document.getElementById('stakeholder-contact').value.trim();
+
+        if (!name) {
+            document.getElementById('stakeholder-name').focus();
+            return;
+        }
+
+        this.currentEditingStakeholders.push({ name, area, contact });
+        this.renderEditorStakeholders();
+        this.hideStakeholderForm();
+    }
+
+    /**
+     * Remove a stakeholder by index
+     */
+    removeStakeholder(index) {
+        if (index >= 0 && index < this.currentEditingStakeholders.length) {
+            this.currentEditingStakeholders.splice(index, 1);
+            this.renderEditorStakeholders();
+        }
+    }
+
+    /**
+     * Render stakeholders in the editor
+     */
+    renderEditorStakeholders() {
+        if (!this.stakeholdersList) return;
+
+        if (this.currentEditingStakeholders.length === 0) {
+            this.stakeholdersList.innerHTML = '';
+            return;
+        }
+
+        this.stakeholdersList.innerHTML = this.currentEditingStakeholders.map((stakeholder, index) => {
+            const details = [];
+            if (stakeholder.area) details.push(`<span>📍 ${this.escapeHtml(stakeholder.area)}</span>`);
+            if (stakeholder.contact) details.push(`<span>📞 ${this.escapeHtml(stakeholder.contact)}</span>`);
+
+            return `
+                <div class="stakeholder-item" data-index="${index}">
+                    <div class="stakeholder-info">
+                        <span class="stakeholder-name">${this.escapeHtml(stakeholder.name)}</span>
+                        ${details.length > 0 ? `<div class="stakeholder-details">${details.join('')}</div>` : ''}
+                    </div>
+                    <button type="button" class="stakeholder-remove" aria-label="Remover pessoa">×</button>
+                </div>
+            `;
+        }).join('');
+
+        // Add click handlers for remove buttons
+        this.stakeholdersList.querySelectorAll('.stakeholder-remove').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const item = btn.closest('.stakeholder-item');
+                const index = parseInt(item.dataset.index, 10);
+                this.removeStakeholder(index);
+            });
+        });
+    }
+
+    /**
      * Escape HTML for safe rendering
      */
     escapeHtml(str) {
@@ -817,6 +942,32 @@ class KanbanManager {
 
         // Generate tags HTML
         tagsEl.innerHTML = this.generateCardTagsHtml(card, tags);
+    }
+
+    /**
+     * Update card stakeholders badge in the DOM
+     */
+    updateCardStakeholdersBadge(cardId, stakeholders) {
+        const cardEl = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+        if (!cardEl) return;
+
+        const headerEl = cardEl.querySelector('.card-header');
+        if (!headerEl) return;
+
+        // Remove existing badge
+        const existingBadge = headerEl.querySelector('.card-stakeholders-badge');
+        if (existingBadge) {
+            existingBadge.remove();
+        }
+
+        // Add new badge if stakeholders exist
+        if (stakeholders && stakeholders.length > 0) {
+            const badgeEl = document.createElement('span');
+            badgeEl.className = 'card-stakeholders-badge';
+            badgeEl.textContent = `👥${stakeholders.length}`;
+            badgeEl.title = stakeholders.map(s => s.name).join(', ');
+            headerEl.appendChild(badgeEl);
+        }
     }
 
     /**
@@ -856,6 +1007,7 @@ class KanbanManager {
         const dueDate = document.getElementById('edit-duedate').value;
         const updates = document.getElementById('edit-updates').value;
         const tags = [...this.currentEditingTags]; // Copy current tags
+        const stakeholders = [...this.currentEditingStakeholders]; // Copy current stakeholders
 
         // Update local state
         if (!this.kanbanState[id]) {
@@ -873,11 +1025,15 @@ class KanbanManager {
             dueDate,
             updates,
             tags,
+            stakeholders,
             updatedAt: new Date().toISOString()
         };
 
         // Update the card's tags display in the DOM
         this.updateCardTagsDisplay(id, tags);
+
+        // Update the card's stakeholders badge in the DOM
+        this.updateCardStakeholdersBadge(id, stakeholders);
 
         // Show saving feedback in the form
         const statusEl = document.getElementById('editor-save-status');

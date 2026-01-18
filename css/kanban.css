@@ -562,3 +562,142 @@
     color: var(--color-text-muted);
     border-style: dashed;
 }
+
+/* === STAKEHOLDERS (ENVOLVER) STYLES === */
+.stakeholders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.stakeholder-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+}
+
+.stakeholder-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
+}
+
+.stakeholder-name {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+}
+
+.stakeholder-details {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stakeholder-details span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stakeholder-remove {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    opacity: 0.7;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.stakeholder-remove:hover {
+    opacity: 1;
+    color: var(--color-error);
+}
+
+.stakeholder-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background: var(--color-bg-card-alt);
+    border: 1px solid var(--color-teal);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stakeholder-form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.btn-add-stakeholder {
+    background: none;
+    border: 1px dashed var(--color-border);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    width: 100%;
+    transition: var(--transition-fast);
+}
+
+.btn-add-stakeholder:hover {
+    border-color: var(--color-teal);
+    color: var(--color-teal-dark);
+    background: var(--color-teal-light, rgba(122, 181, 188, 0.1));
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: var(--font-size-xs);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-sm.btn-primary {
+    background: var(--color-teal);
+    color: white;
+    border: none;
+}
+
+.btn-sm.btn-primary:hover {
+    background: var(--color-teal-hover);
+}
+
+.btn-sm.btn-secondary {
+    background: white;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-sm.btn-secondary:hover {
+    border-color: var(--color-text-muted);
+}
+
+/* Stakeholder badge on cards */
+.card-stakeholders-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--color-bg-subtle, #f5f5f5);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
