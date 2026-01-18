@@ -125,16 +125,25 @@ export default async (req, context) => {
             }
 
             if (rowsToInsert.length > 0) {
-                await sql`
-                    INSERT INTO answers ${sql(rowsToInsert)}
-                    ON CONFLICT (submission_id, field_id) 
-                    DO UPDATE SET 
-                        answer_value = EXCLUDED.answer_value,
-                        section_name = COALESCE(EXCLUDED.section_name, answers.section_name),
-                        subsection_name = COALESCE(EXCLUDED.subsection_name, answers.subsection_name),
-                        question_text = COALESCE(EXCLUDED.question_text, answers.question_text),
-                        updated_at = NOW()
-                `;
+                // Batch process in chunks to avoid MAX_PARAMETERS_EXCEEDED (Postgres limit ~65535 parameters)
+                const CHUNK_SIZE = 2000; // 2000 rows * 7 columns = 14,000 params (safe)
+
+                for (let i = 0; i < rowsToInsert.length; i += CHUNK_SIZE) {
+                    const chunk = rowsToInsert.slice(i, i + CHUNK_SIZE);
+
+                    if (chunk.length > 0) {
+                        await sql`
+                            INSERT INTO answers ${sql(chunk, 'submission_id', 'field_id', 'field_type', 'section_name', 'subsection_name', 'question_text', 'answer_value')}
+                            ON CONFLICT (submission_id, field_id) 
+                            DO UPDATE SET 
+                                answer_value = EXCLUDED.answer_value,
+                                section_name = COALESCE(EXCLUDED.section_name, answers.section_name),
+                                subsection_name = COALESCE(EXCLUDED.subsection_name, answers.subsection_name),
+                                question_text = COALESCE(EXCLUDED.question_text, answers.question_text),
+                                updated_at = NOW()
+                        `;
+                    }
+                }
             }
         }
 

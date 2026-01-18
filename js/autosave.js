@@ -171,7 +171,12 @@ export class AutoSaveManager {
             });
 
             if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
+                let errorMsg = `HTTP ${response.status}`;
+                try {
+                    const errResult = await response.json();
+                    if (errResult.error) errorMsg += `: ${errResult.error}`;
+                } catch (e) { /* ignore parse error */ }
+                throw new Error(errorMsg);
             }
 
             const result = await response.json();
@@ -181,10 +186,10 @@ export class AutoSaveManager {
                 this.saveMeta();
                 this.updateStatus('Salvo na nuvem', 'saved');
 
-                // Update URL for sharing/resuming
+                // Unified Mode: Ensure clean URL (do not expose ID)
                 const currentUrl = new URL(window.location);
-                if (currentUrl.searchParams.get('id') !== this.submissionId) {
-                    currentUrl.searchParams.set('id', this.submissionId);
+                if (currentUrl.searchParams.has('id')) {
+                    currentUrl.searchParams.delete('id');
                     window.history.replaceState({}, '', currentUrl);
                 }
             } else {
