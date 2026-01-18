@@ -21,6 +21,10 @@ class KanbanManager {
         this.currentEditingTags = []; // Track tags being edited
         this.currentEditingStakeholders = []; // Track stakeholders being edited
 
+        // Search Elements
+        this.searchInput = document.getElementById('kanban-search');
+        this.searchDebounceTimer = null;
+
         // Stakeholder Editor Elements
         this.stakeholdersList = document.getElementById('stakeholders-list');
         this.stakeholderForm = document.getElementById('stakeholder-form');
@@ -599,7 +603,11 @@ class KanbanManager {
             const colBody = document.querySelector(`#col-${col.id} .kanban-column-body`);
             const countEl = document.querySelector(`#col-${col.id} .column-count`);
             if (colBody && countEl) {
-                countEl.textContent = colBody.children.length;
+                // Count only visible cards
+                const visibleCards = Array.from(colBody.children).filter(
+                    card => card.style.display !== 'none'
+                );
+                countEl.textContent = visibleCards.length;
             }
         });
     }
@@ -692,6 +700,11 @@ class KanbanManager {
         const stakeholderCancelBtn = document.getElementById('stakeholder-cancel');
         if (stakeholderCancelBtn) {
             stakeholderCancelBtn.addEventListener('click', () => this.hideStakeholderForm());
+        }
+
+        // Search Events
+        if (this.searchInput) {
+            this.searchInput.addEventListener('input', () => this.handleSearchInput());
         }
     }
 
@@ -1088,6 +1101,88 @@ class KanbanManager {
             this.overlayEl.classList.remove('active');
             document.body.style.overflow = '';
         }
+    }
+
+    /**
+     * Handle search input with debounce
+     */
+    handleSearchInput() {
+        clearTimeout(this.searchDebounceTimer);
+        this.searchDebounceTimer = setTimeout(() => {
+            this.filterCards(this.searchInput.value);
+        }, 300);
+    }
+
+    /**
+     * Filter cards based on search query
+     * Matches: ID (I-XX), title, any tag, stakeholder name/area/contact
+     */
+    filterCards(query) {
+        const normalizedQuery = query.trim().toLowerCase();
+        const allCards = document.querySelectorAll('.kanban-card');
+
+        allCards.forEach(cardEl => {
+            const cardId = cardEl.dataset.id;
+            const card = this.interventions.find(c => c.id === cardId);
+            if (!card) return;
+
+            // If query is empty, show all cards
+            if (!normalizedQuery) {
+                cardEl.style.display = '';
+                return;
+            }
+
+            // Check for match
+            const isMatch = this.cardMatchesQuery(card, normalizedQuery);
+            cardEl.style.display = isMatch ? '' : 'none';
+        });
+
+        // Update column counts after filtering
+        this.updateCounts();
+    }
+
+    /**
+     * Check if a card matches the search query
+     */
+    cardMatchesQuery(card, query) {
+        // Match ID (I-XX)
+        if (card.id.toLowerCase().includes(query)) {
+            return true;
+        }
+
+        // Match title
+        if (card.title.toLowerCase().includes(query)) {
+            return true;
+        }
+
+        // Get state for tags and stakeholders
+        const state = this.kanbanState[card.id];
+
+        // Match tags
+        if (state && Array.isArray(state.tags)) {
+            for (const tag of state.tags) {
+                if (tag.toLowerCase().includes(query)) {
+                    return true;
+                }
+            }
+        }
+
+        // Match stakeholders (name, area, contact)
+        if (state && Array.isArray(state.stakeholders)) {
+            for (const stakeholder of state.stakeholders) {
+                if (stakeholder.name && stakeholder.name.toLowerCase().includes(query)) {
+                    return true;
+                }
+                if (stakeholder.area && stakeholder.area.toLowerCase().includes(query)) {
+                    return true;
+                }
+                if (stakeholder.contact && stakeholder.contact.toLowerCase().includes(query)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
 
