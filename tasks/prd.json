@@ -1,0 +1,135 @@
+{
+  "name": "Relatório Sodexo - Kanban de Intervenções",
+  "branchName": "ralph/kanban-intervencoes",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Estrutura da Página Kanban",
+      "description": "Como usuário, quero acessar uma página dedicada ao Kanban através de um link na navegação principal, para que eu possa gerenciar as intervenções sem sair do contexto do aplicativo.",
+      "acceptanceCriteria": [
+        "Criar `kanban.html` com a estrutura base (header, container do board).",
+        "Criar `css/kanban.css` seguindo as variáveis de estilo do SIN Design System.",
+        "Criar `js/kanban.js` como módulo ES6.",
+        "Adicionar link \"Gestão de Intervenções\" no menu principal da aplicação existente.",
+        "A página deve carregar corretamente e exibir o layout vazio das colunas fixas: Backlog, A Fazer, Em Andamento, Bloqueado, Concluído.",
+        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
+        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
+        "Console: Garantir que não há erros de JavaScript no console do navegador",
+        "Responsividade: O layout deve funcionar em desktop e mobile"
+      ],
+      "priority": 1,
+      "passes": true,
+      "dependsOn": [],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-002",
+      "title": "Extração de Intervenções",
+      "description": "Como usuário, quero que o sistema identifique automaticamente as intervenções descritas nos arquivos Markdown do relatório, para que eu não precise cadastrá-las manualmente.",
+      "acceptanceCriteria": [
+        "Implementar função para varrer os arquivos na pasta `Refined/` (utilizando a lista do `js/config.js`).",
+        "Extrair seções identificadas como \"Intervenção\" ou padrões definidos nos Markdowns.",
+        "Gerar uma lista de objetos JSON contendo: ID único (hash do título/conteúdo), Título, Descrição resumida e Link de origem (para abrir o relatório original).",
+        "Exibir os cards extraídos na coluna \"Backlog\" (se ainda não tiverem estado salvo).",
+        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
+        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
+        "Console: Garantir que não há erros de JavaScript no console do navegador",
+        "Responsividade: O layout deve funcionar em desktop e mobile"
+      ],
+      "priority": 2,
+      "passes": true,
+      "dependsOn": [
+        "US-001"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-003",
+      "title": "Integração com Netlify Blobs (Persistência)",
+      "description": "Como usuário, quero que as alterações que faço no quadro sejam salvas na nuvem, para que meus colegas possam ver o status atualizado das tarefas.",
+      "acceptanceCriteria": [
+        "Criar/Ajustar Netlify Function para leitura e escrita em um store dedicado do Netlify Blobs (ex: `sodexo-kanban-state`).",
+        "Ao carregar a página, mesclar as intervenções extraídas (US-002) com o estado salvo no Blob (coluna atual, responsável, etc).",
+        "Implementar salvamento automático ao mover cards ou editar dados.",
+        "Tratamento de erro: Exibir alerta caso a conexão falhe.",
+        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
+        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
+        "Console: Garantir que não há erros de JavaScript no console do navegador",
+        "Responsividade: O layout deve funcionar em desktop e mobile"
+      ],
+      "priority": 3,
+      "passes": true,
+      "dependsOn": [
+        "US-002"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-004",
+      "title": "Quadro Interativo com SortableJS",
+      "description": "Como usuário, quero mover os cards entre as colunas arrastando e soltando, para atualizar o status das intervenções de forma intuitiva.",
+      "acceptanceCriteria": [
+        "Importar biblioteca SortableJS (via CDN ou vendor).",
+        "Tornar as colunas do Kanban áreas de drop ativas.",
+        "Ao soltar um card, atualizar visualmente a posição.",
+        "Disparar evento de salvamento (US-003) imediatamente após o movimento.",
+        "Animações suaves de drag & drop.",
+        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
+        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
+        "Console: Garantir que não há erros de JavaScript no console do navegador",
+        "Responsividade: O layout deve funcionar em desktop e mobile"
+      ],
+      "priority": 4,
+      "passes": true,
+      "dependsOn": [
+        "US-003"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-005",
+      "title": "Edição de Detalhes do Card",
+      "description": "Como usuário, quero clicar em um card para adicionar informações de gestão (responsável, data, atualizações), para detalhar o andamento da intervenção.",
+      "acceptanceCriteria": [
+        "Ao clicar no card, abrir um Modal ou Painel Lateral.",
+        "Exibir dados estáticos (vindos do Markdown) como somente leitura.",
+        "Exibir campos editáveis: Responsável (texto simples), Data Limite, Últimas Atualizações (campo de texto multilinhas).",
+        "Botão \"Salvar\" que persiste os dados no Netlify Blob associado ao ID do card.",
+        "Utilizar a identificação de usuário existente (localStorage/Session) para preencher logs de autoria se disponível.",
+        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
+        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
+        "Console: Garantir que não há erros de JavaScript no console do navegador",
+        "Responsividade: O layout deve funcionar em desktop e mobile"
+      ],
+      "priority": 5,
+      "passes": true,
+      "dependsOn": [
+        "US-004"
+      ],
+      "completionNotes": "Completed by agent"
+    },
+    {
+      "id": "US-006",
+      "title": "Sincronização em Tempo Real (Polling)",
+      "description": "Como usuário, quero ver atualizações feitas por outros usuários sem precisar recarregar a página manualmente o tempo todo.",
+      "acceptanceCriteria": [
+        "Implementar mecanismo de *polling* que consulta o Netlify Blob a cada X segundos (ex: 30s).",
+        "Atualizar a posição dos cards e dados se houver mudança no servidor.",
+        "Evitar sobrescrever se o usuário estiver arrastando um card no momento da atualização.",
+        "Linting: O código deve seguir o padrão do projeto (ES Modules, sem bundler)",
+        "Funcionalidade: Verificar se o comportamento esperado ocorre no navegador",
+        "Console: Garantir que não há erros de JavaScript no console do navegador",
+        "Responsividade: O layout deve funcionar em desktop e mobile"
+      ],
+      "priority": 6,
+      "passes": true,
+      "dependsOn": [
+        "US-005"
+      ],
+      "completionNotes": "Completed by agent"
+    }
+  ],
+  "metadata": {
+    "updatedAt": "2026-01-18T02:59:45.463Z"
+  }
+}
