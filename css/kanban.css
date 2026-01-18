@@ -123,6 +123,18 @@
   border-color: var(--color-teal);
 }
 
+.kanban-card.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+  border: 1px dashed var(--color-teal);
+}
+
+.kanban-column-body.drag-over {
+  background: rgba(0, 150, 136, 0.1); /* Teal tint */
+  border: 2px dashed var(--color-teal);
+  border-radius: var(--radius-md);
+}
+
 .card-id {
   font-size: var(--font-size-xs);
   color: var(--color-text-light);

@@ -22,7 +22,10 @@ class KanbanManager {
 
         // State
         this.interventions = [];
-        this.kanbanState = JSON.parse(localStorage.getItem('kanban_state') || '{}');
+        this.kanbanState = {}; // Will be loaded from Blob
+
+        // API Endpoint
+        this.API_URL = '/api/kanban-state';
 
         this.init();
     }
@@ -31,8 +34,103 @@ class KanbanManager {
         this.initializeSidebarState();
         this.setupGeneralEvents();
         this.renderSkeleton();
-        await this.loadInterventions();
+
+        // Load data in parallel
+        await Promise.all([
+            this.loadInterventions(),
+            this.loadRemoteState()
+        ]);
+
         this.renderBoard();
+        this.setupDragAndDrop();
+    }
+
+    /**
+     * Load state from Netlify Blob
+     */
+    async loadRemoteState() {
+        try {
+            const response = await fetch(this.API_URL);
+            if (response.ok) {
+                this.kanbanState = await response.json();
+                console.log('Remote state loaded:', this.kanbanState);
+            }
+        } catch (error) {
+            console.error('Error loading remote state:', error);
+            // Fallback to local storage if available or empty
+            this.kanbanState = JSON.parse(localStorage.getItem('kanban_state') || '{}');
+        }
+    }
+
+    /**
+     * Save state to Netlify Blob
+     */
+    async saveState() {
+        // Optimistic update locally
+        localStorage.setItem('kanban_state', JSON.stringify(this.kanbanState));
+
+        try {
+            this.showSaving(true);
+            const response = await fetch(this.API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(this.kanbanState)
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to save to cloud');
+            }
+            this.showSaving(false);
+        } catch (error) {
+            console.error('Error saving state:', error);
+            this.showError('Erro ao salvar na nuvem. Verifique sua conexão.');
+            setTimeout(() => this.showSaving(false), 3000);
+        }
+    }
+
+    showSaving(isSaving) {
+        // Ensure we have a status indicator
+        let statusEl = document.getElementById('kanban-status');
+        if (!statusEl) {
+            statusEl = document.createElement('div');
+            statusEl.id = 'kanban-status';
+            statusEl.style.position = 'fixed';
+            statusEl.style.bottom = '20px';
+            statusEl.style.right = '20px';
+            statusEl.style.padding = '8px 12px';
+            statusEl.style.background = 'var(--color-bg-card)';
+            statusEl.style.boxShadow = 'var(--shadow-md)';
+            statusEl.style.borderRadius = 'var(--radius-md)';
+            statusEl.style.fontSize = 'var(--font-size-sm)';
+            statusEl.style.zIndex = '1000';
+            statusEl.style.display = 'none';
+            document.body.appendChild(statusEl);
+        }
+
+        if (isSaving) {
+            statusEl.textContent = '☁️ Salvando...';
+            statusEl.style.display = 'block';
+            statusEl.style.color = 'var(--color-text-secondary)';
+        } else {
+            statusEl.textContent = '✅ Salvo';
+            statusEl.style.color = 'var(--color-success)';
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+            }, 2000);
+        }
+    }
+
+    showError(msg) {
+        let statusEl = document.getElementById('kanban-status');
+        if (statusEl) {
+            statusEl.textContent = `❌ ${msg}`;
+            statusEl.style.display = 'block';
+            statusEl.style.color = 'var(--color-error)';
+        } else {
+            alert(msg);
+        }
     }
 
     /**
@@ -175,7 +273,17 @@ class KanbanManager {
         // Distribute cards
         this.interventions.forEach(card => {
             // Check saved state, default to backlog
-            const status = this.kanbanState[card.id] || 'backlog';
+            // Support both string (legacy) and object formats
+            const state = this.kanbanState[card.id];
+            let status = 'backlog';
+
+            if (state) {
+                if (typeof state === 'string') {
+                    status = state;
+                } else if (state.status) {
+                    status = state.status;
+                }
+            }
 
             const colBody = document.querySelector(`#col-${status} .kanban-column-body`);
             if (colBody) {
@@ -191,7 +299,7 @@ class KanbanManager {
     createCardElement(card) {
         const el = document.createElement('div');
         el.className = 'kanban-card';
-        // el.draggable = true; // Not implementing DnD logic yet, just rendering
+        el.draggable = true;
         el.dataset.id = card.id;
 
         el.innerHTML = `
@@ -202,18 +310,83 @@ class KanbanManager {
             </div>
         `;
 
+        // Drag events
+        el.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', card.id);
+            e.dataTransfer.effectAllowed = 'move';
+            el.classList.add('dragging');
+        });
+
+        el.addEventListener('dragend', () => {
+            el.classList.remove('dragging');
+            // Remove drop targets highlights
+            document.querySelectorAll('.kanban-column-body').forEach(col => {
+                col.classList.remove('drag-over');
+            });
+        });
+
         // Click to navigate to source
         el.addEventListener('click', (e) => {
-            // Don't navigate if we add drag logic later
-            // window.location.href = card.link;
-
-            // For now, let's just log or show alert, or navigate?
-            // User Story says "Link de origem (para abrir o relatório original)".
-            // Let's allow navigation on click
-            window.location.href = card.link;
+            // Prevent navigation if we are dragging (though click usually doesn't fire on drag)
+             window.location.href = card.link;
         });
 
         return el;
+    }
+
+    setupDragAndDrop() {
+        this.columns.forEach(col => {
+            const colBody = document.querySelector(`#col-${col.id} .kanban-column-body`);
+            if (!colBody) return;
+
+            colBody.addEventListener('dragover', (e) => {
+                e.preventDefault(); // Allow drop
+                e.dataTransfer.dropEffect = 'move';
+                colBody.classList.add('drag-over');
+            });
+
+            colBody.addEventListener('dragleave', () => {
+                colBody.classList.remove('drag-over');
+            });
+
+            colBody.addEventListener('drop', (e) => {
+                e.preventDefault();
+                colBody.classList.remove('drag-over');
+
+                const cardId = e.dataTransfer.getData('text/plain');
+                const newStatus = colBody.dataset.status;
+
+                this.handleCardMove(cardId, newStatus);
+            });
+        });
+    }
+
+    handleCardMove(cardId, newStatus) {
+        // Update state - preserve other properties if any
+        const currentState = this.kanbanState[cardId];
+
+        if (typeof currentState === 'object' && currentState !== null) {
+            this.kanbanState[cardId].status = newStatus;
+            this.kanbanState[cardId].updatedAt = new Date().toISOString();
+        } else {
+            // Initialize new state object
+            this.kanbanState[cardId] = {
+                status: newStatus,
+                updatedAt: new Date().toISOString()
+            };
+        }
+
+        // Move element in DOM for immediate feedback
+        const cardEl = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+        const targetColBody = document.querySelector(`#col-${newStatus} .kanban-column-body`);
+
+        if (cardEl && targetColBody) {
+            targetColBody.appendChild(cardEl);
+            this.updateCounts();
+
+            // Trigger save
+            this.saveState();
+        }
     }
 
     updateCounts() {
