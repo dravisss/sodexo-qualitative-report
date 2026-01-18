@@ -89,6 +89,60 @@
         </div>
       </div>
 
+      <!-- Card Details Side Panel -->
+      <div id="card-editor-overlay" class="editor-overlay"></div>
+      <aside id="card-editor" class="card-editor-panel">
+        <header class="editor-header">
+            <div class="editor-title-group">
+                <span id="editor-card-id" class="editor-id">I-00</span>
+                <h2 id="editor-card-title">Título da Intervenção</h2>
+            </div>
+            <button id="close-editor" class="close-editor-btn" aria-label="Fechar">×</button>
+        </header>
+
+        <div class="editor-content">
+            <!-- Read-only details from Markdown -->
+            <div class="editor-section read-only-section">
+                <div class="editor-field">
+                    <label>Origem</label>
+                    <div id="editor-article-source" class="readonly-value">Artigo 01</div>
+                </div>
+                <div class="editor-field">
+                    <label>Descrição Original</label>
+                    <div id="editor-description" class="readonly-value description-text"></div>
+                </div>
+                <div class="editor-actions">
+                    <a id="editor-view-source" href="#" class="btn-secondary btn-sm" target="_blank">📄 Ver Contexto Original</a>
+                </div>
+            </div>
+
+            <hr class="editor-divider">
+
+            <!-- Editable Management Fields -->
+            <form id="card-edit-form" class="editor-section editable-section">
+                <div class="form-group">
+                    <label for="edit-responsible">Responsável</label>
+                    <input type="text" id="edit-responsible" class="form-input" placeholder="Quem está liderando?">
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-duedate">Data Limite</label>
+                    <input type="date" id="edit-duedate" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="edit-updates">Últimas Atualizações / Log</label>
+                    <textarea id="edit-updates" class="form-input form-textarea" rows="6" placeholder="Registre o progresso, bloqueios ou decisões..."></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn-primary">💾 Salvar Alterações</button>
+                    <span id="editor-save-status" class="save-status"></span>
+                </div>
+            </form>
+        </div>
+      </aside>
+
       <footer class="report-footer">
           Relatório Sodexo Frontline | Target Teal | 2026
       </footer>

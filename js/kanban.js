@@ -11,6 +11,12 @@ class KanbanManager {
         this.sidebarEl = document.querySelector('.sin-sidebar');
         this.overlayEl = document.getElementById('sidebar-overlay');
 
+        // Editor Elements
+        this.editorEl = document.getElementById('card-editor');
+        this.editorOverlayEl = document.getElementById('card-editor-overlay');
+        this.editorForm = document.getElementById('card-edit-form');
+        this.currentEditingCardId = null;
+
         // Fixed columns definition
         this.columns = [
             { id: 'backlog', title: 'Backlog', class: 'status-backlog', icon: '📥' },
@@ -309,11 +315,12 @@ class KanbanManager {
             </div>
         `;
 
-        // Click to navigate to source
+        // Click to open editor instead of direct navigation
         el.addEventListener('click', (e) => {
-            // Prevent navigation if we are dragging (Sortable handles this via delay/filter if needed,
-            // but usually click fires. We might need to check if a drag happened, but for now standard click)
-             window.location.href = card.link;
+            // Prevent if dragging (Sortable creates a clone, but sometimes original receives click)
+            if (el.classList.contains('sortable-drag')) return;
+
+            this.openEditor(card.id);
         });
 
         return el;
@@ -409,6 +416,112 @@ class KanbanManager {
         // Overlay Click (close drawer)
         if (this.overlayEl) {
             this.overlayEl.addEventListener('click', () => this.toggleMobileMenu(false));
+        }
+
+        // Editor Events
+        const closeBtn = document.getElementById('close-editor');
+        if (closeBtn) closeBtn.addEventListener('click', () => this.closeEditor());
+
+        if (this.editorOverlayEl) {
+            this.editorOverlayEl.addEventListener('click', () => this.closeEditor());
+        }
+
+        if (this.editorForm) {
+            this.editorForm.addEventListener('submit', (e) => this.handleEditorSave(e));
+        }
+    }
+
+    /**
+     * Open the card editor
+     */
+    openEditor(cardId) {
+        const card = this.interventions.find(c => c.id === cardId);
+        if (!card) return;
+
+        this.currentEditingCardId = cardId;
+        const state = this.kanbanState[cardId] || {};
+
+        // Populate Read-Only Fields
+        document.getElementById('editor-card-id').textContent = card.id;
+        document.getElementById('editor-card-title').textContent = card.title;
+        document.getElementById('editor-article-source').textContent = `${card.articleTitle} (Artigo ${card.articleId})`;
+        document.getElementById('editor-description').textContent = card.description;
+
+        const viewSourceBtn = document.getElementById('editor-view-source');
+        viewSourceBtn.href = card.link;
+
+        // Populate Editable Fields
+        document.getElementById('edit-responsible').value = state.responsible || '';
+        document.getElementById('edit-duedate').value = state.dueDate || '';
+        document.getElementById('edit-updates').value = state.updates || '';
+
+        // Show Editor
+        this.editorEl.classList.add('active');
+        this.editorOverlayEl.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    /**
+     * Close the card editor
+     */
+    closeEditor() {
+        this.editorEl.classList.remove('active');
+        this.editorOverlayEl.classList.remove('active');
+        document.body.style.overflow = '';
+        this.currentEditingCardId = null;
+
+        // Reset status message
+        const statusEl = document.getElementById('editor-save-status');
+        if (statusEl) statusEl.textContent = '';
+    }
+
+    /**
+     * Handle form submission
+     */
+    async handleEditorSave(e) {
+        e.preventDefault();
+        if (!this.currentEditingCardId) return;
+
+        const id = this.currentEditingCardId;
+        const responsible = document.getElementById('edit-responsible').value;
+        const dueDate = document.getElementById('edit-duedate').value;
+        const updates = document.getElementById('edit-updates').value;
+
+        // Update local state
+        if (!this.kanbanState[id]) {
+            this.kanbanState[id] = { status: 'backlog' }; // Default if new
+        }
+
+        // If it was a string (legacy), convert to object
+        if (typeof this.kanbanState[id] === 'string') {
+            this.kanbanState[id] = { status: this.kanbanState[id] };
+        }
+
+        this.kanbanState[id] = {
+            ...this.kanbanState[id],
+            responsible,
+            dueDate,
+            updates,
+            updatedAt: new Date().toISOString()
+        };
+
+        // Show saving feedback in the form
+        const statusEl = document.getElementById('editor-save-status');
+        if (statusEl) {
+            statusEl.textContent = 'Salvando...';
+            statusEl.style.color = 'var(--color-text-muted)';
+        }
+
+        // Trigger global save
+        await this.saveState();
+
+        // Update feedback
+        if (statusEl) {
+            statusEl.textContent = 'Salvo com sucesso!';
+            statusEl.style.color = 'var(--color-success)';
+            setTimeout(() => {
+                statusEl.textContent = '';
+            }, 3000);
         }
     }
 
