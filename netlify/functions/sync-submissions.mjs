@@ -159,10 +159,26 @@ export default async (req, context) => {
                 `;
 
                 // Also delete from attachments to prevent "zombie files" reappearing
-                await sql`
+                // AND delete from Netlify Blobs store for full cleanup
+                const deletedAttachments = await sql`
                     DELETE FROM attachments 
                     WHERE submission_id = ${finalSubmissionId} AND field_id = ANY(${idsToDelete})
+                    RETURNING blob_key
                 `;
+
+                if (deletedAttachments.length > 0) {
+                    try {
+                        const { getStore } = await import('@netlify/blobs');
+                        const store = getStore('evidence-files');
+
+                        await Promise.all(deletedAttachments.map(att =>
+                            store.delete(att.blob_key)
+                        ));
+                    } catch (blobError) {
+                        console.warn('Failed to delete blobs from store:', blobError);
+                        // Non-critical error, continue
+                    }
+                }
             }
         }
 
