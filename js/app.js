@@ -687,12 +687,19 @@ class ReportReader {
                     const cleanText = cell.textContent.trim();
                     if (cleanText === '?' || cleanText === '') {
                         const fieldId = `table_${tIndex}_row_${rIndex}_col_${cIndex}`;
+                        const fileId = `${fieldId}_file`;
                         cell.innerHTML = `
-                            <input type="text" 
-                                   class="form-input" 
-                                   id="${fieldId}" 
-                                   data-type="table-cell"
-                                   placeholder="Inserir dado..." />
+                            <div style="display:flex;align-items:center;gap:4px;">
+                                <input type="text" 
+                                       class="form-input" 
+                                       id="${fieldId}" 
+                                       data-type="table-cell"
+                                       placeholder="..." 
+                                       style="flex:1;min-width:60px;padding:4px 6px;" />
+                                <label for="${fileId}" class="custom-file-upload" style="padding:4px 6px;font-size:0.85em;" title="Anexar">📎</label>
+                                <input type="file" class="form-attachment" id="${fileId}" data-context="Table ${tIndex} Row ${rIndex} Col ${cIndex}" hidden />
+                            </div>
+                            <div id="${fileId}_name" class="file-name-display" style="font-size:0.7em;"></div>
                         `;
                     } else if (cleanText === '[Anexar]') {
                         const fieldId = `table_${tIndex}_row_${rIndex}_col_${cIndex}_file`;

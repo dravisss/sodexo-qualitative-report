@@ -363,9 +363,20 @@ export class AutoSaveManager {
     updateFileUI(fieldId, fileName) {
         const nameDisplay = document.getElementById(`${fieldId}_name`);
         if (nameDisplay) {
+            // Get blob key from localStorage if available
+            const answers = this.getAnswers();
+            const blobKey = answers[`${fieldId}_blob`];
+            // Use API endpoint for download
+            const downloadUrl = blobKey ? `/api/download-blob?key=${encodeURIComponent(blobKey)}` : null;
+
             nameDisplay.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                     <span class="file-success" style="color: var(--color-success);">✅ ${fileName}</span>
+                    ${downloadUrl ? `
+                        <a href="${downloadUrl}" target="_blank" class="btn-icon download-file-btn" title="Baixar arquivo" style="color: var(--color-teal); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em; text-decoration: none;">
+                            ⬇️
+                        </a>
+                    ` : ''}
                     <button type="button" class="btn-icon remove-file-btn" data-field="${fieldId}" title="Remover arquivo" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
                         ❌
                     </button>
