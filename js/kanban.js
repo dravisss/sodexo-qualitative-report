@@ -30,6 +30,9 @@ class KanbanManager {
         this.currentEditingStakeholders = []; // Track stakeholders being edited
         this.currentEditingAttachments = []; // Track attachments being edited
 
+        this.editorAutosaveTimer = null;
+        this.editorAutosaveDelayMs = 800;
+
         // Search Elements
         this.searchInput = document.getElementById('kanban-search');
         this.searchDebounceTimer = null;
@@ -839,6 +842,7 @@ class KanbanManager {
 
         if (this.editorForm) {
             this.editorForm.addEventListener('submit', (e) => this.handleEditorSave(e));
+            this.setupEditorAutosave();
         }
 
         // Tags Input Events
@@ -1071,6 +1075,11 @@ class KanbanManager {
      * Close the card editor
      */
     closeEditor() {
+        if (this.currentEditingCardId && this.editorAutosaveTimer) {
+            clearTimeout(this.editorAutosaveTimer);
+            this.editorAutosaveTimer = null;
+            this.handleEditorSave({ preventDefault: () => { }, _autosave: true });
+        }
         this.editorEl.classList.remove('active');
         this.editorOverlayEl.classList.remove('active');
         document.body.style.overflow = '';
@@ -1150,6 +1159,7 @@ class KanbanManager {
         if (!exists) {
             this.currentEditingTags.push(tag);
             this.renderEditorTags();
+            this.scheduleEditorAutosave();
         }
     }
 
@@ -1161,6 +1171,7 @@ class KanbanManager {
         if (index > -1) {
             this.currentEditingTags.splice(index, 1);
             this.renderEditorTags();
+            this.scheduleEditorAutosave();
         }
     }
 
@@ -1205,6 +1216,7 @@ class KanbanManager {
         this.currentEditingStakeholders.push({ name, area, contact });
         this.renderEditorStakeholders();
         this.hideStakeholderForm();
+        this.scheduleEditorAutosave();
     }
 
     /**
@@ -1214,7 +1226,45 @@ class KanbanManager {
         if (index >= 0 && index < this.currentEditingStakeholders.length) {
             this.currentEditingStakeholders.splice(index, 1);
             this.renderEditorStakeholders();
+            this.scheduleEditorAutosave();
         }
+    }
+
+    setupEditorAutosave() {
+        if (!this.editorForm) return;
+
+        const handler = () => this.scheduleEditorAutosave();
+        const fields = this.editorForm.querySelectorAll('input, textarea, select');
+
+        fields.forEach(el => {
+            if (!el) return;
+            if (el.id === 'edit-tags') return;
+            if (el.id === 'stakeholder-name') return;
+            if (el.id === 'stakeholder-area') return;
+            if (el.id === 'stakeholder-contact') return;
+            if (el.type === 'file') return;
+            el.addEventListener('input', handler);
+            el.addEventListener('change', handler);
+        });
+    }
+
+    scheduleEditorAutosave() {
+        if (!this.currentEditingCardId) return;
+
+        if (this.editorAutosaveTimer) {
+            clearTimeout(this.editorAutosaveTimer);
+        }
+
+        const statusEl = document.getElementById('editor-save-status');
+        if (statusEl) {
+            statusEl.textContent = 'Salvando...';
+            statusEl.style.color = 'var(--color-text-muted)';
+        }
+
+        this.editorAutosaveTimer = setTimeout(() => {
+            this.editorAutosaveTimer = null;
+            this.handleEditorSave({ preventDefault: () => { }, _autosave: true });
+        }, this.editorAutosaveDelayMs);
     }
 
     /**
