@@ -57,6 +57,60 @@ export default async (req, context) => {
             });
         }
 
+        // Also remove stale references from submissions.answers (JSONB), if present
+        try {
+            const rows = await sql`
+                SELECT answers
+                FROM submissions
+                WHERE id = ${submission_id}::uuid
+                LIMIT 1
+            `;
+
+            if (rows.length > 0) {
+                const answers = rows[0]?.answers && typeof rows[0].answers === 'object'
+                    ? rows[0].answers
+                    : {};
+
+                const keyField = `${field_id}_blob`;
+                const namesVal = answers[field_id];
+                const keysVal = answers[keyField];
+
+                const normalizeArr = (v) => {
+                    if (!v) return [];
+                    if (Array.isArray(v)) return v.filter(x => x != null && String(x).trim() !== '');
+                    if (typeof v === 'string') return String(v).trim() ? [v] : [];
+                    return [];
+                };
+
+                const names = normalizeArr(namesVal);
+                const keys = normalizeArr(keysVal);
+
+                const idx = keys.indexOf(blob_key);
+                if (idx >= 0) {
+                    keys.splice(idx, 1);
+                    if (names[idx] !== undefined) names.splice(idx, 1);
+                }
+
+                const finalize = (arr) => {
+                    if (!arr || arr.length === 0) return null;
+                    if (arr.length === 1) return arr[0];
+                    return arr;
+                };
+
+                answers[field_id] = finalize(names);
+                answers[keyField] = finalize(keys);
+
+                await sql`
+                    UPDATE submissions
+                    SET answers = ${JSON.stringify(answers)}::jsonb,
+                        updated_at = NOW()
+                    WHERE id = ${submission_id}::uuid
+                `;
+            }
+        } catch (e) {
+            console.warn('Failed to clean submissions.answers:', e);
+        }
+
         try {
             const store = getStore('evidence-files');
             await store.delete(blob_key);

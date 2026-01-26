@@ -137,12 +137,18 @@ export class AutoSaveManager {
         const names = this.normalizeAttachmentArray(answers[att.field_id]);
         const keys = this.normalizeAttachmentArray(answers[`${att.field_id}_blob`]);
 
-        if (att.file_name && !names.includes(att.file_name)) {
-            names.push(att.file_name);
-        }
-
-        if (att.blob_key && !keys.includes(att.blob_key)) {
-            keys.push(att.blob_key);
+        if (att.blob_key) {
+            const idx = keys.indexOf(att.blob_key);
+            if (idx >= 0) {
+                // Ensure name alignment for existing key
+                if (att.file_name && (!names[idx] || String(names[idx]).trim() === '')) {
+                    names[idx] = att.file_name;
+                }
+            } else {
+                // Push as a pair to keep arrays aligned
+                keys.push(att.blob_key);
+                names.push(att.file_name || '');
+            }
         }
 
         const finalNames = names.length <= 1 ? (names[0] || null) : names;
@@ -418,43 +424,35 @@ export class AutoSaveManager {
             const names = this.normalizeAttachmentArray(answers[fieldId] || fileName);
             const keys = this.normalizeAttachmentArray(answers[`${fieldId}_blob`]);
 
-            if (names.length === 0) {
+            // Prefer rendering from blob keys (source of truth for actual attachment existence)
+            const pairs = keys.length > 0
+                ? keys.map((key, idx) => ({ key, name: names[idx] || '' }))
+                : [];
+
+            if (pairs.length === 0) {
                 nameDisplay.innerHTML = '';
                 return;
             }
 
-            const itemsHtml = names.map((name, idx) => {
-                const key = keys[idx];
-                const downloadUrl = key ? `/api/download-blob?key=${encodeURIComponent(key)}` : null;
+            const itemsHtml = pairs.map(({ key, name }) => {
+                const safeName = String(name || '').trim() || 'Arquivo';
+                const downloadUrl = `/api/download-blob?key=${encodeURIComponent(key)}`;
                 return `
                     <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                        <span class="file-success" style="color: var(--color-success);">✅ ${name}</span>
-                        ${downloadUrl ? `
-                            <a href="${downloadUrl}" target="_blank" class="btn-icon download-file-btn" title="Baixar arquivo" style="color: var(--color-teal); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em; text-decoration: none;">
-                                ⬇️
-                            </a>
-                        ` : ''}
-                        ${key ? `
-                            <button type="button" class="btn-icon remove-file-item-btn" data-field="${fieldId}" data-blob="${key}" title="Remover este arquivo" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
-                                ❌
-                            </button>
-                        ` : ''}
+                        <span class="file-success" style="color: var(--color-success);">✅ ${safeName}</span>
+                        <a href="${downloadUrl}" target="_blank" class="btn-icon download-file-btn" title="Baixar arquivo" style="color: var(--color-teal); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em; text-decoration: none;">
+                            ⬇️
+                        </a>
+                        <button type="button" class="btn-icon remove-file-item-btn" data-field="${fieldId}" data-blob="${key}" title="Remover este arquivo" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
+                            ❌
+                        </button>
                     </div>
                 `;
             }).join('');
 
-            const removeAllHtml = names.length > 1 ? `
-                <div>
-                    <button type="button" class="btn-icon remove-file-btn" data-field="${fieldId}" title="Remover todos os arquivos" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
-                        ❌
-                    </button>
-                </div>
-            ` : '';
-
             nameDisplay.innerHTML = `
                 <div style="display: flex; flex-direction: column; gap: 6px;">
                     ${itemsHtml}
-                    ${removeAllHtml}
                 </div>
             `;
         }
