@@ -697,7 +697,7 @@ class ReportReader {
                                        placeholder="..." 
                                        style="flex:1;min-width:60px;padding:4px 6px;" />
                                 <label for="${fileId}" class="custom-file-upload" style="padding:4px 6px;font-size:0.85em;" title="Anexar">📎</label>
-                                <input type="file" class="form-attachment" id="${fileId}" data-context="Table ${tIndex} Row ${rIndex} Col ${cIndex}" hidden />
+                                <input type="file" class="form-attachment" id="${fileId}" data-context="Table ${tIndex} Row ${rIndex} Col ${cIndex}" multiple hidden />
                             </div>
                             <div id="${fileId}_name" class="file-name-display" style="font-size:0.7em;"></div>
                         `;
@@ -708,7 +708,7 @@ class ReportReader {
                                 <label for="${fieldId}" class="custom-file-upload">
                                     <span class="icon">📎</span> Anexar
                                 </label>
-                                <input type="file" class="form-attachment" id="${fieldId}" data-context="Table ${tIndex} Row ${rIndex}" hidden />
+                                <input type="file" class="form-attachment" id="${fieldId}" data-context="Table ${tIndex} Row ${rIndex}" multiple hidden />
                                 <div id="${fieldId}_name" class="file-name-display"></div>
                             </div>
                          `;
@@ -724,6 +724,7 @@ class ReportReader {
             const textContent = li.textContent;
             const hasAttachment = textContent.includes('[Anexar]');
             const noField = textContent.includes('[Sem Campo]');
+
 
             // Helper to safely remove tag from direct text nodes or formatting elements, WITHOUT destroying children ULs
             const cleanTagSafe = (element, tag) => {
@@ -763,7 +764,7 @@ class ReportReader {
                         <label for="${fileId}" class="custom-file-upload">
                             <span class="icon">📎</span> Anexar Evidência
                         </label>
-                        <input type="file" class="form-attachment" id="${fileId}" data-context="Question ${index}" hidden />
+                        <input type="file" class="form-attachment" id="${fileId}" data-context="Question ${index}" multiple hidden />
                         <div id="${fileId}_name" class="file-name-display"></div>
                     </div>
                 `;
@@ -1010,16 +1011,95 @@ class ReportReader {
         const fileInputs = this.contentEl.querySelectorAll('input[type="file"]');
         fileInputs.forEach(input => {
             input.addEventListener('change', async (e) => {
-                const blobKey = await this.autoSave.uploadFile(e.target);
-                if (blobKey) {
-                    this.autoSave.updateFileUI(e.target.id, e.target.files[0].name);
-                }
+                await this.autoSave.uploadFiles(e.target);
+                this.autoSave.updateFileUI(e.target.id);
             });
         });
 
         // Remove button handler (delegated)
         if (!this.hasRemoveListener) {
             this.contentEl.addEventListener('click', (e) => {
+                const itemBtn = e.target.closest('.remove-file-item-btn');
+                if (itemBtn) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    if (!navigator.onLine) {
+                        this.autoSave.updateStatus('Precisa estar online para remover', 'offline');
+                        return;
+                    }
+
+                    const fieldId = itemBtn.dataset.field;
+                    const blobKey = itemBtn.dataset.blob;
+                    if (!fieldId || !blobKey) return;
+
+                    const ok = confirm('Remover este anexo?');
+                    if (!ok) return;
+
+                    (async () => {
+                        try {
+                            if (!this.autoSave?.submissionId) {
+                                await this.autoSave.syncToCloud();
+                            }
+
+                            const submissionId = this.autoSave?.submissionId;
+                            if (!submissionId) {
+                                throw new Error('Sem submission_id');
+                            }
+
+                            this.autoSave.updateStatus('Removendo arquivo...', 'saving');
+
+                            const response = await fetch('/api/remove-attachment', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    submission_id: submissionId,
+                                    field_id: fieldId,
+                                    blob_key: blobKey
+                                })
+                            });
+
+                            if (!response.ok) {
+                                let msg = `HTTP ${response.status}`;
+                                try {
+                                    const err = await response.json();
+                                    if (err?.error) msg = err.error;
+                                } catch { /* ignore */ }
+                                throw new Error(msg);
+                            }
+
+                            const answers = this.autoSave.getAnswers();
+                            const names = this.autoSave.normalizeAttachmentArray(answers[fieldId]);
+                            const keys = this.autoSave.normalizeAttachmentArray(answers[`${fieldId}_blob`]);
+
+                            const idx = keys.indexOf(blobKey);
+                            if (idx >= 0) {
+                                keys.splice(idx, 1);
+                                if (names[idx] !== undefined) names.splice(idx, 1);
+                            }
+
+                            const finalNames = names.length <= 1 ? (names[0] || null) : names;
+                            const finalKeys = keys.length <= 1 ? (keys[0] || null) : keys;
+                            answers[fieldId] = finalNames;
+                            answers[`${fieldId}_blob`] = finalKeys;
+                            localStorage.setItem(this.autoSave.storageKey, JSON.stringify(answers));
+
+                            // Clear the file input so the user can re-select same file if desired
+                            const input = document.getElementById(fieldId);
+                            if (input) input.value = '';
+
+                            this.autoSave.updateFileUI(fieldId);
+                            this.autoSave.updateStatus('Arquivo removido', 'saved');
+                            this.autoSave.syncToCloud();
+                        } catch (err) {
+                            console.error('Remove attachment UI error:', err);
+                            this.autoSave.updateStatus('Erro ao remover', 'error');
+                        }
+                    })();
+
+                    return;
+                }
+
                 const btn = e.target.closest('.remove-file-btn');
                 if (btn) {
                     e.preventDefault();

@@ -14,7 +14,6 @@ export class AutoSaveManager {
         this.metaKey = options.metaKey || 'investigation_form_meta';
 
         this.submissionId = null;
-        this.submissionId = null;
         this.unitSlug = 'general'; // Enforce 'general' as the master unit (Unified Form)
         this.syncTimer = null;
         this.isSyncing = false;
@@ -31,6 +30,75 @@ export class AutoSaveManager {
         // Online/Offline detection
         window.addEventListener('online', () => this.handleOnline());
         window.addEventListener('offline', () => this.handleOffline());
+    }
+
+    /**
+     * Upload multiple files for a single field
+     */
+    async uploadFiles(fileInput) {
+        if (!fileInput.files || fileInput.files.length === 0) return [];
+
+        // Ensure we have a submission ID
+        if (!this.submissionId) {
+            await this.syncToCloud();
+        }
+
+        if (!this.submissionId) {
+            console.error('Cannot upload without submission ID');
+            return [];
+        }
+
+        const fieldId = fileInput.id;
+        const files = Array.from(fileInput.files);
+        const uploaded = [];
+
+        // Start from existing arrays (backward-compatible)
+        const answers = this.getAnswers();
+        const existingNames = this.normalizeAttachmentArray(answers[fieldId]);
+        const existingKeys = this.normalizeAttachmentArray(answers[`${fieldId}_blob`]);
+
+        for (const file of files) {
+            this.updateStatus(`Enviando ${file.name}...`, 'saving');
+            try {
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('submission_id', this.submissionId);
+                formData.append('field_id', fieldId);
+
+                const response = await fetch(`${this.apiBase}/api/upload-blob`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const result = await response.json();
+                if (!result.success) {
+                    throw new Error(result.error || 'Upload failed');
+                }
+
+                existingNames.push(file.name);
+                existingKeys.push(result.blob_key);
+                uploaded.push(result.blob_key);
+            } catch (error) {
+                console.error('Upload error:', error);
+                this.updateStatus('Erro no upload', 'error');
+            }
+        }
+
+        // Persist arrays (or single value if only one)
+        const finalNames = existingNames.length <= 1 ? (existingNames[0] || null) : existingNames;
+        const finalKeys = existingKeys.length <= 1 ? (existingKeys[0] || null) : existingKeys;
+        this.saveAnswer(fieldId, finalNames);
+        this.saveAnswer(`${fieldId}_blob`, finalKeys);
+
+        if (uploaded.length > 0) {
+            this.updateStatus('Arquivo enviado', 'saved');
+        }
+
+        return uploaded;
     }
 
     /**
@@ -62,6 +130,28 @@ export class AutoSaveManager {
         }
     }
 
+    recordAttachmentFromCloud(att) {
+        if (!att || !att.field_id) return;
+        const answers = this.getAnswers();
+
+        const names = this.normalizeAttachmentArray(answers[att.field_id]);
+        const keys = this.normalizeAttachmentArray(answers[`${att.field_id}_blob`]);
+
+        if (att.file_name && !names.includes(att.file_name)) {
+            names.push(att.file_name);
+        }
+
+        if (att.blob_key && !keys.includes(att.blob_key)) {
+            keys.push(att.blob_key);
+        }
+
+        const finalNames = names.length <= 1 ? (names[0] || null) : names;
+        const finalKeys = keys.length <= 1 ? (keys[0] || null) : keys;
+        answers[att.field_id] = finalNames;
+        answers[`${att.field_id}_blob`] = finalKeys;
+        localStorage.setItem(this.storageKey, JSON.stringify(answers));
+    }
+
     /**
      * Save metadata to localStorage
      */
@@ -84,6 +174,13 @@ export class AutoSaveManager {
         } catch (e) {
             return {};
         }
+    }
+
+    normalizeAttachmentArray(value) {
+        if (!value) return [];
+        if (Array.isArray(value)) return value.filter(v => v != null && String(v).trim() !== '');
+        if (typeof value === 'string') return String(value).trim() ? [value] : [];
+        return [];
     }
 
     /**
@@ -267,57 +364,8 @@ export class AutoSaveManager {
      * Upload file attachment to Netlify Blobs
      */
     async uploadFile(fileInput) {
-        if (!fileInput.files || fileInput.files.length === 0) return null;
-
-        // First, ensure we have a submission ID
-        if (!this.submissionId) {
-            await this.syncToCloud();
-        }
-
-        if (!this.submissionId) {
-            console.error('Cannot upload without submission ID');
-            return null;
-        }
-
-        const file = fileInput.files[0];
-        const fieldId = fileInput.id;
-
-        this.updateStatus(`Enviando ${file.name}...`, 'saving');
-
-        try {
-            const formData = new FormData();
-            formData.append('file', file);
-            formData.append('submission_id', this.submissionId);
-            formData.append('field_id', fieldId);
-
-            const response = await fetch(`${this.apiBase}/api/upload-blob`, {
-                method: 'POST',
-                body: formData
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-
-            const result = await response.json();
-
-            if (result.success) {
-                // Store filename as the answer value
-                this.saveAnswer(fieldId, file.name);
-                // Store blob key reference
-                this.saveAnswer(`${fieldId}_blob`, result.blob_key);
-                this.updateFileUI(fieldId, file.name);
-                this.updateStatus('Arquivo enviado', 'saved');
-                return result.blob_key;
-            } else {
-                throw new Error(result.error || 'Upload failed');
-            }
-
-        } catch (error) {
-            console.error('Upload error:', error);
-            this.updateStatus('Erro no upload', 'error');
-            return null;
-        }
+        const uploaded = await this.uploadFiles(fileInput);
+        return uploaded[0] || null;
     }
 
     /**
@@ -345,7 +393,8 @@ export class AutoSaveManager {
                 // Trigger a UI update for filenames if any
                 if (result.submission.attachments) {
                     result.submission.attachments.forEach(att => {
-                        this.updateFileUI(att.field_id, att.file_name);
+                        this.recordAttachmentFromCloud(att);
+                        this.updateFileUI(att.field_id);
                     });
                 }
 
@@ -360,26 +409,52 @@ export class AutoSaveManager {
         }
     }
 
-    updateFileUI(fieldId, fileName) {
+    updateFileUI(fieldId, fileName = null) {
         const nameDisplay = document.getElementById(`${fieldId}_name`);
         if (nameDisplay) {
             // Get blob key from localStorage if available
             const answers = this.getAnswers();
-            const blobKey = answers[`${fieldId}_blob`];
-            // Use API endpoint for download
-            const downloadUrl = blobKey ? `/api/download-blob?key=${encodeURIComponent(blobKey)}` : null;
 
-            nameDisplay.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                    <span class="file-success" style="color: var(--color-success);">✅ ${fileName}</span>
-                    ${downloadUrl ? `
-                        <a href="${downloadUrl}" target="_blank" class="btn-icon download-file-btn" title="Baixar arquivo" style="color: var(--color-teal); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em; text-decoration: none;">
-                            ⬇️
-                        </a>
-                    ` : ''}
-                    <button type="button" class="btn-icon remove-file-btn" data-field="${fieldId}" title="Remover arquivo" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
+            const names = this.normalizeAttachmentArray(answers[fieldId] || fileName);
+            const keys = this.normalizeAttachmentArray(answers[`${fieldId}_blob`]);
+
+            if (names.length === 0) {
+                nameDisplay.innerHTML = '';
+                return;
+            }
+
+            const itemsHtml = names.map((name, idx) => {
+                const key = keys[idx];
+                const downloadUrl = key ? `/api/download-blob?key=${encodeURIComponent(key)}` : null;
+                return `
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                        <span class="file-success" style="color: var(--color-success);">✅ ${name}</span>
+                        ${downloadUrl ? `
+                            <a href="${downloadUrl}" target="_blank" class="btn-icon download-file-btn" title="Baixar arquivo" style="color: var(--color-teal); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em; text-decoration: none;">
+                                ⬇️
+                            </a>
+                        ` : ''}
+                        ${key ? `
+                            <button type="button" class="btn-icon remove-file-item-btn" data-field="${fieldId}" data-blob="${key}" title="Remover este arquivo" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
+                                ❌
+                            </button>
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
+
+            const removeAllHtml = names.length > 1 ? `
+                <div>
+                    <button type="button" class="btn-icon remove-file-btn" data-field="${fieldId}" title="Remover todos os arquivos" style="color: var(--color-error); background: none; border: none; cursor: pointer; padding: 0; font-size: 1.1em;">
                         ❌
                     </button>
+                </div>
+            ` : '';
+
+            nameDisplay.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    ${itemsHtml}
+                    ${removeAllHtml}
                 </div>
             `;
         }
@@ -474,7 +549,8 @@ export class AutoSaveManager {
                 // Clear all old file UIs first? No easy way. 
                 // But updateFileUI updates specific IDs.
                 result.submission.attachments.forEach(att => {
-                    this.updateFileUI(att.field_id, att.file_name);
+                    this.recordAttachmentFromCloud(att);
+                    this.updateFileUI(att.field_id);
                 });
             }
 
