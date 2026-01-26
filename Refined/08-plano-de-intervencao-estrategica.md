@@ -119,31 +119,31 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Objetivo:** Compartilhar o dilema orçamentário com a equipe para alinhar expectativas.
 **Impacto:** Ao expor a regra do jogo, desloca-se a raiva da equipe do "Gerente Mau" para o "Sistema Difícil", unindo o time.
 
-#### I-29 — Protocolo de Passagem de Turno
+#### I-14 — Protocolo de Passagem de Turno
 **Tensão:** "Herança" de cozinha suja e problemas entre turnos, gerando conflito diário.
 **Descrição:** Checklist físico de passagem de turno (cozinha limpa, insumos ok) com assinatura de quem sai e quem entra. Reprovação gera registro.
 **Objetivo:** Criar responsabilidade compartilhada e fim da "bagunça herdada".
 **Impacto:** Reduz o atrito interpessoal e garante início de turno produtivo.
 
-#### I-31 — Reserva Carimbada por Turno
+#### I-15 — Reserva Carimbada por Turno
 **Tensão:** "Roubo" de ingredientes entre turnos para cobrir falhas, gerando falta de insumo no jantar.
 **Descrição:** Separação física de insumos em containers etiquetados por turno na chegada. Uso cruzado só com autorização formal.
 **Objetivo:** Garantir que o planejamento do jantar seja respeitado.
 **Impacto:** Fim da improvisação forçada no jantar e da "guerra" por insumos.
 
-#### I-32 — Turno de Pré-Preparo (Mise en Place)
+#### I-16 — Turno de Pré-Preparo (Mise en Place)
 **Tensão:** Preparação feita "no calor da hora", gerando atraso e estresse.
 **Descrição:** Designar responsável/turno focado em descongelamento e pré-preparo (mise en place) para o dia seguinte.
 **Objetivo:** Desacoplar preparação de execução.
 **Impacto:** Redução drástica do estresse no pico e melhoria na qualidade da comida (carnes marinadas, etc).
 
-#### I-37 — Improviso como Alerta de Falha Sistêmica
+#### I-17 — Improviso como Alerta de Falha Sistêmica
 **Tensão:** O "dar um jeito" é visto como heroísmo, escondendo a falta crônica de recursos.
 **Descrição:** Inverter a lógica: todo improviso deve gerar um ticket de "falha sistêmica". Mutirão de limpeza aciona revisão de quadro.
 **Objetivo:** Parar de normalizar a precariedade com "resiliência".
 **Impacto:** Força a resolução da causa raiz (falta de gente/material) ao invés de depender do esforço extra.
 
-#### I-28 — Fundo de alimentação do time e autorregulação de estoque
+#### I-18 — Fundo de alimentação do time e autorregulação de estoque
 **Tensão:** Ocorrência de furtos de alimentos (estoque/frigorífico) que persistem apesar da vigilância, indicando ruptura no contrato social ou carências básicas.
 **Descrição:** Criação de um fundo gerido pela GU para aquisição de itens extras de alimentação para o time (ex: café da manhã reforçado, carne, frutas, snacks). O fundo é abastecido pela redução de perdas de estoque: se a perda por furto/desperdício cai, o fundo aumenta. Se há furto detectado, a verba do fundo é usada para cobrir o prejuízo, gerando transparência e responsabilidade coletiva.
 **Objetivo:** Substituir a vigilância punitiva por um mecanismo de pressão social e benefício compartilhado.
@@ -156,31 +156,31 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 ### Mudanças financeiras/estruturais
 
-#### I-14 — Verba corporativa para renovação de equipe
+#### I-19 — Verba corporativa para renovação de equipe
 **Tensão:** O custo da rescisão sai do orçamento da unidade (e da PLR), incentivando o gerente a manter funcionários desengajados ou problemáticos (Ciclo da Retenção Forçada).
 **Descrição:** Criar um fundo corporativo centralizado para custear rescisões, removendo esse custo do orçamento da unidade. A GU solicita o desligamento e o fundo absorve a verba rescisória, permitindo renovação sem penalizar a PLR.
 **Objetivo:** Remover a barreira financeira que impede a gerência local de renovar sua equipe.
 **Impacto:** Se demitir não custa o bônus do gerente, a renovação saudável da equipe acontece, quebrando o ciclo de retenção de profissionais insatisfeitos.
 
-#### I-15 — Saída voluntária sem punir quem fica
+#### I-20 — Saída voluntária sem punir quem fica
 **Tensão:** Impasse onde a empresa não demite pelo custo e o funcionário não pede conta para não perder FGTS, gerando um ambiente tóxico de "quem aguenta mais".
 **Descrição:** Pacote de incentivo à demissão voluntária onde os custos rescisórios são blindados: não afetam a Margem Bruta (GM) da unidade nem a PLR dos colaboradores remanescentes ou da liderança.
 **Objetivo:** Facilitar a saída honrosa e negociada de colaboradores que querem sair, sem sangrar o resultado da unidade.
 **Impacto:** Destravando as saídas voluntárias, limpa-se o clima organizacional de insatisfeitos crônicos ("laranjas podres") rapidamente.
 
-#### I-16 — Revisão do quadro pela demanda real
+#### I-21 — Revisão do quadro pela demanda real
 **Tensão:** O quadro atual é baseado em histórico orçamentário defasado, não na demanda real de trabalho, gerando sobrecarga física crônica.
 **Descrição:** Realizar um estudo de "Orçamento Base Zero" para o quadro de pessoal, calculando a necessidade real de braços com base na volumetria atual (refeições/m² limpo) e complexidade real, ignorando o histórico orçamentário defasado. Ajustar o contrato ou absorver o custo como investimento em qualidade.
 **Objetivo:** Adequar a quantidade de funcionários à carga real de trabalho da operação atual.
 **Impacto:** Se o quadro for compatível com a demanda, a sobrecarga física desaparece na raiz, reduzindo drasticamente lesões e turnover.
 
-#### I-17 — Verba carimbada para reparos essenciais
+#### I-22 — Verba carimbada para reparos essenciais
 **Tensão:** A manutenção compete com o lucro/bônus no P&L da unidade, levando ao sucateamento deliberado para bater meta ("Escolha de Sofia").
 **Descrição:** Criar uma linha orçamentária protegida para manutenções preventivas e corretivas críticas, não discricionária pela GU. Manutenções essenciais são auditadas e custeadas por fundo corporativo.
 **Objetivo:** Garantir que a manutenção essencial ocorra independentemente da pressão por margem de curto prazo.
 **Impacto:** Retirando a manutenção da discricionariedade do gerente, interrompe-se o ciclo de sucateamento e preserva-se o ativo físico e a segurança.
 
-#### I-18 — Pacote de benefícios para transição de carreira
+#### I-23 — Pacote de benefícios para transição de carreira
 **Tensão:** Colaboradores querem sair mas não podem ficar sem plano de saúde ou renda imediata.
 **Descrição:** Oferecer acordos de desligamento que atendam às necessidades financeiras do trabalhador: antecipação parcial de FGTS, extensão de plano de saúde por 3 meses, carta de recomendação.
 **Objetivo:** Tornar o pedido de demissão uma opção viável e segura para o colaborador.
@@ -188,49 +188,49 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 ### Mudanças de Gestão e Processos
 
-#### I-19 — Substituição de chefia por liderança técnica
+#### I-24 — Substituição de chefia por liderança técnica
 **Tensão:** Estrutura hierárquica cara e ineficiente, com encarregados que muitas vezes não operam e geram custo fixo alto.
 **Descrição:** Eliminar o cargo de Encarregado (custo indireto). Reorganizar a liderança da cozinha com "Cozinheiros Líderes" (gratificação de função) que dividem a governança do turno com a GU.
 **Objetivo:** Achatamento da pirâmide hierárquica para reduzir custos e dar autonomia a quem põe a mão na massa.
 **Impacto:** Trocando supervisão cara por autogestão gratificada, economiza-se recurso e empodera-se tecnicamente a equipe de produção.
 
-#### I-20 — Fim do cargo ASG/OSG faz-tudo
+#### I-25 — Fim do cargo ASG/OSG faz-tudo
 **Tensão:** A função de ASG é tratada como "faz tudo", gerando sobrecarga ergonômica e percepção de exploração em tarefas repetitivas.
 **Descrição:** Estabelecer políticas internas de rotatividade de tarefas entre a equipe de ASG, focando em diluir atividades de alta carga física. Definição clara de sub-papéis operacionais (ex: limpeza pesada, conservação, apoio) dentro da mesma nomenclatura homologada, garantindo que nenhum colaborador fique fixo em tarefas críticas.
 **Objetivo:** Organizar a carga de trabalho de ASG para reduzir desgaste físico e aumentar a previsibilidade operacional.
 **Impacto:** Rotacionando as funções internamente, dilui-se o risco ergonômico e melhora-se a percepção de justiça sem necessidade de alteração formal de cargo.
 
-#### I-21 — Revisão dos deflatores de rotatividade na PLR
+#### I-26 — Revisão dos deflatores de rotatividade na PLR
 **Tensão:** Gerentes são punidos na PLR por qualquer turnover, inclusive o necessário, levando à retenção de maus profissionais.
 **Descrição:** Diferenciar rotatividade "saudável" (renovação necessária) de rotatividade "problemática" (perda de talentos) no cálculo do bônus. Apenas a segunda deve deflacionar a PLR.
 **Objetivo:** Ajustar a métrica de sucesso da gerência para incentivar a qualidade da equipe, não apenas a permanência.
 **Impacto:** Se o gerente não for punido por renovar a equipe, ele agirá mais rápido para substituir peças que não funcionam.
 
-#### I-22 — Gatilho progressivo da PLR
+#### I-27 — Gatilho progressivo da PLR
 **Tensão:** Metas "Tudo ou Nada" incentivam cortes desesperados e irracionais no final do mês para garantir o bônus.
 **Descrição:** Substituir o gatilho binário (tudo ou nada) por escalonamento progressivo: 6% meta = 30% bônus; 7% = 60%, etc.
 **Objetivo:** Eliminar o comportamento de "desespero orçamentário" que destrói valor para bater meta binária.
 **Impacto:** Com metas escalonadas, o gerente mantém a racionalidade na gestão de custos, evitando cortes drásticos que prejudicam a operação.
 
-#### I-23 — Desconto proporcional para faltas
+#### I-28 — Desconto proporcional para faltas
 **Tensão:** A regra de "perde tudo se faltar um dia" faz com que quem faltou uma vez não tenha incentivo para vir o resto do mês (ou trabalhe doente).
 **Descrição:** Migrar a política de perda total para perda escalonada proporcional: 1 falta = 30% de desconto (não 100%), etc.
 **Objetivo:** Manter o incentivo à presença mesmo após uma ocorrência de falta.
 **Impacto:** Reduzindo a punição binária, mantém-se o colaborador engajado em vir trabalhar nos demais dias, reduzindo o absenteísmo total.
 
-#### I-33 — SLA de Atendimento para Solicitações de RH
+#### I-29 — SLA de Atendimento para Solicitações de RH
 **Tensão:** Sensação de que o RH "enrola" ou "esconde" problemas de pagamento e benefícios.
 **Descrição:** Publicar e cumprir prazos (SLA) para processos chaves: reembolso (5 dias), correção de folha (3 dias).
 **Objetivo:** Restaurar a confiança nos processos administrativos.
 **Impacto:** Reduz a ansiedade financeira e a percepção de descaso.
 
-#### I-34 — Auditoria de Folha Trimestral
+#### I-30 — Auditoria de Folha Trimestral
 **Tensão:** Desconfiança crônica sobre "roubo" de horas e descontos indevidos.
 **Descrição:** Auditoria por amostragem dos holerites vs ponto trimestralmente, com resultados abertos.
 **Objetivo:** Transparência total na remuneração.
 **Impacto:** Elimina a narrativa de exploração financeira oculta.
 
-#### I-35 — Processo Seletivo com Período de Experiência Real
+#### I-31 — Processo Seletivo com Período de Experiência Real
 **Tensão:** Contratação "às cegas" gera turnover imediato e sobrecarga de treinamento.
 **Descrição:** Incluir dia de "job shadow" (acompanhamento) antes da contratação e feedback estruturado nos primeiros 15 dias.
 **Objetivo:** Validar o fit cultural e operacional antes da efetivação.
@@ -243,25 +243,25 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 ### Ações de atratividade
 
-#### I-24 — Fretado e escalas competitivas
+#### I-32 — Fretado e escalas competitivas
 **Tensão:** A localização remota e escalas rígidas 6x1 tornam a vaga pouco atrativa comparada à logística vizinha.
 **Descrição:** Implementar sistema de transporte fretado (van/ônibus) para buscar colaboradores em áreas residenciais (quebra barreira geográfica) e oferecer escalas atrativas (5x2 ou 12x36).
 **Objetivo:** Criar um diferencial logístico e de qualidade de vida que torne a vaga desejável.
 **Impacto:** Facilitando o acesso e melhorando a escala, a empresa passa a competir por um pool de talentos que hoje a ignora.
 
-#### I-25 — Novo pacote de benefícios atrativo (saúde + VR)
+#### I-33 — Novo pacote de benefícios atrativo (saúde + VR)
 **Tensão:** O pacote de benefícios atual perde para o setor de logística e "bicos" em apps, atraindo apenas quem não tem opção.
 **Descrição:** Desenhar novo pacote de benefícios focado em **Plano de Saúde** (melhor cobertura para família) e **Vale Refeição/Alimentação** de maior valor.
 **Objetivo:** Posicionar a empresa como "porto seguro" social (família/saúde) contra a precarização dos apps.
 **Impacto:** Atraindo pelo benefício saúde/família, seleciona-se um perfil de colaborador mais estável e focado em longo prazo.
 
-#### I-26 — Plano de carreira por tempo de serviço
+#### I-34 — Plano de carreira por tempo de serviço
 **Tensão:** A falta de perspectiva clara de crescimento gera desengajamento e saída precoce para ganhos marginais fora.
 **Descrição:** Automatizar promoções de nível (I → II → III) baseadas puramente em tempo de casa e disciplina (sem dependência da avaliação subjetiva do gestor). Ex: 2 anos = Nível II. Inclusão de "Prêmio Tempo de Empresa".
 **Objetivo:** Oferecer um horizonte de carreira previsível e garantido para quem performa o básico bem.
 **Impacto:** Se o futuro é claro e garantido, a ansiedade diminui e a retenção de longo prazo aumenta naturalmente.
 
-#### I-27 — Ajuste salarial ao mercado local
+#### I-35 — Ajuste salarial ao mercado local
 **Tensão:** O salário base não é competitivo com o mercado local inflacionado por galpões logísticos.
 **Descrição:** Realizar benchmark salarial territorial (Cajamar/Guarulhos) e reposicionar a proposta de valor: ajuste salarial, benefícios diferenciados, crescimento interno.
 **Objetivo:** Ajustar a oferta financeira à realidade de mercado da região.

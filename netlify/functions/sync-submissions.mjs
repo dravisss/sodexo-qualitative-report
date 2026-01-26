@@ -20,6 +20,48 @@ export default async (req, context) => {
         'Access-Control-Allow-Headers': 'Content-Type'
     };
 
+    const normalizeAnswers = (value) => {
+        if (!value) return {};
+
+        if (typeof value === 'string') {
+            try {
+                return JSON.parse(value);
+            } catch (e) {
+                return {};
+            }
+        }
+
+        if (typeof value !== 'object' || value === null) return {};
+
+        const keys = Object.keys(value);
+        if (keys.length === 0) return value;
+
+        const looksLikeCharMap = keys.every(k => {
+            const n = parseInt(k, 10);
+            return Number.isFinite(n) && String(n) === k;
+        });
+
+        if (!looksLikeCharMap) return value;
+
+        try {
+            const maxIndex = keys.reduce((max, k) => {
+                const n = parseInt(k, 10);
+                return Number.isFinite(n) && n > max ? n : max;
+            }, 0);
+
+            const chars = [];
+            for (let i = 0; i <= maxIndex; i++) {
+                if (value[String(i)] !== undefined) {
+                    chars.push(value[String(i)]);
+                }
+            }
+            const reconstructed = chars.join('');
+            return JSON.parse(reconstructed);
+        } catch (e) {
+            return {};
+        }
+    };
+
     if (req.method === 'OPTIONS') {
         return new Response(null, { status: 204, headers });
     }
@@ -40,17 +82,7 @@ export default async (req, context) => {
         const body = await req.json();
         let { submission_id, unit_slug, answers, answers_metadata, respondent_info } = body;
 
-        // Safeguard: Ensure answers is an object
-        if (typeof answers === 'string') {
-            try {
-                answers = JSON.parse(answers);
-            } catch (e) {
-                answers = {};
-            }
-        }
-        if (typeof answers !== 'object' || answers === null) {
-            answers = {};
-        }
+        answers = normalizeAnswers(answers);
 
         if (!unit_slug || !answers) {
             return new Response(JSON.stringify({

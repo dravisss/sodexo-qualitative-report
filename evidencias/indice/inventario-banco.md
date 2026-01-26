@@ -1,0 +1,27 @@
+# Inventário — Export do Banco
+
+Gerado em: 2026-01-26T17:02:56.302Z
+
+## Escopo
+
+- Unidades: general
+
+## Arquivos gerados (em evidencias/banco)
+
+- submissions.json
+- submissions_normalized.json
+- answers.json
+- attachments.json
+
+## Contagens por unidade
+
+- general: submissions=3, answers=15103, attachments=6
+
+## Blob keys (para download posterior)
+
+- b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_0_file/1769017172677_Descri__o_de_cargo_Frontline._FY26.zip
+- b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_9_col_1_file/1769017249113_Base_Frontline_-_Experimento.xlsx
+- b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_3_file/1769017640654_Base_Frontline_-_Experimento.xlsx
+- b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_4_file/1769019648907_Tabela_Salarial_-_Frontline_Experimento.xlsx
+- b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_75_file/1769108567016_Planilha_simula__o_aviso_pr_vio_indenizado.xlsx
+- b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_61_file/1769108787132_REB_OPE_08_PLR_Gerente_Unidades_FY25_17.pdf

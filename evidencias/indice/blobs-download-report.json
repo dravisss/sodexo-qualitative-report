@@ -1,0 +1,31 @@
+{
+  "downloaded": [
+    {
+      "fileName": "Descrição de cargo Frontline. FY26.zip",
+      "key": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_0_file/1769017172677_Descri__o_de_cargo_Frontline._FY26.zip"
+    },
+    {
+      "fileName": "Base Frontline - Experimento.xlsx",
+      "key": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_9_col_1_file/1769017249113_Base_Frontline_-_Experimento.xlsx"
+    },
+    {
+      "fileName": "Tabela Salarial - Frontline Experimento.xlsx",
+      "key": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_4_file/1769019648907_Tabela_Salarial_-_Frontline_Experimento.xlsx"
+    },
+    {
+      "fileName": "Planilha simulação aviso prévio indenizado.xlsx",
+      "key": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_75_file/1769108567016_Planilha_simula__o_aviso_pr_vio_indenizado.xlsx"
+    },
+    {
+      "fileName": "REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf",
+      "key": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_61_file/1769108787132_REB_OPE_08_PLR_Gerente_Unidades_FY25_17.pdf"
+    }
+  ],
+  "skipped_existing": [
+    {
+      "fileName": "Base Frontline - Experimento.xlsx",
+      "key": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_3_file/1769017640654_Base_Frontline_-_Experimento.xlsx"
+    }
+  ],
+  "failed": []
+}
