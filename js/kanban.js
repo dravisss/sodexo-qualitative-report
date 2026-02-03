@@ -77,8 +77,10 @@ class KanbanManager {
         this.isDragging = false;
 
         // API Endpoint
-        this.API_URL = '/.netlify/functions/kanban-state';
-        this.ATTACHMENT_API_URL = '/.netlify/functions/kanban-attachment';
+        this.API_URL = this.buildCloudUrl('/.netlify/functions/kanban-state');
+        this.ATTACHMENT_API_URL = this.buildCloudUrl('/.netlify/functions/kanban-attachment');
+
+        this._syncPromptShown = false;
 
         this.init();
     }
@@ -89,6 +91,37 @@ class KanbanManager {
             return url.searchParams.get(name);
         } catch {
             return null;
+        }
+    }
+
+    getCloudBaseUrl() {
+        const raw = this.getQueryParam('cloud');
+        if (!raw) return null;
+
+        try {
+            const u = new URL(raw);
+            if (u.protocol !== 'https:') return null;
+
+            const host = String(u.host || '').toLowerCase();
+            if (host !== 'relatoriosdx.netlify.app') return null;
+
+            // Normalize: ensure no trailing slash
+            u.pathname = '';
+            u.search = '';
+            u.hash = '';
+            return u.toString().replace(/\/$/, '');
+        } catch {
+            return null;
+        }
+    }
+
+    buildCloudUrl(pathname) {
+        const base = this.getCloudBaseUrl();
+        if (!base) return pathname;
+        try {
+            return new URL(pathname, base).toString();
+        } catch {
+            return pathname;
         }
     }
 
@@ -134,6 +167,40 @@ class KanbanManager {
         return !!obj && typeof obj === 'object' && !Array.isArray(obj) && Object.keys(obj).length === 0;
     }
 
+    hasDifferentState(a, b) {
+        try {
+            return JSON.stringify(a || {}) !== JSON.stringify(b || {});
+        } catch {
+            return true;
+        }
+    }
+
+    async maybeOfferSync(remoteState, localState) {
+        if (this._syncPromptShown) return null;
+        this._syncPromptShown = true;
+
+        const remoteEmpty = this.isEmptyObject(remoteState);
+        const localEmpty = this.isEmptyObject(localState);
+
+        if (localEmpty) return null;
+
+        if (remoteEmpty) {
+            const shouldPush = window.confirm(
+                'Encontrei alterações locais do Kanban neste navegador, mas o estado na nuvem está vazio.\n\nQuer ENVIAR o estado local para a nuvem (Netlify) para sincronizar?\n\nOK = enviar para nuvem\nCancelar = manter só local por enquanto'
+            );
+            return shouldPush ? 'push_local' : 'use_local';
+        }
+
+        if (this.hasDifferentState(remoteState, localState)) {
+            const shouldPush = window.confirm(
+                'O estado local do Kanban é diferente do estado na nuvem.\n\nOK = ENVIAR o estado local e sobrescrever a nuvem\nCancelar = MANTER a nuvem e sobrescrever o local'
+            );
+            return shouldPush ? 'push_local' : 'use_remote';
+        }
+
+        return null;
+    }
+
     async init() {
         this.initializeSidebarState();
         this.setupGeneralEvents();
@@ -170,15 +237,28 @@ class KanbanManager {
                     const remote = await response.json();
                     const local = this.loadLocalStateFallback();
 
-                    // If remote is empty but local has content, prefer local (common in local dev)
-                    if (this.isEmptyObject(remote) && !this.isEmptyObject(local)) {
+                    const syncChoice = await this.maybeOfferSync(remote, local);
+                    if (syncChoice === 'push_local') {
                         this.kanbanState = local;
-                        console.log('Remote state empty; using localStorage state instead.');
+                        await this.saveState();
+                        console.log('Local state pushed to remote.');
+                        return;
+                    }
+                    if (syncChoice === 'use_local') {
+                        this.kanbanState = local;
+                        console.log('Using localStorage state (remote empty).');
+                        return;
+                    }
+                    if (syncChoice === 'use_remote') {
+                        this.kanbanState = remote;
+                        localStorage.setItem('kanban_state', JSON.stringify(this.kanbanState));
+                        console.log('Using remote state and overwriting localStorage.');
                         return;
                     }
 
                     this.kanbanState = remote;
                     console.log('Remote state loaded:', this.kanbanState);
+                    localStorage.setItem('kanban_state', JSON.stringify(this.kanbanState));
                     return;
                 } catch (parseError) {
                     console.warn('Remote state response was not valid JSON; falling back to localStorage.', parseError);
@@ -1080,6 +1160,8 @@ class KanbanManager {
         if (this.startDateInput) this.startDateInput.value = state.startDate || '';
         if (this.endDateInput) this.endDateInput.value = state.endDate || '';
         document.getElementById('edit-updates').value = state.updates || '';
+        const relatedEl = document.getElementById('edit-related-initiatives');
+        if (relatedEl) relatedEl.value = state.relatedInitiatives || '';
 
         // Substatus only relevant in 'doing'
         if (this.substatusGroup && this.substatusSelect) {
@@ -1678,6 +1760,7 @@ class KanbanManager {
         const startDate = this.startDateInput ? this.startDateInput.value : '';
         const endDate = this.endDateInput ? this.endDateInput.value : '';
         const updates = document.getElementById('edit-updates').value;
+        const relatedInitiatives = (document.getElementById('edit-related-initiatives')?.value || '').trim();
         const tags = [...this.currentEditingTags]; // Copy current tags
         const stakeholders = [...this.currentEditingStakeholders]; // Copy current stakeholders
 
@@ -1710,6 +1793,7 @@ class KanbanManager {
             startDate: startDate || '',
             endDate: endDate || '',
             updates,
+            relatedInitiatives,
             tags,
             stakeholders,
             updatedAt: new Date().toISOString()
