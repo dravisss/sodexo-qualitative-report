@@ -165,6 +165,11 @@ O relatório propõe várias intervenções que tocam em políticas de benefíci
 ### Contexto
 O relatório levanta a hipótese de que alguns contratos são "vendidos errados" — com escopo mal definido ou margem irreal que a operação precisa "pagar a conta". Precisamos entender como a venda é estruturada e onde estão os pontos de fragilidade.
 
+## Objetivos da Conversa
+1. **Mapear a Modelagem do GM**: Entender como a meta de margem bruta é construída e se ela considera riscos locais (infraestrutura, logística de talentos).
+2. **Validar a Hipótese de Rigidez**: Descobrir se o modelo de precificação é estático demais para absorver variações operacionais (picos de volume).
+3. **Identificar Alocação de Custos Ocultos**: Como custos de turnover e afastamentos são previstos no bid inicial.
+
 ### Perguntas sobre Estrutura dos Contratos
 
 24. **Definição de Escopo e Quadro:** [Sem Campo]

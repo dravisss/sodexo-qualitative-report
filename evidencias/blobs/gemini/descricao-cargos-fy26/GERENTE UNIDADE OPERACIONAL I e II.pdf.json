@@ -1,0 +1,34 @@
+{
+  "source_file": "GERENTE UNIDADE OPERACIONAL I e II.pdf",
+  "cargo_titulo": "GERENTE UNIDADE OPERACIONAL I e II",
+  "codigo_cargo": "67 e 34",
+  "contexto_organizacional": "CORPORATE / SAÚDE / EDUCAÇÃO / ENERGIA & RECURSOS",
+  "subordinado_a": "GERENTE OPERAÇÕES / GCE",
+  "descricao_sumaria": "Responsabilizar-se pelo gerenciamento de restaurante/unidade de negócios onde está alocado(a), implantando e executando os processos inerentes à sua área. Garante as etapas de produção/ realização dos serviços, qualidade, segurança, organização, planejamento e serviços prestados aos clientes no segmento de food. Entender e praticar o contrato firmado com o cliente, buscando o alcance de metas/ budget estabelecidos de acordo com os valores e princípios da companhia. Estar sempre em conformidade com os princípios éticos e do negócio da Sodexo.",
+  "principais_atividades": [
+    "Supervisionar o processo e finalização de todos os serviços de sua unidade, garantindo excelência no atendimento ao cliente, sempre em conformidade com o contratado.",
+    "Analisar e acompanhar o conjunto dos resultados qualitativos e quantitativos de seu perímetro com o objetivo de otimizar o funcionamento da unidade de negócio, sendo capaz de traçar planos de ação, desenvolver estratégias, criar e inovar em ações que otimizem resultados da unidade e o atendimento ao cliente.",
+    "Ser responsável pelo planejamento e criação anual do budget de sua unidade e garantir que ao longo do ano ele seja atingido e, inclusive, melhorado.",
+    "Realizar toda a gestão da equipe de colaboradores aplicando e respeitando os processos e políticas de Recursos Humanos em sua unidade, realizando o processo de recrutamento e seleção de novos colaboradores, desenvolvendo processo de integração dos mesmos, realizando direcionamento correto das atividades diárias, estabelecendo comunicação clara e de mão dupla, promovendo a capacitação técnica e comportamental de seus colaboradores, inclusive em termos de saúde e segurança, no intuito de manter a equipe engajada, atualizada e sempre produtiva.",
+    "Ser capaz de analisar, interpretar e criar planos de ação sobre indicadores de RH da unidade (taxa de rotatividade, hora-extra, absenteísmo, produtividade, etc.)",
+    "Garantir lançamentos mensais na folha de pagamento e demais procedimentos de administração de pessoal dos colaboradores da unidade",
+    "Ser capaz de analisar o estoque, planejar consumo e elaborar pedidos de compra de insumos para a unidade em busca sempre da ótima utilização do estoque, evitando desperdícios, fugas etc.",
+    "Analisar custos diários, lançamento de kanban, NES (nota de entrega de serviço), emissão e análise de relatórios gerenciais/financeiros de sua unidade.",
+    "Garantir implantação de processos e aplicação de checklists de segurança alimentar e segurança do trabalho e auditorias sempre com o objetivo de atingir zero acidentes e DTAs. Garantir que todos os colaboradores estejam envolvidos e cientes dos processos de saúde e segurança. Aplicar as normas, procedimentos e diretrizes do Sistema de Gestão de Saúde e Segurança.",
+    "Fazer uma gestão adequada do cliente, realizando pesquisa de satisfação, respeitando as diretrizes do contrato, buscando sempre o melhor atendimento de suas expectativas.",
+    "Estar sempre atualizado das demandas e da realidade do cliente, inclusive em busca de novas vendas (cross selling) ou de otimização de vendas de serviços existentes (up selling) com o objetivo de alavancar os resultados de sua unidade.",
+    "Participar como preposto de ações trabalhistas sempre que necessário.",
+    "Ser responsável pela Saúde e Segurança, bem como aplicar as normas, procedimentos e diretrizes do Sistema de Gestão de Saúde e Segurança."
+  ],
+  "kpis": [
+    "FCO1- 100% Atingimento do Budget",
+    "SLA- Pesquisa satisfação cliente",
+    "Zero DTA (doença transmitida por alimentos)",
+    "Acidente de trabalho (índice de frequência)",
+    "Retenção de clientes (100%)",
+    "Todos índices relacionados ao seu perímetro de atuação."
+  ],
+  "observacoes": "A diferenciação entre os níveis I e II ocorre com base em critérios específicos estabelecidos para as operações, considerando o portfólio de atendimento e a complexidade envolvido.",
+  "source_path": "evidencias/blobs/Descrição de cargo Frontline. FY26/GERENTE UNIDADE OPERACIONAL I e II.pdf",
+  "source_sha256": "221d08b12e97f8a99f88fef598c308ad9b9a6de45377ee9afa00d0a40737f7c3"
+}

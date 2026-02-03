@@ -1,0 +1,262 @@
+Certificado de Conclusão
+Identificação de envelope: 295C2793C37E45EDB2F07CC284D1458D                                              Status: Enviado
+Assunto: DocuSign: 2o Aditivo inclusão de unidade_ UNIÃO QUIMICA _27_06_2022.pdf.
+Envelope fonte:
+Documentar páginas: 53                              Assinaturas: 8                                       Remetente do envelope:
+Certificar páginas: 6                               Rubrica: 102                                         Assinatura Eletrônica Jurídico UQ
+Assinatura guiada: Ativado                          Selos: 3                                             Av. Magalhães de Castro, 4.800 – 16o andar Cj. 161
+Selo com EnvelopeId (ID do envelope): Ativado                                                            e 162 – Ed. Continental Tower
+Fuso horário: (UTC-03:00) Brasília
+                                                                                                         São Paulo, SP 05676-120
+                                                                                                         assinaeletronicajur@uniaoquimica.com.br
+                                                                                                         Endereço IP: 201.48.128.177
+
+Rastreamento de registros
+Status: Original                                    Portador: Assinatura Eletrônica Jurídico UQ          Local: DocuSign
+        28/06/2022 09:00:19                                    assinaeletronicajur@uniaoquimica.com.br
+
+Eventos do signatário                               Assinatura                                           Registro de hora e data
+Ana Luiza Isidio Vega                                                                                    Enviado: 28/06/2022 09:12:30
+avega@uniaoquimica.com.br                                                                                Visualizado: 28/06/2022 11:26:25
+Advogada Sr                                                                                              Assinado: 28/06/2022 11:27:07
+União Química
+Nível de segurança: E-mail, Autenticação da conta
+(Nenhuma)                                         Assinado pelo link enviado para
+                                                  avega@uniaoquimica.com.br
+                                                    Usando endereço IP: 201.48.128.177
+
+
+Termos de Assinatura e Registro Eletrônico:
+   Não disponível através da DocuSign
+
+Cristiano dos Santos Berlanda                                                                            Enviado: 28/06/2022 11:27:12
+cberlanda@uniaoquimica.com.br                                                                            Visualizado: 28/06/2022 12:00:24
+Nível de segurança: E-mail, Autenticação da conta                                                        Assinado: 28/06/2022 12:00:47
+(Nenhuma)
+                                                    Adoção de assinatura: Estilo pré-selecionado
+                                                    Assinado pelo link enviado para
+                                                    cberlanda@uniaoquimica.com.br
+                                                    Usando endereço IP: 200.252.235.18
+
+
+Termos de Assinatura e Registro Eletrônico:
+   Aceito: 28/06/2022 12:00:24
+   ID: 6d1d7642-1046-4bc9-967a-0e24a1710db0
+
+Sergio Eduardo A. Costa Freire                                                                           Enviado: 28/06/2022 12:00:53
+sfreire@uniaoquimica.com.br
+Nível de segurança: E-mail, Autenticação da conta
+(Nenhuma)
+Termos de Assinatura e Registro Eletrônico:
+   Aceito: 04/11/2020 11:24:46
+   ID: da002909-b869-4641-9fd3-4f4fc8cead2f
+Eventos do signatário                               Assinatura                                       Registro de hora e data
+José Luiz Junqueira Simões                                                                           Enviado: 28/06/2022 12:00:53
+jlsimoes@uniaoquimica.com.br                                                                         Visualizado: 28/06/2022 14:43:53
+VP de Operações e Tecnologia                                                                         Assinado: 28/06/2022 14:44:58
+Nível de segurança: E-mail, Autenticação da conta
+(Nenhuma)                                         Adoção de assinatura: Estilo pré-selecionado
+                                                  Assinado pelo link enviado para
+                                                    jlsimoes@uniaoquimica.com.br
+                                                    Usando endereço IP: 189.17.143.162
+
+
+Termos de Assinatura e Registro Eletrônico:
+   Aceito: 28/06/2022 14:43:53
+   ID: 2966f361-8277-4251-9672-a8418d349887
+
+Andrea Krewer                                                                                        Enviado: 28/06/2022 12:00:54
+andrea.krewer.contratos@sodexo.com                                                                   Visualizado: 28/06/2022 17:22:46
+CEO CORPORATE BRAZIL                                                                                 Assinado: 28/06/2022 17:23:59
+Nível de segurança: E-mail, Autenticação da conta
+(Nenhuma)                                         Adoção de assinatura: Estilo pré-selecionado
+                                                  Assinado pelo link enviado para
+                                                    andrea.krewer.contratos@sodexo.com
+                                                    Usando endereço IP: 200.185.151.97
+
+
+Termos de Assinatura e Registro Eletrônico:
+   Aceito: 28/06/2022 17:22:46
+   ID: 26eac42a-d3b3-49a1-a3ff-d6620e485844
+
+Fabiano Lopes                                                                                        Enviado: 28/06/2022 12:00:54
+Fabiano.lopes@sodexo.com                                                                             Visualizado: 28/06/2022 12:28:32
+Nível de segurança: E-mail, Autenticação da conta                                                    Assinado: 28/06/2022 12:29:02
+(Nenhuma)
+                                                    Adoção de assinatura: Desenhado no dispositivo
+                                                    Assinado pelo link enviado para
+                                                    Fabiano.lopes@sodexo.com
+                                                    Usando endereço IP: 179.104.239.31
+
+
+Termos de Assinatura e Registro Eletrônico:
+   Aceito: 28/06/2022 12:28:32
+   ID: 61e6a1a1-b494-4566-8540-62f31410b3a3
+
+
+Eventos do signatário presencial                    Assinatura                                       Registro de hora e data
+
+Eventos de entrega do editor                        Status                                           Registro de hora e data
+
+Evento de entrega do agente                         Status                                           Registro de hora e data
+
+Eventos de entrega intermediários                   Status                                           Registro de hora e data
+
+Eventos de entrega certificados                     Status                                           Registro de hora e data
+
+Eventos de cópia                                    Status                                           Registro de hora e data
+Camila Fernandes de Oliveira                                                                         Enviado: 28/06/2022 11:27:11
+                                                    Copiado
+cdoliveira@uniaoquimica.com.br
+União Química
+Nível de segurança: E-mail, Autenticação da conta
+(Nenhuma)
+Termos de Assinatura e Registro Eletrônico:
+   Não disponível através da DocuSign
+
+
+Eventos com testemunhas                             Assinatura                                       Registro de hora e data
+Eventos do tabelião                  Assinatura               Registro de hora e data
+
+Eventos de resumo do envelope        Status                   Carimbo de data/hora
+Envelope enviado                     Com hash/criptografado   28/06/2022 09:12:30
+Entrega certificada                  Segurança verificada     28/06/2022 12:28:32
+Assinatura concluída                 Segurança verificada     28/06/2022 12:29:02
+
+Eventos de pagamento                 Status                   Carimbo de data/hora
+Termos de Assinatura e Registro Eletrônico
+Termos de Assinatura e Registro Eletrônico criado em: 23/09/2020 10:43:08
+Partes concordam em: Cristiano dos Santos Berlanda, Sergio Eduardo A. Costa Freire, José Luiz Junqueira Simões, Andrea Krewer, Fabiano Lopes
+
+
+
+
+            ELECTRONIC RECORD AND SIGNATURE DISCLOSURE
+
+            From time to time, União Química Farmacêutica Nacional (we, us or Company) may be required
+            by law to provide to you certain written notices or disclosures. Described below are the terms
+            and conditions for providing to you such notices and disclosures electronically through the
+            DocuSign system. Please read the information below carefully and thoroughly, and if you can
+            access this information electronically to your satisfaction and agree to this Electronic Record and
+            Signature Disclosure (ERSD), please confirm your agreement by selecting the check-box next to
+            ‘I agree to use electronic records and signatures’ before clicking ‘CONTINUE’ within the
+            DocuSign system.
+
+
+            Getting paper copies
+
+            At any time, you may request from us a paper copy of any record provided or made available
+            electronically to you by us. You will have the ability to download and print documents we send
+            to you through the DocuSign system during and immediately after the signing session and, if you
+            elect to create a DocuSign account, you may access the documents for a limited period of time
+            (usually 30 days) after such documents are first sent to you. After such time, if you wish for us to
+            send you paper copies of any such documents from our office to you, you will be charged a
+            $0.00 per-page fee. You may request delivery of such paper copies from us by following the
+            procedure described below.
+
+
+            Withdrawing your consent
+
+            If you decide to receive notices and disclosures from us electronically, you may at any time
+            change your mind and tell us that thereafter you want to receive required notices and disclosures
+            only in paper format. How you must inform us of your decision to receive future notices and
+            disclosure in paper format and withdraw your consent to receive notices and disclosures
+            electronically is described below.
+
+
+            Consequences of changing your mind
+
+            If you elect to receive required notices and disclosures only in paper format, it will slow the
+            speed at which we can complete certain steps in transactions with you and delivering services to
+            you because we will need first to send the required notices or disclosures to you in paper format,
+            and then wait until we receive back from you your acknowledgment of your receipt of such
+            paper notices or disclosures. Further, you will no longer be able to use the DocuSign system to
+            receive required notices and consents electronically from us or to sign electronically documents
+            from us.
+
+
+            All notices and disclosures will be sent to you electronically
+Unless you tell us otherwise in accordance with the procedures described herein, we will provide
+electronically to you through the DocuSign system all required notices, disclosures,
+authorizations, acknowledgements, and other documents that are required to be provided or made
+available to you during the course of our relationship with you. To reduce the chance of you
+inadvertently not receiving any notice or disclosure, we prefer to provide all of the required
+notices and disclosures to you by the same method and to the same address that you have given
+us. Thus, you can receive all the disclosures and notices electronically or in paper format through
+the paper mail delivery system. If you do not agree with this process, please let us know as
+described below. Please also see the paragraph immediately above that describes the
+consequences of your electing not to receive delivery of the notices and disclosures
+electronically from us.
+
+
+How to contact União Química Farmacêutica Nacional:
+
+You may contact us to let us know of your changes as to how we may contact you electronically,
+to request paper copies of certain information from us, and to withdraw your prior consent to
+receive notices and disclosures electronically as follows:
+To contact us by email send messages to: adadsilva@uniaoquimica.com.br
+
+
+To advise União Química Farmacêutica Nacional of your new email address
+
+To let us know of a change in your email address where we should send notices and disclosures
+electronically to you, you must send an email message to us at adadsilva@uniaoquimica.com.br
+and in the body of such request you must state: your previous email address, your new email
+address. We do not require any other information from you to change your email address.
+
+If you created a DocuSign account, you may update it with your new email address through your
+account preferences.
+
+
+To request paper copies from União Química Farmacêutica Nacional
+
+To request delivery from us of paper copies of the notices and disclosures previously provided
+by us to you electronically, you must send us an email to adadsilva@uniaoquimica.com.br and in
+the body of such request you must state your email address, full name, mailing address, and
+telephone number. We will bill you for any fees at that time, if any.
+
+
+To withdraw your consent with União Química Farmacêutica Nacional
+
+To inform us that you no longer wish to receive future notices and disclosures in electronic
+format you may:
+i. decline to sign a document from within your signing session, and on the subsequent page,
+select the check-box indicating you wish to withdraw your consent, or you may;
+
+ii. send us an email to adadsilva@uniaoquimica.com.br and in the body of such request you must
+state your email, full name, mailing address, and telephone number. We do not need any other
+information from you to withdraw consent.. The consequences of your withdrawing consent for
+online documents will be that transactions may take a longer time to process..
+
+
+Required hardware and software
+
+The minimum system requirements for using the DocuSign system may change over time. The
+current system requirements are found here: https://support.docusign.com/guides/signer-guide-
+signing-system-requirements.
+
+
+Acknowledging your access and consent to receive and sign documents electronically
+
+To confirm to us that you can access this information electronically, which will be similar to
+other electronic notices and disclosures that we will provide to you, please confirm that you have
+read this ERSD, and (i) that you are able to print on paper or electronically save this ERSD for
+your future reference and access; or (ii) that you are able to email this ERSD to an email address
+where you will be able to print on paper or save it for your future reference and access. Further,
+if you consent to receiving notices and disclosures exclusively in electronic format as described
+herein, then select the check-box next to ‘I agree to use electronic records and signatures’ before
+clicking ‘CONTINUE’ within the DocuSign system.
+
+By selecting the check-box next to ‘I agree to use electronic records and signatures’, you confirm
+that:
+
+      You can access and read this Electronic Record and Signature Disclosure; and
+      You can print on paper this Electronic Record and Signature Disclosure, or save or send
+       this Electronic Record and Disclosure to a location where you can print it, for future
+       reference and access; and
+      Until or unless you notify União Química Farmacêutica Nacional as described above, you
+       consent to receive exclusively through electronic means all notices, disclosures,
+       authorizations, acknowledgements, and other documents that are required to be provided
+       or made available to you by União Química Farmacêutica Nacional during the course of
+       your relationship with União Química Farmacêutica Nacional.
+

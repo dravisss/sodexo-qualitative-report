@@ -1,0 +1,68 @@
+source_file: Geral - Contratados por Centro de Custo.PDF
+source_path: evidencias/blobs/Geral - Contratados por Centro de Custo.PDF
+source_sha256: 082558421b43699b266b831b26eab8803fd1baf89ae45f96efa681fc9f0c04c5
+
+                                         Empresa : 1      SODEXO DO BRASIL COMERCIAL S A
+                                           Região : 110 SP CAPITAL
+                                  Centro de Custo : 16517 INOVAT SP FM SOFT -16517
+
+
+    Matrícula                                Nome                            Sit.         Admissão                        Cargo                         Salário
+Centro de Custo -     16517                   - INOVAT SP FM SOFT -16517
+       15463          DIEGO AMORIM DE SOUZA                                Ativo          13/08/2008    1616 - GERENTE UNIDADE OPERACIONAL III              9.672,12
+      9160745         LEANDRO VENTURA GOMES                                Ativo          04/11/2021     770 - OPERADOR EMPILHADEIRA I                      2.627,83
+      9161131         NEIDE DE SOUZA MACHADO                               Ativo          04/11/2021     805 - ENCARREGADO LIMPEZA                          2.426,76
+      9161148         ELAINE APARECIDA DO NASCIMENTO                       Ativo          04/11/2021     640 - OFICIAL LIMPEZA I                            1.837,40
+      9161173         MIRIAM MARIA DE JESUS ROCHA                          Ativo          10/11/2021     640 - OFICIAL LIMPEZA I                            1.837,40
+      9161191         RISELDA DE ANDRADE SILVA                             Ativo          04/11/2021     139 - SUPERVISOR OPERACIONAL                       5.285,82
+      9161311         EDEMIR SILVA FIGUEIREDO                              Ativo          10/11/2021     640 - OFICIAL LIMPEZA I                            1.837,40
+      9161593         LUCIMARA MALAQUIAS                                   Ativo          16/11/2021     640 - OFICIAL LIMPEZA I                            1.837,40
+      9162594         NOELI APARECIDA REZENDE                              Ativo          26/11/2021     640 - OFICIAL LIMPEZA I                            1.837,40
+      9162694         ANA SOLEDADE SANTOS                                  Férias         25/11/2021     640 - OFICIAL LIMPEZA I                            1.837,40
+      9172488         GENI PEREIRA DOS SANTOS                              Ativo          11/03/2022     677 - OFICIAL SERVICOS GERAIS I                    1.967,38
+      9173297         MARINEUSA PEREIRA DOS SANTOS                         Auxílio-Doença22/03/2022      640 - OFICIAL LIMPEZA I                            1.837,40
+      9188940         ANTONIA LUCIENE DE LIMA SOUSA                        Ativo          15/06/2022     640 - OFICIAL LIMPEZA I                            1.837,40
+      9222527         JOSILANE MARIA PEREIRA                               Ativo          18/10/2022     640 - OFICIAL LIMPEZA I                            1.837,40
+      9244019         VANUSA DOS SANTOS SOUZA                              Ativo          02/01/2023     640 - OFICIAL LIMPEZA I                            1.837,40
+      9302929         FLORISMAR GOMES ARAUJO                               Ativo          22/09/2023     640 - OFICIAL LIMPEZA I                            1.837,40
+      9321238         FERNANDA MENEDIM LOURENCO                            Ativo          12/12/2023     640 - OFICIAL LIMPEZA I                            1.837,40
+      9333063         LUCIANA SOUZA NEVES                                  Ativo          19/04/2024     640 - OFICIAL LIMPEZA I                            1.837,40
+      9333380         VITORIA MARIA BARBOSA SANTOS                         Ativo          22/04/2024     805 - ENCARREGADO LIMPEZA                          2.426,76
+      9336392         JACILENE BARROSO DA SILVA                            Ativo          24/05/2024     640 - OFICIAL LIMPEZA I                            1.837,40
+      9343205         ELIANE DE SOUSA COSTA                                Férias         26/08/2024     640 - OFICIAL LIMPEZA I                            1.837,40
+      9346800         RONILDO FELIX DA SILVA                               Auxílio-Doença02/10/2024      640 - OFICIAL LIMPEZA I                            1.837,40
+      9352191         ROSANGELA ADRIANA PEREIRA DOS                        Ativo          09/12/2024     640 - OFICIAL LIMPEZA I                            1.837,40
+      9352494         VINICIUS NAZAREO DA SILVA                            Férias         23/12/2024   56151 - JOVEM APRENDIZ ADMINISTRATIVO                  847,32
+      9358979         JESSICA DE ANDRADE SILVA                             Ativo          09/03/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9361939         ANA PAULA CAVALCANTE DA SILVA                        Ativo          03/04/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9361944         MARGARIDA OLIVEIRA DA SILVA                          Ativo          03/04/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9363788         MARGARETE GOMES DA SILVA                             Ativo          24/04/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9368652         MELISSA FERNANDES DA SILVA                           Ativo          02/06/2025   56151 - JOVEM APRENDIZ ADMINISTRATIVO                  847,32
+      9369888         JOSE ANTONIO LUIZ DO NASCIMENT                       Ativo          11/06/2025     770 - OPERADOR EMPILHADEIRA I                      2.627,83
+      9372092         RUTE LUCAS DOS SANTOS BERNARDE                       Ativo          10/07/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9373679         MARIA JOSE DE ALMEIDA LIMA                           Ativo          04/08/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9373798         LUCIANA CRISTINA CAMPOS MARCEL                       Ativo          04/08/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9374317         LAILA FELIPPO PEREIRA DE ARAUJ                       Ativo          08/08/2025   56151 - JOVEM APRENDIZ ADMINISTRATIVO                  847,32
+      9379988         RONALDO SEIXAS DE OLIVEIRA                           Ativo          08/10/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9380201         ROSIMEIRE FERREIRA                                   Ativo          08/10/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9385538         BALBINA DE ALMEIDA DA SILVA                          Ativo          11/12/2025     640 - OFICIAL LIMPEZA I                            1.837,40
+      9386830         ADRIANE TAVARES                                      Ativo          05/01/2026     640 - OFICIAL LIMPEZA I                            1.837,40
+      9388049         ANGELA ANA ROCHA GALVAO                              Ativo          17/01/2026     640 - OFICIAL LIMPEZA I                            1.837,40
+      9388132         MURYLLO ROBERT NOGUEIRA DA SIL                       Ativo          17/01/2026     640 - OFICIAL LIMPEZA I                            1.837,40
+      9388157         ESTHER                                               Ativo          20/01/2026     640 - OFICIAL LIMPEZA I                            1.837,40
+      9388398         JOSELIA PEREIRA DIAS DA SILVA                        Ativo          22/01/2026     640 - OFICIAL LIMPEZA I                            1.837,40
+      9388897         ROSANA TORRES VERICIMO                               Ativo          26/01/2026     640 - OFICIAL LIMPEZA I                            1.837,40
+      9388910         ZILENE MARIA SOARES                                  Ativo          26/01/2026     640 - OFICIAL LIMPEZA I                            1.837,40
+
+Total do Centro de Custo                44 - Contratado(s)                                                                                                 92.048,06
+
+
+Total da Região                         44 - Contratado(s)                                                                                                 92.048,06
+
+Total da Empresa                        44 - Contratado(s)                                                                                                 92.048,06
+
+
+
+
+Id Relatório: 10202                                                                Página 1 de 1                                           Gerado por: ANA.BETANZOZ
+                                                                                                                                              28/01/2026 12:23

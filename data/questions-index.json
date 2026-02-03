@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "version": "1.0",
+    "lastUpdated": "2026-02-03",
+    "source": "Refined/roteiro-investigacao-dados-por-cl.md"
+  },
+  "categories": [
+    { "id": "A", "name": "Economia da operação", "icon": "💹" },
+    { "id": "B", "name": "Folha vs lucro", "icon": "💰" },
+    { "id": "C", "name": "Distribuição salarial", "icon": "📊" },
+    { "id": "D", "name": "Serviços Gerais / piso", "icon": "👷" },
+    { "id": "E", "name": "Perguntas de alto valor", "icon": "🎯" },
+    { "id": "F", "name": "Descobertas derivadas", "icon": "🔍" },
+    { "id": "G", "name": "Análise de quadro", "icon": "👥" }
+  ],
+  "questions": [
+    {
+      "id": "A1",
+      "category": "A",
+      "title": "Qual é o custo real da operação hoje e quanto ela lucra?",
+      "definition": "Receita = Faturamento Líquido (SAP Real); Lucro = Gross Profit (SAP Real); Custo proxy = Fat − GP",
+      "status": "answered",
+      "answerSummary": "FY25: Cajamar GM 12,1% (R$ 863k GP / R$ 7,1M Fat); INOVAT GM 10,4%; FM GM 19,4%",
+      "drilldownLink": "warroom-dados-margem.html#a1",
+      "evidenceSources": ["SAP Real FY25", "SAP Real FY26 YTD"],
+      "interventions": ["I-21", "I-27"]
+    },
+    {
+      "id": "A2",
+      "category": "A",
+      "title": "Qual é a margem (%) e como ela evolui mês a mês?",
+      "definition": "GM% = Gross Profit / Faturamento Líquido. Série mensal por CL.",
+      "status": "answered",
+      "answerSummary": "Variação alta: Cajamar oscila de 1,5% (Abr/25) a 25% (Ago/25); INOVAT de 1,7% a 20%",
+      "drilldownLink": "warroom-dados-margem.html#a2",
+      "evidenceSources": ["SAP Real mensal"],
+      "interventions": ["I-21", "I-27"]
+    },
+    {
+      "id": "A3",
+      "category": "A",
+      "title": "O que está 'comendo' a margem? (decomposição)",
+      "definition": "Decompor variações de GP em categorias: Consumo, Pessoal, Serviços, Manutenção",
+      "status": "partial",
+      "answerSummary": "Consumo e Pessoal são os maiores componentes (~80% do custo). Análise detalhada por classe pendente.",
+      "drilldownLink": "warroom-dados-margem.html#a3",
+      "evidenceSources": ["SAP Real linhas agregadas"],
+      "interventions": ["I-19", "I-22"]
+    },
+    {
+      "id": "A4",
+      "category": "A",
+      "title": "Real vs Budget: onde o plano quebra sistematicamente?",
+      "definition": "Comparar Real vs Budget em Fat, Consumo, Pessoal, GP. Identificar desvios recorrentes.",
+      "status": "answered",
+      "answerSummary": "Cajamar: GP sistematicamente abaixo do budget (até -91% em Jun/25). INOVAT: performance melhor que budget em vários meses.",
+      "drilldownLink": "warroom-dados-margem.html#a4",
+      "evidenceSources": ["SAP Real + Budget"],
+      "interventions": ["I-19", "I-22", "I-27"]
+    },
+    {
+      "id": "B1",
+      "category": "B",
+      "title": "Quanto custa a folha vs o que a operação lucra?",
+      "definition": "Folha = linha SAP Pessoal. Métricas: Folha/Faturamento, Folha/GP.",
+      "status": "answered",
+      "answerSummary": "Cajamar: Pessoal ~27% do Fat, mas 2,25x o GP (FY25). A folha sozinha excede o lucro bruto.",
+      "drilldownLink": "warroom-dados-folha.html#b1",
+      "evidenceSources": ["SAP Real Pessoal"],
+      "interventions": ["I-21", "I-24", "I-25"]
+    },
+    {
+      "id": "B2",
+      "category": "B",
+      "title": "Produtividade de folha",
+      "definition": "Faturamento por headcount; GP por headcount.",
+      "status": "partial",
+      "answerSummary": "Headcount disponível na base de colaboradores. Cruzamento com SAP pendente.",
+      "drilldownLink": "warroom-dados-folha.html#b2",
+      "evidenceSources": ["SAP Fat/GP", "Base colaboradores"],
+      "interventions": ["I-21", "I-24"]
+    },
+    {
+      "id": "C1",
+      "category": "C",
+      "title": "Qual a diferença entre o menor e o maior salário na operação?",
+      "definition": "Por CL: min(salário base), max(salário base), delta.",
+      "status": "answered",
+      "answerSummary": "Cajamar: min R$ 1.933 / max R$ 7.000 (delta R$ 5.067). Alta compressão salarial.",
+      "drilldownLink": "warroom-dados-salarios.html#c1",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-35"]
+    },
+    {
+      "id": "C2",
+      "category": "C",
+      "title": "Como é a distribuição salarial (p10/p50/p90) e a compressão?",
+      "definition": "Percentis p10, p50, p90; razões p90/p10, max/min.",
+      "status": "answered",
+      "answerSummary": "Cajamar: p10 R$ 1.933 / p50 R$ 2.107 / p90 R$ 2.675. Compressão extrema no piso.",
+      "drilldownLink": "warroom-dados-salarios.html#c2",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-35"]
+    },
+    {
+      "id": "C3",
+      "category": "C",
+      "title": "Quanto do quadro está concentrado em 1-2 cargos?",
+      "definition": "Top cargos por headcount e % do total; top cargos por massa salarial.",
+      "status": "partial",
+      "answerSummary": "Serviços Gerais domina (~43% do quadro em Cajamar). Análise completa pendente.",
+      "drilldownLink": "warroom-dados-salarios.html#c3",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-24", "I-25"]
+    },
+    {
+      "id": "D1",
+      "category": "D",
+      "title": "Quantas pessoas estão em cargos de Serviços Gerais e qual % do quadro?",
+      "definition": "Dicionário de cargos SG (códigos 677, 193292). Métricas: N e %.",
+      "status": "answered",
+      "answerSummary": "Cajamar: 10 pessoas (43,5% do quadro) em Serviços Gerais.",
+      "drilldownLink": "warroom-dados-salarios.html#d1",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-24", "I-25", "I-31"]
+    },
+    {
+      "id": "D2",
+      "category": "D",
+      "title": "Qual % do quadro recebe o menor salário (piso efetivo no CL)?",
+      "definition": "min_sal por CL; %_min = count(sal == min_sal) / headcount.",
+      "status": "answered",
+      "answerSummary": "Cajamar: 43,5% do quadro no piso (R$ 1.933). Coincide com % de Serviços Gerais.",
+      "drilldownLink": "warroom-dados-salarios.html#d2",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-35"]
+    },
+    {
+      "id": "D3",
+      "category": "D",
+      "title": "O 'piso' é a maior parte do quadro?",
+      "definition": "Regra de leitura: >40% = alto, 20-40% = médio, <20% = baixo.",
+      "status": "answered",
+      "answerSummary": "Sim. 43,5% no piso = classificação 'alta concentração no piso'.",
+      "drilldownLink": "warroom-dados-salarios.html#d3",
+      "evidenceSources": ["Derivado de D2"],
+      "interventions": ["I-35"]
+    },
+    {
+      "id": "E1",
+      "category": "E",
+      "title": "Onde a operação está mais 'sensível' a variação de volume?",
+      "definition": "Elasticidade Fat→GP: quando fat sobe/desce, GP acompanha proporcionalmente?",
+      "status": "pending",
+      "answerSummary": null,
+      "drilldownLink": "warroom-dados-margem.html#e1",
+      "evidenceSources": ["SAP Real mensal"],
+      "interventions": ["I-21"]
+    },
+    {
+      "id": "E2",
+      "category": "E",
+      "title": "Qual é a parcela de custo controlável localmente?",
+      "definition": "Classificar linhas SAP em controlável vs não controlável.",
+      "status": "pending",
+      "answerSummary": null,
+      "drilldownLink": "warroom-dados-margem.html#e2",
+      "evidenceSources": ["SAP Real classes"],
+      "interventions": ["I-19", "I-22"]
+    },
+    {
+      "id": "E3",
+      "category": "E",
+      "title": "Há sinais contábeis de 'torniquete' (corte de essencial)?",
+      "definition": "Desvio Real vs Budget em itens essenciais (EPI/uniforme/manutenção).",
+      "status": "partial",
+      "answerSummary": "Evidências qualitativas de corte de EPI/uniformes. Análise SAP por classe pendente.",
+      "drilldownLink": "warroom-dados-margem.html#e3",
+      "evidenceSources": ["SAP Real vs Budget EPI", "Formulário"],
+      "interventions": ["I-01", "I-02"]
+    },
+    {
+      "id": "E4",
+      "category": "E",
+      "title": "Qual é a dependência de poucos indivíduos (risco operacional)?",
+      "definition": "Top N salários e % da massa salarial; cargos-chave.",
+      "status": "pending",
+      "answerSummary": null,
+      "drilldownLink": "warroom-dados-salarios.html#e4",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-24"]
+    },
+    {
+      "id": "E5",
+      "category": "E",
+      "title": "Comparabilidade entre CLs: o que é 'igual' e o que não é?",
+      "definition": "Food vs FM; diferenças de escopo alteram interpretação de margem/folha.",
+      "status": "partial",
+      "answerSummary": "FM (BR016517) tem escopo de serviços, não alimentação. Margem não é diretamente comparável.",
+      "drilldownLink": "warroom-dados-cl-comparar.html#e5",
+      "evidenceSources": ["Contratos", "SAP estrutura"],
+      "interventions": ["I-03", "I-04"]
+    },
+    {
+      "id": "F1",
+      "category": "F",
+      "title": "Qual CL tem maior concentração de quadro no piso salarial?",
+      "definition": "Derivado de D2: comparar % no piso entre os 3 CLs.",
+      "status": "answered",
+      "answerSummary": "Cajamar e INOVAT têm ~43% no piso. FM tem estrutura diferente (serviços).",
+      "drilldownLink": "warroom-dados-cl-comparar.html#f1",
+      "evidenceSources": ["analise-dados-por-cl.respostas.md"],
+      "interventions": ["I-35"]
+    },
+    {
+      "id": "F2",
+      "category": "F",
+      "title": "Quais meses têm desvio de GP > 30% vs Budget?",
+      "definition": "Filtrar tabelas A4 por desvio absoluto > 30%.",
+      "status": "answered",
+      "answerSummary": "Cajamar: Abr/25 (-89%), Mai/25 (-79%), Jun/25 (-91%). Alertas críticos.",
+      "drilldownLink": "warroom-dados-margem.html#f2",
+      "evidenceSources": ["analise-dados-por-cl.respostas.md"],
+      "interventions": ["I-19", "I-27"]
+    },
+    {
+      "id": "F3",
+      "category": "F",
+      "title": "Há correlação entre aumento de Pessoal e queda de GM%?",
+      "definition": "Cruzar séries mensais Pessoal vs GM%.",
+      "status": "pending",
+      "answerSummary": null,
+      "drilldownLink": "warroom-dados-folha.html#f3",
+      "evidenceSources": ["SAP Real mensal"],
+      "interventions": ["I-21", "I-24"]
+    },
+    {
+      "id": "F4",
+      "category": "F",
+      "title": "Quais intervenções têm evidência quantitativa direta?",
+      "definition": "Cruzar MoC + dossiês com dados SAP/base colaboradores.",
+      "status": "partial",
+      "answerSummary": "I-21 (quadro), I-27 (GM), I-35 (salários) têm dados diretos. Outros são qualitativos.",
+      "drilldownLink": "warroom-dados-qa.html#f4",
+      "evidenceSources": ["MoC", "Dossiês"],
+      "interventions": []
+    },
+    {
+      "id": "G1",
+      "category": "G",
+      "title": "Quais cargos têm maior headcount e qual % da folha?",
+      "definition": "Top cargos por N e por massa salarial.",
+      "status": "partial",
+      "answerSummary": "Serviços Gerais é o maior grupo. Análise de massa salarial pendente.",
+      "drilldownLink": "warroom-dados-salarios.html#g1",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-24", "I-25"]
+    },
+    {
+      "id": "G2",
+      "category": "G",
+      "title": "Qual a proporção de aprendizes por CL?",
+      "definition": "Filtrar por códigos de cargo aprendiz (56151, 987).",
+      "status": "answered",
+      "answerSummary": "Aprendizes identificados e separados na análise de piso. Representam minoria do quadro.",
+      "drilldownLink": "warroom-dados-salarios.html#g2",
+      "evidenceSources": ["Base colaboradores"],
+      "interventions": ["I-31"]
+    },
+    {
+      "id": "G3",
+      "category": "G",
+      "title": "Há diferença salarial para o mesmo cargo entre CLs?",
+      "definition": "Comparar salário base por cargo entre CLs.",
+      "status": "partial",
+      "answerSummary": "Confirmado 'Sim' no formulário. Análise detalhada por cargo pendente.",
+      "drilldownLink": "warroom-dados-salarios.html#g3",
+      "evidenceSources": ["Base colaboradores", "Formulário question_1"],
+      "interventions": ["I-35"]
+    }
+  ]
+}

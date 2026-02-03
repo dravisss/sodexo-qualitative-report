@@ -1,0 +1,11 @@
+- Intervenção: `I-XX`
+- Unidade(s): 
+- Frente: 
+- Problema que endereça (1 linha): 
+- Evidência (3–7 refs):
+  - 
+- Força da evidência: Provado | Sustentado qualitativamente | Hipótese | Lacuna
+- Risco mitigado: Jurídico | INSS | Contratual | Operacional | Turnover
+- Viabilidade (semáforo): Verde | Amarelo | Vermelho
+- Pré-condições (1–3): 
+- Lacunas (2–6): 

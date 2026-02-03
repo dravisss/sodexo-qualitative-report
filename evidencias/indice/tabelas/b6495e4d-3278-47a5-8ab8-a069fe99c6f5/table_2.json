@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-01-30T16:50:46.908Z",
+  "submission_id": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5",
+  "table_id": "table_2",
+  "roteiro_parent": "Operacional",
+  "roteiro_subsection_code": "C",
+  "roteiro_subsection_title": "Faturamento e Margem de Lucro",
+  "section_name": "Geral",
+  "subsection_name": "Contexto",
+  "table_title": "Dado",
+  "dimensions": {
+    "rows": 7,
+    "cols": 4
+  },
+  "row_labels": {
+    "1": "Valor mensal do contrato (faturamento bruto)",
+    "2": "Valor anual do contrato",
+    "3": "Margem Bruta contratada (GM target)",
+    "4": "Margem Bruta realizada (últimos 12 meses)",
+    "5": "Delta (contratado vs. realizado)",
+    "6": "Lucro líquido mensal para a Sodexo (após todos os custos)"
+  },
+  "columns": [
+    {
+      "col": 0,
+      "label": "Linha"
+    },
+    {
+      "col": 1,
+      "label": "Cajamar"
+    },
+    {
+      "col": 2,
+      "label": "GRU FOOD"
+    },
+    {
+      "col": 3,
+      "label": "GRU FM"
+    }
+  ],
+  "cells": [
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      {
+        "answer_id": "a22ba658-6424-4204-8711-aad4748f2a78",
+        "field_id": "table_2_row_1_col_1",
+        "row": 1,
+        "col": 1,
+        "value": "577.090,01 ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Valor mensal do contrato (faturamento bruto)"
+      },
+      {
+        "answer_id": "ceffaa3c-89b3-43bd-b0c0-020705fc3d5e",
+        "field_id": "table_2_row_1_col_2",
+        "row": 1,
+        "col": 2,
+        "value": "428.189,47 ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Valor mensal do contrato (faturamento bruto)"
+      },
+      {
+        "answer_id": "8b2a438c-93ea-4bcc-8dbe-6e621a874ff2",
+        "field_id": "table_2_row_1_col_3",
+        "row": 1,
+        "col": 3,
+        "value": "255.616,28  ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Valor mensal do contrato (faturamento bruto)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "07561625-1bf3-4cd4-8d92-b5e8640dc38b",
+        "field_id": "table_2_row_2_col_1",
+        "row": 2,
+        "col": 1,
+        "value": "Enviado e-mail",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Valor anual do contrato"
+      },
+      {
+        "answer_id": "4524555b-c5f5-438c-91e6-d0671755afb9",
+        "field_id": "table_2_row_2_col_2",
+        "row": 2,
+        "col": 2,
+        "value": "Enviado e-mail",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Valor anual do contrato"
+      },
+      {
+        "answer_id": "334b4ec3-2a8d-45af-b8e1-d711c2be15e4",
+        "field_id": "table_2_row_2_col_3",
+        "row": 2,
+        "col": 3,
+        "value": "Enviado e-mail",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Valor anual do contrato"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "02853424-ebb9-4507-9e59-92c50c11de2c",
+        "field_id": "table_2_row_3_col_1",
+        "row": 3,
+        "col": 1,
+        "value": "PFP (Juliana Vieceli)",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Margem Bruta contratada (GM target)"
+      },
+      {
+        "answer_id": "bf3bccb1-8e5d-48f4-8b4c-1c3643ece5c5",
+        "field_id": "table_2_row_3_col_2",
+        "row": 3,
+        "col": 2,
+        "value": "PFP (Juliana Vieceli)",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Margem Bruta contratada (GM target)"
+      },
+      {
+        "answer_id": "055176fa-6edc-424b-8fff-02f693a89715",
+        "field_id": "table_2_row_3_col_3",
+        "row": 3,
+        "col": 3,
+        "value": "PFP (Juliana Vieceli)",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Margem Bruta contratada (GM target)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "a00956ef-8a87-49ce-b6ee-e1a022d54436",
+        "field_id": "table_2_row_4_col_1",
+        "row": 4,
+        "col": 1,
+        "value": "771.014,17 GM Acum 12 meses",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Margem Bruta realizada (últimos 12 meses)"
+      },
+      {
+        "answer_id": "6985e1a3-ab93-4acc-8e6d-c868e1c06bdc",
+        "field_id": "table_2_row_4_col_2",
+        "row": 4,
+        "col": 2,
+        "value": "638.333,87 GM Acum 12 meses",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Margem Bruta realizada (últimos 12 meses)"
+      },
+      {
+        "answer_id": "77c31944-73ad-4097-9dd7-ea6bcf81af80",
+        "field_id": "table_2_row_4_col_3",
+        "row": 4,
+        "col": 3,
+        "value": "566.948,82 Acum 12 meses",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Margem Bruta realizada (últimos 12 meses)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "af700144-beab-48c5-af7f-0934561653db",
+        "field_id": "table_2_row_5_col_1",
+        "row": 5,
+        "col": 1,
+        "value": "Analisar PFP e SAP",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Delta (contratado vs. realizado)"
+      },
+      {
+        "answer_id": "a8d8793e-f9c9-4f8c-acd7-2f79ffe531a7",
+        "field_id": "table_2_row_5_col_2",
+        "row": 5,
+        "col": 2,
+        "value": "Analisar PFP e SAP",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Delta (contratado vs. realizado)"
+      },
+      {
+        "answer_id": "d2604500-bac4-4e89-bd64-b5ff2ca0925b",
+        "field_id": "table_2_row_5_col_3",
+        "row": 5,
+        "col": 3,
+        "value": "Analisar PFP e SAP",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Delta (contratado vs. realizado)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "3bef2a86-8a30-418b-9f4a-1781a9ed4722",
+        "field_id": "table_2_row_6_col_1",
+        "row": 6,
+        "col": 1,
+        "value": "James.Lange UOP",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Lucro líquido mensal para a Sodexo (após todos os custos)"
+      },
+      {
+        "answer_id": "0c1907a7-b098-41df-b3d6-f22d9526ff3b",
+        "field_id": "table_2_row_6_col_2",
+        "row": 6,
+        "col": 2,
+        "value": "James.Lange UOP",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Lucro líquido mensal para a Sodexo (após todos os custos)"
+      },
+      {
+        "answer_id": "bc57886e-22ad-460a-a51f-6ec4e1ba2c71",
+        "field_id": "table_2_row_6_col_3",
+        "row": 6,
+        "col": 3,
+        "value": "James.Lange UOP",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Lucro líquido mensal para a Sodexo (após todos os custos)"
+      }
+    ]
+  ]
+}

@@ -6,6 +6,25 @@ const PROJECT_ROOT = path.resolve(process.cwd());
 const ATTACHMENTS_PATH = path.join(PROJECT_ROOT, 'evidencias', 'banco', 'attachments.json');
 const OUT_DIR = path.join(PROJECT_ROOT, 'evidencias', 'blobs');
 
+const BLOBS_HTTP_BASE = process.env.BLOBS_HTTP_BASE || 'https://relatoriosdx.netlify.app';
+
+function isXlsxPath(p) {
+  return String(p).toLowerCase().endsWith('.xlsx');
+}
+
+function unzipTest(p) {
+  return new Promise((resolve) => {
+    const child = spawn('unzip', ['-t', p], { stdio: ['ignore', 'pipe', 'pipe'] });
+    let out = '';
+    child.stdout.on('data', (d) => (out += d.toString('utf8')));
+    child.stderr.on('data', (d) => (out += d.toString('utf8')));
+    child.on('close', (code) => {
+      const ok = code === 0 && out.includes('No errors detected');
+      resolve(ok);
+    });
+  });
+}
+
 async function fileExists(p) {
   try {
     await fs.access(p);
@@ -31,8 +50,23 @@ function runNetlifyBlobsGet(store, key, outputPath) {
   });
 }
 
+async function downloadViaHttp(key, outputPath) {
+  const url = new URL('/api/download-blob', BLOBS_HTTP_BASE);
+  url.searchParams.set('key', key);
+
+  const res = await fetch(url);
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(`HTTP ${res.status} (${url.toString()}): ${text.slice(0, 200)}`);
+  }
+
+  const buf = Buffer.from(await res.arrayBuffer());
+  await fs.writeFile(outputPath, buf);
+}
+
 async function main() {
   const storeName = process.env.NETLIFY_BLOBS_STORE || 'evidence-files';
+  const preferHttp = (process.env.BLOBS_DOWNLOAD_MODE || 'http').toLowerCase() !== 'cli';
 
   await fs.mkdir(OUT_DIR, { recursive: true });
 
@@ -54,12 +88,26 @@ async function main() {
     const outPath = path.join(OUT_DIR, fileName);
 
     if (await fileExists(outPath)) {
-      results.skipped_existing.push({ fileName, key });
-      continue;
+      if (!isXlsxPath(outPath)) {
+        results.skipped_existing.push({ fileName, key });
+        continue;
+      }
+      if (await unzipTest(outPath)) {
+        results.skipped_existing.push({ fileName, key });
+        continue;
+      }
     }
 
     try {
-      await runNetlifyBlobsGet(storeName, key, outPath);
+      if (preferHttp) {
+        try {
+          await downloadViaHttp(key, outPath);
+        } catch {
+          await runNetlifyBlobsGet(storeName, key, outPath);
+        }
+      } else {
+        await runNetlifyBlobsGet(storeName, key, outPath);
+      }
       results.downloaded.push({ fileName, key });
     } catch (err) {
       results.failed.push({ fileName, key, error: err?.message || String(err) });

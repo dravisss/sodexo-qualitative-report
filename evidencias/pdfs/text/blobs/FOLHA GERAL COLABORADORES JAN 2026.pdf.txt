@@ -1,0 +1,44 @@
+source_file: FOLHA GERAL COLABORADORES JAN 2026.pdf
+source_path: evidencias/blobs/FOLHA GERAL COLABORADORES JAN 2026.pdf
+source_sha256: b7676b908787636947a7aeeabe31f4e7429b02b3ba15b627b45bc7d16b8e9a37
+
+                                     Empresa : 1       SODEXO DO BRASIL COMERCIAL S A
+                                        Região : 110   SP CAPITAL
+                               Centro de Custo : 12302 INOVAT - 12302
+                                    Segmento : 156     DIRETORIA SP CAPITAL
+
+    Matrícula         Nome                                   Sit.        Admissão                      Cargo                        Salário
+     9388482          ANACLARA GONÇALVES DINIZ                1          23/01/2026    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+     8150764          EDILTON FERREIRA DE OLIVEIRA            9          10/10/2016   1927 - OFICIAL ESTOQUE                            1.976,93
+     8136978          EDITANIA LIMA DE CASTRO                 1          16/10/2015   1351 - OFICIAL COZINHA I                          2.106,80
+     9377548          ELENIUDA CARVALHO DANTAS DE LI          1          17/09/2025    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+     9169623          EUGENIO FERREIRA LOPES                  1          16/02/2022    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+      16450           FRANCISCA EDILEUSA DE MOURA FE          1          02/12/2010   2134 - COZINHEIRO I                               2.475,26
+      15252           GILBERTO DOS SANTOS SILVA               1          01/04/1996   2171 - CHEFE COZINHA III                          5.593,13
+     9337696          IZABEL DE CASTRO SOUSA                  1          12/06/2024    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+      11582           LUIZ BARRETO SANTOS                     1          02/03/2000   1749 - COZINHEIRO II                              2.726,80
+      11578           LUZENICE ALVES DE LIMA                  1          01/09/1999   1236 - COPEIRO III                                2.283,29
+     9027596          MARIA APARECIDA DA SILVA                1          06/12/2019    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+     8177466          MARIA DE FATIMA GUEDES GOMES            1          21/03/2018    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+     9213726          MARIA DO CARMO DE ARAUJO VERAS          1          20/09/2022    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+     8189180          MARIA JOSE GOMES DA SILVA               1          01/08/2018   2134 - COZINHEIRO I                               2.376,72
+     9152720          MARIA LUCIANA DE ALCANTARA QUE          9          23/07/2021    677 - OFICIAL SERVICOS GERAIS I                  1.933,20
+      11727           PATRICIA ALVES DE SOUZA                 1          10/09/2012   1370 - COZINHEIRO III                             3.318,59
+      16914           PAULO APARECIDO DOS REIS OLIVE          1          16/04/2013   2134 - COZINHEIRO I                               2.376,72
+      11706           ROSANGELA RODRIGUES DE SOUZA            1          17/02/2012   2134 - COZINHEIRO I                               2.475,26
+     9377649          SAMUEL PAES DO NASCIMENTO               1          17/09/2025    987 - JOVEM APRENDIZ OPERACIONAL                 1.270,98
+     8173205          VAGNER DE SOUZA SANTOS                  1          23/01/2018   1927 - OFICIAL ESTOQUE                            2.084,62
+     9326763          VIVIANE PEREIRA DOS SANTOS              1          16/02/2024   1749 - COZINHEIRO II                              2.726,80
+      12306           WANESSA DE CARVALHO ESTEVES             1          05/07/2006     34 - GERENTE UNIDADE OPERACIONAL II             9.078,53
+
+Total do Centro de Custo         22                                                                                                    58.336,03
+
+Total da Região                  22                                                                                                    58.336,03
+
+Total da Empresa                 22                                                                                                    58.336,03
+
+
+
+
+Id Relatório: 10207                                               Página 1 de 1                                        Gerado por: Wanessa.ESTEVES
+                                                                                                                          27/01/2026 00:41

@@ -9,7 +9,7 @@ const PROJECT_ROOT = path.resolve(process.cwd());
 const OUT_DIR = path.join(PROJECT_ROOT, 'evidencias', 'banco');
 const INDEX_DIR = path.join(PROJECT_ROOT, 'evidencias', 'indice');
 
-const DEFAULT_UNIT_SLUGS = ['cajamar', 'gru-food', 'gru-fm'];
+const DEFAULT_UNIT_SLUGS = ['general'];
 
 function parseArgs(argv) {
   const args = {

@@ -1,0 +1,33 @@
+{
+  "source_file": "COZINHEIRO II.pdf",
+  "cargo_titulo": "COZINHEIRO II",
+  "codigo_cargo": "1749",
+  "contexto_organizacional": "CORPORATE",
+  "subordinado_a": "GERENTE AREA OPERACIONAL/GERENTE UNIDADE OPERACIONAL",
+  "descricao_sumaria": "Executar as atividades de preparo de alimentos designadas e sob orientação do seu superior hierárquico, visando cumprir uma das etapas do processo de produção, montagem, higienização e preparo folhas, coletar e identificar amostras de alimentos. Participação de reuniões de planejamento de cardápio junto a Nutricionista responsável.",
+  "principais_atividades": [
+    "Pré-preparar e preparar pratos e/ou carnes e/ou saladas e/ou dietas;",
+    "Organizar o posto de trabalho com todos os ingredientes necessários e o equipamento de cozinha;",
+    "Montar e repor os alimentos;",
+    "Zelar pela apresentação do produto final;",
+    "Realizar degustação e aprovação de produtos (quando responsável por turno);",
+    "Garantir a reposição dos alimentos no balcão de distribuição;",
+    "Coletar e identificar amostras de alimentos;",
+    "Higienizar utensílios, equipamentos e áreas;",
+    "Certificar que todos os alimentos e outros itens estejam armazenados corretamente;",
+    "Assegurar o cumprimento das normas de qualidade e segurança alimentar e do trabalho na execução das atividades, conforme Manual de Boas Práticas;",
+    "Executar tarefas correlatas;",
+    "Ser responsável pela Saúde e Segurança, bem como aplicar as normas, procedimentos e diretrizes do Sistema de Gestão de Saúde e Segurança."
+  ],
+  "kpis": [
+    "Nível de satisfação de comensais, comerciais e clientes;",
+    "Controle de sobra limpa;",
+    "Controle de resto ingesta;",
+    "Controle de temperatura de cocção;",
+    "Apoiar a GU na organização do estoque na ausência de estoquistas;",
+    "Limpeza e organização da área de cocção."
+  ],
+  "observacoes": "Formação Acadêmica: Ensino Médio (desejável), no mínimo Ensino Fundamental Completo. Experiência desejável: 3 anos na função. Habilidades e Conhecimentos desejável: Experiência comprovada como cozinheiro; Experiência em usar ferramentas de corte, utensílios de cozinha e confeitaria; Conhecimento de diversos procedimentos e métodos culinários (grelhar, assar, ferver etc.); Capacidade de trabalhar em equipe; Ótimas habilidades de comunicação; Alto nível de disposição e energia. Foco em resultado, foco no cliente, foco em qualidade e segurança, proatividade, resistência às pressões e autocontrole.",
+  "source_path": "evidencias/blobs/Descrição de cargo Frontline. FY26/COZINHEIRO II.pdf",
+  "source_sha256": "a36b294da1501e338c51e09950056d7bffa73f723ae43bcc5148fa7e49c4a847"
+}

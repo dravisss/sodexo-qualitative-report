@@ -1,0 +1,36 @@
+{
+  "source_file": "OFICIAL ESTOQUE.pdf",
+  "cargo_titulo": "OFICIAL ESTOQUE",
+  "codigo_cargo": "414105",
+  "contexto_organizacional": "CORE",
+  "subordinado_a": "ESTOQUISTA/ ENCARREGADO/ SUPERVISOR/ COORDENADOR/ GERENTE DE UNIDADE",
+  "descricao_sumaria": "Executar serviços de organização e conservação das dependências do estoque. Dar apoio ao profissional responsável por este setor sob orientação de seu superior hierárquico, visando cumprir as etapas de recebimento, armazenamento, separação e distribuição de insumos.",
+  "principais_atividades": [
+    "Separar mercadorias seguindo a requisição diária de gêneros;",
+    "Coletar amostras no ato do recebimento de produtos perecíveis e monitorar temperatura.",
+    "Realizar a conferência e confrontar notas/ pedidos e materiais recebidos (marcas, quantidades, volumes, qualidade e vencimento);",
+    "Separar e entregar materiais necessários para uso, fazendo o correto registro dessa atividade;",
+    "Controlar as datas de validade das mercadorias no estoque;",
+    "Registrar informações necessárias sobre as atividades realizadas.",
+    "Recepcionar e auxiliar no recebimento de gêneros/ produtos e materiais;",
+    "Colocar os produtos nas prateleiras conforme orientação, organizar e identificar mercadorias;",
+    "Realizar a limpeza e conservação do local de armazenamento;",
+    "Executar serviços de limpeza, conservação, organização no estoque e áreas afins;",
+    "Participar da contagem de mercadorias para o inventário;",
+    "Organizar o ambiente de trabalho e materiais utilizados após a execução das tarefas e ao término da jornada de trabalho;",
+    "Informar a chefia imediata qualquer irregularidade encontrada nas tarefas e nas instalações das dependências de trabalho;",
+    "Executar tarefas correlatas;",
+    "Ser responsável pela Saúde e Segurança, bem como aplicar as normas, procedimentos e diretrizes do Sistema de Gestão de Saúde e Segurança."
+  ],
+  "kpis": [
+    "PEPS (primeiro que entra, primeiro que sai)",
+    "Controle de temperatura/ recebimento.",
+    "Controle de validade de mercadorias no estoque;",
+    "Limpeza e organização da área de estoque;",
+    "Registro das atividades realizadas;",
+    "Rotina planejada x realizada x qualidade."
+  ],
+  "observacoes": "Em casos onde a unidade não tenha o Estoquista, Encarregado, Supervisor ou Coordenador o Oficial Estoque irá reportar diretamente ao Gerente de Unidade.",
+  "source_path": "evidencias/blobs/Descrição de cargo Frontline. FY26/OFICIAL ESTOQUE.pdf",
+  "source_sha256": "46dee69235117d5917f1cf9d9c4cbc8aaf26bacc1746a42bbd1d05ac7156407d"
+}

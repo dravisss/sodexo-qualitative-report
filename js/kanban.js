@@ -83,6 +83,45 @@ class KanbanManager {
         this.init();
     }
 
+    getQueryParam(name) {
+        try {
+            const url = new URL(window.location.href);
+            return url.searchParams.get(name);
+        } catch {
+            return null;
+        }
+    }
+
+    focusCardFromQuery() {
+        const cardId = this.getQueryParam('card');
+        if (!cardId) return;
+
+        const exists = this.interventions.some(c => c.id === cardId);
+        if (!exists) return;
+
+        // Ensure we are on the board view
+        this.setView('board');
+
+        const tryFocus = () => {
+            const el = document.querySelector(`.kanban-card[data-id="${cardId}"]`);
+            if (!el) return false;
+
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            this.openEditor(cardId);
+            return true;
+        };
+
+        // Wait a moment for DOM/render + filters
+        const attempts = 12;
+        let i = 0;
+        const timer = setInterval(() => {
+            i += 1;
+            if (tryFocus() || i >= attempts) {
+                clearInterval(timer);
+            }
+        }, 150);
+    }
+
     loadLocalStateFallback() {
         try {
             return JSON.parse(localStorage.getItem('kanban_state') || '{}');
@@ -110,6 +149,8 @@ class KanbanManager {
         this.applyFilters();
         this.setupDragAndDrop();
         this.startPolling();
+
+        this.focusCardFromQuery();
 
         // Save any pending migrations from V1 -> V2
         if (this._hasPendingMigration) {
@@ -613,8 +654,18 @@ class KanbanManager {
             <div class="card-tags">
                 ${this.generateCardTagsHtml(card, userTags)}
             </div>
+            <div class="card-links">
+                <a class="card-link" href="dossie.html?i=${encodeURIComponent(card.id)}">📄 Dossiê</a>
+                <a class="card-link" href="argumentario.html?i=${encodeURIComponent(card.id)}">🧾 Argumentário</a>
+            </div>
             ${datesHtml}
         `;
+
+        el.querySelectorAll('.card-links a').forEach(a => {
+            a.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
 
         // Click to open editor instead of direct navigation
         el.addEventListener('click', (e) => {
@@ -1018,6 +1069,11 @@ class KanbanManager {
 
         const viewSourceBtn = document.getElementById('editor-view-source');
         viewSourceBtn.href = card.link;
+
+        const viewDossierBtn = document.getElementById('editor-view-dossier');
+        if (viewDossierBtn) {
+            viewDossierBtn.href = `dossie.html?i=${encodeURIComponent(card.id)}`;
+        }
 
         // Populate Editable Fields
         document.getElementById('edit-responsible').value = state.responsible || '';

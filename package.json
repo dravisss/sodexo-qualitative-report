@@ -4,6 +4,10 @@
   "description": "Esta é uma Single Page Application (SPA) para leitura de relatórios qualitativos, focada na análise de tensões sistêmicas e planos de intervenção.",
   "main": "index.js",
   "scripts": {
+    "extract:cargos:gemini": "node scripts/extract_descricao_cargos_gemini.mjs",
+    "evidencias:export": "node scripts/export_evidencias.mjs",
+    "evidencias:normalize": "node scripts/normalize_answers_export.mjs",
+    "evidencias:atualizar-inventario": "node scripts/atualizar_inventario.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

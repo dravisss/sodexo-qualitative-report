@@ -1,0 +1,198 @@
+{
+  "generated_at": "2026-01-30T16:50:46.908Z",
+  "submission_id": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5",
+  "table_id": "table_3",
+  "roteiro_parent": "Operacional",
+  "roteiro_subsection_code": "D",
+  "roteiro_subsection_title": "Volumetria e Capacidade",
+  "section_name": "Geral",
+  "subsection_name": "Contexto",
+  "table_title": "Dado",
+  "dimensions": {
+    "rows": 6,
+    "cols": 4
+  },
+  "row_labels": {
+    "1": "Volume médio diário (refeições ou m² limpos)",
+    "2": "Volume máximo contratado",
+    "3": "Volume mínimo garantido",
+    "4": "Variação de volume (pico vs. vale)",
+    "5": "Quadro dimensionado para qual volume?"
+  },
+  "columns": [
+    {
+      "col": 0,
+      "label": "Linha"
+    },
+    {
+      "col": 1,
+      "label": "Cajamar"
+    },
+    {
+      "col": 2,
+      "label": "GRU FOOD"
+    },
+    {
+      "col": 3,
+      "label": "GRU FM"
+    }
+  ],
+  "cells": [
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      {
+        "answer_id": "c4b79778-4b13-46b4-a6f2-cb7c573098af",
+        "field_id": "table_3_row_1_col_1",
+        "row": 1,
+        "col": 1,
+        "value": "Angela Ilha valor/quantidade faturado",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume médio diário (refeições ou m² limpos)"
+      },
+      {
+        "answer_id": "76cabda3-b083-4b46-b2cf-e1e927d83b47",
+        "field_id": "table_3_row_1_col_2",
+        "row": 1,
+        "col": 2,
+        "value": "Angela Ilha valor/quantidade faturado",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume médio diário (refeições ou m² limpos)"
+      },
+      {
+        "answer_id": "717572f8-de4a-4279-a38f-ed3078cda012",
+        "field_id": "table_3_row_1_col_3",
+        "row": 1,
+        "col": 3,
+        "value": "Angela Ilha valor/quantidade faturado",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume médio diário (refeições ou m² limpos)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "8861bff1-c3e5-433d-bb5d-25635944f988",
+        "field_id": "table_3_row_2_col_1",
+        "row": 2,
+        "col": 1,
+        "value": "Contrato ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume máximo contratado"
+      },
+      {
+        "answer_id": "9cd37f05-5452-4484-a202-0d09aa3880d9",
+        "field_id": "table_3_row_2_col_2",
+        "row": 2,
+        "col": 2,
+        "value": "Não há volume máximo contratual",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume máximo contratado"
+      },
+      {
+        "answer_id": "7ad7e587-b656-4845-b647-b4a7ce130ba3",
+        "field_id": "table_3_row_2_col_3",
+        "row": 2,
+        "col": 3,
+        "value": "57- jovens aprendiz",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume máximo contratado"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "254bc17f-6bcc-40e2-95c6-14616a6baf96",
+        "field_id": "table_3_row_3_col_1",
+        "row": 3,
+        "col": 1,
+        "value": "Contrato ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume mínimo garantido"
+      },
+      {
+        "answer_id": "dd60fb77-a5ab-4d85-9228-bcd951451fd7",
+        "field_id": "table_3_row_3_col_2",
+        "row": 3,
+        "col": 2,
+        "value": "Faturamento Mínimo Contratual  ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume mínimo garantido"
+      },
+      {
+        "answer_id": "8f65499c-23aa-49f7-9062-6571742571f7",
+        "field_id": "table_3_row_3_col_3",
+        "row": 3,
+        "col": 3,
+        "value": "53 - colaboradores ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Volume mínimo garantido"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "4189824b-eded-4162-bd89-bd5fa2a086ea",
+        "field_id": "table_3_row_4_col_1",
+        "row": 4,
+        "col": 1,
+        "value": "Operação (Controle de catraca)",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Variação de volume (pico vs. vale)"
+      },
+      {
+        "answer_id": "22c94d63-d69e-4edd-9ca6-3fb06cd5d89b",
+        "field_id": "table_3_row_4_col_2",
+        "row": 4,
+        "col": 2,
+        "value": "990",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Variação de volume (pico vs. vale)"
+      },
+      {
+        "answer_id": "89721cb9-02cd-4b55-ad33-2ab0d547ba09",
+        "field_id": "table_3_row_4_col_3",
+        "row": 4,
+        "col": 3,
+        "value": "Alto turn over",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Variação de volume (pico vs. vale)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "807d202d-73ce-4f48-bdfb-d9f5e0e81f61",
+        "field_id": "table_3_row_5_col_1",
+        "row": 5,
+        "col": 1,
+        "value": "PFP e contrato",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quadro dimensionado para qual volume?"
+      },
+      {
+        "answer_id": "ca81fb72-6efc-4bbc-bd37-aadcf1bc5f79",
+        "field_id": "table_3_row_5_col_2",
+        "row": 5,
+        "col": 2,
+        "value": "990",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quadro dimensionado para qual volume?"
+      },
+      {
+        "answer_id": "791277f6-ddff-4423-bc2d-d8dabd61fa63",
+        "field_id": "table_3_row_5_col_3",
+        "row": 5,
+        "col": 3,
+        "value": "53 colaboradores",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quadro dimensionado para qual volume?"
+      }
+    ]
+  ]
+}

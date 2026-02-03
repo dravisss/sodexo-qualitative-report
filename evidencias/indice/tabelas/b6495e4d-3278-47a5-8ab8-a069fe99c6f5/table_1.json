@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-01-30T16:50:46.907Z",
+  "submission_id": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5",
+  "table_id": "table_1",
+  "roteiro_parent": "Operacional",
+  "roteiro_subsection_code": "B",
+  "roteiro_subsection_title": "Custos Operacionais e Insumos",
+  "section_name": "Geral",
+  "subsection_name": "Contexto",
+  "table_title": "Dado",
+  "dimensions": {
+    "rows": 7,
+    "cols": 4
+  },
+  "row_labels": {
+    "1": "Custo médio mensal de insumos (alimentos/produtos de limpeza)",
+    "2": "Custo médio mensal de manutenção (programada + emergencial)",
+    "3": "Custo médio mensal de uniformes e EPIs",
+    "4": "Custo médio mensal de transporte (se houver fretado)",
+    "5": "Custos indiretos alocados (overhead corporativo)",
+    "6": "Orçamento total da unidade (Budget aprovado)"
+  },
+  "columns": [
+    {
+      "col": 0,
+      "label": "Linha"
+    },
+    {
+      "col": 1,
+      "label": "Cajamar"
+    },
+    {
+      "col": 2,
+      "label": "GRU FOOD"
+    },
+    {
+      "col": 3,
+      "label": "GRU FM"
+    }
+  ],
+  "cells": [
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      {
+        "answer_id": "fb7b7a4f-384f-4c97-94dc-f301c4c811fe",
+        "field_id": "table_1_row_1_col_1",
+        "row": 1,
+        "col": 1,
+        "value": " 371.538,07 ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de insumos (alimentos/produtos de limpeza)"
+      },
+      {
+        "answer_id": "74901221-8fa0-428b-b79e-ad92b275fcfe",
+        "field_id": "table_1_row_1_col_2",
+        "row": 1,
+        "col": 2,
+        "value": " 296.973,75",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de insumos (alimentos/produtos de limpeza)"
+      },
+      {
+        "answer_id": "f3b1b09a-6d1e-4088-9d52-66a3fc36ac9a",
+        "field_id": "table_1_row_1_col_3",
+        "row": 1,
+        "col": 3,
+        "value": "  4.600,00 ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de insumos (alimentos/produtos de limpeza)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "2b5d6ec6-30bc-4ad8-b775-83998651a2af",
+        "field_id": "table_1_row_2_col_1",
+        "row": 2,
+        "col": 1,
+        "value": "  1.712,23 ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de manutenção (programada + emergencial)"
+      },
+      {
+        "answer_id": "3d45aba7-805f-4ec3-a3c0-17550cd612bf",
+        "field_id": "table_1_row_2_col_2",
+        "row": 2,
+        "col": 2,
+        "value": " 1500,00",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de manutenção (programada + emergencial)"
+      },
+      {
+        "answer_id": "420ab4fe-5eb0-4d8d-994a-72ac3e202c2f",
+        "field_id": "table_1_row_2_col_3",
+        "row": 2,
+        "col": 3,
+        "value": "  1.400,00 ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de manutenção (programada + emergencial)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "14f7db54-ee31-4b42-8e62-ecaccc11b568",
+        "field_id": "table_1_row_3_col_1",
+        "row": 3,
+        "col": 1,
+        "value": "38.294,93 ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de uniformes e EPIs"
+      },
+      {
+        "answer_id": "d5dc058a-10c5-476d-a05a-3d4274802b94",
+        "field_id": "table_1_row_3_col_2",
+        "row": 3,
+        "col": 2,
+        "value": " 1800,00",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de uniformes e EPIs"
+      },
+      {
+        "answer_id": "029d52e6-0b59-47ff-9da6-6700ba2f6751",
+        "field_id": "table_1_row_3_col_3",
+        "row": 3,
+        "col": 3,
+        "value": " 3.000,00",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de uniformes e EPIs"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "ecaf6db7-2abf-4588-8c9b-4b241a2a2633",
+        "field_id": "table_1_row_4_col_1",
+        "row": 4,
+        "col": 1,
+        "value": "NA",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de transporte (se houver fretado)"
+      },
+      {
+        "answer_id": "c323f1af-13b3-44e0-b845-545524d20951",
+        "field_id": "table_1_row_4_col_2",
+        "row": 4,
+        "col": 2,
+        "value": "NA",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de transporte (se houver fretado)"
+      },
+      {
+        "answer_id": "93eaaf67-7d7c-4b29-911b-73a4c5847960",
+        "field_id": "table_1_row_4_col_3",
+        "row": 4,
+        "col": 3,
+        "value": "NA",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal de transporte (se houver fretado)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "8617eb57-dfae-4a8b-81da-837e9c1aa0f2",
+        "field_id": "table_1_row_5_col_1",
+        "row": 5,
+        "col": 1,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custos indiretos alocados (overhead corporativo)"
+      },
+      {
+        "answer_id": "7167535d-5c6f-413a-b662-1aa384cc883a",
+        "field_id": "table_1_row_5_col_2",
+        "row": 5,
+        "col": 2,
+        "value": "12.096",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custos indiretos alocados (overhead corporativo)"
+      },
+      {
+        "answer_id": "8a110fbf-e4f9-4cb8-8e4c-b6258148d05d",
+        "field_id": "table_1_row_5_col_3",
+        "row": 5,
+        "col": 3,
+        "value": "14000,00",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custos indiretos alocados (overhead corporativo)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "3aa09105-ee06-4a07-9e52-9aa76b047ed0",
+        "field_id": "table_1_row_6_col_1",
+        "row": 6,
+        "col": 1,
+        "value": " ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Orçamento total da unidade (Budget aprovado)"
+      },
+      {
+        "answer_id": "91f7b888-1e54-4a3d-8501-152b367a110a",
+        "field_id": "table_1_row_6_col_2",
+        "row": 6,
+        "col": 2,
+        "value": "12,39%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Orçamento total da unidade (Budget aprovado)"
+      },
+      {
+        "answer_id": "0ca078ca-7f73-4d01-84e3-ebaf1212b6f1",
+        "field_id": "table_1_row_6_col_3",
+        "row": 6,
+        "col": 3,
+        "value": "15,76%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Orçamento total da unidade (Budget aprovado)"
+      }
+    ]
+  ]
+}

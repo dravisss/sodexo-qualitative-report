@@ -1701,6 +1701,27 @@ body {
     align-items: flex-start;
 }
 
+.board-modal-header .modal-header-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.board-modal-header .cta-button-container {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.board-modal-header .cta-button {
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+}
+
 .board-modal-header.phase-1 {
     border-left: 6px solid var(--color-error);
 }

@@ -1,0 +1,105 @@
+# I-12 — Canal mensal de escuta da equipe
+
+## Identificação
+
+- Intervenção: `I-12`
+- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
+- Frente: Descompressão
+
+## O que importa aqui
+
+- Sem canal, frustrações viram boato, confronto e pedido de saída.
+- O canal é um rito de 30 minutos com resposta obrigatória, para transformar reclamação em backlog e decisão.
+- O campo registra falha no fluxo de informação e sensação de que problemas são ignorados, sustentando a intervenção.
+
+## O que está provado vs. o que é hipótese
+
+- Provado:
+  - O campo descreve desconexão entre percepção gerencial e operação, com respostas padronizadas que não correspondem à realidade.
+  - O campo descreve frustração de veteranos cujos alertas são ignorados.
+- Hipótese (a validar em execução):
+  - Um canal recorrente reduz ansiedade, melhora resolução de problemas e reduz conflitos e turnover.
+
+## Tensão / Objetivo / Impacto (doc 08)
+
+- Tensão: Acúmulo de frustrações não ditas e distanciamento entre realidade do chão e liderança.
+- Objetivo: Abrir canal oficial e recorrente de escuta ativa e fluxo bottom-up.
+- Impacto esperado: Reduzir ansiedade e identificar problemas antes de virarem crises.
+
+## Descrição (doc 08, com adaptações)
+
+O canal é um rito com três regras.
+
+- Curto: 30 minutos.
+- Recorrente: todo mês.
+- Com resposta: toda demanda precisa de status no mês seguinte.
+
+Governança mínima:
+
+- Entradas: lista de bloqueios e pedidos.
+- Saídas: backlog priorizado + resposta pública do status.
+- Escalonamento: itens sem dono ou sem resposta viram pauta com GO.
+
+## Evidências (citações + leitura)
+
+### Evidência 1 — Respostas padronizadas e ignorar problemas reais
+
+> "Reclamações dos funcionários sobre a falta de produtos, equipamentos ou problemas estruturais são frequentemente ignoradas ou recebem respostas padronizadas que não correspondem à realidade vivida"
+
+Leitura:
+- O campo descreve falha de fluxo de informação; o canal cria uma rotina para transformar isso em decisão.
+
+### Evidência 2 — Alertas de veteranos desconsiderados
+
+> "frustração de funcionários veteranos cujos alertas sobre problemas operacionais (...) são ignorados"
+
+Leitura:
+- A escuta formaliza o uso do conhecimento tácito e reduz sensação de desvalorização.
+
+## Força da evidência
+
+- Classificação: Sustentado qualitativamente
+- Observação: o problema de fluxo de informação é sustentado por evidência qualitativa do campo. O efeito em clima e operação depende de governança.
+
+## Lacunas (viabilidade/execução)
+
+- Definir template de registro do backlog e SLA de resposta.
+- Definir o que pode ser resolvido localmente e o que exige escalonamento.
+- Definir critério de sucesso do piloto em 90 dias (ex.: redução de pendências sem resposta).
+
+## Métricas possíveis
+
+- Turnover:
+  - Definição operacional mínima: desligamentos no mês dividido por headcount médio do mês; janela mensal.
+  - Fonte provável: RH/folha.
+  - Observação: efeito indireto.
+- Absenteísmo / INSS:
+  - Definição operacional mínima: absenteísmo mensal médio; janela mensal.
+  - Fonte provável: ponto/RH.
+  - Observação: efeito indireto.
+- Risco jurídico/passivo:
+  - Definição operacional mínima: número de denúncias e conflitos formais; janela trimestral.
+  - Fonte provável: RH/Compliance.
+  - Observação: sem baseline no acervo.
+- Operação/qualidade:
+  - Definição operacional mínima: número de itens do backlog abertos, resolvidos e em atraso e tempo médio de resposta; janela mensal.
+  - Fonte provável: registro do canal.
+  - Observação: métrica principal do piloto.
+
+## Riscos / Pré-condições
+
+- Se não houver resposta e escalonamento, o canal vira ritual de frustração.
+- Se o canal for usado para punição, ele morre.
+
+## Próximos passos (Fase 4 → 5)
+
+- Rodar piloto por 3 ciclos mensais com template único e status público.
+
+## Apêndice — Rastreabilidade (para auditoria)
+
+- Evidência 1:
+  - fonte: síntese de campo
+  - referência completa (path + linhas/IDs): `Refined/mapeamento_tensoes_intervencoes.md` linhas 210–212.
+- Evidência 2:
+  - fonte: síntese de campo
+  - referência completa (path + linhas/IDs): `Refined/mapeamento_tensoes_intervencoes.md` linhas 238–240.

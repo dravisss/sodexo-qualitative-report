@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-01-30T16:50:46.905Z",
+  "submission_id": "6d9f5d94-7ec5-4127-935b-9a3707b37849",
+  "table_id": "table_0",
+  "roteiro_parent": null,
+  "roteiro_subsection_code": null,
+  "roteiro_subsection_title": null,
+  "section_name": "Geral",
+  "subsection_name": "Contexto",
+  "table_title": "Dado",
+  "dimensions": {
+    "rows": 3,
+    "cols": 4
+  },
+  "row_labels": {
+    "2": "Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)"
+  },
+  "columns": [
+    {
+      "col": 0,
+      "label": "Linha"
+    },
+    {
+      "col": 1,
+      "label": "Cajamar"
+    },
+    {
+      "col": 2,
+      "label": "GRU FOOD"
+    },
+    {
+      "col": 3,
+      "label": "GRU FM"
+    }
+  ],
+  "cells": [
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      {
+        "answer_id": "9b023ce8-fb7d-4702-b93f-f7d9ab38d4d5",
+        "field_id": "table_0_row_2_col_1",
+        "row": 2,
+        "col": 1,
+        "value": "123",
+        "updated_at": "2026-01-17T23:10:15.006Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)"
+      },
+      {
+        "answer_id": "3fa8b609-c4f0-4c70-b427-1ea34d801f53",
+        "field_id": "table_0_row_2_col_2",
+        "row": 2,
+        "col": 2,
+        "value": "1234",
+        "updated_at": "2026-01-17T23:10:15.009Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)"
+      },
+      {
+        "answer_id": "763a2802-9df2-4057-a38b-c882c1af16c3",
+        "field_id": "table_0_row_2_col_3",
+        "row": 2,
+        "col": 3,
+        "value": "12345",
+        "updated_at": "2026-01-17T23:10:15.012Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)"
+      }
+    ]
+  ]
+}

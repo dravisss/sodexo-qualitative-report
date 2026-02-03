@@ -1,0 +1,664 @@
+                                  Título do Documento               Programa de PLR Variável Gerentes de Unidade
+
+                                  Código                            REB_OPE_08
+                                                                    Ana Dias
+                                  Elaborador por:                                                                            Número e data de revisão                    17          15/10/2024
+                                                                    Gian Joaquim
+                                                                    Lídia Santos
+                                  Revisado por:                                                                              Data da Criação                                  01/06/2018
+                                                                    Ronaldo Nóbrega
+                                  Aprovado por:                                                                              Data da Próxima revisão                          15/10/2026
+                                                                    Alexandre Pacheco
+
+
+
+1.     OBJETIVO
+
+
+Determinar os critérios e regras do Programa de PLR de Gerentes de Unidade, com base em
+resultados mensuráveis quantitativos e qualitativos, e que visam a participação efetiva destes
+colaboradores no atingimento dos resultados da empresa e nos termos da legislação em vigor
+(Participação nos Lucros e Resultados - PLR).
+
+Este programa tem também como objetivos:
+      •      Oferecer recompensa atrativa e competitiva frente ao mercado;
+      •      Aumentar o comprometimento com “Resultados”;
+      •      Premiar o cumprimento e superação dos objetivos e implementar uma cultura de meritocracia.
+
+
+2.     ÁREA DE APLICAÇÃO
+
+
+Este procedimento aplica-se aos ocupantes de posições de Gerentes de Unidade Operacional
+(inclusive adjuntos e cargos de gestão operacional nível site oriundas do Design Organizacional), e
+Comissários (Offshore).
+
+
+3.     RESPONSABILIDADES
+
+
+       Cargo/ Área                                                                        Responsabilidade Principal
+     Relações Sindicais               Negocia com os Sindicatos envolvidos as regras dos programas;
+                                      Manter atualizadas as informações deste procedimento;
+      Remuneração &                   Disponibilizar a ferramenta e fazer a Gestão e Controle das Alocações dos GU’s;
+          Benefícios                  Apuração dos cálculos;
+                                      Disponibilizar os valores para aprovações dos gestores.
+                                      Fazer as alocações mensais dos colaboradores elegíveis na ferramenta disponível,
+ Gestores Operacionais                garantindo que foram alocados todos os centros de lucro que cada colaborador foi
+                                      responsável durante o ano fiscal
+                                      Dar orientação suporte aos Gestores sobre o processo e condições gerais da
+   RH Business Partner                premiação durante o ciclo;
+                                      Apoio no esclarecer as dúvidas dos Gestores sobre esta política.
+
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: Novembro/ 2015.
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              2
+
+
+
+
+       Planejamento                   Informar os resultados budget (orçado x realizado) nas linhas de faturamento e GM%
+          Financeiro                  realizado/ orçada em percentual de todo o ano fiscal.
+                                      Informar o GM% (orçado x realizado) por gestor, para cálculo de atingimento do
+ Controller operacional
+                                      Multiplicador Nível II (Resultado do Gestor);
+                                      Realizar o pagamento do Programa.
+      Serviços de RH
+                                      Apoio técnico com informações e/ou relatórios de folha de pagamento.
+ Diretores Operacionais
+                                      Aprovações das aferições e do cálculo final.
+             (N+2)
+
+ Diversidade, Equidade                Monitora e consolida os resultados da cota PcD por quarter de cada diretoria e
+          e Inclusão                  compartilha com a área de Remuneração para deflator do PLR.
+
+
+4.     DESCRITIVO DO PROGRAMA
+
+
+4.1.          Conceitos Utilizados
+      •      Unidade: um centro de lucro que totaliza os serviços prestados a um cliente com realização
+             financeira, qualidade e de pessoal;
+      •      Margem Bruta em percentual: GM%, Gross margin (margem bruta)
+      •      Site: conjunto de centros de lucro que totalizam os serviços prestados a um cliente
+             (localidade) com realização financeira, qualidade e de pessoal;
+      •      Centro de Lucro de Responsabilidade: centro de lucro que o elegível ao programa tem
+             responsabilidade pela gestão financeira (budget orçado – com base no SAP e nos registros
+             da área financeira da dimensão, responsável pela validação dos resultados);
+      •      Atingimento da Meta: alcance/realização do budget (orçado x realizado);
+      •      Gatilho de pagamento: a realização financeira mínima para iniciar o pagamento da
+             premiação;
+      •      Superação: este programa adota o conceito de superação de atingimento dos resultados da
+             unidade/site do elegível em percentual (%) o que permite acelerar a oportunidade de ganho.
+
+
+4.2.          Elegibilidade
+
+
+São elegíveis a este Programa os colaboradores que:
+
+
+      •     Forem admitidos até 15 de março do ano fiscal vigente;
+      •     Tenham trabalhado por no mínimo 6 meses no ano fiscal;
+                   •      Colaboradoras afastadas por licença maternidade tem direito ao programa por todo o
+                          período da licença;
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      2
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              3
+
+
+
+                   •      Colaboradores afastados que tenham no mínimo 6 meses trabalhados no exercício
+                          fiscal.
+      •      Ocupem posições com um dos seguintes cargos
+                              GERENTE UNIDADE OPERACIONAL I, II e III
+                              GERENTE UNIDADE ALIMENTACAO I, II e III (Food)
+                              GERENTE UNIDADE CONSERVACAO I, II e III (Soft FM)
+                              GERENTE UNIDADE INFRAESTRUTURA I, II e III (Hard FM)
+                              GERENTE UNIDADE SERVICOS INTEGRADOS I, II e III
+                              GERENTE UNIDADE OPERACIONAL ADJUNTO I, II e III
+                              GERENTE UNIDADE ADJUNTO I, II e III
+                              GERENTE MULTIUNIDADE OPERACIONAL I, II e III
+                              GERENTE ALIMENTOS & BEBIDAS
+                              GERENTE EVENTOS
+                              CHEFE EXECUTIVO
+
+
+
+Não são elegíveis a este Programa os colaboradores que:
+      •      Sejam elegíveis a outro programa de PLR;
+      •      Tenham sido admitidos a partir de 16 de março do ano fiscal vigente;
+      •      Pedido de demissão dentro FY (01/09/2024 até 31/08/2025): perde-se a elegibilidade ao ciclo;
+      •      Demitidos por justa causa, a qualquer momento do período antes do pagamento;
+      •      Colaboradores que tenham trabalhado menos de 6 meses dentro do ano fiscal.
+
+
+4.3.          Colaboradores promovidos, com mudança de cargo ou transferidos
+
+
+Caso o colaborador mude de elegibilidade do programa em função de promoção ou adequação de
+cargo, será elegível ao programa de maior período trabalhado dentro do ano fiscal. Caso tenha ficado
+6 meses em cada programa, ele será elegível ao programa do último semestre.
+
+
+             Exemplo 1: Encarregado de restaurante promovido para Gerente Unidade Operacional no mês de
+             abril, será elegível ao programa de Encarregado de Restaurante, pois neste caso trabalhou 7/12 avos
+             (maior período) nesta função;
+             Exemplo 2: Gerente Unidade Operacional promovido para Gerente de Conta Estratégica em 01/03,
+             será elegível ao programa de Gerente de Conta Estratégica (ficha de objetivos), pois neste caso
+             trabalhou 6 meses em cada função e receberá de acordo com o programa do último semestre.
+
+
+Considerando as alocações de centros de lucros mensais, o colaborador que for transferido de
+unidade durante o exercício fiscal, terá seu histórico de metas e resultados de acordo com as
+alocações realizadas pelo gestor.
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      3
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              4
+
+
+
+             IMPORTANTE: Na ocasião em que uma transferência é discutida como oportunidade para o
+             negócio e para o colaborador, o gestor e colaborador transferido devem ter – de forma antecipada
+             – uma discussão sobre o cenário de resultados da unidade destino, assim como do Gestor e da
+             Diretoria (se aplicável) e quaisquer impactos sobre a projeção do cenário acumulado.
+             Exemplos: Passivo trabalhista, lançamento de notas fora do período, autuações, reclassificações
+             contábeis etc.
+
+
+4.4.          Indicadores do programa
+
+
+A condição primária para o pagamento da base de premiação da parcela variável deste programa é
+o atingimento do budget (orçado x realizado) no Gross Margin % para o ano fiscal, considerando o
+resultado acumulado de todos os centros de lucro sob responsabilidade do colaborador durante o
+ano fiscal.
+
+
+4.4.1.                Realização nível base
+
+
+A realização do nível base é considerada quando a meta de GM% é atingida. Para este nível será
+utilizado o conceito de “gatilho”, ou seja, o atingimento de um resultado mínimo esperado para que
+a premiação comece a ser considerada. O “gatilho” deste nível corresponde a 95% do atingimento
+da meta de budget GM%, sendo utilizada a progressão linear de 0 (zero) a 100% (cem) da base da
+premiação. Cabe salientar que o atingimento deste resultado é a base para os demais níveis.
+Se alcançada à meta de GM%, o colaborador será elegível ao recebimento de 15% da remuneração
+média anualizada, de acordo com o período trabalhado.
+Para casos de elegíveis alocados em CLs não operacionais, o orçamento da despesa administrativa
+será utilizado como mecanismo de premiação alternativo ao GM%.
+
+
+4.4.2.                Superação nível I
+
+
+A superação nível I traz ao colaborador um potencial de premiação adicional de até mais 7,5% da
+remuneração média anualizada. Para que a superação nível I seja considerada é preciso que ocorra
+a superação do resultado financeiro do GM(%). Quando a superação for de até 5 pontos percentuais,
+será aplicada a regra de progressividade linear para se obter o cálculo proporcional da premiação
+suplementar.
+                                                Superação do GM%                             Premiação adicional ao nível base
+                          Exemplo
+                                               em pontos percentuais                       (% da remuneração média anualizada)
+                                 1                              2,5                                                   3,75%
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      4
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              5
+
+
+
+
+                                 2                              4,0                                                   6,41%
+
+                                 3                             4,27                                                   6,41%
+
+                                 4                              5,0                                                   7,50%
+
+
+IMPORTANTE: Esta superação Nível I somente será computada se alcançada a premiação Nível
+Base. A superação está limitada a 5 pontos percentuais, ou seja, até 7,5% da remuneração média
+anualizada.
+
+
+4.4.3.                Multiplicador nível II
+
+
+Este multiplicador Nível II só poderá ocorrer se o Nível Base e a Superação Nível I forem atingidos.
+Caso o Gestor imediato do colaborador, registrado na folha de pagamento de agosto, atinja o
+resultado de GM% (conforme report realizado por finanças), o colaborador terá uma premiação
+suplementar IGUAL ao valor da superação do nível I.
+
+
+Caso o Gestor imediato do GU em agosto não tenha meta a ser considerada, deverá ser analisado
+o resultado do Nível acima, considerando os perímetros enviados pela área de Finanças.
+
+
+IMPORTANTE: Quaisquer mudanças que ocorram na hierarquia do GU no mês de agosto podem
+afetar o potencial de ganho de PLR, é de responsabilidade dos Gestores avaliarem as situações
+para que não haja impacto para os GUs com a mudança de hierarquia.
+
+
+4.4.4.                Deflatores
+
+
+Assumindo que as premissas financeiras (GM%) tenham sido atingidas e validadas, os deflatores
+abaixo listados podem impactar o valor a ser pago, de acordo com os critérios a seguir:
+
+
+4.4.4.1. Doença Transmitida por Alimentos (DTA) – contratos FOOD
+
+
+A DTA confirmada em qualquer centro de lucro de responsabilidade do colaborador elegível ao
+programa no momento da ocorrência da DTA deflaciona o direito ao pagamento de PLR em 100%
+do colaborador elegível responsável pelo incidente, ou seja, o colaborador perde o direito ao
+pagamento integralmente.
+
+
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      5
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              6
+
+
+
+A apuração das DTAs é realizada pela área de HSE, considerando o período de 01/09/2024 até
+31/08/2025.
+
+
+4.4.4.2. Fidelização
+
+
+A perda de contrato por iniciativa do cliente deflaciona o direito ao pagamento do PLR em
+100% do colaborador, ou seja, o colaborador perde direito ao pagamento integralmente. Será
+computada como perda de contrato a data em que a Sodexo receber a formalização do cliente
+notificando o fim do contrato. As informações de fidelização são entregues ao RH – Remuneração
+pela área de Clients For Life (CFL).
+
+
+Os motivos de perda de contrato que anulam o direito de premiação deste programa, e que devem
+ser consideradas “por iniciativa do cliente” são:
+             Técnico: Problemas com a qualidade/não cumprimento dos serviços contratuais;
+             Relacionamento: Fraco de ambas as partes.
+
+
+Os motivos abaixo não são considerados deflatores do programa como perda de contrato:
+             Rescisão por Iniciativa Sodexo: quando a iniciativa de término de contrato parte da Sodexo;
+             Financeiro: Perda por preço/investimento;
+             Autogestão: cliente decidiu por autogestão.
+             Site/unidade Fechou: o cliente encerrou as atividades naquele local;
+             Fim do Projeto: Contrato assinado com projeto específico e prazo determinado para início e
+             término.
+
+
+4.4.4.3. Meta de PcDs
+
+
+O não atingimento da meta de PcDs da Diretoria Operacional deflaciona o direito ao pagamento
+de PLR em 15%, ou seja, o valor total calculado é reduzido em 15%. Caso o perímetro de Diretoria
+Operacional não esteja disponível ou não seja aplicável pelo modelo de negócio, o perímetro do
+Segmento / Dimensão deverá ser utilizado.
+
+
+Os 15% de deflator serão apurados divididos por quarter (a cada timestre), ou seja, 3,75% de
+deflator para cada final de quarter em que a diretoria não atingir a cota.
+Ao final do último quarter (fechamento do FY25) somaremos os deflatores para aplicação no cálculo
+de pagamento. A apuração dos resultados será feita pela área de Diversidade, Equidade e Inclusão,
+e compartilhada com a área de Remuneração e RH Operações.
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      6
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              7
+
+
+
+
+Exemplo:
+                                                                        % COTA -              % COTA
+                                             DIRETORIA                                                              DEFLATOR
+                                                                          LEI                ATINGIDA
+
+                                                     Q1                     5,0%                  4,8%                  3,75%
+                                                     Q2                     5,0%                  5,1%                  0,00%
+                                                     Q3                     5,0%                  4,9%                  3,75%
+                                                     Q4                     5,0%                  5,0%                  0,00%
+                                               FINAL FY                     5,0%                  5,0%                  7,50%
+
+
+IMPORTANTE: Mesmo a diretoria fechando o ano fiscal com 5%, o deflator considerado será o
+totalizador do ano fiscal no FY. Neste exemplo (quadro acima), a diretoria finalizou dois quarters fora
+da cota e dois dentro da cota, e isso resulta no deflator de 7,5% do ano fiscal no FY.
+Quanto mais quarters forem atingidos fechados com a cota cumprida, menor será o deflator no final
+do ano.
+
+
+
+
+4.4.4.4 Meta de Turnover Total
+
+
+O não atingimento da meta de Turnover total da Diretoria Operacional no período do ano fiscal
+deflaciona o direito ao pagamento de PLR em até 10%.
+
+
+O acompanhamento da meta de turnover deve ser realizado junto com os Gestores Operacionais e
+respectivos Business Partners.
+
+
+5.     REFERÊNCIA DE CÁLCULO E PAGAMENTO
+
+
+O programa será proporcionalmente aplicado ao número correspondente de avos relativos aos
+meses trabalhados dentro do ano fiscal na função amparada por este programa, considerando no
+mínimo 6 meses trabalhados.
+Não será considerado no momento do cálculo o mês que corresponda a algumas das seguintes
+situações:
+      •      Admitidos após o dia 15 do mês em curso;
+
+      •      Desligados até o dia 14 do mês em curso, ou seja, não trabalhou no mínimo 15 dias no mês;
+
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      7
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              8
+
+
+
+      •      Alocação no centro de lucro com data de inauguração (com ou sem atraso) após o dia 16 do
+             mês em curso;
+      •      Alocação no centro de lucro com data de encerramento até o dia 14 do mês em curso.
+      •      Afastamentos superiores a 15 dias, quando o período trabalhado no mês seja inferior a 15
+             dias. Já no caso de afastamento prolongado haverá o desconto dos meses não trabalhados,
+             com exceção ao afastamento por licença maternidade, desde que o colaborador tenha
+             trabalhado ao menos 6 meses dentro do ano fiscal. Caso o saldo do período trabalhado, após
+             o desconto do afastamento, seja inferior a 6 meses, o colaborador não será elegível ao PLR
+             deste programa no ano vigente.
+                   •      Colaboradoras afastadas por licença maternidade tem direito ao programa por todo o
+                          período da licença, porém, para efeito de cálculo do PLR, serão considerados
+                          somente os meses de alocação, ou seja, apenas os meses trabalhados, uma vez que
+                          colaboradoras em licença não impactam no resultado da unidade (positivamente ou
+                          negativamente).
+
+
+      •      Para os colaboradores elegíveis a esse programa que também recebem “Gratificação
+             Catering Google” através da verba “Gratificação eventos GSA”, o valor total referente aos 4
+             últimos pagamentos dessa Gratificação será reduzido da: superação nível I (item 4.4.2) e do
+             multiplicador nível II (item 4.4.3).
+
+
+5.1. Média salarial anualizada e Target de PLR
+
+
+A referência de remuneração utilizada como base para o cálculo é a média do salário base anualizado
+(sem adicionais incidentais, como: ajuda de custo, adicional de transferência, gratificação,
+periculosidade, insalubridade, DSR, etc.). A média salarial anualizada é calculada conforme o quadro
+abaixo: contempla 12 salários (12 meses) + 1 salário (13º salário) + 1/3 de férias, totalizando os 13+1/3
+encontrados no cálculo.
+
+
+O Target de PLR (premiação para atingimento de 100% da meta) é obtido ao calcularmos 15% da
+média salarial anualizada conforme parte inferior do quadro:
+
+
+
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      8
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                              9
+
+
+
+                                                2022                                                                           2023
+                            SET          OUT            NOV         DEZ          JAN          FEV          MAR          ABR            MAI         JUN          JUL          AGO
+Salário Base              4.000,00     4.000,00        4.000,00   4.000,00     4.480,00     4.480,00 4.480,00         4.480,00        4.480,00   4.480,00     4.480,00     4.480,00
+Média Anual                                                                                      4.320,00
+ Média Anualizada                                                                           4.320,00 * (13+1/3)
+    (base 13+1/3)                                                                              57.600,00
+
+                                                                                                  15,0%
+      PLR Target
+                                                                                               57.600 * 15%
+        100%
+                                                                                                8.640,00
+
+Considerando a realização nível base + superação nível I + multiplicador nível II, o colaborador
+elegível poderá ter um ganho total de até 30% do salário médio anualizado.
+
+
+Realização Nível Base com atingimento de 100% = 15% de target
+Superação Nível I = 7,5% de target
+Multiplicador nível II = Mesmo target alcançado na superação nível I.
+Atingimento em 100% de todas as metas = Total de 30% de target.
+
+
+
+
+6.     APURAÇÃO E PAGAMENTO
+
+
+As alocações de unidades/sites que ficaram sob a responsabilidade de um colaborador elegível
+serão utilizadas como base para o cálculo dos valores devidos neste programa. Essas alocações
+devem ser feitas dentro do cronograma, de setembro a agosto, pelo gestor imediato.
+As alocações devem ser revisadas pelos gestores mensalmente para garantir melhor gestão,
+agilidade no processo de cálculo e evitando que o cronograma e/ou a qualidade das informações
+sejam comprometidos. É de responsabilidade do colaborador elegível acompanhar se o gestor
+imediato está realizando as alocações corretamente.
+
+
+O Gestor imediato, em 31 de agosto do ano fiscal vigente, deverá validar as alocações informadas
+na ferramenta oficial de alocações. Caso o colaborador tenha ficado sob responsabilidade de outros
+gestores durante o ano fiscal, e o Gestor responsável pela validação tenha dúvida sobre as
+alocações, deverá esclarecer diretamente com os gestores anteriores.
+
+
+Após as alocações serem revisadas, a área de RH/Remuneração inicia o processo dos cálculos
+individuais, disponibilizando até 2 prévias de cálculo dentro da ferramenta, para que seja feita a
+devida validação das alocações e respectivas correções.
+
+
+Com base nas informações recebidas, os cálculos são feitos, auditados e aprovados conforme plano
+de delegação. O prazo para validações dos extratos/cálculos será devidamente comunicado pela
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                      9
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                          10
+
+
+
+área de RH - Remuneração, e caso esse prazo não seja cumprido pelo gestor, a aprovação seguirá
+para o próximo nível de gestão.
+
+
+Por fim, os valores calculados são enviados para pagamento em folha e são processados pela área
+de Serviços de RH
+
+
+Caso o gestor solicite recálculo após o prazo estabelecido, havendo valor residual a pagar, este não
+será pago como PLR e deverá ser absorvido pelo centro de lucro, através da solicitação do pagamento
+via gratificação, conforme procedimento de Gratificação / Bonificação.
+
+
+O pagamento dos colaboradores ativos é feito ao fim de cada ciclo. O pagamento ocorre até o dia 15
+de dezembro ou dia útil anterior. Já o pagamento dos colaboradores desligados é feito no mês
+subsequente ao pagamento dos ativos, ou seja, em 15 de janeiro/2026, ou dia útil anterior. No ato do
+pagamento, é retido o IRRF (Imposto de Renda Retido na Fonte) incidente sobre o valor apurado, em
+conformidade com a lei em vigor de PLR.
+
+
+7.     VIGÊNCIA E PERIODICIDADE
+
+
+Este documento vigora para o exercício fiscal do ano em curso, podendo ser revisto e alterado a
+qualquer momento pelo TLR (Time de Liderança Regional) quando necessário, sendo válida a última
+revisão vigente no ano fiscal. O programa tem periodicidade anual seguindo os parâmetros do ano
+fiscal vigente na empresa, isto é, de setembro a agosto.
+
+
+
+
+8.     CONSIDERAÇÕES GERAIS
+
+
+A apuração dos itens formadores do cálculo dos objetivos está sujeita, a qualquer momento, à ação
+de auditoria interna e/ou externa. Após a verificação da auditoria, caso seja constatada alguma
+alteração no resultado que anule qualquer valor de premiação, o devido ajuste será feito ocasionando
+pagamento ou desconto, ou mesmo perda do programa.
+O colaborador terá 30 dias após a data de recebimento dos resultados, para solicitar revisões e
+análises da apuração.
+
+
+Colaboradores desligados que forem elegíveis ao pagamento de PLR recebem o valor de forma
+automática conforme dados bancários cadastrados em sistema, caso esses dados estejam
+divergentes o pagamento não ocorre, e o ex-colaborador poderá entrar em contato com a empresa
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                  10
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                          11
+
+
+
+através do Gestor ou unidade que trabalhou na ocasião para enviar informações bancárias
+atualizadas. Será de responsabilidade do Gestor enviar os novos dados bancários para atualização
+através da Central de atendimento. Acesse a Alicia, digite a sua dúvida que a assistente virtual irá
+mostrar opões de respostas na hora!
+
+
+Se nenhuma das respostas ajudar, clique em "Nenhuma das opções" no menu, ou clique em "Ainda
+não, vamos abrir um chamado" que aparece logo abaixo da resposta exibida. Assim serão abertos os
+canais de RH e você poderá escolher a opção >> 12AAC ADMISSÃO E ALTERAÇÕES CADASTRAIS
+>> 12ACA DADOS BANCÁRIOS. Para realizar a solicitação é necessário anexar ao chamado: extrato
+bancário constando o nome do banco, agência e conta juntamente com um documento do ex colaborador.
+
+
+Exceções às regras deste procedimento não poderão ser premiadas como PLR, pois os programas
+de Participação nos Lucros e Resultados são amparados por lei 10.101, e acordo homologado junto
+ao sindicato, sem espaço para flexibilização na interpretação das aferições e/ou ação discricionária.
+A qualquer momento no processo, o gestor ou colaborador avaliado poderá procurar orientação junto
+à Central de Atendimento e/ou RH Business Partner, no intuito de obter esclarecimentos sobre sua
+condição de premiação, procedimento e ferramentas.
+
+
+9.     REGISTROS
+Não aplicável
+
+
+10. REFERÊNCIAS
+Não aplicável.
+
+
+11. ESCLARECIMENTO DE DÚVIDAS
+Acesse a Alicia, digite a sua dúvida que a assistente virtual irá mostrar opões de respostas na hora!
+Se nenhuma das respostas ajudar, clique em "Nenhuma das opções" no menu, ou clique em "Ainda não, vamos
+abrir um chamado" que aparece logo abaixo da resposta exibida. Assim serão abertos os canais de RH e você
+poderá escolher a opção "PLR participação nos Lucros e resultados" e o canal desejado > 12PGU PLR GU ou
+12AGU PLR PORTAL BI.
+
+
+
+
+12. HISTÓRICO DE ALTERAÇÕES
+
+
+     Revisão                       Responsável                                   Data                                                 Alterações
+        00               Ronaldo Nóbrega                                   24/04/2013                Elaboração do documento.
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                  11
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                          12
+
+
+
+                                                                                                     Identidade visual padrão Sodexo.
+        01               Ronaldo Nóbrega                                   19/08/2014                Inclusão do registro Programa Remuneração
+                                                                                                     Variável GU Operacional.
+                                                                                                     Atualização do registro Programa Remuneração
+        02               Lilian Rauld                                      01/11/2014
+                                                                                                     Variável GU Operacional.
+                                                                                                     Revisão e atualização de apuração e
+        03               Lilian Rauld                                      23/01/2015
+                                                                                                     proporcionalidade.
+                                                                                                     Adequação ao novo template e código de
+        04               Lilian Rauld                                      01/04/2015
+                                                                                                     documentos da empresa.
+                                                                                                     Revisão e atualização das regras.
+                         Lilian Rauld
+        05                                                                 13/06/2016                Mudança de título do documento para Programa
+                         Shirley Moreira
+                                                                                                     de PLR Variável Gerentes de Unidade.
+                         Lilian Rauld
+        06                                                                 12/07/2016                Alteração item Considerações Gerais, ponto 2.
+                         Shirley Moreira
+                         Shirley Moreira                                                             Revisão e atualização de apuração e
+        07                                                                 15/05/2017
+                         Gustavo Mecol                                                               proporcionalidade.
+                                                                                                     Revisão e Alteração do procedimento do
+        08               Stephany Cardoso                                  31/01/2018
+                                                                                                     Programa de PLR Variável, adequação FY18
+        09               Cristiane Mariano                                 14/03/2018                Revisão do item deflatores
+        10               Cleber Vilela                                     01/03/2019                Revisão baseada no acordo de PLR 2018-2020
+                                                                                                     Revisão e atualização das regras e revisão do
+        11               Helena Mouriño                                    16/03/2020
+                                                                                                     texto.
+        12               Helena Mouriño                                    01/11/2020                Revisão das regras sem alteração de conteúdo.
+                                                                                                     Revisão de texto, com aprimoramento dos
+                                                                                                     termos (FC – GP), e formatação para melhor
+                                                                                                     organização
+                                                                                                     Atualização do catálogo de cargos elegíveis (em
+                                                                                                     decorrência do Design Organizacional)
+                         Ana Dias
+        13                                                                 01/08/2022                Definição do Deflator PcD atrelado a
+                         Gercina Medeiros
+                                                                                                     Diretoria/Segmento.
+                                                                                                     Esclarecimento das bases de finanças para
+                                                                                                     informação de atingimento do Gestor
+                                                                                                     Atualização do elaborador, revisor e aprovador
+                                                                                                     deste documento.
+                                                                                                     Ajuste de cláusulas gerais para cumprimento de
+                                                                                                     metas de GM ao invés de GP;
+        14               Ana Dias                                          01/11/2022
+                                                                                                     Melhorias de redação para esclarecimento de
+                                                                                                     critérios (sem alteração de regra)
+                                                                                                     • Alteração do elaborador, revisor e aprovador
+                                                                                                          do documento
+                                                                                                     • Ajuste geral no texto sem alteração de
+        15               Ana Dias                                          01/01/2024
+                                                                                                          regras
+                                                                                                     • Inclusão do item 4.4.4.4 Meta de Turnover
+                                                                                                          Total
+                                                                                                     • Atualização da data de pagamento dos
+        16               Rafael Almeida                                    11/04/2024                     colaboradores desligados. Mudança
+                                                                                                          ocorrida devido ao FGTS Digital.
+                         Ana Dias
+                                                                                                     •      Alteração dos revisores do documento
+        17               Gian Joaquim                                      15/10/2024
+                                                                                                     •      Atualização no item 4.2 – cargos elegíveis
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                  12
+Programa de PLR Variável Gerentes de Unidade, revisão 17                                                                                                                                          13
+
+
+
+                                                                                                     •      Atualização no item 4.4.4.3 – Meta de PcD
+                                                                                                            Mudança de regra no deflator
+                                                                                                     •      Inclusão de regra no item 5: referente a
+                                                                                                            condições de elegibilidade a pagamento de
+                                                                                                            Gratificação Catering Google.
+
+
+
+
+Não utilizar cópia impressa sem verificar a versão vigente. As informações contidas neste documento são restritas e de uso exclusivo da Sodexo do Brasil e não podem ser utilizadas ou reproduzidas
+sem autorização escrita da mesma. A base de criação deste documento está vinculada ao Procedimento PRO_EMP_01_Reg_01_Rev.: novembro/ 2015.
+                                                                                                                                                                                                  13
+

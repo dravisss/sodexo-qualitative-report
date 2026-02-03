@@ -1,0 +1,30 @@
+{
+  "source_file": "AUXILIAR SERVICOS GERAIS I II III.pdf",
+  "cargo_titulo": "AUXILIAR SERVICOS GERAIS I, II, III",
+  "codigo_cargo": "193292,193387,193485",
+  "contexto_organizacional": "CORPORATE",
+  "subordinado_a": "LÍDER, SUPERVISOR, ENCARREGADO, GERENTE UNIDADE",
+  "descricao_sumaria": "Executar serviços de limpeza e auxílio na distribuição e/ou reposição de alimentos, pré-preparar e preparar saladas e frutas, visando garantir o cumprimento de uma das etapas da qualidade dos serviços.",
+  "principais_atividades": [
+    "Higienizar utensílios, equipamentos e áreas;",
+    "Coletar e identificar amostras de alimentos;",
+    "Pré-preparar e preparar saladas e frutas;",
+    "Preparar e distribuir bebidas;",
+    "Escolher grãos e manuseio de saladas e frutas;",
+    "Limpar e organizar o refeitório; áreas externas; banheiros e demais áreas sob cuidados da equipe da unidade.",
+    "Lavar panelas;",
+    "Recolher o lixo e higienizar a área;",
+    "Distribuir e repor alimentos, bebidas e utensílios;",
+    "Preparar e distribuir lanches e desjejum;",
+    "Receber vales;",
+    "Ser responsável pela Saúde e Segurança, bem como aplicar as normas, procedimentos e diretrizes do Sistema de Gestão de Saúde e Segurança."
+  ],
+  "kpis": [
+    "Nível de satisfação de comensais e clientes;",
+    "Controles atualizados de planilha de amostra, temperatura, check list de pré-uso e controle cloro.",
+    "Limpeza e organização das áreas externas, salão e demais áreas sob cuidados da equipe da unidade."
+  ],
+  "observacoes": null,
+  "source_path": "evidencias/blobs/Descrição de cargo Frontline. FY26/AUXILIAR SERVICOS GERAIS I II III.pdf",
+  "source_sha256": "1879e0bd664ad074b266b1be258ea46b377b07a32cbe524961e7c5a6e466938a"
+}

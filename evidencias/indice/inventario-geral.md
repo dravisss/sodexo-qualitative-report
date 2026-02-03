@@ -15,14 +15,27 @@ Consolidar, em um único lugar, **todas as evidências disponíveis** (banco, bl
 
 ## Blobs baixados
 
-| Arquivo local | Origem | unit_slug | submission_id | field_id | blob_key |
-|---|---|---|---|---|---|
-| `../blobs/Menu_de_Experimentos.csv` | Netlify Blobs | cajamar | 67305793-b608-43c8-ad39-196f2aefd8c9 | table_0_row_9_col_1_file | 67305793-b608-43c8-ad39-196f2aefd8c9/table_0_row_9_col_1_file/1768670316985_Menu_de_Experimentos.csv |
-| `../blobs/Descrição de cargo Frontline. FY26.zip` | Netlify Blobs (relatoriosdx) | general | b6495e4d-3278-47a5-8ab8-a069fe99c6f5 | question_0_file | b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_0_file/1769017172677_Descri__o_de_cargo_Frontline._FY26.zip |
-| `../blobs/Base Frontline - Experimento.xlsx` | Netlify Blobs (relatoriosdx) | general | b6495e4d-3278-47a5-8ab8-a069fe99c6f5 | table_0_row_9_col_1_file | b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_9_col_1_file/1769017249113_Base_Frontline_-_Experimento.xlsx |
-| `../blobs/Tabela Salarial - Frontline Experimento.xlsx` | Netlify Blobs (relatoriosdx) | general | b6495e4d-3278-47a5-8ab8-a069fe99c6f5 | question_4_file | b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_4_file/1769019648907_Tabela_Salarial_-_Frontline_Experimento.xlsx |
-| `../blobs/Planilha simulação aviso prévio indenizado.xlsx` | Netlify Blobs (relatoriosdx) | general | b6495e4d-3278-47a5-8ab8-a069fe99c6f5 | question_75_file | b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_75_file/1769108567016_Planilha_simula__o_aviso_pr_vio_indenizado.xlsx |
-| `../blobs/REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf` | Netlify Blobs (relatoriosdx) | general | b6495e4d-3278-47a5-8ab8-a069fe99c6f5 | question_61_file | b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_61_file/1769108787132_REB_OPE_08_PLR_Gerente_Unidades_FY25_17.pdf |
+Lista simples (nomes):
+
+- Base Frontline - Experimento.xlsx
+- Tabela Salarial - Frontline Experimento.xlsx
+- Planilha simulação aviso prévio indenizado.xlsx
+- REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf
+- Descrição de cargo Frontline. FY26 (zip)
+- FOLHA GERAL COLABORADORES JAN 2026.pdf
+- Geral - Contratados por Centro de Custo.PDF
+- Dados SAP Budget FY25 - FY26.xlsx
+- Dados SAP Real Jan25-Dez25.xlsx
+- Dados SAP Real x Budget EPI e Unif FY25.xlsx
+- Relatórios de cardápio (JAN 26 — 307 Caseira Almoço)
+
+Inventário detalhado (paths + `submission_id` + `field_id` + `blob_key` + versões): `inventario-blobs-detalhado.md`
+
+## Tabelas derivadas (respostas `table_cell`)
+
+- `tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md` (quadro/salários/turnover/absenteísmo/INSS)
+- `tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_1.md` (custos operacionais/insumos)
+- `tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_2.md` (faturamento/margem)
 
 ## Itens pendentes para completar este inventário
 
@@ -70,7 +83,7 @@ Relatório do downloader (tentativas e resultados): `blobs-download-report.json`
 ## Próximos passos
 
 1. Se houver novas submissões/anexos no banco, reexecutar o export e o downloader.
-2. Salvar arquivos em `../blobs/` mantendo subpastas por `unit_slug` e/ou por `submission_id` (se necessário quando escalar).
+2. Manter os blobs organizados em `../blobs/<submission_id>/<field_id>/...` (evita colisões e melhora rastreabilidade).
 3. Atualizar este inventário com:
    - nome do arquivo
    - origem

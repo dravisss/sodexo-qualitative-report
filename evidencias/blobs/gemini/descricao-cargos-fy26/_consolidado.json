@@ -1,0 +1,116 @@
+{
+  "model": "gemini-2.5-flash-lite",
+  "input_dir": "evidencias/blobs/Descrição de cargo Frontline. FY26",
+  "output_dir": "evidencias/blobs/gemini/descricao-cargos-fy26",
+  "generated_at": "2026-01-27T10:11:35.930Z",
+  "results": [
+    {
+      "fileName": "AUXILIAR SERVICOS GERAIS I II III.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/AUXILIAR SERVICOS GERAIS I II III.pdf.json",
+      "sha256": "1879e0bd664ad074b266b1be258ea46b377b07a32cbe524961e7c5a6e466938a"
+    },
+    {
+      "fileName": "COPEIRO III.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/COPEIRO III.pdf.json",
+      "sha256": "6ac85e4a9e01d054b3a5548f3fbb1d1e3166809ecc2c3ad8460bbdd3c72eedb1"
+    },
+    {
+      "fileName": "COZINHEIRO I.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/COZINHEIRO I.pdf.json",
+      "sha256": "9cd99fb6c865869c5612e8f490dc37423f31e124e2c32b85261254d9d509c7ba"
+    },
+    {
+      "fileName": "COZINHEIRO II.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/COZINHEIRO II.pdf.json",
+      "sha256": "a36b294da1501e338c51e09950056d7bffa73f723ae43bcc5148fa7e49c4a847"
+    },
+    {
+      "fileName": "COZINHEIRO III.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/COZINHEIRO III.pdf.json",
+      "sha256": "10298164547d2eb8dc127af756b6f42b754bac90774183faa6074f43f34248d5"
+    },
+    {
+      "fileName": "ENCARREGADO LIMPEZA.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/ENCARREGADO LIMPEZA.pdf.json",
+      "sha256": "afbb8e8b8cb0a1a4a7141b2996905fcfb159d2e1c305aa85f03c8579ec8d0ea1"
+    },
+    {
+      "fileName": "GERENTE UNIDADE OPERACIONAL I e II (1).pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/GERENTE UNIDADE OPERACIONAL I e II (1).pdf.json",
+      "sha256": "221d08b12e97f8a99f88fef598c308ad9b9a6de45377ee9afa00d0a40737f7c3"
+    },
+    {
+      "fileName": "GERENTE UNIDADE OPERACIONAL I e II.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/GERENTE UNIDADE OPERACIONAL I e II.pdf.json",
+      "sha256": "221d08b12e97f8a99f88fef598c308ad9b9a6de45377ee9afa00d0a40737f7c3"
+    },
+    {
+      "fileName": "JOVEM APRENDIZ ADMINISTRATIVO (1).pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/JOVEM APRENDIZ ADMINISTRATIVO (1).pdf.json",
+      "sha256": "688a90c0f4c329cdf236102c929630eaa8407278b78031de563dcde708b7656d"
+    },
+    {
+      "fileName": "JOVEM APRENDIZ ADMINISTRATIVO.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/JOVEM APRENDIZ ADMINISTRATIVO.pdf.json",
+      "sha256": "688a90c0f4c329cdf236102c929630eaa8407278b78031de563dcde708b7656d"
+    },
+    {
+      "fileName": "JOVEM APRENDIZ OPERACIONAL (1).pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/JOVEM APRENDIZ OPERACIONAL (1).pdf.json",
+      "sha256": "4d8708bbe3427e29d2aae0dbbdc87d2c247f730ff872c74556502cf94cdd75b4"
+    },
+    {
+      "fileName": "JOVEM APRENDIZ OPERACIONAL.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/JOVEM APRENDIZ OPERACIONAL.pdf.json",
+      "sha256": "4d8708bbe3427e29d2aae0dbbdc87d2c247f730ff872c74556502cf94cdd75b4"
+    },
+    {
+      "fileName": "OFICIAL ESTOQUE.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/OFICIAL ESTOQUE.pdf.json",
+      "sha256": "46dee69235117d5917f1cf9d9c4cbc8aaf26bacc1746a42bbd1d05ac7156407d"
+    },
+    {
+      "fileName": "OFICIAL LIMPEZA I.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/OFICIAL LIMPEZA I.pdf.json",
+      "sha256": "fb7ec8a3d254844d13b8d997c3015dc5d2806361a7fc83d0ae690ed7af18b4f6"
+    },
+    {
+      "fileName": "OFICIAL SERVIÇOS GERAIS I.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/OFICIAL SERVIÇOS GERAIS I.pdf.json",
+      "sha256": "d025c058499ad11d59d7622dd48f65aad9c18d667ce5f6762c96dbea214dc62e"
+    },
+    {
+      "fileName": "SUPERVISOR OPERACIONAL I.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/SUPERVISOR OPERACIONAL I.pdf.json",
+      "sha256": "6eb2c7ab8c94d0f2a31ab0b1366672712bf98f469ab344205e30bbc9e60e7d4c"
+    },
+    {
+      "fileName": "SUPERVISOR OPERACIONAL II.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/SUPERVISOR OPERACIONAL II.pdf.json",
+      "sha256": "c0fa2f4a53a4c5fb903f92bfe588652a525b6badd4a82b6653cd1045d20cde71"
+    },
+    {
+      "fileName": "SUPERVISOR OPERACIONAL III.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/blobs/gemini/descricao-cargos-fy26/SUPERVISOR OPERACIONAL III.pdf.json",
+      "sha256": "40d08b709d0493e39b083e95e265f3c7e137a4f0f6affe14554da5ff2bcb72f6"
+    }
+  ]
+}

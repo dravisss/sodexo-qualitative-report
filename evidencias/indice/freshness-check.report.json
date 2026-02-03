@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-01-30T16:51:15Z",
+  "exports": {
+    "submissions": {
+      "path": "evidencias/banco/submissions.json",
+      "count": 3,
+      "max_updated_at": "2026-01-29T17:31:00.095Z",
+      "max_created_at": "2026-01-17T23:10:11.100Z",
+      "sha256": "ca34759aa790af200b665578f47a80fcd7c502ff70c52eb5e0bc8c29e9136738"
+    },
+    "answers": {
+      "path": "evidencias/banco/answers.json",
+      "count": 15137,
+      "max_updated_at": "2026-01-29T17:31:00.505Z",
+      "max_created_at": "2026-01-28T19:09:37.461Z",
+      "sha256": "f4f380531d8fe75fe5c97df568304edabb797aa8181d59fe9ffb24bfde5112a9"
+    },
+    "attachments": {
+      "path": "evidencias/banco/attachments.json",
+      "count": 23,
+      "max_created_at": "2026-01-28T19:09:34.858Z",
+      "sha256": "9044a92161fcd284ffae5dec3e3fa56fcb2ccf342c8d805f406d9ed41d2b2787"
+    }
+  },
+  "inventory_update_report": {
+    "path": "evidencias/indice/atualizacao-inventario.report.json",
+    "generated_at": "2026-01-30T16:50:46.960Z",
+    "counts": {
+      "attachments_total": 23,
+      "new_attachments": 0,
+      "downloaded": 0,
+      "skipped_existing": 0,
+      "failed": 0
+    },
+    "delta": {
+      "submissions": {
+        "counts": {
+          "prev_total": 3,
+          "next_total": 3,
+          "added": 0,
+          "changed": 0,
+          "removed": 0
+        },
+        "added_truncated": false,
+        "changed_truncated": false,
+        "removed_truncated": false,
+        "added": [],
+        "changed": [],
+        "removed": []
+      },
+      "answers": {
+        "counts": {
+          "prev_total": 15137,
+          "next_total": 15137,
+          "added": 0,
+          "changed": 0,
+          "removed": 0
+        },
+        "added_truncated": false,
+        "changed_truncated": false,
+        "removed_truncated": false,
+        "added": [],
+        "changed": [],
+        "removed": []
+      },
+      "attachments_records": {
+        "counts": {
+          "prev_total": 23,
+          "next_total": 23,
+          "added": 0,
+          "changed": 0,
+          "removed": 0
+        },
+        "added_truncated": false,
+        "changed_truncated": false,
+        "removed_truncated": false,
+        "added": [],
+        "changed": [],
+        "removed": []
+      }
+    }
+  }
+}

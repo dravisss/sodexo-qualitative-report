@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-01-30T16:44:50.942Z",
+  "blobs_dir": "evidencias/blobs",
+  "output_root": "evidencias/blobs/csv",
+  "results": [
+    {
+      "fileName": "Base Frontline - Experimento.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_3_file/Base Frontline - Experimento.xlsx",
+      "category": "remuneracao",
+      "outDir": "evidencias/blobs/csv/remuneracao/Base_Frontline_-_Experimento",
+      "status": "skipped_existing",
+      "sha256": "d90644cff6e81d0b4131407e7dff240b68658852b2076b1b0e7f4254f1fdd94a"
+    },
+    {
+      "fileName": "Tabela Salarial - Frontline Experimento.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_4_file/Tabela Salarial - Frontline Experimento.xlsx",
+      "category": "remuneracao",
+      "outDir": "evidencias/blobs/csv/remuneracao/Tabela_Salarial_-_Frontline_Experimento",
+      "status": "skipped_existing",
+      "sha256": "9c3a44afeb1b084adae7fe69531f4df703eff29e5ecf5244758414e08a634ef4"
+    },
+    {
+      "fileName": "12302 - Relatório de cardápios - JAN 26 - 307 Caseira Almoço.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_5_file/12302 - Relatório de cardápios - JAN 26 - 307 Caseira Almoço.xlsx",
+      "category": "cardapios",
+      "outDir": "evidencias/blobs/csv/cardapios/12302_-_Relatório_de_cardápios_-_JAN_26_-_307_Caseira_Almoço",
+      "status": "skipped_existing",
+      "sha256": "d6860fc29d2cd79b2f777ba12e385048ed9d541219776b3189ef5ea2bd8ed333"
+    },
+    {
+      "fileName": "14545 - Relatório de cardápios - JAN 26 - 307 Caseira Almoço.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_5_file/14545 - Relatório de cardápios - JAN 26 - 307 Caseira Almoço.xlsx",
+      "category": "cardapios",
+      "outDir": "evidencias/blobs/csv/cardapios/14545_-_Relatório_de_cardápios_-_JAN_26_-_307_Caseira_Almoço",
+      "status": "skipped_existing",
+      "sha256": "5a5c87eb27edc3f42b04e3e3673589a7db36a74dc24a9e9f6473064d9d76bb14"
+    },
+    {
+      "fileName": "Planilha simulação aviso prévio indenizado.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_75_file/Planilha simulação aviso prévio indenizado.xlsx",
+      "category": "rescisao",
+      "outDir": "evidencias/blobs/csv/rescisao/Planilha_simulação_aviso_prévio_indenizado",
+      "status": "skipped_existing",
+      "sha256": "442ee2c534675663edf3ffe7c44e46e230d28e589639bcfcc66c49b44f8c54d8"
+    },
+    {
+      "fileName": "Dados SAP Real x Budget EPI e Unif FY25.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_8_file/Dados SAP Real x Budget EPI e Unif FY25.xlsx",
+      "category": "sap",
+      "outDir": "evidencias/blobs/csv/sap/Dados_SAP_Real_x_Budget_EPI_e_Unif_FY25",
+      "status": "skipped_existing",
+      "sha256": "80d9d26b9b72348b20b91b182d301960e4e93d15e8572abd7bc68fa66146d89c"
+    },
+    {
+      "fileName": "Base Frontline - Experimento.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_9_col_1_file/Base Frontline - Experimento.xlsx",
+      "category": "remuneracao",
+      "outDir": "evidencias/blobs/csv/remuneracao/Base_Frontline_-_Experimento",
+      "status": "skipped_existing",
+      "sha256": "d90644cff6e81d0b4131407e7dff240b68658852b2076b1b0e7f4254f1fdd94a"
+    },
+    {
+      "fileName": "Dados SAP Real Jan25-Dez25.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_1_row_1_col_1_file/Dados SAP Real Jan25-Dez25.xlsx",
+      "category": "sap",
+      "outDir": "evidencias/blobs/csv/sap/Dados_SAP_Real_Jan25-Dez25",
+      "status": "skipped_existing",
+      "sha256": "dc866e54fec3e7744f6f2781cbc6df6f80540d88f94f32cb451f26cc607f8a70"
+    },
+    {
+      "fileName": "Dados SAP Budget FY25 - FY26.xlsx",
+      "input": "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_1_row_6_col_1_file/Dados SAP Budget FY25 - FY26.xlsx",
+      "category": "sap",
+      "outDir": "evidencias/blobs/csv/sap/Dados_SAP_Budget_FY25_-_FY26",
+      "status": "skipped_existing",
+      "sha256": "d6d98f677f700b8bf9b2dc5d426ce6003e06d90477ac81b41aa67b704ae21d17"
+    },
+    {
+      "fileName": "Base Frontline Experimento (1).xlsx",
+      "input": "evidencias/blobs/Base Frontline Experimento (1).xlsx",
+      "category": "remuneracao",
+      "outDir": "evidencias/blobs/csv/remuneracao/Base_Frontline_Experimento_(1)",
+      "status": "skipped_existing",
+      "sha256": "d90644cff6e81d0b4131407e7dff240b68658852b2076b1b0e7f4254f1fdd94a"
+    },
+    {
+      "fileName": "Simulação Aviso Prévio Indenizado.xlsx",
+      "input": "evidencias/blobs/Simulação Aviso Prévio Indenizado.xlsx",
+      "category": "rescisao",
+      "outDir": "evidencias/blobs/csv/rescisao/Simulação_Aviso_Prévio_Indenizado",
+      "status": "skipped_existing",
+      "sha256": "442ee2c534675663edf3ffe7c44e46e230d28e589639bcfcc66c49b44f8c54d8"
+    },
+    {
+      "fileName": "Tabela Salarial - Frontline Experimento.xlsx",
+      "input": "evidencias/blobs/Tabela Salarial - Frontline Experimento.xlsx",
+      "category": "remuneracao",
+      "outDir": "evidencias/blobs/csv/remuneracao/Tabela_Salarial_-_Frontline_Experimento",
+      "status": "skipped_existing",
+      "sha256": "9c3a44afeb1b084adae7fe69531f4df703eff29e5ecf5244758414e08a634ef4"
+    }
+  ]
+}

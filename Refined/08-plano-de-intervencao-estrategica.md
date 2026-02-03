@@ -29,7 +29,7 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 ### Ações transversais (Todas as unidades)
 
 #### I-01 — Compra centralizada de uniformes e proteção
-**Tensão:** Colaboradores trabalhando em condições indignas (roupas rasgadas) ou inseguras por falta de EPI, gerando risco legal e moral.
+**Tensão:** Colaboradores trabalhando em condições indignas (roupas rasgadas e apenas um uniforme para escala 6x1) ou inseguras por falta de EPI, gerando risco legal e moral.
 **Descrição:** Compra centralizada emergencial de kits de uniforme e EPI para zerar o déficit em todas as unidades críticas, tratada como investimento corporativo (fora do P&L da unidade). Inclui mapeamento de necessidades reais vs. estoque e criação de processo de realocação de recursos entre unidades do mesmo portfólio.
 **Objetivo:** Zerar o déficit de equipamentos básicos de proteção e vestimenta em todas as unidades.
 **Impacto:** Ao garantir a dignidade básica, elimina-se o fator mais visível de descontentamento e reduz-se imediatamente o risco de passivo trabalhista por insalubridade.

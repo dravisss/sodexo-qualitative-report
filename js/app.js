@@ -42,7 +42,7 @@ class ReportReader {
             {
                 id: 'geral',
                 title: 'Visão Geral',
-                articleIds: ['00', '06', '08', '13', '12']
+                articleIds: ['00', '16', '06', '08', '13', '12']
             },
             {
                 id: 'artigos',
@@ -223,6 +223,10 @@ class ReportReader {
             if (article.id === '08') {
                 this.setupWarRoomModal();
                 this.setupMatrixSpotlight();
+                this.setupPlanHubLinks();
+            } else if (article.id === '16') {
+                this.setupMatrixDecisionPanel();
+                this.setupMatrixInterventionLinks();
             } else if (article.id === '05') {
                 this.setupCaseFilesTabs();
             } else if (article.id === '15') {
@@ -1553,9 +1557,10 @@ class ReportReader {
             <div class="board-modal-overlay" id="board-modal-overlay">
                 <div class="board-modal">
                     <div class="board-modal-header" id="board-modal-header">
-                        <div>
+                        <div class="modal-header-main">
                             <div class="modal-id" id="modal-id"></div>
                             <h3 class="modal-title" id="modal-title"></h3>
+                            <div class="cta-button-container" id="modal-actions"></div>
                         </div>
                         <button class="board-modal-close" id="board-modal-close">×</button>
                     </div>
@@ -1595,6 +1600,7 @@ class ReportReader {
         const header = document.getElementById('board-modal-header');
         const idEl = document.getElementById('modal-id');
         const titleEl = document.getElementById('modal-title');
+        const actionsEl = document.getElementById('modal-actions');
         const tensaoEl = document.getElementById('modal-tensao');
         const descricaoEl = document.getElementById('modal-descricao');
         const objetivoEl = document.getElementById('modal-objetivo');
@@ -1610,12 +1616,36 @@ class ReportReader {
         document.querySelectorAll('.board-card').forEach(card => {
             card.addEventListener('click', () => {
                 const phase = card.dataset.phase;
-                idEl.textContent = card.dataset.id;
+                const id = card.dataset.id;
+                idEl.textContent = id;
                 titleEl.textContent = card.dataset.title;
                 tensaoEl.textContent = card.dataset.tensao || '-';
                 descricaoEl.textContent = card.dataset.descricao || '-';
                 objetivoEl.textContent = card.dataset.objetivo || '-';
                 impactoEl.textContent = card.dataset.impacto || '-';
+
+                if (actionsEl) {
+                    actionsEl.innerHTML = '';
+
+                    const dossier = document.createElement('a');
+                    dossier.className = 'cta-button';
+                    dossier.href = `dossie.html?i=${encodeURIComponent(id)}`;
+                    dossier.textContent = '📄 Dossiê';
+
+                    const arg = document.createElement('a');
+                    arg.className = 'cta-button';
+                    arg.href = `argumentario.html?i=${encodeURIComponent(id)}`;
+                    arg.textContent = '🧾 Argumentário';
+
+                    const kanban = document.createElement('a');
+                    kanban.className = 'cta-button';
+                    kanban.href = `kanban.html?card=${encodeURIComponent(id)}`;
+                    kanban.textContent = '📋 Kanban';
+
+                    actionsEl.appendChild(dossier);
+                    actionsEl.appendChild(arg);
+                    actionsEl.appendChild(kanban);
+                }
 
                 // Set phase class
                 header.className = 'board-modal-header phase-' + phase;
@@ -2143,6 +2173,255 @@ class ReportReader {
     showLoading() {
         this.contentEl.classList.add('loading');
         this.contentEl.innerHTML = 'Carregando';
+    }
+
+    setupMatrixInterventionLinks() {
+        const root = this.contentEl;
+        if (!root) return;
+
+        const headings = root.querySelectorAll('h2');
+        headings.forEach(h => {
+            const text = (h.textContent || '').trim();
+            const m = text.match(/^(I-\d{2})\b/);
+            if (!m) return;
+
+            const id = m[1];
+            const existing = h.nextElementSibling;
+            if (existing && existing.classList && existing.classList.contains('cta-button-container')) return;
+
+            const container = document.createElement('div');
+            container.className = 'cta-button-container';
+
+            const dossier = document.createElement('a');
+            dossier.className = 'cta-button';
+            dossier.href = `dossie.html?i=${encodeURIComponent(id)}`;
+            dossier.textContent = '📄 Abrir Dossiê';
+
+            const arg = document.createElement('a');
+            arg.className = 'cta-button';
+            arg.href = `argumentario.html?i=${encodeURIComponent(id)}`;
+            arg.textContent = '🧾 Abrir Argumentário';
+
+            container.appendChild(dossier);
+            container.appendChild(arg);
+
+            h.insertAdjacentElement('afterend', container);
+        });
+    }
+
+    setupMatrixDecisionPanel() {
+        const root = this.contentEl;
+        if (!root) return;
+
+        const article = root.querySelector('article');
+        if (!article) return;
+
+        if (article.querySelector('[data-matrix-decision-panel="true"]')) return;
+
+        const headings = Array.from(article.querySelectorAll('h2'));
+        if (!headings.length) return;
+
+        const getSectionNodes = (h) => {
+            const nodes = [];
+            let el = h.nextElementSibling;
+            while (el && el.tagName !== 'H2') {
+                nodes.push(el);
+                el = el.nextElementSibling;
+            }
+            return nodes;
+        };
+
+        const getFieldValue = (sectionNodes, fieldName) => {
+            const needle = String(fieldName || '').toLowerCase();
+            for (const node of sectionNodes) {
+                if (node.tagName !== 'UL' && node.tagName !== 'OL') continue;
+                const items = Array.from(node.querySelectorAll('li'));
+                for (const li of items) {
+                    const t = (li.textContent || '').trim();
+                    const lower = t.toLowerCase();
+                    if (!lower.startsWith(needle)) continue;
+                    const idx = t.indexOf(':');
+                    if (idx === -1) return '';
+                    return t.slice(idx + 1).trim();
+                }
+            }
+            return '';
+        };
+
+        const buildIndex = () => {
+            return headings.map(h => {
+                const title = (h.textContent || '').trim();
+                const idMatch = title.match(/^(I-\d{2})\b/);
+                const id = idMatch ? idMatch[1] : '';
+                const sectionNodes = getSectionNodes(h);
+                const frente = getFieldValue(sectionNodes, 'Frente');
+                const risco = getFieldValue(sectionNodes, 'Risco mitigado');
+                const viabilidade = getFieldValue(sectionNodes, 'Viabilidade (semáforo)');
+                const forca = getFieldValue(sectionNodes, 'Força da evidência');
+                const text = [title, ...sectionNodes.map(n => (n.textContent || ''))].join('\n');
+                return { h, id, title, frente, risco, viabilidade, forca, text };
+            }).filter(x => x.id);
+        };
+
+        const index = buildIndex();
+        if (!index.length) return;
+
+        const countMatches = (predicate) => index.filter(predicate).length;
+        const scrollToFirstMatch = (predicate) => {
+            const match = index.find(predicate);
+            if (!match) return false;
+            match.h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return true;
+        };
+
+        const panel = document.createElement('section');
+        panel.setAttribute('data-matrix-decision-panel', 'true');
+
+        const panelTitle = document.createElement('h2');
+        panelTitle.textContent = 'Painel de decisão (Matriz)';
+
+        const panelIntro = document.createElement('p');
+        panelIntro.textContent = 'Use esta página para comparar e priorizar intervenções. Para detalhes de mecanismo e governança, abra o Dossiê. Para defesa executiva e objeções, abra o Argumentário.';
+
+        const tracksTitle = document.createElement('h3');
+        tracksTitle.textContent = 'Trilhas de leitura';
+
+        const tracks = document.createElement('div');
+        tracks.className = 'cta-button-container';
+
+        const btnQuick = document.createElement('button');
+        btnQuick.type = 'button';
+        btnQuick.className = 'cta-button';
+        const quickCount = countMatches(x => /\bverde\b/i.test(x.viabilidade) && !/\bhip[oó]tese\b/i.test(x.forca));
+        btnQuick.textContent = `🚀 Quick wins (Verde) (${quickCount})`;
+        btnQuick.addEventListener('click', () => {
+            scrollToFirstMatch(x => /\bverde\b/i.test(x.viabilidade) && !/\bhip[oó]tese\b/i.test(x.forca));
+        });
+
+        const btnLegal = document.createElement('button');
+        btnLegal.type = 'button';
+        btnLegal.className = 'cta-button';
+        const legalCount = countMatches(x => /jur[ií]dic/i.test(x.risco));
+        btnLegal.textContent = `⚖️ Risco jurídico (${legalCount})`;
+        btnLegal.addEventListener('click', () => {
+            scrollToFirstMatch(x => /jur[ií]dic/i.test(x.risco));
+        });
+
+        const btnTorniquete = document.createElement('button');
+        btnTorniquete.type = 'button';
+        btnTorniquete.className = 'cta-button';
+        const torniqueteCount = countMatches(x => /torniquete/i.test(x.frente));
+        btnTorniquete.textContent = `🛡️ Frente: Torniquete (${torniqueteCount})`;
+        btnTorniquete.addEventListener('click', () => {
+            scrollToFirstMatch(x => /torniquete/i.test(x.frente));
+        });
+
+        tracks.appendChild(btnQuick);
+        tracks.appendChild(btnLegal);
+        tracks.appendChild(btnTorniquete);
+
+        const searchTitle = document.createElement('h3');
+        searchTitle.textContent = 'Buscar na Matriz';
+
+        const searchWrap = document.createElement('div');
+        searchWrap.className = 'cta-button-container';
+
+        const searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.placeholder = 'Ex.: I-24, "benefícios", "INSS"';
+        searchInput.setAttribute('aria-label', 'Buscar na Matriz');
+        searchInput.style.maxWidth = '420px';
+        searchInput.style.padding = '10px 12px';
+        searchInput.style.borderRadius = '10px';
+        searchInput.style.border = '1px solid rgba(0,0,0,0.12)';
+
+        const btnFind = document.createElement('button');
+        btnFind.type = 'button';
+        btnFind.className = 'cta-button';
+        btnFind.textContent = '🔎 Ir para próximo match';
+
+        let lastIdx = -1;
+        const doFind = () => {
+            const q = (searchInput.value || '').trim();
+            if (!q) return;
+            const qLower = q.toLowerCase();
+            const start = (lastIdx + 1) % index.length;
+            for (let step = 0; step < index.length; step++) {
+                const i = (start + step) % index.length;
+                const item = index[i];
+                if (
+                    item.id.toLowerCase() === qLower ||
+                    item.title.toLowerCase().includes(qLower) ||
+                    item.text.toLowerCase().includes(qLower)
+                ) {
+                    lastIdx = i;
+                    item.h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return;
+                }
+            }
+        };
+
+        btnFind.addEventListener('click', doFind);
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') doFind();
+        });
+
+        searchWrap.appendChild(searchInput);
+        searchWrap.appendChild(btnFind);
+
+        panel.appendChild(panelTitle);
+        panel.appendChild(panelIntro);
+        panel.appendChild(tracksTitle);
+        panel.appendChild(tracks);
+        panel.appendChild(searchTitle);
+        panel.appendChild(searchWrap);
+
+        const firstH2 = headings[0];
+        firstH2.insertAdjacentElement('beforebegin', panel);
+        panel.insertAdjacentElement('afterend', document.createElement('hr'));
+    }
+
+    setupPlanHubLinks() {
+        const root = this.contentEl;
+        if (!root) return;
+
+        const article = root.querySelector('article');
+        if (!article) return;
+
+        const headings = article.querySelectorAll('h4');
+        headings.forEach(h => {
+            const text = (h.textContent || '').trim();
+            const m = text.match(/^(I-\d{2})\b/);
+            if (!m) return;
+
+            const id = m[1];
+            const existing = h.nextElementSibling;
+            if (existing && existing.classList && existing.classList.contains('cta-button-container')) return;
+
+            const container = document.createElement('div');
+            container.className = 'cta-button-container';
+
+            const dossier = document.createElement('a');
+            dossier.className = 'cta-button';
+            dossier.href = `dossie.html?i=${encodeURIComponent(id)}`;
+            dossier.textContent = '📄 Abrir Dossiê';
+
+            const arg = document.createElement('a');
+            arg.className = 'cta-button';
+            arg.href = `argumentario.html?i=${encodeURIComponent(id)}`;
+            arg.textContent = '🧾 Abrir Argumentário';
+
+            const kanban = document.createElement('a');
+            kanban.className = 'cta-button';
+            kanban.href = `kanban.html?card=${encodeURIComponent(id)}`;
+            kanban.textContent = '📋 Abrir Kanban';
+
+            container.appendChild(dossier);
+            container.appendChild(arg);
+            container.appendChild(kanban);
+
+            h.insertAdjacentElement('afterend', container);
+        });
     }
 
     /**

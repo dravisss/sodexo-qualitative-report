@@ -1,0 +1,209 @@
+{
+  "generated_at": "2026-01-31T21:36:44.536Z",
+  "counts": {
+    "repo_relevant": 179,
+    "repo_primary": 49,
+    "repo_derived_canonical": 45,
+    "moc_refs": 48,
+    "dossier_refs_total": 21,
+    "argumentario_refs_total": 6,
+    "moc_missing": 0,
+    "dossier_missing": 0,
+    "argumentario_missing": 0,
+    "primary_not_referenced_anywhere": 30,
+    "derived_not_referenced_anywhere": 32
+  },
+  "missing": {
+    "moc": [],
+    "dossiers": [],
+    "argumentarios": []
+  },
+  "not_referenced": {
+    "primary": [
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/AUXILIAR SERVICOS GERAIS I II III.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/COPEIRO III.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/COZINHEIRO I.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/COZINHEIRO II.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/COZINHEIRO III.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/ENCARREGADO LIMPEZA.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/GERENTE UNIDADE OPERACIONAL I e II (1).pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/GERENTE UNIDADE OPERACIONAL I e II.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/JOVEM APRENDIZ ADMINISTRATIVO (1).pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/JOVEM APRENDIZ ADMINISTRATIVO.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/JOVEM APRENDIZ OPERACIONAL (1).pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/JOVEM APRENDIZ OPERACIONAL.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/OFICIAL ESTOQUE.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/OFICIAL LIMPEZA I.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/OFICIAL SERVIÇOS GERAIS I.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/SUPERVISOR OPERACIONAL I.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/SUPERVISOR OPERACIONAL II.pdf",
+      "evidencias/blobs/Descrição de cargo Frontline. FY26/SUPERVISOR OPERACIONAL III.pdf",
+      "evidencias/blobs/REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_3_file/FOLHA GERAL COLABORADORES JAN 2026.pdf",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_3_file/Geral - Contratados por Centro de Custo.PDF",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_4_file/FOLHA GERAL COLABORADORES JAN 2026.pdf",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_4_file/Geral - Contratados por Centro de Custo.PDF",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_61_file/REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_2_col_2_file/FOLHA GERAL COLABORADORES JAN 2026.pdf",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_2_col_3_file/Geral - Contratados por Centro de Custo.PDF",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_3_col_2_file/FOLHA GERAL COLABORADORES JAN 2026.pdf",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_3_col_3_file/Geral - Contratados por Centro de Custo.PDF",
+      "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0_row_9_col_2_file/Geral - Contratados por Centro de Custo.PDF",
+      "evidencias/blobs/ocr/descricao-cargos-fy26/AUXILIAR SERVICOS GERAIS I II III_ocr.pdf"
+    ],
+    "derived_canonical": [
+      "evidencias/blobs/csv/Base Frontline Experimento/ADMITIDOS-Tabela 1.csv",
+      "evidencias/blobs/csv/Base Frontline Experimento/BASE-Tabela 1.csv",
+      "evidencias/blobs/csv/Base Frontline Experimento/PIVOT-Tabela dinâmica1.csv",
+      "evidencias/blobs/csv/Tabela Salarial - Frontline Experimento 2/INOVAT FOOD - FM-Tabela 1.csv",
+      "evidencias/blobs/csv/Tabela Salarial - Frontline Experimento 2/Leroy Merlin Cajamar-Tabela 1.csv",
+      "evidencias/blobs/csv/cardapios/12302_-_Relatório_de_cardápios_-_JAN_26_-_307_Caseira_Almoço/12302 - Relatório de cardápios - JAN 26 - 307 Caseira Almoço.csv",
+      "evidencias/blobs/csv/cardapios/14545_-_Relatório_de_cardápios_-_JAN_26_-_307_Caseira_Almoço/14545 - Relatório de cardápios - JAN 26 - 307 Caseira Almoço.csv",
+      "evidencias/blobs/csv/remuneracao/Base_Frontline_-_Experimento/Base Frontline - Experimento.csv",
+      "evidencias/blobs/csv/remuneracao/Base_Frontline_Experimento_(1)/Base Frontline Experimento (1).csv",
+      "evidencias/blobs/csv/remuneracao/Tabela_Salarial_-_Frontline_Experimento/Tabela Salarial - Frontline Experimento.csv",
+      "evidencias/blobs/csv/remuneracao/Tabela_Salarial_-_Frontline_Experimento/Tabela_Salarial_-_Frontline_Experimento.csv",
+      "evidencias/blobs/csv/rescisao/Planilha_simulação_aviso_prévio_indenizado/Planilha simulação aviso prévio indenizado.csv",
+      "evidencias/blobs/csv/sap/Dados_SAP_Budget_FY25_-_FY26/BR016517_INOVAT_SP_SOFT_-_FM.csv",
+      "evidencias/blobs/csv/sap/Dados_SAP_Budget_FY25_-_FY26/Dados SAP Budget FY25 - FY26.csv",
+      "evidencias/blobs/csv/sap/Dados_SAP_Real_Jan25-Dez25/BR016517_INOVAT_SP_SOFT_-_FM.csv",
+      "evidencias/blobs/csv/sap/Dados_SAP_Real_Jan25-Dez25/Dados SAP Real Jan25-Dez25.csv",
+      "evidencias/blobs/csv/sap/Dados_SAP_Real_x_Budget_EPI_e_Unif_FY25/BR012302_INOVAT.csv",
+      "evidencias/blobs/csv/sap/Dados_SAP_Real_x_Budget_EPI_e_Unif_FY25/BR016517_INOVAT_SP_SOFT_-_FM.csv",
+      "evidencias/blobs/csv/sap/Dados_SAP_Real_x_Budget_EPI_e_Unif_FY25/Dados SAP Real x Budget EPI e Unif FY25.csv",
+      "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_4º Aditivo - (2023) assinado.pdf.txt",
+      "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_6º Aditivo - (2024) assinado.pdf.txt",
+      "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta + CG - (2019) assinada.pdf.txt",
+      "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta + CG - (2019).pdf.txt",
+      "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta - (2024).pdf.txt",
+      "evidencias/pdfs/text/União Química/Contrato FM Assinado 2021.pdf.txt",
+      "evidencias/pdfs/text/União Química/F & F_Proposta Comercial_Food  - (2022)_assinada (Summary).pdf.txt",
+      "evidencias/pdfs/text/União Química/F & F_Proposta Comercial_Food - (2022)_assinada.pdf.txt",
+      "evidencias/pdfs/text/União Química/INOVAT_Aditivo Food - (2022) - assinado.pdf.txt",
+      "evidencias/pdfs/text/União Química/União Química_Aditivo_Food - (2020)_assinado.pdf.txt",
+      "evidencias/pdfs/text/União Química/União Química_Contrato_Food - (2016)_assinado.pdf.txt",
+      "evidencias/pdfs/text/União Química/União Química_Proposta Comercial_Food  - (2018)_assinada.pdf.txt",
+      "evidencias/pdfs/text/União Química/União Química_Proposta Comercial_Food  - (2019)_assinada.pdf.txt"
+    ]
+  },
+  "refs_by_file": {
+    "dossiers": {
+      "intervencoes/I-01-compra-centralizada-de-uniformes-e-protecao.md": [
+        "evidencias/blobs/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/question_8_file/Dados SAP Real x Budget EPI e Unif FY25.xlsx",
+        "evidencias/blobs/csv/sap/Dados_SAP_Real_x_Budget_EPI_e_Unif_FY25/BR014545_LEROY_MERLIN_CAJAMAR.csv",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_1.md",
+        "evidencias/notas/SAP/sap-leroy-merlin-cajamar-epi-uniformes-real-vs-budget-fy25.analise.md"
+      ],
+      "intervencoes/I-02-desvincular-cesta-basica-de-atestados-medicos.md": [
+        "evidencias/banco/answers.json",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md"
+      ],
+      "intervencoes/I-03-mesa-compartilhada-para-correcao-de-infraestrutura.md": [
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_2.md",
+        "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta - (2020) assinada.pdf.txt",
+        "evidencias/pdfs/text/União Química/União Química_Aditivo_Food - (2024)_assinado.pdf.txt",
+        "evidencias/pdfs/text/blobs/FOLHA GERAL COLABORADORES JAN 2026.pdf.txt",
+        "evidencias/pdfs/text/blobs/Geral - Contratados por Centro de Custo.PDF.txt",
+        "evidencias/pdfs/text/ocr2/União Química_Proposta Comercial_Food  - (2019)_assinada_ocr.txt"
+      ],
+      "intervencoes/I-04-notificacao-contratual-de-manutencao-cajamar.md": [
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_2.md",
+        "evidencias/pdfs/text/ocr/Leroy Merlin_Food_4º Aditivo - (2023) assinado_ocr.txt"
+      ],
+      "intervencoes/I-05-orcamento-focado-em-eliminar-esforco-fisico.md": [
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_1.md"
+      ],
+      "intervencoes/I-06-liberacao-remunerada-para-casos-agudos.md": [
+        "evidencias/banco/answers.json",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md"
+      ],
+      "intervencoes/I-07-rodizio-de-tarefas-pesadas.md": [],
+      "intervencoes/I-08-protecao-ergonomica-para-veteranos.md": [
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md"
+      ],
+      "intervencoes/I-09-auditoria-tecnica-de-fluxo-e-recursos.md": [
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_3.md",
+        "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta - (2020) assinada.pdf.txt"
+      ],
+      "intervencoes/I-10-calendario-fixo-de-celebracoes-da-equipe.md": [],
+      "intervencoes/I-11-banco-de-folgas-emergenciais.md": [],
+      "intervencoes/I-12-canal-mensal-de-escuta-da-equipe.md": [],
+      "intervencoes/I-13-abertura-dos-numeros-e-limites-para-o-time.md": [
+        "evidencias/banco/answers.json"
+      ],
+      "intervencoes/I-14-protocolo-de-passagem-de-turno.md": [],
+      "intervencoes/I-15-reserva-carimbada-por-turno.md": [],
+      "intervencoes/I-16-turno-de-pre-preparo-mise-en-place.md": [],
+      "intervencoes/I-17-improviso-como-alerta-de-falha-sistemica.md": [],
+      "intervencoes/I-18-fundo-de-alimentacao-do-time-e-autorregulacao-de-estoque.md": [],
+      "intervencoes/I-19-verba-corporativa-para-renovacao-de-equipe.md": [
+        "evidencias/blobs/csv/Simulação Aviso Prévio Indenizado.csv"
+      ],
+      "intervencoes/I-20-saida-voluntaria-sem-punir-quem-fica.md": [
+        "evidencias/blobs/csv/rescisao/Simulação_Aviso_Prévio_Indenizado/Simulação Aviso Prévio Indenizado.csv",
+        "evidencias/notas/RESCISAO/simulacao-aviso-previo-indenizado.analise.md"
+      ],
+      "intervencoes/I-21-revisao-do-quadro-pela-demanda-real.md": [
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_2.md",
+        "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta - (2020) assinada.pdf.txt"
+      ],
+      "intervencoes/I-22-verba-carimbada-para-reparos-essenciais.md": [
+        "evidencias/blobs/csv/sap/Dados_SAP_Real_x_Budget_EPI_e_Unif_FY25/BR014545_LEROY_MERLIN_CAJAMAR.csv",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_1.md"
+      ],
+      "intervencoes/I-23-pacote-de-beneficios-para-transicao-de-carreira.md": [],
+      "intervencoes/I-24-substituicao-de-chefia-por-lideranca-tecnica.md": [],
+      "intervencoes/I-25-fim-do-cargo-asg-osg-faz-tudo.md": [
+        "evidencias/banco/answers.json"
+      ],
+      "intervencoes/I-26-revisao-dos-deflatores-de-rotatividade-na-plr.md": [
+        "evidencias/pdfs/text/PLR/REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf.txt"
+      ],
+      "intervencoes/I-27-gatilho-progressivo-da-plr.md": [
+        "evidencias/pdfs/text/PLR/REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf.txt",
+        "evidencias/pdfs/text/PLR/REB_OPE_15_PLR_Operacional_Food_12.pdf.txt"
+      ],
+      "intervencoes/I-28-desconto-proporcional-para-faltas.md": [
+        "evidencias/pdfs/text/PLR/REB_OPE_15_PLR_Operacional_Food_12.pdf.txt"
+      ],
+      "intervencoes/I-29-sla-de-atendimento-para-solicitacoes-de-rh.md": [
+        "evidencias/notas/ROTEIRO/due-diligence-operacional/F-processos-e-escalas.analise.md"
+      ],
+      "intervencoes/I-30-auditoria-de-folha-trimestral.md": [
+        "evidencias/blobs/csv/Simulação Aviso Prévio Indenizado.csv",
+        "evidencias/notas/ROTEIRO/due-diligence-operacional/F-processos-e-escalas.analise.md"
+      ],
+      "intervencoes/I-31-processo-seletivo-com-periodo-de-experiencia-real.md": [],
+      "intervencoes/I-32-fretado-e-escalas-competitivas.md": [
+        "evidencias/banco/answers.json"
+      ],
+      "intervencoes/I-33-novo-pacote-de-beneficios-atrativo-saude-vr.md": [],
+      "intervencoes/I-34-plano-de-carreira-por-tempo-de-servico.md": [],
+      "intervencoes/I-35-ajuste-salarial-ao-mercado-local.md": [
+        "evidencias/banco/answers.json"
+      ],
+      "intervencoes/I-36-processo-de-equalizacao-proprios-vs-terceirizados.md": []
+    },
+    "argumentarios": {
+      "intervencoes/I-03-mesa-compartilhada-para-correcao-de-infraestrutura.argumentario.md": [
+        "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta - (2020) assinada.pdf.txt",
+        "evidencias/pdfs/text/União Química/União Química_Aditivo_Food - (2024)_assinado.pdf.txt",
+        "evidencias/pdfs/text/ocr2/União Química_Proposta Comercial_Food  - (2019)_assinada_ocr.txt"
+      ],
+      "intervencoes/I-19-verba-corporativa-para-renovacao-de-equipe.argumentario.md": [
+        "evidencias/blobs/csv/Simulação Aviso Prévio Indenizado.csv"
+      ],
+      "intervencoes/I-21-revisao-do-quadro-pela-demanda-real.argumentario.md": [
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md",
+        "evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_3.md",
+        "evidencias/pdfs/text/Leroy Merlin/Leroy Merlin_Food_Proposta - (2020) assinada.pdf.txt"
+      ]
+    }
+  }
+}

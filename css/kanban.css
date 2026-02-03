@@ -118,7 +118,8 @@
 }
 
 .tag-picker-caret {
-  font-size: 10px;
+  font-size: 0.7em;
+  opacity: 0.7;
   transition: transform var(--transition-fast);
 }
 
@@ -499,7 +500,28 @@
   font-size: var(--font-size-sm);
   color: var(--color-text);
   line-height: var(--line-height-normal);
-  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-xs);
+}
+
+.card-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-xs);
+}
+
+.card-link {
+  font-size: var(--font-size-xs);
+  color: var(--color-teal-dark, #2c6b6f);
+  text-decoration: none;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-teal-light, rgba(122, 181, 188, 0.15));
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card-link:hover {
+  border-color: var(--color-teal);
 }
 
 .card-tags {

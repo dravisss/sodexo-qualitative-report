@@ -1,0 +1,14 @@
+{
+  "model": "gemini-2.5-flash",
+  "input": "evidencias/blobs/FOLHA GERAL COLABORADORES JAN 2026.pdf",
+  "output_dir": "evidencias/pdfs/text/blobs",
+  "generated_at": "2026-01-30T19:19:56.783Z",
+  "results": [
+    {
+      "fileName": "FOLHA GERAL COLABORADORES JAN 2026.pdf",
+      "status": "ok",
+      "outFile": "/Users/Ravi/Apps/Qualitative Analyst/publish-site/evidencias/pdfs/text/blobs/FOLHA GERAL COLABORADORES JAN 2026.pdf.txt",
+      "sha256": "bfcb4301668192a11f3aec0782d9d3ca69993b68eccd1b744338a4eaeaa64d8f"
+    }
+  ]
+}

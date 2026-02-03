@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-01-30T16:50:46.909Z",
+  "submission_id": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5",
+  "table_id": "table_4",
+  "roteiro_parent": "Operacional",
+  "roteiro_subsection_code": "E",
+  "roteiro_subsection_title": "Passivos e Provisões",
+  "section_name": "Geral",
+  "subsection_name": "Contexto",
+  "table_title": "Dado",
+  "dimensions": {
+    "rows": 5,
+    "cols": 4
+  },
+  "row_labels": {
+    "1": "Provisão para rescisões (se existir)",
+    "2": "Ações trabalhistas ativas contra a unidade",
+    "3": "Notificações do MTE/MPT pendentes",
+    "4": "Multas contratuais aplicadas pelo cliente"
+  },
+  "columns": [
+    {
+      "col": 0,
+      "label": "Linha"
+    },
+    {
+      "col": 1,
+      "label": "Cajamar"
+    },
+    {
+      "col": 2,
+      "label": "GRU FOOD"
+    },
+    {
+      "col": 3,
+      "label": "GRU FM"
+    }
+  ],
+  "cells": [
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      {
+        "answer_id": "5de506c2-cb1d-47cd-8870-fffbfc20e44b",
+        "field_id": "table_4_row_1_col_1",
+        "row": 1,
+        "col": 1,
+        "value": "Não existe ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Provisão para rescisões (se existir)"
+      },
+      {
+        "answer_id": "17b4de98-e98c-4c35-bbba-94a766d2e936",
+        "field_id": "table_4_row_1_col_2",
+        "row": 1,
+        "col": 2,
+        "value": "Não existe ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Provisão para rescisões (se existir)"
+      },
+      {
+        "answer_id": "d35a3461-2dd6-4a57-bd7c-4414e4bc02d1",
+        "field_id": "table_4_row_1_col_3",
+        "row": 1,
+        "col": 3,
+        "value": "Não existe ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Provisão para rescisões (se existir)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "e74780e1-51ce-4c10-85b8-543dc820036f",
+        "field_id": "table_4_row_2_col_1",
+        "row": 2,
+        "col": 1,
+        "value": "Juridico",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Ações trabalhistas ativas contra a unidade"
+      },
+      {
+        "answer_id": "115dcf9c-5ebb-415e-9150-54c47db4a521",
+        "field_id": "table_4_row_2_col_2",
+        "row": 2,
+        "col": 2,
+        "value": "Juridico",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Ações trabalhistas ativas contra a unidade"
+      },
+      {
+        "answer_id": "65fdaf8b-aa39-4c04-8fa3-9d12948f32ca",
+        "field_id": "table_4_row_2_col_3",
+        "row": 2,
+        "col": 3,
+        "value": "Juridico",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Ações trabalhistas ativas contra a unidade"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "a4f8067a-b567-4031-b63c-1d0fb8a5e76e",
+        "field_id": "table_4_row_3_col_1",
+        "row": 3,
+        "col": 1,
+        "value": "Suhene ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Notificações do MTE/MPT pendentes"
+      },
+      {
+        "answer_id": "0634281b-61b9-4ec5-a03f-e01da3726455",
+        "field_id": "table_4_row_3_col_2",
+        "row": 3,
+        "col": 2,
+        "value": "Suhene ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Notificações do MTE/MPT pendentes"
+      },
+      {
+        "answer_id": "ec228448-707a-4933-8c8c-524bf534a639",
+        "field_id": "table_4_row_3_col_3",
+        "row": 3,
+        "col": 3,
+        "value": "Suhene ",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Notificações do MTE/MPT pendentes"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "c5b04ad9-83a3-4153-9116-83a1844d263e",
+        "field_id": "table_4_row_4_col_1",
+        "row": 4,
+        "col": 1,
+        "value": "Operação",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Multas contratuais aplicadas pelo cliente"
+      },
+      {
+        "answer_id": "57b73394-f596-4677-a8f2-07257f977c23",
+        "field_id": "table_4_row_4_col_2",
+        "row": 4,
+        "col": 2,
+        "value": "Operação",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Multas contratuais aplicadas pelo cliente"
+      },
+      {
+        "answer_id": "2cb5fa99-aef8-4799-9b44-72d6d75a13b2",
+        "field_id": "table_4_row_4_col_3",
+        "row": 4,
+        "col": 3,
+        "value": "Operação",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Multas contratuais aplicadas pelo cliente"
+      }
+    ]
+  ]
+}

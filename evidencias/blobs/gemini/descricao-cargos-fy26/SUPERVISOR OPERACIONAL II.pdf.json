@@ -1,0 +1,38 @@
+{
+  "source_file": "SUPERVISOR OPERACIONAL II.pdf",
+  "cargo_titulo": "SUPERVISOR OPERACIONAL II",
+  "codigo_cargo": "193285",
+  "contexto_organizacional": "CORPORATE",
+  "subordinado_a": "COORDENADOR OPERACIONAL/ GERENTE DE UNIDADE",
+  "descricao_sumaria": "Supervisionar a limpeza, higienização e conservação de móveis, utensílios, equipamentos e instalações, requisitar e distribuir material necessário para cumprir as atividades, controlar o estoque de produtos, planejar e acompanhar rotina de trabalho dos serviços de conservação da infraestrutura, abrangendo limpeza, jardinagem, visando assegurar o bom funcionamento da infraestrutura e fornecer dados para o fechamento administrativo.",
+  "principais_atividades": [
+    "Zelar pela aparência e higiene pessoal dos funcionários;",
+    "Verificar a presença dos funcionários do setor e, se necessário, redistribuir as atividades;",
+    "Habilitar técnica e comportamental os funcionários para o desenvolvimento das tarefas;",
+    "Assegurar a higiene do ambiente, equipamentos e utensílios;",
+    "Gestão integrada de serviços como limpeza, jardinagem, segurança, logística e apoio à operação (ou parte desses serviços;",
+    "Elaborar e inspecionar o cumprimento das escalas de atividades, realizando e/ou reforçando a Conversa do Dia, DDS para a equipe;",
+    "Assegurar a higiene do ambiente, equipamentos e utensílios, requisitando e distribuindo material e equipamentos necessários para o cumprimento das atividades e buscando acompanhar com proximidade a equipe direta.",
+    "Participar no processo seletivo de funcionários;",
+    "Buscar por melhorias no contrato;",
+    "Realizar a supervisão da equipe de gestão (Encarregados e Líderes);",
+    "Manter relacionamento com o cliente no atendimento das solicitações, buscando ser o mais assertivo quanto possível dentro dos padrões estabelecidos.",
+    "Gerenciar manutenções de equipamentos manuais e mecanizados para a utilização da equipe;",
+    "Mapear ações de sucesso já executadas, reclamações de clientes, atuação da concorrência, revisão de procedimentos, redimensionamento de equipes, reavaliação de contratos etc;",
+    "Controle de estoque de produtos de limpeza;",
+    "Executar serviços e relatórios de operação e avaliação, fornecendo dados para o fechamento administrativo;",
+    "Buscar produtos e equipamentos que favoreçam a execução das atividades;",
+    "Criação e controle de KPIs de execução de serviço e consumo de insumos;",
+    "Ser responsável pela Saúde e Segurança, bem como aplicar as normas, procedimentos e diretrizes do Sistema de Gestão de Saúde e Segurança."
+  ],
+  "kpis": [
+    "Cumprimento dos processos de segurança do trabalho na execução das atividades;",
+    "Percentual de satisfação dos clientes com a limpeza e organização do ambiente;",
+    "KPIs de execução de serviços por área/setor;",
+    "KPIs de consumo de produtos de limpeza e correlatos;",
+    "Cumprimento das escalas de atividades, conforme programação."
+  ],
+  "observacoes": "Em casos onde a unidade não tenha o Coordenador Operacional, o Supervisor Operacional II irá reportar diretamente ao Gerente de Unidade",
+  "source_path": "evidencias/blobs/Descrição de cargo Frontline. FY26/SUPERVISOR OPERACIONAL II.pdf",
+  "source_sha256": "c0fa2f4a53a4c5fb903f92bfe588652a525b6badd4a82b6653cd1045d20cde71"
+}

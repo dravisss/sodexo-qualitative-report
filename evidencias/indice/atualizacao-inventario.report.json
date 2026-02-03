@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-01-30T16:50:46.960Z",
+  "scope_args": [],
+  "counts": {
+    "attachments_total": 23,
+    "new_attachments": 0,
+    "downloaded": 0,
+    "skipped_existing": 0,
+    "failed": 0
+  },
+  "delta": {
+    "submissions": {
+      "counts": {
+        "prev_total": 3,
+        "next_total": 3,
+        "added": 0,
+        "changed": 0,
+        "removed": 0
+      },
+      "added_truncated": false,
+      "changed_truncated": false,
+      "removed_truncated": false,
+      "added": [],
+      "changed": [],
+      "removed": []
+    },
+    "answers": {
+      "counts": {
+        "prev_total": 15137,
+        "next_total": 15137,
+        "added": 0,
+        "changed": 0,
+        "removed": 0
+      },
+      "added_truncated": false,
+      "changed_truncated": false,
+      "removed_truncated": false,
+      "added": [],
+      "changed": [],
+      "removed": []
+    },
+    "attachments_records": {
+      "counts": {
+        "prev_total": 23,
+        "next_total": 23,
+        "added": 0,
+        "changed": 0,
+        "removed": 0
+      },
+      "added_truncated": false,
+      "changed_truncated": false,
+      "removed_truncated": false,
+      "added": [],
+      "changed": [],
+      "removed": []
+    }
+  },
+  "new_attachments": [],
+  "download": {
+    "downloaded": [],
+    "skipped_existing": [],
+    "failed": []
+  }
+}

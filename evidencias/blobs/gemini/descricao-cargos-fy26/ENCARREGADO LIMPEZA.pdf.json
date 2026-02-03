@@ -1,0 +1,29 @@
+{
+  "source_file": "ENCARREGADO LIMPEZA.pdf",
+  "cargo_titulo": "ENCARREGADO LIMPEZA",
+  "codigo_cargo": "410105",
+  "contexto_organizacional": "CORPORATE",
+  "subordinado_a": "GERENTE ÁREA OPERACIONAL/GERENTE UNIDADE OPERACIONAL",
+  "descricao_sumaria": "Coordenar e supervisionar a limpeza, higienização e conservação de móveis, utensílios, equipamentos e instalações. Requisitar e distribuir materiais de limpeza, controlar estoque e fornecer dados para o fechamento administrativo.",
+  "principais_atividades": [
+    "Zelar pela aparência e higiene pessoal dos funcionários;",
+    "Verificar a presença dos funcionários do setor e, se necessário, redistribuir as atividades;",
+    "Habilitar técnica e comportamentalmente os funcionários para o desenvolvimento das tarefas;",
+    "Assegurar a higiene do ambiente, equipamentos e utensílios;",
+    "Elaborar e inspecionar o cumprimento das escalas de atividades;",
+    "Requisitar e distribuir material necessário para o cumprimento das atividades;",
+    "Participar no processo seletivo de funcionários;",
+    "Controle de estoque de produtos de limpeza;",
+    "Fornecer dados para o fechamento administrativo;",
+    "Buscar produtos e equipamentos que favoreçam a execução das atividades;",
+    "Executar tarefas correlatas;",
+    "Ser responsável pela Saúde e Segurança, bem como aplicar as normas, procedimentos e diretrizes do Sistema de Gestão de Saúde e Segurança."
+  ],
+  "kpis": [
+    "Cumprimento dos processos de segurança do trabalho na execução das atividades;",
+    "Percentual de satisfação dos clientes com a limpeza e organização do ambiente."
+  ],
+  "observacoes": null,
+  "source_path": "evidencias/blobs/Descrição de cargo Frontline. FY26/ENCARREGADO LIMPEZA.pdf",
+  "source_sha256": "afbb8e8b8cb0a1a4a7141b2996905fcfb159d2e1c305aa85f03c8579ec8d0ea1"
+}

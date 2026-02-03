@@ -1,2 +1,21 @@
 # Local Netlify folder
 .netlify
+
+.DS_Store
+.env
+node_modules/
+
+evidencias/pdfs/ocr2/
+evidencias/pdfs/ocr3/
+evidencias/pdfs/ocr4/
+
+evidencias/banco/
+evidencias/notas/
+
+evidencias/blobs/**/*.pdf
+evidencias/blobs/**/*.PDF
+evidencias/blobs/**/*.xlsx
+evidencias/blobs/**/*.zip
+
+.obsidian/
+TODO/

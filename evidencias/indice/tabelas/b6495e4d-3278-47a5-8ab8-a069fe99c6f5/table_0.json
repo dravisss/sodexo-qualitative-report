@@ -1,0 +1,291 @@
+{
+  "generated_at": "2026-01-30T16:50:46.907Z",
+  "submission_id": "b6495e4d-3278-47a5-8ab8-a069fe99c6f5",
+  "table_id": "table_0",
+  "roteiro_parent": "Operacional",
+  "roteiro_subsection_code": "A",
+  "roteiro_subsection_title": "Quadro de Pessoal e Salários",
+  "section_name": "Geral",
+  "subsection_name": "Contexto",
+  "table_title": "Dado",
+  "dimensions": {
+    "rows": 9,
+    "cols": 4
+  },
+  "row_labels": {
+    "1": "Headcount total (PJ + CLT)",
+    "2": "Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)",
+    "3": "Salário base por cargo",
+    "4": "Afastamentos INSS ativos",
+    "5": "Afastamentos INSS ativos",
+    "6": "Turnover anual (%)",
+    "7": "Absenteísmo mensal médio (%)",
+    "8": "Afastamentos INSS ativos"
+  },
+  "columns": [
+    {
+      "col": 0,
+      "label": "Linha"
+    },
+    {
+      "col": 1,
+      "label": "Cajamar"
+    },
+    {
+      "col": 2,
+      "label": "GRU FOOD"
+    },
+    {
+      "col": 3,
+      "label": "GRU FM"
+    }
+  ],
+  "cells": [
+    [
+      null,
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      {
+        "answer_id": "382d7b3d-ffef-4f3f-8b62-43ae70ef0918",
+        "field_id": "table_0_row_1_col_1",
+        "row": 1,
+        "col": 1,
+        "value": "24",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Headcount total (PJ + CLT)"
+      },
+      {
+        "answer_id": "5e512a9a-e002-441d-92c8-ee9da4328353",
+        "field_id": "table_0_row_1_col_2",
+        "row": 1,
+        "col": 2,
+        "value": "24",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Headcount total (PJ + CLT)"
+      },
+      {
+        "answer_id": "1dc041ff-5e39-4cd6-a0b9-1d0eae0b832d",
+        "field_id": "table_0_row_1_col_3",
+        "row": 1,
+        "col": 3,
+        "value": "57",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Headcount total (PJ + CLT)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "74515ab0-2c35-4990-a717-23551ff755e6",
+        "field_id": "table_0_row_2_col_1",
+        "row": 2,
+        "col": 1,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)"
+      },
+      {
+        "answer_id": "c3991708-3369-4a1f-80a1-0cc3c3a56b83",
+        "field_id": "table_0_row_2_col_2",
+        "row": 2,
+        "col": 2,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)"
+      },
+      {
+        "answer_id": "72f83271-e51e-4c8c-8739-be175791bd62",
+        "field_id": "table_0_row_2_col_3",
+        "row": 2,
+        "col": 3,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Quantidade por cargo (Cozinheiro, ASG, Encarregado, GU)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "e085e405-2927-4121-8fa2-cb89542faabc",
+        "field_id": "table_0_row_3_col_1",
+        "row": 3,
+        "col": 1,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Salário base por cargo"
+      },
+      {
+        "answer_id": "f0bd8e71-ce83-4f3a-8ca5-9f9b508cd0a7",
+        "field_id": "table_0_row_3_col_2",
+        "row": 3,
+        "col": 2,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Salário base por cargo"
+      },
+      {
+        "answer_id": "a44f7a3a-ccde-4f75-ab61-afb5151a7321",
+        "field_id": "table_0_row_3_col_3",
+        "row": 3,
+        "col": 3,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Salário base por cargo"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "628881d7-b619-434b-9626-d4a4a07f7859",
+        "field_id": "table_0_row_4_col_1",
+        "row": 4,
+        "col": 1,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal total com folha (inclui encargos)"
+      },
+      {
+        "answer_id": "d1ed71ac-5c7d-4407-ac95-65e26320465a",
+        "field_id": "table_0_row_4_col_2",
+        "row": 4,
+        "col": 2,
+        "value": "201.369,98",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Custo médio mensal total com folha (inclui encargos)"
+      },
+      {
+        "answer_id": "dd3c3350-49f6-4f92-b5b7-8ecfd431864e",
+        "field_id": "table_0_row_4_col_3",
+        "row": 4,
+        "col": 3,
+        "value": "3,4%",
+        "updated_at": "2026-01-26T19:20:31.237Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Afastamentos INSS ativos"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "81d4a2e7-4ee9-444a-9cf2-05ce74f5b2ad",
+        "field_id": "table_0_row_5_col_1",
+        "row": 5,
+        "col": 1,
+        "value": "",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: % de folha sobre faturamento da unidade"
+      },
+      {
+        "answer_id": "13d28b8b-3f9a-4d93-b003-d1f327ac389f",
+        "field_id": "table_0_row_5_col_2",
+        "row": 5,
+        "col": 2,
+        "value": "77,8%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: % de folha sobre faturamento da unidade"
+      },
+      {
+        "answer_id": "292c1e73-ce0a-4fb0-a94d-2af4dee68b56",
+        "field_id": "table_0_row_5_col_3",
+        "row": 5,
+        "col": 3,
+        "value": "2",
+        "updated_at": "2026-01-26T19:20:31.237Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Afastamentos INSS ativos"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "7a228f70-c340-4f56-8ba5-dfe8ebff4401",
+        "field_id": "table_0_row_6_col_1",
+        "row": 6,
+        "col": 1,
+        "value": "57,51%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Turnover anual (%)"
+      },
+      {
+        "answer_id": "133b160b-5165-45a6-8772-7cd4bdacb226",
+        "field_id": "table_0_row_6_col_2",
+        "row": 6,
+        "col": 2,
+        "value": "41,54%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Turnover anual (%)"
+      },
+      {
+        "answer_id": "875fd625-640b-410c-b4c7-78b351d5ab4e",
+        "field_id": "table_0_row_6_col_3",
+        "row": 6,
+        "col": 3,
+        "value": "119,22%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Turnover anual (%)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "23ef5ac6-ec5e-4090-9c71-be9abe077122",
+        "field_id": "table_0_row_7_col_1",
+        "row": 7,
+        "col": 1,
+        "value": "4,6%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Absenteísmo mensal médio (%)"
+      },
+      {
+        "answer_id": "5e1942a0-c65e-436b-b9de-8244015eab1c",
+        "field_id": "table_0_row_7_col_2",
+        "row": 7,
+        "col": 2,
+        "value": "1,7%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Absenteísmo mensal médio (%)"
+      },
+      {
+        "answer_id": "32ef616a-8ee3-49a1-9cad-396aac7f1107",
+        "field_id": "table_0_row_7_col_3",
+        "row": 7,
+        "col": 3,
+        "value": "3,4%",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Absenteísmo mensal médio (%)"
+      }
+    ],
+    [
+      null,
+      {
+        "answer_id": "f172c7f8-4af3-4fad-b22d-698d515433bc",
+        "field_id": "table_0_row_8_col_1",
+        "row": 8,
+        "col": 1,
+        "value": "4",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Afastamentos INSS ativos"
+      },
+      {
+        "answer_id": "1eee5fda-bfa9-4912-ad8f-74c9098f14e2",
+        "field_id": "table_0_row_8_col_2",
+        "row": 8,
+        "col": 2,
+        "value": "0",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Afastamentos INSS ativos"
+      },
+      {
+        "answer_id": "9dda82da-4706-4f38-9622-1989456203de",
+        "field_id": "table_0_row_8_col_3",
+        "row": 8,
+        "col": 3,
+        "value": "2",
+        "updated_at": "2026-01-29T17:31:00.505Z",
+        "question_text": "Tabela: Dado | Cajamar | GRU FOOD | GRU FM | Linha: Afastamentos INSS ativos"
+      }
+    ]
+  ]
+}

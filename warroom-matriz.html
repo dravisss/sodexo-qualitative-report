@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script>
+    if (!sessionStorage.getItem('sin_authenticated')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="War Room - Audit: Matriz">
+  <meta name="author" content="Target Teal">
+
+  <title>Audit: Matriz | War Room</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/report.css">
+  <link rel="stylesheet" href="css/warroom.css">
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%237ab5bc'/></svg>">
+</head>
+
+<body>
+  <button id="mobile-toggle" class="mobile-menu-trigger" aria-label="Abrir menu">
+    <span class="hamburger-icon"></span>
+  </button>
+
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <div class="sin-shell">
+    <aside class="sin-sidebar">
+      <header class="sidebar-header">
+        <h1 class="sidebar-logo">📊 Frontline Sodexo</h1>
+        <p class="sidebar-subtitle">Relatório Q1 2026</p>
+      </header>
+
+      <nav class="sidebar-nav">
+        <span class="nav-section-title">War Room</span>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="warroom-plano.html" class="nav-link">
+              <span class="nav-number">🧭</span>
+              <span class="nav-title">Plano (Hub)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="kanban.html" class="nav-link">
+              <span class="nav-number">📋</span>
+              <span class="nav-title">Abrir Kanban</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="dossie.html" class="nav-link">
+              <span class="nav-number">📄</span>
+              <span class="nav-title">Dossiês</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="argumentario.html" class="nav-link">
+              <span class="nav-number">🧾</span>
+              <span class="nav-title">Argumentários</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="warroom-matriz.html" class="nav-link active">
+              <span class="nav-number">🧩</span>
+              <span class="nav-title">Audit: Matriz</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <span class="nav-number">⬅️</span>
+              <span class="nav-title">Voltar ao Relatório</span>
+            </a>
+          </li>
+        </ul>
+
+        <span class="nav-section-title">Dados</span>
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="warroom-dados-visao.html" class="nav-link">
+              <span class="nav-number">💹</span>
+              <span class="nav-title">Visão Geral</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="warroom-dados-qa.html" class="nav-link">
+              <span class="nav-number">❓</span>
+              <span class="nav-title">Perguntas & Respostas</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="warroom-dados-cl.html" class="nav-link">
+              <span class="nav-number">📁</span>
+              <span class="nav-title">Drill-down por CL</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="warroom-dados-cl-comparar.html" class="nav-link">
+              <span class="nav-number">⚖️</span>
+              <span class="nav-title">Comparar CLs</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <footer class="sidebar-footer">
+        <button id="sidebar-toggle" class="sidebar-toggle" title="Recolher Menu">
+          <span class="toggle-arrow">◀</span>
+          <span class="toggle-text">Colapsar</span>
+        </button>
+      </footer>
+    </aside>
+
+    <main class="sin-main">
+      <div class="content-wrapper">
+        <div id="wr-matrix-content" class="loading">Carregando matriz...</div>
+        <footer class="report-footer">
+          Relatório Sodexo Frontline | Target Teal | 2026
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="js/warroom/matriz.js"></script>
+</body>
+
+</html>
