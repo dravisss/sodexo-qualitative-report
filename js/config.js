@@ -61,6 +61,13 @@ const ARTICLES = [
         icon: '📊'
     },
     {
+        id: '07',
+        title: 'Painel de Risco Consolidado',
+        subtitle: 'Visão consolidada de riscos',
+        path: './Refined/07-painel-risco-consolidado.md',
+        icon: '⚠️'
+    },
+    {
         id: '08',
         title: 'Plano de Intervenção',
         subtitle: 'Estratégia completa',

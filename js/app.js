@@ -47,7 +47,7 @@ class ReportReader {
             {
                 id: 'artigos',
                 title: 'Artigos',
-                articleIds: ['11', '01', '02', '03', '04']
+                articleIds: ['11', '01', '02', '03', '04', '07']
             },
             {
                 id: 'evidencias',
@@ -62,7 +62,15 @@ class ReportReader {
             {
                 id: 'campo',
                 title: 'Campo',
-                articleIds: ['15']
+                articleIds: ['15'],
+                tools: [
+                    {
+                        href: 'warroom.html',
+                        title: 'War Room',
+                        icon: '🧭',
+                        label: 'War Room'
+                    }
+                ]
             },
             {
                 id: 'ferramentas',
