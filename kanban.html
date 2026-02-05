@@ -135,6 +135,7 @@
               <div class="view-toggle" role="tablist" aria-label="Alternar visualização">
                   <button type="button" id="view-board" class="view-toggle-btn active" role="tab" aria-selected="true">Board</button>
                   <button type="button" id="view-timeline" class="view-toggle-btn" role="tab" aria-selected="false">Timeline</button>
+                  <button type="button" id="view-table" class="view-toggle-btn" role="tab" aria-selected="false">Tabela</button>
               </div>
               <div class="search-container">
                   <input type="text" id="kanban-search" class="search-input" placeholder="Buscar...">
@@ -171,6 +172,9 @@
         </div>
         <div id="kanban-timeline" class="kanban-timeline" style="display: none;">
             <div class="loading">Carregando timeline...</div>
+        </div>
+        <div id="kanban-table" class="kanban-table-container" style="display: none;">
+            <div class="loading">Carregando tabela...</div>
         </div>
       </div>
 

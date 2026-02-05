@@ -9,6 +9,7 @@ class KanbanManager {
     constructor() {
         this.boardEl = document.getElementById('kanban-board');
         this.timelineEl = document.getElementById('kanban-timeline');
+        this.tableEl = document.getElementById('kanban-table');
         this.sidebarEl = document.querySelector('.sin-sidebar');
         this.overlayEl = document.getElementById('sidebar-overlay');
 
@@ -47,6 +48,7 @@ class KanbanManager {
         // View + Mobile Tabs
         this.viewBoardBtn = document.getElementById('view-board');
         this.viewTimelineBtn = document.getElementById('view-timeline');
+        this.viewTableBtn = document.getElementById('view-table');
         this.mobileTabsEl = document.getElementById('kanban-mobile-tabs');
         this.activeMobileStatus = 'backlog';
         this.currentView = 'board';
@@ -1028,6 +1030,9 @@ class KanbanManager {
             this.viewBoardBtn.addEventListener('click', () => this.setView('board'));
             this.viewTimelineBtn.addEventListener('click', () => this.setView('timeline'));
         }
+        if (this.viewTableBtn) {
+            this.viewTableBtn.addEventListener('click', () => this.setView('table'));
+        }
 
         // Mobile tabs
         if (this.mobileTabsEl) {
@@ -1052,15 +1057,16 @@ class KanbanManager {
     }
 
     setView(view) {
-        if (view !== 'board' && view !== 'timeline') return;
+        if (view !== 'board' && view !== 'timeline' && view !== 'table') return;
         this.currentView = view;
 
-        if (this.viewBoardBtn && this.viewTimelineBtn) {
-            const isBoard = view === 'board';
-            this.viewBoardBtn.classList.toggle('active', isBoard);
-            this.viewTimelineBtn.classList.toggle('active', !isBoard);
-            this.viewBoardBtn.setAttribute('aria-selected', isBoard ? 'true' : 'false');
-            this.viewTimelineBtn.setAttribute('aria-selected', !isBoard ? 'true' : 'false');
+        if (this.viewBoardBtn && this.viewTimelineBtn && this.viewTableBtn) {
+            this.viewBoardBtn.classList.toggle('active', view === 'board');
+            this.viewTimelineBtn.classList.toggle('active', view === 'timeline');
+            this.viewTableBtn.classList.toggle('active', view === 'table');
+            this.viewBoardBtn.setAttribute('aria-selected', view === 'board' ? 'true' : 'false');
+            this.viewTimelineBtn.setAttribute('aria-selected', view === 'timeline' ? 'true' : 'false');
+            this.viewTableBtn.setAttribute('aria-selected', view === 'table' ? 'true' : 'false');
         }
 
         if (this.boardEl) {
@@ -1069,6 +1075,9 @@ class KanbanManager {
         if (this.timelineEl) {
             this.timelineEl.style.display = view === 'timeline' ? '' : 'none';
         }
+        if (this.tableEl) {
+            this.tableEl.style.display = view === 'table' ? '' : 'none';
+        }
 
         if (this.mobileTabsEl) {
             this.mobileTabsEl.style.display = (view === 'board') ? '' : 'none';
@@ -1076,6 +1085,8 @@ class KanbanManager {
 
         if (view === 'timeline') {
             this.renderTimeline();
+        } else if (view === 'table') {
+            this.renderTable();
         } else {
             this.applyFilters();
             this.applyMobileColumnVisibility();
@@ -1828,6 +1839,8 @@ class KanbanManager {
 
         if (this.currentView === 'timeline') {
             this.renderTimeline();
+        } else if (this.currentView === 'table') {
+            this.renderTable();
         }
 
         // Update feedback
@@ -2185,6 +2198,8 @@ class KanbanManager {
 
         if (this.currentView === 'timeline') {
             this.renderTimeline();
+        } else if (this.currentView === 'table') {
+            this.renderTable();
         }
     }
 
@@ -2356,6 +2371,275 @@ class KanbanManager {
     refreshTagPicker() {
         if (this.tagPickerDropdown.classList.contains('open')) {
             this.renderTagPicker();
+        }
+    }
+
+    /**
+     * Render the Table view with inline editing
+     */
+    renderTable() {
+        if (!this.tableEl) return;
+
+        const cards = this.getFilteredCards();
+
+        if (cards.length === 0) {
+            this.tableEl.innerHTML = `<div class="table-empty">Nenhuma intervenção encontrada.</div>`;
+            return;
+        }
+
+        const statusOptions = this.columns.map(c => 
+            `<option value="${c.id}">${c.title}</option>`
+        ).join('');
+
+        const substatusOptions = `
+            <option value="todo">A fazer</option>
+            <option value="doing">Fazendo</option>
+        `;
+
+        const rowsHtml = cards.map(card => {
+            const state = this.kanbanState[card.id] || {};
+            const s = typeof state === 'object' ? state : { status: state };
+            const status = s.status || 'backlog';
+            const substatus = s.substatus || 'todo';
+            const responsible = s.responsible || '';
+            const startDate = s.startDate || '';
+            const endDate = s.endDate || '';
+            const tags = Array.isArray(s.tags) ? s.tags.join(', ') : '';
+            const relatedInitiatives = s.relatedInitiatives || '';
+            const stakeholders = Array.isArray(s.stakeholders) ? s.stakeholders.map(st => st.name).join(', ') : '';
+            const updates = s.updates || '';
+            const updatedAt = s.updatedAt ? this.formatDateTimeBR(s.updatedAt) : '—';
+
+            return `
+                <tr data-cardid="${this.escapeHtml(card.id)}">
+                    <td class="table-cell-id">
+                        <button type="button" class="table-open-btn" data-action="open" data-cardid="${this.escapeHtml(card.id)}" title="Abrir painel">
+                            ${this.escapeHtml(card.id)}
+                        </button>
+                    </td>
+                    <td class="table-cell-title" title="${this.escapeHtml(card.title)}">${this.escapeHtml(card.title)}</td>
+                    <td class="table-cell-status">
+                        <select class="table-input table-select" data-field="status" data-cardid="${this.escapeHtml(card.id)}">
+                            ${this.columns.map(c => 
+                                `<option value="${c.id}" ${status === c.id ? 'selected' : ''}>${c.title}</option>`
+                            ).join('')}
+                        </select>
+                    </td>
+                    <td class="table-cell-substatus ${status !== 'doing' ? 'table-cell-disabled' : ''}">
+                        ${status === 'doing' ? `
+                            <select class="table-input table-select" data-field="substatus" data-cardid="${this.escapeHtml(card.id)}">
+                                <option value="todo" ${substatus === 'todo' ? 'selected' : ''}>A fazer</option>
+                                <option value="doing" ${substatus === 'doing' ? 'selected' : ''}>Fazendo</option>
+                            </select>
+                        ` : '—'}
+                    </td>
+                    <td class="table-cell-responsible">
+                        <input type="text" class="table-input" data-field="responsible" data-cardid="${this.escapeHtml(card.id)}" value="${this.escapeHtml(responsible)}" placeholder="Responsável">
+                    </td>
+                    <td class="table-cell-date">
+                        <input type="date" class="table-input table-date" data-field="startDate" data-cardid="${this.escapeHtml(card.id)}" value="${startDate}">
+                    </td>
+                    <td class="table-cell-date">
+                        <input type="date" class="table-input table-date" data-field="endDate" data-cardid="${this.escapeHtml(card.id)}" value="${endDate}">
+                    </td>
+                    <td class="table-cell-tags">
+                        <input type="text" class="table-input" data-field="tags" data-cardid="${this.escapeHtml(card.id)}" value="${this.escapeHtml(tags)}" placeholder="tag1, tag2">
+                    </td>
+                    <td class="table-cell-related">
+                        <input type="text" class="table-input" data-field="relatedInitiatives" data-cardid="${this.escapeHtml(card.id)}" value="${this.escapeHtml(relatedInitiatives)}" placeholder="Iniciativas">
+                    </td>
+                    <td class="table-cell-stakeholders" title="${this.escapeHtml(stakeholders)}">
+                        <span class="table-stakeholders-display" data-action="open" data-cardid="${this.escapeHtml(card.id)}">${stakeholders ? this.escapeHtml(stakeholders) : '—'}</span>
+                    </td>
+                    <td class="table-cell-updates">
+                        <textarea class="table-input table-textarea" data-field="updates" data-cardid="${this.escapeHtml(card.id)}" placeholder="Atualizações...">${this.escapeHtml(updates)}</textarea>
+                    </td>
+                    <td class="table-cell-updated">${updatedAt}</td>
+                    <td class="table-cell-actions">
+                        <a href="dossie.html?i=${encodeURIComponent(card.id)}" class="table-action-link" title="Dossiê">📄</a>
+                        <a href="argumentario.html?i=${encodeURIComponent(card.id)}" class="table-action-link" title="Argumentário">🧾</a>
+                    </td>
+                </tr>
+            `;
+        }).join('');
+
+        this.tableEl.innerHTML = `
+            <div class="table-scroll">
+                <table class="kanban-data-table">
+                    <thead>
+                        <tr>
+                            <th class="th-id">ID</th>
+                            <th class="th-title">Título</th>
+                            <th class="th-status">Status</th>
+                            <th class="th-substatus">Substatus</th>
+                            <th class="th-responsible">Responsável</th>
+                            <th class="th-date">Início</th>
+                            <th class="th-date">Fim</th>
+                            <th class="th-tags">Tags</th>
+                            <th class="th-related">Iniciativas</th>
+                            <th class="th-stakeholders">Envolver</th>
+                            <th class="th-updates">Atualizações</th>
+                            <th class="th-updated">Atualizado</th>
+                            <th class="th-actions">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${rowsHtml}
+                    </tbody>
+                </table>
+            </div>
+        `;
+
+        this.bindTableEvents();
+    }
+
+    /**
+     * Bind events for inline table editing
+     */
+    bindTableEvents() {
+        if (!this.tableEl) return;
+
+        // Open editor buttons
+        this.tableEl.querySelectorAll('[data-action="open"]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const cardId = btn.dataset.cardid;
+                if (cardId) this.openEditor(cardId);
+            });
+        });
+
+        // Inline editing - debounce save
+        const inputs = this.tableEl.querySelectorAll('.table-input');
+        inputs.forEach(input => {
+            const handler = () => this.handleTableFieldChange(input);
+            input.addEventListener('change', handler);
+            // For text inputs, also handle blur for immediate save
+            if (input.type === 'text') {
+                input.addEventListener('blur', handler);
+            }
+        });
+    }
+
+    /**
+     * Handle inline field change in table view
+     */
+    async handleTableFieldChange(input) {
+        const cardId = input.dataset.cardid;
+        const field = input.dataset.field;
+        if (!cardId || !field) return;
+
+        let value = input.value;
+
+        // Normalize tags: split by comma, trim, filter empty
+        if (field === 'tags') {
+            value = value.split(',').map(t => t.trim()).filter(t => t.length > 0);
+        }
+
+        // Ensure state object exists
+        if (!this.kanbanState[cardId]) {
+            this.kanbanState[cardId] = { status: 'backlog' };
+        }
+        if (typeof this.kanbanState[cardId] === 'string') {
+            this.kanbanState[cardId] = { status: this.kanbanState[cardId] };
+        }
+
+        const state = this.kanbanState[cardId];
+        const oldValue = state[field];
+
+        // Skip if value unchanged
+        if (field === 'tags') {
+            const oldTags = Array.isArray(oldValue) ? oldValue.join(',') : '';
+            const newTags = value.join(',');
+            if (oldTags === newTags) return;
+        } else {
+            if (oldValue === value) return;
+        }
+
+        // Date validation
+        if (field === 'endDate' && value && state.startDate) {
+            const start = new Date(`${state.startDate}T00:00:00`);
+            const end = new Date(`${value}T00:00:00`);
+            if (end < start) {
+                this.showError('Data final não pode ser anterior à Data de início.');
+                input.value = oldValue || '';
+                return;
+            }
+        }
+        if (field === 'startDate' && value && state.endDate) {
+            const start = new Date(`${value}T00:00:00`);
+            const end = new Date(`${state.endDate}T00:00:00`);
+            if (end < start) {
+                this.showError('Data de início não pode ser posterior à Data final.');
+                input.value = oldValue || '';
+                return;
+            }
+        }
+
+        // Update state
+        state[field] = value;
+        state.updatedAt = new Date().toISOString();
+
+        // Handle status change side effects
+        if (field === 'status') {
+            if (value === 'doing' && !state.substatus) {
+                state.substatus = 'todo';
+            } else if (value !== 'doing') {
+                delete state.substatus;
+            }
+            // Re-render table to update substatus cell
+            this.renderTable();
+            // Also update board
+            this.renderBoard();
+            this.applyFilters();
+        }
+
+        // Handle substatus change
+        if (field === 'substatus') {
+            const label = value === 'doing' ? 'Fazendo' : 'A fazer';
+            this.updateCardSubstatus(cardId, label);
+        }
+
+        // Update board display for relevant fields
+        if (field === 'tags') {
+            this.updateCardTagsDisplay(cardId, value);
+            this.refreshTagPicker();
+        }
+        if (field === 'startDate' || field === 'endDate') {
+            this.updateCardDatesDisplay(cardId);
+        }
+
+        // Update "Atualizado" cell in table
+        const row = this.tableEl.querySelector(`tr[data-cardid="${cardId}"]`);
+        if (row) {
+            const updatedCell = row.querySelector('.table-cell-updated');
+            if (updatedCell) {
+                updatedCell.textContent = this.formatDateTimeBR(state.updatedAt);
+            }
+        }
+
+        // Save to backend
+        await this.saveState();
+
+        // Re-render timeline if it was the active view before
+        if (this.currentView === 'timeline') {
+            this.renderTimeline();
+        }
+    }
+
+    /**
+     * Format ISO date-time to Brazilian format (DD/MM HH:MM)
+     */
+    formatDateTimeBR(isoString) {
+        if (!isoString) return '—';
+        try {
+            const d = new Date(isoString);
+            const day = String(d.getDate()).padStart(2, '0');
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const hours = String(d.getHours()).padStart(2, '0');
+            const mins = String(d.getMinutes()).padStart(2, '0');
+            return `${day}/${month} ${hours}:${mins}`;
+        } catch {
+            return '—';
         }
     }
 }

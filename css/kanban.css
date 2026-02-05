@@ -1386,3 +1386,212 @@
     color: var(--color-text-muted);
     font-style: italic;
 }
+
+/* === TABLE VIEW === */
+.kanban-table-container {
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-card);
+    overflow: hidden;
+}
+
+.table-scroll {
+    height: 100%;
+    overflow: auto;
+}
+
+.table-empty {
+    padding: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.kanban-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+    min-width: 1450px;
+}
+
+.kanban-data-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--color-bg-card-alt);
+}
+
+.kanban-data-table th {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.kanban-data-table tbody tr {
+    border-bottom: 1px solid var(--color-border-light);
+    transition: background var(--transition-fast);
+}
+
+.kanban-data-table tbody tr:nth-child(even) {
+    background: var(--color-bg-subtle, rgba(0, 0, 0, 0.02));
+}
+
+.kanban-data-table tbody tr:hover {
+    background: var(--color-teal-light, rgba(122, 181, 188, 0.1));
+}
+
+.kanban-data-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    vertical-align: middle;
+}
+
+/* Column widths */
+.th-id, .table-cell-id { width: 70px; min-width: 70px; }
+.th-title, .table-cell-title { min-width: 180px; max-width: 280px; }
+.th-status, .table-cell-status { width: 130px; min-width: 130px; }
+.th-substatus, .table-cell-substatus { width: 100px; min-width: 100px; }
+.th-responsible, .table-cell-responsible { width: 140px; min-width: 140px; }
+.th-date, .table-cell-date { width: 120px; min-width: 120px; }
+.th-tags, .table-cell-tags { width: 140px; min-width: 140px; }
+.th-related, .table-cell-related { width: 140px; min-width: 140px; }
+.th-stakeholders, .table-cell-stakeholders { width: 120px; min-width: 120px; }
+.th-updates, .table-cell-updates { width: 180px; min-width: 180px; }
+.th-updated, .table-cell-updated { width: 100px; min-width: 100px; }
+.th-actions, .table-cell-actions { width: 70px; min-width: 70px; text-align: center; }
+
+/* Title cell - truncate */
+.table-cell-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--color-text);
+}
+
+/* ID button to open editor */
+.table-open-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-teal-dark, #2c6b6f);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+}
+
+.table-open-btn:hover {
+    background: var(--color-teal-light, rgba(122, 181, 188, 0.2));
+    text-decoration: underline;
+}
+
+/* Table inputs */
+.table-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    background: transparent;
+    transition: var(--transition-fast);
+}
+
+.table-input:hover {
+    border-color: var(--color-border);
+    background: var(--color-bg-card);
+}
+
+.table-input:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    background: var(--color-bg-card);
+    box-shadow: 0 0 0 2px var(--color-teal-light);
+}
+
+.table-input::placeholder {
+    color: var(--color-text-light);
+}
+
+/* Select inputs */
+.table-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 6px center;
+    padding-right: 24px;
+}
+
+/* Date inputs */
+.table-date {
+    max-width: 130px;
+}
+
+/* Disabled substatus cell */
+.table-cell-disabled {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Stakeholders display - clickable to open editor */
+.table-stakeholders-display {
+    display: block;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: var(--transition-fast);
+}
+
+.table-stakeholders-display:hover {
+    background: var(--color-teal-light, rgba(122, 181, 188, 0.2));
+}
+
+/* Textarea for updates */
+.table-textarea {
+    resize: vertical;
+    min-height: 32px;
+    max-height: 80px;
+    line-height: 1.3;
+}
+
+/* Updated cell */
+.table-cell-updated {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+}
+
+/* Action links */
+.table-action-link {
+    display: inline-block;
+    padding: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: var(--transition-fast);
+}
+
+.table-action-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Responsive: horizontal scroll on smaller screens */
+@media (max-width: 1200px) {
+    .kanban-table-container {
+        overflow-x: auto;
+    }
+}
