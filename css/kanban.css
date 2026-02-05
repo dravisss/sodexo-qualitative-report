@@ -1415,7 +1415,12 @@
     color: var(--color-text-muted);
 }
 
-.table-fullscreen-btn {
+.table-toolbar-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.table-toolbar-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -1430,7 +1435,7 @@
     transition: var(--transition-fast);
 }
 
-.table-fullscreen-btn:hover {
+.table-toolbar-btn:hover {
     background: var(--color-teal-light);
     border-color: var(--color-teal);
 }

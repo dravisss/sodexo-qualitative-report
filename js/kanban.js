@@ -2466,9 +2466,14 @@ class KanbanManager {
         this.tableEl.innerHTML = `
             <div class="table-toolbar">
                 <span class="table-count">${cards.length} intervenções</span>
-                <button type="button" class="table-fullscreen-btn" id="table-fullscreen-toggle" title="Tela cheia (Esc para sair)">
-                    <span class="fullscreen-icon">⛶</span> Tela cheia
-                </button>
+                <div class="table-toolbar-actions">
+                    <button type="button" class="table-toolbar-btn" id="table-export-csv" title="Exportar para CSV">
+                        📥 Exportar CSV
+                    </button>
+                    <button type="button" class="table-toolbar-btn" id="table-fullscreen-toggle" title="Tela cheia (Esc para sair)">
+                        <span class="fullscreen-icon">⛶</span> Tela cheia
+                    </button>
+                </div>
             </div>
             <div class="table-scroll">
                 <table class="kanban-data-table">
@@ -2509,6 +2514,12 @@ class KanbanManager {
         const fullscreenBtn = this.tableEl.querySelector('#table-fullscreen-toggle');
         if (fullscreenBtn) {
             fullscreenBtn.addEventListener('click', () => this.toggleTableFullscreen());
+        }
+
+        // CSV export
+        const exportBtn = this.tableEl.querySelector('#table-export-csv');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', () => this.exportTableToCSV());
         }
 
         // Open editor buttons
@@ -2560,6 +2571,88 @@ class KanbanManager {
                 this._tableEscHandler = null;
             }
         }
+    }
+
+    /**
+     * Export table data to CSV file
+     */
+    exportTableToCSV() {
+        const cards = this.getFilteredCards();
+        if (cards.length === 0) {
+            alert('Nenhuma intervenção para exportar.');
+            return;
+        }
+
+        // CSV headers
+        const headers = [
+            'ID',
+            'Título',
+            'Status',
+            'Substatus',
+            'Responsável',
+            'Início',
+            'Fim',
+            'Tags',
+            'Iniciativas Relacionadas',
+            'Envolver',
+            'Atualizações',
+            'Atualizado em'
+        ];
+
+        // Build CSV rows
+        const rows = cards.map(card => {
+            const s = this.kanbanState[card.id] || {};
+            const stakeholders = Array.isArray(s.stakeholders) 
+                ? s.stakeholders.map(st => st.name).join('; ') 
+                : '';
+            const tags = Array.isArray(s.tags) ? s.tags.join('; ') : '';
+            const updates = (s.updates || '').replace(/\n/g, ' | ');
+            
+            return [
+                card.id,
+                card.title,
+                s.status || 'backlog',
+                s.substatus || '',
+                s.responsible || '',
+                s.startDate || '',
+                s.endDate || '',
+                tags,
+                s.relatedInitiatives || '',
+                stakeholders,
+                updates,
+                s.updatedAt ? this.formatDateTimeBR(s.updatedAt) : ''
+            ];
+        });
+
+        // Escape CSV values
+        const escapeCSV = (val) => {
+            if (val == null) return '';
+            const str = String(val);
+            if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+                return '"' + str.replace(/"/g, '""') + '"';
+            }
+            return str;
+        };
+
+        // Build CSV content
+        const csvContent = [
+            headers.map(escapeCSV).join(','),
+            ...rows.map(row => row.map(escapeCSV).join(','))
+        ].join('\n');
+
+        // Add BOM for Excel UTF-8 compatibility
+        const bom = '\uFEFF';
+        const blob = new Blob([bom + csvContent], { type: 'text/csv;charset=utf-8;' });
+        
+        // Download
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `kanban-intervencoes-${new Date().toISOString().slice(0,10)}.csv`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
     }
 
     /**
