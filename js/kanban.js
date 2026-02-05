@@ -2464,6 +2464,12 @@ class KanbanManager {
         }).join('');
 
         this.tableEl.innerHTML = `
+            <div class="table-toolbar">
+                <span class="table-count">${cards.length} intervenções</span>
+                <button type="button" class="table-fullscreen-btn" id="table-fullscreen-toggle" title="Tela cheia (Esc para sair)">
+                    <span class="fullscreen-icon">⛶</span> Tela cheia
+                </button>
+            </div>
             <div class="table-scroll">
                 <table class="kanban-data-table">
                     <thead>
@@ -2499,6 +2505,12 @@ class KanbanManager {
     bindTableEvents() {
         if (!this.tableEl) return;
 
+        // Fullscreen toggle
+        const fullscreenBtn = this.tableEl.querySelector('#table-fullscreen-toggle');
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', () => this.toggleTableFullscreen());
+        }
+
         // Open editor buttons
         this.tableEl.querySelectorAll('[data-action="open"]').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -2518,6 +2530,36 @@ class KanbanManager {
                 input.addEventListener('blur', handler);
             }
         });
+    }
+
+    /**
+     * Toggle table fullscreen mode
+     */
+    toggleTableFullscreen() {
+        if (!this.tableEl) return;
+        
+        const isFullscreen = this.tableEl.classList.toggle('table-fullscreen');
+        const btn = this.tableEl.querySelector('#table-fullscreen-toggle');
+        
+        if (isFullscreen) {
+            document.body.style.overflow = 'hidden';
+            if (btn) btn.innerHTML = '<span class="fullscreen-icon">✕</span> Sair';
+            
+            // Add Esc key listener
+            this._tableEscHandler = (e) => {
+                if (e.key === 'Escape') this.toggleTableFullscreen();
+            };
+            document.addEventListener('keydown', this._tableEscHandler);
+        } else {
+            document.body.style.overflow = '';
+            if (btn) btn.innerHTML = '<span class="fullscreen-icon">⛶</span> Tela cheia';
+            
+            // Remove Esc key listener
+            if (this._tableEscHandler) {
+                document.removeEventListener('keydown', this._tableEscHandler);
+                this._tableEscHandler = null;
+            }
+        }
     }
 
     /**
