@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Adotar ajuste salarial territorial (benchmark por CEP/polo logístico) para recuperar competitividade em Cajamar/Guarulhos, reduzir seleção adversa e reduzir turnover precoce por ganhos marginais.
+Benchmark Territorial (Catho/Vagas/CAGED) para reposicionar salário-base: piso R$ 2.000 para Auxiliar (vs R$ 1.850 atual), R$ 1.900 para ASG (vs R$ 1.650). Gap nominal atual de R$ 250-400 vs Amazon/Mercado Livre torna Sodexo "segunda opção" crônica, gerando turnover estrutural >100%/ano. Implementação faseada: piloto Guarulhos FM (turnover crítico), depois escala.
 
 ## O que os dados provam
 

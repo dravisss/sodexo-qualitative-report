@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar um fundo local e auditável de itens extras de alimentação do time, abastecido pela redução de perdas (furto/desperdício), para substituir vigilância punitiva por incentivo coletivo e pressão social, reduzindo perdas e melhorando clima.
+Substituir a "polícia de estoque" (cara e ineficiente) por um "contrato de prosperidade compartilhada": a redução comprovada das perdas (quebras/furtos) financia automaticamente um upgrade na qualidade da alimentação do próprio time. Alinha o interesse individual (comer melhor) com o da empresa (perder menos).
 
 ## O que os dados provam
 

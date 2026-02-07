@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Substituir a "polícia de estoque" (cara e ineficiente) por um "contrato de prosperidade compartilhada": a redução comprovada das perdas (quebras/furtos) financia automaticamente um upgrade na qualidade da alimentação do próprio time. Alinha o interesse individual (comer melhor) com o da empresa (perder menos).
+
 - Intervenção: `I-18`
 - Unidade(s): Cajamar | Guarulhos Food
 - Frente: Descompressão

@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar separação física e regra de uso cruzado (com autorização e registro) para insumos por turno, reduzindo improviso e conflito quando o almoço “puxa” insumos do jantar e quebra o planejamento do turno seguinte.
+Garantir a "soberania de estoque" do turno da noite através de segregação física inviolável (armário/gaiola trancada) dos insumos críticos, impedindo que a "pressão do almoço" canibalize o planejamento do jantar e force a improvisação crônica que desmoraliza o cozinheiro noturno.
 
 ## O que os dados provam
 

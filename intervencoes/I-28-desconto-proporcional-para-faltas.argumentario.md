@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Trocar a lógica binária de punição por faltas por uma escala progressiva/proporcional, para reduzir presenteísmo e manter incentivo à presença após a primeira falta.
+Substituir regra binária (110h falta = perde 100% PLR) por escala proporcional de desconto (0-30h = 10%, 30-60h = 30%, 60-90h = 60%, >110h = 100%), eliminando os dois comportamentos tóxicos induzidos: presenteísmo (trabalhar doente) e desistência precoce ("já perdi tudo, tanto faz").
 
 ## O que os dados provam
 

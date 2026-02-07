@@ -12,6 +12,10 @@
 - Uma auditoria técnica curta e focada transforma percepções em um diagnóstico executável: onde está o gargalo, qual recurso falta, qual mudança é de processo e qual depende de contrato.
 - Sem esse diagnóstico, intervenções como revisão de quadro, mesa de infraestrutura e ajustes de turno viram tentativa e erro.
 
+## Tese (o que defender)
+
+Rodar uma auditoria técnica curta (observação + medição simples) por unidade para transformar discussão abstrata de “falta gente/infra” em decisões executáveis: gargalos de fluxo, recursos críticos, backlog com dono e o que depende de contrato/cliente.
+
 ## O que está provado vs. o que é hipótese
 
 - Provado:

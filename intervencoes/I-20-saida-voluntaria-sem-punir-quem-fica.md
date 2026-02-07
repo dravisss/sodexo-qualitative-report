@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Construir uma "Ponte Dourada" para a saída honrosa de colaboradores desengajados, oferecendo pacotes de desligamento negociado (com manutenção de parte dos benefícios/acordo legal) que custam menos que a permanência de um sabotador na folha de pagamento.
+
 - Intervenção: `I-20`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

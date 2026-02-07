@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá CLT/Terceirizado). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente. Rixa atual ("não é meu problema") custa 15% de produtividade em tarefas colaborativas.
+
 - Intervenção: `I-36`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reposicionamento

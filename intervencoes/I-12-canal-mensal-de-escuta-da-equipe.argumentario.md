@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Instituir um rito mensal curto (30 min) de escuta ativa com resposta obrigatória e rastreável, para transformar reclamações recorrentes em backlog com status e reduzir frustração por “problemas ignorados”.
+Instituir um rito de escuta "imune à retaliação" conectado obrigatoriamente a um Backlog Público de Resolução, quebrando o ciclo de "reclamação de corredor" e cinismo gerado por pesquisas de clima anônimas que nunca geram ação prática na ponta.
 
 ## O que os dados provam
 

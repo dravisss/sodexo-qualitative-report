@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Criar "Deflator Seletivo" que distingue rotatividade involuntária (demissão por baixa performance documentada) = não deflaciona PLR, de rotatividade voluntária de profissionais com avaliação "bom/ótimo" = deflaciona progressivamente. Assim, o gestor pode renovar a equipe sem perder bônus pessoal quando resolve problemas de fit.
+
 - Intervenção: `I-26`
 - Unidade(s): Transversal
 - Frente: Reposicionamento

@@ -12,6 +12,10 @@
 - A intervenção é um mecanismo de proteção e redistribuição de carga física, com regra simples e rastreável em escala.
 - O acervo sustenta qualitativamente que restrições médicas são desconsideradas e que isso agrava lesões; e traz indicadores reportados de absenteísmo e INSS como contexto de risco.
 
+## Tese (o que defender)
+
+Implantar uma regra explícita de escala que proteja veteranos e pessoas com restrição (formal ou recorrente), redistribuindo tarefas de alto impacto físico e priorizando veteranos para funções de menor carga e instrução, para reduzir afastamentos crônicos e preservar conhecimento tácito.
+
 ## O que está provado vs. o que é hipótese
 
 - Provado:

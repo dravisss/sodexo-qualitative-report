@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Desvincular benefícios alimentares (cesta/VA/VR conforme regra local) de faltas justificadas por atestado médico para reduzir presenteísmo, risco sanitário e conflito com liderança, formalizando uma regra corporativa negociável com sindicato.
+Eliminar o "Presenteísmo por Fome" e profissionalizar a gestão de absenteísmo, trocando a punição alimentar por indicadores de assiduidade reais (Score de Assiduidade).nitário e conflito com liderança, formalizando uma regra corporativa negociável com sindicato.
 
 ## O que os dados provam
 

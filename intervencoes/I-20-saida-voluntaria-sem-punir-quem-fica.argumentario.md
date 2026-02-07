@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar um mecanismo de saída voluntária “honrosa” e padronizada, com blindagem de P&L local e PLR do time remanescente, para destravar retenção forçada e reduzir clima tóxico sem gerar colapso de capacidade.
+Construir uma "Ponte Dourada" para a saída honrosa de colaboradores desengajados, oferecendo pacotes de desligamento negociado (com manutenção de parte dos benefícios/acordo legal) que custam menos que a permanência de um sabotador na folha de pagamento.
 
 ## O que os dados provam
 

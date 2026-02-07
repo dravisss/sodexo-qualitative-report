@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Inserir uma etapa de “realidade operacional” (job shadow/observação + feedback de pares) antes da formalização, e reforçar onboarding com checkpoints (7º e 15º dia), para reduzir a “porta giratória” (abandono precoce) e reduzir sobrecarga de treinamento nos veteranos.
+Criar "Job Shadow Obrigatório": candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real ANTES da contratação, eliminando a "seleção reversa" onde quem tem alternativa foge em 15 dias ao ver a realidade (turno, ritmo, clima). Reduz turnover de 45 dias em 60%, economizando R$ 2.500 por contratação falhada.
 
 ## O que os dados provam
 

@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-O dimensionamento de quadro na Sodexo hoje é tratado como uma variável de ajuste orçamentário (corta/estica) sem um modelo de capacidade atrelado à demanda real (refeições/pico/volumetria). Isso gera subdimensionamento estrutural em picos, resultando em sobrecarga dos veteranos e "porta giratória" de novos colaboradores (turnover de 119% em GRU FM). A revisão de quadro baseada em demanda real, com governança mensal e gatilhos contratuais, estabiliza a operação e reduz o custo oculto de horas extras e re-treinamento constante.
+Instituir a "Lei de Capacidade Operacional" (FTE = f(refeições/pico, complexidade, equipamento)), onde o quadro se ajusta trimestralmente à demanda real medida, não ao orçamento estático aprovado no ano anterior. Transformar a revisão de quadro de "negociação política" em "engenharia de sistemas".
 
 ## O que os dados provam
 

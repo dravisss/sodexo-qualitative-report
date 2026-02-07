@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Revisar o deflator de turnover na PLR (perímetro, progressividade, transparência e exceções) para remover incentivos perversos e reduzir retenção forçada/maquiagem de indicador, preservando alinhamento com retenção sustentável.
+Criar "Deflator Seletivo" que distingue rotatividade involuntária (demissão por baixa performance documentada) = não deflaciona PLR, de rotatividade voluntária de profissionais com avaliação "bom/ótimo" = deflaciona progressivamente. Assim, o gestor pode renovar a equipe sem perder bônus pessoal quando resolve problemas de fit.
 
 ## O que os dados provam
 

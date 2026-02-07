@@ -12,6 +12,10 @@
 - O rodízio não é só escala. É uma regra visível de distribuição de carga com participação da equipe.
 - Esta intervenção cria previsibilidade e reduz ressentimento, e pode funcionar mesmo sem aumento imediato de headcount.
 
+## Tese (o que defender)
+
+Implantar um rodízio transparente e participativo de tarefas de alta carga física para reduzir concentração de esforço, reduzir percepção de injustiça e reduzir adoecimento e absenteísmo.
+
 ## O que está provado vs. o que é hipótese
 
 - Provado:

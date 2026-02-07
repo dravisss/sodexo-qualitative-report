@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Instrumentalizar o improviso como "evidência de dívida técnica", onde cada gambiarra operacional (ex: usar prato de sobremesa por falta de raso) gera um ticket automático de Falha Sistêmica, forçando a organização a encarar o custo oculto que hoje é pago silenciosamente com a saúde do time.
+
 - Intervenção: `I-17`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

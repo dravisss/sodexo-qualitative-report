@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar uma janela/turno dedicado de pré-preparo com entregáveis claros (descongelamento, corte, tempero, porcionamento) e registro simples, para reduzir improviso no pico e melhorar qualidade e previsibilidade.
+Instituir a "Blindagem do Mise-en-place" (janela sagrada de produção sem atendimento), reconhecendo que a qualidade do pico é fabricada nas 2 horas de silêncio anteriores. Transformar a preparação antecipada de "tarefa extra" em "pré-requisito de abertura da loja".
 
 ## O que os dados provam
 

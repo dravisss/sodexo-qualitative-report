@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Equalizar ritos, regras de convivência e tratamento visível (não necessariamente salário no curto prazo) para reduzir fragmentação por crachá e aumentar cooperação entre turnos e equipes.
+Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá CLT/Terceirizado). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente. Rixa atual ("não é meu problema") custa 15% de produtividade em tarefas colaborativas.
 
 ## O que os dados provam
 

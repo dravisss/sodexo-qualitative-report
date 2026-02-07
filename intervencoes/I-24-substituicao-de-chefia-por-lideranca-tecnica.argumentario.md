@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Substituir parte da chefia intermediária por liderança técnica operante (função gratificada, mão na massa) para reduzir custo fixo, reduzir vácuo técnico no turno e melhorar coordenação real da produção.
+Substituir "Encarregado Burocrático" (custo fixo de R$ 4.500/mês, não operante) por "Cozinheiro Líder" (gratificação de R$ 800, mão na massa), achatando a pirâmide e colocando a governança operacional nas mãos de quem domina o processo produtivo.
 
 ## O que os dados provam
 

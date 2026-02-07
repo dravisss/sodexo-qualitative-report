@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Redesenhar benefícios para competir em polos logísticos: plano de saúde com coparticipação viável (incluindo dependentes) e reajuste territorial de VA/VR, como mecanismo de atratividade e redução de seleção adversa.
+Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge + 2 filhos sem coparticipação) + VR R$ 25/dia (vs R$ 18 atual) + Fretado/VT, visando reposicionar Sodexo como "porto seguro familiar" vs Amazon (plano odonto + VR R$ 25 + bônus) e iFood (flexibilidade total). Custo: R$ 150/mês/colaborador. ROI: evitar 1 rescisão/ano já paga 16 meses de upgrade.
 
 ## O que os dados provam
 

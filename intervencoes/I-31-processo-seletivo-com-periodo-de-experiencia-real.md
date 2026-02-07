@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Criar "Job Shadow Obrigatório": candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real ANTES da contratação, eliminando a "seleção reversa" onde quem tem alternativa foge em 15 dias ao ver a realidade (turno, ritmo, clima). Reduz turnover de 45 dias em 60%, economizando R$ 2.500 por contratação falhada.
+
 - Intervenção: `I-31`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reposicionamento

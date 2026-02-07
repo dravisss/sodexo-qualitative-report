@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Criar "Registro de Auditoria de Subpapéis" (rodízio semanal documentado), onde cada ASG/OSG tem limite formal de carga crítica (ex: máximo 3 dias/semana em tarefas pesadas) e exceções são registradas como "Incidente de Subdimensionamento", forçando a operação a encarar que a "flexibilidade" mascara falta de gente.
+
 - Intervenção: `I-25`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

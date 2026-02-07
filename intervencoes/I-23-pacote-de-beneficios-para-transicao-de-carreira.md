@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Criar "Ponte de Segurança" (3 meses plano saúde + orientação de recolocação) para desligamentos negociados, reduzindo o risco individual de transição e desobstruindo a saída honrosa de colaboradores que hoje "fazem corpo mole" até serem demitidos para acessar FGTS.
+
 - Intervenção: `I-23`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Criar "Fila Única RH" com SLA por criticidade (Crítico 3 dias, Normal 7 dias, Rotina 15 dias), escalonamento automático (atraso >48h = alerta BP, >5 dias = escala regional) e evidência obrigatória de fechamento, transformando RH/DP de "caixa-preta" em processo rastreável.
+
 - Intervenção: `I-29`
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

@@ -12,6 +12,10 @@
 - O mecanismo precisa ser previsível e barato, para não virar promessa que morre em 2 meses.
 - O acervo sustenta qualitativamente que há ausência de reconhecimento e que o reconhecimento simbólico atual é percebido como insuficiente.
 
+## Tese (o que defender)
+
+Criar um calendário mínimo e previsível de ritos de reconhecimento (barato, padronizado e anti-favoritismo) para reduzir sensação de invisibilidade e estabilizar microclima.
+
 ## O que está provado vs. o que é hipótese
 
 - Provado:

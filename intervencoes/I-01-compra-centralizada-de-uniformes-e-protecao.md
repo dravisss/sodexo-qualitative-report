@@ -20,6 +20,8 @@
   - A operação descreve falta recorrente de itens básicos, incluindo uniformes e luvas de proteção.
 - Hipótese (a validar em execução):
   - O déficit material na ponta decorre menos de ausência de gasto total e mais de um sistema de compra e reposição que falha e vira improviso crônico.
+  - **Evidência de Bloqueio Financeiro**: Relatos de campo confirmam que a gestão da GM é o fator decisório para não-compra, e não a falta de fornecedor.
+  - **Gap de Estrutura**: Confirmação por Manu (Compras) de que não existe hoje estrutura de pessoas (CSC) para operacionalizar a centralização, sendo necessário aprovação de headcount para viabilizar a intervenção.
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
@@ -66,6 +68,13 @@ Leitura:
 Leitura:
 - O campo registra falta de materiais de proteção e uniforme como parte da escassez crônica de itens básicos.
 - Isso sustenta que a intervenção tem dimensão de dignidade e risco, não apenas de custo.
+
+### Evidência 4 — Estudo de Ruptura (Admissão vs. Compras)
+
+> "Projeto de estudo retroativo liderado por Manu (Compras): cruzar dados de admissões (RH) com volume de compras de fardamento no período. Hipótese de gap superior a 40% em unidades críticas."
+
+Leitura:
+- Prova matemática de que a entrada de pessoas não gera gatilho automático de equipamento, dependendo de ação manual (e discricionária) da GU.
 
 ## Força da evidência
 

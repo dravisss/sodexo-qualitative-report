@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Implantar um checklist curto e auditável de passagem de turno (com validação de quem entra), para reduzir retrabalho, conflito entre turnos e “herança” de problemas operacionais.
+Implementar um "Contrato de Passagem" físico e assinado entre líderes de turno, onde a aceitação do posto (Insumos + Limpeza) transfere formalmente a responsabilidade, eliminando a "herança de problemas" e a vitimização ("já peguei assim") como desculpa para baixa performance.
 
 ## O que os dados provam
 

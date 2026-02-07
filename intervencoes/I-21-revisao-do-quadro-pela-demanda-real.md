@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Instituir a "Lei de Capacidade Operacional" (FTE = f(refeições/pico, complexidade, equipamento)), onde o quadro se ajusta trimestralmente à demanda real medida, não ao orçamento estático aprovado no ano anterior. Transformar a revisão de quadro de "negociação política" em "engenharia de sistemas".
+
 - Intervenção: `I-21`
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

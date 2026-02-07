@@ -12,6 +12,10 @@
 - Esta intervenção é um mecanismo tampão enquanto a regra sistêmica de benefício e bônus não muda: liberar o trabalhador doente sem perda integral de renda.
 - O acervo já registra que regras punitivas ligadas a atestado e bônus são tratadas como negociadas com sindicatos e que a alteração exige negociação.
 
+## Tese (o que defender)
+
+Implementar um protocolo local de liberação remunerada para casos agudos (sintomas visíveis/incapacidade operacional), com registro e limites, como tampão enquanto a regra sistêmica de punição por atestado não muda, reduzindo presenteísmo e contágio.
+
 ## O que está provado vs. o que é hipótese
 
 - Provado:

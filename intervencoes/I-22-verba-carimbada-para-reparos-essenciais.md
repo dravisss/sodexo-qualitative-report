@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Criar "Reserva Protegida para Conformidade" (linha orçamentária blindada e auditável), reconhecendo que itens de conformidade não podem competir com outras despesas no curto prazo sob pena de gerar passivo oculto (NR/CLT) que custa 10x mais depois.
+
 - Intervenção: `I-22`
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

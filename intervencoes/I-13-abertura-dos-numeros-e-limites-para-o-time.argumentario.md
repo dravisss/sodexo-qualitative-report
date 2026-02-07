@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Abrir, de forma controlada, as regras do jogo (limites orçamentários e alçadas) para deslocar a fricção do “gerente mau” para a regra do sistema, reduzindo antagonismo e boatos e aumentando adesão aos ritos.
+Compartilhar as "regras de travamento" do sistema (Budget travado, normas de Compliance, alçadas de compra) com a equipe, deslocando o antagonismo da figura do "Gerente Mau" para a "Regra do Jogo", criando um inimigo comum (a restrição) e legitimando a necessidade de priorização dolorosa.
 
 ## O que os dados provam
 

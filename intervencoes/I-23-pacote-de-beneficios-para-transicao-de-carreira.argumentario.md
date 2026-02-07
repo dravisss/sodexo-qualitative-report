@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Oferecer um pacote de transição (extensão de plano de saúde por 3 meses + facilitação de acordo/antecipação parcial + carta/orientação) para tornar a saída voluntária ou negociada uma opção viável, reduzindo retenção forçada e passivo oculto de produtividade.
+Criar "Ponte de Segurança" (3 meses plano saúde + orientação de recolocação) para desligamentos negociados, reduzindo o risco individual de transição e desobstruindo a saída honrosa de colaboradores que hoje "fazem corpo mole" até serem demitidos para acessar FGTS.
 
 ## O que os dados provam
 

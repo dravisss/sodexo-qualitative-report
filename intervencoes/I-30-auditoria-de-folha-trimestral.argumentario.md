@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Instituir um rito trimestral de auditoria de folha (por amostragem e itens de maior risco), com checklist e trilha de correção até fechamento, para reduzir reincidência de erro e ruído operacional, e aumentar confiança do time.
+Instituir rito trimestral de auditoria por amostragem (10% folha/unidade, foco em rescisões e horas extras) com checklist (ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias), publicação anônima de % conformidade e prazo de correção, cortando pela raiz a "lenda urbana de roubo" que descamba para Sindicato/Justiça (R$ 15k/processo evitável).
 
 ## O que os dados provam
 

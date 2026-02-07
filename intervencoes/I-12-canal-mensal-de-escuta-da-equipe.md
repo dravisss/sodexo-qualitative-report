@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Instituir um rito de escuta "imune à retaliação" conectado obrigatoriamente a um Backlog Público de Resolução, quebrando o ciclo de "reclamação de corredor" e cinismo gerado por pesquisas de clima anônimas que nunca geram ação prática na ponta.
+
 - Intervenção: `I-12`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Descompressão

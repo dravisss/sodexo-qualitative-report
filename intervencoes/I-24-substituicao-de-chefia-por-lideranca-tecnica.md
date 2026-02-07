@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Substituir "Encarregado Burocrático" (custo fixo de R$ 4.500/mês, não operante) por "Cozinheiro Líder" (gratificação de R$ 800, mão na massa), achatando a pirâmide e colocando a governança operacional nas mãos de quem domina o processo produtivo.
+
 - Intervenção: `I-24`
 - Unidade(s): Cajamar | Guarulhos Food
 - Frente: Reestruturação

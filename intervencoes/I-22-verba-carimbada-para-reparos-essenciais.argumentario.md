@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar uma linha orçamentária protegida (verba carimbada) para itens essenciais de EPI/uniformes e manutenção crítica, com lista elegível, limites e evidência objetiva de uso, para reduzir improviso e risco jurídico/operacional quando o orçamento aperta.
+Criar "Reserva Protegida para Conformidade" (linha orçamentária blindada e auditável), reconhecendo que itens de conformidade não podem competir com outras despesas no curto prazo sob pena de gerar passivo oculto (NR/CLT) que custa 10x mais depois.
 
 ## O que os dados provam
 

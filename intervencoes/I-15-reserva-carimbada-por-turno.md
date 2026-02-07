@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Garantir a "soberania de estoque" do turno da noite através de segregação física inviolável (armário/gaiola trancada) dos insumos críticos, impedindo que a "pressão do almoço" canibalize o planejamento do jantar e force a improvisação crônica que desmoraliza o cozinheiro noturno.
+
 - Intervenção: `I-15`
 - Unidade(s): Cajamar | Guarulhos Food
 - Frente: Descompressão

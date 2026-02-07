@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-A Sodexo está retendo colaboradores desengajados e de baixa performance porque o custo de rescisão (multa FGTS e verbas não provisionadas) é debitado diretamente no centro de custo da unidade, inviabilizando a meta mensal de GM do gestor local. Esse "travamento rescisório" gera um passivo oculto de produtividade estimado em R$ 60k/ano por unidade (base: 5 funcionários a 50% de performance). A criação de um fundo centralizado ("Fundo de Renovação") desvincula a decisão técnica de desligamento da restrição de caixa local, permitindo o saneamento do clima e a renovação por perfil.
+Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisório (multas e encargos) em um fundo corporativo ("Bad Bank" de RH), permitindo que o gestor local demita baseado em critérios técnicos (competência/fit) sem implodir o P&L da unidade no mês da decisão.
 
 ## O que os dados provam
 

@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Instituir rito trimestral de auditoria por amostragem (10% folha/unidade, foco em rescisões e horas extras) com checklist (ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias), publicação anônima de % conformidade e prazo de correção, cortando pela raiz a "lenda urbana de roubo" que descamba para Sindicato/Justiça (R$ 15k/processo evitável).
+
 - Intervenção: `I-30`
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação

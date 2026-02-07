@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge + 2 filhos sem coparticipação) + VR R$ 25/dia (vs R$ 18 atual) + Fretado/VT, visando reposicionar Sodexo como "porto seguro familiar" vs Amazon (plano odonto + VR R$ 25 + bônus) e iFood (flexibilidade total). Custo: R$ 150/mês/colaborador. ROI: evitar 1 rescisão/ano já paga 16 meses de upgrade.
+
 - Intervenção: `I-33`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reposicionamento

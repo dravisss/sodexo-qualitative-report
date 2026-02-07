@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Tratar uniformes e EPI como “torniquete corporativo” de risco e dignidade: zerar déficit rapidamente via compra centralizada fora do P&L local e instituir um mecanismo simples de reposição e realocação entre unidades para evitar ruptura recorrente.
+Tratar uniformes e EPI não apenas como compra emergencial, mas como reestruturação de governança: retirar a autonomia de compra da unidade (eliminando o conflito de interesse com a PLR) e instituir um processo corporativo automático acionado por admissão (via novo CSC), transformando custo variável oculto em investimento controlado.
 
 ## O que os dados provam
 
@@ -24,10 +24,13 @@ Tratar uniformes e EPI como “torniquete corporativo” de risco e dignidade: z
 
 - “Se sair do P&L local, perde-se controle e aumenta desperdício”.
 - “Realocar entre unidades aumenta risco de desvio/perda”.
+- “Isso vai aumentar o custo fixo da empresa (OPEX central)”.
 
 ## Respostas (com base em evidências)
 
 - O acervo já mostra que, quando o item é essencial, a execução real tende a furar o plan. O controle precisa ser pelo mecanismo: kit mínimo, estoque mínimo e registro de reposição, em vez de improviso local.
+- **Defesa do Custo Oculto**: "O custo não está aumentando, ele está apenas saindo da invisibilidade. Hoje, pagamos esse valor em processos trabalhistas, multas de segurança e turnover de insatisfação. Centralizar transforma um custo 'ruim' e variável em um investimento controlado e previsível. Além disso, a compra em escala nacional (sem picadinho local) tende a reduzir o custo unitário em 15-20%."
+- **Defesa da Governança**: "Não é tirar autonomia do gerente, é tirar um fardo administrativo e um conflito de interesse. O gerente não deve ter que escolher entre proteger a equipe e bater a meta."
 
 ## Viabilidade prática
 

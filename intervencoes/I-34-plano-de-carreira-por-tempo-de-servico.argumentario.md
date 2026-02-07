@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar um plano de progressão previsível por tempo de serviço (com trava mínima de desempenho e disciplina) para reduzir sensação de futuro inexistente, reter conhecimento e reduzir saída por “ganho marginal”.
+Plano de Carreira Automático: 2 anos casa + sem advertências = promoção para "Auxiliar Sênior" (aumento R$ 150), 4 anos = "Operador Especialista" (mais R$ 200). Prêmio Tempo de Empresa: 3 anos = R$ 300, 5 anos = R$ 600 (pagamento único anual). Gestor não pode vetar, apenas adiar por 3 meses com justificativa formal (reduz clientelismo). Colaborador veterano (2-3 anos) hoje sai pelo "título" em varejo, não pelo dinheiro.
 
 ## O que os dados provam
 

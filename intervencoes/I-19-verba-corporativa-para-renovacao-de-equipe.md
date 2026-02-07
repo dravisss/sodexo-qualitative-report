@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisório (multas e encargos) em um fundo corporativo ("Bad Bank" de RH), permitindo que o gestor local demita baseado em critérios técnicos (competência/fit) sem implodir o P&L da unidade no mês da decisão.
+
 - Intervenção: `I-19`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM | Transversal
 - Frente: Reestruturação

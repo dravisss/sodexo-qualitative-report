@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Implementar fretado e testar escalas mais competitivas (5x2, 12x36 quando aplicável) para remover barreiras de atratividade (deslocamento e recuperação) em polos logísticos e reduzir turnover por cansaço/logística.
+Implementar Fretado gratuito (3 pontos de embarque) + Escala 5x2 para equiparar (ao menos parcialmente) ao benchmark local: Amazon/Mercado Livre oferecem fretado + escala 4x3 + R$ 200 a mais, tornando a vaga Sodexo "invisível" para quem mora a >1h de transporte público. Resultado: só se candidata quem está desempregado há meses.
 
 ## O que os dados provam
 

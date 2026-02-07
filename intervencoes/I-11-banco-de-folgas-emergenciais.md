@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Formalizar um mecanismo de reciprocidade (Banco de Folgas Local) que converta a inevitável sobrecarga de cobertura (horas extras) em moeda de flexibilidade (crédito de tempo), retirando a gestão de escalas da ilegalidade informal e reduzindo o absenteísmo defensivo ("vou faltar senão não resolvo").
+
 - Intervenção: `I-11`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Descompressão

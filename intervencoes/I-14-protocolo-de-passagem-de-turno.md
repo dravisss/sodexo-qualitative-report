@@ -2,6 +2,10 @@
 
 ## Identificação
 
+## Tese (o que defender)
+
+Implementar um "Contrato de Passagem" físico e assinado entre líderes de turno, onde a aceitação do posto (Insumos + Limpeza) transfere formalmente a responsabilidade, eliminando a "herança de problemas" e a vitimização ("já peguei assim") como desculpa para baixa performance.
+
 - Intervenção: `I-14`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Descompressão

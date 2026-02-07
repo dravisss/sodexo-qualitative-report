@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Converter improvisos relevantes em “tickets” de falha sistêmica (material/equipamento/gente/processo) com revisão semanal e backlog priorizado, para parar de normalizar precariedade por heroísmo e forçar correção de causa raiz.
+Instrumentalizar o improviso como "evidência de dívida técnica", onde cada gambiarra operacional (ex: usar prato de sobremesa por falta de raso) gera um ticket automático de Falha Sistêmica, forçando a organização a encarar o custo oculto que hoje é pago silenciosamente com a saúde do time.
 
 ## O que os dados provam
 

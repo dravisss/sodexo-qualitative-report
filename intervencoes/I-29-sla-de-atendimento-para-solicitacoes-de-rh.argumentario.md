@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Instituir um SLA simples e rastreável (fila única + triagem + prioridade + evidência de fechamento) para demandas críticas de RH/DP, reduzindo ruído operacional e aumentando confiança na ponta.
+Criar "Fila Única RH" com SLA por criticidade (Crítico 3 dias, Normal 7 dias, Rotina 15 dias), escalonamento automático (atraso >48h = alerta BP, >5 dias = escala regional) e evidência obrigatória de fechamento, transformando RH/DP de "caixa-preta" em processo rastreável.
 
 ## O que os dados provam
 

@@ -20,6 +20,8 @@
   - O campo registra que incentivos financeiros penalizam faltas e criam medo de apresentar atestados.
 - Hipótese (a validar em execução):
   - A desvinculação de cesta e benefícios alimentares de faltas justificadas tende a reduzir presenteísmo e melhorar indicadores de absenteísmo e afastamentos em médio prazo.
+  - **Evidência de Mecanismo Disciplinar**: Relatos indicam que GUs resistem à mudança pois veem o desconto como único meio de controle de equipe.
+  - **Presenteísmo Tóxico**: Confirmação visual de colaboradores gripados/febris na linha de servir para não perder a cesta ("O medo da fome vence o medo do vírus").
 
 ## Tensão / Objetivo / Impacto (doc 08)
 

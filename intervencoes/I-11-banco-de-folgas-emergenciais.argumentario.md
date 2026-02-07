@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar um banco simples e rastreável de folgas emergenciais, baseado em reciprocidade de cobertura de turnos, para reduzir fricção por rigidez de escala e reduzir faltas não planejadas.
+Formalizar um mecanismo de reciprocidade (Banco de Folgas Local) que converta a inevitável sobrecarga de cobertura (horas extras) em moeda de flexibilidade (crédito de tempo), retirando a gestão de escalas da ilegalidade informal e reduzindo o absenteísmo defensivo ("vou faltar senão não resolvo").
 
 ## O que os dados provam
 
