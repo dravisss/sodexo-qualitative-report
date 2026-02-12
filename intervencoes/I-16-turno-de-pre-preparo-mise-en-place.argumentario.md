@@ -1,8 +1,8 @@
-# Argumentário — I-16 — Turno de pré-preparo (mise en place)
+# Argumentário — I-16 — Turno de Pré-Preparo (Mise en Place)
 
 ## Tese (o que defender)
-
-Instituir a "Blindagem do Mise-en-place" (janela sagrada de produção sem atendimento), reconhecendo que a qualidade do pico é fabricada nas 2 horas de silêncio anteriores. Transformar a preparação antecipada de "tarefa extra" em "pré-requisito de abertura da loja".
+ 
+Designar "Guardião do Mise-en-place" em turno trocado ou janela blindada (ex: 7h-9h só produção). Proibir a abertura da linha de servir sem o checklist de pré-preparo validado. Investir em horas de silêncio para economizar horas de grito.
 
 ## O que os dados provam
 

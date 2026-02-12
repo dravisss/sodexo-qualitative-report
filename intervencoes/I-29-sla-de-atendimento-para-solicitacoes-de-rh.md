@@ -26,9 +26,10 @@ Criar "Fila Única RH" com SLA por criticidade (Crítico 3 dias, Normal 7 dias, 
 
 ## Tensão / Objetivo / Impacto — doc 08
 
-- Tensão: demandas de RH e DP viram fila invisível e sem dono. O impacto aparece como conflito, retrabalho e desgaste na ponta.
-- Objetivo: estabelecer um SLA de atendimento, com triagem e prioridade, para solicitações críticas, com rastreabilidade e prazo de resposta.
-- Impacto esperado: reduzir tempo parado e retrabalho, diminuir escalada informal e aumentar confiança do time em processos de RH.
+- Tensão: Processos de RH/DP com baixa visibilidade de status: folha errada demora semanas para corrigir, férias somem do sistema, ticket de uniforme fica no limbo. Resultado: gestor local vira "despachante" informal de RH, perdendo 2h/dia resolvendo burocracias.
+- Descrição: Fila Única RH com SLA por criticidade: Crítico (folha/rescisão) = 3 dias úteis, Normal (férias/benefícios) = 7 dias, Rotina (dúvidas) = 15 dias. Escalonamento automático: atraso >48h = alerta ao BP, >5 dias = escala RH regional. Evidência de fechamento obrigatória (print/protocolo).
+- Objetivo: Restaurar a confiança nos processos administrativos.
+- Impacto: Reduz a ansiedade financeira e a percepção de descaso.
 
 ## Descrição
 

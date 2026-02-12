@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Redesenhar o “gatilho” da PLR para ser progressivo por faixas (reduzindo o tudo-ou-nada), mantendo conexão com GM% e metas operacionais já existentes, para melhorar previsibilidade e reduzir incentivos perversos de curto prazo.
+Curva de gatilho progressivo: 85% GM = 20% PLR, 90% = 50%, 95% = 100%, >100% = multiplicador. Regra publicada em dashboard mensal visível ao time. Exceção: rescisão de contrato (cliente) = suspensão do deflator no trimestre.
 
 ## O que os dados provam
 

@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar "Reserva Protegida para Conformidade" (linha orçamentária blindada e auditável), reconhecendo que itens de conformidade não podem competir com outras despesas no curto prazo sob pena de gerar passivo oculto (NR/CLT) que custa 10x mais depois.
+Criar conta "Essenciais Blindados" (5% do Opex) com lista fechada (EPIs, uniformes, extintores, reparos críticos NR), prestação de contas mensal via NF/foto, e auditoria trimestral. Quem tentar usar para não-essencial perde a verba no mês seguinte (punição automática).
 
 ## O que os dados provam
 

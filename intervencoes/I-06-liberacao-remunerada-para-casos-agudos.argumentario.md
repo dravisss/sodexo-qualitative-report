@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Implementar um protocolo local de liberação remunerada para casos agudos (sintomas visíveis/incapacidade operacional), com registro e limites, como tampão enquanto a regra sistêmica de punição por atestado não muda, reduzindo presenteísmo e contágio.
+Implementar protocolo local de liberação remunerada para casos agudos (tampão), preservando a renda variável e reduzindo o presenteísmo induzido por punição sistêmica.
 
 ## O que os dados provam
 

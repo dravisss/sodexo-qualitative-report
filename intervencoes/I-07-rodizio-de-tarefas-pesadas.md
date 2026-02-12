@@ -26,9 +26,10 @@ Implantar um rodízio transparente e participativo de tarefas de alta carga fís
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Distribuição desigual de tarefas pesadas entre turnos ou pessoas, gerando ressentimento e conflito.
+- Tensão: Distribuição desigual de tarefas pesadas entre turnos ou pessoas, gerando ressentimento ("só eu carrego peso") e conflito.
+- Descrição: Rodízio transparente e participativo de tarefas de alta carga física, visando reduzir concentração de esforço e a percepção de injustiça na distribuição de tarefas.
 - Objetivo: Visualizar e rotacionar a distribuição de esforço físico de forma transparente e participativa.
-- Impacto esperado: Reduzir percepção de injustiça e aumentar colaboração entre turnos.
+- Impacto: Se a equipe visualiza a carga e participa da distribuição, a percepção de injustiça diminui e a colaboração entre turnos aumenta.
 
 ## Descrição (doc 08, com adaptações)
 

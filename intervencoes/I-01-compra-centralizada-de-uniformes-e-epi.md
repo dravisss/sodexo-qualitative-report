@@ -1,4 +1,4 @@
-# I-01 — Compra centralizada de uniformes e proteção
+# I-01 — Compra centralizada de uniformes e EPI
 
 ## Identificação
 
@@ -25,9 +25,10 @@
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Colaboradores trabalhando em condições indignas ou inseguras por falta de EPI, gerando risco legal e moral.
-- Objetivo: Zerar o déficit de equipamentos básicos de proteção e vestimenta em todas as unidades.
-- Impacto esperado: Reduzir imediatamente risco de passivo trabalhista e um dos sinais mais visíveis de abandono.
+- Tensão: Colaboradores com vestimenta abaixo do padrão operacional mínimo (ex: 1 uniforme para 6x1) porque a estrutura de incentivos atual desestimula gastos com vestimenta/EPI para proteger metas de curto prazo.
+- Descrição: Retirar a autonomia de compra da unidade, transformando o custo variável em rateio corporativo fixo. Implementar envio automático de kits baseado em gatilhos de admissão (via sistema de RH) e reposição programada, operado por nova célula no CSC.
+- Objetivo: Zerar o déficit permanente de vestimenta e EPI, garantindo que a proteção chegue à ponta independente da vontade ou meta financeira do gerente local.
+- Impacto: Elimina o descontentamento visível, recupera a dignidade do trabalhador e reduz riscos trabalhistas e de segurança.
 
 ## Descrição (doc 08, com adaptações)
 

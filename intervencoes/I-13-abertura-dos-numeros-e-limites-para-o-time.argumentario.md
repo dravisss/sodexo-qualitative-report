@@ -1,13 +1,13 @@
 # Argumentário — I-13 — Abertura dos números e limites para o time
 
 ## Tese (o que defender)
-
-Compartilhar as "regras de travamento" do sistema (Budget travado, normas de Compliance, alçadas de compra) com a equipe, deslocando o antagonismo da figura do "Gerente Mau" para a "Regra do Jogo", criando um inimigo comum (a restrição) e legitimando a necessidade de priorização dolorosa.
+ 
+Sessão de "Open Book Simplificado": explicar didaticamente o que é CAPEX vs OPEX, por que o uniforme atrasa (processo de compras) e qual a verba real disponível. Transformar reclamações em educação financeira.
 
 ## O que os dados provam
 
 - A unidade não tem verba livre e opera conforme budget, e compras/ajustes/demissões/manutenções exigem aprovação superior. Não há fundo de emergência.
-- A meta de turnover total da diretoria operacional deflaciona o direito ao pagamento de PLR em 10% quando não atingida, o que sustenta que existe pressão sistêmica por indicadores, e que “regras” importam.
+- As restrições de budget e a necessidade de aprovação superior são evidenciadas no banco de respostas.
 
 ## O que os dados sugerem (mas não provam)
 

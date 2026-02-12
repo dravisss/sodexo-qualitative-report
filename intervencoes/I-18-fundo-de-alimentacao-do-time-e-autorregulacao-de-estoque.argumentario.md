@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Substituir a "polícia de estoque" (cara e ineficiente) por um "contrato de prosperidade compartilhada": a redução comprovada das perdas (quebras/furtos) financia automaticamente um upgrade na qualidade da alimentação do próprio time. Alinha o interesse individual (comer melhor) com o da empresa (perder menos).
+Criação de um "Fundo de Melhoria" abastecido pela variação positiva do CMV Teórico vs Real. Se a sobra técnica aumenta (menos desperdício), o time ganha café da manhã premium, churrasco mensal ou itens nobres. O próprio grupo passa a vigiar o desperdício para não perder o bônus.
 
 ## O que os dados provam
 

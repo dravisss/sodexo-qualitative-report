@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Plano de Carreira Automático: 2 anos casa + sem advertências = promoção para "Auxiliar Sênior" (aumento R$ 150), 4 anos = "Operador Especialista" (mais R$ 200). Prêmio Tempo de Empresa: 3 anos = R$ 300, 5 anos = R$ 600 (pagamento único anual). Gestor não pode vetar, apenas adiar por 3 meses com justificativa formal (reduz clientelismo). Colaborador veterano (2-3 anos) hoje sai pelo "título" em varejo, não pelo dinheiro.
+Plano de Carreira Automático: 2 anos casa + sem advertências = promoção para "Auxiliar Sênior" (aumento R$ 150), 4 anos = "Operador Especialista" (mais R$ 200). Prêmio Tempo de Empresa: 3 anos = R$ 300, 5 anos = R$ 600 (pagamento único anual). Governance: RH publica lista anual de elegíveis; gestor não pode vetar, apenas adiar por 3 meses com justificativa formal.
 
 ## O que os dados provam
 

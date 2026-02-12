@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Rodar uma auditoria técnica curta (observação + medição simples) por unidade para transformar discussão abstrata de “falta gente/infra” em decisões executáveis: gargalos de fluxo, recursos críticos, backlog com dono e o que depende de contrato/cliente.
+Auditoria técnica curta para transformar a discussão abstrata de falta de recursos em decisões executáveis sobre gargalos de fluxo e backlog com dono.
 
 ## O que os dados provam
 

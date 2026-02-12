@@ -25,9 +25,10 @@ Substituir a "polícia de estoque" (cara e ineficiente) por um "contrato de pros
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Ocorrência de furtos e perdas de alimentos persistem apesar da vigilância, indicando ruptura do contrato social.
-- Objetivo: Substituir vigilância punitiva por mecanismo de pressão social e benefício compartilhado.
-- Impacto esperado: Redução de perdas e fortalecimento de integridade do grupo.
+- Tensão: O consumo não autorizado de alimentos muitas vezes não é criminal, é compensatório ("salário emocional informal"). Combatê-lo com vigilância cria uma dinâmica contraproducente que destrói o clima.
+- Descrição: Criação de um "Fundo de Melhoria" abastecido pela variação positiva do CMV Teórico vs Real. Se a sobra técnica aumenta (menos desperdício), o time ganha café da manhã premium, churrasco mensal ou itens nobres. O próprio grupo passa a vigiar o desperdício para não perder o bônus.
+- Objetivo: Substituir a vigilância punitiva por um mecanismo de pressão social e benefício compartilhado.
+- Impacto: Redução de perdas operacionais e fortalecimento da integridade do grupo através de um incentivo positivo tangível, aplicado apenas em unidades com problemas crônicos de perda.
 
 ## Descrição (doc 08, com adaptações)
 

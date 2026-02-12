@@ -26,9 +26,10 @@ Implantar uma regra explícita de escala que proteja veteranos e pessoas com res
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Colaboradores veteranos e idosos expostos à mesma carga física dos jovens, resultando em afastamentos crônicos e perda de conhecimento tácito.
+- Tensão: Colaboradores veteranos/idosos expostos à mesma carga física dos jovens, resultando em afastamentos crônicos e perda de conhecimento tácito.
+- Descrição: Regra explícita de escala que protege veteranos e restrições médicas, redistribuindo tarefas de alto impacto para evitar agravamento de lesões e preservar conhecimento tácito.
 - Objetivo: Preservar a saúde física dos colaboradores mais antigos, deslocando-os para funções de menor impacto.
-- Impacto esperado: Reduzir taxa de afastamento por LER/DORT e valorizar tempo de casa.
+- Impacto: Protegendo fisicamente os veteranos, reduz-se a taxa de afastamento por LER/DORT e valoriza-se o tempo de casa.
 
 ## Descrição (doc 08, com adaptações)
 

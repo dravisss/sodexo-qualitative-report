@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Formalizar um mecanismo de reciprocidade (Banco de Folgas Local) que converta a inevitável sobrecarga de cobertura (horas extras) em moeda de flexibilidade (crédito de tempo), retirando a gestão de escalas da ilegalidade informal e reduzindo o absenteísmo defensivo ("vou faltar senão não resolvo").
+Instituir um "Wallet de Horas" gerido localmente pela GU, onde coberturas de furos (crédito) geram direito automático a saídas antecipadas ou folgas agendadas (débito). Transforma a "ajuda" em crédito bancável auditável.
 
 ## O que os dados provam
 
@@ -10,7 +10,7 @@ Formalizar um mecanismo de reciprocidade (Banco de Folgas Local) que converta a 
 
 ## O que os dados sugerem (mas não provam)
 
-- A rigidez de jornada e a falta de mecanismo de cobertura de ausências tendem a transferir o custo de emergências pessoais para conflito e absenteísmo não planejado.
+- Instituir um "Wallet de Horas" gerido localmente pela GU, onde coberturas de furos (crédito) geram direito automático a saídas antecipadas ou folgas agendadas (débito). Transforma a "ajuda" em crédito bancável auditável.
 
 ## O que falta validar (lacunas)
 

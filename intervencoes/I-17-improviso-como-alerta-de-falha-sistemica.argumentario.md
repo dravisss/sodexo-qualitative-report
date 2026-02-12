@@ -1,8 +1,8 @@
-# Argumentário — I-17 — Improviso como alerta de falha sistêmica
+# Argumentário — I-17 — Improviso como Alerta de Falha Sistêmica
 
 ## Tese (o que defender)
 
-Instrumentalizar o improviso como "evidência de dívida técnica", onde cada gambiarra operacional (ex: usar prato de sobremesa por falta de raso) gera um ticket automático de Falha Sistêmica, forçando a organização a encarar o custo oculto que hoje é pago silenciosamente com a saúde do time.
+Inverter a lógica: todo improviso deve gerar um Incidente Registrado. Se a equipe teve que lavar pratos na mão porque a máquina quebrou, abre-se ticket de "Colapso de Equipamento". Acumular dados para demonstrar que a falta de investimento tem custo real (horas extras/turnover).
 
 ## O que os dados provam
 

@@ -1,8 +1,8 @@
-# Argumentário — I-14 — Protocolo de passagem de turno
+# Argumentário — I-14 — Protocolo de Passagem de Turno
 
 ## Tese (o que defender)
-
-Implementar um "Contrato de Passagem" físico e assinado entre líderes de turno, onde a aceitação do posto (Insumos + Limpeza) transfere formalmente a responsabilidade, eliminando a "herança de problemas" e a vitimização ("já peguei assim") como desculpa para baixa performance.
+ 
+Checklist de "Aceite de Posto": O líder que entra só assume o turno se o checklist (limpeza, mis-en-place) estiver ok. Se não estiver, abre-se Não Conformidade imediata para o turno anterior. Acaba com a área cinzenta da responsabilidade.
 
 ## O que os dados provam
 

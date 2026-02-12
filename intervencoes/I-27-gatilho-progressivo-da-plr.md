@@ -26,8 +26,10 @@ Substituir o "gatilho penhasco" (95% GM = tudo, 94,9% = nada) por curva progress
 
 ## Tensão / Objetivo / Impacto — doc 08
 
-- Tensão: quando o gatilho funciona como “degrau”, o sistema vira pressão por curto prazo e pode piorar práticas de gestão, sobretudo em ambiente com alta rotatividade.
-- Objetivo: redesenhar o gatilho para ser progressivo e transparente, mantendo conexão com performance real e evitando cliff.
+- Tensão: Gatilho de 95% do GM% cria efeito "penhasco": 94,9% = R$ 0, 95,1% = bônus total. Nos últimos 5 dias do mês, o gestor adota medidas de curto prazo que comprometem a operação (corta manutenção, cancela folgas) para salvar o bônus.
+- Descrição: Curva de gatilho progressivo: 85% GM = 20% PLR, 90% = 50%, 95% = 100%, >100% = multiplicador. Regra publicada em dashboard mensal visível ao time. Exceção: rescisão de contrato (cliente) = suspensão do deflator no trimestre.
+- Objetivo: Eliminar o comportamento de curto-prazismo que destrói valor para bater meta binária.
+- Impacto: Com metas escalonadas, o gerente mantém a racionalidade na gestão de custos, evitando cortes drásticos que prejudicam a operação.
 - Impacto esperado: maior previsibilidade e sensação de justiça; menor incentivo a atalhos; alinhamento melhor com retenção sustentável.
 
 ## Descrição

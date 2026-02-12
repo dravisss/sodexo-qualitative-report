@@ -27,9 +27,10 @@ Rodar uma auditoria técnica curta (observação + medição simples) por unidad
 
 ## Tensão / Objetivo / Impacto — doc 08
 
-- Tensão: a operação convive com pressão por entrega, variação de volume e restrições contratuais, mas sem um mapa simples de fluxo e capacidade a decisão vira opinião.
-- Objetivo: produzir um diagnóstico técnico curto de fluxo, capacidade e recursos por unidade, que gere backlog e decisões com dono.
-- Impacto esperado: reduzir gargalos e retrabalho; melhorar previsibilidade de quadro e rotina; reduzir improviso e risco operacional.
+- Tensão: A operação reclama de falta de braço/equipamento, mas a gerência vê como "corpo mole", travando investimentos necessários.
+- Descrição: Auditoria técnica curta para transformar a discussão abstrata de falta de recursos em decisões executáveis sobre gargalos de fluxo e backlog com dono.
+- Objetivo: Obter um laudo técnico isento que comprove a necessidade de recursos adicionais.
+- Impacto: Com um laudo externo, a discussão sai do campo da opinião ("acho que falta gente") para o técnico, facilitando a aprovação de CAPEX e Headcount.
 
 ## Descrição
 

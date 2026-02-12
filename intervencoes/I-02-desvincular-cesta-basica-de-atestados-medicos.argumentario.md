@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Eliminar o "Presenteísmo por Fome" e profissionalizar a gestão de absenteísmo, trocando a punição alimentar por indicadores de assiduidade reais (Score de Assiduidade).nitário e conflito com liderança, formalizando uma regra corporativa negociável com sindicato.
+Tratar a Cesta Básica como direito de segurança alimentar, não como ferramenta punitiva. Profissionalizar a gestão de absenteísmo através do "Score de Assiduidade", eliminando o "Presenteísmo por Fome" e reduzindo riscos sanitários e conflitos locais.
 
 ## O que os dados provam
 

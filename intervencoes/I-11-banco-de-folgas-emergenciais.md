@@ -25,9 +25,10 @@ Formalizar um mecanismo de reciprocidade (Banco de Folgas Local) que converta a 
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Rigidez total de horários impede que colaboradores resolvam problemas pessoais graves sem perder salário e bônus.
+- Tensão: A rigidez contratual (6x1) cria um jogo de soma zero: ou o colaborador perde o dia (punição) ou a operação para. Sem válvula de escape, a "falta estratégica" vira a única ferramenta de gestão da vida pessoal.
+- Descrição: Instituir um "Wallet de Horas" gerido localmente pela GU, onde coberturas de furos (crédito) geram direito automático a saídas antecipadas ou folgas agendadas (débito). Transforma a "ajuda" em crédito bancável auditável.
 - Objetivo: Oferecer flexibilidade de horário em troca de engajamento, sem custo financeiro adicional.
-- Impacto esperado: Aumentar reciprocidade e engajamento com cobertura de turnos.
+- Impacto: Dando autonomia para o colaborador gerir suas emergências, aumenta-se a reciprocidade e o engajamento com a cobertura de turnos.
 
 ## Descrição (doc 08, com adaptações)
 

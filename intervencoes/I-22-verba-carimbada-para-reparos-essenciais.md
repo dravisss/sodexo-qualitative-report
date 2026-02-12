@@ -26,9 +26,10 @@ Criar "Reserva Protegida para Conformidade" (linha orçamentária blindada e aud
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: quando o orçamento aperta, o “essencial” vira variável de ajuste; o custo aparece depois como risco jurídico/operacional e desgaste do time.
-- Objetivo: estabelecer verba protegida para reparos/itens essenciais (com critérios e trilha), impedindo cortes silenciosos.
-- Impacto esperado: menor risco NR/EPI, menos paradas por manutenção crítica, menos improviso e menor desgaste operacional.
+- Tensão: Quando a unidade aperta o orçamento, o primeiro corte é no "não urgente": EPI, uniformes, pequenos reparos. Três meses depois, o problema vira autuação do Ministério do Trabalho ou acidente registrado. O barato saiu caro.
+- Descrição: Criar conta "Essenciais Blindados" (5% do Opex) com lista fechada (EPIs, uniformes, extintores, reparos críticos NR), prestação de contas mensal via NF/foto, e auditoria trimestral. Quem tentar usar para não-essencial perde a verba no mês seguinte (punição automática).
+- Objetivo: Estabelecer verba protegida para reparos/itens essenciais (com critérios e trilha), impedindo cortes silenciosos.
+- Impacto: Menor risco NR/EPI, menos paradas por manutenção crítica, menos improviso e menor desgaste operacional.
 
 ## Descrição (doc 08, com adaptações)
 

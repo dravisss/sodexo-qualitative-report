@@ -26,9 +26,10 @@ Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge +
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O pacote de benefícios atual perde para o setor de logística e "bicos" em apps, atraindo apenas quem não tem opção.
-- Objetivo: Posicionar a empresa como "porto seguro" social (família/saúde) contra a precarização dos apps.
-- Impacto esperado: Atração de perfil de colaborador mais estável e focado em longo prazo, reduzindo a seleção adversa.
+- Tensão: Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Amazon (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
+- Descrição: Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
+- Objetivo: Posicionar a empresa como opção de estabilidade (família/saúde) contra a precarização dos apps.
+- Impacto: Atraindo pelo benefício saúde/família, seleciona-se um perfil de colaborador mais estável e focado em longo prazo.
 
 ## Descrição (doc 08, com adaptações)
 

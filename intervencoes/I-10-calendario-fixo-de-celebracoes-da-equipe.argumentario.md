@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar um calendário mínimo e previsível de ritos de reconhecimento (barato, padronizado e anti-favoritismo) para reduzir sensação de invisibilidade e estabilizar microclima.
+Calendário mínimo e previsível de ritos de reconhecimento (barato e padronizado) para reduzir a sensação de invisibilidade e estabilizar o microclima.
 
 ## O que os dados provam
 

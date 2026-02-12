@@ -25,9 +25,10 @@
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O desconto de VA e cesta básica por atestado médico força colaboradores doentes a trabalharem, espalhando contágio e piorando o quadro de saúde.
-- Objetivo: Desvincular o recebimento de benefícios alimentares da apresentação de atestados médicos legítimos.
-- Impacto esperado: Reduzir presenteísmo e melhorar a saúde coletiva da equipe.
+- Tensão: O uso da Cesta Básica como mecanismo disciplinar para punir atestados gera presenteísmo de doentes (risco de contágio) e insegurança alimentar, sem resolver o absenteísmo real.
+- Descrição: Revisar a política para que a perda do benefício ocorra apenas em **faltas injustificadas**. Para não deixar a gestão sem instrumentos contra abusos, implementar paralelamente o "Score de Assiduidade" (ferramenta de gestão de frequência baseada em dados).
+- Objetivo: Eliminar o incentivo perverso de "trabalhar doente para não perder benefício", separando saúde de disciplina.
+- Impacto: Reduz infecções cruzadas na equipe e muda o foco da gestão: de fiscalização de atestados para gestão de engajamento.
 
 ## Descrição (doc 08, com adaptações)
 

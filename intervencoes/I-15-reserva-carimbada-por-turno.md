@@ -25,9 +25,10 @@ Garantir a "soberania de estoque" do turno da noite através de segregação fí
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Roubo de ingredientes entre turnos para cobrir falhas, gerando falta de insumo no jantar.
+- Tensão: A priorização do pico do almoço autoriza moralmente o saque dos insumos do jantar. O time da noite chega e encontra insumos insuficientes para a operação planejada, sendo forçado a improvisar (o que gera reclamação do cliente).
+- Descrição: "Gaiola do Jantar": Kit de insumos proteicos e nobres do turno da noite é separado e lacrado no recebimento. O rompimento do lacre pelo turno da manhã exige justificativa formal e reposição imediata (compra de emergência no caixa da unidade).
 - Objetivo: Garantir que o planejamento do jantar seja respeitado.
-- Impacto esperado: Fim da improvisação forçada e da guerra por insumos.
+- Impacto: Fim da improvisação forçada no jantar e do conflito por insumos entre turnos.
 
 ## Descrição (doc 08, com adaptações)
 

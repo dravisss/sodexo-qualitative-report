@@ -25,9 +25,10 @@ Compartilhar as "regras de travamento" do sistema (Budget travado, normas de Com
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A equipe culpa o gerente local pela falta de recursos, criando antagonismo e isolando liderança.
+- Tensão: O time operacional projeta no Gerente Local a onipotência de dono ("ele não compra porque não quer"), desconhecendo que ele é um gestor com autonomia limitada por travas sistêmicas e orçamentos rígidos.
+- Descrição: Sessão de "Open Book Simplificado": explicar didaticamente o que é CAPEX vs OPEX, por que o uniforme atrasa (processo de compras) e qual a verba real disponível. Transformar reclamações em educação financeira.
 - Objetivo: Compartilhar o dilema orçamentário com a equipe para alinhar expectativas.
-- Impacto esperado: Deslocar a raiva do “gerente mau” para o “sistema difícil”, unindo o time.
+- Impacto: Ao expor a regra do jogo, desloca-se a frustração da equipe do gestor individual para as restrições do sistema, unindo o time.
 
 ## Descrição (doc 08, com adaptações)
 

@@ -26,9 +26,10 @@ Instituir um rito de escuta "imune à retaliação" conectado obrigatoriamente a
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Acúmulo de frustrações não ditas e distanciamento entre realidade do chão e liderança.
-- Objetivo: Abrir canal oficial e recorrente de escuta ativa e fluxo bottom-up.
-- Impacto esperado: Reduzir ansiedade e identificar problemas antes de virarem crises.
+- Tensão: O acúmulo de "micro-agressões operacionais" (torneira vazando, farda rasgada) é ignorado pela gerência focada em P&L, gerando a sensação de que "a empresa não se importa", o que explode em sabotagem silenciosa.
+- Descrição: Roda de Conversa Mensal com ata pública e status obrigatório ("Feito", "Em Andamento", "Negado com Justificativa"). A ausência de resposta gera escalonamento automático para o Regional. O foco sai da "terapia" para a "resolução de pendências".
+- Objetivo: Abrir um canal oficial e recorrente de escuta ativa e fluxo de informação bottom-up.
+- Impacto: Se as pessoas se sentem ouvidas, a ansiedade diminui e problemas operacionais são identificados antes de virarem crises.
 
 ## Descrição (doc 08, com adaptações)
 

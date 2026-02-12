@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Substituir "Encarregado Burocrático" (custo fixo de R$ 4.500/mês, não operante) por "Cozinheiro Líder" (gratificação de R$ 800, mão na massa), achatando a pirâmide e colocando a governança operacional nas mãos de quem domina o processo produtivo.
+Pilotar em Cajamar a substituição do cargo de Encarregado por função gratificada de "Líder Técnico de Turno" (Cozinheiro Veterano, Oficial de Manutenção Senior). Economia: R$ 3.700/mês por unidade. Governança: Líder responde por ritos (passagem de turno, pré-preparo, segurança) mas opera junto com o time.
 
 ## O que os dados provam
 

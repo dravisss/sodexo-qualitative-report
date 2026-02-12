@@ -1,8 +1,8 @@
-# Argumentário — I-04 — Notificação contratual de manutenção (Leroy Cajamar)
+# Argumentário — I-04 — Gatilho de Execução Subsidiária de Manutenção
 
 ## Tese (o que defender)
 
-Formalizar um rito de notificação contratual de manutenção e infraestrutura, com perímetro mínimo, prazos por criticidade, evidência objetiva de conclusão e regra de escalonamento, para reduzir zona cinzenta com o cliente e diminuir risco operacional e jurídico.
+Instituir protocolo de "Execução Subsidiária": registro de chamado -> estouro de SLA (48h) -> Sodexo executa reparo -> Cobrança automática no faturamento (Aditivo de Service Level).
 
 ## O que os dados provam
 

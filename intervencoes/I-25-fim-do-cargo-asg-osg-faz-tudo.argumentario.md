@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar "Registro de Auditoria de Subpapéis" (rodízio semanal documentado), onde cada ASG/OSG tem limite formal de carga crítica (ex: máximo 3 dias/semana em tarefas pesadas) e exceções são registradas como "Incidente de Subdimensionamento", forçando a operação a encarar que a "flexibilidade" mascara falta de gente.
+Mapear tarefas ASG/OSG e criar 3 subpapéis (Limpeza Pesada, Conservação Rotina, Apoio Reposição). Regra: rodízio semanal obrigatório, registrado em planilha simples. Se alguém ficar >3 dias em "Pesada", abrir ticket de "Subdimensionamento Detectado". Governança: GU audita mensalmente; se não houver rotatividade, perde autonomia de escala.
 
 ## O que os dados provam
 

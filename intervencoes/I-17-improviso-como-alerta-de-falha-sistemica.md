@@ -25,9 +25,10 @@ Instrumentalizar o improviso como "evidência de dívida técnica", onde cada ga
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O dar um jeito é visto como heroísmo, escondendo falta crônica de recursos.
-- Objetivo: Parar de normalizar precariedade com resiliência.
-- Impacto esperado: Forçar resolução de causa raiz ao invés de depender de esforço extra.
+- Tensão: A dependência de esforço extra mascara necessidades estruturais de investimento. Enquanto a equipe resolver problemas em silêncio, as lacunas de feedback impedem decisões de investimento.
+- Descrição: Inverter a lógica: todo improviso deve gerar um Incidente Registrado. Se a equipe teve que lavar pratos na mão porque a máquina quebrou, abre-se ticket de "Colapso de Equipamento". Acumular dados para demonstrar que a falta de investimento tem custo real (horas extras/turnover).
+- Objetivo: Parar de normalizar a precariedade com resiliência individual.
+- Impacto: Força a resolução da causa raiz (falta de gente/material) ao invés de depender do esforço extra.
 
 ## Descrição (doc 08, com adaptações)
 

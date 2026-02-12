@@ -26,9 +26,10 @@ Benchmark Territorial (Catho/Vagas/CAGED) para reposicionar salário-base: piso 
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O salário base não é competitivo com o mercado local inflacionado por galpões logísticos.
-- Objetivo: Ajustar a oferta financeira à realidade de mercado da região para retomar o poder de escolha na seleção.
-- Impacto esperado: Melhoria da qualidade técnica da equipe, redução de vagas abertas por longo período e aumento da retenção.
+- Tensão: Salário-base Sodexo (Aux. Cozinha R$ 1.850, ASG R$ 1.650) vs Amazon/Mercado Livre (Operador Logístico R$ 2.100 + bônus produtividade). Gap nominal de R$ 250-400 torna Sodexo "segunda opção" crônica. Mesmo quem aceita a vaga já está de olho na próxima, gerando turnover estrutural de >100%/ano.
+- Descrição: Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
+- Objetivo: Ajustar a oferta financeira à realidade de mercado da região.
+- Impacto: Pagando o preço justo de mercado, a empresa volta a ter poder de escolha na seleção, elevando a qualidade técnica da equipe.
 
 ## Descrição (doc 08, com adaptações)
 

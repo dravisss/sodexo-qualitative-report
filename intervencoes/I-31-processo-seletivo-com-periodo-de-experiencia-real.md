@@ -26,9 +26,10 @@ Criar "Job Shadow Obrigatório": candidato passa 1 turno completo (6h, remunerad
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Contratação "às cegas" gera turnover imediato e sobrecarga de treinamento.
-- Objetivo: Validar o fit cultural e operacional antes da efetivação.
-- Impacto esperado: Redução da rotatividade no período de experiência e preservação da energia de treinamento da equipe.
+- Tensão: Contratação sem validação prévia de fit: profissionais com alternativas desistem em 15 dias ao conhecer a realidade (turno, ritmo, clima). O processo atual não valida fit cultural antes da contratação, elevando turnover inicial. Custo: R$ 2.500 estimados por contratação falhada (admissão + treinamento + rescisão).
+- Descrição: Job Shadow Obrigatório: candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real antes da contratação. Feedback estruturado nos primeiros 15 dias (gestor + colega veterano). Se desistir no Shadow: sem custo de rescisão. Se ficar: já sabe o que esperar.
+- Objetivo: Validar o fit cultural e operacional ANTES da efetivação.
+- Impacto: Reduz o turnover de primeiros 45 dias e poupa energia da equipe com treinamentos de baixa conversão.
 
 ## Descrição (doc 08, com adaptações)
 

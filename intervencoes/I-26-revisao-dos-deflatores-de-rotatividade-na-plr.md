@@ -26,8 +26,10 @@ Criar "Deflator Seletivo" que distingue rotatividade involuntária (demissão po
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: metas agregadas usadas como deflator podem punir a unidade mesmo quando o time “entrega” o financeiro; isso desloca o foco de correção sistêmica para pressão operacional.
-- Objetivo: redesenhar o deflator de turnover para ser justo, progressivo e acionável (com critério e exceções), evitando incentivos perversos.
+- Tensão: O deflator de turnover pune qualquer rotatividade (até 10% do PLR), sem distinguir "renovação saudável" (baixa performance) de "sangria de talentos". Resultado: gestores seguram maus profissionais para não perder bônus pessoal.
+- Descrição: Criar "Deflator Seletivo": rotatividade involuntária (demissão por baixa performance, com processo documentado) não deflaciona. Rotatividade voluntária de profissionais com avaliação "bom/ótimo" deflaciona progressivamente (5% se <10% turnover, 10% se >10%). Governança: BP valida processo demissional e classifica.
+- Objetivo: Ajustar a métrica de sucesso da gerência para incentivar a qualidade da equipe, não apenas a permanência.
+- Impacto: Se o gerente não for punido por renovar a equipe, ele agirá mais rápido para substituir peças que não funcionam.
 - Impacto esperado: melhora de retenção e redução de seleção adversa; menor risco de práticas informais para “cumprir meta”.
 
 ## Descrição (doc 08, com adaptações)

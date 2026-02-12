@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisório (multas e encargos) em um fundo corporativo ("Bad Bank" de RH), permitindo que o gestor local demita baseado em critérios técnicos (competência/fit) sem implodir o P&L da unidade no mês da decisão.
+Criar conta centralizada para absorver demissões estruturais aprovadas (limite de X% do quadro/ano). A unidade paga o salário corrente, mas o "custo de morte" (rescisão) é assumido pela matriz para sanear a operação.
 
 ## O que os dados provam
 

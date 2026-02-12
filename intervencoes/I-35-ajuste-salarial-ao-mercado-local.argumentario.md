@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Benchmark Territorial (Catho/Vagas/CAGED) para reposicionar salário-base: piso R$ 2.000 para Auxiliar (vs R$ 1.850 atual), R$ 1.900 para ASG (vs R$ 1.650). Gap nominal atual de R$ 250-400 vs Amazon/Mercado Livre torna Sodexo "segunda opção" crônica, gerando turnover estrutural >100%/ano. Implementação faseada: piloto Guarulhos FM (turnover crítico), depois escala.
+Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
 
 ## O que os dados provam
 

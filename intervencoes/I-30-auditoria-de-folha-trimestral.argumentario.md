@@ -1,8 +1,8 @@
-# Argumentário — I-30 — Auditoria de folha trimestral
+# Argumentário — I-30 — Auditoria de Folha Trimestral
 
 ## Tese (o que defender)
 
-Instituir rito trimestral de auditoria por amostragem (10% folha/unidade, foco em rescisões e horas extras) com checklist (ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias), publicação anônima de % conformidade e prazo de correção, cortando pela raiz a "lenda urbana de roubo" que descamba para Sindicato/Justiça (R$ 15k/processo evitável).
+Rito trimestral de auditoria por amostragem (10% da folha/unidade, priorizando rescisões e horas extras). Checklist: conferir ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias. Resultado publicado em mural (anônimo) com % de conformidade e prazo de correção. Meta: >95% conformidade, cortando pela raiz a "lenda urbana de roubo" que descamba para Sindicato/Justiça (R$ 15k/processo evitável).
 
 ## O que os dados provam
 

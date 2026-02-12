@@ -1,8 +1,8 @@
-# Argumentário — I-36 — Processo de equalização próprios vs terceirizados
+# Argumentário — I-36 — Processo de Equalização Próprios vs Terceirizados
 
 ## Tese (o que defender)
 
-Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá CLT/Terceirizado). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente. Rixa atual ("não é meu problema") custa 15% de produtividade em tarefas colaborativas.
+Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Governança: criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente.
 
 ## O que os dados provam
 

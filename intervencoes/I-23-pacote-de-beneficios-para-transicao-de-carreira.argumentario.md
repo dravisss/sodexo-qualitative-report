@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Criar "Ponte de Segurança" (3 meses plano saúde + orientação de recolocação) para desligamentos negociados, reduzindo o risco individual de transição e desobstruindo a saída honrosa de colaboradores que hoje "fazem corpo mole" até serem demitidos para acessar FGTS.
+Programa de Transição Assistida: colaborador elegível (2+ anos casa, fit baixo, desejo manifesto saída) recebe extensão de 3 meses do plano de saúde (custo Sodexo) + carta de recomendação + 1 sessão de orientação profissional. Custo estimado: R$ 1.200/pessoa. Economia: evitar 18 meses de baixa performance (R$ 36k salário para 50% entrega).
 
 ## O que os dados provam
 

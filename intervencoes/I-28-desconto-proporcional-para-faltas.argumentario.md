@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Substituir regra binária (110h falta = perde 100% PLR) por escala proporcional de desconto (0-30h = 10%, 30-60h = 30%, 60-90h = 60%, >110h = 100%), eliminando os dois comportamentos tóxicos induzidos: presenteísmo (trabalhar doente) e desistência precoce ("já perdi tudo, tanto faz").
+Escala proporcional de desconto: 0-30h falta = 10% desconto, 30-60h = 30%, 60-90h = 60%, >110h = 100%. Faltas justificadas (atestado >3 dias + validação médica) não contam. Comunicação: cartaz na copa + simulador individual.
 
 ## O que os dados provam
 

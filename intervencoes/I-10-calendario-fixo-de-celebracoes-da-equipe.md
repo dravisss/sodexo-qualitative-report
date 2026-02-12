@@ -25,9 +25,10 @@ Criar um calendário mínimo e previsível de ritos de reconhecimento (barato, p
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Sensação generalizada de invisibilidade e falta de reforço positivo.
+- Tensão: Sensação generalizada de invisibilidade ("só lembram de mim quando erro") e falta de reforço positivo.
+- Descrição: Calendário mínimo e previsível de ritos de reconhecimento (barato e padronizado) para reduzir a sensação de invisibilidade e estabilizar o microclima.
 - Objetivo: Estabelecer momentos previsíveis de celebração e visibilidade positiva para a equipe.
-- Impacto esperado: Quebrar monotonia do trabalho invisível e melhorar microclima.
+- Impacto: Criando marcos positivos regulares, quebra-se a monotonia do "trabalho invisível" e melhora-se o microclima da unidade.
 
 ## Descrição (doc 08, com adaptações)
 

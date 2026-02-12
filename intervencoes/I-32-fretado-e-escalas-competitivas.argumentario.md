@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Implementar Fretado gratuito (3 pontos de embarque) + Escala 5x2 para equiparar (ao menos parcialmente) ao benchmark local: Amazon/Mercado Livre oferecem fretado + escala 4x3 + R$ 200 a mais, tornando a vaga Sodexo "invisível" para quem mora a >1h de transporte público. Resultado: só se candidata quem está desempregado há meses.
+Fretado gratuito com 3 pontos de embarque em áreas residenciais (Guarulhos Centro, Cumbica, Jardim São Paulo). Escala 5x2 (vs 6x1 atual). Benchmark: Amazon oferece fretado + escala 4x3 + R$ 200 a mais. Sodexo precisa equiparar ao menos parcialmente.
 
 ## O que os dados provam
 

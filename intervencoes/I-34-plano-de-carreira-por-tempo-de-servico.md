@@ -26,9 +26,10 @@ Plano de Carreira Automático: 2 anos casa + sem advertências = promoção para
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A falta de perspectiva clara de crescimento gera desengajamento e saída precoce para ganhos marginais fora.
+- Tensão: Sem perspectiva clara de crescimento, colaborador veterano (2-3 anos) vê vaga de "coordenador" em loja de varejo (R$ 200 a mais) e pede demissão, mesmo sabendo que o esforço lá é maior. Ele sai pelo "título", não pelo dinheiro. Sodexo perde mentor e reinicia o ciclo de treinamento.
+- Descrição: Plano de Carreira Automático: 2 anos casa + sem advertências = promoção para "Auxiliar Sênior" (aumento R$ 150), 4 anos = "Operador Especialista" (mais R$ 200). Prêmio Tempo de Empresa: 3 anos = R$ 300, 5 anos = R$ 600 (pagamento único anual). Governance: RH publica lista anual de elegíveis; gestor não pode vetar, apenas adiar por 3 meses com justificativa formal.
 - Objetivo: Oferecer um horizonte de carreira previsível e garantido para quem performa o básico bem.
-- Impacto esperado: Redução da ansiedade sobre o futuro, aumento da retenção de longo prazo e valorização do conhecimento acumulado.
+- Impacto: Se o futuro é claro e garantido, a ansiedade diminui e a retenção de longo prazo aumenta naturalmente.
 
 ## Descrição (doc 08, com adaptações)
 

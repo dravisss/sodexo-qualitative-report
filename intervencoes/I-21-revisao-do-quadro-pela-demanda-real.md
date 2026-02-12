@@ -26,15 +26,6 @@ Instituir a "Lei de Capacidade Operacional" (FTE = f(refeições/pico, complexid
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: o quadro é tratado como variável de ajuste (corta/estica) sem um “modelo” de demanda, gerando esforço manual e seleção adversa.
-- Objetivo: definir e aplicar regra de dimensionamento por demanda real (refeições/turno, volumetria, complexidade), com revisão periódica.
-- Impacto esperado: redução de sobrecarga e retrabalho; melhoria de estabilidade (turnover) e previsibilidade de custo.
-
-## Descrição (doc 08, com adaptações)
-
-Criar um modelo simples de capacidade (por turno/produção) que ligue:
-- demanda real (refeições/turno, picos, sazonalidade)
-- capacidade instalada (equipamentos/processos)
 - quadro necessário (por função)
 e institucionalizar uma rotina mensal de ajuste e negociação com cliente quando houver desalinhamento.
 

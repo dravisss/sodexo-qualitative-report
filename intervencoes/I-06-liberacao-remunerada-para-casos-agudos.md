@@ -28,8 +28,9 @@ Implementar um protocolo local de liberação remunerada para casos agudos (sint
 ## Tensão / Objetivo / Impacto (doc 08)
 
 - Tensão: Colaboradores visivelmente doentes comparecem ao trabalho para não perderem a renda variável integral, operando com baixa produtividade e risco.
+- Descrição: Implementar protocolo local de liberação remunerada para casos agudos (tampão), preservando a renda variável e reduzindo o presenteísmo induzido por punição sistêmica.
 - Objetivo: Criar um mecanismo local de afastamento remunerado para casos agudos enquanto a regra sistêmica não muda.
-- Impacto esperado: Proteger a equipe do contágio e reduzir tensão com chefia ao permitir liberação sem punição.
+- Impacto: Permitindo que o doente vá para casa sem punição, protege-se a equipe do contágio e demonstra-se humanidade, reduzindo a tensão com a chefia.
 
 ## Descrição (doc 08, com adaptações)
 

@@ -26,9 +26,10 @@ Construir uma "Ponte Dourada" para a saída honrosa de colaboradores desengajado
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Impasse onde a empresa não demite pelo custo e o funcionário não pede conta para não perder FGTS, gerando ambiente tóxico.
-- Objetivo: Facilitar a saída honrosa e negociada de colaboradores que querem sair, sem sangrar o resultado da unidade e sem punir quem fica.
-- Impacto esperado: Reduzir retenção forçada e limpar clima organizacional de insatisfeitos crônicos.
+- Tensão: Empregados desengajados entram em "modo de espera" (presenteísmo), entregando o mínimo para forçar a demissão, enquanto contaminam o time produtivo com cinismo.
+- Descrição: Programa de Demissão Consensual (baseado na Reforma Trabalhista) com incentivos adicionais (ex: extensão de plano de saúde por 3 meses). Trata a saída não como traição, mas como transição de carreira madura, permitindo a renovação do quadro de forma estruturada.
+- Objetivo: Facilitar a saída honrosa e negociada de colaboradores que querem sair, sem sangrar o resultado da unidade.
+- Impacto: Destravando as saídas voluntárias, acelera-se a renovação do quadro e recupera-se o clima organizacional de forma estruturada.
 
 ## Descrição (doc 08, com adaptações)
 

@@ -26,11 +26,13 @@ Substituir "Encarregado Burocrático" (custo fixo de R$ 4.500/mês, não operant
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Estrutura hierárquica cara e ineficiente, com encarregados que muitas vezes não operam e geram custo fixo alto.
+- Tensão: A estrutura hierárquica atual cria uma camada de supervisão que "fiscaliza" mas não "resolve". Quando a máquina quebra, o Encarregado preenche papel; o Cozinheiro Líder conserta o improviso e dá continuidade à produção.
 - Objetivo: Achatamento da pirâmide hierárquica para reduzir custos e dar autonomia a quem põe a mão na massa.
-- Impacto esperado: Economia de recursos e empoderamento técnico da equipe de produção, com liderança mais próxima da execução.
+- Impacto: Economia de recursos e empoderamento técnico da equipe de produção, com liderança mais próxima da execução.
 
 ## Descrição (doc 08, com adaptações)
+
+Pilotar em Cajamar a substituição do cargo de Encarregado por função gratificada de "Líder Técnico de Turno" (Cozinheiro Veterano, Oficial de Manutenção Senior). Economia: R$ 3.700/mês por unidade. Governança: Líder responde por ritos (passagem de turno, pré-preparo, segurança) mas opera junto com o time.
 
 O mecanismo foca em substituir a "vigilância" pela "coordenação técnica".
 

@@ -1,8 +1,8 @@
-# Argumentário — I-31 — Processo seletivo com período de experiência real
+# Argumentário — I-31 — Processo Seletivo com Período de Experiência Real
 
 ## Tese (o que defender)
 
-Criar "Job Shadow Obrigatório": candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real ANTES da contratação, eliminando a "seleção reversa" onde quem tem alternativa foge em 15 dias ao ver a realidade (turno, ritmo, clima). Reduz turnover de 45 dias em 60%, economizando R$ 2.500 por contratação falhada.
+Job Shadow Obrigatório: candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real antes da contratação. Feedback estruturado nos primeiros 15 dias (gestor + colega veterano). Se desistir no Shadow: sem custo de rescisão. Se ficar: já sabe o que esperar.
 
 ## O que os dados provam
 

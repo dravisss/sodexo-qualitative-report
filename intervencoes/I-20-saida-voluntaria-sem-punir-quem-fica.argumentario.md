@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Construir uma "Ponte Dourada" para a saída honrosa de colaboradores desengajados, oferecendo pacotes de desligamento negociado (com manutenção de parte dos benefícios/acordo legal) que custam menos que a permanência de um sabotador na folha de pagamento.
+Programa de Demissão Consensual (baseado na Reforma Trabalhista) com incentivos adicionais (ex: extensão de plano de saúde por 3 meses). Trata a saída não como traição, mas como transição de carreira madura, permitindo a renovação do quadro de forma estruturada.
 
 ## O que os dados provam
 

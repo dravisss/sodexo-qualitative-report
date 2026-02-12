@@ -1,8 +1,8 @@
-# Argumentário — I-29 — SLA de atendimento para solicitações de RH
+# Argumentário — I-29 — SLA de Atendimento para Solicitações de RH
 
 ## Tese (o que defender)
 
-Criar "Fila Única RH" com SLA por criticidade (Crítico 3 dias, Normal 7 dias, Rotina 15 dias), escalonamento automático (atraso >48h = alerta BP, >5 dias = escala regional) e evidência obrigatória de fechamento, transformando RH/DP de "caixa-preta" em processo rastreável.
+Fila Única RH com SLA por criticidade: Crítico (folha/rescisão) = 3 dias úteis, Normal (férias/benefícios) = 7 dias, Rotina (dúvidas) = 15 dias. Escalonamento automático: atraso >48h = alerta ao BP, >5 dias = escala RH regional. Evidência de fechamento obrigatória (print/protocolo).
 
 ## O que os dados provam
 

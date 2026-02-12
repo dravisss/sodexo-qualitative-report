@@ -26,9 +26,10 @@ Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time únic
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Tratamento de "segunda classe" para terceirizados ou próprios, fragmentando o time e sabotando a cultura de unidade.
-- Objetivo: Criar uma cultura de "Time Único" independente do crachá através da equalização de rituais e regras.
-- Impacto esperado: Melhoria no clima organizacional, redução de conflitos interpessoais e maior colaboração operacional.
+- Tensão: CLT Sodexo recebe brindes corporativos (Natal/Páscoa), é convidado para festas, tem acesso ao canal direto com GU. Terceirizados (mesma função, mesma copa) ficam fora dos rituais. Resultado: baixa cooperação interdepartamental, clima de desconfiança. Impacto significativo na produtividade de tarefas colaborativas (setup de eventos, faxina pesada).
+- Descrição: Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Governança: criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente.
+- Objetivo: Criar uma cultura de "Time Único" independente do crachá.
+- Impacto: Reduz o atrito operacional e melhora a cooperação em tarefas conjuntas.
 
 ## Descrição (doc 08, com adaptações)
 

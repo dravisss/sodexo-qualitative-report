@@ -27,9 +27,10 @@ Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisó
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Unidades retêm colaboradores improdutivos ou sabotadores porque o custo da rescisão inviabilizaria a meta de GM do mês.
-- Objetivo: Criar um fundo corporativo (off-unit P&L) para custear desligamentos estratégicos e renovação de equipe.
-- Impacto esperado: Destravar a gestão de pessoas, melhorar o clima organizacional e reduzir o passivo oculto de produtividade.
+- Tensão: O P&L da unidade pune a correção de rumo. O gerente sabe que precisa demitir o funcionário tóxico, mas se o fizer, perde sua meta financeiro no mês. Resultado: paga para manter o problema.
+- Descrição: Criar conta centralizada para absorver demissões estruturais aprovadas (limite de X% do quadro/ano). A unidade paga o salário corrente, mas o "custo de morte" (rescisão) é assumido pela matriz para sanear a operação.
+- Objetivo: Remover a barreira financeira que impede a gerência local de renovar sua equipe.
+- Impacto: Se demitir não custa o bônus do gerente, a renovação saudável da equipe acontece, quebrando o ciclo de retenção de profissionais insatisfeitos.
 
 ## Descrição (doc 08, com adaptações)
 

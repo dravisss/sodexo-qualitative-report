@@ -1,8 +1,8 @@
 # Argumentário — I-12 — Canal mensal de escuta da equipe
 
 ## Tese (o que defender)
-
-Instituir um rito de escuta "imune à retaliação" conectado obrigatoriamente a um Backlog Público de Resolução, quebrando o ciclo de "reclamação de corredor" e cinismo gerado por pesquisas de clima anônimas que nunca geram ação prática na ponta.
+ 
+Roda de Conversa Mensal com ata pública e status obrigatório ("Feito", "Em Andamento", "Negado com Justificativa"). A ausência de resposta gera escalonamento automático para o Regional. O foco sai da "terapia" para a "resolução de pendências".
 
 ## O que os dados provam
 

@@ -28,13 +28,13 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 ### Ações transversais (Todas as unidades)
 
-#### I-01 — Compra centralizada de uniformes e proteção (Modelo Estrutural)
+#### I-01 — Compra centralizada de uniformes e EPI
 **Tensão:** Colaboradores com vestimenta abaixo do padrão operacional mínimo (ex: 1 uniforme para 6x1) porque a estrutura de incentivos atual desestimula gastos com vestimenta/EPI para proteger metas de curto prazo.
 **Descrição:** Retirar a autonomia de compra da unidade, transformando o custo variável em rateio corporativo fixo. Implementar envio automático de kits baseado em gatilhos de admissão (via sistema de RH) e reposição programada, operado por nova célula no CSC.
 **Objetivo:** Zerar o déficit permanente de vestimenta e EPI, garantindo que a proteção chegue à ponta independente da vontade ou meta financeira do gerente local.
 **Impacto:** Elimina o descontentamento visível, recupera a dignidade do trabalhador e reduz riscos trabalhistas e de segurança.
 
-#### I-02 — Desvincular cesta básica de atestados médicos (Desvinculação de Frequência Médica)
+#### I-02 — Desvincular cesta básica de atestados médicos
 **Tensão:** O uso da Cesta Básica como mecanismo disciplinar para punir atestados gera presenteísmo de doentes (risco de contágio) e insegurança alimentar, sem resolver o absenteísmo real.
 **Descrição:** Revisar a política para que a perda do benefício ocorra apenas em **faltas injustificadas**. Para não deixar a gestão sem instrumentos contra abusos, implementar paralelamente o "Score de Assiduidade" (ferramenta de gestão de frequência baseada em dados).
 **Objetivo:** Eliminar o incentivo perverso de "trabalhar doente para não perder benefício", separando saúde de disciplina.
@@ -42,7 +42,7 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 ### Ações Específicas
 
-#### I-03 — Fundo de Correção Estrutural (Anistia de Legado)
+#### I-03 — Fundo de Correção Estrutural
 **Tensão:** A unidade sangra margem operacional pagando consertos estruturais (esgoto, telhado) que são responsabilidade do imóvel (cliente), devido a contratos mal amarrados na origem.
 **Descrição:** Criação de um "Laudo de Vícios Ocultos" pós-entrada e constituição de um Fundo de Correção Compartilhado (ou Aditivo de Regularização), retirando esse custo da linha de manutenção da unidade.
 **Objetivo:** Estancar a drenagem de recursos operacionais para problemas patrimoniais do cliente.
@@ -54,7 +54,7 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Objetivo:** Garantir continuidade operacional sem depender da boa vontade da manutenção do cliente e sem expor politicamente a gerência local.
 **Impacto:** Reduz tempo de equipamento parado e transfere o ônus da ineficiência para quem de fato falhou (cliente), preservando a relação comercial local.
 
-#### I-05 — Verba Blindada de Ergonomia e Segurança (CAPEX HSE)
+#### I-05 — Orçamento Pré Alocado de Ergonomia e Segurança (CAPEX HSE)
 **Tensão:** A priorização compulsória de demandas imediatas (equipamentos quebrados) consome 100% da verba de manutenção, deixando zero recursos para reduzir o esforço físico (ergonomia), perpetuando lesões e afastamentos.
 **Descrição:** Segregar o orçamento: Manutenção Corretiva (P&L Operacional) vs. Adequação Ergonômica (Fundo Corporativo de HSE ou CAPEX Carimbado). A GU não pode usar verba de ergonomia para consertar geladeira.
 **Objetivo:** Garantir investimento perene em redução de esforço físico, independente do caos da manutenção diária.
@@ -202,9 +202,7 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 #### I-26 — Revisão dos deflatores de rotatividade na PLR
 **Tensão:** O deflator de turnover pune qualquer rotatividade (até 10% do PLR), sem distinguir "renovação saudável" (baixa performance) de "sangria de talentos". Resultado: gestores seguram maus profissionais para não perder bônus pessoal.
-**Descrição:** Criar "Deflator Seletivo": rotatividade involuntária (demissão por baixa performance, com processo documentado) não deflaciona. Rotatividade voluntária de profissionais com avaliação "bom/ótimo" deflaciona progress
-
-ivamente (5% se <10% turnover, 10% se >10%). Governança: BP valida processo demissional e classifica.
+**Descrição:** Criar "Deflator Seletivo": rotatividade involuntária (demissão por baixa performance, com processo documentado) não deflaciona. Rotatividade voluntária de profissionais com avaliação "bom/ótimo" deflaciona progressivamente (5% se <10% turnover, 10% se >10%). Governança: BP valida processo demissional e classifica.
 **Objetivo:** Ajustar a métrica de sucesso da gerência para incentivar a qualidade da equipe, não apenas a permanência.
 **Impacto:** Se o gerente não for punido por renovar a equipe, ele agirá mais rápido para substituir peças que não funcionam.
 
@@ -230,8 +228,7 @@ ivamente (5% se <10% turnover, 10% se >10%). Governança: BP valida processo dem
 **Tensão:** Erro de folha (hora extra sumida, desconto fantasma, férias lançadas errado) gera percepção de erros sistemáticos não validada, desmoraliza RH e escala para Sindicato/Justiça. Custo estimado: R$ 15k por processo trabalhista evitável.
 **Descrição:** Rito trimestral de auditoria por amostragem (10% da folha/unidade, priorizando rescisões e horas extras). Checklist: conferir ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias. Resultado publicado em mural (anônimo) com % de conformidade e prazo de correção. Meta: >95% conformidade.
 **Objetivo:** Transparência total na remuneração.
-**Impacto:** Corrigindo erros recorrentes de folha com trilha pública, reduz-se a desconfiança e o passivo jurídico.
-**Impacto:** Elimina a narrativa de exploração financeira oculta.
+**Impacto:** Corrigindo erros recorrentes de folha com trilha pública, reduz-se a desconfiança e o passivo jurídico. Elimina a narrativa de exploração financeira oculta.
 
 #### I-31 — Processo Seletivo com Período de Experiência Real
 **Tensão:** Contratação sem validação prévia de fit: profissionais com alternativas desistem em 15 dias ao conhecer a realidade (turno, ritmo, clima). O processo atual não valida fit cultural antes da contratação, elevando turnover inicial. Custo: R$ 2.500 estimados por contratação falhada (admissão + treinamento + rescisão).

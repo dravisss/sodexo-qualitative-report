@@ -1,8 +1,8 @@
-# Argumentário — I-03 — Mesa compartilhada para correção de infraestrutura
+# Argumentário — I-03 — Fundo de Correção Estrutural
 
 ## Tese (o que defender)
 
-A Sodexo está operando em um "equilíbrio de Nash negativo" onde a falta de manutenção física e infraestrutura precária (utilidades, equipamentos) é absorvida pelo esforço manual do frontline. Isso gera adoecimento e turnover, mas não é escalado formalmente como quebra de contrato do cliente. A criação de uma "Mesa de Infraestrutura" transforma pendências técnicas em decisões executivas conjuntas, deslocando o custo do sucateamento da mão de obra para a governança contratual.
+Criação de um "Laudo de Vícios Ocultos" pós-entrada e constituição de um Fundo de Correção Compartilhado (ou Aditivo de Regularização), retirando esse custo da linha de manutenção da unidade.
 
 ## O que os dados provam
 

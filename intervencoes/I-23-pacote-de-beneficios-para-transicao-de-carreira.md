@@ -26,9 +26,10 @@ Criar "Ponte de Segurança" (3 meses plano saúde + orientação de recolocaçã
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Colaboradores querem sair mas não podem ficar sem plano de saúde ou renda imediata.
-- Objetivo: Tornar o pedido de demissão ou a saída negociada uma opção viável e segura para o colaborador.
-- Impacto esperado: Maximizar adesão ao programa de saída voluntária e reduzir desengajamento crônico.
+- Tensão: Colaboradores com 5-10 anos de casa que querem sair ficam "fazendo presença" (presenteísmo tóxico) porque não podem abrir mão do plano de saúde familiar. Resultado: metade da produtividade pelo custo total, contaminando o clima dos produtivos.
+- Descrição: Programa de Transição Assistida: colaborador elegível (2+ anos casa, fit baixo, desejo manifesto saída) recebe extensão de 3 meses do plano de saúde (custo Sodexo) + carta de recomendação + 1 sessão de orientação profissional. Custo estimado: R$ 1.200/pessoa. Economia: evitar 18 meses de baixa performance (R$ 36k salário para 50% entrega).
+- Objetivo: Tornar a saída honrosa e negociada uma opção viável e segura para o colaborador.
+- Impacto: Maximizar adesão ao programa de saída voluntária e reduzir desengajamento crônico.
 
 ## Descrição (doc 08, com adaptações)
 

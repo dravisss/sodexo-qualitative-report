@@ -1,0 +1,389 @@
+Iniciando auditoria profunda (IDs + Conteúdo)...
+{
+  "inconsistencies": [],
+  "drift": [
+    {
+      "id": "I-02",
+      "diffs": {
+        "impacto": {
+          "plano": "Reduz infec\u00e7\u00f5es cruzadas na equipe e muda o foco d...",
+          "dossie": "Reduz infec\u00e7\u00f5es cruzadas na equipe e muda o foco d..."
+        }
+      }
+    },
+    {
+      "id": "I-09",
+      "diffs": {
+        "impacto": {
+          "plano": "Com um laudo externo, a discuss\u00e3o sai do campo da ...",
+          "dossie": "Com um laudo externo, a discuss\u00e3o sai do campo da ..."
+        }
+      }
+    },
+    {
+      "id": "I-16",
+      "diffs": {
+        "arg_titulo_interno": {
+          "plano": "Turno de Pr\u00e9-Preparo (Mise en Place)",
+          "arg": "Turno de pr\u00e9-preparo (mise en place)"
+        },
+        "tensao": {
+          "plano": "A cultura de \"chegar e abrir\" funde os tempos de *...",
+          "dossie": "Prepara\u00e7\u00e3o feita no calor da hora, gerando atraso ..."
+        },
+        "impacto": {
+          "plano": "Redu\u00e7\u00e3o dr\u00e1stica do estresse no pico e melhoria na...",
+          "dossie": "Redu\u00e7\u00e3o do estresse no pico e melhoria de qualidad..."
+        }
+      }
+    },
+    {
+      "id": "I-17",
+      "diffs": {
+        "arg_titulo_interno": {
+          "plano": "Improviso como Alerta de Falha Sist\u00eamica",
+          "arg": "Improviso como alerta de falha sist\u00eamica"
+        },
+        "tensao": {
+          "plano": "A depend\u00eancia de esfor\u00e7o extra mascara necessidade...",
+          "dossie": "O dar um jeito \u00e9 visto como hero\u00edsmo, escondendo f..."
+        },
+        "objetivo": {
+          "plano": "Parar de normalizar a precariedade com resili\u00eancia...",
+          "dossie": "Parar de normalizar precariedade com resili\u00eancia...."
+        },
+        "impacto": {
+          "plano": "For\u00e7a a resolu\u00e7\u00e3o da causa raiz (falta de gente/ma...",
+          "dossie": "For\u00e7ar resolu\u00e7\u00e3o de causa raiz ao inv\u00e9s de depende..."
+        }
+      }
+    },
+    {
+      "id": "I-18",
+      "diffs": {
+        "tensao": {
+          "plano": "O consumo n\u00e3o autorizado de alimentos muitas vezes...",
+          "dossie": "Ocorr\u00eancia de furtos e perdas de alimentos persist..."
+        },
+        "objetivo": {
+          "plano": "Substituir a vigil\u00e2ncia punitiva por um mecanismo ...",
+          "dossie": "Substituir vigil\u00e2ncia punitiva por mecanismo de pr..."
+        },
+        "impacto": {
+          "plano": "Redu\u00e7\u00e3o de perdas operacionais e fortalecimento da...",
+          "dossie": "Redu\u00e7\u00e3o de perdas e fortalecimento de integridade ..."
+        }
+      }
+    },
+    {
+      "id": "I-19",
+      "diffs": {
+        "tensao": {
+          "plano": "O P&L da unidade pune a corre\u00e7\u00e3o de rumo. O gerent...",
+          "dossie": "Unidades ret\u00eam colaboradores improdutivos ou sabot..."
+        },
+        "objetivo": {
+          "plano": "Remover a barreira financeira que impede a ger\u00eanci...",
+          "dossie": "Criar um fundo corporativo (off-unit P&L) para cus..."
+        },
+        "impacto": {
+          "plano": "Se demitir n\u00e3o custa o b\u00f4nus do gerente, a renova\u00e7...",
+          "dossie": "Destravar a gest\u00e3o de pessoas, melhorar o clima or..."
+        }
+      }
+    },
+    {
+      "id": "I-20",
+      "diffs": {
+        "tensao": {
+          "plano": "Empregados desengajados entram em \"modo de espera\"...",
+          "dossie": "Impasse onde a empresa n\u00e3o demite pelo custo e o f..."
+        },
+        "objetivo": {
+          "plano": "Facilitar a sa\u00edda honrosa e negociada de colaborad...",
+          "dossie": "Facilitar a sa\u00edda honrosa e negociada de colaborad..."
+        },
+        "impacto": {
+          "plano": "Destravando as sa\u00eddas volunt\u00e1rias, acelera-se a re...",
+          "dossie": "Reduzir reten\u00e7\u00e3o for\u00e7ada e limpar clima organizaci..."
+        }
+      }
+    },
+    {
+      "id": "I-21",
+      "diffs": {
+        "tensao": {
+          "plano": "O subdimensionamento estrutural cria um efeito cas...",
+          "dossie": "o quadro \u00e9 tratado como vari\u00e1vel de ajuste (corta/..."
+        },
+        "objetivo": {
+          "plano": "Definir e aplicar regra de dimensionamento por dem...",
+          "dossie": "definir e aplicar regra de dimensionamento por dem..."
+        },
+        "impacto": {
+          "plano": "Redu\u00e7\u00e3o de sobrecarga e retrabalho; melhoria de es...",
+          "dossie": "redu\u00e7\u00e3o de sobrecarga e retrabalho; melhoria de es..."
+        }
+      }
+    },
+    {
+      "id": "I-22",
+      "diffs": {
+        "tensao": {
+          "plano": "Quando a unidade aperta o or\u00e7amento, o primeiro co...",
+          "dossie": "quando o or\u00e7amento aperta, o \u201cessencial\u201d vira vari..."
+        },
+        "objetivo": {
+          "plano": "Estabelecer verba protegida para reparos/itens ess...",
+          "dossie": "estabelecer verba protegida para reparos/itens ess..."
+        },
+        "impacto": {
+          "plano": "Menor risco NR/EPI, menos paradas por manuten\u00e7\u00e3o c...",
+          "dossie": "menor risco NR/EPI, menos paradas por manuten\u00e7\u00e3o c..."
+        }
+      }
+    },
+    {
+      "id": "I-23",
+      "diffs": {
+        "tensao": {
+          "plano": "Colaboradores com 5-10 anos de casa que querem sai...",
+          "dossie": "Colaboradores querem sair mas n\u00e3o podem ficar sem ..."
+        },
+        "objetivo": {
+          "plano": "Tornar a sa\u00edda honrosa e negociada uma op\u00e7\u00e3o vi\u00e1ve...",
+          "dossie": "Tornar o pedido de demiss\u00e3o ou a sa\u00edda negociada u..."
+        },
+        "impacto": {
+          "plano": "Maximizar ades\u00e3o ao programa de sa\u00edda volunt\u00e1ria e...",
+          "dossie": "Maximizar ades\u00e3o ao programa de sa\u00edda volunt\u00e1ria e..."
+        }
+      }
+    },
+    {
+      "id": "I-24",
+      "diffs": {
+        "tensao": {
+          "plano": "A estrutura hier\u00e1rquica atual cria uma camada de s...",
+          "dossie": "Estrutura hier\u00e1rquica cara e ineficiente, com enca..."
+        }
+      }
+    },
+    {
+      "id": "I-25",
+      "diffs": {
+        "dossie_filename": {
+          "expected": "I-25-fim-do-cargo-asgosg-faz-tudo.md",
+          "current": "I-25-fim-do-cargo-asg-osg-faz-tudo.md"
+        },
+        "arg_filename": {
+          "expected": "I-25-fim-do-cargo-asgosg-faz-tudo.argumentario.md",
+          "current": "I-25-fim-do-cargo-asg-osg-faz-tudo.argumentario.md"
+        },
+        "tensao": {
+          "plano": "O cargo de ASG/OSG virou sin\u00f4nimo de \"quem faz o q...",
+          "dossie": "A fun\u00e7\u00e3o de ASG \u00e9 tratada como faz-tudo, gerando s..."
+        },
+        "objetivo": {
+          "plano": "Organizar a carga de trabalho de ASG para reduzir ...",
+          "dossie": "Organizar a carga de trabalho de ASG para reduzir ..."
+        },
+        "impacto": {
+          "plano": "Rotacionando as fun\u00e7\u00f5es internamente, dilui-se o r...",
+          "dossie": "Diluir risco ergon\u00f4mico e melhorar percep\u00e7\u00e3o de ju..."
+        }
+      }
+    },
+    {
+      "id": "I-26",
+      "diffs": {
+        "tensao": {
+          "plano": "O deflator de turnover pune qualquer rotatividade ...",
+          "dossie": "metas agregadas usadas como deflator podem punir a..."
+        },
+        "objetivo": {
+          "plano": "Ajustar a m\u00e9trica de sucesso da ger\u00eancia para ince...",
+          "dossie": "redesenhar o deflator de turnover para ser justo, ..."
+        },
+        "impacto": {
+          "plano": "Se o gerente n\u00e3o for punido por renovar a equipe, ...",
+          "dossie": "melhora de reten\u00e7\u00e3o e redu\u00e7\u00e3o de sele\u00e7\u00e3o adversa; ..."
+        }
+      }
+    },
+    {
+      "id": "I-27",
+      "diffs": {
+        "tensao": {
+          "plano": "Gatilho de 95% do GM% cria efeito \"penhasco\": 94,9...",
+          "dossie": "quando o gatilho funciona como \u201cdegrau\u201d, o sistema..."
+        },
+        "objetivo": {
+          "plano": "Eliminar o comportamento de curto-prazismo que des...",
+          "dossie": "redesenhar o gatilho para ser progressivo e transp..."
+        },
+        "impacto": {
+          "plano": "Com metas escalonadas, o gerente mant\u00e9m a racional...",
+          "dossie": "maior previsibilidade e sensa\u00e7\u00e3o de justi\u00e7a; menor..."
+        }
+      }
+    },
+    {
+      "id": "I-28",
+      "diffs": {
+        "tensao": {
+          "plano": "Regra bin\u00e1ria (110h falta = perde 100% PLR) cria d...",
+          "dossie": "A regra de perde tudo se faltar um dia faz com que..."
+        },
+        "impacto": {
+          "plano": "Reduzindo a puni\u00e7\u00e3o bin\u00e1ria, mant\u00e9m-se o colaborad...",
+          "dossie": "Reduzir absente\u00edsmo total e reduzir presente\u00edsmo i..."
+        }
+      }
+    },
+    {
+      "id": "I-29",
+      "diffs": {
+        "arg_titulo_interno": {
+          "plano": "SLA de Atendimento para Solicita\u00e7\u00f5es de RH",
+          "arg": "SLA de atendimento para solicita\u00e7\u00f5es de RH"
+        },
+        "tensao": {
+          "plano": "Processos de RH/DP com baixa visibilidade de statu...",
+          "dossie": "demandas de RH e DP viram fila invis\u00edvel e sem don..."
+        },
+        "objetivo": {
+          "plano": "Restaurar a confian\u00e7a nos processos administrativo...",
+          "dossie": "estabelecer um SLA de atendimento, com triagem e p..."
+        },
+        "impacto": {
+          "plano": "Reduz a ansiedade financeira e a percep\u00e7\u00e3o de desc...",
+          "dossie": "reduzir tempo parado e retrabalho, diminuir escala..."
+        }
+      }
+    },
+    {
+      "id": "I-30",
+      "diffs": {
+        "arg_titulo_interno": {
+          "plano": "Auditoria de Folha Trimestral",
+          "arg": "Auditoria de folha trimestral"
+        },
+        "tensao": {
+          "plano": "Erro de folha (hora extra sumida, desconto fantasm...",
+          "dossie": "erros e corre\u00e7\u00f5es de folha competem com a opera\u00e7\u00e3o..."
+        },
+        "objetivo": {
+          "plano": "Transpar\u00eancia total na remunera\u00e7\u00e3o....",
+          "dossie": "instituir um rito trimestral de auditoria de folha..."
+        },
+        "impacto": {
+          "plano": "Corrigindo erros recorrentes de folha com trilha p...",
+          "dossie": "menos erros e menos corre\u00e7\u00f5es emergenciais; maior ..."
+        }
+      }
+    },
+    {
+      "id": "I-31",
+      "diffs": {
+        "arg_titulo_interno": {
+          "plano": "Processo Seletivo com Per\u00edodo de Experi\u00eancia Real",
+          "arg": "Processo seletivo com per\u00edodo de experi\u00eancia real"
+        },
+        "tensao": {
+          "plano": "Contrata\u00e7\u00e3o sem valida\u00e7\u00e3o pr\u00e9via de fit: profissio...",
+          "dossie": "Contrata\u00e7\u00e3o \"\u00e0s cegas\" gera turnover imediato e so..."
+        },
+        "objetivo": {
+          "plano": "Validar o fit cultural e operacional ANTES da efet...",
+          "dossie": "Validar o fit cultural e operacional antes da efet..."
+        },
+        "impacto": {
+          "plano": "Reduz o turnover de primeiros 45 dias e poupa ener...",
+          "dossie": "Redu\u00e7\u00e3o da rotatividade no per\u00edodo de experi\u00eancia ..."
+        }
+      }
+    },
+    {
+      "id": "I-32",
+      "diffs": {
+        "tensao": {
+          "plano": "Cajamar/Guarulhos Food ficam a >1h de transporte p...",
+          "dossie": "A localiza\u00e7\u00e3o remota e escalas r\u00edgidas 6x1 tornam ..."
+        },
+        "impacto": {
+          "plano": "Facilitando o acesso e melhorando a escala, a empr...",
+          "dossie": "Acesso a um pool de talentos mais qualificado e re..."
+        }
+      }
+    },
+    {
+      "id": "I-33",
+      "diffs": {
+        "tensao": {
+          "plano": "Pacote Sodexo atual (plano sa\u00fade b\u00e1sico + VR R$ 18...",
+          "dossie": "O pacote de benef\u00edcios atual perde para o setor de..."
+        },
+        "objetivo": {
+          "plano": "Posicionar a empresa como op\u00e7\u00e3o de estabilidade (f...",
+          "dossie": "Posicionar a empresa como \"porto seguro\" social (f..."
+        },
+        "impacto": {
+          "plano": "Atraindo pelo benef\u00edcio sa\u00fade/fam\u00edlia, seleciona-s...",
+          "dossie": "Atra\u00e7\u00e3o de perfil de colaborador mais est\u00e1vel e fo..."
+        }
+      }
+    },
+    {
+      "id": "I-34",
+      "diffs": {
+        "tensao": {
+          "plano": "Sem perspectiva clara de crescimento, colaborador ...",
+          "dossie": "A falta de perspectiva clara de crescimento gera d..."
+        },
+        "impacto": {
+          "plano": "Se o futuro \u00e9 claro e garantido, a ansiedade dimin...",
+          "dossie": "Redu\u00e7\u00e3o da ansiedade sobre o futuro, aumento da re..."
+        }
+      }
+    },
+    {
+      "id": "I-35",
+      "diffs": {
+        "tensao": {
+          "plano": "Sal\u00e1rio-base Sodexo (Aux. Cozinha R$ 1.850, ASG R$...",
+          "dossie": "O sal\u00e1rio base n\u00e3o \u00e9 competitivo com o mercado loc..."
+        },
+        "objetivo": {
+          "plano": "Ajustar a oferta financeira \u00e0 realidade de mercado...",
+          "dossie": "Ajustar a oferta financeira \u00e0 realidade de mercado..."
+        },
+        "impacto": {
+          "plano": "Pagando o pre\u00e7o justo de mercado, a empresa volta ...",
+          "dossie": "Melhoria da qualidade t\u00e9cnica da equipe, redu\u00e7\u00e3o d..."
+        }
+      }
+    },
+    {
+      "id": "I-36",
+      "diffs": {
+        "arg_titulo_interno": {
+          "plano": "Processo de Equaliza\u00e7\u00e3o Pr\u00f3prios vs Terceirizados",
+          "arg": "Processo de equaliza\u00e7\u00e3o pr\u00f3prios vs terceirizados"
+        },
+        "tensao": {
+          "plano": "CLT Sodexo recebe brindes corporativos (Natal/P\u00e1sc...",
+          "dossie": "Tratamento de \"segunda classe\" para terceirizados ..."
+        },
+        "objetivo": {
+          "plano": "Criar uma cultura de \"Time \u00danico\" independente do ...",
+          "dossie": "Criar uma cultura de \"Time \u00danico\" independente do ..."
+        },
+        "impacto": {
+          "plano": "Reduz o atrito operacional e melhora a coopera\u00e7\u00e3o ...",
+          "dossie": "Melhoria no clima organizacional, redu\u00e7\u00e3o de confl..."
+        }
+      }
+    }
+  ]
+}

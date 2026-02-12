@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge + 2 filhos sem coparticipação) + VR R$ 25/dia (vs R$ 18 atual) + Fretado/VT, visando reposicionar Sodexo como "porto seguro familiar" vs Amazon (plano odonto + VR R$ 25 + bônus) e iFood (flexibilidade total). Custo: R$ 150/mês/colaborador. ROI: evitar 1 rescisão/ano já paga 16 meses de upgrade.
+Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 serviço de rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
 
 ## O que os dados provam
 

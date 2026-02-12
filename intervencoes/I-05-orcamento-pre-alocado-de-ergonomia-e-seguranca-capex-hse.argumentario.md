@@ -1,8 +1,8 @@
-# Argumentário — I-05 — Orçamento focado em eliminar esforço físico
+# Argumentário — I-05 — Orçamento Pré Alocado de Ergonomia e Segurança (CAPEX HSE)
 
 ## Tese (o que defender)
 
-Criar uma regra mínima de priorização do orçamento de manutenção para itens que reduzam dor e risco físico (ergonomia/segurança), com lista viva revisada semanalmente, para impedir que o orçamento curto seja capturado por itens periféricos.
+Segregar o orçamento: Manutenção Corretiva (P&L Operacional) vs. Adequação Ergonômica (Fundo Corporativo de HSE ou CAPEX Carimbado). A GU não pode usar verba de ergonomia para consertar geladeira.
 
 ## O que os dados provam
 

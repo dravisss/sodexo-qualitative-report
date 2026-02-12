@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Implantar um rodízio transparente e participativo de tarefas de alta carga física para reduzir concentração de esforço, reduzir percepção de injustiça e reduzir adoecimento e absenteísmo.
+Rodízio transparente e participativo de tarefas de alta carga física, visando reduzir concentração de esforço e a percepção de injustiça na distribuição de tarefas.
 
 ## O que os dados provam
 

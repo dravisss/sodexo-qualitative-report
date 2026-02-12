@@ -25,9 +25,10 @@ Implementar um "Contrato de Passagem" físico e assinado entre líderes de turno
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Herança de cozinha suja e problemas entre turnos, gerando conflito diário.
-- Objetivo: Criar responsabilidade compartilhada e fim da bagunça herdada.
-- Impacto esperado: Reduzir atrito interpessoal e garantir início de turno produtivo.
+- Tensão: A ausência de marco zero entre turnos permite que a ineficiência do almoço contamine o jantar (e vice-versa), criando uma cultura de "empurrar com a barriga" e hostilidade tribal entre equipes.
+- Descrição: Checklist de "Aceite de Posto": O líder que entra só assume o turno se o checklist (limpeza, mis-en-place) estiver ok. Se não estiver, abre-se Não Conformidade imediata para o turno anterior. Acaba com a área cinzenta da responsabilidade.
+- Objetivo: Criar responsabilidade compartilhada e fim da "bagunça herdada".
+- Impacto: Reduz o atrito interpessoal e garante início de turno produtivo.
 
 ## Descrição (doc 08, com adaptações)
 

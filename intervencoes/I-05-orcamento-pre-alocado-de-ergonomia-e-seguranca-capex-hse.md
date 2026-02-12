@@ -1,4 +1,4 @@
-# I-05 — Orçamento focado em eliminar esforço físico
+# I-05 — Orçamento Pré Alocado de Ergonomia e Segurança (CAPEX HSE)
 
 ## Identificação
 
@@ -22,9 +22,10 @@
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O orçamento limitado de manutenção é gasto em itens não-críticos, deixando problemas ergonômicos e de segurança sem solução.
-- Objetivo: Direcionar cada centavo do orçamento de manutenção existente para itens que reduzam dor ou risco físico.
-- Impacto esperado: Reduzir percepção de abandono e reduzir risco de lesão imediata.
+- Tensão: A priorização compulsória de demandas imediatas (equipamentos quebrados) consome 100% da verba de manutenção, deixando zero recursos para reduzir o esforço físico (ergonomia), perpetuando lesões e afastamentos.
+- Descrição: Segregar o orçamento: Manutenção Corretiva (P&L Operacional) vs. Adequação Ergonômica (Fundo Corporativo de HSE ou CAPEX Carimbado). A GU não pode usar verba de ergonomia para consertar geladeira.
+- Objetivo: Garantir investimento perene em redução de esforço físico, independente do caos da manutenção diária.
+- Impacto: Reduz afastamentos por LER/DORT (custo oculto significativo) e mostra aos times que a empresa cuida do corpo deles, não só do equipamento.
 
 ## Descrição (doc 08, com adaptações)
 

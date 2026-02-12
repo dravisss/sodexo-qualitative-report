@@ -14,7 +14,7 @@ tags:
 evidence_strength: hipotese
 ---
 
-# I-03 — Mesa compartilhada para correção de infraestrutura
+# I-03 — Fundo de Correção Estrutural
 
 ## Identificação
 
@@ -38,9 +38,10 @@ evidence_strength: hipotese
 
 ## Tensão / Objetivo / Impacto — doc 08
 
-- Tensão: infraestrutura, insumos e utilidades viram variável de ajuste quando não há governança conjunta Sodexo e cliente.
-- Objetivo: criar um mecanismo formal e recorrente de decisão e execução com o cliente para fechar pendências de infraestrutura e responsabilidade.
-- Impacto esperado: redução de improviso, esforço manual e risco operacional, jurídico e INSS associados ao sucateamento.
+- Tensão: A unidade sangra margem operacional pagando consertos estruturais (esgoto, telhado) que são responsabilidade do imóvel (cliente), devido a contratos mal amarrados na origem.
+- Descrição: Criação de um "Laudo de Vícios Ocultos" pós-entrada e constituição de um Fundo de Correção Compartilhado (ou Aditivo de Regularização), retirando esse custo da linha de manutenção da unidade.
+- Objetivo: Estancar a drenagem de recursos operacionais para problemas patrimoniais do cliente.
+- Impacto: Recupera a margem real da unidade e força o cliente a assumir sua responsabilidade patrimonial.
 
 ## Descrição
 

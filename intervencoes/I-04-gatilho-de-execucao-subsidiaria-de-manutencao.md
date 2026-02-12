@@ -1,4 +1,4 @@
-# I-04 — Notificação Contratual de Manutenção — Cajamar
+# I-04 — Gatilho de Execução Subsidiária de Manutenção
 
 ## Identificação
 
@@ -22,9 +22,10 @@
 
 ## Tensão / Objetivo / Impacto — doc 08
 
-- Tensão: Manutenção/infra vira zona cinzenta entre operação e cliente, gerando improviso, risco e perda de produtividade.
-- Objetivo: Formalizar, por escrito, a cobrança de manutenção/infra do cliente com prazos, itens e evidência de conclusão, para destravar execução.
-- Impacto esperado: Menor risco operacional/jurídico, menos retrabalho e menos paradas por falhas críticas de infraestrutura.
+- Tensão: Equipamentos críticos parados por inércia da manutenção do cliente. A GU não cobra formalmente por medo de conflito político ("NPS").
+- Descrição: Instituir protocolo de "Execução Subsidiária": registro de chamado -> estouro de SLA (48h) -> Sodexo executa reparo -> Cobrança automática no faturamento (Aditivo de Service Level).
+- Objetivo: Garantir continuidade operacional sem depender da boa vontade da manutenção do cliente e sem expor politicamente a gerência local.
+- Impacto: Reduz tempo de equipamento parado e transfere o ônus da ineficiência para quem de fato falhou (cliente), preservando a relação comercial local.
 
 ## Descrição
 

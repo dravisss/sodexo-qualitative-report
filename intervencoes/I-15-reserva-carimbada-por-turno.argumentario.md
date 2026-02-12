@@ -1,8 +1,8 @@
-# Argumentário — I-15 — Reserva carimbada por turno
+# Argumentário — I-15 — Reserva Carimbada por Turno
 
 ## Tese (o que defender)
 
-Garantir a "soberania de estoque" do turno da noite através de segregação física inviolável (armário/gaiola trancada) dos insumos críticos, impedindo que a "pressão do almoço" canibalize o planejamento do jantar e force a improvisação crônica que desmoraliza o cozinheiro noturno.
+"Gaiola do Jantar": Kit de insumos proteicos e nobres do turno da noite é separado e lacrado no recebimento. O rompimento do lacre pelo turno da manhã exige justificativa formal e reposição imediata (compra de emergência no caixa da unidade).
 
 ## O que os dados provam
 

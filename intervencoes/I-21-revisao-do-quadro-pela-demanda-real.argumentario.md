@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Instituir a "Lei de Capacidade Operacional" (FTE = f(refeições/pico, complexidade, equipamento)), onde o quadro se ajusta trimestralmente à demanda real medida, não ao orçamento estático aprovado no ano anterior. Transformar a revisão de quadro de "negociação política" em "engenharia de sistemas".
+Criar modelo de dimensionamento baseado em volumetria de catraca (já medida: 990 acessos/dia Cajamar) e picos de serviço. Regra: se demanda subir >10% por 2 meses, gatilho automático de revisão de quadro. Se equipamento quebrar (I-03), ajustar quadro proporcionalmente ou consertar em 15 dias. Governança mensal GU + Cliente para sincronizar.
 
 ## O que os dados provam
 
