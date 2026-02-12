@@ -23,12 +23,17 @@ description: Mantém a consistência entre Plano Estratégico, Dossiês, Matrize
     - **Dossiê**: Sincronize os campos de identificação e resumo vindos do Plano, preservando as seções de Evidências/Lacunas.
     - **Argumentário**: Re-gere ou atualize a tese e os dados provados com base no Dossiê atualizado.
 
-## Procedimento de Remoção
+## Procedimento de Remoção (Automático)
 
-1.  Rode `python3 .agent/skills/sincronizacao-intervencoes/scripts/sync_manager.py audit`.
-2.  Se uma `I-XX` sumiu do Plano #08 mas existe nos outros:
-    - Mova o `intervencoes/I-XX-*.md` e `intervencoes/I-XX-*.argumentario.md` para `intervencoes/archive/`.
-    - Notifique o usuário sobre a limpeza.
+1.  **Use o comando dedicado**:
+    - Rode `python3 .agent/skills/sincronizacao-intervencoes/scripts/sync_manager.py remove I-XX` (ex: `I-05`).
+    - O script irá automaticamente:
+        - Arquivar os arquivos da `I-XX` em `_archive/`.
+        - Renumerar todas as intervenções seguintes (I-06 -> I-05, etc.) nos arquivos e conteúdo.
+        - Atualizar o Plano #08 removendo o bloco da `I-XX` e corrigindo os IDs seguintes.
+
+2.  **Verificação**:
+    - Rode `python3 .agent/skills/sincronizacao-intervencoes/scripts/sync_manager.py audit` para garantir integridade.
 
 ## Regras de Ouro
 

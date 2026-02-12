@@ -4,6 +4,8 @@ import json
 import argparse
 import unicodedata
 from pathlib import Path
+import shutil
+from datetime import datetime
 
 # Configurações de caminhos
 BASE_DIR = Path("/Users/Ravi/Apps/Qualitative Analyst/publish-site")
@@ -198,6 +200,126 @@ def audit():
             
     return {"inconsistencies": inconsistencies, "drift": drift}
 
+def remove_intervention(target_id):
+    """
+    Remove uma intervenção, arquiva seus arquivos, renumera as subsequentes
+    e atualiza o Plano #08.
+    """
+    if not re.match(r"^I-\d+$", target_id):
+        print(f"Erro: ID inválido '{target_id}'. Use formato I-XX (ex: I-05).")
+        return
+
+    print(f" iniciada remoção da intervenção {target_id}...")
+    
+    # 1. Preparar Arquivo
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    archive_dir = BASE_DIR / "_archive" / "intervencoes" / f"{timestamp}_removed_{target_id}"
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    
+    # 2. Arquivar arquivos da intervenção alvo
+    print(f"-> Arquivando arquivos de {target_id} em {archive_dir}...")
+    target_files = list(INTERVENCOES_DIR.glob(f"{target_id}-*.md"))
+    if not target_files:
+        print(f"Aviso: Nenhum arquivo encontrado para {target_id}. Continuando renumeração...")
+    
+    for f in target_files:
+        shutil.move(str(f), str(archive_dir / f.name))
+        print(f"  - Arquivado: {f.name}")
+
+    # 3. Identificar e Renumerar Subsequentes
+    # Lista todas as intervenções para encontrar as que precisam descer 1 degrau
+    all_files = list(INTERVENCOES_DIR.glob("I-*.md"))
+    subsequent_map = {} # {old_id: new_id}
+    
+    target_num = int(target_id.split("-")[1])
+    
+    # Encontra IDs maiores que o target
+    # Usamos um set para não duplicar (dossie + argumentario tem mesmo ID)
+    ids_to_process = set()
+    for f in all_files:
+        match = re.search(r"(I-(\d+))", f.name)
+        if match:
+            pid = match.group(1)
+            pnum = int(match.group(2))
+            if pnum > target_num:
+                ids_to_process.add((pnum, pid))
+    
+    # Ordena crescente para renomear em ordem (I-06 -> I-05, depois I-07 -> I-06)
+    # Isso evita colisão de nomes se fizéssemos reverso
+    sorted_ids = sorted(list(ids_to_process))
+    
+    print(f"-> Renumerando {len(sorted_ids)} intervenções subsequentes...")
+    
+    for pnum, old_id in sorted_ids:
+        new_num = pnum - 1
+        new_id = f"I-{new_num:02d}"
+        subsequent_map[old_id] = new_id
+        print(f"  - Processando {old_id} -> {new_id}")
+        
+        # Renomear arquivos e atualizar conteúdo
+        files = list(INTERVENCOES_DIR.glob(f"{old_id}-*.md"))
+        for file_path in files:
+            # 3.1 Atualizar Conteúdo Interno
+            with open(file_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            # Atualiza Header (# I-XX ...)
+            content = re.sub(rf"# {old_id}", f"# {new_id}", content)
+            # Atualiza Header Argumentário (# Argumentário — I-XX ...)
+            content = re.sub(rf"# Argumentário — {old_id}", f"# Argumentário — {new_id}", content)
+            # Atualiza Metadados (Intervenção: I-XX)
+            content = re.sub(rf"Intervenção: `{old_id}`", f"Intervenção: `{new_id}`", content)
+            content = re.sub(rf"Intervenção: {old_id}", f"Intervenção: {new_id}", content)
+            
+            with open(file_path, "w", encoding="utf-8") as f:
+                f.write(content)
+                
+            # 3.2 Renomear Arquivo
+            new_name = file_path.name.replace(old_id, new_id)
+            new_path = file_path.parent / new_name
+            file_path.rename(new_path)
+            print(f"    - Renomeado: {file_path.name} -> {new_name}")
+
+    # 4. Atualizar Plano #08
+    plano_file = REFINED_DIR / "08-plano-de-intervencao-estrategica.md"
+    if plano_file.exists():
+        print(f"-> Atualizando Plano #08...")
+        with open(plano_file, "r", encoding="utf-8") as f:
+            content = f.read()
+        
+        # 4.1 Remover bloco da intervenção deletada
+        # Regex: #### I-XX ... (até o próximo #### ou ---)
+        # O padrão tenta pegar o bloco inteiro.
+        # Atenção: re.DOTALL é necessário.
+        
+        # Bloco com #### I-XX ...
+        block_pattern = rf"#### {target_id} — .*?\n(.*?)(?=\n#### I-|\n---| \Z)"
+        # A remoção segura precisa incluir o cabeçalho.
+        full_block_pattern = rf"\n*#### {target_id} — .*?(?=\n#### I-|\n---| \Z)"
+        
+        if re.search(full_block_pattern, content, re.DOTALL):
+            content = re.sub(full_block_pattern, "", content, count=1, flags=re.DOTALL)
+            print(f"  - Bloco {target_id} removido.")
+        else:
+            print(f"  - Aviso: Bloco {target_id} não encontrado no Plano #08.")
+
+        # 4.2 Renumerar Headers subsequentes
+        # Como já temos o map subsequent_map (old->new), aplicamos as substituições
+        # Importante: Fazer isso de forma segura para não substituir texto errado.
+        # Focamos em "#### I-XX"
+        
+        for old_id, new_id in subsequent_map.items():
+            pattern = rf"#### {old_id}"
+            if re.search(pattern, content):
+                content = re.sub(pattern, f"#### {new_id}", content)
+                # Opcional: Tentar substituir referências textuais "ver I-XX"
+                # Risco: Pode pegar algo que não deve. Vamos nos ater aos headers por segurança garantida.
+        
+        with open(plano_file, "w", encoding="utf-8") as f:
+            f.write(content)
+            
+    print("Remoção e renumeração concluídas com sucesso!")
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Sync Manager para Intervenções Sodexo")
     subparsers = parser.add_subparsers(dest="command")
@@ -205,6 +327,9 @@ if __name__ == "__main__":
     subparsers.add_parser("find").add_argument("id")
     subparsers.add_parser("extract").add_argument("id")
     subparsers.add_parser("audit")
+    
+    remove_parser = subparsers.add_parser("remove")
+    remove_parser.add_argument("id", help="ID da intervenção a remover (ex: I-05)")
     
     args = parser.parse_args()
     
@@ -218,3 +343,5 @@ if __name__ == "__main__":
             print("Tudo 100% sincronizado (IDs e Conteúdo)!")
         else:
             print(json.dumps(res, indent=2))
+    elif args.command == "remove":
+        remove_intervention(args.id)
