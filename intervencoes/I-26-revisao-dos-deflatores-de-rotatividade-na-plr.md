@@ -1,4 +1,4 @@
-# I-26 — Revisão dos deflatores de rotatividade na PLR
+# I-26 — Revisão dos Deflatores de Rotatividade na PLR
 
 ## Identificação
 

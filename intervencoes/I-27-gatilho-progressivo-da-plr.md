@@ -6,7 +6,7 @@
 
 Substituir o "gatilho penhasco" (95% GM = tudo, 94,9% = nada) por curva progressiva de faixas (85% = 20% PLR, 90% = 50%, 95% = 100%, >100% = multiplicador), eliminando o incentivo a "loucuras gerenciais" nos últimos 5 dias do mês para salvar o bônus.
 
-- Intervenção: `I-27`
+- Intervenção: `I-24`
 - Unidade(s): Transversal
 - Frente: Reposicionamento
 

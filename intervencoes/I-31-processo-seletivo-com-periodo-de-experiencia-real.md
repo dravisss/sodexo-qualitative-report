@@ -27,8 +27,7 @@ Criar "Job Shadow Obrigatório": candidato passa 1 turno completo (6h, remunerad
 ## Tensão / Objetivo / Impacto (doc 08)
 
 - Tensão: Contratação sem validação prévia de fit: profissionais com alternativas desistem em 15 dias ao conhecer a realidade (turno, ritmo, clima). O processo atual não valida fit cultural antes da contratação, elevando turnover inicial. Custo: R$ 2.500 estimados por contratação falhada (admissão + treinamento + rescisão).
-- Descrição: Job Shadow Obrigatório: candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real antes da contratação. Feedback estruturado nos primeiros 15 dias (gestor + colega veterano).
-  *   **Atualização (Onboarding):** Estruturar o 'Programa de Acolhimento': Além do *Job Shadow* pré-contratação, instituir a figura do 'Padrinho Veterano' na primeira semana e checkpoints formais de RH no 30º e 60º dia para sustentar o engajamento.
+- Descrição: Job Shadow Obrigatório: candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real antes da contratação. Feedback estruturado nos primeiros 15 dias (gestor + colega veterano). Além do job Shadow pré-contratação, instituir a figura do 'Padrinho Veterano' na primeira semana e checkpoints formais de RH no 30º e 60º dia para sustentar o engajamento.
 - Objetivo: Validar o fit cultural ANTES da efetivação e sustentar a adaptação durante os primeiros 90 dias.
 - Impacto: Reduz o turnover de primeiros 90 dias e poupa energia da equipe com treinamentos de baixa conversão.
 

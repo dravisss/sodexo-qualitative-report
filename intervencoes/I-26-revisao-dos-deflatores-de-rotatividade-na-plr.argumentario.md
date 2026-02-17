@@ -1,4 +1,4 @@
-# Argumentário — I-26 — Revisão dos Deflatores (Isonomia de Incentivos)
+# Argumentário — I-26 — Revisão dos Deflatores de Rotatividade na PLR
 
 ## Tese (o que defender)
 

@@ -6,7 +6,7 @@
 
 Instituir a "Blindagem do Mise-en-place" (janela sagrada de produção sem atendimento), reconhecendo que a qualidade do pico é fabricada nas 2 horas de silêncio anteriores. Transformar a preparação antecipada de "tarefa extra" em "pré-requisito de abertura da loja".
 
-- Intervenção: `I-16`
+- Intervenção: `I-15`
 - Unidade(s): Cajamar | Guarulhos Food
 - Frente: Descompressão
 

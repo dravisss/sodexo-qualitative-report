@@ -6,7 +6,7 @@
 
 Substituir regra binária (110h falta = perde 100% PLR) por escala proporcional de desconto (0-30h = 10%, 30-60h = 30%, 60-90h = 60%, >110h = 100%), eliminando os dois comportamentos tóxicos induzidos: presenteísmo (trabalhar doente) e desistência precoce ("já perdi tudo, tanto faz").
 
-- Intervenção: `I-28`
+- Intervenção: `I-25`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação
 

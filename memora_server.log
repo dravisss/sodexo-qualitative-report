@@ -1,0 +1,236 @@
+Initializing database...
+Database ready.
+Graph visualization available at http://127.0.0.1:8766/graph
+INFO:     Started server process [24263]
+INFO:     Started server process [24263]
+INFO:     Waiting for application startup.
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+[02/12… INFO     S streama…
+12:10:…          t         
+                 r         
+                 e         
+                 a         
+                 m         
+                 a         
+                 b         
+                 l         
+                 e         
+                 H         
+                 T         
+                 T         
+                 P         
+                           
+                 s         
+                 e         
+                 s         
+                 s         
+                 i         
+                 o         
+                 n         
+                           
+                 m         
+                 a         
+                 n         
+                 a         
+                 g         
+                 e         
+                 r         
+                           
+                 s         
+                 t         
+                 a         
+                 r         
+                 t         
+                 e         
+                 d         
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8767 (Press CTRL+C to quit)
+INFO:     Uvicorn running on http://127.0.0.1:8766 (Press CTRL+C to quit)
+INFO:     127.0.0.1:53119 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53174 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53174 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53175 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53191 - "GET /api/memories/136 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53191 - "GET /api/memories/99 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/65 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/16 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/21 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/35 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/22 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/43 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/38 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/40 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/11 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53214 - "GET /api/memories/58 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53279 - "GET /api/memories/83 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53279 - "GET /api/memories/75 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53279 - "GET /api/memories/113 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53375 - "GET /api/memories/151 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53375 - "GET /api/memories/152 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53375 - "GET /api/memories/150 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/memories/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/memories/57 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/memories/56 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/memories/155 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/memories/102 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/memories/66 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/memories/61 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53583 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53583 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53671 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53671 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53671 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53673 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53673 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53674 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53673 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53673 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53677 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53810 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53810 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53810 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53810 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53810 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53810 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53841 - "GET /api/memories/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53841 - "GET /api/memories/224 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53841 - "GET /api/memories/192 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53974 - "GET /api/memories/165 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53983 - "GET /api/memories/220 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53983 - "GET /api/memories/230 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54018 - "GET /api/memories/227 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54149 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54149 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54149 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54149 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54149 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54149 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54168 - "GET /api/memories/295 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54182 - "GET /api/memories/303 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54182 - "GET /api/memories/288 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54346 - "GET /api/memories/397 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54346 - "GET /api/memories/415 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54346 - "GET /api/memories/404 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54377 - "GET /api/memories/401 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54377 - "GET /api/memories/359 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54377 - "GET /api/memories/386 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54377 - "GET /api/memories/348 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54377 - "GET /api/memories/328 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54377 - "GET /api/memories/325 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54460 - "GET /api/memories/298 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54460 - "GET /api/memories/297 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54503 - "GET /api/memories/337 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54513 - "GET /api/memories/304 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54513 - "GET /api/memories/299 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54513 - "GET /api/memories/302 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54513 - "GET /api/memories/301 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54513 - "GET /api/memories/307 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54577 - "GET /api/memories/417 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54587 - "GET /api/memories/416 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54587 - "GET /api/memories/418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54650 - "GET /api/memories/305 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54650 - "GET /api/memories/300 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54671 - "GET /api/memories/294 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55320 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55372 - "GET /api/memories/508 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55372 - "GET /api/memories/506 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55372 - "GET /api/memories/505 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55372 - "GET /api/memories/476 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55372 - "GET /api/memories/462 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55372 - "GET /api/memories/475 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55372 - "GET /api/memories/467 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55405 - "GET /api/memories/452 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55405 - "GET /api/memories/492 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/495 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/456 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/433 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/523 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/memories/517 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55463 - "GET /api/memories/616 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55463 - "GET /api/memories/618 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55463 - "GET /api/memories/615 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55463 - "GET /api/memories/619 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55463 - "GET /api/memories/611 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55503 - "GET /api/memories/612 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55503 - "GET /api/memories/614 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55503 - "GET /api/memories/613 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     Shutting down
+ERROR:    ASGI callable returned without completing response.
+ERROR:    ASGI callable returned without completing response.
+INFO:     Waiting for application shutdown.
+[02/12/26  INFO     S streamable…
+12:46:40]           t            
+                    r            
+                    e            
+                    a            
+                    m            
+                    a            
+                    b            
+                    l            
+                    e            
+                    H            
+                    T            
+                    T            
+                    P            
+                                 
+                    s            
+                    e            
+                    s            
+                    s            
+                    i            
+                    o            
+                    n            
+                                 
+                    m            
+                    a            
+                    n            
+                    a            
+                    g            
+                    e            
+                    r            
+                                 
+                    s            
+                    h            
+                    u            
+                    t            
+                    t            
+                    i            
+                    n            
+                    g            
+                                 
+                    d            
+                    o            
+                    w            
+                    n            
+INFO:     Application shutdown complete.
+INFO:     Finished server process [24263]
