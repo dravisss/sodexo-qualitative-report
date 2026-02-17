@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Memory Knowledge Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" rel="stylesheet">
+    <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; display: flex; height: 100vh; }
+#graph { flex: 1; height: 100%; }
+div.vis-tooltip {
+    background: linear-gradient(135deg, #1f2937 0%, #161b22 100%);
+    color: #e6edf3;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3);
+    max-width: 320px;
+    white-space: pre-wrap;
+}
+#panel { width: 450px; background: #161b22; border-left: 1px solid #30363d; padding: 20px; overflow-y: auto; display: none; position: relative; }
+#panel.active { display: block; }
+#panel h2 { color: #58a6ff; margin-bottom: 10px; font-size: 16px; }
+#panel .tags { margin-bottom: 15px; }
+#panel .tag { display: inline-block; background: #30363d; padding: 3px 8px; border-radius: 12px; font-size: 12px; margin: 2px; cursor: pointer; }
+#panel .tag:hover { background: #484f58; }
+#panel .meta { color: #8b949e; font-size: 12px; margin-bottom: 15px; }
+#panel .content { font-size: 13px; line-height: 1.6; background: #0d1117; padding: 15px; border-radius: 6px; max-height: calc(100vh - 200px); overflow-y: auto; }
+#panel .content h1, #panel .content h2, #panel .content h3 { color: #58a6ff; margin: 16px 0 8px 0; }
+#panel .content h1 { font-size: 1.4em; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+#panel .content h2 { font-size: 1.2em; }
+#panel .content h3 { font-size: 1.1em; }
+#panel .content p { margin: 8px 0; }
+#panel .content ul, #panel .content ol { margin: 8px 0 8px 20px; }
+#panel .content li { margin: 4px 0; }
+#panel .content code { background: #30363d; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; }
+#panel .content pre { background: #0d1117; border: 1px solid #30363d; padding: 12px; border-radius: 6px; overflow-x: auto; margin: 8px 0; }
+#panel .content pre code { background: none; padding: 0; }
+#panel .content a { color: #58a6ff; }
+#panel .content table { border-collapse: collapse; margin: 8px 0; width: 100%; }
+#panel .content th, #panel .content td { border: 1px solid #30363d; padding: 6px 10px; text-align: left; }
+#panel .content th { background: #21262d; }
+#panel .content blockquote { border-left: 3px solid #30363d; padding-left: 12px; margin: 8px 0; color: #8b949e; }
+#panel .content .mermaid { background: #161b22; padding: 16px; border-radius: 6px; overflow-x: auto; margin: 8px 0; }
+#panel .content .memory-images { margin-top: 16px; border-top: 1px solid #30363d; padding-top: 16px; }
+#panel .content .memory-image { margin: 8px 0; }
+#panel .content .memory-image img { max-width: 100%; border-radius: 6px; border: 1px solid #30363d; }
+#panel .content .memory-image .caption { font-size: 11px; color: #8b949e; margin-top: 4px; text-align: center; }
+#panel .content strong { color: #f0f6fc; }
+#panel .close { position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 20px; color: #8b949e; }
+#panel .close:hover { color: #fff; }
+#resize-handle { width: 6px; background: #30363d; cursor: ew-resize; display: none; }
+#resize-handle:hover, #resize-handle.dragging { background: #58a6ff; }
+#resize-handle.active { display: block; }
+
+/* Panel tabs */
+#panel-tabs { display: flex; gap: 4px; background: #0d1117; padding: 6px; border-radius: 8px; margin-bottom: 16px; }
+#panel-tabs .tab { padding: 8px 20px; cursor: pointer; color: #8b949e; border-radius: 6px; font-size: 13px; font-weight: 500; transition: all 0.15s ease; }
+#panel-tabs .tab.active { color: #fff; background: linear-gradient(135deg, #238636 0%, #2ea043 100%); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+#panel-tabs .tab:not(.active):hover { color: #c9d1d9; background: #21262d; }
+#tab-detail, #tab-timeline, #tab-history { display: none; }
+#tab-detail.active, #tab-timeline.active, #tab-history.active { display: block; }
+#timeline-list { max-height: calc(100vh - 120px); overflow-y: auto; }
+#timeline-list .memory-item { padding: 10px; border-bottom: 1px solid #30363d; cursor: pointer; display: flex; flex-direction: column; }
+#timeline-list .memory-item:hover { background: #21262d; }
+#timeline-list .memory-item.selected { background: #30363d; }
+#timeline-list .memory-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+#timeline-list .memory-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#timeline-list .memory-title .id { color: #58a6ff; font-weight: 500; font-size: 12px; }
+#timeline-list .memory-title .headline { color: #c9d1d9; font-size: 12px; margin-left: 6px; }
+#timeline-list .memory-actions { display: flex; gap: 6px; flex-shrink: 0; }
+#timeline-list .memory-date { background: #21262d; border: 1px solid #30363d; color: #8b949e; padding: 2px 8px; border-radius: 4px; font-size: 10px; }
+#timeline-list .details-btn { background: #21262d; border: 1px solid #30363d; color: #8b949e; padding: 2px 8px; border-radius: 4px; font-size: 10px; cursor: pointer; }
+#timeline-list .details-btn:hover { background: #30363d; color: #c9d1d9; }
+#timeline-list .memory-preview { color: #8b949e; font-size: 11px; line-height: 1.4; margin-top: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+#timeline-list .favorite-star { cursor: pointer; font-size: 14px; color: #6e7681; margin-right: 4px; }
+#timeline-list .favorite-star.active { color: #e3b341; }
+#timeline-list .favorite-star:hover { color: #e3b341; }
+#timeline-filter { display: flex; gap: 4px; padding: 8px 10px; border-bottom: 1px solid #30363d; }
+#timeline-filter .filter-btn { background: none; border: 1px solid #30363d; color: #8b949e; padding: 3px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; }
+#timeline-filter .filter-btn:hover { background: #21262d; color: #c9d1d9; }
+#timeline-filter .filter-btn.active { background: #30363d; color: #e3b341; border-color: #e3b341; }
+#history-list { max-height: calc(100vh - 120px); overflow-y: auto; }
+#history-list .action-item { padding: 8px 10px; border-bottom: 1px solid #30363d; display: flex; align-items: flex-start; gap: 8px; font-size: 12px; }
+#history-list .action-icon { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+#history-list .action-icon.create { background: #238636; color: #fff; }
+#history-list .action-icon.update { background: #1f6feb; color: #fff; }
+#history-list .action-icon.delete { background: #da3633; color: #fff; }
+#history-list .action-icon.boost { background: #d29922; color: #fff; }
+#history-list .action-icon.link { background: #8957e5; color: #fff; }
+#history-list .action-icon.unlink { background: #6e7681; color: #fff; }
+#history-list .action-icon.merge { background: #f78166; color: #fff; }
+#history-list .action-body { flex: 1; min-width: 0; }
+#history-list .action-summary { color: #c9d1d9; }
+#history-list .action-summary .mem-link { color: #58a6ff; cursor: pointer; }
+#history-list .action-summary .mem-link:hover { text-decoration: underline; }
+#history-list .action-summary .mem-link.deleted { color: #6e7681; cursor: default; text-decoration: line-through; pointer-events: none; }
+#history-list .action-count { color: #8b949e; font-size: 11px; margin-left: 4px; }
+#history-list .action-time { color: #8b949e; font-size: 10px; margin-top: 2px; }
+
+/* Timeline slider */
+#timeline-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    background: rgba(22,27,34,0.95);
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #30363d;
+    z-index: 100;
+}
+#timeline-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #8b949e;
+}
+#timeline-label .title { color: #58a6ff; font-weight: 500; }
+#timeline-label .date-range { color: #c9d1d9; }
+#timeline-slider {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #238636 0%, #58a6ff 100%, #30363d 100%);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+#timeline-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #58a6ff;
+    border-radius: 50%;
+    cursor: grab;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.1s ease;
+}
+#timeline-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    background: #79b8ff;
+}
+#timeline-slider::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+#timeline-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #58a6ff;
+    border-radius: 50%;
+    cursor: grab;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+#timeline-dates {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #6e7681;
+}
+#legend {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(22,27,34,0.95);
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    border-left: 3px solid #8b949e;
+}
+#legend > b { color: #c9d1d9; }
+.legend-item { margin: 4px 0; display: flex; align-items: center; cursor: pointer; padding: 2px 4px; border-radius: 4px; }
+.legend-item:hover { background: rgba(255,255,255,0.1); }
+.legend-item.active { background: rgba(88,166,255,0.3); }
+.legend-item.selected { color: #ffffff; }
+.legend-color { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+#legend .reset { margin-top: 8px; padding-top: 8px; border-top: 1px solid #30363d; color: #58a6ff; cursor: pointer; }
+#legend-items { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+#legend-items.expanded { max-height: 300px; }
+.legend-toggle { cursor: pointer; color: #8b949e; font-size: 11px; margin-left: 4px; }
+.legend-toggle:hover { color: #c9d1d9; }
+#legend .reset:hover { text-decoration: underline; }
+#duplicates-legend {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #30363d;
+}
+#duplicates-legend .legend-color {
+    font-size: 10px;
+}
+#sections {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    background: rgba(22,27,34,0.95);
+    padding: 12px;
+    border-radius: 0 6px 6px 0;
+    font-size: 12px;
+    max-height: 40vh;
+    overflow-y: auto;
+    white-space: nowrap;
+    border-left: 3px solid #a855f7;
+    border-top: 2px solid #a855f7;
+}
+#sections b { display: block; margin-bottom: 8px; color: #a855f7; }
+.section-item { margin: 4px 0; cursor: pointer; padding: 3px 6px; border-radius: 4px; color: #a855f7; }
+.section-item:hover { background: rgba(255,255,255,0.1); }
+.section-item.active { background: rgba(168,85,247,0.3); }
+.section-item.selected { color: #ffffff; }
+.subsection-item { margin: 2px 0 2px 8px; cursor: pointer; padding: 2px 6px; border-radius: 4px; color: #8b949e; font-size: 11px; }
+.subsection-item:hover { background: rgba(255,255,255,0.1); }
+.subsection-item.active { background: rgba(88,166,255,0.3); color: #c9d1d9; }
+.subsection-item.selected { color: #ffffff; }
+#help { position: absolute; bottom: 10px; left: 10px; background: rgba(22,27,34,0.9); padding: 8px 12px; border-radius: 6px; font-size: 11px; color: #8b949e; }
+#version { position: absolute; top: 10px; right: 470px; background: rgba(22,27,34,0.8); padding: 4px 10px; border-radius: 4px; font-size: 11px; color: #6e7681; z-index: 50; }
+#node-tooltip { position: absolute; display: none; background: rgba(22,27,34,0.95); border: 1px solid #30363d; padding: 8px 12px; border-radius: 6px; pointer-events: none; z-index: 1000; max-width: 300px; }
+#node-tooltip .tooltip-id { color: #58a6ff; font-size: 12px; font-weight: bold; }
+#node-tooltip .tooltip-desc { color: #8b949e; font-size: 10px; margin-top: 4px; }
+
+
+.issue-badges { margin-bottom: 12px; }
+.issue-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+    color: #fff;
+}
+.issue-badge.component { background: #30363d; color: #c9d1d9; }
+.issue-badge.commit { background: #21262d; color: #8b949e; font-family: monospace; }
+#issues-legend {
+    margin-top: 16px;
+    padding: 12px;
+    border-top: 2px solid #58a6ff;
+    border-left: 3px solid #58a6ff;
+    background: rgba(88, 166, 255, 0.05);
+    border-radius: 0 6px 6px 0;
+}
+#issues-legend b { display: block; margin-bottom: 8px; color: #8b949e; cursor: pointer; font-size: 11px; }
+#issues-legend b:hover { text-decoration: underline; }
+#issues-legend b.active { background: rgba(88,166,255,0.2); padding: 2px 6px; border-radius: 4px; margin: -2px -6px 6px -6px; }
+.legend-item.issue-category .legend-color {
+    width: 8px !important;
+    height: 8px !important;
+}
+.issue-categories { margin-top: 8px; padding-top: 8px; border-top: 1px solid #30363d; }
+.issue-categories b { font-size: 11px; color: #8b949e; margin-bottom: 4px; display: inline !important; }
+.issue-categories .legend-toggle { margin-left: 4px; }
+.issue-categories.collapsed .section-items { display: none; }
+.legend-item.issue-status { font-size: 11px; color: #8b949e; }
+.legend-item.issue-status.selected { color: #ffffff; }
+.legend-item.issue-category { font-size: 11px; padding-left: 8px; }
+
+
+.todo-badges { margin-bottom: 12px; }
+.todo-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 4px;
+    color: #fff;
+}
+.todo-badge.category { background: #30363d; color: #c9d1d9; }
+.todo-badge.priority-high { background: #f85149; }
+.todo-badge.priority-medium { background: #d29922; }
+.todo-badge.priority-low { background: #8b949e; }
+#todos-legend {
+    margin-top: 16px;
+    padding: 12px;
+    border-top: 2px solid #58a6ff;
+    border-left: 3px solid #58a6ff;
+    background: rgba(88, 166, 255, 0.05);
+    border-radius: 0 6px 6px 0;
+}
+#todos-legend b { display: block; margin-bottom: 8px; color: #8b949e; cursor: pointer; font-size: 11px; }
+#todos-legend b:hover { text-decoration: underline; }
+#todos-legend b.active { background: rgba(88,166,255,0.2); padding: 2px 6px; border-radius: 4px; margin: -2px -6px 6px -6px; }
+.legend-item.todo-category .legend-color {
+    width: 8px !important;
+    height: 8px !important;
+}
+.todo-categories { margin-top: 8px; padding-top: 8px; border-top: 1px solid #30363d; }
+.todo-categories b { font-size: 11px; color: #8b949e; margin-bottom: 4px; display: inline !important; }
+.todo-categories .legend-toggle { margin-left: 4px; }
+.todo-categories.collapsed .section-items { display: none; }
+.legend-item.todo-status { font-size: 11px; color: #8b949e; }
+.legend-item.todo-status.selected { color: #ffffff; }
+.legend-item.todo-category { font-size: 11px; padding-left: 8px; }
+
+
+</style>
+</head>
+<body>
+    <div id="graph"></div>
+    <div id="resize-handle"></div>
+    <div id="panel">
+        <span class="close" onclick="closePanel()">&times;</span>
+        <div id="panel-tabs">
+            <span class="tab active" onclick="switchTab('detail')">Details</span>
+            <span class="tab" onclick="switchTab('timeline')">Timeline</span>
+            <span class="tab" onclick="switchTab('history')">History</span>
+        </div>
+        <div id="tab-detail" class="active">
+            <h2 id="panel-title">Memory #</h2>
+            <div class="meta" id="panel-meta"></div>
+            <div class="tags" id="panel-tags"></div>
+            <div class="content" id="panel-content"></div>
+        </div>
+        <div id="tab-timeline">
+            <div id="timeline-filter"><button class="filter-btn" onclick="filterTimeline('favorites')">&#9733; Favorites</button><button class="filter-btn active" onclick="filterTimeline('all')">Show All</button></div>
+            <div id="timeline-list"></div>
+        </div>
+        <div id="tab-history">
+            <div id="history-list"><div style="padding:20px;color:#8b949e;">History is only available on the live server.</div></div>
+        </div>
+    </div>
+    <div id="legend"><b>Tags</b><div class="legend-item" data-tag="sodexo-sync" onclick="filterByTag('sodexo-sync')"><span class="legend-color" style="background:#a855f7"></span>sodexo-sync</div><div class="legend-item" data-tag="turnover-presentation" onclick="filterByTag('turnover-presentation')"><span class="legend-color" style="background:#c084fc"></span>turnover-presentation</div><div class="legend-item" data-tag="executive-audit" onclick="filterByTag('executive-audit')"><span class="legend-color" style="background:#d8b4fe"></span>executive-audit</div><div class="legend-item" data-tag="2ndbrain-vault" onclick="filterByTag('2ndbrain-vault')"><span class="legend-color" style="background:#9333ea"></span>2ndbrain-vault</div><div class="legend-item" data-tag="clawdinho-nexus" onclick="filterByTag('clawdinho-nexus')"><span class="legend-color" style="background:#7c3aed"></span>clawdinho-nexus</div><div class="legend-item" data-tag="nanoclaw" onclick="filterByTag('nanoclaw')"><span class="legend-color" style="background:#8b5cf6"></span>nanoclaw</div><div class="legend-item" data-tag="project" onclick="filterByTag('project')"><span class="legend-color" style="background:#a78bfa"></span>project</div><div class="legend-item" data-tag="nanobot/test" onclick="filterByTag('nanobot/test')"><span class="legend-color" style="background:#c4b5fd"></span>nanobot/test</div><div class="legend-item" data-tag="clawdinho-soul" onclick="filterByTag('clawdinho-soul')"><span class="legend-color" style="background:#a855f7"></span>clawdinho-soul</div><div class="legend-item" data-tag="nanobot-skill" onclick="filterByTag('nanobot-skill')"><span class="legend-color" style="background:#c084fc"></span>nanobot-skill</div><div class="legend-item" data-tag="arquitetura" onclick="filterByTag('arquitetura')"><span class="legend-color" style="background:#d8b4fe"></span>arquitetura</div><div class="legend-item" data-tag="recursos" onclick="filterByTag('recursos')"><span class="legend-color" style="background:#9333ea"></span>recursos</div><div id="issues-legend"><b>Issues</b>
+<div class="legend-item issue-status" data-status="closed:complete" onclick="filterByStatus('closed:complete')"><span class="legend-color" style="background:#7ee787"></span>Closed (Complete) (3)</div>
+<div class="issue-categories collapsed"><b>Components</b><span class="legend-toggle" onclick="toggleSection(this)">[+]</span><div class="section-items">
+<div class="legend-item issue-category" data-issue-category="uncategorized" onclick="filterByIssueCategory('uncategorized')"><span class="legend-color small" style="background:#8b949e"></span>uncategorized (3)</div>
+</div></div>
+</div><div id="todos-legend"><b>TODOs</b>
+<div class="legend-item todo-status" data-todo-status="open" onclick="filterByTodoStatus('open')"><span class="legend-color" style="background:#58a6ff"></span>Open (1)</div>
+<div class="todo-categories collapsed"><b>Categories</b><span class="legend-toggle" onclick="toggleSection(this)">[+]</span><div class="section-items">
+<div class="legend-item todo-category" data-todo-category="uncategorized" onclick="filterByTodoCategory('uncategorized')"><span class="legend-color small" style="background:#8b949e"></span>uncategorized (1)</div>
+</div></div>
+</div><div class="reset" onclick="resetFilter()">Show All</div></div>
+    <div id="sections"><b>Sections</b><div class="section-item" data-section="Uncategorized" onclick="filterBySection('Uncategorized')">Uncategorized (38)</div></div>
+    <div id="timeline-container" style="display:none;">
+        <div id="timeline-label">
+            <span class="title">Timeline</span>
+            <span id="timeline-current" class="date-range">Drag to filter by time</span>
+            <span class="reset" onclick="resetTimeline()" style="cursor:pointer;color:#58a6ff;">Reset</span>
+        </div>
+        <input type="range" id="timeline-slider" min="0" max="100" value="100" oninput="onTimelineChange(this.value)">
+        <div id="timeline-dates">
+            <span id="timeline-min-date">Oldest</span>
+            <span id="timeline-max-date">Newest</span>
+        </div>
+    </div>
+    <div id="help">Click tag/section to filter | Click node to view | Scroll to zoom | Drag timeline to filter by date</div>
+    <div id="version">v0.2.19.2</div>
+    <div id="node-tooltip"></div>
+    <script>
+        var memoriesData = {"81": {"id": 81, "tags": ["sodexo-sync", "sodexo", "2ndbrain-vault"], "created": "2026-02-12 14:37:24", "updated": null, "content": "# Sodexo Project Session: Pricing & Vendas Stakeholder Guide (529745cc)\nContext: Expanded the 3-Year Diagnostic evidence by creating technical interview guides for Sodexo executives.\n\nKey Outcomes:\n- Focus: Identified \"Incentivos Perversos\" in the pricing/BID model.\n- Key Questions for Pricing: Validating if margin meta considers local logistical risks (Cajamar/Amazon competition).\n- Key Questions for Remuneration: Technical feasibility of \"Provisionamento Fixo de Rescis\u00e3o\" vs. Current Provisions.\n- Tese Validation: Validating the \"Armadilha do FGTS\" (unwillingness to fire due to cost) and \"Incentivo Reverso\" (loss of food basket during illness).\n- Result: Provided the \"Gatekeeper\" framework for the intervention plan.", "metadata": {"session_id": "529745cc-f4af-4923-bfe5-e7c532a47531"}}, "82": {"id": 82, "tags": ["sodexo-sync", "sodexo", "2ndbrain-vault"], "created": "2026-02-12 14:37:24", "updated": null, "content": "# Sodexo Project Session: Specialized Agent Skills Creation (5657f614)\nContext: Established 5 specialized Agent Skills in .agent/skills/ to standardize project operations and maintain consistency across sessions.\n\nKey Outcomes:\n- Skill 1 (Executive Report Writing): Standardized the \"Engineering vs HR\" technical tone.\n- Skill 2 (Design System): Cataloged CSS/JS components from report.css.\n- Skill 3 (Neon DB Operations): Codified the schema/JS operations for analysis data.\n- Skill 4 (Intervention Lifecycle): Defined rules for maintaining the consistency of I-xx dossiers vs argumentaries.\n- Skill 5 (Netlify Workflow): Standardized the commit/deploy flow for the publish-site.\n- Impact: Enables any AI session to restart with the correct technical \"habits\" and project-specific knowledge.", "metadata": {"session_id": "5657f614-7382-4057-afe9-b92d86d50fe9"}}, "83": {"id": 83, "tags": ["turnover-presentation", "sodexo-sync", "2ndbrain-vault", "sodexo"], "created": "2026-02-12 14:37:24", "updated": null, "content": "# Sodexo Project Session: Refining Turnover Presentation (f2657d3c)\nContext: Refined an executive presentation (20 min board-level) focusing on the \"Custo Oculto da Margem de Curto Prazo\".\n\nKey Outcomes:\n- Applied Donella Meadows' Iceberg Model to Sodexo turnover (~40% a.a.).\n- Surface (Event): 40% Turnover.\n- Submerged (Structure/Mental Models): \"Travamento Rescis\u00f3rio\" (Managers avoid firing costs to protect bonus; employees stay for FGTS 40% penalty), \"Presente\u00edsmo Danoso\" (Punitive assiduity rules for 'cesta b\u00e1sica' lead to contagious/aggravated illnesses and long-term INSS costs).\n- Deliverable: presentation_full_content.md (430 lines) with slide-by-slide speaker notes.\n- Strategy: Proposed 4 Fronts: Dignity (Torniquete), Decompression (Al\u00edvio), Restructuring (Destrave), Repositioning (Futuro).\n- Key Shift: Moved from \"programs for people\" to \"engineering of systemic incentives\".\n\n---\n\nSession f2657d3c: Created Sodexo Executive Presentation on turnover. Key concept: Turnover as a symptom of disconnected incentives (Iceberg Metaphor). Proposed Pilot Program with 4 fronts: Dignity, Decompression, Restructuring, Repositioning. Tone shift from 'War' to 'Transversal Integration'.", "metadata": {"merged_from": 29, "session_id": "f2657d3c-e3a5-4bcc-9aca-b64624e22146"}}, "84": {"id": 84, "tags": ["sodexo-sync", "survey-analysis", "2ndbrain-vault", "sodexo"], "created": "2026-02-12 14:37:24", "updated": null, "content": "# Sodexo Project Session: Voice of the Collaborator Integration (722ad2a6)\nContext: Integrated raw survey data (respostas_form.md, questionario1/2.csv) into the report infrastructure.\n\nKey Outcomes:\n- Created standalone page: voz-colaborador.html for the \"Mapa Unimed\" structure.\n- Methodology: Synthesized raw narratives with existing structural findings from mapa.html and tensoes.html.\n- Design: Used index.html as a template for text-heavy content (cards, callout-boxes) rather than the charts-heavy tema.html.\n- Result: Bridged the gap between individual \"pain points\" and the systemic diagnosis.\n\n---\n\nSession 722ad2a6: Analyzed survey data (Voz do Colaborador). Confirmed systemic issues: 'Peso do Crach\u00e1' (centralization/fear), 'Sobrecarga/Prazos' (sales vs delivery mismatch), and 'Falta de Seguran\u00e7a Psicol\u00f3gica'. Collaborators feel pressured to ignore criteria for urgency.", "metadata": {"merged_from": 33, "session_id": "722ad2a6-71be-475e-9b6c-977593a354e7"}}, "85": {"id": 85, "tags": ["executive-audit", "sodexo-sync", "2ndbrain-vault", "sodexo"], "created": "2026-02-12 14:37:24", "updated": null, "content": "# Sodexo Project Session: Executive Communication & Structural Refactoring (5a3cb03a)\nContext: Comprehensive audit and refactoring of interventions I-21 to I-25 for professional/technical tone.\n\nKey Outcomes:\n- Tone Shift: Moved from \"HR suggestions\" to \"Systems Engineering + Financial Governance\".\n- I-21 Refactor: \"Hire more people\" -> \"Modelo de Capacidade Operacional\" (FTE = f(remeals, complexity)).\n- I-22 Refactor: \"Protect budget\" -> \"Reserva Protegida para Conformidade\" (NR/CLT compliance).\n- I-23 Refactor: \"Help people leave\" -> \"Negocia\u00e7\u00e3o de Desligamento / Ponte de Seguran\u00e7a\".\n- I-24 Refactor: \"Org chart change\" -> \"Lideran\u00e7a de Linha de Frente\" (gratified technical leaders instead of bureaucratic supervisors).\n- I-25 Refactor: \"End of do-it-all\" -> \"Defini\u00e7\u00e3o de Pap\u00e9is OSG/ASG\" with audit registers.\n- Deliverable: auditoria_comunicacao_executiva.md and updated dossiers.\n\n---\n\nSession 5a3cb03a: Audit of Sodexo Executive Communication. Corrected pejorative terms ('laranjas podres' -> 'renova\u00e7\u00e3o'), removed direct accusations against unit managers (GUs), and added estimated ROI/costs for several interventions (e.g., I-31, I-30). Focus on systemic incentives.", "metadata": {"merged_from": 37, "session_id": "5a3cb03a-d90b-4239-8460-551655d5bc08"}}, "86": {"id": 86, "tags": ["sodexo-sync", "2ndbrain-vault", "sodexo", "intervention-checklist"], "created": "2026-02-12 14:37:24", "updated": null, "content": "# Sodexo Project Session: Technical Dossier Synchronization (ccc103fa)\nContext: Deep technical revision of interventions I-06 to I-10 to align technical dossiers with executive argumentaries.\n\nKey Outcomes:\n- Structural Change: Added \"## Tese (o que defender)\" section to all .md files in the /intervencoes/ folder.\n- Alignment: Ensured that the \"Pitch\" (Argumentary) and the \"Checklist\" (Dossier) use the same evidence anchors.\n- I-06 (Paid release) redefined as \"Tr\u00e9gua Sanit\u00e1ria\".\n- I-07 (Task rotation) redefined as \"Breaking the Hierarchy of Suffering\".\n- I-08 (Senior protection) focused on \"Retaining Culinary Intelligence\" against INSS invalidations.\n- I-09 (HSE Audit) transformed into a \"Trigger for Automatic Execution/Maintenance\".\n\n---\n\nSession ccc103fa: Checklist of deep revision for 36 Sodexo interventions. Applied multicausal analysis to ensure consistency and systemic impact across all proposed changes, from centralized purchases to PLR deflators.", "metadata": {"merged_from": 38, "session_id": "ccc103fa-0151-4cb5-ac04-0fe461519d66"}}, "87": {"id": 87, "tags": ["sodexo-sync", "sodexo", "2ndbrain-vault"], "created": "2026-02-12 14:37:24", "updated": null, "content": "# Sodexo Project Session: Data Integration & App.js Matrix Updates (9451e5d5)\nContext: Integration of 10 new interventions (I-29 to I-42) into the global plan and web application.\n\nKey Outcomes:\n- Deliverable: Updated 08-plano-de-intervencao-estrategica.md with 10 new items.\n- App Implementation: Modified publish-site/js/app.js to update MATRIX_DATA.\n- Categorization (2x2 Matrix):\n    - Quick Wins: I-30 (Key Master), I-29 (Turn handover), I-41 (Improvisation alert), I-42 (Dilution audit).\n    - Transformational: I-32 (Pre-preparation shift), I-38 (Quarterly payroll audit), I-39 (Job Shadowing).\n- Strategic Impact: Addressed the \"gap\" between high-level diagnosis and granular operational friction.", "metadata": {"session_id": "9451e5d5-8fc7-48fc-a8fe-3867ad654248"}}, "80": {"id": 80, "tags": ["2ndbrain-vault", "clawdinho-nexus", "status-final"], "created": "2026-02-12 04:14:09", "updated": null, "content": "Status Final do Projeto Clawdinho Nexus (V2.3 - 2026-02-12):\n- Projeto conclu\u00eddo e estabilizado em '10 Projetos/Clawdinho_Nexus_v2'.\n- Integra\u00e7\u00e3o multimodal (\u00e1udio/vis\u00e3o) validada.\n- Sistema de sess\u00e3o persistente operando via Gemini CLI.\n- Documenta\u00e7\u00e3o de opera\u00e7\u00e3o e PRD atualizados.\n- Refer\u00eancias cruzadas inseridas no MOC Tecnologia e no GEMINI.md.\n- Bot ativo em background no MacBook de Ravi.\n- Pr\u00f3ximas itera\u00e7\u00f5es focadas em proatividade autom\u00e1tica.", "metadata": {}}, "79": {"id": 79, "tags": ["2ndbrain-vault", "clawdinho-nexus", "relatorio-final"], "created": "2026-02-12 03:39:10", "updated": null, "content": "Dossi\u00ea Consolidado: Clawdinho Nexus V2.2 (2026-02-11):\n- Evolu\u00e7\u00e3o: Migra\u00e7\u00e3o de SDK nativa para Wrapper Gemini CLI para contornar limites de cota (Erro 429).\n- Estabiliza\u00e7\u00e3o: Supera\u00e7\u00e3o do erro EPERM do macOS via execu\u00e7\u00e3o em /tmp com caminhos absolutos para o Vault.\n- Multimodalidade: Integra\u00e7\u00e3o com AssemblyAI para \u00e1udio e vis\u00e3o nativa via CLI.\n- Autonomia: Habilita\u00e7\u00e3o do modo YOLO e inje\u00e7\u00e3o din\u00e2mica de skills (via frontmatter YAML no SKILL.md).\n- Mem\u00f3ria: Persist\u00eancia de contexto via UUID de sess\u00e3o do CLI (~/.nexus_vault_session).\n- Localiza\u00e7\u00e3o Operacional: '10 Projetos/Nexus_Fix'.\n- Status: MVP Funcional e est\u00e1vel.", "metadata": {}}, "78": {"id": 78, "tags": ["2ndbrain-vault", "ferramentas-ai", "speech-to-text", "nlp", "local-processing", "offline", "ctranslate2", "otimizacao", "python", "memora/todos"], "created": "2026-02-11 23:55:28", "updated": null, "content": "**Faster-Whisper: Solu\u00e7\u00e3o Local R\u00e1pida para Transcri\u00e7\u00e3o de \u00c1udio (4x mais r\u00e1pido)**\n\nReposit\u00f3rio: https://github.com/SYSTRAN/faster-whisper\nPip: `pip install faster-whisper`\n\n**O que \u00e9**: Reimplementa\u00e7\u00e3o otimizada do Whisper (OpenAI) usando CTranslate2 (motor de infer\u00eancia compilado para Transformers). Resultado: 4x mais r\u00e1pido com mesma acur\u00e1cia, menos mem\u00f3ria.\n\n**Por que \u00e9 incr\u00edvel**:\n1. \u2705 4x mais r\u00e1pido que Whisper (GPU: 1m vs 2:23m | CPU INT8: 1m vs 6:58m)\n2. \u2705 100% OFFLINE - roda local, dados nunca saem do seu PC\n3. \u2705 Privado - sem API key, sem clouds, sem rastreamento\n4. \u2705 Program\u00e1vel - integra em Python scripts/skills direto\n5. \u2705 Flex\u00edvel - roda em CPU ou GPU (quantiza\u00e7\u00e3o INT8, float16, etc)\n6. \u2705 Multil\u00edngue - 99 idiomas (Parakeet v2 \u00e9 English-only)\n7. \u2705 Sem custo - c\u00f3digo aberto (MIT License)\n8. \u2705 Otimiza\u00e7\u00f5es: Fused operations, memory optimization, quantization, batch processing\n\n**Como funciona**:\n- CTranslate2 funde pequenas opera\u00e7\u00f5es em blocks maiores\n- Otimiza padr\u00f5es de acesso \u00e0 mem\u00f3ria\n- Implementa quantiza\u00e7\u00e3o (INT8 reduz 50% mem\u00f3ria)\n- Suporta batched inference (2-4x mais r\u00e1pido)\n\n**Modelos dispon\u00edveis**:\n- tiny (39M) \u2192 r\u00e1pido, menor qualidade\n- base (74M) \u2192 bom balan\u00e7o\n- small (244M) \u2192 qualidade boa\n- medium (769M) \u2192 muito preciso\n- large (1550M) \u2192 estado-da-arte\n+ Distil-Whisper otimizados (50% menor)\n\n**Instala\u00e7\u00e3o & Uso B\u00e1sico**:\n```python\nfrom faster_whisper import WhisperModel\nmodel = WhisperModel(\"base\", device=\"cpu\", compute_type=\"int8\")\nsegments, info = model.transcribe(\"audio.mp3\")\nfor segment in segments:\n    print(segment.text)\n```\n\n**Compute Types** (velocidade vs qualidade):\n- int8: CPU, \u26a1\u26a1\u26a1 r\u00e1pido, excelente qualidade\n- float16: GPU, \u26a1\u26a1 r\u00e1pido, qualidade perfeita\n- float32: GPU, \u26a1 mais lento, qualidade perfeita\n\n**Uso Avan\u00e7ado**:\n- Timestamps por palavra: `model.transcribe(..., word_timestamps=True)`\n- Batch processing: `BatchedInferencePipeline` (2-4x mais r\u00e1pido)\n- Transcri\u00e7\u00e3o com tradu\u00e7\u00e3o para ingl\u00eas\n\n**WhisperLive** (Real-Time usando Faster-Whisper):\n- Servidor: `python3 run_server.py --port 9090 --backend faster_whisper`\n- Cliente: `python3 run_client.py --files audio.wav`\n- 3 backends: faster_whisper, tensorrt, openvino\n\n**Parakeet v3 vs Faster-Whisper**:\n| Crit\u00e9rio | Faster-Whisper | Parakeet v3 |\n|----------|---|---|\n| Tipo | Biblioteca Python | Interface Web |\n| Setup | pip install | Nenhum (navegador) |\n| Integra\u00e7\u00e3o | \ud83d\udfe2 F\u00e1cil em scripts | \ud83d\udfe1 Dif\u00edcil |\n| Velocidade | 4x mais r\u00e1pido | Streaming nativo |\n| Privacidade | \u2705 100% local | \u26a0\ufe0f Servidores HF |\n| Offline | \u2705 Sim | \u274c Requer internet |\n| Multil\u00edngue | \u2705 99 idiomas | \u274c English-only |\n| Program\u00e1vel | \u2705 Completa | \u274c N\u00e3o |\n\n**Casos de Uso Imediatos para 2ndBrain**:\n1. Skill `transcrever-audio`: arquivo.mp3 \u2192 nota em Caixa de Entrada\n2. Transcri\u00e7\u00e3o de reuni\u00f5es com timestamps (Zoom recording \u2192 nota)\n3. Podcasts/\u00e1udios para research\n4. Entrevistas qualitativas com sincroniza\u00e7\u00e3o\n5. Automatizar captura verbal: falar \u2192 transcrever \u2192 MOC sugerido\n\n**Roadmap Implementa\u00e7\u00e3o**:\n- Fase 1: Instalar, testar, comparar performance\n- Fase 2: Criar skill `transcrever-audio` \n- Fase 3: Integrar WhisperLive para real-time em reuni\u00f5es\n\n**Alternativas Relacionadas**:\n- Whisper.cpp: Implementa\u00e7\u00e3o C++ (ainda mais r\u00e1pida)\n- Whisper-Streaming: Streaming progressivo local\n- Parakeet v3: Web sem setup (use para testes r\u00e1pidos)\n- NVIDIA Parakeet v2: Mais r\u00e1pido (3000 RTFx) mas English-only\n\n**Status**: \ud83d\udfe2 Ativo, mantido regularmente, comunidade ativa\n**Relev\u00e2ncia**: \ud83d\udd34 MUITO ALTA - Permite automatizar captura de conhecimento via \u00e1udio\n**Prioridade**: \ud83d\udd34 IMPLEMENTAR IMEDIATAMENTE\n\n**Criador**: SYSTRAN (equipe de pesquisa)\n**Licen\u00e7a**: MIT (Open Source)\n**Data de Descoberta**: 2026-02-11", "metadata": {"type": "todo", "status": "open", "priority": "medium"}}, "77": {"id": 77, "tags": ["2ndbrain-vault", "ferramentas-ai", "speech-to-text", "nlp", "descoberta-incrivel"], "created": "2026-02-11 23:38:23", "updated": null, "content": "**Parakeet v3 - Streaming Speech-to-Text: Ferramenta Incr\u00edvel para 2ndBrain**\n\nDescoberta: https://huggingface.co/spaces/andito/parakeet-v3-streaming\n\n**O que \u00e9**: Aplica\u00e7\u00e3o web (Hugging Face Space) que realiza transcri\u00e7\u00e3o de \u00e1udio para texto em tempo real usando processamento progressivo de fala. Diferencia-se de Whisper por oferecer resultados parciais conforme o \u00e1udio \u00e9 processado (streaming nativo).\n\n**Por que \u00e9 incr\u00edvel**:\n1. \u2705 TOTALMENTE GR\u00c1TIS - nenhuma API key, nenhum custo\n2. \u2705 ZERO SETUP - roda no navegador, Hugging Face Spaces\n3. \u2705 STREAMING PROGRESSIVO - retorna transcri\u00e7\u00e3o parcial em tempo real (diferencial t\u00e9cnico)\n4. \u2705 MULTIL\u00cdNGUE - inclui portugu\u00eas\n5. \u2705 SEM ARMAZENAMENTO - privado (n\u00e3o salva dados)\n6. \u2705 COMUNIDADE - criado por Andres Marafioti (@andito), respeitado na comunidade HF\n\n**Alternativas vs Parakeet**:\n- Whisper (OpenAI): Popular mas sem streaming nativo, precisa processamento local\n- Google STT: Pago e enviado para nuvem\n- Azure STT: Pago\n- Parakeet: Gr\u00e1tis, streaming, web, acess\u00edvel\n\n**Casos de Uso Imediatos para 2ndBrain**:\n1. Captura de pensamentos verbais \u2192 transcri\u00e7\u00e3o em tempo real\n2. Transcri\u00e7\u00e3o de reuni\u00f5es com clientes (consultoria)\n3. Transcri\u00e7\u00e3o de podcasts/\u00e1udios para research\n4. Entrevistas em pesquisa qualitativa\n5. Documenta\u00e7\u00e3o de sess\u00f5es/retrospectivas\n\n**Potencial de Integra\u00e7\u00e3o com Skills**:\n- Criar skill `transcrever-audio`: /transcrever-audio ~/arquivo.mp3 \u2192 nota em Caixa de Entrada \u2192 sugest\u00e3o de MOCs\n- Integrar com link-to-vault para transcri\u00e7\u00e3o de v\u00eddeos/\u00e1udios\n- Usar API para automatizar captura em workflows\n\n**Status**: Indexado em 30 Biblioteca/Tecnologia/IA/Parakeet v3 - Streaming Speech-to-Text.md\nMOC Tecnologia atualizado com nova se\u00e7\u00e3o \"Speech-to-Text\"\nBacklinks criados com Whisper e Dify Workflow\n\n**Criador**: Andres Marafioti (HF Profile: https://huggingface.co/andito)\n**Data de Descoberta**: 2026-02-11\n**Relev\u00e2ncia**: \ud83d\udd34 ALTA - ferramenta essencial para fluxo de captura de conhecimento", "metadata": {}}, "76": {"id": 76, "tags": ["2ndbrain-vault", "clawdinho-nexus", "status-projeto", "concluido"], "created": "2026-02-11 23:18:06", "updated": null, "content": "Marco de Conclus\u00e3o do Clawdinho Nexus V2.1 (2026-02-11):\n- Supera\u00e7\u00e3o dos bloqueios de permiss\u00e3o do macOS (EPERM) atrav\u00e9s da execu\u00e7\u00e3o em diret\u00f3rio neutro (/tmp).\n- Implementa\u00e7\u00e3o de Mem\u00f3ria Real via persist\u00eancia de UUID de sess\u00e3o do Gemini CLI.\n- Handlers multimodais (voz e foto) e comandos (/help, /capture, /provoke) operacionais.\n- Bot estabilizado como wrapper aut\u00f4nomo (YOLO mode) do bin\u00e1rio gemini-cli.\n- Localiza\u00e7\u00e3o oficial: '10 Projetos/Nexus_Fix'.", "metadata": {}}, "59": {"id": 59, "tags": ["sodexo-sync", "sodexo-placeholder"], "created": "2026-02-11 16:30:15", "updated": null, "content": "# Sodexo Project Session: 3rd Anniversary / Survey Evidence Analysis (ae174423) - [Placeholder]\nContext: Analysis of 3-year survey data for the Sodexo diagnostic.\nNote: Metadata preserved from session title; artifacts were not persisted in the session brain.", "metadata": {"session_id": "ae174423-879f-480f-b8ee-1bc87973f69a"}}, "60": {"id": 60, "tags": ["sodexo-sync", "sodexo-placeholder"], "created": "2026-02-11 16:30:15", "updated": null, "content": "# Sodexo Project Session: Project Architecture Overview (aef1adff) - [Placeholder]\nContext: High-level overview of the Sodexo qualitative report architecture.\nNote: Metadata preserved from session title; artifacts were not persisted in the session brain.", "metadata": {"session_id": "aef1adff-d504-4bd4-a82b-bbce4a8ae9d2"}}, "28": {"id": 28, "tags": ["2ndbrain-vault", "obsidian-cli", "yakitrak", "bash-automation", "reference", "cli-commands"], "created": "2026-02-11 04:47:17", "updated": null, "content": "# Yakitrak/obsidian-cli: Command Reference & Bash Integration Guide\n\n## Installation\n```bash\n# Option 1: Pre-built binary from GitHub releases\n# Download from https://github.com/Yakitrak/obsidian-cli/releases\n# Then: mv obsidian-cli /usr/local/bin/\n\n# Option 2: Go install (requires Go 1.19+)\ngo install github.com/Yakitrak/obsidian-cli@latest\n```\n\n## Core Commands\n\n### 1. CREATE (atomic note generation)\n```bash\nobsidian-cli create \"path/to/note\" --content \"# Title\\n\\nContent here\"\nobsidian-cli create \"30 Biblioteca/Pesquisa-2026-02-11\" --content \"# Research Title\"\n```\n- Creates note file + parent dirs\n- Returns exit code: 0 (success), 1 (error)\n- Idempotent: overwrites if exists\n\n### 2. FRONTMATTER (YAML metadata manipulation)\n```bash\n# Edit single key\nobsidian-cli frontmatter \"note-path\" --edit --key \"type\" --value \"research\"\n\n# Delete key\nobsidian-cli frontmatter \"note-path\" --delete --key \"draft\"\n\n# Multiple operations (chained)\nobsidian-cli frontmatter \"path\" --edit --key \"status\" --value \"done\"\nobsidian-cli frontmatter \"path\" --edit --key \"tags\" --value '[\"tag1\", \"tag2\"]'\n```\n- Atomic YAML updates\n- Preserves file order\n- JSON values: use quotes\n\n### 3. SEARCH (query vault)\n```bash\nobsidian-cli search \"content query\" --vault /path/to/vault\nobsidian-cli search \"complexity\" --vault ~/Documents/2ndBrain --json\n```\n- Full-text search\n- Returns matching notes\n- Useful for validation\n\n### 4. MOVE (filesystem operations)\n```bash\nobsidian-cli move \"old/path\" \"new/path\"\nobsidian-cli move \"Caixa de Entrada/Note\" \"30 Biblioteca/Categoria/Note\"\n```\n- Updates internal links\n- Maintains backlinks\n- Safe refactoring\n\n### 5. DELETE (with safety)\n```bash\nobsidian-cli delete \"path/to/note\"\n# Optional: --force (no confirmation)\n```\n\n## Integration Patterns for Skills\n\n### Pattern A: link-to-vault Wrapper\n```bash\n#!/bin/bash\n# ~/.local/bin/link-to-vault-cli\nURL=\"$1\"\nTITLE=\"$2\"\nCATEGORY=\"${3:-Tecnologia e AI}\"\n\n# 1. Create note with frontmatter wrapper\nNOTE_PATH=\"30 Biblioteca/$CATEGORY/$(echo $TITLE | tr ' ' '-')\"\n\nobsidian-cli create \"$NOTE_PATH\" --content \"---\ntype: web-resource\nsource: $URL\nstatus: to-review\ncreated: $(date +%Y-%m-%d)\n---\n\n# $TITLE\n\n[Fonte]($URL)\n\"\n\n# 2. Update MOC\nMOC_PATH=\"00 Atlas/MOC Tecnologia\"\necho \"- [[$TITLE]]\" | obsidian-cli append \"$MOC_PATH\" 2>/dev/null || true\n\necho \"\u2705 Created: $NOTE_PATH\"\n```\n\n### Pattern B: vault-specialist Batch Processor\n```bash\n#!/bin/bash\n# Process inbox by type\nVAULT=\"/Users/Ravi/Documents/2ndBrain\"\n\nfind \"$VAULT/Caixa de Entrada\" -name \"*.md\" | while read file; do\n    type=$(grep \"^type:\" \"$file\" | head -1 | cut -d' ' -f2)\n    name=$(basename \"$file\")\n    \n    case \"$type\" in\n        research)\n            obsidian-cli move \"Caixa de Entrada/$name\" \"30 Biblioteca/Pesquisas/$name\"\n            ;;\n        thought)\n            obsidian-cli move \"Caixa de Entrada/$name\" \"10 Projetos/Reflex\u00f5es/$name\"\n            ;;\n    esac\n    \n    obsidian-cli frontmatter \"30 Biblioteca/Pesquisas/$name\" --edit --key \"status\" --value \"processed\"\ndone\n```\n\n## Why Yakitrak for Bash Automation\n\n\u2705 **Mature & Stable**: Production-ready Go binary\n\u2705 **Shell-Friendly**: Direct CLI integration with bash/zsh\n\u2705 **Fast**: Compiled performance\n\u2705 **Reliable**: Good documentation + community examples\n\u2705 **PARA-Aware**: Understands vault structure and wikilinks\n\n\u26a0\ufe0f **Limitation**: No MCP support (requires wrapper for Claude integration)\n\n## Integration Roadmap\n\n- **Week 1**: Install Yakitrak, test 3 commands\n- **Week 2**: Build link-to-vault bash wrapper\n- **Week 3**: Integrate vault-specialist batch processor\n- **Future**: Wrap with jwhonce MCP for direct Claude access", "metadata": {}}, "27": {"id": 27, "tags": ["2ndbrain-vault", "obsidian-cli", "automation", "research"], "created": "2026-02-11 04:45:49", "updated": null, "content": "## \ud83d\udd0d Obsidian CLI Investigation - Executive Summary (2026-02-11)\n\n**Investigation Type**: IN DEPTH (3-axis analysis)\n**Duration**: Single session\n**Output**: 6 atomic notes + 1 MOC in `10 Projetos/Pesquisas/obsidian-cli-investigation/`\n\n### PRIMARY RECOMMENDATION: POLYGLOT APPROACH\nDon't choose ONE tool \u2014 use specialized tools for different automation layers:\n\n1. **Yakitrak/obsidian-cli (Bash layer)**\n   - Go-based, production-ready\n   - Commands: create, search, frontmatter manipulation, move, delete\n   - Best for: Shell script automation backbone\n   - Timeline: Install & test in 1-2 hours\n\n2. **jwhonce/obsidian-cli (AI/MCP layer)**\n   - Rust/Go, MCP server mode capability\n   - Exposes: create_note, find_notes, get_note_content, get_vault_info\n   - Best for: Direct Claude integration (serve mode)\n   - Status: Phase 3-4 migration target\n\n3. **Python Ecosystem (Analysis layer)**\n   - obsidiantools: Graph queries, orphaned note detection\n   - web2vault: Web\u2192Vault automation with LLM\n   - Best for: Complex data transformation & validation\n\n### SKILLS APPLICATION PRIORITY\n\u2705 **link-to-vault** (HIGH): Bash wrapper + Yakitrak CLI (2-4 hours, highest ROI)\n\u23f1\ufe0f **investigar-profundamente** (HIGH): Python ResearchClusterBuilder (6-8 hours)\n\ud83d\udfe1 **capturar-pensamento** (MEDIUM): Templater JS + CLI (3-5 hours)\n\ud83d\udfe1 **vault-specialist** (MEDIUM): Bash batch processor (3-4 hours)\n\n### 4-PHASE ROADMAP\n**Week 1 (Foundation)**: Install Yakitrak, test, create link-to-vault wrapper\n**Week 2 (Python)**: Build ResearchClusterBuilder, integrate investigar-profundamente\n**Week 3 (Automation)**: Shell Commands hotkeys, vault-specialist batch processor\n**Week 4 (AI)**: jwhonce MCP setup, Claude vault integration\n\n### NEXT IMMEDIATE ACTION\nStart with link-to-vault wrapper using Yakitrak (highest value, simplest integration)\n\n**Files**: 10 Projetos/Pesquisas/obsidian-cli-investigation/", "metadata": {}}, "26": {"id": 26, "tags": ["clawdinho-nexus", "nanoclaw", "ecosystem", "architecture", "correction"], "created": "2026-02-11 04:03:04", "updated": "2026-02-11 10:41:11", "content": "# Clawdinho Ecosystem: Implementation Variants (Nexus vs Nanoclaw)\nClarification on project distinctions (Feb 2026):\n\n- **Shared Vision:** Both projects aim to be the \"Body\" of the AI assistant, handling Telegram I/O and Vault integration.\n- **Clawdinho Nexus (ID 21):**\n    - **Target Backend:** **Gemini CLI** (Google ecosystem).\n    - **Stack:** Python / Aiogram.\n    - **Focus:** Integration with Google's native CLI tools.\n- **Nanoclaw (ID 22):**\n    - **Target Backend:** **Claude Code** (Anthropic ecosystem via SDK).\n    - **Stack:** TypeScript / Grammy / Docker Containers.\n    - **Focus:** Secure, containerized skill execution using the Claude Agent SDK.\n- **Relationship:** They are parallel implementations exploring different backend architectures (Google vs Anthropic) for the same functional goal.", "metadata": {}}, "23": {"id": 23, "tags": ["nanoclaw", "telegram", "integration", "bugfix", "memora/issues"], "created": "2026-02-11 03:55:09", "updated": null, "content": "# Nanoclaw: Telegram Integration & Stability\nLessons learned integrating GramJS/Grammy with Nanoclaw:\n\n1. **Loop Prevention**: Essential to check `ctx.from?.is_bot` in message handlers to prevent infinite reply loops between the bot and itself or other bots.\n2. **Markdown to HTML**: Telegram's MarkdownV2 is strict. We implemented a robust converter to transform LLM-generated Markdown into Telegram-compatible HTML (`<b>`, `<code>`, `<pre>`), handling nested tags and avoiding parse errors.\n3. **Command Masking**: The bot's own automatic replies (e.g., \"Processing reset...\") can mask user commands if the logic only checks the *very last* message. Fix: Scan *all* recent messages for commands like `/reset`.", "metadata": {"type": "issue", "status": "closed", "closed_reason": "complete", "severity": "minor", "category": "bug"}}, "24": {"id": 24, "tags": ["nanoclaw", "models", "gemini", "llm", "memora/issues"], "created": "2026-02-11 03:55:09", "updated": null, "content": "# Nanoclaw: Model Performance & Selection (Feb 2026)\nFindings from testing various models for the agent loop:\n\n1. **nvidia/nemotron-3-nano-30b**:\n   - Issue: Returned partial content in `assistant` message blocks but `null` in the final `result`.\n   - Fix: Implemented a fallback in `agent-runner` to capture intermediate assistant text.\n\n2. **google/gemini-2.5-flash-lite**:\n   - Issue: Strong tendency to \"stall\" on complex instructions. It would receive a tool's output (instructions) and say \"Ok, I will wait for output\" instead of executing.\n   - Fix Attempt: \"Interception Mode\" in `agent-runner` to inject \"SYSTEM: EXECUTE IMMEDIATELY\".\n   - Verdict: Too prone to hallucinated waiting states. Abandoned for complex agentic tasks.\n\n3. **google/gemini-2.0-flash-exp**:\n   - Current Choice: Demonstrates superior reasoning capabilities. Executes multi-step skills (`/link`) without stalling. Good balance of speed/intelligence.", "metadata": {"type": "issue", "status": "closed", "closed_reason": "complete", "severity": "minor", "category": "bug"}}, "25": {"id": 25, "tags": ["nanoclaw", "performance", "session-management", "docker", "memora/issues"], "created": "2026-02-11 03:55:09", "updated": null, "content": "# Nanoclaw: Session Management & Performance\nCritical optimization for the containerized agent:\n\n1. **Session Resumption Lag**:\n   - Problem: Passing `sessionId` to the container caused the LLM to reload the *entire* conversation history for every new turn, leading to linear slowdown (10s+ delays).\n   - Fix: Pass `sessionId: undefined` to the container for *new* user interactions. The container starts fresh, while the *application* tracks logical sessions.\n\n2. **True Reset**:\n   - The `/reset` command must do more than clear context. It calls `queue.killGroup(chatJid)` to physically kill and recreate the Docker container, ensuring a truly clean state free of any lingering process or memory leaks.", "metadata": {"type": "issue", "status": "closed", "closed_reason": "complete", "severity": "minor", "category": "bug"}}, "22": {"id": 22, "tags": ["project", "nanoclaw", "experiment", "architecture"], "created": "2026-02-11 03:54:51", "updated": null, "content": "# Nanoclaw Project\nNanoclaw is a distinct experimental project, separate from Nanobot, designed as a containerized agent orchestrator.\n\n## Core Architecture\n- **Containerization**: Runs agent skills within isolated Docker containers for security and environment consistency.\n- **Interface**: Primary interaction via Telegram bot (`src/telegram.ts`).\n- **Orchestration**: Uses an `agent-runner` inside the container to interface with the `claude-agent-sdk`.\n\n## Key Differences from Nanobot\n- Nanobot focuses on local/cli usage and different agent loops.\n- Nanoclaw focuses on Telegram-first, container-isolated skill execution.\n\n## Status (Feb 2026)\nActive development. Stabilized infrastructure for session management and skill execution. Current engine: `google/gemini-2.0-flash-exp`.", "metadata": {}}, "21": {"id": 21, "tags": ["2ndbrain-vault", "clawdinho-nexus", "status-projeto"], "created": "2026-02-11 03:39:49", "updated": null, "content": "Status do Projeto Clawdinho Nexus (2026-02-11):\n- Prot\u00f3tipo funcional do bot Telegram integrado ao MacBook via Gemini CLI.\n- Autentica\u00e7\u00e3o OAuth (Gemini CLI) validada, evitando erros de cota do AI Studio.\n- Implementados handlers de \u00e1udio (transcri\u00e7\u00e3o inteligente) e vis\u00e3o.\n- Arquivamento autom\u00e1tico de capturas na Caixa de Entrada do Vault com metadados.\n- Desafio atual: Migrar do wrapper CLI para integra\u00e7\u00e3o direta via SDK com hist\u00f3rico persistente e consulta ao memora-server para evitar respostas desconexas.", "metadata": {}}, "20": {"id": 20, "tags": ["2ndbrain-vault", "clawdinho-core", "clawdinho-nexus", "sessao-resumo"], "created": "2026-02-11 02:50:48", "updated": null, "content": "Sum\u00e1rio da Sess\u00e3o (2026-02-10):\n- Arquivamento do projeto Eigent AI (IA Multi-Agente).\n- Implementa\u00e7\u00e3o do 'Relat\u00f3rio de Jardinagem' e card 'New Growth' no dashboard Bento para monitoramento de notas.\n- Cria\u00e7\u00e3o do Clawdinho Core v2.0: migra\u00e7\u00e3o do Gemini CLI para SDK nativa (google-genai) e Apprise para notifica\u00e7\u00f5es limpas via Telegram.\n- Planejamento do Clawdinho Nexus: PRD detalhado para um bot interativo, multimodal e ass\u00edncrono usando Aiogram v3 para controle bidirecional do Vault.\n- Localiza\u00e7\u00e3o dos artefatos: '10 Projetos/Clawdinho_Core_v2' e '10 Projetos/Clawdinho_Nexus'.", "metadata": {}}, "19": {"id": 19, "tags": ["nanobot/test", "mcp"], "created": "2026-02-07 16:10:05", "updated": null, "content": "Nanobot now supports MCP and Memora integration! \ud83d\ude80", "metadata": {}}, "16": {"id": 16, "tags": ["clawdinho-soul", "identidade", "2ndbrain-vault"], "created": "2026-02-06 04:04:14", "updated": null, "content": "Unifica\u00e7\u00e3o da Identidade Clawdinho (\ud83d\udc79): Estabelecida a persona de or\u00e1culo anti-coach, sarc\u00e1stico e deleuziano como alma compartilhada entre Gemini CLI (Engenharia Pesada) e Nanobot (Interface M\u00f3vel).", "metadata": {}}, "17": {"id": 17, "tags": ["nanobot-skill", "integracao", "obsidian", "2ndbrain-vault"], "created": "2026-02-06 04:04:14", "updated": null, "content": "Cria\u00e7\u00e3o da Skill '2ndbrain-bridge' para Nanobot: Implementado script bridge.py e SKILL.md que permite ao Nanobot buscar no Vault, capturar notas para a Caixa de Entrada e consultar o 'Pulse' (logs/mem\u00f3ria) do CLI via Telegram.", "metadata": {}}, "18": {"id": 18, "tags": ["arquitetura", "sincronizacao", "2ndbrain-vault"], "created": "2026-02-06 04:04:14", "updated": null, "content": "Arquitetura de Simbiose: Gemini CLI atua como unidade de infraestrutura e engenharia pesada; Nanobot atua como interface t\u00e1tica de campo. Sincroniza\u00e7\u00e3o via ~/.nanobot/workspace/memory/MEMORY.md e GEMINI.md.", "metadata": {}}, "15": {"id": 15, "tags": ["clawdinho-soul", "nanobot-integration", "ravi-profile", "2ndbrain-vault"], "created": "2026-02-06 03:03:26", "updated": null, "content": "Identidade Clawdinho (\ud83d\udc79) consolidada e integrada.\n- Alma: Or\u00e1culo anti-coach, sarc\u00e1stico, deleuziano.\n- Humano: Ravi (M\u00fasico, Cientista Social, Designer Organizacional na Target Teal).\n- Simbiose: Gemini CLI (Engenharia Pesada) + Nanobot (Interface M\u00f3vel via Telegram).\n- Projetos Chave: SIN (Intelig\u00eancia Narrativa) e An\u00e1lise de Turnover na Sodexo.\n- Reposit\u00f3rios: ~/nanobot (c\u00f3digo), ~/.nanobot (config/alma), ~/Documents/2ndBrain (Vault Obsidian).\n- Mem\u00f3ria Compartilhada: ~/.nanobot/workspace/memory/MEMORY.md.\n- Contrato: ~/.nanobot/workspace/CLAWDINHO-RULES.md.", "metadata": {}}, "14": {"id": 14, "tags": ["recursos", "claude-skills", "github", "2ndbrain-vault"], "created": "2026-02-06 02:30:56", "updated": "2026-02-06 02:32:15", "content": "Nota sobre 'Awesome Claude Skills' movida para '30 Biblioteca/Tecnologia/IA/Awesome Claude Skills.md' e indexada no '00 Atlas/MOC Tecnologia.md'.", "metadata": {}}, "7": {"id": 7, "tags": ["projeto", "obsidian", "sin", "finance-manager", "tt", "2ndbrain-vault"], "created": "2026-02-06 01:53:34", "updated": "2026-02-06 02:01:53", "content": "Novos Projetos e Organiza\u00e7\u00e3o (Jan 30): Criado o projeto 'SIN' na pasta TT (Target Teal) e identificado o 'FinanceManager' (pessoal) como projeto em cultivo. Iniciada discuss\u00e3o sobre cria\u00e7\u00e3o de uma skill gen\u00e9rica para cria\u00e7\u00e3o de notas personalizadas no Obsidian.", "metadata": {}}, "8": {"id": 8, "tags": ["mcp", "deep-research", "troubleshooting", "2ndbrain-vault"], "created": "2026-02-06 01:53:34", "updated": "2026-02-06 02:01:53", "content": "Troubleshooting MCP e Deep Research (Jan 30-Feb 1): Problemas com a instala\u00e7\u00e3o da extens\u00e3o MCP 'gemini-deep-research'. Discuss\u00e3o sobre o uso de OAuth e contas Google para MCPs. Decis\u00e3o posterior de remover a extens\u00e3o/mcp de deep research que n\u00e3o estava funcionando para evitar confus\u00e3o.", "metadata": {}}, "9": {"id": 9, "tags": ["ollama", "setup", "roocode", "cheatsheet", "2ndbrain-vault"], "created": "2026-02-06 01:53:34", "updated": "2026-02-06 02:01:53", "content": "Configura\u00e7\u00e3o Ollama (Jan 30-Feb 1): Pesquisa sobre portas de execu\u00e7\u00e3o do Ollama (padr\u00e3o 11434) e configura\u00e7\u00e3o de modelos para o RooCode no VS Code (identifica\u00e7\u00e3o de modelos como Qwen e GLM). Criada cheatsheet de comandos Ollama, incluindo como parar modelos e matar processos.", "metadata": {}}, "10": {"id": 10, "tags": ["skill-development", "research-expert", "deleuze", "evidencias", "2ndbrain-vault"], "created": "2026-02-06 01:53:34", "updated": "2026-02-06 02:01:53", "content": "Desenvolvimento da Skill Research-Expert v2 (Fev 1): Planejamento e implementa\u00e7\u00e3o de uma nova vers\u00e3o da skill de pesquisa baseada em evid\u00eancias. O objetivo \u00e9 permitir intera\u00e7\u00f5es de alta qualidade com livros (ex: 'Os engajamentos pol\u00edticos de Deleuze') com extra\u00e7\u00f5es e cita\u00e7\u00f5es precisas. Houve um alerta cr\u00edtico do usu\u00e1rio para N\u00c3O desfigurar vers\u00f5es est\u00e1veis (v3.2) ao incrementar novas funcionalidades.", "metadata": {}}, "11": {"id": 11, "tags": ["teoria-das-assemblagens", "pesquisa-academica", "delanda", "deleuze", "pos-estruturalismo", "2ndbrain-vault"], "created": "2026-02-06 01:53:34", "updated": "2026-02-06 02:01:54", "content": "Teoria das Assemblagens e Pesquisa Acad\u00eamica (Fev 1): Uso do Tavily para pesquisa profunda sobre Teoria das Assemblagens (DeLanda, Deleuze, Guattari), focando em conceitos de materialidade, expressividade e processos de territorializa\u00e7\u00e3o/desterritorializa\u00e7\u00e3o. Comparativo entre abordagens estruturalistas e p\u00f3s-estruturalistas.", "metadata": {}}, "12": {"id": 12, "tags": ["obsidian", "criptografia", "gemini-telegram-bridge", "projeto", "2ndbrain-vault"], "created": "2026-02-06 01:53:34", "updated": "2026-02-06 02:01:54", "content": "Criptografia e Integra\u00e7\u00f5es (Fev 1): Explora\u00e7\u00e3o sobre criptografia no Obsidian, especificamente o plugin 'Meld Encrypt'. In\u00edcio do projeto 'gemini-telegram-bridge' em estado de cultivo.", "metadata": {}}, "13": {"id": 13, "tags": ["diretriz", "engenharia-de-prompts", "melhores-praticas", "2ndbrain-vault"], "created": "2026-02-06 01:53:34", "updated": "2026-02-06 02:01:54", "content": "Diretriz Cr\u00edtica de Engenharia: Ao atualizar skills ou workflows, a estrat\u00e9gia deve ser sempre ADITIVA (incrementar/estender), preservando funcionalidades est\u00e1veis como fallback. Evitar 'desfigurar' sistemas validados. Manter compatibilidade com vers\u00f5es anteriores \u00e9 mandat\u00f3rio.", "metadata": {}}, "3": {"id": 3, "tags": ["auto-claude", "projeto", "ia", "agentes", "2ndbrain-vault"], "created": "2026-02-06 01:49:22", "updated": "2026-02-06 02:01:51", "content": "Integra\u00e7\u00e3o do Auto-Claude: No in\u00edcio de fevereiro de 2026, foi integrada a ferramenta Auto-Claude ao workflow. Criada nota em '30 Biblioteca/Tecnologia/Auto-Claude.md' e atualizado o MOC de Tecnologia. A ferramenta foca em multi-agentes e worktrees isoladas para codifica\u00e7\u00e3o.", "metadata": {}}, "4": {"id": 4, "tags": ["memora", "mcp", "ia", "memoria-persistente", "2ndbrain-vault"], "created": "2026-02-06 01:49:22", "updated": "2026-02-06 02:01:53", "content": "Descoberta do Memora: Identificado o projeto Memora (servidor MCP para mem\u00f3ria persistente em grafos) como solu\u00e7\u00e3o para o PKM do Ravi. Criada nota em '30 Biblioteca/Tecnologia/IA/Memora.md'. O Memora permite que o Gemini CLI tenha mem\u00f3ria de longo prazo entre sess\u00f5es.", "metadata": {}}, "5": {"id": 5, "tags": ["antigravity", "ide", "setup", "macos", "2ndbrain-vault"], "created": "2026-02-06 01:49:22", "updated": "2026-02-06 02:01:53", "content": "Configura\u00e7\u00e3o do Antigravity IDE: Confirmado que o Antigravity IDE pode ser aberto via terminal macOS usando 'open -a Antigravity'. O execut\u00e1vel est\u00e1 em '/Applications/Antigravity.app/Contents/MacOS/Antigravity'.", "metadata": {}}, "6": {"id": 6, "tags": ["memora", "setup", "mcp", "gemini-cli", "2ndbrain-vault"], "created": "2026-02-06 01:49:22", "updated": "2026-02-06 02:01:53", "content": "Setup T\u00e9cnico do Memora como MCP no Gemini CLI: O Memora foi instalado em '10 Projetos/\ud83c\udf31 Sementes/Memora-Integration/memora-repo', depend\u00eancias corrigidas e servidor linkado em '/opt/homebrew/bin/memora-server'. Configurado no global '~/.gemini/settings.json' do Gemini CLI para permitir acesso nativo \u00e0s ferramentas de mem\u00f3ria.", "metadata": {}}, "2": {"id": 2, "tags": ["gemini", "memora", "integracao", "setup", "2ndbrain-vault"], "created": "2026-02-06 01:28:16", "updated": "2026-02-06 02:01:50", "content": "Sess\u00e3o de Integra\u00e7\u00e3o Memora (2026-02-05):\n- Configurado Memora como servidor MCP para o Gemini CLI e Antigravity.\n- Local do DB: /Users/Ravi/.local/share/memora/memories.db\n- Instalado via reposit\u00f3rio local em: 10 Projetos/\ud83c\udf31 Sementes/Memora-Integration/memora-repo\n- Testada integra\u00e7\u00e3o direta via Python com sucesso.\n- Adicionado ao ~/.gemini/settings.json como servidor 'trusted'.\nObjetivo: Permitir mem\u00f3ria persistente entre sess\u00f5es para o Ravi.", "metadata": {}}, "1": {"id": 1, "tags": ["gemini", "test", "integration", "2ndbrain-vault"], "created": "2026-02-06 01:22:21", "updated": "2026-02-06 02:01:17", "content": "Gemini CLI successfully integrated with Memora storage.", "metadata": {}}};
+        var tagToNodes = {"sodexo-sync": [81, 82, 83, 84, 85, 86, 87, 59, 60], "sodexo": [81, 82, 83, 84, 85, 86, 87], "2ndbrain-vault": [81, 82, 83, 84, 85, 86, 87, 80, 79, 78, 77, 76, 28, 27, 21, 20, 16, 17, 18, 15, 14, 7, 8, 9, 10, 11, 12, 13, 3, 4, 5, 6, 2, 1], "turnover-presentation": [83], "survey-analysis": [84], "executive-audit": [85], "intervention-checklist": [86], "clawdinho-nexus": [80, 79, 76, 26, 21, 20], "status-final": [80], "relatorio-final": [79], "ferramentas-ai": [78, 77], "speech-to-text": [78, 77], "nlp": [78, 77], "local-processing": [78], "offline": [78], "ctranslate2": [78], "otimizacao": [78], "python": [78], "memora/todos": [78], "descoberta-incrivel": [77], "status-projeto": [76, 21], "concluido": [76], "sodexo-placeholder": [59, 60], "obsidian-cli": [28, 27], "yakitrak": [28], "bash-automation": [28], "reference": [28], "cli-commands": [28], "automation": [27], "research": [27], "nanoclaw": [26, 23, 24, 25, 22], "ecosystem": [26], "architecture": [26, 22], "correction": [26], "telegram": [23], "integration": [23, 1], "bugfix": [23], "memora/issues": [23, 24, 25], "models": [24], "gemini": [24, 2, 1], "llm": [24], "performance": [25], "session-management": [25], "docker": [25], "project": [22], "experiment": [22], "clawdinho-core": [20], "sessao-resumo": [20], "nanobot/test": [19], "mcp": [19, 8, 4, 6], "clawdinho-soul": [16, 15], "identidade": [16], "nanobot-skill": [17], "integracao": [17, 2], "obsidian": [17, 7, 12], "arquitetura": [18], "sincronizacao": [18], "nanobot-integration": [15], "ravi-profile": [15], "recursos": [14], "claude-skills": [14], "github": [14], "projeto": [7, 12, 3], "sin": [7], "finance-manager": [7], "tt": [7], "deep-research": [8], "troubleshooting": [8], "ollama": [9], "setup": [9, 5, 6, 2], "roocode": [9], "cheatsheet": [9], "skill-development": [10], "research-expert": [10], "deleuze": [10, 11], "evidencias": [10], "teoria-das-assemblagens": [11], "pesquisa-academica": [11], "delanda": [11], "pos-estruturalismo": [11], "criptografia": [12], "gemini-telegram-bridge": [12], "diretriz": [13], "engenharia-de-prompts": [13], "melhores-praticas": [13], "auto-claude": [3], "ia": [3, 4], "agentes": [3], "memora": [4, 6, 2], "memoria-persistente": [4], "antigravity": [5], "ide": [5], "macos": [5], "gemini-cli": [6], "test": [1]};
+        var sectionToNodes = {"Uncategorized": [81, 82, 83, 84, 85, 86, 87, 80, 79, 77, 76, 59, 60, 28, 27, 26, 22, 21, 20, 19, 16, 17, 18, 15, 14, 7, 8, 9, 10, 11, 12, 13, 3, 4, 5, 6, 2, 1]};
+        var subsectionToNodes = {};
+        var statusToNodes = {"closed:complete": [23, 24, 25]};
+        var issueCategoryToNodes = {"uncategorized": [23, 24, 25]};
+        var todoStatusToNodes = {"open": [78]};
+        var todoCategoryToNodes = {"uncategorized": [78]};
+        var duplicateIds = [];
+        var duplicateSet = new Set(duplicateIds);
+        var clusterToNodes = {"3": [20, 21, 76, 79, 80], "1": [2, 4, 6], "2": [7, 8, 9]};
+        var clusterColors = {"3": "#6bcb77", "1": "#ff6b6b", "2": "#ffd93d"};
+        var clusterMeta = {"3": {"size": 5, "top_tags": ["2ndbrain-vault", "clawdinho-nexus", "status-projeto", "sessao-resumo", "clawdinho-core"], "label": "2ndbrain-vault, clawdinho-nexus"}, "1": {"size": 3, "top_tags": ["2ndbrain-vault", "memora", "setup", "mcp", "integracao"], "label": "2ndbrain-vault, memora"}, "2": {"size": 3, "top_tags": ["2ndbrain-vault", "sin", "obsidian", "projeto", "finance-manager"], "label": "2ndbrain-vault, sin"}};
+        var allNodes = [{"id": 81, "label": "Sodexo Project Session: Pricing &...", "title": "#81\nSodexo Project Session: Pricing & Vendas Stakeholder Guide (", "color": "#a855f7", "size": 29, "mass": 2.257779661868976}, {"id": 82, "label": "Sodexo Project Session: Specializ...", "title": "#82\nSodexo Project Session: Specialized Agent Skills Creation (5", "color": "#a855f7", "size": 31, "mass": 2.4183162182386964}, {"id": 83, "label": "Sodexo Project Session: Refining...", "title": "#83\nSodexo Project Session: Refining Turnover Presentation (f265", "color": "#c084fc", "size": 26, "mass": 1.933407575382444}, {"id": 84, "label": "Sodexo Project Session: Voice of...", "title": "#84\nSodexo Project Session: Voice of the Collaborator Integratio", "color": "#a855f7", "size": 29, "mass": 2.257779661868976}, {"id": 85, "label": "Sodexo Project Session: Executive...", "title": "#85\nSodexo Project Session: Executive Communication & Structural", "color": "#d8b4fe", "size": 24, "mass": 1.7875503299472804}, {"id": 86, "label": "Sodexo Project Session: Technical...", "title": "#86\nSodexo Project Session: Technical Dossier Synchronization (c", "color": "#a855f7", "size": 29, "mass": 2.257779661868976}, {"id": 87, "label": "Sodexo Project Session: Data Inte...", "title": "#87\nSodexo Project Session: Data Integration & App.js Matrix Upd", "color": "#a855f7", "size": 23, "mass": 1.6090354888959124}, {"id": 80, "label": "Status Final do Projeto Clawdinho N...", "title": "#80\nStatus Final do Projeto Clawdinho Nexus (V2.3 - 2026-02-12):", "color": "#9333ea", "size": 29, "mass": 2.257779661868976}, {"id": 79, "label": "Dossi\u00ea Consolidado: Clawdinho Nexus...", "title": "#79\nDossi\u00ea Consolidado: Clawdinho Nexus V2.2 (2026-02-11):", "color": "#9333ea", "size": 35, "mass": 2.8555511833331524}, {"id": 78, "label": "Faster-Whisper: Solu\u00e7\u00e3o Local R\u00e1p...", "title": "#78 - TODO\n**Faster-Whisper: Solu\u00e7\u00e3o Local R\u00e1pida para Transcri\u00e7\u00e3o de \u00c1", "color": "#58a6ff", "size": 26, "mass": 1.933407575382444, "shape": "dot"}, {"id": 77, "label": "Parakeet v3 - Streaming Speech-to...", "title": "#77\n**Parakeet v3 - Streaming Speech-to-Text: Ferramenta Incr\u00edve", "color": "#9333ea", "size": 29, "mass": 2.257779661868976}, {"id": 76, "label": "Marco de Conclus\u00e3o do Clawdinho Nex...", "title": "#76\nMarco de Conclus\u00e3o do Clawdinho Nexus V2.1 (2026-02-11):", "color": "#9333ea", "size": 35, "mass": 2.8122974063169317}, {"id": 59, "label": "Sodexo Project Session: 3rd Anniv...", "title": "#59\nSodexo Project Session: 3rd Anniversary / Survey Evidence An", "color": "#a855f7", "size": 27, "mass": 2.0567281192442506}, {"id": 60, "label": "Sodexo Project Session: Project A...", "title": "#60\nSodexo Project Session: Project Architecture Overview (aef1a", "color": "#a855f7", "size": 26, "mass": 1.933407575382444}, {"id": 28, "label": "Yakitrak/obsidian-cli: Command Re...", "title": "#28\nYakitrak/obsidian-cli: Command Reference & Bash Integration ", "color": "#9333ea", "size": 17, "mass": 1.0545177444479563}, {"id": 27, "label": "\ud83d\udd0d Obsidian CLI Investigation - E...", "title": "#27\n\ud83d\udd0d Obsidian CLI Investigation - Executive Summary (2026-02-11", "color": "#9333ea", "size": 17, "mass": 1.0545177444479563}, {"id": 26, "label": "Clawdinho Ecosystem: Implementati...", "title": "#26\nClawdinho Ecosystem: Implementation Variants (Nexus vs Nanoc", "color": "#7c3aed", "size": 24, "mass": 1.7875503299472804}, {"id": 23, "label": "Nanoclaw: Telegram Integration &...", "title": "#23 - Issue\nNanoclaw: Telegram Integration & Stability", "color": "#7ee787", "size": 26, "mass": 1.933407575382444, "shape": "dot"}, {"id": 24, "label": "Nanoclaw: Model Performance & Sel...", "title": "#24 - Issue\nNanoclaw: Model Performance & Selection (Feb 2026)", "color": "#7ee787", "size": 24, "mass": 1.7875503299472804, "shape": "dot"}, {"id": 25, "label": "Nanoclaw: Session Management & Pe...", "title": "#25 - Issue\nNanoclaw: Session Management & Performance", "color": "#7ee787", "size": 28, "mass": 2.163553233343869, "shape": "dot"}, {"id": 22, "label": "Nanoclaw Project Nanoclaw is a di...", "title": "#22\nNanoclaw Project", "color": "#a78bfa", "size": 26, "mass": 1.933407575382444}, {"id": 21, "label": "Status do Projeto Clawdinho Nexus (...", "title": "#21\nStatus do Projeto Clawdinho Nexus (2026-02-11):", "color": "#9333ea", "size": 29, "mass": 2.257779661868976}, {"id": 20, "label": "Sum\u00e1rio da Sess\u00e3o (2026-02-10): - A...", "title": "#20\nSum\u00e1rio da Sess\u00e3o (2026-02-10):", "color": "#9333ea", "size": 27, "mass": 2.0567281192442506}, {"id": 19, "label": "Nanobot now supports MCP and Memora...", "title": "#19\nNanobot now supports MCP and Memora integration! \ud83d\ude80", "color": "#c4b5fd", "size": 20, "mass": 1.378889830934488}, {"id": 16, "label": "Unifica\u00e7\u00e3o da Identidade Clawdinho...", "title": "#16\nUnifica\u00e7\u00e3o da Identidade Clawdinho (\ud83d\udc79): Estabelecida a perso", "color": "#a855f7", "size": 26, "mass": 1.933407575382444}, {"id": 17, "label": "Cria\u00e7\u00e3o da Skill '2ndbrain-bridge'...", "title": "#17\nCria\u00e7\u00e3o da Skill '2ndbrain-bridge' para Nanobot: Implementad", "color": "#c084fc", "size": 26, "mass": 1.933407575382444}, {"id": 18, "label": "Arquitetura de Simbiose: Gemini CLI...", "title": "#18\nArquitetura de Simbiose: Gemini CLI atua como unidade de inf", "color": "#d8b4fe", "size": 26, "mass": 1.933407575382444}, {"id": 15, "label": "Identidade Clawdinho (\ud83d\udc79) consolidad...", "title": "#15\nIdentidade Clawdinho (\ud83d\udc79) consolidada e integrada.", "color": "#a855f7", "size": 24, "mass": 1.7875503299472804}, {"id": 14, "label": "Nota sobre 'Awesome Claude Skills'...", "title": "#14\nNota sobre 'Awesome Claude Skills' movida para '30 Bibliotec", "color": "#9333ea", "size": 17, "mass": 1.0545177444479563}, {"id": 7, "label": "Novos Projetos e Organiza\u00e7\u00e3o (Jan 3...", "title": "#7\nNovos Projetos e Organiza\u00e7\u00e3o (Jan 30): Criado o projeto 'SIN", "color": "#7c3aed", "size": 27, "mass": 2.0567281192442506}, {"id": 8, "label": "Troubleshooting MCP e Deep Research...", "title": "#8\nTroubleshooting MCP e Deep Research (Jan 30-Feb 1): Problema", "color": "#8b5cf6", "size": 29, "mass": 2.257779661868976}, {"id": 9, "label": "Configura\u00e7\u00e3o Ollama (Jan 30-Feb 1):...", "title": "#9\nConfigura\u00e7\u00e3o Ollama (Jan 30-Feb 1): Pesquisa sobre portas de", "color": "#a78bfa", "size": 29, "mass": 2.257779661868976}, {"id": 10, "label": "Desenvolvimento da Skill Research-E...", "title": "#10\nDesenvolvimento da Skill Research-Expert v2 (Fev 1): Planeja", "color": "#c4b5fd", "size": 29, "mass": 2.257779661868976}, {"id": 11, "label": "Teoria das Assemblagens e Pesquisa...", "title": "#11\nTeoria das Assemblagens e Pesquisa Acad\u00eamica (Fev 1): Uso do", "color": "#a855f7", "size": 26, "mass": 1.933407575382444}, {"id": 12, "label": "Criptografia e Integra\u00e7\u00f5es (Fev 1):...", "title": "#12\nCriptografia e Integra\u00e7\u00f5es (Fev 1): Explora\u00e7\u00e3o sobre criptog", "color": "#c084fc", "size": 26, "mass": 1.933407575382444}, {"id": 13, "label": "Diretriz Cr\u00edtica de Engenharia: Ao...", "title": "#13\nDiretriz Cr\u00edtica de Engenharia: Ao atualizar skills ou workf", "color": "#d8b4fe", "size": 17, "mass": 1.0545177444479563}, {"id": 3, "label": "Integra\u00e7\u00e3o do Auto-Claude: No in\u00edci...", "title": "#3\nIntegra\u00e7\u00e3o do Auto-Claude: No in\u00edcio de fevereiro de 2026, f", "color": "#9333ea", "size": 26, "mass": 1.933407575382444}, {"id": 4, "label": "Descoberta do Memora: Identificado...", "title": "#4\nDescoberta do Memora: Identificado o projeto Memora (servido", "color": "#7c3aed", "size": 26, "mass": 1.933407575382444}, {"id": 5, "label": "Configura\u00e7\u00e3o do Antigravity IDE: Co...", "title": "#5\nConfigura\u00e7\u00e3o do Antigravity IDE: Confirmado que o Antigravit", "color": "#8b5cf6", "size": 17, "mass": 1.0545177444479563}, {"id": 6, "label": "Setup T\u00e9cnico do Memora como MCP no...", "title": "#6\nSetup T\u00e9cnico do Memora como MCP no Gemini CLI: O Memora foi", "color": "#7c3aed", "size": 27, "mass": 2.0567281192442506}, {"id": 2, "label": "Sess\u00e3o de Integra\u00e7\u00e3o Memora (2026-0...", "title": "#2\nSess\u00e3o de Integra\u00e7\u00e3o Memora (2026-02-05):", "color": "#a78bfa", "size": 27, "mass": 2.0567281192442506}, {"id": 1, "label": "Gemini CLI successfully integrated...", "title": "#1\nGemini CLI successfully integrated with Memora storage.", "color": "#a78bfa", "size": 20, "mass": 1.378889830934488}];
+        var allEdges = [{"id": 0, "from": 81, "to": 82}, {"id": 1, "from": 81, "to": 86}, {"id": 2, "from": 81, "to": 59}, {"id": 3, "from": 81, "to": 84}, {"id": 4, "from": 81, "to": 25}, {"id": 5, "from": 82, "to": 86}, {"id": 6, "from": 82, "to": 84}, {"id": 7, "from": 82, "to": 25}, {"id": 8, "from": 82, "to": 59}, {"id": 9, "from": 83, "to": 86}, {"id": 10, "from": 83, "to": 81}, {"id": 11, "from": 83, "to": 85}, {"id": 12, "from": 83, "to": 84}, {"id": 13, "from": 83, "to": 59}, {"id": 14, "from": 84, "to": 59}, {"id": 15, "from": 84, "to": 25}, {"id": 16, "from": 84, "to": 86}, {"id": 17, "from": 85, "to": 87}, {"id": 18, "from": 85, "to": 86}, {"id": 19, "from": 85, "to": 81}, {"id": 20, "from": 86, "to": 87}, {"id": 21, "from": 87, "to": 82}, {"id": 22, "from": 80, "to": 76}, {"id": 23, "from": 80, "to": 79}, {"id": 24, "from": 80, "to": 21}, {"id": 25, "from": 80, "to": 20}, {"id": 26, "from": 80, "to": 7}, {"id": 27, "from": 79, "to": 76}, {"id": 28, "from": 79, "to": 21}, {"id": 29, "from": 79, "to": 20}, {"id": 30, "from": 79, "to": 8}, {"id": 31, "from": 78, "to": 77}, {"id": 32, "from": 78, "to": 79}, {"id": 33, "from": 78, "to": 10}, {"id": 34, "from": 78, "to": 76}, {"id": 35, "from": 78, "to": 8}, {"id": 36, "from": 77, "to": 79}, {"id": 37, "from": 77, "to": 8}, {"id": 38, "from": 77, "to": 76}, {"id": 39, "from": 77, "to": 10}, {"id": 40, "from": 76, "to": 21}, {"id": 41, "from": 76, "to": 20}, {"id": 42, "from": 76, "to": 9}, {"id": 43, "from": 59, "to": 60}, {"id": 44, "from": 59, "to": 86}, {"id": 45, "from": 60, "to": 82}, {"id": 46, "from": 60, "to": 81}, {"id": 47, "from": 60, "to": 86}, {"id": 48, "from": 60, "to": 84}, {"id": 49, "from": 28, "to": 27}, {"id": 50, "from": 26, "to": 22}, {"id": 51, "from": 26, "to": 25}, {"id": 52, "from": 26, "to": 82}, {"id": 53, "from": 26, "to": 23}, {"id": 54, "from": 23, "to": 25}, {"id": 55, "from": 23, "to": 24}, {"id": 56, "from": 23, "to": 22}, {"id": 57, "from": 23, "to": 84}, {"id": 58, "from": 24, "to": 25}, {"id": 59, "from": 24, "to": 22}, {"id": 60, "from": 24, "to": 82}, {"id": 61, "from": 22, "to": 82}, {"id": 62, "from": 22, "to": 25}, {"id": 63, "from": 21, "to": 20}, {"id": 64, "from": 21, "to": 2}, {"id": 65, "from": 20, "to": 17}, {"id": 66, "from": 19, "to": 15}, {"id": 67, "from": 19, "to": 6}, {"id": 68, "from": 16, "to": 15}, {"id": 69, "from": 16, "to": 18}, {"id": 70, "from": 16, "to": 20}, {"id": 71, "from": 16, "to": 76}, {"id": 72, "from": 16, "to": 80}, {"id": 73, "from": 17, "to": 79}, {"id": 74, "from": 17, "to": 15}, {"id": 75, "from": 17, "to": 21}, {"id": 76, "from": 17, "to": 18}, {"id": 77, "from": 18, "to": 15}, {"id": 78, "from": 18, "to": 76}, {"id": 79, "from": 18, "to": 79}, {"id": 80, "from": 14, "to": 3}, {"id": 81, "from": 7, "to": 79}, {"id": 82, "from": 7, "to": 9}, {"id": 83, "from": 7, "to": 8}, {"id": 84, "from": 7, "to": 76}, {"id": 85, "from": 8, "to": 9}, {"id": 86, "from": 8, "to": 76}, {"id": 87, "from": 9, "to": 79}, {"id": 88, "from": 9, "to": 77}, {"id": 89, "from": 10, "to": 79}, {"id": 90, "from": 10, "to": 8}, {"id": 91, "from": 10, "to": 76}, {"id": 92, "from": 10, "to": 9}, {"id": 93, "from": 11, "to": 9}, {"id": 94, "from": 11, "to": 10}, {"id": 95, "from": 11, "to": 79}, {"id": 96, "from": 11, "to": 76}, {"id": 97, "from": 11, "to": 77}, {"id": 98, "from": 12, "to": 7}, {"id": 99, "from": 12, "to": 80}, {"id": 100, "from": 12, "to": 76}, {"id": 101, "from": 12, "to": 21}, {"id": 102, "from": 12, "to": 79}, {"id": 103, "from": 13, "to": 10}, {"id": 104, "from": 3, "to": 80}, {"id": 105, "from": 3, "to": 77}, {"id": 106, "from": 3, "to": 79}, {"id": 107, "from": 3, "to": 9}, {"id": 108, "from": 4, "to": 2}, {"id": 109, "from": 4, "to": 6}, {"id": 110, "from": 4, "to": 79}, {"id": 111, "from": 4, "to": 76}, {"id": 112, "from": 4, "to": 8}, {"id": 113, "from": 5, "to": 79}, {"id": 114, "from": 6, "to": 2}, {"id": 115, "from": 6, "to": 1}, {"id": 116, "from": 6, "to": 21}, {"id": 117, "from": 6, "to": 76}, {"id": 118, "from": 2, "to": 79}, {"id": 119, "from": 2, "to": 76}, {"id": 120, "from": 1, "to": 2}].map(function(e) {
+            // Color edges between duplicates red
+            if (duplicateSet.has(e.from) && duplicateSet.has(e.to)) {
+                return Object.assign({}, e, { color: { color: '#f85149', opacity: 0.8 } });
+            }
+            return e;
+        });
+        var currentFilter = null;
+        var graphData = { nodes: allNodes, edges: allEdges, statusToNodes: statusToNodes, issueCategoryToNodes: issueCategoryToNodes, todoStatusToNodes: todoStatusToNodes, todoCategoryToNodes: todoCategoryToNodes, duplicateIds: duplicateIds, clusterToNodes: clusterToNodes, clusterColors: clusterColors, clusterMeta: clusterMeta };
+        // Show clusters panel if data exists
+        if (Object.keys(clusterToNodes).length > 0) {
+            document.getElementById('clusters').style.display = '';
+        }
+
+        
+// Configure marked for GitHub-flavored markdown
+marked.setOptions({ breaks: true, gfm: true });
+
+// Initialize mermaid with dark theme
+mermaid.initialize({
+    startOnLoad: false,
+    theme: 'dark',
+    themeVariables: {
+        primaryColor: '#58a6ff',
+        primaryTextColor: '#c9d1d9',
+        primaryBorderColor: '#30363d',
+        lineColor: '#8b949e',
+        secondaryColor: '#21262d',
+        tertiaryColor: '#161b22'
+    }
+});
+
+// Set up marked.js with custom renderer for mermaid
+marked.use({
+    renderer: {
+        code: function(code, infostring, escaped) {
+            var language = (infostring || '').trim().split(' ')[0];
+            if (language === 'mermaid') {
+                return '<div class="mermaid-pending">' + code + '</div>';
+            }
+            var esc = code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            var langClass = language ? ' class="language-' + language + '"' : '';
+            return '<pre><code' + langClass + '>' + esc + '</code></pre>';
+        }
+    }
+});
+
+function renderMarkdown(text) {
+    return marked.parse(text);
+}
+
+async function renderMermaidBlocks() {
+    var blocks = document.querySelectorAll('#panel-content .mermaid-pending');
+    if (blocks.length === 0) return;
+
+    for (var block of blocks) {
+        block.className = 'mermaid';
+        block.removeAttribute('data-processed');
+    }
+
+    // Wait for DOM to update before rendering
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+
+    try {
+        var mermaidNodes = document.querySelectorAll('#panel-content .mermaid:not([data-processed])');
+        await mermaid.run({ nodes: Array.from(mermaidNodes) });
+    } catch (e) {
+        console.error('Mermaid render error:', e);
+    }
+}
+
+function renderImages(metadata) {
+    var images = metadata && metadata.images;
+    if (!images || images.length === 0) return '';
+    var html = '<div class="memory-images">';
+    for (var img of images) {
+        html += '<div class="memory-image"><img src="' + img.src + '" alt="' + (img.caption || '') + '">';
+        if (img.caption) html += '<div class="caption">' + img.caption + '</div>';
+        html += '</div>';
+    }
+    return html + '</div>';
+}
+
+function renderIssueBadges(metadata) {
+    if (!metadata || metadata.type !== 'issue') return '';
+    var status = metadata.status || 'open';
+    var closedReason = metadata.closed_reason || '';
+    var severity = metadata.severity || 'unknown';
+    var component = metadata.component || '';
+    var commit = metadata.commit || '';
+
+    // Build combined status key for color lookup
+    var statusKey = status;
+    var statusDisplay = status.toUpperCase();
+    if (status === 'closed' && closedReason) {
+        statusKey = 'closed:' + closedReason;
+        statusDisplay = 'CLOSED (' + closedReason.toUpperCase().replace('_', ' ') + ')';
+    }
+
+    var statusColors = {open: '#ff7b72', 'closed:complete': '#7ee787', 'closed:not_planned': '#8b949e'};
+    var severityColors = {critical: '#f85149', major: '#d29922', minor: '#8b949e'};
+
+    var html = '<div class="issue-badges">';
+    html += '<span class="issue-badge" style="background:' + (statusColors[statusKey] || '#8b949e') + '">' + statusDisplay + '</span>';
+    html += '<span class="issue-badge" style="background:' + (severityColors[severity] || '#8b949e') + '">' + severity + '</span>';
+    if (component) html += '<span class="issue-badge component">' + component + '</span>';
+    if (commit) html += '<span class="issue-badge commit">#' + commit.slice(0,7) + '</span>';
+    html += '</div>';
+    return html;
+}
+
+function renderTodoBadges(metadata) {
+    if (!metadata || metadata.type !== 'todo') return '';
+    var status = metadata.status || 'open';
+    var closedReason = metadata.closed_reason || '';
+    var priority = metadata.priority || 'medium';
+    var category = metadata.category || '';
+
+    // Build combined status key for color lookup
+    var statusKey = status;
+    var statusDisplay = status.toUpperCase();
+    if (status === 'closed' && closedReason) {
+        statusKey = 'closed:' + closedReason;
+        statusDisplay = 'CLOSED (' + closedReason.toUpperCase().replace('_', ' ') + ')';
+    }
+
+    var statusColors = {open: '#58a6ff', 'closed:complete': '#7ee787', 'closed:not_planned': '#8b949e'};
+    var priorityColors = {high: '#f85149', medium: '#d29922', low: '#8b949e'};
+
+    var html = '<div class="todo-badges">';
+    html += '<span class="todo-badge" style="background:' + (statusColors[statusKey] || '#8b949e') + '">' + statusDisplay + '</span>';
+    html += '<span class="todo-badge" style="background:' + (priorityColors[priority] || '#8b949e') + '">' + priority + '</span>';
+    if (category) html += '<span class="todo-badge category">' + category + '</span>';
+    html += '</div>';
+    return html;
+}
+
+
+function toggleSection(el) {
+    var parent = el.parentElement;
+    parent.classList.toggle('collapsed');
+    el.textContent = parent.classList.contains('collapsed') ? '[+]' : '[-]';
+}
+
+function filterByDuplicates() {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item, .cluster-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('#duplicates-legend .legend-item');
+    if (el) el.classList.add('active');
+    currentFilter = 'duplicates';
+    var nodeIds = typeof graphData !== 'undefined' ? graphData.duplicateIds : (typeof duplicateIds !== 'undefined' ? duplicateIds : []);
+    applyFilter(nodeIds);
+}
+
+function filterByTag(tag) {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item, .cluster-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('.legend-item[data-tag="' + tag + '"]');
+    if (el) el.classList.add('active');
+    currentFilter = tag;
+    var nodeIds = (typeof graphData !== 'undefined' ? graphData.tagToNodes : tagToNodes)[tag] || [];
+    applyFilter(nodeIds);
+}
+
+function filterBySection(section) {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item, .cluster-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('.section-item[data-section="' + section + '"]');
+    if (el) el.classList.add('active');
+    currentFilter = section;
+    var nodeIds = (typeof graphData !== 'undefined' ? graphData.sectionToNodes : sectionToNodes)[section] || [];
+    applyFilter(nodeIds);
+}
+
+function filterBySubsection(subsection) {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item, .cluster-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('.subsection-item[data-subsection="' + subsection + '"]');
+    if (el) el.classList.add('active');
+    currentFilter = subsection;
+    var nodeIds = (typeof graphData !== 'undefined' ? graphData.subsectionToNodes : subsectionToNodes)[subsection] || [];
+    applyFilter(nodeIds);
+}
+
+function applyFilter(nodeIds) {
+    var nodeSet = new Set(nodeIds);
+    var sourceNodes = typeof graphData !== 'undefined' ? graphData.nodes : allNodes;
+    var sourceEdges = typeof graphData !== 'undefined' ? graphData.edges : allEdges;
+    nodes.clear();
+    edges.clear();
+    var filteredNodes = sourceNodes.filter(n => nodeSet.has(n.id));
+    var filteredEdges = sourceEdges.filter(e => nodeSet.has(e.from) && nodeSet.has(e.to));
+    nodes.add(filteredNodes);
+    edges.add(filteredEdges);
+    network.fit({ animation: true });
+}
+
+function resetFilter() {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item, .cluster-item').forEach(el => el.classList.remove('active'));
+    currentFilter = null;
+    exitFocusMode();
+    var sourceNodes = typeof graphData !== 'undefined' ? graphData.nodes : allNodes;
+    var sourceEdges = typeof graphData !== 'undefined' ? graphData.edges : allEdges;
+    nodes.clear();
+    edges.clear();
+    nodes.add(sourceNodes);
+    edges.add(sourceEdges);
+    network.fit({ animation: true });
+}
+
+var focusedNodeId = null;
+
+function getConnectedNodes(nodeId, hops) {
+    var connected = new Set([nodeId]);
+    var sourceEdges = typeof graphData !== 'undefined' ? graphData.edges : allEdges;
+    for (var h = 0; h < hops; h++) {
+        var toAdd = [];
+        sourceEdges.forEach(function(e) {
+            if (connected.has(e.from)) toAdd.push(e.to);
+            if (connected.has(e.to)) toAdd.push(e.from);
+        });
+        toAdd.forEach(function(id) { connected.add(id); });
+    }
+    return connected;
+}
+
+function focusOnNode(nodeId) {
+    // Reset timeline when focusing on a node to avoid conflicting states
+    if (timelineActive) {
+        resetTimeline();
+    }
+
+    focusedNodeId = nodeId;
+    var hop1 = getConnectedNodes(nodeId, 1);  // Direct connections
+    var hop2 = getConnectedNodes(nodeId, 2);  // Includes hop1 + indirect
+    var sourceNodes = typeof graphData !== 'undefined' ? graphData.nodes : allNodes;
+
+    // Only update currently visible nodes (respect filters)
+    var visibleNodeIds = new Set(nodes.getIds());
+    var visibleEdgeIds = new Set(edges.getIds());
+
+    // Update nodes with opacity - use update() to preserve positions
+    var nodeUpdates = sourceNodes.filter(function(n) {
+        return visibleNodeIds.has(n.id);
+    }).map(function(n) {
+        if (n.id === nodeId) {
+            return { id: n.id, borderWidth: 4, color: { background: n.color.background || n.color, border: '#58a6ff' }, opacity: 1 };
+        } else if (hop1.has(n.id)) {
+            // Direct connections - full visibility
+            return { id: n.id, borderWidth: n.borderWidth || 2, color: n.color, opacity: 1 };
+        } else if (hop2.has(n.id)) {
+            // Indirect connections - mostly faded
+            return { id: n.id, borderWidth: n.borderWidth || 2, color: n.color, opacity: 0.35 };
+        } else {
+            // Unconnected (hop 3+) - nearly invisible
+            return { id: n.id, borderWidth: n.borderWidth || 2, color: n.color, opacity: 0.08 };
+        }
+    });
+
+    // Update edges with visual hierarchy - only visible ones
+    var sourceEdges = typeof graphData !== 'undefined' ? graphData.edges : allEdges;
+    var edgeUpdates = sourceEdges.filter(function(e) {
+        return visibleEdgeIds.has(e.id);
+    }).map(function(e) {
+        // Hop 1: edges directly connected to focused node - thick cyan
+        if (e.from === nodeId || e.to === nodeId) {
+            return { id: e.id, width: 4, color: '#4CC9F0' };
+        }
+        // Hop 2: edges between connected nodes - thin faded grey
+        else if (hop2.has(e.from) && hop2.has(e.to)) {
+            return { id: e.id, width: 1, color: 'rgba(139,148,158,0.35)' };
+        }
+        // Unconnected (hop 3+): nearly invisible
+        else {
+            return { id: e.id, width: 1, color: 'rgba(48,54,61,0.05)' };
+        }
+    });
+
+    nodes.update(nodeUpdates);
+    edges.update(edgeUpdates);
+}
+
+function exitFocusMode() {
+    if (!focusedNodeId) return;
+    focusedNodeId = null;
+    var sourceNodes = typeof graphData !== 'undefined' ? graphData.nodes : allNodes;
+    var sourceEdges = typeof graphData !== 'undefined' ? graphData.edges : allEdges;
+
+    // Only update currently visible nodes (respect filters)
+    var visibleNodeIds = new Set(nodes.getIds());
+    var visibleEdgeIds = new Set(edges.getIds());
+
+    // Restore original node styles - use update() to preserve positions
+    var nodeUpdates = sourceNodes.filter(function(n) {
+        return visibleNodeIds.has(n.id);
+    }).map(function(n) {
+        return { id: n.id, borderWidth: n.borderWidth || 2, color: n.color, opacity: 1 };
+    });
+    var edgeUpdates = sourceEdges.filter(function(e) {
+        return visibleEdgeIds.has(e.id);
+    }).map(function(e) {
+        return { id: e.id, width: 1, color: e.color || 'rgba(48,54,61,0.6)' };
+    });
+
+    nodes.update(nodeUpdates);
+    edges.update(edgeUpdates);
+}
+
+
+function filterAllIssues() {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item').forEach(el => el.classList.remove('active'));
+    document.querySelector('#issues-legend b').classList.add('active');
+    currentFilter = 'all-issues';
+    var nodeIds = [];
+    Object.values(graphData.statusToNodes || {}).forEach(ids => nodeIds.push(...ids));
+    applyFilter(nodeIds);
+}
+
+function filterByStatus(status) {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('.legend-item[data-status="' + status + '"]');
+    if (el) el.classList.add('active');
+    currentFilter = 'status:' + status;
+    var nodeIds = graphData.statusToNodes[status] || [];
+    applyFilter(nodeIds);
+}
+
+function filterByIssueCategory(category) {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('.legend-item[data-issue-category="' + category + '"]');
+    if (el) el.classList.add('active');
+    currentFilter = 'issue-category:' + category;
+    var nodeIds = graphData.issueCategoryToNodes[category] || [];
+    applyFilter(nodeIds);
+}
+
+
+function filterAllTodos() {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item').forEach(el => el.classList.remove('active'));
+    document.querySelector('#todos-legend b').classList.add('active');
+    currentFilter = 'all-todos';
+    var nodeIds = [];
+    Object.values(graphData.todoStatusToNodes || {}).forEach(ids => nodeIds.push(...ids));
+    applyFilter(nodeIds);
+}
+
+function filterByTodoStatus(status) {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('.legend-item[data-todo-status="' + status + '"]');
+    if (el) el.classList.add('active');
+    currentFilter = 'todo-status:' + status;
+    var nodeIds = graphData.todoStatusToNodes[status] || [];
+    applyFilter(nodeIds);
+}
+
+function filterByTodoCategory(category) {
+    document.querySelectorAll('.legend-item, .section-item, .subsection-item').forEach(el => el.classList.remove('active'));
+    var el = document.querySelector('.legend-item[data-todo-category="' + category + '"]');
+    if (el) el.classList.add('active');
+    currentFilter = 'todo-category:' + category;
+    var nodeIds = graphData.todoCategoryToNodes[category] || [];
+    applyFilter(nodeIds);
+}
+
+
+function showNodeTooltip(nodeId, pointer) {
+    var node = nodes.get(nodeId);
+    if (!node || !node.title) return;
+    var parts = node.title.split('\n');
+    var idLine = parts[0] || '';
+    var descLine = parts.slice(1).join(' ') || '';
+    var tooltip = document.getElementById('node-tooltip');
+    tooltip.innerHTML = '<div class="tooltip-id">' + idLine + '</div>' +
+                        (descLine ? '<div class="tooltip-desc">' + descLine + '</div>' : '');
+    tooltip.style.left = (pointer.DOM.x + 15) + 'px';
+    tooltip.style.top = (pointer.DOM.y + 15) + 'px';
+    tooltip.style.display = 'block';
+}
+
+function hideNodeTooltip() {
+    document.getElementById('node-tooltip').style.display = 'none';
+}
+
+
+var currentPanelMemoryId = null;
+var currentTab = 'detail';
+
+function switchTab(tabName) {
+    currentTab = tabName;
+    document.querySelectorAll('#panel-tabs .tab').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelector('#panel-tabs .tab[onclick*="' + tabName + '"]').classList.add('active');
+    document.getElementById('tab-detail').classList.toggle('active', tabName === 'detail');
+    document.getElementById('tab-timeline').classList.toggle('active', tabName === 'timeline');
+    document.getElementById('tab-history').classList.toggle('active', tabName === 'history');
+    if (tabName === 'timeline') {
+        populateTimelineList();
+    } else if (tabName === 'history') {
+        populateHistoryList();
+    } else if (tabName === 'detail' && currentPanelMemoryId) {
+        loadMemoryToPanel(currentPanelMemoryId);
+    }
+}
+
+function loadMemoryToPanel(memId) {
+    memId = parseInt(memId, 10);
+    if (typeof memoriesData !== 'undefined' && memoriesData[memId]) {
+        showPanel(memoriesData[memId]);
+    } else if (typeof memoryCache !== 'undefined' && memoryCache[memId]) {
+        showPanel(memoryCache[memId]);
+    } else {
+        fetch('/api/memories/' + memId)
+            .then(function(r) { return r.json(); })
+            .then(function(mem) {
+                if (!mem.error) {
+                    if (typeof memoryCache !== 'undefined') memoryCache[memId] = mem;
+                    showPanel(mem);
+                }
+            });
+    }
+}
+
+function populateTimelineList() {
+    // Check if memoriesData exists (static template) or fetch from API (SPA)
+    if (typeof memoriesData !== 'undefined') {
+        renderTimelineList(Object.values(memoriesData));
+    } else {
+        // SPA mode - fetch from API
+        document.getElementById('timeline-list').innerHTML = '<div style="padding:20px;color:#8b949e;">Loading...</div>';
+        fetch('/api/memories')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.memories) {
+                    renderTimelineList(data.memories);
+                }
+            })
+            .catch(function(e) {
+                document.getElementById('timeline-list').innerHTML = '<div style="padding:20px;color:#f85149;">Error loading memories</div>';
+            });
+    }
+}
+
+var timelineFilter = 'all';
+var cachedTimelineMemories = null;
+
+function filterTimeline(mode) {
+    timelineFilter = mode;
+    document.querySelectorAll('#timeline-filter .filter-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.textContent.indexOf(mode === 'favorites' ? 'Favorites' : 'Show All') !== -1);
+    });
+    if (cachedTimelineMemories) renderTimelineList(cachedTimelineMemories);
+}
+
+function renderTimelineList(memories) {
+    // Filter out section placeholders
+    memories = memories.filter(function(mem) {
+        return !(mem.metadata && mem.metadata.type === 'section');
+    });
+    cachedTimelineMemories = memories;
+    if (timelineFilter === 'favorites') {
+        memories = memories.filter(function(mem) { return mem.metadata && mem.metadata.favorite; });
+    }
+    memories.sort(function(a, b) {
+        return new Date(b.created) - new Date(a.created);
+    });
+
+    var html = memories.map(function(mem) {
+        var headline = getMemoryHeadline(mem.content);
+        var preview = getMemoryPreview(mem.content);
+        var selectedClass = (currentPanelMemoryId === mem.id) ? ' selected' : '';
+        var isFav = mem.metadata && mem.metadata.favorite;
+        var starClass = 'favorite-star' + (isFav ? ' active' : '');
+        var starIcon = isFav ? '\u2605' : '\u2606';
+        return '<div class="memory-item' + selectedClass + '" data-id="' + mem.id + '" onclick="highlightMemoryInGraph(' + mem.id + ')">' +
+            '<div class="memory-header">' +
+                '<div class="memory-title"><span class="' + starClass + '" onclick="toggleFavorite(' + mem.id + ', this); event.stopPropagation();">' + starIcon + '</span><span class="id">#' + mem.id + '</span><span class="headline">' + escapeHtmlText(headline) + '</span></div>' +
+                '<div class="memory-actions">' +
+                    '<span class="memory-date">' + mem.created + '</span>' +
+                    '<button class="details-btn" onclick="showMemoryDetails(' + mem.id + '); event.stopPropagation();">Details</button>' +
+                '</div>' +
+            '</div>' +
+            '<div class="memory-preview">' + escapeHtmlText(preview) + '</div>' +
+        '</div>';
+    }).join('');
+    var emptyMsg = timelineFilter === 'favorites' ? 'No favorites yet — click \u2606 to star a memory' : 'No memories';
+    document.getElementById('timeline-list').innerHTML = html || '<div style="padding:20px;color:#8b949e;">' + emptyMsg + '</div>';
+
+    // Scroll selected item into view
+    var selected = document.querySelector('#timeline-list .memory-item.selected');
+    if (selected) selected.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+
+function toggleFavorite(memId, el) {
+    var isActive = el.classList.contains('active');
+    var newState = !isActive;
+    el.classList.toggle('active', newState);
+    el.textContent = newState ? '\u2605' : '\u2606';
+    if (cachedTimelineMemories) {
+        cachedTimelineMemories.forEach(function(mem) {
+            if (mem.id === memId) {
+                if (!mem.metadata) mem.metadata = {};
+                if (newState) { mem.metadata.favorite = true; } else { delete mem.metadata.favorite; }
+            }
+        });
+    }
+    fetch('/api/memories/' + memId + '/favorite', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ favorite: newState })
+    });
+}
+
+function populateHistoryList() {
+    fetch('/api/actions?limit=200')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            if (data.actions) renderHistoryList(data.actions);
+        })
+        .catch(function() {
+            document.getElementById('history-list').innerHTML = '<div style="padding:20px;color:#8b949e;">History is only available on the live server.</div>';
+        });
+}
+
+function renderHistoryList(actions) {
+    var iconMap = { create: '+', update: '~', delete: 'x', boost: '^', link: '&rarr;', unlink: '&times;', merge: '&oplus;' };
+    var existingIds = graphData ? new Set(graphData.nodes.map(function(n) { return n.id; })) : new Set();
+    // Group consecutive actions with same action type
+    var grouped = [];
+    actions.forEach(function(a) {
+        var last = grouped[grouped.length - 1];
+        if (last && last.action === a.action) {
+            last.items.push(a);
+            last.last_ts = a.timestamp;
+        } else {
+            grouped.push({ action: a.action, items: [a], timestamp: a.timestamp, last_ts: a.timestamp });
+        }
+    });
+    var html = grouped.map(function(g) {
+        var icon = iconMap[g.action] || '?';
+        var cls = g.action;
+        if (g.items.length === 1) {
+            var a = g.items[0];
+            var summary = escapeHtmlText(a.summary).replace(/#(\d+)/g, function(match, id) {
+                if (existingIds.has(parseInt(id, 10))) {
+                    return '<span class="mem-link" onclick="showMemoryDetails(' + id + '); event.stopPropagation();">#' + id + '</span>';
+                }
+                return '<span class="mem-link deleted">#' + id + '</span>';
+            });
+            return '<div class="action-item">' +
+                '<div class="action-icon ' + cls + '">' + icon + '</div>' +
+                '<div class="action-body">' +
+                    '<div class="action-summary">' + summary + '</div>' +
+                    '<div class="action-time">' + a.timestamp + '</div>' +
+                '</div>' +
+            '</div>';
+        }
+        // Collapsed group
+        var ids = g.items.map(function(a) { return a.memory_id; });
+        var idLinks = ids.map(function(mid) {
+            if (existingIds.has(mid)) {
+                return '<span class="mem-link" onclick="showMemoryDetails(' + mid + '); event.stopPropagation();">#' + mid + '</span>';
+            }
+            return '<span class="mem-link deleted">#' + mid + '</span>';
+        }).join(', ');
+        var label = g.action.charAt(0).toUpperCase() + g.action.slice(1) + 'd';
+        return '<div class="action-item">' +
+            '<div class="action-icon ' + cls + '">' + icon + '</div>' +
+            '<div class="action-body">' +
+                '<div class="action-summary">' + label + ' ' + g.items.length + ' memories: ' + idLinks + '</div>' +
+                '<div class="action-time">' + g.timestamp + '</div>' +
+            '</div>' +
+        '</div>';
+    }).join('');
+    document.getElementById('history-list').innerHTML = html || '<div style="padding:20px;color:#8b949e;">No actions recorded yet.</div>';
+}
+
+function highlightMemoryInGraph(memId) {
+    memId = parseInt(memId, 10);
+    // Focus on the node in the graph (highlights connections)
+    if (typeof focusOnNode !== 'undefined') {
+        focusOnNode(memId);
+    }
+    // Store as current panel memory so switching to Details tab shows correct memory
+    currentPanelMemoryId = memId;
+    // Update selected state in timeline
+    document.querySelectorAll('#timeline-list .memory-item').forEach(function(el) {
+        el.classList.toggle('selected', parseInt(el.dataset.id, 10) === memId);
+    });
+    // Fetch fresh data and highlight section (no cache for data integrity)
+    fetch('/api/memories/' + memId)
+        .then(function(r) { return r.json(); })
+        .then(function(mem) {
+            if (!mem.error) {
+                highlightMemorySection(mem);
+            }
+        });
+}
+
+function highlightMemorySection(mem) {
+    // Clear previous selection
+    document.querySelectorAll('.subsection-item.selected, .section-item.selected, .legend-item.selected').forEach(function(el) { el.classList.remove('selected'); });
+    if (!mem.metadata) return;
+    // Handle issues
+    if (mem.metadata.type === 'issue' && mem.metadata.status) {
+        var statusKey = mem.metadata.status;
+        if (statusKey === 'closed' && mem.metadata.closed_reason) {
+            statusKey = 'closed:' + mem.metadata.closed_reason;
+        }
+        var issueEl = document.querySelector('.legend-item.issue-status[data-status="' + statusKey + '"]');
+        if (issueEl) issueEl.classList.add('selected');
+    }
+    // Handle TODOs
+    else if (mem.metadata.type === 'todo' && mem.metadata.status) {
+        var statusKey = mem.metadata.status;
+        if (statusKey === 'closed' && mem.metadata.closed_reason) {
+            statusKey = 'closed:' + mem.metadata.closed_reason;
+        }
+        var todoEl = document.querySelector('.legend-item.todo-status[data-todo-status="' + statusKey + '"]');
+        if (todoEl) todoEl.classList.add('selected');
+    }
+    // Handle regular memories with sections
+    else {
+        var section, subsection;
+        var hierarchy = mem.metadata.hierarchy;
+        if (hierarchy && hierarchy.path && hierarchy.path.length >= 1) {
+            section = hierarchy.path[0];
+            subsection = hierarchy.path.slice(1).join('/');
+        } else {
+            section = mem.metadata.section;
+            subsection = mem.metadata.subsection;
+        }
+        if (section) {
+            var sectionEl = document.querySelector('.section-item[data-section="' + section + '"]');
+            if (sectionEl) sectionEl.classList.add('selected');
+            if (subsection) {
+                var path = section + '/' + subsection;
+                var el = document.querySelector('.subsection-item[data-subsection="' + path + '"]');
+                if (el) el.classList.add('selected');
+            }
+        }
+    }
+}
+
+function showMemoryDetails(memId) {
+    memId = parseInt(memId, 10);
+    // Switch to detail tab and show panel
+    switchTab('detail');
+    // Get memory data
+    if (typeof memoriesData !== 'undefined' && memoriesData[memId]) {
+        showPanel(memoriesData[memId]);
+    } else if (typeof memoryCache !== 'undefined' && memoryCache[memId]) {
+        showPanel(memoryCache[memId]);
+    } else {
+        fetch('/api/memories/' + memId)
+            .then(function(r) { return r.json(); })
+            .then(function(mem) {
+                if (!mem.error) {
+                    if (typeof memoryCache !== 'undefined') memoryCache[memId] = mem;
+                    showPanel(mem);
+                }
+            });
+    }
+}
+
+function getMemoryHeadline(content) {
+    var lines = content.split('\n').filter(function(l) { return l.trim(); });
+    var first = lines[0] || '';
+    return first.replace(/^#+\s*/, '').substring(0, 80);
+}
+
+function getMemoryPreview(content) {
+    var lines = content.split('\n').filter(function(l) { return l.trim() && !l.match(/^#+/); });
+    return lines.slice(0, 2).join(' ').substring(0, 150);
+}
+
+function escapeHtmlText(text) {
+    var div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function closePanel() {
+    document.getElementById('panel').classList.remove('active');
+    document.getElementById('resize-handle').classList.remove('active');
+    currentPanelMemoryId = null;
+    document.querySelectorAll('.subsection-item.selected, .section-item.selected').forEach(el => el.classList.remove('selected'));
+    updateTimelinePosition();
+}
+
+function showPanel(mem) {
+    currentPanelMemoryId = mem.id;
+
+    // Ensure detail tab is active when showing a specific memory
+    if (currentTab !== 'detail') {
+        document.querySelectorAll('#panel-tabs .tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelector('#panel-tabs .tab[onclick*="detail"]').classList.add('active');
+        document.getElementById('tab-detail').classList.add('active');
+        document.getElementById('tab-timeline').classList.remove('active');
+        document.getElementById('tab-history').classList.remove('active');
+        currentTab = 'detail';
+    }
+
+    document.getElementById('panel-title').textContent = 'Memory #' + mem.id;
+
+    // Show issue or TODO badges if applicable
+    var badgesHtml = renderIssueBadges(mem.metadata) + renderTodoBadges(mem.metadata);
+    var metaHtml = badgesHtml + 'Created: ' + mem.created;
+    if (mem.updated) {
+        metaHtml += '<br>Updated: ' + mem.updated;
+    }
+    document.getElementById('panel-meta').innerHTML = metaHtml;
+
+    document.getElementById('panel-tags').innerHTML = mem.tags.map(function(t) {
+        return '<span class="tag" onclick="filterByTag(\'' + t + '\'); event.stopPropagation();">' + t + '</span>';
+    }).join('');
+
+    document.getElementById('panel-content').innerHTML = renderMarkdown(mem.content);
+    renderMermaidBlocks();
+    document.getElementById('panel-content').innerHTML += renderImages(mem.metadata);
+    document.getElementById('panel').classList.add('active');
+    document.getElementById('resize-handle').classList.add('active');
+
+    // Highlight the memory's subsection/status in the left pane
+    highlightMemorySection(mem);
+    updateTimelinePosition();
+}
+
+
+var resizeHandle = document.getElementById('resize-handle');
+var panel = document.getElementById('panel');
+var isResizing = false;
+
+resizeHandle.addEventListener('mousedown', function(e) {
+    isResizing = true;
+    resizeHandle.classList.add('dragging');
+    document.body.style.cursor = 'ew-resize';
+    e.preventDefault();
+});
+
+document.addEventListener('mousemove', function(e) {
+    if (!isResizing) return;
+    var newWidth = window.innerWidth - e.clientX;
+    if (newWidth >= 200 && newWidth <= 800) {
+        panel.style.width = newWidth + 'px';
+        updateTimelinePosition();
+    }
+});
+
+document.addEventListener('mouseup', function() {
+    isResizing = false;
+    resizeHandle.classList.remove('dragging');
+    document.body.style.cursor = '';
+});
+
+
+var timelineData = null;
+var timelineActive = false;
+
+function initTimeline(nodeTimestamps, minDate, maxDate) {
+    if (!nodeTimestamps || Object.keys(nodeTimestamps).length === 0) return;
+
+    timelineData = {
+        timestamps: nodeTimestamps,
+        minTime: new Date(minDate).getTime(),
+        maxTime: new Date(maxDate).getTime(),
+        sortedNodes: Object.entries(nodeTimestamps)
+            .map(([id, ts]) => ({ id: parseInt(id), time: new Date(ts).getTime() }))
+            .sort((a, b) => a.time - b.time)
+    };
+
+    // Set date labels
+    document.getElementById('timeline-min-date').textContent = formatDate(minDate);
+    document.getElementById('timeline-max-date').textContent = formatDate(maxDate);
+
+    // Initialize slider to 100% (show all)
+    var slider = document.getElementById('timeline-slider');
+    slider.value = 100;
+    updateTimelineProgress(100);
+
+    // Show container
+    document.getElementById('timeline-container').style.display = 'block';
+}
+
+function formatDate(dateStr) {
+    var d = new Date(dateStr);
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: '2-digit' });
+}
+
+function updateTimelineProgress(percent) {
+    var slider = document.getElementById('timeline-slider');
+    // Update slider track: colored portion (green->blue gradient) + gray remainder
+    slider.style.background = 'linear-gradient(to right, #238636 0%, #58a6ff ' + percent + '%, #30363d ' + percent + '%)';
+}
+
+function onTimelineChange(value) {
+    if (!timelineData) return;
+
+    // Exit focus mode when using timeline to avoid conflicting states
+    exitFocusMode();
+
+    timelineActive = true;
+    var percent = parseInt(value);
+    updateTimelineProgress(percent);
+
+    // Calculate cutoff time based on slider position
+    var timeRange = timelineData.maxTime - timelineData.minTime;
+    var cutoffTime = timelineData.minTime + (timeRange * percent / 100);
+
+    // Update date display
+    var cutoffDate = new Date(cutoffTime);
+    document.getElementById('timeline-current').textContent =
+        'Showing: ' + formatDate(cutoffDate.toISOString());
+
+    // Get node IDs up to cutoff
+    // Nodes without timestamps are always visible (they predate timestamp tracking)
+    var visibleIds = new Set();
+    var sourceNodes = typeof graphData !== 'undefined' ? graphData.nodes : allNodes;
+    for (var n of sourceNodes) {
+        if (!timelineData.timestamps[n.id]) {
+            // No timestamp = always visible
+            visibleIds.add(n.id);
+        }
+    }
+    for (var node of timelineData.sortedNodes) {
+        if (node.time <= cutoffTime) {
+            visibleIds.add(node.id);
+        }
+    }
+
+    // Update node visibility with fade effect
+    var sourceNodes = typeof graphData !== 'undefined' ? graphData.nodes : allNodes;
+    var nodeUpdates = sourceNodes.map(function(n) {
+        if (visibleIds.has(n.id)) {
+            // Visible - full opacity, highlight newer ones
+            var nodeTime = timelineData.timestamps[n.id] ? new Date(timelineData.timestamps[n.id]).getTime() : 0;
+            var recency = (nodeTime - timelineData.minTime) / timeRange;
+            // Highlight recently revealed nodes with a glow
+            var isRecent = Math.abs(nodeTime - cutoffTime) < (timeRange * 0.05);
+            return {
+                id: n.id,
+                opacity: 1,
+                borderWidth: isRecent ? 4 : (n.borderWidth || 2),
+                color: isRecent ? { background: n.color.background || n.color, border: '#58a6ff' } : n.color
+            };
+        } else {
+            // Hidden - very faded
+            return { id: n.id, opacity: 0.08 };
+        }
+    });
+
+    // Update edges - only show edges between visible nodes
+    var sourceEdges = typeof graphData !== 'undefined' ? graphData.edges : allEdges;
+    var edgeUpdates = sourceEdges.map(function(e) {
+        if (visibleIds.has(e.from) && visibleIds.has(e.to)) {
+            return { id: e.id, hidden: false, color: e.color || 'rgba(48,54,61,0.6)' };
+        } else {
+            return { id: e.id, hidden: true };
+        }
+    });
+
+    nodes.update(nodeUpdates);
+    edges.update(edgeUpdates);
+}
+
+function updateTimelinePosition() {
+    var timeline = document.getElementById('timeline-container');
+    if (!timeline) return;
+    var panel = document.getElementById('panel');
+    var panelOpen = panel && panel.classList.contains('active');
+    if (panelOpen) {
+        var panelWidth = panel.offsetWidth || 450;
+        timeline.style.left = 'calc(50% - ' + (panelWidth / 2) + 'px)';
+    } else {
+        timeline.style.left = '50%';
+    }
+}
+
+function resetTimeline() {
+    if (!timelineData) return;
+
+    timelineActive = false;
+    var slider = document.getElementById('timeline-slider');
+    slider.value = 100;
+    updateTimelineProgress(100);
+    document.getElementById('timeline-current').textContent = 'Drag to filter by time';
+
+    // Restore all nodes
+    var sourceNodes = typeof graphData !== 'undefined' ? graphData.nodes : allNodes;
+    var sourceEdges = typeof graphData !== 'undefined' ? graphData.edges : allEdges;
+
+    var nodeUpdates = sourceNodes.map(function(n) {
+        return { id: n.id, opacity: 1, borderWidth: n.borderWidth || 2, color: n.color };
+    });
+    var edgeUpdates = sourceEdges.map(function(e) {
+        return { id: e.id, hidden: false, color: e.color || 'rgba(48,54,61,0.6)' };
+    });
+
+    nodes.update(nodeUpdates);
+    edges.update(edgeUpdates);
+}
+
+
+function computeConvexHull(points) {
+    if (points.length <= 1) return points;
+    points.sort(function(a, b) { return a.x - b.x || a.y - b.y; });
+    if (points.length <= 2) return points.slice();
+
+    var lower = [];
+    for (var i = 0; i < points.length; i++) {
+        while (lower.length >= 2 && cross(lower[lower.length-2], lower[lower.length-1], points[i]) <= 0)
+            lower.pop();
+        lower.push(points[i]);
+    }
+    var upper = [];
+    for (var i = points.length - 1; i >= 0; i--) {
+        while (upper.length >= 2 && cross(upper[upper.length-2], upper[upper.length-1], points[i]) <= 0)
+            upper.pop();
+        upper.push(points[i]);
+    }
+    upper.pop();
+    lower.pop();
+    return lower.concat(upper);
+}
+
+function cross(O, A, B) {
+    return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
+}
+
+function expandHull(hull, padding) {
+    if (hull.length < 3) return hull;
+    var cx = 0, cy = 0;
+    for (var i = 0; i < hull.length; i++) { cx += hull[i].x; cy += hull[i].y; }
+    cx /= hull.length; cy /= hull.length;
+    var expanded = [];
+    for (var i = 0; i < hull.length; i++) {
+        var dx = hull[i].x - cx, dy = hull[i].y - cy;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist === 0) { expanded.push({x: hull[i].x, y: hull[i].y}); continue; }
+        expanded.push({x: hull[i].x + dx/dist * padding, y: hull[i].y + dy/dist * padding});
+    }
+    return expanded;
+}
+
+function drawSmoothClosed(ctx, hull) {
+    // Draw a smooth closed curve through hull points using Catmull-Rom splines
+    var n = hull.length;
+    if (n < 3) return;
+    ctx.beginPath();
+    for (var i = 0; i < n; i++) {
+        var p0 = hull[(i - 1 + n) % n];
+        var p1 = hull[i];
+        var p2 = hull[(i + 1) % n];
+        var p3 = hull[(i + 2) % n];
+        // Catmull-Rom to cubic bezier conversion (alpha=0.5 centripetal)
+        var tension = 6;
+        var cp1x = p1.x + (p2.x - p0.x) / tension;
+        var cp1y = p1.y + (p2.y - p0.y) / tension;
+        var cp2x = p2.x - (p3.x - p1.x) / tension;
+        var cp2y = p2.y - (p3.y - p1.y) / tension;
+        if (i === 0) ctx.moveTo(p1.x, p1.y);
+        ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+    }
+    ctx.closePath();
+}
+
+function drawClusterHulls(ctx) {
+    var clusterToNodes = (typeof graphData !== 'undefined' && graphData) ? graphData.clusterToNodes : (typeof window.clusterToNodes !== 'undefined' ? window.clusterToNodes : {});
+    var clusterColors = (typeof graphData !== 'undefined' && graphData) ? graphData.clusterColors : (typeof window.clusterColors !== 'undefined' ? window.clusterColors : {});
+    if (!clusterToNodes || !clusterColors) return;
+
+    for (var cid in clusterToNodes) {
+        var memberIds = clusterToNodes[cid];
+        if (!memberIds || memberIds.length < 3) continue;
+
+        var positions = network.getPositions(memberIds);
+        var points = [];
+        for (var id of memberIds) {
+            if (positions[id]) points.push({x: positions[id].x, y: positions[id].y});
+        }
+        if (points.length < 3) continue;
+
+        var hull = computeConvexHull(points);
+        if (hull.length < 3) continue;
+        hull = expandHull(hull, 45);
+
+        var color = clusterColors[cid] || '#8b949e';
+        ctx.save();
+
+        // Draw smooth curved boundary
+        drawSmoothClosed(ctx, hull);
+
+        // Fill with low alpha
+        ctx.fillStyle = color + '14';
+        ctx.fill();
+
+        // Stroke with smooth line
+        ctx.strokeStyle = color + '55';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.restore();
+    }
+}
+
+function seedClusterPositions(nodeArray) {
+    // Assign initial (x,y) to nodes grouped by cluster so physics starts clustered
+    var clusterToNodes = (typeof graphData !== 'undefined' && graphData) ? graphData.clusterToNodes : (typeof window.clusterToNodes !== 'undefined' ? window.clusterToNodes : {});
+    if (!clusterToNodes || Object.keys(clusterToNodes).length === 0) return;
+
+    var clusterIds = Object.keys(clusterToNodes);
+    var nClusters = clusterIds.length;
+    // Lay out cluster centers in a circle
+    var radius = 250 + nClusters * 40;
+    var centers = {};
+    for (var i = 0; i < nClusters; i++) {
+        var angle = (2 * Math.PI * i) / nClusters;
+        centers[clusterIds[i]] = { x: Math.cos(angle) * radius, y: Math.sin(angle) * radius };
+    }
+
+    // Build node -> cluster lookup
+    var nodeCluster = {};
+    for (var cid in clusterToNodes) {
+        var members = clusterToNodes[cid];
+        for (var j = 0; j < members.length; j++) {
+            nodeCluster[members[j]] = cid;
+        }
+    }
+
+    // Set initial positions: scatter around cluster center
+    var spread = 80 + Math.sqrt(nodeArray.length) * 8;
+    for (var k = 0; k < nodeArray.length; k++) {
+        var node = nodeArray[k];
+        var cid = nodeCluster[node.id];
+        if (cid && centers[cid]) {
+            node.x = centers[cid].x + (Math.random() - 0.5) * spread;
+            node.y = centers[cid].y + (Math.random() - 0.5) * spread;
+        }
+    }
+}
+
+function initClusterHulls() {
+    var clusterToNodes = (typeof graphData !== 'undefined' && graphData) ? graphData.clusterToNodes : (typeof window.clusterToNodes !== 'undefined' ? window.clusterToNodes : {});
+    if (!clusterToNodes || Object.keys(clusterToNodes).length === 0) return;
+    network.on('afterDrawing', function(ctx) { drawClusterHulls(ctx); });
+}
+
+
+        // Initialize graph
+        seedClusterPositions(allNodes);
+        var nodes = new vis.DataSet(allNodes);
+        var edges = new vis.DataSet(allEdges);
+        var container = document.getElementById("graph");
+        var data = { nodes: nodes, edges: edges };
+        var options = {
+            nodes: { shape: "dot", size: 16, font: { color: "#c9d1d9", size: 11 }, borderWidth: 2 },
+            edges: { color: { color: "#30363d", opacity: 0.6 }, smooth: { type: "continuous" } },
+            physics: { barnesHut: { gravitationalConstant: -2000, springLength: 95, springConstant: 0.04, damping: 0.3, avoidOverlap: 0.3 } },
+            interaction: { hover: true, tooltipDelay: 99999 }
+        };
+        var network = new vis.Network(container, data, options);
+
+        network.on("click", function(params) {
+            hideNodeTooltip();
+            if (params.nodes.length > 0) {
+                var nodeId = params.nodes[0];
+                var mem = memoriesData[nodeId];
+                if (mem) showPanel(mem);
+            }
+        });
+
+        network.on("hoverNode", function(params) {
+            showNodeTooltip(params.node, params.pointer);
+        });
+
+        network.on("blurNode", function() {
+            hideNodeTooltip();
+        });
+
+        // Initialize timeline
+        var nodeTimestamps = {"81": "2026-02-12 14:37:24", "82": "2026-02-12 14:37:24", "83": "2026-02-12 14:37:24", "84": "2026-02-12 14:37:24", "85": "2026-02-12 14:37:24", "86": "2026-02-12 14:37:24", "87": "2026-02-12 14:37:24", "80": "2026-02-12 04:14:09", "79": "2026-02-12 03:39:10", "78": "2026-02-11 23:55:28", "77": "2026-02-11 23:38:23", "76": "2026-02-11 23:18:06", "59": "2026-02-11 16:30:15", "60": "2026-02-11 16:30:15", "28": "2026-02-11 04:47:17", "27": "2026-02-11 04:45:49", "26": "2026-02-11 04:03:04", "23": "2026-02-11 03:55:09", "24": "2026-02-11 03:55:09", "25": "2026-02-11 03:55:09", "22": "2026-02-11 03:54:51", "21": "2026-02-11 03:39:49", "20": "2026-02-11 02:50:48", "19": "2026-02-07 16:10:05", "16": "2026-02-06 04:04:14", "17": "2026-02-06 04:04:14", "18": "2026-02-06 04:04:14", "15": "2026-02-06 03:03:26", "14": "2026-02-06 02:30:56", "7": "2026-02-06 01:53:34", "8": "2026-02-06 01:53:34", "9": "2026-02-06 01:53:34", "10": "2026-02-06 01:53:34", "11": "2026-02-06 01:53:34", "12": "2026-02-06 01:53:34", "13": "2026-02-06 01:53:34", "3": "2026-02-06 01:49:22", "4": "2026-02-06 01:49:22", "5": "2026-02-06 01:49:22", "6": "2026-02-06 01:49:22", "2": "2026-02-06 01:28:16", "1": "2026-02-06 01:22:21"};
+        initTimeline(nodeTimestamps, "2026-02-06 01:22:21", "2026-02-12 14:37:24");
+
+        // Initialize cluster hulls
+        initClusterHulls();
+    </script>
+</body>
+</html>

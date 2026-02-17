@@ -9,6 +9,7 @@
 ## O que importa aqui
 
 - A punição financeira por adoecer empurra para o presenteísmo e aumenta risco sanitário e conflito com liderança.
+- **Sinergia de Ouro:** A PLR Operacional (FY26 - `REB_OPE_15`) já destina 20% do bônus para "Zero Faltas Injustificadas". Isso permite que a Cesta Básica deixe de ser fiscal (punindo atestado) e vire social (apoiando saúde), pois a PLR já garante o incentivo financeiro à presença.
 - O acervo já traz evidência de regra de perda integral do bônus por atestado e indica que a mudança depende de negociação sindical.
 - Esta intervenção não é um “benefício a mais”. É um redesenho mínimo de regra para evitar trabalhar doente e reduzir contágio e cronificação.
 
@@ -27,6 +28,7 @@
 
 - Tensão: O uso da Cesta Básica como mecanismo disciplinar para punir atestados gera presenteísmo de doentes (risco de contágio) e insegurança alimentar, sem resolver o absenteísmo real.
 - Descrição: Revisar a política para que a perda do benefício ocorra apenas em **faltas injustificadas**. Para não deixar a gestão sem instrumentos contra abusos, implementar paralelamente o "Score de Assiduidade" (ferramenta de gestão de frequência baseada em dados).
+A desvinculação da cesta básica permanece válida para apoiar quem adoece, mas com um limite de monitoramento (ex: até 3 eventos/ano). Ao atingir o gatilho, o benefício deixa de ser automático e passa por validação gerencial.
 - Objetivo: Eliminar o incentivo perverso de "trabalhar doente para não perder benefício", separando saúde de disciplina.
 - Impacto: Reduz infecções cruzadas na equipe e muda o foco da gestão: de fiscalização de atestados para gestão de engajamento.
 

@@ -762,3 +762,123 @@ Esta matriz é derivada automaticamente dos dossiês individuais em `@/Users/Rav
   - Calcular ROI: Vale Transporte vs. Fretado.
 
 ---
+
+## I-37 — Conexão Automática HSE → Manutenção
+
+- **Intervenção**: `I-37`
+- **Unidade(s)**: Todas
+- **Frente**: Torniquete
+- **Problema que endereça (1 linha)**: Relatórios de segurança ignorados por restrição orçamentária local, gerando risco estrutural e legal.
+- **Evidência (3–7 refs)**:
+  - Relatórios de HSE secundarizados por custo (`War Room / Transcrição Audio 5`)
+- **Força da evidência**: Sustentado qualitativamente
+- **Risco mitigado**: Jurídico | Operacional | INSS
+- **Viabilidade (semáforo)**: Verde
+- **Pré-condições (1–3)**: 
+  - Classificação de criticidade automática.
+  - Alinhamento de fluxo CSC (HSE -> Manutenção).
+- **Lacunas (2–6)**: 
+  - Definir limiar de "Risco Crítico".
+  - Definir fonte de custeio (Unidade vs Matrix).
+
+---
+
+## I-38 — Uso Estratégico do DDS
+
+- **Intervenção**: `I-38`
+- **Unidade(s)**: Todas
+- **Frente**: Descompressão
+- **Problema que endereça (1 linha)**: Ritual diário burocrático e subutilizado que perde oportunidade de conexão e alinhamento cultural.
+- **Evidência (3–7 refs)**:
+  - DDS tratado como "assinar lista" sem conteúdo (`War Room / Transcrição Audio 6`)
+- **Força da evidência**: Sustentado qualitativamente
+- **Risco mitigado**: Operacional | Turnover
+- **Viabilidade (semáforo)**: Verde
+- **Pré-condições (1–3)**: 
+  - Pautas estruturadas pela Comunicação Interna.
+  - Treinamento básico de facilitação para GUs.
+- **Lacunas (2–6)**: 
+  - Medir eficácia do recado na ponta.
+  - Banco de pautas "enlatadas".
+
+---
+
+## I-39 — Guia de Boas Práticas Financeiras
+
+- **Intervenção**: `I-39`
+- **Unidade(s)**: Todas
+- **Frente**: Descompressão
+- **Problema que endereça (1 linha)**: Decisões financeiras de curto prazo (economias burras) que geram custos catastróficos em 90 dias.
+- **Evidência (3–7 refs)**:
+  - Cortes de preventiva gerando quebras severas (`War Room / Transcrição Audio 4`)
+- **Força da evidência**: Sustentado qualitativamente
+- **Risco mitigado**: Operacional | Jurídico
+- **Viabilidade (semáforo)**: Verde
+- **Pré-condições (1–3)**: 
+  - Cenários reais de TCO (Total Cost of Ownership).
+  - Educação financeira básica para GUs.
+- **Lacunas (2–6)**: 
+  - Criar simulador de "Impacto Tri-mesal".
+  - Mapear top 5 erros recorrentes.
+
+---
+
+## I-40 — Auditoria de PFP (Vício de Origem)
+
+- **Intervenção**: `I-40`
+- **Unidade(s)**: Novos Contratos
+- **Frente**: Reestruturação
+- **Problema que endereça (1 linha)**: Contratos vendidos com subdimensionamento de quadro, gerando turnover e sobrecarga desde o Dia 1.
+- **Evidência (3–7 refs)**:
+  - Contratos que já "nascem" com hora extra estrutural (`War Room / Transcrição Audio 2`)
+- **Força da evidência**: Sustentado qualitativamente
+- **Risco mitigado**: Operacional | Turnover | Jurídico
+- **Viabilidade (semáforo)**: Amarelo (requer veto de Operações no Comercial)
+- **Pré-condições (1–3)**: 
+  - Alçada de veto para Operações.
+  - Tabela de dimensionamento técnico validada.
+- **Lacunas (2–6)**: 
+  - Checklist de "Saúde Operacional Mínima".
+  - Definir fluxo de Bid review.
+
+---
+
+## I-41 — Limpeza da Base de GUs
+
+- **Intervenção**: `I-41`
+- **Unidade(s)**: Todas
+- **Frente**: Reestruturação
+- **Problema que endereça (1 linha)**: Desvio de função salarial onde administrativos ocupam vaga de GU, distorcendo bônus e governança.
+- **Evidência (3–7 refs)**:
+  - "Falsos GUs" para justificar progressão salarial (`War Room / Transcrição Audio 4`)
+- **Força da evidência**: Sustentado qualitativamente
+- **Risco mitigado**: Financeiro | Operacional
+- **Viabilidade (semáforo)**: Vermelho (alto risco trabalhista)
+- **Pré-condições (1–3)**: 
+  - Mapeamento total de cargos vs unidades reais.
+  - Plano de enquadramento sindical.
+- **Lacunas (2–6)**: 
+  - Risco de equiparação salarial.
+  - Impacto no turnover da base de gestão.
+
+---
+
+## I-43 — Apoio Centralizado de Recrutamento
+
+- **Intervenção**: `I-43`
+- **Unidade(s)**: Todas (Foco SP)
+- **Frente**: Reestruturação
+- **Problema que endereça (1 linha)**: Gestores perdem 2-3h/dia em triagem de currículos em vez de focar na gestão de pessoas.
+- **Evidência (3–7 refs)**:
+  - GUs reclamam de virar "despachante de currículo" (`War Room / Transcrição Audio 5`)
+- **Força da evidência**: Sustentado qualitativamente
+- **Risco mitigado**: Operacional | Turnover
+- **Viabilidade (semáforo)**: Verde (modelo RPO)
+- **Pré-condições (1–3)**: 
+  - Célula centralizada de triagem.
+  - SLA de entrega de candidatos triados.
+- **Lacunas (2–6)**: 
+  - Custo de internalização vs outsourcing.
+  - Eficácia da triagem remota para frontline.
+
+---

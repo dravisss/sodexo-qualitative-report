@@ -28,6 +28,7 @@ Instituir rito trimestral de auditoria por amostragem (10% folha/unidade, foco e
 
 - Tensão: Erro de folha (hora extra sumida, desconto fantasma, férias lançadas errado) gera percepção de erros sistemáticos não validada, desmoraliza RH e escala para Sindicato/Justiça. Custo estimado: R$ 15k por processo trabalhista evitável.
 - Descrição: Rito trimestral de auditoria por amostragem (10% da folha/unidade, priorizando rescisões e horas extras). Checklist: conferir ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias. Resultado publicado em mural (anônimo) com % de conformidade e prazo de correção. Meta: >95% conformidade.
+  *   **Atualização (Transparência Digital):** Implementar piloto de tecnologia ('Portal do Colaborador' via App ou Quiosque) que proporcione autonomia ao operacional para visualizar espelho de ponto e demonstrativo de pagamento, mitigando a dependência da gestão local.
 - Objetivo: Transparência total na remuneração.
 - Impacto: Corrigindo erros recorrentes de folha com trilha pública, reduz-se a desconfiança e o passivo jurídico. Elimina a narrativa de exploração financeira oculta.
 - Objetivo: instituir um rito trimestral de auditoria de folha, com checklist e trilha de correção, para reduzir reincidência.

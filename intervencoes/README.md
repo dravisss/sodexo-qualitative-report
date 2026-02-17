@@ -37,4 +37,10 @@
 | I-33 — Novo pacote de benefícios atrativo (saúde + VR) | ./I-33-novo-pacote-de-beneficios-atrativo-saude-vr.md | Padronizado | Cajamar; GRU Food; GRU FM |
 | I-34 — Plano de carreira por tempo de serviço | ./I-34-plano-de-carreira-por-tempo-de-servico.md | Padronizado | Cajamar; GRU Food; GRU FM |
 | I-35 — Ajuste salarial ao mercado local | ./I-35-ajuste-salarial-ao-mercado-local.md | Padronizado | Cajamar; GRU Food; GRU FM |
-| I-36 — Processo de Equalização Próprios vs Terceirizados | ./I-36-processo-de-equalizacao-proprios-vs-terceirizados.md | Padronizado | Cajamar; GRU Food; GRU FM |
+| I-36 — Processo de Equalização Próprios vs Terceirizados | ./I-36-processo-seletivo-com-periodo-de-experiencia-real.md | Padronizado | Cajamar; GRU Food; GRU FM |
+| I-37 — Conexão Automática HSE → Manutenção | ./I-37-conexao-automatica-hse-manutencao.md | Em Elaboração | Todas |
+| I-38 — Uso Estratégico do DDS | ./I-38-uso-estrategico-do-dds.md | Em Elaboração | Todas |
+| I-39 — Guia de Boas Práticas Financeiras | ./I-39-guia-de-boas-praticas-financeiras.md | Em Elaboração | Todas |
+| I-40 — Auditoria de PFP (Vício de Origem) | ./I-40-auditoria-de-pfp.md | Em Elaboração | Novos Contratos |
+| I-41 — Limpeza da Base de GUs | ./I-41-limpeza-da-base-de-gus.md | Em Elaboração | Todas |
+| I-43 — Apoio Centralizado de Recrutamento | ./I-43-apoio-centralizado-de-recrutamento.md | Em Elaboração | Todas (Foco SP) |

@@ -1,0 +1,98 @@
+Initializing database...
+Database ready.
+Graph visualization available at http://127.0.0.1:8766/graph
+INFO:     Started server process [5513]
+INFO:     Started server process [5513]
+INFO:     Waiting for application startup.
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8767 (Press CTRL+C to quit)
+INFO:     Uvicorn running on http://127.0.0.1:8766 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50383 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50383 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50435 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50435 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50435 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50437 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50443 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50441 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50435 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50445 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50450 - "GET /api/memories/841 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50450 - "GET /api/memories/683 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51196 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51196 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51198 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51227 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51227 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51229 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63517 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63517 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63518 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63551 - "GET /api/memories/654 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63551 - "GET /api/memories/653 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64182 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64307 - "GET /api/memories/960 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64307 - "GET /api/memories/959 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64307 - "GET /api/memories/653 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64307 - "GET /api/memories/654 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64336 - "GET /api/memories/1182 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64336 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64336 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64346 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64388 - "GET /api/memories/1118 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64401 - "GET /api/memories/1018 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64411 - "GET /api/memories/636 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64411 - "GET /api/memories/634 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64427 - "GET /api/memories/1239 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64457 - "GET /api/memories/982 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64457 - "GET /api/memories/943 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64564 - "GET /api/memories/1017 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64590 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64665 - "GET /api/memories/1450 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64665 - "GET /api/memories/833 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64777 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50471 - "GET /api/memories/1552 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50585 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /api/memories/1321 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50643 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50646 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50652 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50651 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50652 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50653 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50637 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50637 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50653 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50654 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50711 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50711 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50713 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50712 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50713 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49798 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49799 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57970 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58160 - "GET /health HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58358 - "GET /graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58371 - "GET /api/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58372 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58487 - "GET /api/memories/783 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58510 - "GET /api/memories/784 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58510 - "GET /api/memories/763 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58533 - "GET /api/memories/741 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58533 - "GET /api/memories/769 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58540 - "GET /api/memories/772 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58540 - "GET /api/memories/775 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58540 - "GET /api/memories/732 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55945 - "GET /api/events HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56007 - "GET /api/events HTTP/1.1" 200 OK

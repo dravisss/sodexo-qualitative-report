@@ -37,7 +37,7 @@ O mecanismo é a calibração da oferta financeira baseada em CEP, não apenas e
 
 Como funciona:
 
-- Benchmark Territorial: Realizar pesquisa semestral de salários de entrada em empresas vizinhas (logística e indústria).
+- Benchmark Territorial: Realizar pesquisa semestral de salários de entrada em empresas vizinhas (logística e indústria). **Importante:** Segregar "Polo Logístico" de "Restaurante Comum". O concorrente em Cajamar é a Amazon, não o restaurante da esquina.
 - Adicional de Localidade: Implementar gratificação ou ajuste de tabela para unidades em "polos de alta competição".
 - Revisão de Faixas: Ajustar os thresholds de Nível I, II e III para que o Nível I da Sodexo não fique abaixo do piso de entrada da logística local.
 

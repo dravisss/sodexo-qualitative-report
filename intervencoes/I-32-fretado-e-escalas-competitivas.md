@@ -38,6 +38,7 @@ O foco é remover a barreira do "tempo de deslocamento" e do "desgaste da escala
 Como funciona:
 
 - Rotas de Fretado: Mapear os bairros com maior densidade de colaboradores e criar rotas de van/ônibus exclusivas para os horários de troca de turno.
+- **Análise de Heatmap:** Comprar/realizar estudo geoespacial de onde moram colaboradores vs candidatos para desenhar rotas mais eficientes que o transporte público.
 - Escalas Alternativas: Testar modelos 5x2 (administrativo/apoio) e 12x36 (operação 24h) em unidades piloto, mantendo a carga horária legal mas concentrando folgas.
 - Subsídio de Transporte: Avaliar a troca do VT pelo fretado, reduzindo custo para o colaborador e tempo de trajeto.
 

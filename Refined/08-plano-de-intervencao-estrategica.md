@@ -36,14 +36,14 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 #### I-02 — Desvincular cesta básica de atestados médicos
 **Tensão:** O uso da Cesta Básica como mecanismo disciplinar para punir atestados gera presenteísmo de doentes (risco de contágio) e insegurança alimentar, sem resolver o absenteísmo real.
-**Descrição:** Revisar a política para que a perda do benefício ocorra apenas em **faltas injustificadas**. Para não deixar a gestão sem instrumentos contra abusos, implementar paralelamente o "Score de Assiduidade" (ferramenta de gestão de frequência baseada em dados).
+**Descrição:** Revisar a política para que a perda do benefício ocorra apenas em **faltas injustificadas**. Para não deixar a gestão sem instrumentos contra abusos, implementar paralelamente o "Score de Assiduidade". A desvinculação da cesta básica permanece válida para apoiar quem adoece, mas com um limite de monitoramento (ex: até 3 eventos/ano). Ao atingir o gatilho, o benefício deixa de ser automático e passa por validação gerencial.
 **Objetivo:** Eliminar o incentivo perverso de "trabalhar doente para não perder benefício", separando saúde de disciplina.
 **Impacto:** Reduz infecções cruzadas na equipe e muda o foco da gestão: de fiscalização de atestados para gestão de engajamento.
 
 ### Ações Específicas
 
 #### I-03 — Fundo de Correção Estrutural
-**Tensão:** A unidade sangra margem operacional pagando consertos estruturais (esgoto, telhado) que são responsabilidade do imóvel (cliente), devido a contratos mal amarrados na origem.
+**Tensão:** A unidade sangra margem operacional pagando consertos estruturais (esgoto, telhado) que são responsabilidade do cliente, devido a contratos mal amarrados na origem.
 **Descrição:** Criação de um "Laudo de Vícios Ocultos" pós-entrada e constituição de um Fundo de Correção Compartilhado (ou Aditivo de Regularização), retirando esse custo da linha de manutenção da unidade.
 **Objetivo:** Estancar a drenagem de recursos operacionais para problemas patrimoniais do cliente.
 **Impacto:** Recupera a margem real da unidade e força o cliente a assumir sua responsabilidade patrimonial.
@@ -65,6 +65,12 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Descrição:** Implementar protocolo local de liberação remunerada para casos agudos (tampão), preservando a renda variável e reduzindo o presenteísmo induzido por punição sistêmica.
 **Objetivo:** Criar um mecanismo local de afastamento remunerado para casos agudos enquanto a regra sistêmica não muda.
 **Impacto:** Permitindo que o doente vá para casa sem punição, protege-se a equipe do contágio e demonstra-se humanidade, reduzindo a tensão com a chefia.
+
+#### I-37 — Conexão Automática HSE → Manutenção
+**Tensão:** A área de Segurança (HSE) identifica riscos em visitas técnicas, mas o fluxo de correção muitas vezes é interrompido por restrições orçamentárias locais ou priorização conflitante na unidade.
+**Descrição:** Integração de fluxo: Classificar apontamentos de "Risco Estrutural" do relatório de HSE como gatilho automático de Ordem de Serviço para a Manutenção Centralizada, garantindo a execução independente da validação orçamentária local.
+**Objetivo:** Utilizar a governança de Segurança como alavanca para garantir a manutenção de itens críticos.
+**Impacto:** Aceleração na resolução de passivos de infraestrutura e mitigação de riscos operacionais.
 
 
 
@@ -149,6 +155,18 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Objetivo:** Substituir a vigilância punitiva por um mecanismo de pressão social e benefício compartilhado.
 **Impacto:** Redução de perdas operacionais e fortalecimento da integridade do grupo através de um incentivo positivo tangível, aplicado apenas em unidades com problemas crônicos de perda.
 
+#### I-38 — Uso Estratégico do DDS (Diálogo Diário de Segurança)
+**Tensão:** O DDS é um ritual mandatório de alta capilaridade, mas hoje é subutilizado com pautas estritamente operacionais ou burocráticas, perdendo a oportunidade de conexão com a equipe.
+**Descrição:** Reposicionar o DDS como canal de comunicação estratégica. A Comunicação Interna fornece pautas semanais estruturadas sobre: Transparência (I-13), Saúde Mental, Reconhecimento e Regras de Compliance, facilitando a aplicação pelo gestor.
+**Objetivo:** Potencializar um ritual existente para disseminar cultura e suporte sem adicionar carga de trabalho à liderança.
+**Impacto:** Melhoria no fluxo de informação institucional e fortalecimento do vínculo líder-liderado.
+
+#### I-39 — Guia de Boas Práticas Financeiras
+**Tensão:** Gestores locais muitas vezes postergam manutenções ou realizam desligamentos sem considerar o custo total (TCO), visando atingir metas de curto prazo. Essa otimização local gera custos globais maiores (multas, processos, quebras complexas).
+**Descrição:** Programa de educação financeira aplicada ("Guia de Decisão"), demonstrando com cenários reais o impacto de decisões de curto prazo no resultado trimestral. Ex: "A economia de R$ 500 hoje pode gerar custo de R$ 5.000 em 90 dias".
+**Objetivo:** Instrumentalizar o gerente para decisões financeiras sustentáveis e alinhadas aos objetivos de longo prazo.
+**Impacto:** Qualificação da tomada de decisão na ponta e redução de custos ocultos decorrentes de má gestão.
+
 ---
 
 ## FRENTE 3: REESTRUTURAÇÃO (Médio Prazo & Regras do Jogo)
@@ -200,11 +218,12 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Objetivo:** Organizar a carga de trabalho de ASG para reduzir desgaste físico e aumentar a previsibilidade operacional.
 **Impacto:** Rotacionando as funções internamente, dilui-se o risco ergonômico e melhora-se a percepção de justiça sem necessidade de alteração formal de cargo.
 
-#### I-26 — Revisão dos deflatores de rotatividade na PLR
-**Tensão:** O deflator de turnover pune qualquer rotatividade (até 10% do PLR), sem distinguir "renovação saudável" (baixa performance) de "sangria de talentos". Resultado: gestores seguram maus profissionais para não perder bônus pessoal.
-**Descrição:** Criar "Deflator Seletivo": rotatividade involuntária (demissão por baixa performance, com processo documentado) não deflaciona. Rotatividade voluntária de profissionais com avaliação "bom/ótimo" deflaciona progressivamente (5% se <10% turnover, 10% se >10%). Governança: BP valida processo demissional e classifica.
-**Objetivo:** Ajustar a métrica de sucesso da gerência para incentivar a qualidade da equipe, não apenas a permanência.
+#### I-26 — Revisão dos Deflatores de Rotatividade na PLR
+**Tensão:** **Limbo de Política.** A Liderança (FY26) já migrou para a meta inteligente de "Regrettable Turnover" e o Operacional para "Absenteísmo". O GU, excluído de ambos, permanece refém do "Turnover Total" (histórico). Isso cria um curto-circuito onde o GO cobra renovação, mas a regra do GU cobra imobilismo.
+**Descrição:** Isonomia Vertical Imediata: Estender a métrica de "Regrettable Turnover" para o nível de Gerente de Unidade, eliminando a punição por demissões de saneamento. O que é neutro para o Diretor não pode ser punitivo para o Gerente.
+**Objetivo:** Desbloquear a gestão da ponta para realizar as trocas necessárias sem medo de perder o bônus.
 **Impacto:** Se o gerente não for punido por renovar a equipe, ele agirá mais rápido para substituir peças que não funcionam.
+**Nota de Refinamento:** Estabelecer **Isonomia Vertical**: O deflator do Gerente de Unidade deve seguir a mesma regra da Diretoria (Regrettable Turnover), excluindo demissões de saneamento aprovadas (ver I-42).
 
 #### I-27 — Gatilho progressivo da PLR
 **Tensão:** Gatilho de 95% do GM% cria efeito "penhasco": 94,9% = R$ 0, 95,1% = bônus total. Nos últimos 5 dias do mês, o gestor adota medidas de curto prazo que comprometem a operação (corta manutenção, cancela folgas) para salvar o bônus.
@@ -228,13 +247,31 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Tensão:** Erro de folha (hora extra sumida, desconto fantasma, férias lançadas errado) gera percepção de erros sistemáticos não validada, desmoraliza RH e escala para Sindicato/Justiça. Custo estimado: R$ 15k por processo trabalhista evitável.
 **Descrição:** Rito trimestral de auditoria por amostragem (10% da folha/unidade, priorizando rescisões e horas extras). Checklist: conferir ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias. Resultado publicado em mural (anônimo) com % de conformidade e prazo de correção. Meta: >95% conformidade.
 **Objetivo:** Transparência total na remuneração.
-**Impacto:** Corrigindo erros recorrentes de folha com trilha pública, reduz-se a desconfiança e o passivo jurídico. Elimina a narrativa de exploração financeira oculta.
+**Impacto:** Corrigindo erros recorrentes de folha com trilha pública, reduz-se a desconfiança e o passivo jurídico. Elimina a narrativa de exploração financeira oculta. Implementar piloto de tecnologia ('Portal do Colaborador' via App ou Quiosque) que proporcione autonomia ao operacional para visualizar espelho de ponto e demonstrativo de pagamento, mitigando a dependência da gestão local.
 
 #### I-31 — Processo Seletivo com Período de Experiência Real
 **Tensão:** Contratação sem validação prévia de fit: profissionais com alternativas desistem em 15 dias ao conhecer a realidade (turno, ritmo, clima). O processo atual não valida fit cultural antes da contratação, elevando turnover inicial. Custo: R$ 2.500 estimados por contratação falhada (admissão + treinamento + rescisão).
 **Descrição:** Job Shadow Obrigatório: candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real antes da contratação. Feedback estruturado nos primeiros 15 dias (gestor + colega veterano). Se desistir no Shadow: sem custo de rescisão. Se ficar: já sabe o que esperar.
 **Objetivo:** Validar o fit cultural e operacional ANTES da efetivação.
-**Impacto:** Reduz o turnover de primeiros 45 dias e poupa energia da equipe com treinamentos de baixa conversão.
+**Impacto:** Reduz o turnover de primeiros 45 dias e poupa energia da equipe com treinamentos de baixa conversão. Além do Job Shadow pré-contratação, instituir a figura do 'Padrinho Veterano' na primeira semana e checkpoints formais de RH no 30º e 60º dia. Objetivo: Sustentar o engajamento no período crítico de adaptação (40% do turnover).
+
+#### I-40 — Auditoria de PFP (Vício de Origem em Vendas)
+**Tensão:** A venda de contratos com dimensionamento de equipe subestimado (para garantir competitividade de preço) cria operações estruturalmente deficitárias, gerando sobrecarga e turnover inevitável desde o início.
+**Descrição:** Governança de Vendas (Bid): Instituir validação técnica obrigatória do quadro operacional por um especialista de Operações antes da assinatura. Contratos com quadro inviável devem ter o PFP revisado ou vetado.
+**Objetivo:** Evitar a entrada de contratos com desequilíbrio estrutural que degradam a margem e o clima organizacional.
+**Impacto:** Maior sustentabilidade dos novos contratos e redução do turnover precoce.
+
+#### I-41 — Limpeza da Base de GUs (Saneamento de Função)
+**Tensão:** A nomenclatura de cargo "Gerente de Unidade" (GU) tem sido utilizada para conceder progressão salarial a perfis administrativos ou técnicos, distorcendo a estrutura de incentivos (PLR) e a clareza de papéis.
+**Descrição:** Revisão da estrutura de cargos: Restringir a função de GU ao titular com responsabilidade integral pelo site. Migrar perfis administrativos/apoio para as carreiras corretas (Analista/Líder/Assistente), adequando o pacote de remuneração.
+**Objetivo:** Garantir a coerência da estrutura organizacional e direcionar os incentivos de gestão para as lideranças efetivas.
+**Impacto:** Racionalização da folha de pagamento e maior clareza nas responsabilidades.
+
+#### I-43 — Apoio Centralizado de Recrutamento
+**Tensão:** O gestor local dedica parcela significativa do tempo à triagem operacional de currículos, muitas vezes sem ferramentas adequadas, o que resulta em contratações reativas e de menor aderência ao perfil (fit).
+**Descrição:** Implementação de Célula Central de Apoio (RPO interno ou externo) para entregar candidatos já triados e qualificados. O gestor local foca exclusivamente na entrevista final e validação técnica.
+**Objetivo:** Profissionalizar o processo de atração e devolver horas de gestão para a liderança local.
+**Impacto:** Aumento na qualidade das contratações e melhor aproveitamento do tempo da liderança.
 
 ---
 
@@ -248,6 +285,7 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Descrição:** Fretado gratuito com 3 pontos de embarque em áreas residenciais (Guarulhos Centro, Cumbica, Jardim São Paulo). Escala 5x2 (vs 6x1 atual). Benchmark: Amazon oferece fretado + escala 4x3 + R$ 200 a mais. Sodexo precisa equiparar ao menos parcialmente.
 **Objetivo:** Criar um diferencial logístico e de qualidade de vida que torne a vaga desejável.
 **Impacto:** Facilitando o acesso e melhorando a escala, a empresa passa a competir por um pool de talentos que hoje a ignora.
+**Refinamento Tático:** Realizar análise de **Heatmap Geográfico** (CEP candidatos vs Rotas Concorrência) para desenhar linhas que vençam a capilaridade da Amazon.
 
 #### I-33 — Novo pacote de benefícios atrativo (saúde + VR)
 **Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Amazon (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
@@ -263,14 +301,37 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 
 #### I-35 — Ajuste salarial ao mercado local
 **Tensão:** Salário-base Sodexo (Aux. Cozinha R$ 1.850, ASG R$ 1.650) vs Amazon/Mercado Livre (Operador Logístico R$ 2.100 + bônus produtividade). Gap nominal de R$ 250-400 torna Sodexo "segunda opção" crônica. Mesmo quem aceita a vaga já está de olho na próxima, gerando turnover estrutural de >100%/ano.
-**Descrição:** Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
+**Descrição:** Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). **Diferenciação Crítica:** A pesquisa deve segregar "Polo Logístico" de "Restaurante Comum". O concorrente por mão de obra em Cajamar é a Amazon/Mercado Livre, não o restaurante da esquina. Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
 **Objetivo:** Ajustar a oferta financeira à realidade de mercado da região.
 **Impacto:** Pagando o preço justo de mercado, a empresa volta a ter poder de escolha na seleção, elevando a qualidade técnica da equipe.
 
 #### I-36 — Processo de Equalização Próprios vs Terceirizados
 **Tensão:** CLT Sodexo recebe brindes corporativos (Natal/Páscoa), é convidado para festas, tem acesso ao canal direto com GU. Terceirizados (mesma função, mesma copa) ficam fora dos rituais. Resultado: baixa cooperação interdepartamental, clima de desconfiança. Impacto significativo na produtividade de tarefas colaborativas (setup de eventos, faxina pesada).
-**Descrição:** Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Governança: criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente.
+**Descrição:** Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. O uso de Agências de Emprego deve restringir-se a atividades de **Recrutamento e Seleção (Hunting)**, sendo vedada a terceirização permanente de funções *core*. A contratação final deve ocorrer via folha Sodexo (CLT).
 **Objetivo:** Criar uma cultura de "Time Único" independente do crachá.
 **Impacto:** Reduz o atrito operacional e melhora a cooperação em tarefas conjuntas.
 
 ---
+
+## FRENTE 5: GOVERNANÇA (O Elo Perdido)
+*Foco: Realinhar os incentivos da média liderança (GO/GCE) para que resolver problemas estruturais seja premiado, não punido.*
+
+### Intervenções de Incentivo
+
+#### I-42 — Protocolo de Saneamento Estrutural
+**Tensão:** O atual sistema de metas pune quem resolve problemas estruturais (gastar com EPI/Manutenção reduz a margem e o bônus).
+**Descrição:** Criação de uma linha de "Investimento de Saneamento" na DRE gerencial que não penaliza o Bônus Operacional. Gastos aprovados (com laudo e validação de Segurança/Qualidade) são neutralizados para fins de meta. Inclui "Trava de Reincidência": se o problema voltar em 6 meses, o custo é estornado com multa (má gestão).
+**Objetivo:** Remover o desincentivo financeiro para fazer a coisa certa.
+**Impacto:** Aceleração da resolução de passivos (EPI, Legal, Segurança) sem depender de heroismo do gestor.
+
+#### I-44 — Pequeno Caixa Express (Red Card)
+**Tensão:** A burocracia de compras trava reparos simples (gás, torneira, registro) por dias, degradando a operação e o clima por valores irrisórios (< R$ 500).
+**Descrição:** Fundo Rotativo ou Cartão Pré-Pago na mão do Gerente de Unidade (Limite R$ 2.000/mês, R$ 500/evento) exclusivo para "Reparos de Bloqueio". Prestação de contas digital em 24h (foto + NF). Falha na prestação bloqueia o cartão e desconta em folha.
+**Objetivo:** Empoderar o GU para resolver o "vazamento da pia" na hora, sem abrir chamado no sistema central.
+**Impacto:** Fim da degradação acumulada por pequenos defeitos e aumento da sensação de autonomia do líder local.
+
+#### I-45 — Guardião da Segurança (Gamificação Positiva)
+**Tensão:** O "Muro de Silêncio". Metas de "Zero Acidentes" incentivam a ocultação de riscos e quase-acidentes para não perder o bônus/recorde.
+**Descrição:** Inversão da lógica: Programa de Pontos por "Risco Identificado e Tratado". A unidade que mais reporta e corrige riscos preventivamente ganha prêmios coletivos (Lazer/Experiência). Anistia total para reportes honestos, mesmo que revelem falha de processo.
+**Objetivo:** Transformar a segurança em uma caça ao tesouro positiva, não em uma caça às bruxas.
+**Impacto:** Aumento exponencial da visibilidade de riscos reais e mudança cultural de medo para colaboração.

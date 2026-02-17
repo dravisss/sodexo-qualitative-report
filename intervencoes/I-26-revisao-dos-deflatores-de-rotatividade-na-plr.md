@@ -4,33 +4,28 @@
 
 ## Tese (o que defender)
 
-Criar "Deflator Seletivo" que distingue rotatividade involuntária (demissão por baixa performance documentada) = não deflaciona PLR, de rotatividade voluntária de profissionais com avaliação "bom/ótimo" = deflaciona progressivamente. Assim, o gestor pode renovar a equipe sem perder bônus pessoal quando resolve problemas de fit.
+## Tese (o que defender)
 
-- Intervenção: `I-26`
-- Unidade(s): Transversal
-- Frente: Reposicionamento
-
-## O que importa aqui
-
-- Deflatores podem transformar PLR em mecanismo punitivo: mesmo com GM atingido, a remuneração variável pode ser reduzida por metas agregadas (ex.: turnover).
-- Isso cria incentivo perigoso: “segurar” turnover artificialmente ou maquiar indicadores em vez de atacar causas (infra, quadro, liderança, saúde).
-- Revisar o deflator de turnover (perímetro, cálculo, progressividade e exceções) reduz seleção adversa e melhora alinhamento com retenção sustentável.
-
-## O que está provado vs. o que é hipótese
-
-- Provado:
-  - o programa de PLR prevê deflatores que podem reduzir o pagamento mesmo quando premissas financeiras (GM%) foram atingidas.
-  - há um deflator explícito de meta de turnover total que pode reduzir o PLR em até 10%.
-- Hipótese (a validar em execução):
-  - calibrar o deflator (progressividade e regras) reduz comportamentos disfuncionais e aumenta retenção de forma sustentável.
+Os Gerentes de Unidade (GUs) estão presos em um "Limbo de Política". Documentos de FY26 confirmam que a Liderança (I1+) migrou para a meta inteligente de "Regrettable Turnover" e o Operacional (Food) foca em "Absenteísmo". O GU, excluído de ambos, permanece na regra histórica de "Turnover Total".
+**A intervenção é de Isonomia Vertical:** Estender a regra da Liderança aos GUs. Isso elimina o incentivo perverso de manter funcionários tóxicos apenas para preservar o bônus, destravando a renovação necessária da equipe.
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O deflator de turnover pune qualquer rotatividade (até 10% do PLR), sem distinguir "renovação saudável" (baixa performance) de "sangria de talentos". Resultado: gestores seguram maus profissionais para não perder bônus pessoal.
-- Descrição: Criar "Deflator Seletivo": rotatividade involuntária (demissão por baixa performance, com processo documentado) não deflaciona. Rotatividade voluntária de profissionais com avaliação "bom/ótimo" deflaciona progressivamente (5% se <10% turnover, 10% se >10%). Governança: BP valida processo demissional e classifica.
-- Objetivo: Ajustar a métrica de sucesso da gerência para incentivar a qualidade da equipe, não apenas a permanência.
-- Impacto: Se o gerente não for punido por renovar a equipe, ele agirá mais rápido para substituir peças que não funcionam.
-- Impacto esperado: melhora de retenção e redução de seleção adversa; menor risco de práticas informais para “cumprir meta”.
+- **Tensão:** **Limbo de Política.** O Diretor (meta Regrettable) cobra a "melhoria da equipe", mas a regra do GU (Total) cobra "imobilismo". O GU sabe que precisa demitir o funcionário de baixo desempenho, mas se o fizer, perde 10% da sua remuneração variável. Resultado: "Cegueira Deliberada" e manutenção de quadros medíocres.
+- **Descrição:** Unificação da regra de PLR: O que vale para o chefe (GO) deve valer para o barco (GU). Alterar o deflator de "Turnover Total" para "Regrettable Turnover" (saídas indesejadas de alta performance). Demissões de saneamento (baixa performance/fit) tornam-se neutras para o bônus. **Princípio de Isonomia Vertical.**
+- **Objetivo:** Alinhar o incentivo financeiro à necessidade operacional de saneamento da base.
+- **Impacto:** Destravamento imediato das decisões de desligamento represadas. Renovação da qualidade técnica da equipe sem punição financeira ao gestor.
+
+## Modelo Lógico de Simulação Financeira (Custo da Inação)
+
+Para defender a mudança, usamos a lógica do "Custo Evitado":
+
+| Cenário | Ação do GU | Impacto no Bônus (GU) | Impacto na Empresa (Sodexo) |
+| :--- | :--- | :--- | :--- |
+| **Atual (Turnover Total)** | Mantém funcionário tóxico/improdutivo | **Preservado (0% perda)** | **Prejuízo Oculto:** Erros operacionais, hora extra de cobertura, risco de perda de contrato (NPS), contaminação do clima. |
+| **Proposto (Regrettable)** | Demite funcionário tóxico (Saneamento) | **Preservado (0% perda)** | **Investimento:** Custo de rescisão (único). Ganho recorrente de produtividade e redução de risco. |
+
+**Conclusão:** O modelo atual economiza na verba rescisória (curto prazo) mas sangra a margem operacional e o contrato (longo prazo). A mudança de regra incentiva a decisão economicamente racional.
 
 ## Descrição (doc 08, com adaptações)
 

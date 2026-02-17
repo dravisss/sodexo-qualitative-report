@@ -1,6 +1,6 @@
 ---
 name: sincronizacao-intervencoes
-description: Mantém a consistência entre Plano Estratégico, Dossiês, Matrizes e Argumentários após alterações em intervenções (I-XX) (Adicionar, remover ou editar intervenções).
+description: CRITICAL / MANDATORY. Run this skill IMMEDIATELY AFTER adding, removing, or editing any Intervention (I-XX). Propagates changes to Plan, Dossiers, Matrix, and Argumentaries to ensure consistency.
 ---
 
 # Skill — Sincronização de Intervenções (SoT Flexível)

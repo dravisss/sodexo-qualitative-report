@@ -21,20 +21,15 @@ python3 .agent/skills/auto-commit/scripts/commit.py "Sua mensagem de commit aqui
 
 ### Argumentos
 
-- `message` (opcional): Uma mensagem descritiva para o commit.
+- `message` (obrigatório): Uma mensagem descritiva para o commit.
     - **Recomendado**: Use mensagens semânticas convencionais (ex: `feat: adiciona nova skill`, `fix: corrige erro de verificação`).
-    - **Padrão**: Se não fornecida, o script usará um timestamp (`Auto-commit: YYYY-MM-DD HH:MM:SS`).
+    - **Erro**: Se não fornecida, o script retornará erro.
 
 ## Exemplos
 
-**Comitar com mensagem específica (Prefira este):**
+**Comitar com mensagem específica:**
 ```bash
 python3 .agent/skills/auto-commit/scripts/commit.py "feat: implementa nova estrutura de skills"
-```
-
-**Comitar com mensagem automática (Timestamp):**
-```bash
-python3 .agent/skills/auto-commit/scripts/commit.py
 ```
 
 ## Notas

@@ -108,6 +108,13 @@ Observação: estes arquivos não têm `submission_id`/`field_id` do formulário
 
 Observação: `REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf` existe como **blob** e como **PDF de e-mail**.
 
+
+## Notas Analíticas Transversais (Sínteses)
+
+- **[PLR FY26: Análise Comparativa](evidencias/notas/PLR/PLR_FY26_Analise_Comparativa.analise.md)**: Mapeamento das regras para Liderança (`REB_EMP_21`) vs Operação (`REB_OPE_15`).
+- **[PLR: Análise Forense dos Deflatores](evidencias/notas/PLR/PLR_Analise_Critica_Incentivos.analise.md)**: (🔥 Crítico) Desconstrução dos incentivos perversos (Pacto de Silêncio, Limbo do Turnover, Punição Nuclear). Essencial para a defesa da I-26 e I-02.
+- **Análise Crítica de Incentivos (Risco Sistêmico):** A estrutura atual de incentivos impõe um "Conflito de Agência" onde o gestor local é penalizado financeiramente por executar a estratégia da liderança (saneamento) e a operação é incentivada ao risco (ocultação de problemas).
+
 ## Próximas ações (FASE 3.1 → 4)
 1) Abrir cada blob/PDF, adicionar resumo de 2–3 linhas e ligação explícita a intervenções (I-XX) nesta MoC.
 2) Para respostas textuais do banco, gerar notas por pergunta (p.ex. autonomia financeira, GM, break-even) aqui ou em notas específicas.

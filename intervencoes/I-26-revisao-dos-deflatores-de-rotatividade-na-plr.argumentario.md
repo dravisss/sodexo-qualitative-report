@@ -1,59 +1,61 @@
-# Argumentário — I-26 — Revisão dos deflatores de rotatividade na PLR
+# Argumentário — I-26 — Revisão dos Deflatores (Isonomia de Incentivos)
 
 ## Tese (o que defender)
 
-Criar "Deflator Seletivo": rotatividade involuntária (demissão por baixa performance, com processo documentado) não deflaciona. Rotatividade voluntária de profissionais com avaliação "bom/ótimo" deflaciona progressivamente (5% se <10% turnover, 10% se >10%). Governança: BP valida processo demissional e classifica.
+Corrigir o **"Limbo de Política"** que pune os Gerentes de Unidade (GUs). A Liderança (FY26) já migrou para "Regrettable Turnover" (saída de talentos). O Operacional (FY26) foca em "Absenteísmo". O GU, excluído de ambos os documentos, permanece refém da regra histórica de "Turnover Total".
+Defendemos a **isonomia vertical imediata**: estender a regra da Liderança aos GUs. Isso acaba com o incentivo perverso de manter funcionários improdutivos apenas para não perder bônus, permitindo o saneamento necessário da base.
+
+## Simulação: O Modelo Lógico do "Custo Evitado"
+
+| Decisão do GU | Regra Atual (Total) | Regra Proposta (Regrettable/Saneamento) |
+| :--- | :--- | :--- |
+| **Demitir Baixa Performance** | ❌ **Punição:** Perde 10% da PLR | ✅ **Neutro:** Sem impacto no bônus |
+| **Manter Baixa Performance** | ✅ **Prêmio:** Mantém PlR Integral | ❌ **Risco:** Perde com erros/horas extras |
+
+**Impacto Financeiro:** A regra atual *paga* o gerente para esconder a ineficiência. A nova regra alinha o interesse dele com o da empresa (lucro sustentável).
 
 ## O que os dados provam
 
-- Existe deflator explícito de turnover total que deflaciona o direito ao pagamento de PLR em 10% quando a meta não é atingida.
-- Existem outros deflatores além de rotatividade (meta de PCD, DTA/perda de contrato), com regra de perda total do PLR em determinados eventos.
+- **Limbo Confirmado:** O documento `Gestores REB FY26` **exclui explicitamente** GUs da regra de Regrettable. O documento `Operacional Food FY26` também os exclui.
+- **Histórico:** Na ausência de nova regra, vigora o padrão de "Turnover Total" (deflator de 10%).
 
 ## O que os dados sugerem (mas não provam)
 
-- Um deflator em formato “cliff” ou com perímetro injusto tende a induzir comportamentos disfuncionais (segurar turnover artificialmente, etc.).
+- Que essa disparidade é a causa raiz da "cegueira deliberada" do GU. Ele sabe que precisa demitir o funcionário tóxico, mas o sistema de PLR dele diz "não demita", enquanto o do chefe diz "retenha talentos".
 
 ## O que falta validar (lacunas)
 
-- Curva real do “até 10%” e sua progressividade.
-- Perímetro correto (diretoria vs unidade vs centro de lucro).
-- Processo formal de contestação e evidências aceitas.
+- **Auditoria de Cálculo Real:** Verificar na folha de um GU se o desconto efetivamente ocorreu no último ciclo (prova cabal do desastre).
+- **Regra Tácita:** Se existe alguma instrução normativa "de gaveta" que atenua essa regra (pouco provável dado o rigor de compliance da Sodexo).
 
-## Objeções prováveis (board / jurídico / cliente)
+## Objeções prováveis (RH / Financeiro)
 
-- “Vai reduzir rigor e aumentar turnover”.
-- “É mexer em remuneração variável, risco político”.
+- "Turnover na base é custo direto (uniforme/treinamento), por isso punimos o total".
 
 ## Respostas (com base em evidências)
 
-- A própria regra é uma alavanca de incentivo; calibragem e transparência não reduzem rigor, reduzem distorções.
+- **Defesa de Maturidade:** "Se tratarmos o GU como imaturo, ele agirá como tal. A classificação deve ser validada pelo BP ou pelo próprio GO (que tem interesse na métrica correta). Manter a regra 'burra' custa mais caro (passivo trabalhista e cliente insatisfeito) do que o risco de manipulação."
+- **Defesa de Custo:** "Reter um funcionário ruim custa mais que o uniforme da reposição. O Turnover Total esconde o Custo da Não-Qualidade (horas extras, desperdício, reclamação). Queremos zerar o *Regrettable*, e aceitar o Turnover de Saneamento como investimento."
 
 ## Viabilidade prática
 
-- Execução (recursos/rotina):
-  - Propor 2 curvas alternativas.
-  - Simular com históricos.
-- Governança (quem decide/mede):
-  - RH Remuneração + Operações.
-- Custo (capex/opex):
-  - Baixo direto; impacto é redistribuição de incentivo.
-- Dependências (cliente/contrato):
-  - Nenhuma direta.
+- **Execução:**
+  - Aditivo na política de PLR de GUs (ou instrução normativa) alterando a base de cálculo do deflator para "Turnover - Demissões Involuntárias".
+- **Governança:**
+  - Dashboard de Turnover que separa as linhas. BPs auditam os casos de "Regrettable".
+- **Custo:**
+  - Zero custo sistêmico (apenas ajuste de regra). Potencial aumento de pagamento de PLR se os GUs baterem mais a meta, mas pago com a eficiência da melhor equipe.
 
 ## Riscos e efeitos colaterais
 
-- Se mexer no deflator sem mexer nas causas do turnover, desloca o problema.
+- Desgaste se o RH não confiar na ponta.
 
 ## Checagem S1 (âncoras e força)
 
-- Âncoras **Provado** (2):
-  - Regra do deflator de turnover (10%).
-    - `evidencias/banco/answers.json` — submission_id `b6495e4d-3278-47a5-8ab8-a069fe99c6f5`; answer_id `a6dc617f-bf78-426d-9a49-9b785b98cbc7`; field_id `question_66`.
-  - Lista de deflatores e regra de perda total em eventos específicos.
-    - `evidencias/banco/answers.json` — submission_id `b6495e4d-3278-47a5-8ab8-a069fe99c6f5`; answer_id `25a54983-70df-457b-bd6d-9571484d9cb3`; field_id `question_65`.
+- **Provado:** Disparidade de regras nos documentos de política (FY26 Gestores vs Histórico).
+  - `evidencias/notas/PLR/Gestores REB FY26.pdf`
+  - `evidencias/pdfs/PLR/REB_OPE_08_PLR_Gerente Unidades FY25_17.pdf`
 
 ## Referências principais
 
-- `evidencias/banco/answers.json` — submission_id `b6495e4d-3278-47a5-8ab8-a069fe99c6f5`; answer_id `a6dc617f-bf78-426d-9a49-9b785b98cbc7`; field_id `question_66`.
-- `evidencias/banco/answers.json` — submission_id `b6495e4d-3278-47a5-8ab8-a069fe99c6f5`; answer_id `25a54983-70df-457b-bd6d-9571484d9cb3`; field_id `question_65`.
-- `intervencoes/I-26-revisao-dos-deflatores-de-rotatividade-na-plr.md` (apêndice de rastreabilidade)
+- `evidencias/notas/PLR/PLR_FY26_Analise_Comparativa.analise.md`

@@ -31,8 +31,8 @@ def main():
     if len(sys.argv) > 1:
         message = sys.argv[1]
     else:
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        message = f"Auto-commit: {timestamp}"
+        print("Error: Commit message is required.")
+        sys.exit(1)
 
     # Commit
     run_command(["git", "commit", "-m", message])
