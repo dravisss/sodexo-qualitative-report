@@ -292,7 +292,6 @@ def main():
     
     # Import bridge functions if --direct is used
     if args.direct:
-        import sys
         from pathlib import Path
         skill_dir = Path(__file__).parent
         sys.path.insert(0, str(skill_dir))

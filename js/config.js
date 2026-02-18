@@ -103,12 +103,35 @@ const ARTICLES = [
         icon: '🧪'
     },
     {
+
         id: '15',
         title: 'Roteiro de Investigação',
         subtitle: 'Due Diligence & Coleta',
         path: './Refined/roteiro-investigacao-unidades.md',
-        icon: '📝'
+        icon: '📝',
+        group: 'evidencias_historico'
     }
+];
+
+// Add groups to existing articles that missed them in the initial declaration
+const groupMapping = {
+    '00': 'visao_geral', '06': 'visao_geral', '13': 'visao_geral', '12': 'visao_geral',
+    '11': 'analise_contexto', '01': 'analise_contexto', '02': 'analise_contexto', '03': 'analise_contexto', '04': 'analise_contexto',
+    '07': 'intervencao', '08': 'intervencao',
+    '05': 'evidencias_historico', '09': 'evidencias_historico', '10': 'evidencias_historico', '15': 'evidencias_historico'
+};
+
+ARTICLES.forEach(a => {
+    if (!a.group && groupMapping[a.id]) {
+        a.group = groupMapping[a.id];
+    }
+});
+
+const NAV_GROUPS = [
+    { id: 'visao_geral', label: 'Visão Geral', icon: '📖', collapsible: false },
+    { id: 'analise_contexto', label: 'Análise de Contexto', icon: '🕸️', collapsible: false },
+    { id: 'intervencao', label: 'Intervenção', icon: '🚀', collapsible: false },
+    { id: 'evidencias_historico', label: 'Evidências e Histórico', icon: '🗄️', collapsible: true }
 ];
 
 // Report metadata
@@ -119,4 +142,4 @@ const REPORT_META = {
     date: '2026-01-14'
 };
 
-export { ARTICLES, REPORT_META };
+export { ARTICLES, REPORT_META, NAV_GROUPS };

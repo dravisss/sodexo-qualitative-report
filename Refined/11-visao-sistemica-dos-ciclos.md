@@ -52,6 +52,10 @@ O ciclo do **Sucateamento da Infraestrutura** demonstra que o **Corte de Manuten
 
 O **Ciclo da Seleção Adversa** tem início com as **Condições Precárias** de trabalho (como escalas 6x1 e baixos salários), o que resulta em uma imediata **Perda de Atratividade** da vaga no mercado. Para suprir a falta de pessoal, a empresa realiza uma **Contratação de Emergência** sem critérios técnicos adequados, o que inevitavelmente gera a **Sobrecarga de Veteranos**, que precisam absorver o trabalho e as falhas dos novos contratados. Esse desgaste excessivo degrada ainda mais o ambiente de trabalho, retroalimentando as condições precárias e tornando a retenção de talentos cada vez mais difícil.
 
+**Fator Humano: O "Balde Furado" (Dados Fev/26)**
+- A investigação prova que o ciclo é mais agressivo na **BU1 (Cajamar)**, que apresenta quase o dobro do turnover precoce em relação à **BU2 (Guarulhos)**.
+- Isso indica que, embora o mercado seja o mesmo, a **cultura de gestão local e o acolhimento no onboarding** são as variáveis que decidem se o balde continua furado ou se a retenção se estabiliza.
+
 
 
 ---

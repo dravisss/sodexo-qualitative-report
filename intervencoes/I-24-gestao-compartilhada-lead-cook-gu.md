@@ -67,6 +67,13 @@ Leitura:
 Leitura:
 - A falta de uma coordenação técnica na linha de produção deixa os veteranos desprotegidos; o Líder Técnico tem o papel de redistribuir essa carga em tempo real.
 
+### Evidência 3 — Estabilidade da "Prata da Casa" (Veteranos)
+
+> "O grupo 51-60 anos é resiliente (22% da empresa) e possui estabilidade razoável. O grupo acima de 60 anos apresenta apenas 14% de turnover no 1º ano."
+
+Leitura:
+- Os veteranos são o pilar de estabilidade que sustenta o onboarding caótico dos jovens. A Gestão Compartilhada deve usar essa resiliência para mentorar os novos e evitar a sobrecarga que gera o esgotamento.
+
 ## Força da evidência
 
 - Classificação: Sustentado qualitativamente
@@ -111,3 +118,6 @@ Leitura:
 - Evidência 2:
   - fonte: Síntese de campo (Mapeamento de Tensões)
   - referência completa (path + linhas/IDs): `Refined/mapeamento_tensoes_intervencoes.md` linhas 30-32.
+- Evidência 3:
+  - fonte: Dados de Demografia e Turnover (Priscila Santos, 04/02/2026)
+  - referência completa (path + linhas/IDs): `evidencias/2026-02-04-demografia-turnover-bu1-bu2.md`

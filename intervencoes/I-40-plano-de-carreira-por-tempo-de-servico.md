@@ -64,6 +64,13 @@ Leitura:
 Leitura:
 - Se não houver um ganho futuro garantido pela permanência, o maior ganho financeiro percebido passa a ser a própria rescisão (travamento rescisório).
 
+### Evidência 3 — Queda brusca de volume pós-3 anos (Platô de 5 anos)
+
+> "Há uma queda brusca de volume entre quem tem '1-3 anos' (26%) e '3-5 anos' (13%). Mesmo no grupo estável de 41-50 anos, 28% têm menos de 1 ano de casa."
+
+Leitura:
+- A falta de perspectiva de degraus automáticos faz com que o sistema expulse quem começa a se tornar experiente. A retenção falha mesmo em perfis mais maduros por falta de "Mapa de Futuro".
+
 ## Força da evidência
 
 - Classificação: Sustentado qualitativamente
@@ -107,3 +114,6 @@ Leitura:
 - Evidência 2:
   - fonte: Síntese de campo (Mapeamento de Tensões)
   - referência completa (path + linhas/IDs): `Refined/mapeamento_tensoes_intervencoes.md` linhas 174–176.
+- Evidência 3:
+  - fonte: Dados de Demografia e Turnover (Priscila Santos, 04/02/2026)
+  - referência completa (path + linhas/IDs): `evidencias/2026-02-04-demografia-turnover-bu1-bu2.md`

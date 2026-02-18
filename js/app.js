@@ -3,7 +3,7 @@
  * Handles navigation, fetching, and rendering of Markdown articles
  */
 
-import { ARTICLES, REPORT_META } from './config.js';
+import { ARTICLES, REPORT_META, NAV_GROUPS } from './config.js';
 import { AutoSaveManager } from './autosave.js';
 
 class ReportReader {
@@ -33,107 +33,86 @@ class ReportReader {
     /**
      * Render sidebar navigation from ARTICLES config
      */
+    /**
+     * Render sidebar navigation from ARTICLES config
+     */
     renderNavigation() {
         if (!this.navGroupsEl) return;
 
+
+
         const byId = new Map(ARTICLES.map(a => [a.id, a]));
+        const groupsHtml = NAV_GROUPS.map(group => {
+            const groupArticles = ARTICLES.filter(a => a.group === group.id);
+            if (!groupArticles.length) return '';
 
-        const groups = [
-            {
-                id: 'geral',
-                title: 'Visão Geral',
-                articleIds: ['00', '16', '06', '08', '13', '12']
-            },
-            {
-                id: 'artigos',
-                title: 'Artigos',
-                articleIds: ['11', '01', '02', '03', '04', '07']
-            },
-            {
-                id: 'evidencias',
-                title: 'Evidências',
-                articleIds: ['05']
-            },
-            {
-                id: 'memoria',
-                title: 'Memória',
-                articleIds: ['09', '10']
-            },
-            {
-                id: 'campo',
-                title: 'Campo',
-                articleIds: ['15'],
-                tools: [
-                    {
-                        href: 'warroom.html',
-                        title: 'War Room',
-                        icon: '🧭',
-                        label: 'War Room'
-                    }
-                ]
-            },
-            {
-                id: 'ferramentas',
-                title: 'Ferramentas',
-                tools: [
-                    {
-                        href: 'kanban.html',
-                        title: 'Gestão de Intervenções',
-                        icon: '📋',
-                        label: 'Gestão de Intervenções'
-                    }
-                ]
+            const itemsHtml = groupArticles.map(article => `
+                <li class="nav-item">
+                    <a href="#${article.id}"
+                       class="nav-link"
+                       data-id="${article.id}"
+                       title="${article.title}">
+                        <span class="nav-number">${article.icon}</span>
+                        <span class="nav-title">${article.title}</span>
+                    </a>
+                </li>
+            `).join('');
+
+            // If collapsible, wrap in details/summary interaction
+            if (group.collapsible) {
+                return `
+                    <section class="nav-group collapsible" data-group="${group.id}">
+                        <button class="nav-group-header" type="button" data-action="toggle-group" data-group="${group.id}">
+                            <span class="nav-group-title">
+                                <span class="group-icon">${group.icon}</span>
+                                <span class="group-label">${group.label}</span>
+                            </span>
+                            <span class="nav-group-chevron">▾</span>
+                        </button>
+                        <ul class="nav-list" style="display:none">
+                            ${itemsHtml}
+                        </ul>
+                    </section>
+                `;
             }
-        ];
 
-        const renderArticleLink = (article) => {
+            // Standard open groups
             return `
-      <li class="nav-item">
-        <a href="#${article.id}"
-           class="nav-link"
-           data-id="${article.id}"
-           title="${article.title}: ${article.subtitle}">
-          <span class="nav-number">${article.icon}</span>
-          <span class="nav-title">${article.title}</span>
-        </a>
-      </li>
-    `;
-        };
-
-        const renderToolLink = (tool) => {
-            return `
-      <li class="nav-item">
-        <a href="${tool.href}" class="nav-link" title="${tool.title}">
-          <span class="nav-number">${tool.icon}</span>
-          <span class="nav-title">${tool.label}</span>
-        </a>
-      </li>
-    `;
-        };
-
-        this.navGroupsEl.innerHTML = groups.map(group => {
-            const itemsHtml = (group.articleIds || [])
-                .map(id => byId.get(id))
-                .filter(Boolean)
-                .map(renderArticleLink)
-                .join('');
-
-            const toolsHtml = (group.tools || [])
-                .map(renderToolLink)
-                .join('');
-
-            return `
-      <section class="nav-group" data-group="${group.id}">
-        <button class="nav-group-header" type="button" data-action="toggle-group" data-group="${group.id}">
-          <span class="nav-group-title">${group.title}</span>
-          <span class="nav-group-chevron">▾</span>
-        </button>
-        <ul class="nav-list">
-          ${itemsHtml}${toolsHtml}
-        </ul>
-      </section>
-    `;
+                <section class="nav-group" data-group="${group.id}">
+                    <div class="nav-section-label">
+                        <span class="group-icon">${group.icon}</span>
+                        <span class="group-label">${group.label}</span>
+                    </div>
+                    <ul class="nav-list">
+                        ${itemsHtml}
+                    </ul>
+                </section>
+            `;
         }).join('');
+
+        // Tools Footer (War Room & Kanban)
+        const toolsHtml = `
+            <div class="sidebar-tools">
+                <a href="warroom.html" class="tool-button" title="War Room">
+                    <span class="tool-icon">🧭</span>
+                    <span class="tool-label">War Room</span>
+                </a>
+                <a href="kanban.html" class="tool-button" title="Gestão de Intervenções">
+                    <span class="tool-icon">📋</span>
+                    <span class="tool-label">Gestão</span>
+                </a>
+            </div>
+        `;
+
+        this.navGroupsEl.innerHTML = groupsHtml;
+
+        // Append tools to sidebar footer or after nav groups
+        // Fixing the layout: nav-groups should scroll, tools should be fixed at bottom
+        // We might need to inject tools outside nav-groups if we want it fixed
+        const existingTools = document.querySelector('.sidebar-tools');
+        if (existingTools) existingTools.remove();
+
+        this.navGroupsEl.insertAdjacentHTML('afterend', toolsHtml);
 
         this.restoreNavGroupsState();
         this.setupNavGroupsEvents();
@@ -149,13 +128,27 @@ class ReportReader {
             state = null;
         }
 
-        const defaultOpen = { executive: true };
+        // Default state: evidence group closed (collapsed)
+        const defaultOpen = { evidences_historico: false };
         const finalState = (state && typeof state === 'object') ? state : defaultOpen;
 
-        this.navGroupsEl.querySelectorAll('.nav-group').forEach(groupEl => {
+        this.navGroupsEl.querySelectorAll('.nav-group.collapsible').forEach(groupEl => {
             const id = groupEl.dataset.group;
+            // If it's in the state as true, we show the list. Otherwise it stays hidden (default style=display:none)
             const isOpen = !!finalState[id];
-            groupEl.classList.toggle('collapsed', !isOpen);
+
+            const list = groupEl.querySelector('.nav-list');
+            const chevron = groupEl.querySelector('.nav-group-chevron');
+
+            if (isOpen) {
+                if (list) list.style.display = 'block';
+                if (chevron) chevron.style.transform = 'rotate(0deg)'; // Point down
+                groupEl.classList.add('open');
+            } else {
+                if (list) list.style.display = 'none';
+                if (chevron) chevron.style.transform = 'rotate(-90deg)'; // Point right
+                groupEl.classList.remove('open');
+            }
         });
     }
 
@@ -163,9 +156,9 @@ class ReportReader {
         if (!this.navGroupsEl) return;
 
         const state = {};
-        this.navGroupsEl.querySelectorAll('.nav-group').forEach(groupEl => {
+        this.navGroupsEl.querySelectorAll('.nav-group.collapsible').forEach(groupEl => {
             const id = groupEl.dataset.group;
-            state[id] = !groupEl.classList.contains('collapsed');
+            state[id] = groupEl.classList.contains('open');
         });
 
         localStorage.setItem('sidebar-open-groups', JSON.stringify(state));
@@ -174,14 +167,30 @@ class ReportReader {
     setupNavGroupsEvents() {
         if (!this.navGroupsEl) return;
 
-        this.navGroupsEl.querySelectorAll('[data-action="toggle-group"]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const groupId = btn.dataset.group;
-                const groupEl = this.navGroupsEl.querySelector(`.nav-group[data-group="${groupId}"]`);
-                if (!groupEl) return;
-                groupEl.classList.toggle('collapsed');
-                this.saveNavGroupsState();
-            });
+        this.navGroupsEl.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-action="toggle-group"]');
+            if (!btn) return;
+
+            const groupEl = btn.closest('.nav-group');
+            if (!groupEl) return;
+
+            const list = groupEl.querySelector('.nav-list');
+            const chevron = groupEl.querySelector('.nav-group-chevron');
+
+            const wasOpen = groupEl.classList.contains('open');
+            const isOpen = !wasOpen;
+
+            if (isOpen) {
+                if (list) list.style.display = 'block';
+                if (chevron) chevron.style.transform = 'rotate(0deg)';
+                groupEl.classList.add('open');
+            } else {
+                if (list) list.style.display = 'none';
+                if (chevron) chevron.style.transform = 'rotate(-90deg)';
+                groupEl.classList.remove('open');
+            }
+
+            this.saveNavGroupsState();
         });
     }
 

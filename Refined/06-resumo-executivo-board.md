@@ -12,6 +12,13 @@ A investigação focou em duas unidades críticas que servem como arquétipos do
 | **Guarulhos (Food)** | União Química | Explosão de volume sem ajuste de estrutura; equipe de veteranos sobrecarregados|
 | **Guarulhos (FM)** | União Química | Alta rotatividade; falta de EPIs básicos; inconsistência na qualidade do serviço |
 
+> [!IMPORTANT]
+> **ALERTA: O Abismo do Primeiro Ano (Dados Fev/2026)**
+> Nossa investigação quantitativa revela uma falha crítica de retenção na base:
+> - **33% da força de trabalho total** (14.996 pessoas) tem menos de 1 ano de casa.
+> - **54% dos jovens (até 30 anos)** abandonam o posto antes de completar 12 meses.
+> - O **Onboarding atual funciona como um "balde furado"**, gerando custo de recrutamento contínuo sem consolidação de equipe.
+
 <details class="executive-qa" open>
 <summary>📂 PERGUNTAS ESTRATÉGICAS QUE ESTE RELATÓRIO RESPONDE</summary>
 <div class="qa-content">
@@ -20,7 +27,7 @@ A investigação focou em duas unidades críticas que servem como arquétipos do
 
 <div class="qa-pair">
 <span class="qa-question">"Por que não conseguimos contratar e reter gente na ponta?"</span>
-<div class="qa-answer">Porque perdemos a competitividade para a logística e apps (<a href="#04">Panorama Macroeconômico</a>). Nossa "vaga de entrada" exige esforço físico extremo e paga o piso, enquanto competidores pagam mais ou oferecem flexibilidade.</div>
+<div class="qa-answer">Porque perdemos a competitividade para a logística e apps. Dados de Fev/2026 mostram que <strong>54% dos nossos jovens saem antes de 1 ano</strong>. Nossa "vaga de entrada" exige esforço físico extremo e paga o piso, enquanto competidores pagam mais ou oferecem flexibilidade (<a href="#04">Panorama Macroeconômico</a>).</div>
 </div>
 
 <div class="qa-pair">

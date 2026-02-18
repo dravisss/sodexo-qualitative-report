@@ -16,7 +16,7 @@ Este documento apresenta uma visão consolidada dos riscos identificados na aná
 | **Perda de contrato Leroy Merlin** | Média | Alto | 🟠 Alto |
 | **Ação individual por insalubridade** | Alta | Baixo | 🟡 Médio |
 | **Falha de segurança alimentar (multa contratual)** | Baixa | Alto | 🟡 Médio |
-| **Rotatividade >100% anual** | Alta | Baixo | 🟡 Médio |
+| **Concentração Crítica de Turnover Precoce** | Alta | Médio | 🟠 Alto |
 
 ---
 
@@ -65,24 +65,6 @@ Em 2023, o MPT ajuizou ação coletiva contra empresa de alimentação coletiva 
 
 ---
 
-## Mapa visual de risco
-
-```
-                        IMPACTO
-                 Baixo    Médio    Alto
-           ┌─────────┬─────────┬─────────┐
-     Alta  │ Insalub.│Afastam. │ Desvio  │
-           │ Individ.│  INSS   │ Função  │
-PROBABIL.  ├─────────┼─────────┼─────────┤
-     Média │Rotativ. │         │Contratos│
-           │  >100%  │         │MTE/Acid.│
-           ├─────────┼─────────┼─────────┤
-     Baixa │         │         │Seg.Alim.│
-           └─────────┴─────────┴─────────┘
-```
-
----
-
 ## Resposta tática 
 
 Para cada risco crítico identificado, existe um conjunto de intervenções planejadas no **[Plano Estratégico (08)](file:///Users/Ravi/Apps/Qualitative%20Analyst/docs/Analise%20Geral/Refined/08-plano-de-intervencao-estrategica.md)**:
@@ -95,9 +77,7 @@ Para cada risco crítico identificado, existe um conjunto de intervenções plan
 | **Travamento de Saída (Passivo)** | **I-20** (Provisionamento de Rescisão) + **I-21** (Win-Win / PDV Protegido) |
 | **Sucateamento / Acidentes** | **I-03** (Fundo Correção) + **I-23** (Orçamento Protegido Manutenção) |
 | **Turnover de GUs (Limbo)** | **I-19** (Guia de Gestão) + **I-26** (Revisão Deflatores) + **I-33** (Saneamento Função) |
-
-> **Nota:** A execução detalhada de cada Item (I-XX) encontra-se no documento 08.
-
+      
 ---
 
 

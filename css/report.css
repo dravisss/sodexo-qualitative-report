@@ -61,7 +61,11 @@ body {
 .sin-sidebar.collapsed .sidebar-header,
 .sin-sidebar.collapsed .nav-section-title,
 .sin-sidebar.collapsed .nav-title,
-.sin-sidebar.collapsed .sidebar-subtitle {
+.sin-sidebar.collapsed .sidebar-subtitle,
+.sin-sidebar.collapsed .nav-group-chevron,
+.sin-sidebar.collapsed .sidebar-footer .toggle-text,
+.sin-sidebar.collapsed .tool-label,
+.sin-sidebar.collapsed .group-label {
     display: none;
 }
 
@@ -77,6 +81,21 @@ body {
 }
 
 .sin-sidebar.collapsed .nav-number {
+    margin: 0;
+}
+
+/* Collapsed Header Handling */
+.sin-sidebar.collapsed .nav-group-header {
+    justify-content: center;
+    padding: var(--spacing-sm);
+}
+
+.sin-sidebar.collapsed .nav-group-title {
+    margin: 0;
+}
+
+.sin-sidebar.collapsed .group-icon {
+    font-size: 1.2rem;
     margin: 0;
 }
 
@@ -106,78 +125,83 @@ body {
     padding: var(--spacing-md) 0;
 }
 
- .nav-groups {
-     display: flex;
-     flex-direction: column;
-     gap: 2px;
- }
+.nav-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
- .nav-group {
-     padding: 0;
- }
+.nav-group {
+    padding: 0;
+}
 
- .nav-group-header {
-     width: 100%;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     gap: var(--spacing-sm);
-     padding: var(--spacing-sm) var(--spacing-lg);
-     background: transparent;
-     border: none;
-     border-top: 1px solid rgba(0, 0, 0, 0.03);
-     color: var(--color-text-muted);
-     cursor: pointer;
-     text-align: left;
-     font-size: var(--font-size-xs);
-     font-weight: var(--font-weight-semibold);
-     text-transform: uppercase;
-     letter-spacing: 0.05em;
-     transition: background var(--transition-fast), color var(--transition-fast);
- }
-
- .nav-group:first-child .nav-group-header {
-     border-top: none;
- }
-
- .nav-group-header:hover {
-     background: rgba(122, 181, 188, 0.10);
-     color: var(--color-teal-dark);
- }
-
- .nav-group-title {
-     display: inline-flex;
-     align-items: center;
- }
-
- .nav-group-chevron {
-     opacity: 0.7;
-     transition: transform var(--transition-fast);
- }
-
- .nav-group.collapsed .nav-group-chevron {
-     transform: rotate(-90deg);
- }
-
- .nav-group .nav-list {
-     list-style: none;
- }
-
- .nav-group.collapsed .nav-list {
-     display: none;
- }
-
- .sin-sidebar.collapsed .nav-group-header {
-     display: none;
- }
-
-.nav-section-title {
+/* Standard Group Label (Non-Collapsible) */
+.nav-section-label {
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--color-text-muted);
     padding: var(--spacing-md) var(--spacing-lg) var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* Collapsible Group Header */
+.nav-group-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    text-align: left;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-group:first-child .nav-group-header {
+    border-top: none;
+}
+
+.nav-group-header:hover {
+    background: rgba(122, 181, 188, 0.10);
+    color: var(--color-teal-dark);
+}
+
+.nav-group-title {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.nav-group-chevron {
+    opacity: 0.7;
+    transition: transform var(--transition-fast);
+}
+
+.nav-group.collapsed .nav-group-chevron,
+.nav-group:not(.open) .nav-group-chevron {
+    /* Support both class conventions if needed */
+    transform: rotate(-90deg);
+}
+
+.nav-group .nav-list {
+    list-style: none;
+}
+
+/* Logic handled by JS inline style, but can enforce here */
+.nav-group:not(.open) .nav-list.collapsible-list {
+    display: none;
 }
 
 .nav-list {
@@ -229,6 +253,45 @@ body {
 .nav-link.active .nav-number {
     background: var(--color-teal);
     color: #fff;
+}
+
+/* Sidebar Tools Footer */
+.sidebar-tools {
+    flex-shrink: 0;
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-md);
+    background: var(--color-bg-card);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.tool-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.tool-button:hover {
+    background: var(--color-teal-light);
+    color: var(--color-teal-dark);
+}
+
+.tool-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 1.2rem;
 }
 
 /* Sidebar Footer & Toggle */

@@ -16,7 +16,7 @@ Antes de detalhar os mecanismos, é fundamental traduzir os achados qualitativos
 | **Presenteísmo forçado** | Afastamentos INSS prolongados (custo médio de R$ 8.000 a R$ 15.000 por caso); risco de ações por condições de trabalho |
 | **Desvio de função** | Passivo trabalhista estimado em 5 a 7 anos de diferenças salariais por funcionário; risco de ação coletiva |
 | **Sucateamento de infraestrutura** | Acidentes de trabalho com afastamento (deflator na PLR + indenizações); falhas de segurança alimentar (multas contratuais) |
-| **Rotatividade alta** | Custo de recrutamento e treinamento (estimado em 2 a 3 salários por vaga reposta) |
+| **Rotatividade alta** | Custo de recrutamento e treinamento (estimado em 2 a 3 salários por vaga reposta). **Dado Fev/26:** 33% da força de trabalho geral e 54% dos jovens não completam 1 ano de casa. |
 
 > **Nota para a alta gestão:** A economia de curto prazo em manutenção, pessoal e rescisões está sendo paga com passivos trabalhistas, operacionais e contratuais que não aparecem no resultado mensal. A margem reportada mascara sua própria insustentabilidade.
 
@@ -86,9 +86,10 @@ A análise das entrevistas revelou quatro mecanismos distintos que geram comport
 - A empresa se torna um "bico" temporário até surgir oportunidade melhor
 - A falta de especialização leva a erros de produção e desperdício de insumos
 
-### 2.5 PLR da ponta: A economia como métrica
-**Detalhes:** Diferente das lideranças, o incentivo para cozinheiros e auxiliares está atrelado à capacidade da unidade de economizar recursos.
-- **O Conflito:** Isso pode incentivar a restrição no uso de materiais básicos e EPIs (ex: luvas, panos) para não onerar as despesas e proteger o bônus, gerando improvisos perigosos.
+### 2.5 PLR da ponta: Metas Fantasmas e Economia
+**Detalhes:** O incentivo para cozinheiros e auxiliares (PLR Operacional) possui uma característica crítica de **"Metas Fantasmas"**:
+- **30% do Peso Incontrolável:** Cerca de **30% da composição do bônus** depende de indicadores da Diretoria Regional (20% UOP da Diretoria + 10% Retenção da Diretoria). O colaborador da ponta não conhece essas metas, não tem visibilidade do resultado e não possui qualquer alavanca para influenciá-las.
+- **O Conflito Local:** Os outros 70% estão atrelados à economia da unidade (GM, desperdício). Isso incentiva a restrição no uso de materiais básicos e EPIs (ex: luvas, panos) para proteger a única parte do bônus que eles "acham" que controlam.
 
 > **Relato do Frontline:**
 > "Você pede um pano para limpar as coisas, e trazem dois pedacinhos de papel toalha desse tamanho. Imagina o quanto de sujeira você limpa com papel. Eles ganham por nossa causa! No final do ano o que recebemos? Um panetone e pronto."
@@ -106,6 +107,7 @@ Identificamos quatro mecanismos que operam sob a superfície financeira e explic
 2.  **Pacto de Silêncio:** A meta de GM como gatilho "tudo-ou-nada", combinada com deflatores de rotatividade, incentiva o gestor a esconder problemas e não reportar acidentes/demissões para salvar o bônus.
 3.  **Canibalização Operacional:** Para proteger a margem, equipamentos e EPIs tornam-se variáveis de ajuste.
 4.  **Travamento Rescisório:** O custo de demissão torna-se proibitivo dentro do orçamento mensal, zumbificando a vaga.
+5.  **Onboarding "Balde Furado":** O turnover precoce de 54% em jovens mostra que a empresa está pagando o custo de entrada (atestado médico admissional, uniformes, treinamento inicial) mas não colhe a produtividade, gerando um ROI negativo sistêmico na contratação.
 
 ---
 

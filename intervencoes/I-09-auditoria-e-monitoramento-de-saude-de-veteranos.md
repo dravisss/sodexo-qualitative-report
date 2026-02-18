@@ -72,6 +72,13 @@ Leitura:
 Leitura:
 - Indicadores reportados de INSS ativos sugerem risco de afastamentos prolongados e reforçam a necessidade de mecanismos preventivos.
 
+### Evidência 4 — Resiliência da "Prata da Casa" (> 60 anos)
+
+> "O grupo acima de 60 anos apresenta uma curva de retenção saudável: apenas 14% com < 1 ano de casa. Eles representam 6% da força total."
+
+Leitura:
+- Este grupo é o benchmark de estabilidade. Proteger sua saúde e usá-los como mentores (Guardiões da Cultura) é vital para estabilizar o turnover dos < 30 anos (54% saem no 1º ano).
+
 ## Força da evidência
 
 - Classificação: Sustentado qualitativamente
@@ -124,3 +131,6 @@ Leitura:
 - Evidência 3:
   - fonte: formulário, tabela derivada
   - referência completa (path + linhas/IDs): `evidencias/indice/tabelas/b6495e4d-3278-47a5-8ab8-a069fe99c6f5/table_0.md` linha 22; célula `field_id=table_0_row_8_col_1/_col_2/_col_3`.
+- Evidência 4:
+  - fonte: Dados de Demografia e Turnover (Priscila Santos, 04/02/2026)
+  - referência completa (path + linhas/IDs): `evidencias/2026-02-04-demografia-turnover-bu1-bu2.md`

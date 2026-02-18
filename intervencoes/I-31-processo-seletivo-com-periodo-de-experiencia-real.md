@@ -65,6 +65,13 @@ Leitura:
 Leitura:
 - Existe uma falha no filtro inicial que não considera a dureza da rotina do frontline, gerando choque de realidade após a contratação.
 
+### Evidência 3 — Abismo demográfico e turnover precoce (Fev/2026)
+
+> "33% de toda a força de trabalho (14.996 pessoas) tem menos de 1 ano de casa. O grupo <= 30 anos concentra o maior índice de turnover: < 1 ano chega a 54% nesse grupo."
+
+Leitura:
+- O onboarding atual é um "balde furado". A falta de validação de realidade (Job Shadow) expulsa mais da metade dos jovens em menos de 1 ano.
+
 ## Força da evidência
 
 - Classificação: Sustentado qualitativamente
@@ -109,3 +116,6 @@ Leitura:
 - Evidência 2:
   - fonte: Síntese de contexto operacional (porta giratória)
   - referência completa (path + linhas/IDs): `Refined/05-dossies-operacionais-estudo-comparativo.md` linhas 54–55.
+- Evidência 3:
+  - fonte: Dados de Demografia e Turnover (Priscila Santos, 04/02/2026)
+  - referência completa (path + linhas/IDs): `evidencias/2026-02-04-demografia-turnover-bu1-bu2.md`

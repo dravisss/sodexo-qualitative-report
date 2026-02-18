@@ -33,33 +33,17 @@ def create_memory(content: str, tags: list = None, metadata: dict = None):
     
     # Insert memory
     cursor.execute("""
-        INSERT INTO memories (content, metadata, created_at, updated_at)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO memories (content, metadata, tags, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?)
     """, (
         content,
         json.dumps(metadata or {}),
+        json.dumps(tags or []),
         datetime.utcnow().isoformat(),
         datetime.utcnow().isoformat()
     ))
     
     memory_id = cursor.lastrowid
-    
-    # Insert tags if provided
-    if tags:
-        for tag in tags:
-            cursor.execute("""
-                INSERT OR IGNORE INTO tags (name) VALUES (?)
-            """, (tag,))
-            
-            cursor.execute("""
-                SELECT id FROM tags WHERE name = ?
-            """, (tag,))
-            tag_id = cursor.fetchone()[0]
-            
-            cursor.execute("""
-                INSERT INTO memory_tags (memory_id, tag_id) VALUES (?, ?)
-            """, (memory_id, tag_id))
-    
     conn.commit()
     conn.close()
     
@@ -75,30 +59,17 @@ def delete_by_tag(tag: str):
     conn = get_connection()
     cursor = conn.cursor()
     
-    # Find tag ID
-    cursor.execute("SELECT id FROM tags WHERE name = ?", (tag,))
-    result = cursor.fetchone()
-    
-    if not result:
-        conn.close()
-        return 0
-    
-    tag_id = result[0]
-    
-    # Find memory IDs with this tag
+    # Find memory IDs with this tag in JSON array
+    # Heuristic: search for the tag in the JSON string
     cursor.execute("""
-        SELECT memory_id FROM memory_tags WHERE tag_id = ?
-    """, (tag_id,))
+        SELECT id FROM memories 
+        WHERE tags LIKE ?
+    """, (f'%"{tag}"%',))
     memory_ids = [row[0] for row in cursor.fetchall()]
     
     if not memory_ids:
         conn.close()
         return 0
-    
-    # Delete memory_tags entries
-    cursor.execute("""
-        DELETE FROM memory_tags WHERE tag_id = ?
-    """, (tag_id,))
     
     # Delete memories
     placeholders = ','.join('?' * len(memory_ids))
@@ -150,14 +121,10 @@ def stats():
     cursor.execute("SELECT COUNT(*) FROM memories")
     memory_count = cursor.fetchone()[0]
     
-    cursor.execute("SELECT COUNT(*) FROM tags")
-    tag_count = cursor.fetchone()[0]
-    
     conn.close()
     
     return {
         "memories": memory_count,
-        "tags": tag_count,
         "database": str(DB_PATH)
     }
 
