@@ -19,9 +19,8 @@ evidence_strength: hipotese
 ## Identificação
 
 - Intervenção: `I-03`
+- Frente: Torniquete
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM | Transversal
-- Frente: Reestruturação
-
 ## O que importa aqui
 
 - Em União Química, o texto contratual explicita itens de utilidades, infraestrutura e controles que são responsabilidade da contratante, criando base objetiva para cobrar execução e registrar pendências.
@@ -36,12 +35,12 @@ evidence_strength: hipotese
 - Hipótese a validar em execução:
   - há um gap recorrente entre responsabilidade contratual e execução prática, pendência vira improviso, esforço manual e risco
 
-## Tensão / Objetivo / Impacto — doc 08
+## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A unidade sangra margem operacional pagando consertos estruturais (esgoto, telhado) que são responsabilidade do imóvel (cliente), devido a contratos mal amarrados na origem.
-- Descrição: Criação de um "Laudo de Vícios Ocultos" pós-entrada e constituição de um Fundo de Correção Compartilhado (ou Aditivo de Regularização), retirando esse custo da linha de manutenção da unidade.
-- Objetivo: Estancar a drenagem de recursos operacionais para problemas patrimoniais do cliente.
-- Impacto: Recupera a margem real da unidade e força o cliente a assumir sua responsabilidade patrimonial.
+- **Tensão:** A unidade sangra margem operacional pagando consertos estruturais (esgoto, telhado) que são responsabilidade do cliente, devido a contratos mal amarrados na origem.
+- **Descrição:** Criação de um "Laudo de Vícios Ocultos" pós-entrada e constituição de um Fundo de Correção Compartilhado (ou Aditivo de Regularização), retirando esse custo da linha de manutenção da unidade.
+- **Objetivo:** Estancar a drenagem de recursos operacionais para problemas patrimoniais do cliente.
+- **Impacto:** Recupera a margem real da unidade e força o cliente a assumir sua responsabilidade patrimonial.
 
 ## Descrição
 

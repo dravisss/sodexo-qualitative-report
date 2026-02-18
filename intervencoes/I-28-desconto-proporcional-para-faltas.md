@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-28`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Substituir regra binária (110h falta = perde 100% PLR) por escala proporcional de desconto (0-30h = 10%, 30-60h = 30%, 60-90h = 60%, >110h = 100%), eliminando os dois comportamentos tóxicos induzidos: presenteísmo (trabalhar doente) e desistência precoce ("já perdi tudo, tanto faz").
 
-- Intervenção: `I-25`
+- Intervenção: `I-28`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação
 
@@ -28,10 +31,10 @@ Substituir regra binária (110h falta = perde 100% PLR) por escala proporcional 
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Regra binária (110h falta = perde 100% PLR) cria dois comportamentos tóxicos: (1) trabalhar doente (presenteísmo) e (2) após 1ª falta, "já perdi tudo mesmo" (desistência do mês).
-- Descrição: Escala proporcional de desconto: 0-30h falta = 10% desconto, 30-60h = 30%, 60-90h = 60%, >110h = 100%. Faltas justificadas (atestado >3 dias + validação médica) não contam. Comunicação: cartaz na copa + simulador individual.
-- Objetivo: Manter o incentivo à presença mesmo após uma ocorrência de falta.
-- Impacto: Reduzindo a punição binária, mantém-se o colaborador engajado em vir trabalhar nos demais dias, reduzindo o absenteísmo total.
+- **Tensão:** Regra binária (110h falta = perde 100% PLR) cria dois comportamentos tóxicos: (1) trabalhar doente (presenteísmo) e (2) após 1ª falta, "já perdi tudo mesmo" (desistência do mês).
+- **Descrição:** Escala proporcional de desconto: 0-30h falta = 10% desconto, 30-60h = 30%, 60-90h = 60%, >110h = 100%. Faltas justificadas (atestado >3 dias + validação médica) não contam. Comunicação: cartaz na copa + simulador individual.
+- **Objetivo:** Manter o incentivo à presença mesmo após uma ocorrência de falta.
+- **Impacto:** Reduzindo a punição binária, mantém-se o colaborador engajado em vir trabalhar nos demais dias, reduzindo o absenteísmo total.
 
 ## Descrição (doc 08, com adaptações)
 

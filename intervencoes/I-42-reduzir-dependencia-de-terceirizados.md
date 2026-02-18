@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-42`
+- Frente: Reposicionamento
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá CLT/Terceirizado). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente. Rixa atual ("não é meu problema") custa 15% de produtividade em tarefas colaborativas.
 
-- Intervenção: `I-33`
+- Intervenção: `I-42`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reposicionamento
 
@@ -26,10 +29,10 @@ Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time únic
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: CLT Sodexo recebe brindes corporativos (Natal/Páscoa), é convidado para festas, tem acesso ao canal direto com GU. Terceirizados (mesma função, mesma copa) ficam fora dos rituais. Resultado: baixa cooperação interdepartamental, clima de desconfiança. Impacto significativo na produtividade de tarefas colaborativas (setup de eventos, faxina pesada).
-- Descrição: Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros. Governança: criar Comitê de Integração (1 CLT + 1 Terceirizado + GU) que audita práticas discriminatórias trimestralmente.
-- Objetivo: Criar uma cultura de "Time Único" independente do crachá.
-- Impacto: Reduz o atrito operacional e melhora a cooperação em tarefas conjuntas.
+- **Tensão:** CLT Sodexo recebe brindes corporativos (Natal/Páscoa), é convidado para festas, tem acesso ao canal direto com GU. Terceirizados (mesma função, mesma copa) ficam fora dos rituais. Resultado: baixa cooperação interdepartamental, clima de desconfiança. Impacto significativo na produtividade de tarefas colaborativas (setup de eventos, faxina pesada).
+- **Descrição:** Focar energia no Apoio Centralizado de Recrutamento para garantir velocidade de reposição (SLA < 10 dias). Tornar o uso de temporários uma exceção raríssima, eliminando naturalmente a duplicidade de culturas. Equalização Progressiva de Rituais: Festa de fim de ano + brindes = time único (sem distinção de crachá). Comunicados e reuniões = envolvem ambos. Reconhecimento público (colaborador destaque) = vale para terceiros.  A contratação final deve ocorrer via folha Sodexo (CLT).
+- **Objetivo:** Eliminar a existência da "casta inferior" reduzindo a necessidade de contratá-los.
+- **Impacto:** Unificação da cultura pelo fim da precarização da entrada, com redução de custo (temporário é mais caro que CLT).
 
 ## Descrição (doc 08, com adaptações)
 

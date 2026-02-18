@@ -2,25 +2,19 @@
 
 ## Identificação
 
-- **Intervenção:** I-42
-- **Nome:** Protocolo de Saneamento Estrutural
-- **Frente:** Governança (Incentivos)
-- **Status:** Em Elaboração
+- Intervenção: `I-35`
+- Frente: Reestruturação
 - **Unidade:** Todas (Foco em Cajamar/Guarulhos)
-
 ## Tese (o que defender)
 
 O atual sistema de metas (PLR/Bônus) pune o gestor que resolve problemas estruturais, pois gastos variáveis (EPI extra, Manutenção, Rescisão) deduzem diretamente da margem operacional. Para sanear a base, precisamos de um **"Shadow P&L"**: uma linha gerencial de "Investimento em Saneamento" que neutraliza esses custos para fins de apuração de bônus, mediante governança estrita de "Trava de Reincidência".
 
-## Tensão / Objetivo / Impacto
+## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** **Incentivo Reverso.** O GO recebe demandas de saneamento (troca de piso, demissão de tóxicos), mas se aprovar, sua margem cai e ele perde o bônus. Resultado: empurra com a barriga ("monitorar").
-- **Descrição:** Instituir o **Protocolo de Saneamento**:
-    1.  **Conta Segregada:** Gastos aprovados entram como investimento, não custo operacional.
-    2.  **Governança:** Exige Laudo Técnico (Segurança/Qualidade) + Evidência "Antes/Depois".
-    3.  **Trava:** Se o problema reincidir em 6 meses, o valor é estornado contra o bônus (multa).
-- **Objetivo:** Remover o desincentivo financeiro para "fazer a coisa certa".
-- **Impacto:** Aceleração imediata da resolução de passivos acumulados (Segurança, Legal, Infra).
+- **Tensão:** O atual sistema de metas pune quem resolve problemas estruturais (gastar com EPI/Manutenção reduz a margem e o bônus).
+- **Descrição:** Criação de uma linha de "Investimento de Saneamento" na DRE gerencial que não penaliza o Bônus Operacional. Gastos aprovados (com laudo e validação de Segurança/Qualidade) são neutralizados para fins de meta. Inclui "Trava de Reincidência": se o problema voltar em 6 meses, o custo é estornado com multa (má gestão).
+- **Objetivo:** Remover o desincentivo financeiro para fazer a coisa certa.
+- **Impacto:** Aceleração da resolução de passivos (EPI, Legal, Segurança) sem depender de heroismo do gestor.
 
 ## Mecânica da Intervenção
 

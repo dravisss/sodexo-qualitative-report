@@ -1,4 +1,4 @@
-# Argumentário — I-26 — Revisão dos Deflatores de Rotatividade na PLR
+# Argumentário — I-26 — Revisão dos Deflatores (Isonomia de Incentivos)
 
 ## Tese (o que defender)
 
@@ -16,8 +16,9 @@ Defendemos a **isonomia vertical imediata**: estender a regra da Liderança aos 
 
 ## O que os dados provam
 
-- **Limbo Confirmado:** O documento `Gestores REB FY26` **exclui explicitamente** GUs da regra de Regrettable. O documento `Operacional Food FY26` também os exclui.
-- **Histórico:** Na ausência de nova regra, vigora o padrão de "Turnover Total" (deflator de 10%).
+- **Liderança:** Documento `Gestores REB FY26` institui "Regrettable Turnover" como meta de 10% para cargos I1+ (GOs/GCEs).
+- **GUs:** Histórico (`REB_OPE_08`) mostra deflator de 10% sobre Turnover Total.
+- **Conflito:** O GO é premiado se a equipe "boa" ficar. O GU é premiado se "ninguém" sair (independente da qualidade).
 
 ## O que os dados sugerem (mas não provam)
 

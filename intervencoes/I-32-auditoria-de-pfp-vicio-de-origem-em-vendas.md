@@ -2,18 +2,21 @@
 
 ## Identificação
 
+- Intervenção: `I-32`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Bloquear a entrada de "contratos tóxicos" (subdimensionados) criando uma etapa de validação técnica operacional obrigatória no funil de vendas, impedindo que o Comercial venda o que a Operação não consegue entregar.
 
-- Intervenção: `I-37`
+- Intervenção: `I-32`
 - Unidade(s): Novos Contratos
 - Frente: Reestruturação
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
 - **Tensão:** A venda de contratos com dimensionamento de equipe subestimado (para garantir competitividade de preço) cria operações estruturalmente deficitárias, gerando sobrecarga e turnover inevitável desde o início.
-- **Descrição:** Governança de Vendas (Bid): Instituir validação técnica obrigatória do quadro operacional por um especialista de Operações antes da assinatura. Contratos com quadro inviável devem ter o PFP revisado ou vetado.
+- **Descrição:** Governança de Vendas (Bid): Instituir validação técnica obrigatória do quadro operacional por um time multifuncional de Operações, HSE e Manutenção(Satoshi) antes da assinatura. Contratos com quadro inviável devem ter o PFP revisado ou vetado.
 - **Objetivo:** Evitar a entrada de contratos com desequilíbrio estrutural que degradam a margem e o clima organizacional.
 - **Impacto:** Maior sustentabilidade dos novos contratos e redução do turnover precoce.
 

@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-34`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Tirar o peso operacional do recrutamento das costas do Gerente de Unidade (que hoje faz triagem amadora e perde tempo de gestão), centralizando a atração e triagem em especialistas (RPO/Célula), entregando apenas a decisão final ao gestor.
 
-- Intervenção: `I-40`
+- Intervenção: `I-34`
 - Unidade(s): Todas (Foco em SP)
 - Frente: Reestruturação
 

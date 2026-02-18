@@ -3,9 +3,8 @@
 ## Identificação
 
 - Intervenção: `I-06`
-- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Torniquete
-
+- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 ## O que importa aqui
 
 - O sistema atual cria incentivo para trabalhar doente, o que piora produtividade, aumenta risco sanitário e eleva conflito com liderança.
@@ -27,10 +26,10 @@ Implementar um protocolo local de liberação remunerada para casos agudos (sint
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Colaboradores visivelmente doentes comparecem ao trabalho para não perderem a renda variável integral, operando com baixa produtividade e risco.
-- Descrição: Implementar protocolo local de liberação remunerada para casos agudos (tampão), preservando a renda variável e reduzindo o presenteísmo induzido por punição sistêmica.
-- Objetivo: Criar um mecanismo local de afastamento remunerado para casos agudos enquanto a regra sistêmica não muda.
-- Impacto: Permitindo que o doente vá para casa sem punição, protege-se a equipe do contágio e demonstra-se humanidade, reduzindo a tensão com a chefia.
+- **Tensão:** Colaboradores evitam usar licenças legais para apoiar familiares doentes por medo de impactar a meta financeira da unidade e perder a PLR ("Safe Harbor" inexistente).
+- **Descrição:** Implementar "Porto Seguro" (Safe Harbor) na apuração de margem para utilização da política **REB_EMP_27 (Licença para Cuidar de Familiares)**. Utilização válida (até 5 dias/ano para >2 anos de casa) deve ter seu custo marginal expurgado do cálculo de PLR do Gerente.
+- **Objetivo:** Garantir que o uso desse direito corporativo não puna a unidade (GM) financeiramente, eliminando a barreira invisível de aprovação.
+- **Impacto:** Segurança psicológica para quem tem dependentes doentes e alinhamento com a política global de "Care" da Sodexo.
 
 ## Descrição (doc 08, com adaptações)
 

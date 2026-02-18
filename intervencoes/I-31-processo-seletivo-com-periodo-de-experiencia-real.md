@@ -2,6 +2,9 @@
 
 ## Identificação
 
+- Intervenção: `I-31`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Criar "Job Shadow Obrigatório": candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real ANTES da contratação, eliminando a "seleção reversa" onde quem tem alternativa foge em 15 dias ao ver a realidade (turno, ritmo, clima). Reduz turnover de 45 dias em 60%, economizando R$ 2.500 por contratação falhada.
@@ -26,10 +29,10 @@ Criar "Job Shadow Obrigatório": candidato passa 1 turno completo (6h, remunerad
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Contratação sem validação prévia de fit: profissionais com alternativas desistem em 15 dias ao conhecer a realidade (turno, ritmo, clima). O processo atual não valida fit cultural antes da contratação, elevando turnover inicial. Custo: R$ 2.500 estimados por contratação falhada (admissão + treinamento + rescisão).
-- Descrição: Job Shadow Obrigatório: candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real antes da contratação. Feedback estruturado nos primeiros 15 dias (gestor + colega veterano). Além do job Shadow pré-contratação, instituir a figura do 'Padrinho Veterano' na primeira semana e checkpoints formais de RH no 30º e 60º dia para sustentar o engajamento.
-- Objetivo: Validar o fit cultural ANTES da efetivação e sustentar a adaptação durante os primeiros 90 dias.
-- Impacto: Reduz o turnover de primeiros 90 dias e poupa energia da equipe com treinamentos de baixa conversão.
+- **Tensão:** Contratação sem validação prévia de fit: profissionais com alternativas desistem em 15 dias ao conhecer a realidade (turno, ritmo, clima). O processo atual não valida fit cultural antes da contratação, elevando turnover inicial. Custo: R$ 2.500 estimados por contratação falhada (admissão + treinamento + rescisão). 40% do turnover ocorre nos primeiros 3 meses. O "Padrinho" existe no papel mas não na prática. O novato é "jogado na fogueira" e desiste em 45 dias.
+- **Descrição:** Job Shadow Obrigatório: candidato passa 1 turno completo (6h, remunerado R$ 80) acompanhando a rotina real antes da contratação. Feedback estruturado nos primeiros 15 dias (gestor + colega veterano). Se desistir no Shadow: sem custo de rescisão. Se ficar: já sabe o que esperar. Programa estruturado de 90 dias: (1) **Job Shadow pré-contratação** (1 dia remunerado para validar fit); (2) **Kit Boas Vindas Real** (Uniforme novo, não herdado); (3) **Padrinho com Incentivo** (Veterano ganha folha/prêmio se afilhado completar 90 dias, usando a política de campanhas).
+- **Objetivo:** Validar o fit cultural e operacional ANTES da efetivação.
+- **Impacto:** Reduz o turnover de primeiros 45 dias e poupa energia da equipe com treinamentos de baixa conversão. Além do Job Shadow pré-contratação, instituir a figura do 'Padrinho Veterano' na primeira semana e checkpoints formais de RH no 30º e 60º dia.
 
 ## Descrição (doc 08, com adaptações)
 

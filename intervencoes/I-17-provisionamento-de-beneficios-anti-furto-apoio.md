@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-17`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Substituir a "polícia de estoque" (cara e ineficiente) por um "contrato de prosperidade compartilhada": a redução comprovada das perdas (quebras/furtos) financia automaticamente um upgrade na qualidade da alimentação do próprio time. Alinha o interesse individual (comer melhor) com o da empresa (perder menos).
 
-- Intervenção: `I-16`
+- Intervenção: `I-17`
 - Unidade(s): Cajamar | Guarulhos Food
 - Frente: Descompressão
 
@@ -25,10 +28,10 @@ Substituir a "polícia de estoque" (cara e ineficiente) por um "contrato de pros
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O consumo não autorizado de alimentos muitas vezes não é criminal, é compensatório ("salário emocional informal"). Combatê-lo com vigilância cria uma dinâmica contraproducente que destrói o clima.
-- Descrição: Criação de um "Fundo de Melhoria" abastecido pela variação positiva do CMV Teórico vs Real. Se a sobra técnica aumenta (menos desperdício), o time ganha café da manhã premium, churrasco mensal ou itens nobres. O próprio grupo passa a vigiar o desperdício para não perder o bônus.
-- Objetivo: Substituir a vigilância punitiva por um mecanismo de pressão social e benefício compartilhado.
-- Impacto: Redução de perdas operacionais e fortalecimento da integridade do grupo através de um incentivo positivo tangível, aplicado apenas em unidades com problemas crônicos de perda.
+- **Tensão:** O "furto de sobrevivência" (comer escondido) e a falta de reconhecimento tangível degradam a integridade do time. A vigilância punitiva destrói o clima.
+- **Descrição:** Criar linha de **Provisionamento de Benefícios** no orçamento para cobrir itens de apoio (café da manhã reforçado, itens de higiene) e reconhecimento. Reconhecer que parte do "furto" é carência material e tratá-la com suporte, não polícia.
+- **Objetivo:** Reduzir a necessidade do furto por subsistência e melhorar a percepção de cuidado.
+- **Impacto:** Redução de perdas de estoque (CMV) e aumento da dignidade no ambiente de trabalho.
 
 ## Descrição (doc 08, com adaptações)
 

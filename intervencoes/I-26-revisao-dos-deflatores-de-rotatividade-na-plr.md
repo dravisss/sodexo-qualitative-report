@@ -2,6 +2,9 @@
 
 ## Identificação
 
+- Intervenção: `I-26`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 ## Tese (o que defender)
@@ -11,10 +14,10 @@ Os Gerentes de Unidade (GUs) estão presos em um "Limbo de Política". Documento
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** **Limbo de Política.** O Diretor (meta Regrettable) cobra a "melhoria da equipe", mas a regra do GU (Total) cobra "imobilismo". O GU sabe que precisa demitir o funcionário de baixo desempenho, mas se o fizer, perde 10% da sua remuneração variável. Resultado: "Cegueira Deliberada" e manutenção de quadros medíocres.
-- **Descrição:** Unificação da regra de PLR: O que vale para o chefe (GO) deve valer para o barco (GU). Alterar o deflator de "Turnover Total" para "Regrettable Turnover" (saídas indesejadas de alta performance). Demissões de saneamento (baixa performance/fit) tornam-se neutras para o bônus. **Princípio de Isonomia Vertical.**
-- **Objetivo:** Alinhar o incentivo financeiro à necessidade operacional de saneamento da base.
-- **Impacto:** Destravamento imediato das decisões de desligamento represadas. Renovação da qualidade técnica da equipe sem punição financeira ao gestor.
+- **Tensão:** **Limbo de Política.** A Liderança (FY26) já migrou para a meta inteligente de "Regrettable Turnover" e o Operacional para "Absenteísmo". O GU, excluído de ambos, permanece refém do "Turnover Total" (histórico). Isso cria um curto-circuito onde o GO cobra renovação, mas a regra do GU cobra imobilismo.
+- **Descrição:** Isonomia Vertical Imediata: Estender a métrica de "Regrettable Turnover" para o nível de Gerente de Unidade, eliminando a punição por demissões de saneamento. O que é neutro para o Diretor não pode ser punitivo para o Gerente.
+- **Objetivo:** Desbloquear a gestão da ponta para realizar as trocas necessárias sem medo de perder o bônus.
+- **Impacto:** Se o gerente não for punido por renovar a equipe, ele agirá mais rápido para substituir peças que não funcionam.
 
 ## Modelo Lógico de Simulação Financeira (Custo da Inação)
 

@@ -2,10 +2,9 @@
 
 ## Identificação
 
-- Intervenção: `I-08`
-- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
+- Intervenção: `I-09`
 - Frente: Descompressão
-
+- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 ## O que importa aqui
 
 - “Veteranos” concentram conhecimento tácito e estabilidade operacional, mas sofrem mais quando a operação usa esforço físico como variável de ajuste.
@@ -26,10 +25,10 @@ Implantar uma regra explícita de escala que proteja veteranos e pessoas com res
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Colaboradores veteranos/idosos expostos à mesma carga física dos jovens, resultando em afastamentos crônicos e perda de conhecimento tácito.
-- Descrição: Regra explícita de escala que protege veteranos e restrições médicas, redistribuindo tarefas de alto impacto para evitar agravamento de lesões e preservar conhecimento tácito.
-- Objetivo: Preservar a saúde física dos colaboradores mais antigos, deslocando-os para funções de menor impacto.
-- Impacto: Protegendo fisicamente os veteranos, reduz-se a taxa de afastamento por LER/DORT e valoriza-se o tempo de casa.
+- **Tensão:** Colaboradores veteranos (idosos) acumulam desgaste físico silencioso. A gestão só percebe quando ocorre um afastamento grave (falha reativa).
+- **Descrição:** Instituir ritual de auditoria/monitoramento trimestral focado na saúde e ergonomia dos veteranos (>60 anos ou >10 anos casa). Check-up focado em LER/DORT e adequação do posto de trabalho.
+- **Objetivo:** Monitorar ativamente a saúde da força de trabalho sênior para prevenir lesões irreversíveis.
+- **Impacto:** Redução de afastamentos de longa duração e demonstração de cuidado com quem construiu a empresa.
 
 ## Descrição (doc 08, com adaptações)
 

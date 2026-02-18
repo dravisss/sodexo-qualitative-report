@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-23`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Criar "Reserva Protegida para Conformidade" (linha orçamentária blindada e auditável), reconhecendo que itens de conformidade não podem competir com outras despesas no curto prazo sob pena de gerar passivo oculto (NR/CLT) que custa 10x mais depois.
 
-- Intervenção: `I-20`
+- Intervenção: `I-23`
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação
 
@@ -26,10 +29,10 @@ Criar "Reserva Protegida para Conformidade" (linha orçamentária blindada e aud
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Quando a unidade aperta o orçamento, o primeiro corte é no "não urgente": EPI, uniformes, pequenos reparos. Três meses depois, o problema vira autuação do Ministério do Trabalho ou acidente registrado. O barato saiu caro.
-- Descrição: Criar conta "Essenciais Blindados" (5% do Opex) com lista fechada (EPIs, uniformes, extintores, reparos críticos NR), prestação de contas mensal via NF/foto, e auditoria trimestral. Quem tentar usar para não-essencial perde a verba no mês seguinte (punição automática).
-- Objetivo: Estabelecer verba protegida para reparos/itens essenciais (com critérios e trilha), impedindo cortes silenciosos.
-- Impacto: Menor risco NR/EPI, menos paradas por manutenção crítica, menos improviso e menor desgaste operacional.
+- **Tensão:** Pequenos reparos (torneiras, tomadas) são ignorados por falta de verba imediata, degradando o ambiente e gerando multas maiores no futuro.
+- **Descrição:** Estabelecer linha de **Provisionamento Mandatório para Manutenção** no orçamento. A verba deve ser carimbada para conservação predial e equipamentos, blindada de cortes para atingimento de meta de lucro puramente financeiro.
+- **Objetivo:** Garantir a conservação do ativo e as condições de trabalho.
+- **Impacto:** Ambientes de trabalho funcionais e dignos, reduzindo o estresse operacional causado por infraestrutura quebrada.
 
 ## Descrição (doc 08, com adaptações)
 

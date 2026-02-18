@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-25`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Criar "Registro de Auditoria de Subpapéis" (rodízio semanal documentado), onde cada ASG/OSG tem limite formal de carga crítica (ex: máximo 3 dias/semana em tarefas pesadas) e exceções são registradas como "Incidente de Subdimensionamento", forçando a operação a encarar que a "flexibilidade" mascara falta de gente.
 
-- Intervenção: `I-22`
+- Intervenção: `I-25`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação
 
@@ -26,10 +29,10 @@ Criar "Registro de Auditoria de Subpapéis" (rodízio semanal documentado), onde
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O cargo de ASG/OSG virou sinônimo de "quem faz o que ninguém quer". Resultado: desgaste físico (LER/DORT), percepção de exploração e turnover acelerado nessa função.
-- Descrição: Mapear tarefas ASG/OSG e criar 3 subpapéis (Limpeza Pesada, Conservação Rotina, Apoio Reposição). Regra: rodízio semanal obrigatório, registrado em planilha simples. Se alguém ficar >3 dias em "Pesada", abrir ticket de "Subdimensionamento Detectado". Governança: GU audita mensalmente; se não houver rotatividade, perde autonomia de escala.
-- Objetivo: Organizar a carga de trabalho de ASG para reduzir desgaste físico e aumentar a previsibilidade operacional.
-- Impacto: Rotacionando as funções internamente, dilui-se o risco ergonômico e melhora-se a percepção de justiça sem necessidade de alteração formal de cargo.
+- **Tensão:** O cargo de ASG/OSG virou sinônimo de "quem faz o que ninguém quer". Resultado: desgaste físico (LER/DORT), percepção de exploração e turnover acelerado nessa função.
+- **Descrição:** Mapear tarefas ASG/OSG e criar 3 subpapéis (Limpeza Pesada, Conservação Rotina, Apoio Reposição). Regra: rodízio semanal obrigatório, registrado em planilha simples. Se alguém ficar >3 dias em "Pesada", abrir ticket de "Subdimensionamento Detectado". Governança: GU audita mensalmente; se não houver rotatividade, perde autonomia de escala.
+- **Objetivo:** Organizar a carga de trabalho de ASG para reduzir desgaste físico e aumentar a previsibilidade operacional.
+- **Impacto:** Rotacionando as funções internamente, dilui-se o risco ergonômico e melhora-se a percepção de justiça sem necessidade de alteração formal de cargo.
 
 ## Descrição (doc 08, com adaptações)
 

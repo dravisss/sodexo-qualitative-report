@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-38`
+- Frente: Reposicionamento
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Implementar Fretado gratuito (3 pontos de embarque) + Escala 5x2 para equiparar (ao menos parcialmente) ao benchmark local: Amazon/Mercado Livre oferecem fretado + escala 4x3 + R$ 200 a mais, tornando a vaga Sodexo "invisível" para quem mora a >1h de transporte público. Resultado: só se candidata quem está desempregado há meses.
 
-- Intervenção: `I-29`
+- Intervenção: `I-38`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reposicionamento
 
@@ -26,10 +29,10 @@ Implementar Fretado gratuito (3 pontos de embarque) + Escala 5x2 para equiparar 
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Cajamar/Guarulhos Food ficam a >1h de transporte público das áreas residenciais populares. Competição com Amazon/Mercado Livre (fretado grátis + escala 4x3) torna a vaga Sodexo "invisível" no mercado. Resultado: só se candidata quem está desempregado há meses.
-- Descrição: Fretado gratuito com 3 pontos de embarque em áreas residenciais (Guarulhos Centro, Cumbica, Jardim São Paulo). Escala 5x2 (vs 6x1 atual). Benchmark: Amazon oferece fretado + escala 4x3 + R$ 200 a mais. Sodexo precisa equiparar ao menos parcialmente.
-- Objetivo: Criar um diferencial logístico e de qualidade de vida que torne a vaga desejável.
-- Impacto: Facilitando o acesso e melhorando a escala, a empresa passa a competir por um pool de talentos que hoje a ignora.
+- **Tensão:** Cajamar/Guarulhos Food ficam a >1h de transporte público das áreas residenciais populares. Competição com Amazon/Mercado Livre (fretado grátis + escala 4x3) torna a vaga Sodexo "invisível" no mercado. Resultado: só se candidata quem está desempregado há meses.
+- **Descrição:** Fretado gratuito com 3 pontos de embarque em áreas residenciais (Guarulhos Centro, Cumbica, Jardim São Paulo). Escala 5x2 (vs 6x1 atual). Benchmark: Amazon oferece fretado + escala 4x3 + R$ 200 a mais. Sodexo precisa equiparar ao menos parcialmente.
+- **Objetivo:** Criar um diferencial logístico e de qualidade de vida que torne a vaga desejável.
+- **Impacto:** Facilitando o acesso e melhorando a escala, a empresa passa a competir por um pool de talentos que hoje a ignora.
 
 ## Descrição (doc 08, com adaptações)
 

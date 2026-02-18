@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-14`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Compartilhar as "regras de travamento" do sistema (Budget travado, normas de Compliance, alçadas de compra) com a equipe, deslocando o antagonismo da figura do "Gerente Mau" para a "Regra do Jogo", criando um inimigo comum (a restrição) e legitimando a necessidade de priorização dolorosa.
 
-- Intervenção: `I-13`
+- Intervenção: `I-14`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Descompressão
 
@@ -25,10 +28,10 @@ Compartilhar as "regras de travamento" do sistema (Budget travado, normas de Com
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O time operacional projeta no Gerente Local a onipotência de dono ("ele não compra porque não quer"), desconhecendo que ele é um gestor com autonomia limitada por travas sistêmicas e orçamentos rígidos.
-- Descrição: Sessão de "Open Book Simplificado": explicar didaticamente o que é CAPEX vs OPEX, por que o uniforme atrasa (processo de compras) e qual a verba real disponível. Transformar reclamações em educação financeira.
-- Objetivo: Compartilhar o dilema orçamentário com a equipe para alinhar expectativas.
-- Impacto: Ao expor a regra do jogo, desloca-se a frustração da equipe do gestor individual para as restrições do sistema, unindo o time.
+- **Tensão:** O time operacional projeta no Gerente Local a onipotência de dono ("ele não compra porque não quer"), desconhecendo que ele é um gestor com autonomia limitada por travas sistêmicas e orçamentos rígidos.
+- **Descrição:** Sessão de "Open Book Simplificado": explicar didaticamente o que é CAPEX vs OPEX, por que o uniforme atrasa (processo de compras) e qual a verba real disponível. Transformar reclamações em educação financeira.
+- **Objetivo:** Compartilhar o dilema orçamentário com a equipe para alinhar expectativas.
+- **Impacto:** Ao expor a regra do jogo, desloca-se a frustração da equipe do gestor individual para as restrições do sistema, unindo o time.
 
 ## Descrição (doc 08, com adaptações)
 

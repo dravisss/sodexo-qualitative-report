@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-30`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Instituir rito trimestral de auditoria por amostragem (10% folha/unidade, foco em rescisões e horas extras) com checklist (ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias), publicação anônima de % conformidade e prazo de correção, cortando pela raiz a "lenda urbana de roubo" que descamba para Sindicato/Justiça (R$ 15k/processo evitável).
 
-- Intervenção: `I-27`
+- Intervenção: `I-30`
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação
 
@@ -24,15 +27,12 @@ Instituir rito trimestral de auditoria por amostragem (10% folha/unidade, foco e
 - Hipótese a validar em execução:
   - uma auditoria trimestral padronizada reduz erros recorrentes e reduz tempo de correção quando houver dono e capacidade de execução.
 
-## Tensão / Objetivo / Impacto — doc 08
+## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Erro de folha (hora extra sumida, desconto fantasma, férias lançadas errado) gera percepção de erros sistemáticos não validada, desmoraliza RH e escala para Sindicato/Justiça. Custo estimado: R$ 15k por processo trabalhista evitável.
-- Descrição: Rito trimestral de auditoria por amostragem (10% da folha/unidade, priorizando rescisões e horas extras). Checklist: conferir ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias. Resultado publicado em mural (anônimo) com % de conformidade e prazo de correção. Meta: >95% conformidade.
-  *   **Atualização (Transparência Digital):** Implementar piloto de tecnologia ('Portal do Colaborador' via App ou Quiosque) que proporcione autonomia ao operacional para visualizar espelho de ponto e demonstrativo de pagamento, mitigando a dependência da gestão local.
-- Objetivo: Transparência total na remuneração.
-- Impacto: Corrigindo erros recorrentes de folha com trilha pública, reduz-se a desconfiança e o passivo jurídico. Elimina a narrativa de exploração financeira oculta.
-- Objetivo: instituir um rito trimestral de auditoria de folha, com checklist e trilha de correção, para reduzir reincidência.
-- Impacto esperado: menos erros e menos correções emergenciais; maior previsibilidade; redução de escalada informal e conflitos.
+- **Tensão:** Erro de folha (hora extra sumida, desconto fantasma, férias lançadas errado) gera percepção de erros sistemáticos não validada, desmoraliza RH e escala para Sindicato/Justiça. Custo estimado: R$ 15k por processo trabalhista evitável.
+- **Descrição:** Rito trimestral de auditoria por amostragem (10% da folha/unidade, priorizando rescisões e horas extras). Checklist: conferir ponto vs holerite, adicional noturno, banco de horas, verbas rescisórias. Resultado publicado em mural (anônimo) com % de conformidade e prazo de correção. Meta: >95% conformidade. Atribuir a responsabilidade de **Auditoria Contínua de Folha** ao nível regional (GCE/GO). Monitoramento constante, não apenas trimestral, para identificar discrepâncias sistêmicas antes do pagamento.
+- **Objetivo:** Transparência total na remuneração.
+- **Impacto:** Corrigindo erros recorrentes de folha com trilha pública, reduz-se a desconfiança e o passivo jurídico. Elimina a narrativa de exploração financeira oculta. Implementar piloto de tecnologia ('Portal do Colaborador' via App ou Quiosque) que proporcione autonomia ao operacional para visualizar espelho de ponto e demonstrativo de pagamento, mitigando a dependência da gestão local.
 
 ## Descrição
 

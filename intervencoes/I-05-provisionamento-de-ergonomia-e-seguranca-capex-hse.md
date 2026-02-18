@@ -3,9 +3,8 @@
 ## Identificação
 
 - Intervenção: `I-05`
-- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Torniquete
-
+- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 ## O que importa aqui
 
 - Quando o orçamento é curto, a pior decisão é gastar em itens periféricos e manter o núcleo ergonômico e de segurança quebrado.
@@ -22,10 +21,10 @@
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A priorização compulsória de demandas imediatas (equipamentos quebrados) consome 100% da verba de manutenção, deixando zero recursos para reduzir o esforço físico (ergonomia), perpetuando lesões e afastamentos.
-- Descrição: Segregar o orçamento: Manutenção Corretiva (P&L Operacional) vs. Adequação Ergonômica (Fundo Corporativo de HSE ou CAPEX Carimbado). A GU não pode usar verba de ergonomia para consertar geladeira.
-- Objetivo: Garantir investimento perene em redução de esforço físico, independente do caos da manutenção diária.
-- Impacto: Reduz afastamentos por LER/DORT (custo oculto significativo) e mostra aos times que a empresa cuida do corpo deles, não só do equipamento.
+- **Tensão:** A priorização compulsória de demandas imediatas (equipamentos quebrados) consome 100% da verba de manutenção, deixando zero recursos para reduzir o esforço físico (ergonomia), perpetuando lesões e afastamentos.
+- **Descrição:** Segregar o orçamento: Manutenção Corretiva (P&L Operacional) vs. Adequação Ergonômica (Fundo Corporativo de HSE ou CAPEX Carimbado). A GU não pode usar verba de ergonomia para consertar geladeira.
+- **Objetivo:** Garantir investimento perene em redução de esforço físico, independente do caos da manutenção diária.
+- **Impacto:** Reduz afastamentos por LER/DORT (custo oculto significativo) e mostra aos times que a empresa cuida do corpo deles, não só do equipamento.
 
 ## Descrição (doc 08, com adaptações)
 

@@ -3,9 +3,8 @@
 ## Identificação
 
 - Intervenção: `I-04`
+- Frente: Torniquete
 - Unidade(s): Cajamar Food
-- Frente: Reestruturação
-
 ## O que importa aqui
 
 - Em contratos com mecanismos de reajuste e retroativos, falhas recorrentes de infraestrutura/manutenção viram disputa difusa e custo oculto.
@@ -20,12 +19,12 @@
 - Hipótese a validar em execução:
   - Uma notificação bem desenhada, com perímetro, prazos e evidência de conclusão, reduz pendências críticas de manutenção e diminui improviso operacional.
 
-## Tensão / Objetivo / Impacto — doc 08
+## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Equipamentos críticos parados por inércia da manutenção do cliente. A GU não cobra formalmente por medo de conflito político ("NPS").
-- Descrição: Instituir protocolo de "Execução Subsidiária": registro de chamado -> estouro de SLA (48h) -> Sodexo executa reparo -> Cobrança automática no faturamento (Aditivo de Service Level).
-- Objetivo: Garantir continuidade operacional sem depender da boa vontade da manutenção do cliente e sem expor politicamente a gerência local.
-- Impacto: Reduz tempo de equipamento parado e transfere o ônus da ineficiência para quem de fato falhou (cliente), preservando a relação comercial local.
+- **Tensão:** Equipamentos críticos parados por inércia da manutenção do cliente. A GU não cobra formalmente por medo de conflito político ("NPS").
+- **Descrição:** Instituir protocolo de "Execução Subsidiária": registro de chamado -> estouro de SLA (48h) -> Sodexo executa reparo -> Cobrança automática no faturamento (Aditivo de Service Level).
+- **Objetivo:** Garantir continuidade operacional sem depender da boa vontade da manutenção do cliente e sem expor politicamente a gerência local.
+- **Impacto:** Reduz tempo de equipamento parado e transfere o ônus da ineficiência para quem de fato falhou (cliente), preservando a relação comercial local.
 
 ## Descrição
 

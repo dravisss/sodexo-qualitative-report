@@ -2,25 +2,19 @@
 
 ## Identificação
 
-- **Intervenção:** I-44
-- **Nome:** Pequeno Caixa Express (Red Card)
-- **Frente:** Governança (Agilidade)
-- **Status:** Em Elaboração
+- Intervenção: `I-36`
+- Frente: Reestruturação
 - **Unidade:** Todas (Foco em Cajamar/Guarulhos)
-
 ## Tese (o que defender)
 
 A centralização excessiva de compras trava a resolução de pequenos problemas operacionais (gás, torneira pingando, liquidificador quebrado), gerando degradação do ambiente e perda de produtividade desproporcional ao custo do reparo. Empoderar o Gerente de Unidade (GU) com um fundo de pequeno caixa ágil elimina esses gargalos e restaura a dignidade da operação.
 
-## Tensão / Objetivo / Impacto
+## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** **Micro-Colapsos Diários.** A burocracia de compras (SLA de 5 a 15 dias) torna impossível resolver urgências de baixo valor (< R$ 500). Resultado: "cozinha de guerra" permanente.
-- **Descrição:** Instituir o **Fundo Rotativo / Cartão Corporativo Pré-Pago (Red Card)**:
-    - **Limite:** R$ 500,00 por evento / Teto de R$ 2.000,00 mensais.
-    - **Uso:** Exclusivo para "Reparos de Bloqueio" e insumos emergenciais.
-    - **Prestação de Contas:** App Digital (foto + NF) em 24h.
-- **Objetivo:** Agilidade na resolução de micro-problemas que afetam o dia a dia.
-- **Impacto:** Fim da degradação acumulada e aumento da moral da equipe (o gestor resolve).
+- **Tensão:** A burocracia de compras trava reparos simples (gás, torneira, registro) por dias, degradando a operação e o clima por valores irrisórios (< R$ 500).
+- **Descrição:** Fundo Rotativo ou Cartão Pré-Pago na mão do Gerente de Unidade (Limite R$ 2.000/mês, R$ 500/evento) exclusivo para "Reparos de Bloqueio". Prestação de contas digital em 24h (foto + NF). Falha na prestação bloqueia o cartão e desconta em folha.
+- **Objetivo:** Empoderar o GU para resolver o "vazamento da pia" na hora, sem abrir chamado no sistema central.
+- **Impacto:** Fim da degradação acumulada por pequenos defeitos e aumento da sensação de autonomia do líder local.
 
 ## Mecânica da Intervenção
 

@@ -2,10 +2,9 @@
 
 ## Identificação
 
-- Intervenção: `I-10`
-- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
+- Intervenção: `I-11`
 - Frente: Descompressão
-
+- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 ## O que importa aqui
 
 - Reconhecimento não resolve estrutura, mas reduz sensação de invisibilidade e pode estabilizar o microclima.
@@ -25,10 +24,10 @@ Criar um calendário mínimo e previsível de ritos de reconhecimento (barato, p
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Sensação generalizada de invisibilidade ("só lembram de mim quando erro") e falta de reforço positivo.
-- Descrição: Calendário mínimo e previsível de ritos de reconhecimento (barato e padronizado) para reduzir a sensação de invisibilidade e estabilizar o microclima.
-- Objetivo: Estabelecer momentos previsíveis de celebração e visibilidade positiva para a equipe.
-- Impacto: Criando marcos positivos regulares, quebra-se a monotonia do "trabalho invisível" e melhora-se o microclima da unidade.
+- **Tensão:** Celebrações improvisadas ("vaquinha") ou inexistentes geram sensação de invisibilidade. A falta de budget específico faz com que o GU pague do bolso ou ignore datas importantes.
+- **Descrição:** Calendário anual de ritos (Aniversariantes, Tempo de Casa, Metas) com **provisionamento orçamentário antecipado** (linha específica de "Bem-Estar" no budget). Monitoramento da execução via evidência fotográfica mensal.
+- **Objetivo:** Garantir recursos e execução dos ritos de reconhecimento, profissionalizando a celebração.
+- **Impacto:** Estabilidade do microclima e fim da dependência da "generosidade" pessoal do gerente.
 
 ## Descrição (doc 08, com adaptações)
 

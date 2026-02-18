@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-20`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisório (multas e encargos) em um fundo corporativo ("Bad Bank" de RH), permitindo que o gestor local demita baseado em critérios técnicos (competência/fit) sem implodir o P&L da unidade no mês da decisão.
 
-- Intervenção: `I-17`
+- Intervenção: `I-20`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM | Transversal
 - Frente: Reestruturação
 
@@ -27,10 +30,10 @@ Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisó
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O P&L da unidade pune a correção de rumo. O gerente sabe que precisa demitir o funcionário tóxico, mas se o fizer, perde sua meta financeiro no mês. Resultado: paga para manter o problema.
-- Descrição: Criar conta centralizada para absorver demissões estruturais aprovadas (limite de X% do quadro/ano). A unidade paga o salário corrente, mas o "custo de morte" (rescisão) é assumido pela matriz para sanear a operação.
-- Objetivo: Remover a barreira financeira que impede a gerência local de renovar sua equipe.
-- Impacto: Se demitir não custa o bônus do gerente, a renovação saudável da equipe acontece, quebrando o ciclo de retenção de profissionais insatisfeitos.
+- **Tensão:** A unidade não demite quem precisa sair porque não tem budget para rescisão no mês. O problema se arrasta, contaminando a equipe.
+- **Descrição:** Incluir linha de **Provisionamento de Rescisão** no orçamento anual da unidade (Budget Operacional), reportando mensalmente o saldo à GO/Sodexo. O custo da demissão deixa de ser uma "surpresa" que mata a meta do mês e passa a ser um custo planejado e monitorado.
+- **Objetivo:** Garantir recursos disponíveis para a renovação saudável da equipe quando necessário.
+- **Impacto:** Destrava a gestão de pessoas, permitindo que o gestor tome decisões difíceis sem comprometer inviabilizar o resultado financeiro imediato.
 
 ## Descrição (doc 08, com adaptações)
 

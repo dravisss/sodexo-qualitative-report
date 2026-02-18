@@ -2,18 +2,21 @@
 
 ## Identificação
 
+- Intervenção: `I-33`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Restituir a autoridade e o pacote de incentivos do Gerente de Unidade (GU) ao titular real da função, removendo distorções onde administrativos/suporte ocupam a vaga para fins salariais, o que infla a folha e dilui a governança.
 
-- Intervenção: `I-38`
+- Intervenção: `I-33`
 - Unidade(s): Todas
 - Frente: Reestruturação
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** A nomenclatura de cargo "Gerente de Unidade" (GU) tem sido utilizada para concessão de progressão salarial a perfis administrativos ou técnicos, distorcendo a estrutura de incentivos (PLR) e a clareza de papéis.
-- **Descrição:** Revisão da estrutura de cargos: Restringir a função de GU ao titular com responsabilidade integral pelo site. Migrar perfis administrativos/apoio para as carreiras corretas (Analista/Líder/Assistente), adequando o pacote de remuneração.
+- **Tensão:** A nomenclatura de cargo "Gerente de Unidade" (GU) tem sido utilizada para conceder progressão salarial a perfis administrativos ou técnicos, distorcendo a estrutura de incentivos (PLR) e a clareza de papéis nas unidades.
+- **Descrição:** Restringir a função de GU ao titular com responsabilidade integral pelo site. Migrar perfis administrativos/apoio para as carreiras corretas (Analista/Líder/Assistente), adequando o pacote de remuneração.
 - **Objetivo:** Garantir a coerência da estrutura organizacional e direcionar os incentivos de gestão para as lideranças efetivas.
 - **Impacto:** Racionalização da folha de pagamento e maior clareza nas responsabilidades.
 

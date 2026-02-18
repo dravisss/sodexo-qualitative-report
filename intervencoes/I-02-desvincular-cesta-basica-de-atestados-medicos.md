@@ -3,9 +3,8 @@
 ## Identificação
 
 - Intervenção: `I-02`
-- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Torniquete
-
+- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 ## O que importa aqui
 
 - A punição financeira por adoecer empurra para o presenteísmo e aumenta risco sanitário e conflito com liderança.
@@ -26,11 +25,10 @@
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O uso da Cesta Básica como mecanismo disciplinar para punir atestados gera presenteísmo de doentes (risco de contágio) e insegurança alimentar, sem resolver o absenteísmo real.
-- Descrição: Revisar a política para que a perda do benefício ocorra apenas em **faltas injustificadas**. Para não deixar a gestão sem instrumentos contra abusos, implementar paralelamente o "Score de Assiduidade" (ferramenta de gestão de frequência baseada em dados).
-A desvinculação da cesta básica permanece válida para apoiar quem adoece, mas com um limite de monitoramento (ex: até 3 eventos/ano). Ao atingir o gatilho, o benefício deixa de ser automático e passa por validação gerencial.
-- Objetivo: Eliminar o incentivo perverso de "trabalhar doente para não perder benefício", separando saúde de disciplina.
-- Impacto: Reduz infecções cruzadas na equipe e muda o foco da gestão: de fiscalização de atestados para gestão de engajamento.
+- **Tensão:** O uso da Cesta Básica como mecanismo disciplinar para punir atestados gera presenteísmo de doentes (risco de contágio) e insegurança alimentar, sem resolver o absenteísmo real.
+- **Descrição:** Revisar a política para que a perda do benefício ocorra apenas em **faltas injustificadas**. Para não deixar a gestão sem instrumentos contra abusos, implementar paralelamente o "Score de Assiduidade". A desvinculação da cesta básica permanece válida para apoiar quem adoece, mas com um limite de monitoramento (ex: até 3 eventos/ano). Ao atingir o gatilho, o benefício deixa de ser automático e passa por validação gerencial.
+- **Objetivo:** Eliminar o incentivo perverso de "trabalhar doente para não perder benefício", separando saúde de disciplina.
+- **Impacto:** Reduz infecções cruzadas na equipe e muda o foco da gestão: de fiscalização de atestados para gestão de engajamento.
 
 ## Descrição (doc 08, com adaptações)
 

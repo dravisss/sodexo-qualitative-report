@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-12`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Formalizar um mecanismo de reciprocidade (Banco de Folgas Local) que converta a inevitável sobrecarga de cobertura (horas extras) em moeda de flexibilidade (crédito de tempo), retirando a gestão de escalas da ilegalidade informal e reduzindo o absenteísmo defensivo ("vou faltar senão não resolvo").
 
-- Intervenção: `I-11`
+- Intervenção: `I-12`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Descompressão
 
@@ -25,10 +28,10 @@ Formalizar um mecanismo de reciprocidade (Banco de Folgas Local) que converta a 
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A rigidez contratual (6x1) cria um jogo de soma zero: ou o colaborador perde o dia (punição) ou a operação para. Sem válvula de escape, a "falta estratégica" vira a única ferramenta de gestão da vida pessoal.
-- Descrição: Instituir um "Wallet de Horas" gerido localmente pela GU, onde coberturas de furos (crédito) geram direito automático a saídas antecipadas ou folgas agendadas (débito). Transforma a "ajuda" em crédito bancável auditável.
-- Objetivo: Oferecer flexibilidade de horário em troca de engajamento, sem custo financeiro adicional.
-- Impacto: Dando autonomia para o colaborador gerir suas emergências, aumenta-se a reciprocidade e o engajamento com a cobertura de turnos.
+- **Tensão:** A prática informal de "banco de horas de boca" (Wallet) gera desconfiança e passivo trabalhista oculto. Funcionários rejeitam a informalidade ("me deve e não paga").
+- **Descrição:** Formalizar o tratamento de horas excedentes: Prioridade absoluta para o **Pagamento de Horas Extras** em folha. Onde o orçamento não permitir, instituir Banco de Horas Regulamentado com regras claras de compensação (D+30 máximo) e visibilidade de saldo no ponto.
+- **Objetivo:** Eliminar o "mercado informal de horas" e garantir a justa remuneração ou compensação pelo esforço extra.
+- **Impacto:** Redução de passivo trabalhista e aumento da confiança na relação de troca (esforço x recompensa).
 
 ## Descrição (doc 08, com adaptações)
 

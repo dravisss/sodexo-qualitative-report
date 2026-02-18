@@ -56,4 +56,4 @@ Fretado gratuito com 3 pontos de embarque em áreas residenciais (Guarulhos Cent
 
 - `evidencias/banco/answers.json` — submission_id `b6495e4d-3278-47a5-8ab8-a069fe99c6f5`; answer_id `305dd3b5-12ad-4a0c-a829-8ac4e58b3d10`; field_id `question_34`.
 - `Refined/mapeamento_tensoes_intervencoes.md`, linhas 34–36.
-- `intervencoes/I-32-fretado-e-escalas-competitivas.md` (apêndice de rastreabilidade)
+- `intervencoes/I-38-fretado-e-escalas-competitivas.md` (apêndice de rastreabilidade)

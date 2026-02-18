@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-29`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Criar "Fila Única RH" com SLA por criticidade (Crítico 3 dias, Normal 7 dias, Rotina 15 dias), escalonamento automático (atraso >48h = alerta BP, >5 dias = escala regional) e evidência obrigatória de fechamento, transformando RH/DP de "caixa-preta" em processo rastreável.
 
-- Intervenção: `I-26`
+- Intervenção: `I-29`
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação
 
@@ -24,12 +27,12 @@ Criar "Fila Única RH" com SLA por criticidade (Crítico 3 dias, Normal 7 dias, 
 - Hipótese a validar em execução:
   - um SLA simples, com triagem e prioridade, reduz retrabalho na operação e melhora previsibilidade, desde que exista capacidade e governança de escalonamento.
 
-## Tensão / Objetivo / Impacto — doc 08
+## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Processos de RH/DP com baixa visibilidade de status: folha errada demora semanas para corrigir, férias somem do sistema, ticket de uniforme fica no limbo. Resultado: gestor local vira "despachante" informal de RH, perdendo 2h/dia resolvendo burocracias.
-- Descrição: Fila Única RH com SLA por criticidade: Crítico (folha/rescisão) = 3 dias úteis, Normal (férias/benefícios) = 7 dias, Rotina (dúvidas) = 15 dias. Escalonamento automático: atraso >48h = alerta ao BP, >5 dias = escala RH regional. Evidência de fechamento obrigatória (print/protocolo).
-- Objetivo: Restaurar a confiança nos processos administrativos.
-- Impacto: Reduz a ansiedade financeira e a percepção de descaso.
+- **Tensão:** Processos de RH/DP com baixa visibilidade de status: folha errada demora semanas para corrigir, férias somem do sistema, ticket de uniforme fica no limbo. Resultado: gestor local vira "despachante" informal de RH, perdendo 2h/dia resolvendo burocracias.
+- **Descrição:** Fila Única RH com SLA por criticidade: Crítico (folha/rescisão) = 3 dias úteis, Normal (férias/benefícios) = 7 dias, Rotina (dúvidas) = 15 dias. Escalonamento automático: atraso >48h = alerta ao BP, >5 dias = escala RH regional. Evidência de fechamento obrigatória (print/protocolo).
+- **Objetivo:** Restaurar a confiança nos processos administrativos.
+- **Impacto:** Reduz a ansiedade financeira e a percepção de descaso.
 
 ## Descrição
 

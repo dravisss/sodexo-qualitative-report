@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-13`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Instituir um rito de escuta "imune à retaliação" conectado obrigatoriamente a um Backlog Público de Resolução, quebrando o ciclo de "reclamação de corredor" e cinismo gerado por pesquisas de clima anônimas que nunca geram ação prática na ponta.
 
-- Intervenção: `I-12`
+- Intervenção: `I-13`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Descompressão
 
@@ -26,10 +29,10 @@ Instituir um rito de escuta "imune à retaliação" conectado obrigatoriamente a
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: O acúmulo de "micro-agressões operacionais" (torneira vazando, farda rasgada) é ignorado pela gerência focada em P&L, gerando a sensação de que "a empresa não se importa", o que explode em sabotagem silenciosa.
-- Descrição: Roda de Conversa Mensal com ata pública e status obrigatório ("Feito", "Em Andamento", "Negado com Justificativa"). A ausência de resposta gera escalonamento automático para o Regional. O foco sai da "terapia" para a "resolução de pendências".
-- Objetivo: Abrir um canal oficial e recorrente de escuta ativa e fluxo de informação bottom-up.
-- Impacto: Se as pessoas se sentem ouvidas, a ansiedade diminui e problemas operacionais são identificados antes de virarem crises.
+- **Tensão:** Canais formais de denúncia são vistos como "buraco negro". O DDS (Diálogo Diário de Segurança) é um ritual diário subutilizado e mecânico.
+- **Descrição:** Transformar o DDS em ferramenta de **Escuta Ativa e Saúde Mental**. Inserir pautas obrigatórias semanais (enviadas pela Comunicação) sobre bem-estar e abrir espaço para feedback da equipe ("O que está travando nosso trabalho hoje?").
+- **Objetivo:** Utilizar a capilaridade do DDS para monitorar o clima e coletar demandas operacionais antes que virem crise.
+- **Impacto:** Melhora na detecção precoce de burnout e problemas operacionais, sem criar novos rituais burocráticos.
 
 ## Descrição (doc 08, com adaptações)
 

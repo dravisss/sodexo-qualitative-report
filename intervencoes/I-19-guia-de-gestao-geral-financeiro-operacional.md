@@ -2,20 +2,23 @@
 
 ## Identificação
 
+- Intervenção: `I-19`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Combater o "analfabetismo sistêmico" dos gestores que tomam decisões ótimas para o mês (bater meta) mas péssimas para o trimestre (multas e quebras), através de simulações e educação financeira aplicada.
 
-- Intervenção: `I-36`
+- Intervenção: `I-19`
 - Unidade(s): Todas
 - Frente: Descompressão
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** Gestores locais muitas vezes postergam manutenções ou realizam desligamentos sem considerar o custo total (TCO), visando atingir metas de curto prazo. Essa otimização local gera custos globais maiores (multas, processos, quebras complexas).
-- **Descrição:** Programa de educação financeira aplicada ("Guia de Decisão"), demonstrando com cenários reais o impacto de decisões de curto prazo no resultado trimestral. Ex: "A economia de R$ 500 hoje pode gerar custo de R$ 5.000 em 90 dias".
-- **Objetivo:** Instrumentalizar o gerente para decisões financeiras sustentáveis e alinhadas aos objetivos de longo prazo.
-- **Impacto:** Qualificação da tomada de decisão na ponta e redução de custos ocultos decorrentes de má gestão.
+- **Tensão:** Gestores promovidos da operação muitas vezes carecem de visão sistêmica de negócio (Financeiro + Pessoas + Operação).
+- **Descrição:** Desenvolver **Guia de Gestão Geral**: material prático e consultável que integre boas práticas financeiras (TCO, impacto de curto vs longo prazo) com gestão de pessoas e operação.
+- **Objetivo:** Instrumentalizar o GU para tomar decisões de negócio completas, não apenas apagar incêndios.
+- **Impacto:** Liderança local mais qualificada e autônoma, reduzindo a dependência da supervisão regional.
 
 ## Evidências (citações + leitura)
 

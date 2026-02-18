@@ -2,20 +2,23 @@
 
 ## Identificação
 
+- Intervenção: `I-18`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Transformar o ritual diário obrigatório (DDS), hoje burocrático, em um canal de comunicação estratégica "enlatada" (preparada pela matriz) para que o gerente possa disseminar cultura, regras e apoio sem precisar criar conteúdo do zero.
 
-- Intervenção: `I-35`
+- Intervenção: `I-18`
 - Unidade(s): Todas
 - Frente: Descompressão
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** O DDS é um ritual mandatório de alta capilaridade, mas hoje é subutilizado com pautas estritamente operacionais ou burocráticas, perdendo a oportunidade de conexão com a equipe.
-- **Descrição:** Reposicionar o DDS como canal de comunicação estratégica. A Comunicação Interna fornece pautas semanais estruturadas sobre: Transparência (I-13), Saúde Mental, Reconhecimento e Regras de Compliance, facilitando a aplicação pelo gestor.
-- **Objetivo:** Potencializar um ritual existente para disseminar cultura e suporte sem adicionar carga de trabalho à liderança.
-- **Impacto:** Melhoria no fluxo de informação institucional e fortalecimento do vínculo líder-liderado.
+- **Tensão:** Foco excessivo em indicadores financeiros mascara a saúde real da operação (clima, saúde física, riscos).
+- **Descrição:** Expandir o escopo do DDS para incluir indicadores de **Saúde da Operação**: Transparência Financeira (I-13), Reconhecimento, Compliance e Dados de Saúde (afastamentos). O DDS vira o pulso diário da gestão integral.
+- **Objetivo:** Monitorar a saúde do "organismo" operacional diariamente, não apenas a segurança física.
+- **Impacto:** Visão holística da unidade e engajamento da equipe nos resultados globais.
 
 ## Evidências (citações + leitura)
 

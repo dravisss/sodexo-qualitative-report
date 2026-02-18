@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-15`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Implementar um "Contrato de Passagem" físico e assinado entre líderes de turno, onde a aceitação do posto (Insumos + Limpeza) transfere formalmente a responsabilidade, eliminando a "herança de problemas" e a vitimização ("já peguei assim") como desculpa para baixa performance.
 
-- Intervenção: `I-14`
+- Intervenção: `I-15`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Descompressão
 
@@ -25,10 +28,10 @@ Implementar um "Contrato de Passagem" físico e assinado entre líderes de turno
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A ausência de marco zero entre turnos permite que a ineficiência do almoço contamine o jantar (e vice-versa), criando uma cultura de "empurrar com a barriga" e hostilidade tribal entre equipes.
-- Descrição: Checklist de "Aceite de Posto": O líder que entra só assume o turno se o checklist (limpeza, mis-en-place) estiver ok. Se não estiver, abre-se Não Conformidade imediata para o turno anterior. Acaba com a área cinzenta da responsabilidade.
-- Objetivo: Criar responsabilidade compartilhada e fim da "bagunça herdada".
-- Impacto: Reduz o atrito interpessoal e garante início de turno produtivo.
+- **Tensão:** A passagem de bastão desestruturada cria zonas cinzentas de responsabilidade e conflito entre turnos ("deixaram sujo para mim").
+- **Descrição:** Sistematizar rituais existentes (e muitas vezes informais) com checklist padronizado de "Aceite de Posto": Limpeza, Mise-en-place, Ocorrências. O turno seguinte só assume após validar as condições.
+- **Objetivo:** Profissionalizar a transição de responsabilidade, eliminando o "disse-me-disse".
+- **Impacto:** Redução de conflitos interpessoais e garantia de continuidade operacional padronizada.
 
 ## Descrição (doc 08, com adaptações)
 

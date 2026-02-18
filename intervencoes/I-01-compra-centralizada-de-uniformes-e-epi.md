@@ -3,9 +3,8 @@
 ## Identificação
 
 - Intervenção: `I-01`
-- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Torniquete
-
+- Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 ## O que importa aqui
 
 - A falta de uniformes e EPI vira um sinal diário de desvalorização e um risco operacional e jurídico.
@@ -25,10 +24,10 @@
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Colaboradores com vestimenta abaixo do padrão operacional mínimo (ex: 1 uniforme para 6x1) porque a estrutura de incentivos atual desestimula gastos com vestimenta/EPI para proteger metas de curto prazo.
-- Descrição: Retirar a autonomia de compra da unidade, transformando o custo variável em rateio corporativo fixo. Implementar envio automático de kits baseado em gatilhos de admissão (via sistema de RH) e reposição programada, operado por nova célula no CSC.
-- Objetivo: Zerar o déficit permanente de vestimenta e EPI, garantindo que a proteção chegue à ponta independente da vontade ou meta financeira do gerente local.
-- Impacto: Elimina o descontentamento visível, recupera a dignidade do trabalhador e reduz riscos trabalhistas e de segurança.
+- **Tensão:** Colaboradores com vestimenta abaixo do padrão operacional mínimo (ex: 1 uniforme para 6x1) porque a estrutura de incentivos atual desestimula gastos com vestimenta/EPI para proteger metas de curto prazo.
+- **Descrição:** Fixar o provisionamento de compra de EPIs da unidade, transformando o custo variável em rateio corporativo fixo. Implementar envio automático de kits baseado em gatilhos de admissão (via sistema de RH) e reposição programada, operado por nova célula em um CSC de atendimento ao Frontline.
+- **Objetivo:** Zerar o déficit permanente de vestimenta e EPI, garantindo que a proteção chegue à ponta independente da vontade ou meta financeira do gerente local.
+- **Impacto:** Elimina o descontentamento visível, recupera a dignidade do trabalhador e reduz riscos trabalhistas e de segurança.
 
 ## Descrição (doc 08, com adaptações)
 

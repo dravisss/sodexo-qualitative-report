@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-27`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Substituir o "gatilho penhasco" (95% GM = tudo, 94,9% = nada) por curva progressiva de faixas (85% = 20% PLR, 90% = 50%, 95% = 100%, >100% = multiplicador), eliminando o incentivo a "loucuras gerenciais" nos últimos 5 dias do mês para salvar o bônus.
 
-- Intervenção: `I-24`
+- Intervenção: `I-27`
 - Unidade(s): Transversal
 - Frente: Reposicionamento
 
@@ -24,13 +27,12 @@ Substituir o "gatilho penhasco" (95% GM = tudo, 94,9% = nada) por curva progress
 - Hipótese a validar em execução:
   - tornar o gatilho mais progressivo, com mais faixas e menor descontinuidade, melhora comportamento e estabilidade sem reduzir governança financeira.
 
-## Tensão / Objetivo / Impacto — doc 08
+## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Gatilho de 95% do GM% cria efeito "penhasco": 94,9% = R$ 0, 95,1% = bônus total. Nos últimos 5 dias do mês, o gestor adota medidas de curto prazo que comprometem a operação (corta manutenção, cancela folgas) para salvar o bônus.
-- Descrição: Curva de gatilho progressivo: 85% GM = 20% PLR, 90% = 50%, 95% = 100%, >100% = multiplicador. Regra publicada em dashboard mensal visível ao time. Exceção: rescisão de contrato (cliente) = suspensão do deflator no trimestre.
-- Objetivo: Eliminar o comportamento de curto-prazismo que destrói valor para bater meta binária.
-- Impacto: Com metas escalonadas, o gerente mantém a racionalidade na gestão de custos, evitando cortes drásticos que prejudicam a operação.
-- Impacto esperado: maior previsibilidade e sensação de justiça; menor incentivo a atalhos; alinhamento melhor com retenção sustentável.
+- **Tensão:** Gatilho de 95% do GM% cria efeito "penhasco": 94,9% = R$ 0, 95,1% = bônus total. Nos últimos 5 dias do mês, o gestor adota medidas de curto prazo que comprometem a operação (corta manutenção, cancela folgas) para salvar o bônus.
+- **Descrição:** Curva de gatilho progressivo: 85% GM = 20% PLR, 90% = 50%, 95% = 100%, >100% = multiplicador. Regra publicada em dashboard mensal visível ao time. Exceção: rescisão de contrato (cliente) = suspensão do deflator no trimestre.
+- **Objetivo:** Eliminar o comportamento de curto-prazismo que destrói valor para bater meta binária.
+- **Impacto:** Com metas escalonadas, o gerente mantém a racionalidade na gestão de custos, evitando cortes drásticos que prejudicam a operação.
 
 ## Descrição
 

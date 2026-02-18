@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-24`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Substituir "Encarregado Burocrático" (custo fixo de R$ 4.500/mês, não operante) por "Cozinheiro Líder" (gratificação de R$ 800, mão na massa), achatando a pirâmide e colocando a governança operacional nas mãos de quem domina o processo produtivo.
 
-- Intervenção: `I-21`
+- Intervenção: `I-24`
 - Unidade(s): Cajamar | Guarulhos Food
 - Frente: Reestruturação
 
@@ -26,9 +29,10 @@ Substituir "Encarregado Burocrático" (custo fixo de R$ 4.500/mês, não operant
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A estrutura hierárquica atual cria uma camada de supervisão que "fiscaliza" mas não "resolve". Quando a máquina quebra, o Encarregado preenche papel; o Cozinheiro Líder conserta o improviso e dá continuidade à produção.
-- Objetivo: Achatamento da pirâmide hierárquica para reduzir custos e dar autonomia a quem põe a mão na massa.
-- Impacto: Economia de recursos e empoderamento técnico da equipe de produção, com liderança mais próxima da execução.
+- **Tensão:** A estrutura hierárquica atual cria uma camada de supervisão que "fiscaliza" mas não "resolve". Quando a máquina quebra, o Encarregado preenche papel; o Cozinheiro Líder conserta o improviso e dá continuidade à produção.
+- **Descrição:** Implementar modelo de **Gestão Compartilhada**: Criar/Fortalecer o papel de **Cozinheiro Líder** que divide a gestão operacional com o GU. Revisar a necessidade do cargo de Encarregado onde este for redundante ou burocrático.
+- **Objetivo:** Aproximar a liderança da produção e valorizar a competência técnica.
+- **Impacto:** Melhoria na qualidade do serviço (com liderança técnica presente) e otimização da folha de liderança.
 
 ## Descrição (doc 08, com adaptações)
 

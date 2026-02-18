@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-21`
+- Frente: Reestruturação
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Construir uma "Ponte Dourada" para a saída honrosa de colaboradores desengajados, oferecendo pacotes de desligamento negociado (com manutenção de parte dos benefícios/acordo legal) que custam menos que a permanência de um sabotador na folha de pagamento.
 
-- Intervenção: `I-18`
+- Intervenção: `I-21`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reestruturação
 
@@ -26,10 +29,10 @@ Construir uma "Ponte Dourada" para a saída honrosa de colaboradores desengajado
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Empregados desengajados entram em "modo de espera" (presenteísmo), entregando o mínimo para forçar a demissão, enquanto contaminam o time produtivo com cinismo.
-- Descrição: Programa de Demissão Consensual (baseado na Reforma Trabalhista) com incentivos adicionais (ex: extensão de plano de saúde por 3 meses). Trata a saída não como traição, mas como transição de carreira madura, permitindo a renovação do quadro de forma estruturada.
-- Objetivo: Facilitar a saída honrosa e negociada de colaboradores que querem sair, sem sangrar o resultado da unidade.
-- Impacto: Destravando as saídas voluntárias, acelera-se a renovação do quadro e recupera-se o clima organizacional de forma estruturada.
+- **Tensão:** Colaboradores desengajados forçam a demissão para acessar FGTS/Seguro, criando um ambiente tóxico de "corpo mole".
+- **Descrição:** Instituir programa de **Desligamento Consensual** (Acordo Trabalhista Legal) com incentivos claros (Win-Win): extensão de plano de saúde por 3 meses, carta de recomendação e suporte à transição. Formalizar a saída honrosa, onde a empresa economiza na multa e o colaborador acessa recursos imediatos com segurança.
+- **Objetivo:** Facilitar a saída de quem não quer mais estar na empresa, de forma legal, segura e menos custosa.
+- **Impacto:** Renovação do quadro, redução de custos rescisórios totais e eliminação do "terrorismo" para ser demitido.
 
 ## Descrição (doc 08, com adaptações)
 

@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-07`
+- Frente: Torniquete
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Utilizar a obrigatoriedade regulatória dos relatórios de Segurança do Trabalho (HSE) como alavanca ("Cavalo de Troia") para executar manutenções estruturais que o gerente local evita por pressão de custos. Se a Segurança aponta risco, a Manutenção executa automaticamente.
 
-- Intervenção: `I-34`
+- Intervenção: `I-07`
 - Unidade(s): Todas
 - Frente: Torniquete
 

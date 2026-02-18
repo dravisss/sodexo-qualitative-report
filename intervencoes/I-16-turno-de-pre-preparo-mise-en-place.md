@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-16`
+- Frente: Descompressão
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Instituir a "Blindagem do Mise-en-place" (janela sagrada de produção sem atendimento), reconhecendo que a qualidade do pico é fabricada nas 2 horas de silêncio anteriores. Transformar a preparação antecipada de "tarefa extra" em "pré-requisito de abertura da loja".
 
-- Intervenção: `I-15`
+- Intervenção: `I-16`
 - Unidade(s): Cajamar | Guarulhos Food
 - Frente: Descompressão
 
@@ -25,10 +28,10 @@ Instituir a "Blindagem do Mise-en-place" (janela sagrada de produção sem atend
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A cultura de "chegar e abrir" funde os tempos de *preparação* e *execução*, garantindo que todo imprevisto vire atraso na entrega e estresse no pico.
-- Descrição: Designar "Guardião do Mise-en-place" em turno trocado ou janela blindada (ex: 7h-9h só produção). Proibir a abertura da linha de servir sem o checklist de pré-preparo validado. Investir em horas de silêncio para economizar horas de grito.
-- Objetivo: Desacoplar preparação de execução.
-- Impacto: Redução drástica do estresse no pico e melhoria na qualidade da comida (carnes marinadas, etc).
+- **Tensão:** A cultura de "chegar e abrir" funde os tempos de *preparação* e *execução*, garantindo que todo imprevisto vire atraso na entrega e estresse no pico.
+- **Descrição:** Designar "Guardião do Mise-en-place" em turno trocado ou janela blindada (ex: 7h-9h só produção). Proibir a abertura da linha de servir sem o checklist de pré-preparo validado. Investir em horas de silêncio para economizar horas de grito.
+- **Objetivo:** Desacoplar preparação de execução.
+- **Impacto:** Redução drástica do estresse no pico e melhoria na qualidade da comida (carnes marinadas, etc).
 
 ## Descrição (doc 08, com adaptações)
 

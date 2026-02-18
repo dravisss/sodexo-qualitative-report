@@ -311,33 +311,36 @@ Objetivo: parar a sangria; reduzir risco legal/sanitário; restaurar o básico.
 Exemplos (referência **Página #08**):
 - `I-01` compra centralizada de uniformes/EPI
 - `I-02` desvincular cesta/benefício de atestados
-- `I-03` mesa com cliente para infraestrutura
+- `I-03` fundo de correção estrutural (vice-versa com cliente)
+- `I-07` conexão automática HSE → Manutenção
 
 ### Frente 2 — DESCOMPRESSÃO (curto prazo & clima)
 Objetivo: reduzir conflito e sensação de injustiça; criar rituais e mecanismos de organização.
 
 Exemplos:
-- `I-07` rodízio de tarefas pesadas com visualização
-- `I-12` canal mensal de escuta
-- `I-29` protocolo de passagem de turno
+- `I-08` rodízio de tarefas pesadas
+- `I-13` DDS estratégico (escuta e saúde mental)
+- `I-15` sistematização de passagem de turno
+- `I-11` calendário fixo de celebrações
 
 ### Frente 3 — REESTRUTURAÇÃO (médio prazo & regras do jogo)
 Objetivo: mexer na arquitetura de incentivos que produz os ciclos.
 
 Exemplos:
-- `I-14` fundo corporativo para rescisões (renovação)
-- `I-16` revisão de quadro por demanda real (base zero)
-- `I-17` orçamento protegido para manutenção essencial
-- `I-22` gatilho progressivo de PLR (anti “tudo ou nada”)
-- `I-23` desconto proporcional para faltas (anti punição binária)
+- `I-20` provisionamento orçamentário de rescisão
+- `I-22` revisão do quadro pela demanda real
+- `I-23` provisionamento para reparos essenciais
+- `I-26` revisão dos deflatores de rotatividade na PLR
+- `I-27` gatilho progressivo de PLR
 
 ### Frente 4 — REPOSICIONAMENTO (longo prazo & mercado)
 Objetivo: competir com o mercado atual; tornar a vaga atrativa.
 
 Exemplos:
-- `I-24` fretado e escalas competitivas
-- `I-25` pacote de benefícios (saúde + VR)
-- `I-27` ajuste salarial territorial
+- `I-38` fretado e escalas competitivas
+- `I-39` novo pacote de benefícios (saúde família)
+- `I-41` ajuste salarial ao mercado local
+- `I-42` reduzir dependência de terceirizados
 
 Referência: **Página #08**.
 

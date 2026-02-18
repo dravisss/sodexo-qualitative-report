@@ -2,10 +2,9 @@
 
 ## Identificação
 
-- Intervenção: `I-09`
+- Intervenção: `I-10`
+- Frente: Descompressão
 - Unidade(s): Cajamar Food | Guarulhos Food | Guarulhos FM
-- Frente: Reestruturação
-
 ## O que importa aqui
 
 - O debate sobre quadro e capacidade aparece com respostas incompletas e, em alguns casos, com semântica misturada. Isso cria decisões no escuro.
@@ -25,12 +24,12 @@ Rodar uma auditoria técnica curta (observação + medição simples) por unidad
 - Hipótese a validar em execução:
   - uma auditoria técnica curta, com observação e medição simples, é suficiente para localizar gargalos de fluxo e reduzir retrabalho e improviso.
 
-## Tensão / Objetivo / Impacto — doc 08
+## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: A operação reclama de falta de braço/equipamento, mas a gerência vê como "corpo mole", travando investimentos necessários.
-- Descrição: Auditoria técnica curta para transformar a discussão abstrata de falta de recursos em decisões executáveis sobre gargalos de fluxo e backlog com dono.
-- Objetivo: Obter um laudo técnico isento que comprove a necessidade de recursos adicionais.
-- Impacto: Com um laudo externo, a discussão sai do campo da opinião ("acho que falta gente") para o técnico, facilitando a aprovação de CAPEX e Headcount.
+- **Tensão:** A operação reclama de falta de braço/equipamento, mas a gerência vê como "corpo mole", travando investimentos necessários.
+- **Descrição:** Auditoria técnica curta para transformar a discussão abstrata de falta de recursos em decisões executáveis sobre gargalos de fluxo e backlog com dono.
+- **Objetivo:** Obter um laudo técnico isento que comprove a necessidade de recursos adicionais.
+- **Impacto:** Com um laudo externo, a discussão sai do campo da opinião ("acho que falta gente") para o técnico, facilitando a aprovação de CAPEX e Headcount.
 
 ## Descrição
 

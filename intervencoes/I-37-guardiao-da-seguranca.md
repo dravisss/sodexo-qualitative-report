@@ -2,25 +2,19 @@
 
 ## Identificação
 
-- **Intervenção:** I-45
-- **Nome:** Guardião da Segurança
-- **Frente:** Governança (Cultura)
-- **Status:** Em Elaboração
+- Intervenção: `I-37`
+- Frente: Reestruturação
 - **Unidade:** Todas
-
 ## Tese (o que defender)
 
 A cultura atual de segurança baseada em "Zero Acidentes" incentiva o silêncio: se reportar um quase-acidente, perco o recorde e o bônus. Precisamos inverter o vetor: premiar quem **encontra e corrige** riscos. A segurança deve ser uma "caça ao tesouro" colaborativa, não uma auditoria punitiva.
 
-## Tensão / Objetivo / Impacto
+## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** **Muro de Silêncio.** Riscos operacionais (fio desencapado, piso solto, gambiarra elétrica) são ignorados ou escondidos para não gerar "Não Conformidade".
-- **Descrição:** Programa de Gamificação Positiva:
-    - **Pontos por Reporte:** Cada risco identificado e cadastrado (com foto) vale pontos.
-    - **Pontos por Solução:** Se a própria equipe resolver (ex: isolar área, trocar lâmpada com I-44), ganha o dobro.
-    - **Anistia:** Nenhum reporte gera punição, mesmo que revele erro de processo anterior.
-- **Objetivo:** Dar visibilidade total aos riscos ocultos da operação.
-- **Impacto:** Redução real de acidentes graves (que nascem dos pequenos riscos ignorados) e engajamento da equipe na cultura de cuidado.
+- **Tensão:** O "Muro de Silêncio". Metas de "Zero Acidentes" incentivam a ocultação de riscos e quase-acidentes para não perder o bônus/recorde.
+- **Descrição:** Inversão da lógica: Programa de Pontos por "Risco Identificado e Tratado". A unidade que mais reporta e corrige riscos preventivamente ganha prêmios coletivos (Lazer/Experiência). Anistia total para reportes honestos, mesmo que revelem falha de processo.
+- **Objetivo:** Transformar a segurança em uma caça ao tesouro positiva, não em uma caça às bruxas.
+- **Impacto:** Aumento exponencial da visibilidade de riscos reais e mudança cultural de medo para colaboração.
 
 ## Mecânica da Intervenção
 

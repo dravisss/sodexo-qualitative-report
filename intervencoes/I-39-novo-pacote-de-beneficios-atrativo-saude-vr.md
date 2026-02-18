@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-39`
+- Frente: Reposicionamento
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge + 2 filhos sem coparticipação) + VR R$ 25/dia (vs R$ 18 atual) + Fretado/VT, visando reposicionar Sodexo como "porto seguro familiar" vs Amazon (plano odonto + VR R$ 25 + bônus) e iFood (flexibilidade total). Custo: R$ 150/mês/colaborador. ROI: evitar 1 rescisão/ano já paga 16 meses de upgrade.
 
-- Intervenção: `I-30`
+- Intervenção: `I-39`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reposicionamento
 
@@ -26,10 +29,10 @@ Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge +
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Amazon (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
-- Descrição: Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
-- Objetivo: Posicionar a empresa como opção de estabilidade (família/saúde) contra a precarização dos apps.
-- Impacto: Atraindo pelo benefício saúde/família, seleciona-se um perfil de colaborador mais estável e focado em longo prazo.
+- **Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Amazon (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
+- **Descrição:** Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
+- **Objetivo:** Posicionar a empresa como opção de estabilidade (família/saúde) contra a precarização dos apps.
+- **Impacto:** Atraindo pelo benefício saúde/família, seleciona-se um perfil de colaborador mais estável e focado em longo prazo.
 
 ## Descrição (doc 08, com adaptações)
 

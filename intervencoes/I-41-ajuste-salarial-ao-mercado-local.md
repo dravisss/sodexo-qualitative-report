@@ -2,11 +2,14 @@
 
 ## Identificação
 
+- Intervenção: `I-41`
+- Frente: Reposicionamento
+- Unidade(s): Todas
 ## Tese (o que defender)
 
 Benchmark Territorial (Catho/Vagas/CAGED) para reposicionar salário-base: piso R$ 2.000 para Auxiliar (vs R$ 1.850 atual), R$ 1.900 para ASG (vs R$ 1.650). Gap nominal atual de R$ 250-400 vs Amazon/Mercado Livre torna Sodexo "segunda opção" crônica, gerando turnover estrutural >100%/ano. Implementação faseada: piloto Guarulhos FM (turnover crítico), depois escala.
 
-- Intervenção: `I-32`
+- Intervenção: `I-41`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
 - Frente: Reposicionamento
 
@@ -26,10 +29,10 @@ Benchmark Territorial (Catho/Vagas/CAGED) para reposicionar salário-base: piso 
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- Tensão: Salário-base Sodexo (Aux. Cozinha R$ 1.850, ASG R$ 1.650) vs Amazon/Mercado Livre (Operador Logístico R$ 2.100 + bônus produtividade). Gap nominal de R$ 250-400 torna Sodexo "segunda opção" crônica. Mesmo quem aceita a vaga já está de olho na próxima, gerando turnover estrutural de >100%/ano.
-- Descrição: Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
-- Objetivo: Ajustar a oferta financeira à realidade de mercado da região.
-- Impacto: Pagando o preço justo de mercado, a empresa volta a ter poder de escolha na seleção, elevando a qualidade técnica da equipe.
+- **Tensão:** Salário-base Sodexo (Aux. Cozinha R$ 1.850, ASG R$ 1.650) vs Amazon/Mercado Livre (Operador Logístico R$ 2.100 + bônus produtividade). Gap nominal de R$ 250-400 torna Sodexo "segunda opção" crônica. Mesmo quem aceita a vaga já está de olho na próxima, gerando turnover estrutural de >100%/ano.
+- **Descrição:** Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). **Diferenciação Crítica:** A pesquisa deve segregar "Polo Logístico" de "Restaurante Comum". O concorrente por mão de obra em Cajamar é a Amazon/Mercado Livre, não o restaurante da esquina. Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
+- **Objetivo:** Ajustar a oferta financeira à realidade de mercado da região.
+- **Impacto:** Pagando o preço justo de mercado, a empresa volta a ter poder de escolha na seleção, elevando a qualidade técnica da equipe.
 
 ## Descrição (doc 08, com adaptações)
 
