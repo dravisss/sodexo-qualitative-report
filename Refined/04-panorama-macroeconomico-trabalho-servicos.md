@@ -28,7 +28,7 @@ O modelo brasileiro de proteção ao desemprego (multa de 40% do FGTS + acesso a
 
 Colaboradores com muitos anos de casa estão "presos". Eles desejam sair, mas não podem pedir demissão para não perder o patrimônio acumulado no fundo de garantia. Quando a organização também evita demitir (por restrições orçamentárias), cria-se um impasse.
 
-**Consequência:** O funcionário permanece infeliz, pode adoecer ou reduzir a produtividade, enquanto a liderança não consegue renovar a equipe.
+**Consequência:** O que parece ser apenas uma "cultura de pedir demissão" é, na verdade, um **Travamento Rescisório** matemático. O colaborador faz a conta do FGTS; o gestor faz a conta da margem. O resultado é o impasse: o funcionário permanece infeliz, pode adoecer ou reduzir a produtividade, enquanto a liderança não consegue renovar a equipe.
 
 ---
 

@@ -99,6 +99,14 @@ A análise das entrevistas revelou quatro mecanismos distintos que geram comport
 - **Segurança e Acidentes:** Acidentes com afastamento são deflatores críticos. Aqui reside uma contradição: o bônus de assiduidade força o trabalho doente, o que eleva o risco de acidentes, que por sua vez penaliza a PLR de toda a equipe e da gestão.
 - **Auditorias (Regra de Ouro):** Falhas em auditorias de qualidade e segurança resultam em multas contratuais que impactam diretamente o valor distribuído.
 
+### 2.7 A Mecânica do Colapso: Como os Incentivos Travam a Operação
+Identificamos quatro mecanismos que operam sob a superfície financeira e explicam por que a operação trava:
+
+1.  **Asfixia de Caixa (Fundamentação):** A combinação de prazos de recebimento estendidos (90 dias) e cláusulas de faturamento mínimo (que cobram 50% do custo fixo na quebra de volume) transfere o risco de fluxo de caixa para a unidade. Sem liquidez, a gestão corta despesas "invisíveis" como manutenção preventiva.
+2.  **Pacto de Silêncio:** A meta de GM como gatilho "tudo-ou-nada", combinada com deflatores de rotatividade, incentiva o gestor a esconder problemas e não reportar acidentes/demissões para salvar o bônus.
+3.  **Canibalização Operacional:** Para proteger a margem, equipamentos e EPIs tornam-se variáveis de ajuste.
+4.  **Travamento Rescisório:** O custo de demissão torna-se proibitivo dentro do orçamento mensal, zumbificando a vaga.
+
 ---
 
 ## 3. A pressão do sistema de metas

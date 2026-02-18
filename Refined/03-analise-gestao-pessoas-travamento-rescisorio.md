@@ -9,7 +9,7 @@ A operação está pagando salário integral para funcionários que entregam fra
 
 Os custos rescisórios (multa do FGTS, aviso prévio e demais verbas) são debitados diretamente do centro de custo da unidade. Não existe um fundo centralizado para desligamentos.
 
-Se uma rescisão custa R$ 15.000 ou R$ 20.000, esse valor sai diretamente do resultado daquele mês. Como o orçamento é estático e definido no ano anterior, uma demissão não planejada "come" a margem de lucro e pode inviabilizar o atingimento da meta financeira.
+Se uma rescisão custa R$ 15.000 ou R$ 20.000, esse valor sai diretamente do resultado daquele mês. Simulações com dados reais de folha (Jan/2026) mostram que o custo de desligar um colaborador veterano **(15 anos de casa) chega a ~R$ 28.000,00**. Em um orçamento estático de unidade, esse valor é proibitivo. Não é uma "escolha de gestão", é uma impossibilidade matemática.
 
 Além do custo financeiro direto, o ato de demitir aumenta o índice de rotatividade, que funciona como "deflator" na bonificação da liderança. Mesmo que a meta de lucro seja atingida, uma rotatividade alta resulta em desconto no bônus (por exemplo, 10%).
 
