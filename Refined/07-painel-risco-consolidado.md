@@ -92,7 +92,7 @@ Para cada risco crítico identificado, existe um conjunto de intervenções plan
 | **Ação Coletiva (Desvio de Função)** | **I-22** (Redimensionamento Zero-Based) + **I-25** (Fim ASG faz-tudo) |
 | **Afastamentos INSS / Presenteísmo** | **I-02** (Fim Punição Atestado) + **I-06** (Care Leave) + **I-28** (Assiduidade Escalonada) |
 | **Perda de Contrato (Clima/Greve)** | **I-01** (EPIs Emergenciais) + **I-08** (Rodízio Tarefas) + **I-13** (DDS Estratégico) |
-| **Travamento de Saída (Passivo)** | **I-20** (Fundo de Rescisão Centralizado) + **I-21** (Win-Win / PDV Protegido) |
+| **Travamento de Saída (Passivo)** | **I-20** (Provisionamento de Rescisão) + **I-21** (Win-Win / PDV Protegido) |
 | **Sucateamento / Acidentes** | **I-03** (Fundo Correção) + **I-23** (Orçamento Protegido Manutenção) |
 | **Turnover de GUs (Limbo)** | **I-19** (Guia de Gestão) + **I-26** (Revisão Deflatores) + **I-33** (Saneamento Função) |
 

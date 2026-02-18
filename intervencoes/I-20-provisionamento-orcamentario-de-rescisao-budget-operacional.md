@@ -7,7 +7,7 @@
 - Unidade(s): Todas
 ## Tese (o que defender)
 
-Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisório (multas e encargos) em um fundo corporativo ("Bad Bank" de RH), permitindo que o gestor local demita baseado em critérios técnicos (competência/fit) sem implodir o P&L da unidade no mês da decisão.
+Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisório (multas e encargos) em um provisionamento corporativo ("Bad Bank" de RH), permitindo que o gestor local demita baseado em critérios técnicos (competência/fit) sem implodir o P&L da unidade no mês da decisão.
 
 - Intervenção: `I-20`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM | Transversal
@@ -17,7 +17,7 @@ Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisó
 
 - O custo de rescisão é debitado diretamente no P&L local, o que vira um veto invisível a desligamentos necessários, mantendo pessoas desengajadas por meses ou anos.
 - Este "travamento rescisório" gera um custo invisível de produtividade: paga-se 100% do salário para quem entrega 50% ou menos, além de contaminar o clima dos que permanecem produtivos.
-- A intervenção propõe um fundo centralizado que absorve o impacto imediato da rescisão, permitindo que a liderança local tome decisões baseadas em fit técnico e engajamento, não em saldo de caixa do mês.
+- A intervenção propõe um provisionamento centralizado que absorve o impacto imediato da rescisão, permitindo que a liderança local tome decisões baseadas em fit técnico e engajamento, não em saldo de caixa do mês.
 
 ## O que está provado vs. o que é hipótese
 
@@ -26,7 +26,7 @@ Remover o "Veto Contábil" à gestão de pessoas, centralizando o custo rescisó
   - Simulações internas mostram que uma rescisão de colaborador veterano (5 a 15 anos) pode custar entre R$ 17k e R$ 28k (para salário de R$ 2k).
   - O campo registra que a empresa não demite pelo custo e o funcionário não pede conta para não perder o FGTS.
 - Hipótese (a validar em execução):
-  - A centralização do custo rescisório em um fundo corporativo reduz a retenção forçada e aumenta a produtividade média da unidade em 15% após 6 meses de renovação.
+  - A centralização do custo rescisório em um provisionamento corporativo reduz a retenção forçada e aumenta a produtividade média da unidade em 15% após 6 meses de renovação.
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
@@ -41,10 +41,10 @@ O mecanismo foca em desvincular a "decisão de gestão" da "capacidade de caixa 
 
 Como funciona:
 
-- Criação de uma conta centralizada de "Fundo de Renovação".
+- Criação de uma conta centralizada de "Provisionamento de Renovação".
 - A GU submete casos de desligamento estratégico (ex: baixo fit crônico, desejo manifesto de saída, performance abaixo de 50%).
-- Uma vez aprovado pelo RH/Operações, o custo da multa do FGTS e verbas não provisionadas é debitado do fundo central, não do GM da unidade.
-- Regra de Uso: Limite de uso do fundo por contrato/ano (ex: renovação de até 10% do headcount/ano) para evitar "farra de demissões".
+- Uma vez aprovado pelo RH/Operações, o custo da multa do FGTS e verbas não provisionadas é debitado do provisionamento central, não do GM da unidade.
+- Regra de Uso: Limite de uso do provisionamento por contrato/ano (ex: renovação de até 10% do headcount/ano) para evitar "farra de demissões".
 
 ## Evidências (citações + leitura)
 
@@ -65,12 +65,12 @@ Leitura:
 ## Força da evidência
 
 - Classificação: Sustentado qualitativamente
-- Observação: O custo financeiro é provado via planilhas de simulação. O comportamento de travamento é sustentado por múltiplos relatos de campo. A eficácia do fundo depende de governança corporativa.
+- Observação: O custo financeiro é provado via planilhas de simulação. O comportamento de travamento é sustentado por múltiplos relatos de campo. A eficácia do mecanismo depende de governança corporativa.
 
 ## Lacunas (viabilidade/execução)
 
-- Definir a origem do capital para o fundo inicial (aporte corporativo vs taxa mensal por unidade).
-- Definir SLA de aprovação de uso do fundo (quem valida o "caráter estratégico" da demissão).
+- Definir a origem do capital para o provisionamento inicial (aporte corporativo vs taxa mensal por unidade).
+- Definir SLA de aprovação de uso do recurso (quem valida o "caráter estratégico" da demissão).
 - Mapear o impacto de longo prazo na multa de 40% do FGTS (passivo acumulado).
 
 ## Métricas possíveis
@@ -84,13 +84,13 @@ Leitura:
 
 ## Riscos / Pré-condições
 
-- Risco: Uso indiscriminado do fundo para punições disciplinares comuns que deveriam ser geridas por processo normal.
+- Risco: Uso indiscriminado do recurso para punições disciplinares comuns que deveriam ser geridas por processo normal.
 - Pré-condição: Orçamento corporativo aprovado e sistema contábil capaz de isolar o custo da unidade.
 
 ## Próximos passos (Fase 4 → 5)
 
 - Simular o custo de renovar 5% do headcount das unidades de Cajamar e Guarulhos.
-- Elaborar a política de "Saída Honrosa" vinculada ao uso do fundo.
+- Elaborar a política de "Saída Honrosa" vinculada ao uso do provisionamento.
 
 ## Apêndice — Rastreabilidade (para auditoria)
 
@@ -117,6 +117,6 @@ Leitura:
     - `evidencias/banco/answers.json` — submission_id `b6495e4d-3278-47a5-8ab8-a069fe99c6f5`; answer_id `c4e4fff5-b3e8-4f0e-b046-364604e3f7f2`; field_id `question_75`.
 
 - Evidência 6:
-  - fonte: Banco (formulário) — implicação sindical do fundo
+  - fonte: Banco (formulário) — implicação sindical do mecanismo
   - referência completa (submission_id + answer_id + field_id):
     - `evidencias/banco/answers.json` — submission_id `b6495e4d-3278-47a5-8ab8-a069fe99c6f5`; answer_id `30a44184-6218-4686-bb7e-911bad6c28b0`; field_id `question_38`.

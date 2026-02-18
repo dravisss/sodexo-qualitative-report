@@ -56,7 +56,7 @@ A investigação focou em duas unidades críticas que servem como arquétipos do
 
 <div class="qa-pair">
 <span class="qa-question">"Como quebramos esse ciclo sem explodir o orçamento?"</span>
-<div class="qa-answer">Com o <strong>Plano de Intervenção Estratégica</strong> (<a href="#08">Plano de Intervenção</a>), criando ferramentas de governança como o <strong>Fundo Centralizado de Rescisões</strong>. Tiramos a decisão individual do gerente enviesado e criamos uma regra sistêmica auditada.</div>
+<div class="qa-answer">Com o <strong>Plano de Intervenção Estratégica</strong> (<a href="#08">Plano de Intervenção</a>), criando ferramentas de governança como o <strong>Provisionamento de Rescisão (I-20)</strong>. Tiramos a decisão individual do gerente enviesado e criamos uma regra sistêmica auditada.</div>
 </div>
 
 <div class="qa-pair">

@@ -102,6 +102,6 @@ O "travamento rescisório" não é uma falha pontual de gestão, mas uma **conse
 
 O resultado é um ambiente de **retenção forçada**, onde a organização mantém funcionários improdutivos porque o custo de desligá-los é maior do que o custo (aparente) de mantê-los. Contudo, os custos ocultos (clima deteriorado, queda de qualidade, sobrecarga dos comprometidos, adoecimento) podem superar significativamente a economia de curto prazo.
 
-A solução estrutural para este impasse é a criação do **[Fundo Centralizado de Rescisões](#08)** detalhado no plano de intervenção.
+A solução estrutural para este impasse é a criação do **[Provisionamento de Rescisão (I-20)](#08)** detalhado no plano de intervenção.
 
 ---

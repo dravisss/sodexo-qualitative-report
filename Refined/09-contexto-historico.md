@@ -64,7 +64,7 @@ Deste esforço nasceu o **Plano de Intervenção Consolidado** (objeto de aprova
 
 *   **Frente 1: Torniquete (Imediato & Dignidade):** Estancar a sangria e garantir o básico (EPIs, fim de punições injustas).
 *   **Frente 2: Descompressão (Curto Prazo & Clima):** Aliviar a tensão da equipe e da gestão com recursos de baixo custo (e.g. escalas justas).
-*   **Frente 3: Reestruturação (Médio Prazo & Regras):** Alterar a arquitetura de incentivos (Fundo de Rescisão, Deflatores de PLR).
+*   **Frente 3: Reestruturação (Médio Prazo & Regras):** Alterar a arquitetura de incentivos (Provisionamento de Rescisão, Deflatores de PLR).
 *   **Frente 4: Reposicionamento (Longo Prazo & Futuro):** Tornar a vaga atrativa novamente frente ao mercado.
 
 Este plano consolidado é a aplicação prática e viável das hipóteses originais, demonstrando que é possível gerar impacto sistêmico começando pequeno.

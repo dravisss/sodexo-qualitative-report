@@ -6,9 +6,7 @@ Slide 1: Capa
 Visual: Foto de alta qualidade, preto e branco, de um colaborador da Sodexo de costas, olhando para uma operação industrial complexa. O foco está no humano, não na máquina. Texto do Slide:
 
 Título: Sustentabilidade Operacional: O Custo Oculto da Margem de Curto Prazo
-Subtitulo: Diagnóstico de 3 anos no Frontline & Plano de Intervenção Estratégica
-Rodapé: Target Teal | Fevereiro 2026
-Speaker Notes: Bom dia a todos. Estamos aqui hoje para apresentar os resultados de uma investigação profunda de 3 anos na nossa operação de ponta. O que vamos mostrar não é apenas um diagnóstico de RH, mas uma análise financeira e sistêmica de como nossa proteção de margem de curto prazo está, paradoxalmente, destruindo nosO turnover é um desafio transversal (jurídico, compras, vendas, operações) e as iniciativas atuais estão fragmentadas. Precisamos integrar a força da organização para estancar a sangria financeira e operacional.
+Subtitulo: Diagnóstico <div class="qa-answer">Com o <strong>Plano de Intervenção Estratégica</strong> (<a href="#08">Plano de Intervenção</a>), criando ferramentas de governança como o <strong>Provisionamento de Rescisão (I-20)</strong>. Tiramos a decisão individual do gerente enviesado e criamos uma regra sistêmica auditada.</div>e ponta. O que vamos mostrar não é apenas um diagnóstico de RH, mas uma análise financeira e sistêmica de como nossa proteção de margem de curto prazo está, paradoxalmente, destruindo nosO turnover é um desafio transversal (jurídico, compras, vendas, operações) e as iniciativas atuais estão fragmentadas. Precisamos integrar a força da organização para estancar a sangria financeira e operacional.
 
 Slide 2: O Iceberg da Sodexo
 Visual: Infográfico de um Iceberg.
@@ -241,7 +239,7 @@ Título: Frente 3: Reestruturação dos Incentivos (O Coração da Mudança)
 Foco: Alinhar o interesse financeiro da gestão local com a sustentabilidade do negócio.
 Intervenções Chave:
 
-I-19: Provisionamento Mensal de Rescisão (Fixo):
+I-20: Provisionamento Mensal de Rescisão (Fixo):
 Correção de Rota: Fundo Centralizado é inviável.
 Solução: Provisionamento Fixo no Centro de Custo da Unidade. Em vez de pagar a rescisão "à vista" (destruindo a margem do mês), a unidade provisiona um valor fixo mensal obrigatório.
 Impacto: A despesa de demissão já está "paga" contabilmente. O gerente não perde o bônus se demitir, pois o impacto na margem foi diluído ao longo do ano. Remove o desincentivo financeiro à renovação.

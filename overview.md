@@ -356,7 +356,7 @@ A **Página #12 (Perguntas Frequentes)** reforça a hipótese de desenho:
 Também antecipa objeções comuns:
 
 - “A amostra é pequena” → pequena para julgar pessoas, robusta para auditar regras.
-- “O fundo de rescisão vira farra” → risco moral existe e deve ser mitigado com governança e critérios.
+- “O provisionamento de rescisão vira farra” → risco moral existe e deve ser mitigado com governança e critérios.
 - “O problema é comercial” → contratos ruins existem, mas passivo e turnover destroem valor mesmo em contratos bons.
 
 Referência: **Página #12**.

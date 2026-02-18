@@ -16,7 +16,7 @@ Não é uma questão de competência matemática, é de **sobrevivência orçame
 
 ## 2. O mercado não é igual para todos?
 
-> "Se o Ifood e a Amazon pagam mais e o trabalho é mais leve, e a inflação está alta, mexer no nosso 'fundo de rescisão' não vai mudar a realidade de mercado. Não estamos tentando consertar um problema macroeconômico com uma solução contábil interna?"
+> "Se o Ifood e o Mercado Livre pagam mais e o trabalho é mais leve, e a inflação está alta, mexer no nosso 'Provisionamento de Rescisão' não vai mudar a realidade de mercado. Não estamos tentando consertar um problema macroeconômico com uma solução contábil interna?"
 
 Não competiremos com a Amazon no curto prazo financeiro, mas hoje perdemos talentos porque, em muitos casos, operamos abaixo do **básico da dignidade**.
 
@@ -48,13 +48,13 @@ As regras de orçamento, a estrutura de metas e as travas do FGTS são universai
 
 ---
 
-## 5. Como evitar que o Fundo de Rescisão vire farra?
+## 5. Como evitar que o Provisionamento de Rescisão (I-20) vire farra?
 
-> "Se tirarmos o custo da rescisão da conta da unidade e jogarmos num fundo corporativo, criamos o incentivo perfeito para o gerente demitir qualquer um na primeira dificuldade. Como você evita o Risco Moral desse 'Fundo de Renovação'?"
+> "Se tirarmos o custo da rescisão da conta da unidade e jogarmos num fundo corporativo, criamos o incentivo perfeito para o gerente demitir qualquer um na primeira dificuldade. Como você evita o Risco Moral desse 'Provisionamento de Rescisão'?"
 
-O risco é real e foi previsto. Por isso, o fundo não opera como um "cheque em branco". A proposta evolui o modelo: saímos de um veto por falta de caixa (aleatório) para uma **aprovação por critério técnico** (estratégico).
+O risco é real e foi previsto. Por isso, o provisionamento não opera como um "cheque em branco". A proposta evolui o modelo: saímos de um veto por falta de caixa (aleatório) para uma **aprovação por critério técnico** (estratégico).
 
-O fundo centralizado introduz governança: para acessar o recurso, o gestor precisa justificar tecnicamente a troca. Trocamos o "caos orçamentário" (onde quem tem caixa demite, quem não tem segura) por uma **estratégia de renovação auditada**, com travas claras e responsabilidade compartilhada. O desenho técnico seguro deste fundo está detalhado na seção de **[Reestruturação do Plano de Intervenção](#08)**.
+O provisionamento centralizado introduz governança: para acessar o recurso, o gestor precisa justificar tecnicamente a troca. Trocamos o "caos orçamentário" (onde quem tem caixa demite, quem não tem segura) por uma **estratégia de renovação auditada**, com travas claras e responsabilidade compartilhada. O desenho técnico seguro deste mecanismo está detalhado na seção de **[Reestruturação do Plano de Intervenção](#08)**.
 
 ---
 

@@ -149,8 +149,8 @@ O relatório propõe várias intervenções que tocam em políticas de benefíci
 
 ### Perguntas sobre Demissões e Renovação
 
-22. **Fundo Centralizado de Rescisões (I-14):** [Sem Campo]
-    - A criação de um fundo corporativo para custear rescisões tem alguma implicação sindical? [Anexar]
+22. **Provisionamento de Rescisão (I-20):** [Sem Campo]
+    - A criação de um provisionamento corporativo para custear rescisões tem alguma implicação sindical? [Anexar]
     - Existem precedentes de Programas de Demissão Voluntária (PDV) negociados com o sindicato? Quais foram os termos? [Anexar]
     - A proposta de oferecer "incentivos à saída voluntária" (I-15 e I-18) pode ser interpretada como coação? Qual a melhor forma de estruturar legalmente? [Anexar]
 
