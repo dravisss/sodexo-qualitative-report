@@ -102,24 +102,31 @@ const ARTICLES = [
         path: './Refined/10-catalogo-experimentos-2024.md',
         icon: '🧪'
     },
-    {
-
-        id: '15',
-        title: 'Roteiro de Investigação',
-        subtitle: 'Due Diligence & Coleta',
-        path: './Refined/roteiro-investigacao-unidades.md',
-        icon: '📝',
-        group: 'evidencias_historico'
-    }
-];
-
-// Add groups to existing articles that missed them in the initial declaration
-const groupMapping = {
-    '00': 'visao_geral', '06': 'visao_geral', '13': 'visao_geral', '12': 'visao_geral',
-    '11': 'analise_contexto', '01': 'analise_contexto', '02': 'analise_contexto', '03': 'analise_contexto', '04': 'analise_contexto',
-    '07': 'intervencao', '08': 'intervencao',
-    '05': 'evidencias_historico', '09': 'evidencias_historico', '10': 'evidencias_historico', '15': 'evidencias_historico'
-};
+        {
+            id: '15',
+            title: 'Roteiro de Investigação',
+            subtitle: 'Due Diligence & Coleta',
+            path: './Refined/roteiro-investigacao-unidades.md',
+            icon: '📝',
+            group: 'evidencias_historico'
+        },
+        {
+            id: '16',
+            title: 'Simulador de Orçamento',
+            subtitle: 'Projeção de Investimento e ROI',
+            path: './Refined/16-simulador-orcamento.md',
+            icon: '🧮',
+            group: 'intervencao'
+        }
+    ];
+    
+    // Add groups to existing articles that missed them in the initial declaration
+    const groupMapping = {
+        '00': 'visao_geral', '06': 'visao_geral', '13': 'visao_geral', '12': 'visao_geral',
+        '11': 'analise_contexto', '01': 'analise_contexto', '02': 'analise_contexto', '03': 'analise_contexto', '04': 'analise_contexto',
+        '07': 'intervencao', '08': 'intervencao', '16': 'intervencao',
+        '05': 'evidencias_historico', '09': 'evidencias_historico', '10': 'evidencias_historico', '15': 'evidencias_historico'
+    };
 
 ARTICLES.forEach(a => {
     if (!a.group && groupMapping[a.id]) {

@@ -1,4 +1,4 @@
-# Argumentário — I-25 — Fim do cargo ASG/OSG faz-tudo
+# Argumentário — I-25 — Definição de Papéis e Rotina Operacional (Fim do "Faz-Tudo")
 
 ## Tese (o que defender)
 

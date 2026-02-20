@@ -1,4 +1,4 @@
-# Argumentário — I-24 — Gestão Compartilhada (Lead Cook + GU)
+# Argumentário — I-24 — Substituição de Chefia por Liderança Técnica (Cozinheiro Líder)
 
 ## Tese (o que defender)
 

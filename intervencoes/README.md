@@ -25,8 +25,8 @@
 | I-21 | Programa de Negociação Ganha-Ganha | [I-21-programa-de-negociacao-ganha-ganha.md](./I-21-programa-de-negociacao-ganha-ganha.md) |
 | I-22 | Revisão do quadro pela demanda real | [I-22-revisao-do-quadro-pela-demanda-real.md](./I-22-revisao-do-quadro-pela-demanda-real.md) |
 | I-23 | Provisionamento para Reparos Essenciais | [I-23-provisionamento-para-reparos-essenciais.md](./I-23-provisionamento-para-reparos-essenciais.md) |
-| I-24 | Gestão Compartilhada (Lead Cook + GU) | [I-24-gestao-compartilhada-lead-cook-gu.md](./I-24-gestao-compartilhada-lead-cook-gu.md) |
-| I-25 | Fim do cargo ASG/OSG faz-tudo | [I-25-fim-do-cargo-asg-osg-faz-tudo.md](./I-25-fim-do-cargo-asg-osg-faz-tudo.md) |
+| I-24 | Substituição de Chefia por Liderança Técnica (Cozinheiro Líder) | [I-24-substituicao-de-chefia-por-lideranca-tecnica.md](./I-24-substituicao-de-chefia-por-lideranca-tecnica.md) |
+| I-25 | Definição de Papéis e Rotina Operacional (Fim do "Faz-Tudo") | [I-25-definicao-de-papeis-e-rotina-operacional.md](./I-25-definicao-de-papeis-e-rotina-operacional.md) |
 | I-26 | Revisão dos Deflatores de Rotatividade na PLR | [I-26-revisao-dos-deflatores-de-rotatividade-na-plr.md](./I-26-revisao-dos-deflatores-de-rotatividade-na-plr.md) |
 | I-27 | Gatilho progressivo da PLR | [I-27-gatilho-progressivo-da-plr.md](./I-27-gatilho-progressivo-da-plr.md) |
 | I-28 | Desconto proporcional para faltas | [I-28-desconto-proporcional-para-faltas.md](./I-28-desconto-proporcional-para-faltas.md) |

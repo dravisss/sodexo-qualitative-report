@@ -1,4 +1,4 @@
-# I-24 — Gestão Compartilhada (Lead Cook + GU)
+# I-24 — Substituição de Chefia por Liderança Técnica (Cozinheiro Líder)
 
 ## Identificação
 

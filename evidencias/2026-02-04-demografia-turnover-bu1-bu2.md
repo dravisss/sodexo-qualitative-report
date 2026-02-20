@@ -29,7 +29,7 @@ Com base nesses dados, as seguintes claims sustentam o projeto Frontline:
 *   **CLAIM 3: A BU1 precisa de um "Deep Dive" em Cultura de Gestão.**
     *   *Evidência:* A BU1 tem mais jovens (21%) e maior turnover inicial (34%).
     *   *Hipótese:* A estrutura de liderança na BU1 pode estar operando sob um modelo de comando-e-controle que colide mais fortemente com o perfil demográfico mais jovem.
-    *   *Intervenções Candidatas:* [I-19](file:///Users/Ravi/Apps/Qualitative%20Analyst/publish-site/intervencoes/I-19-guia-de-gestao-geral-financeiro-operacional.md), [I-24](file:///Users/Ravi/Apps/Qualitative%20Analyst/publish-site/intervencoes/I-24-gestao-compartilhada-lead-cook-gu.md)
+    *   *Intervenções Candidatas:* [I-19](file:///Users/Ravi/Apps/Qualitative%20Analyst/publish-site/intervencoes/I-19-guia-de-gestao-geral-financeiro-operacional.md), [I-24](file:///Users/Ravi/Apps/Qualitative%20Analyst/publish-site/intervencoes/I-24-substituicao-de-chefia-por-lideranca-tecnica.md)
 
 *   **CLAIM 4: Aproveitamento da "Prata da Casa".**
     *   *Evidência:* O grupo 51-60 anos é resiliente (22% da empresa) e possui estabilidade razoável.

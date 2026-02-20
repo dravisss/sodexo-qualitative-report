@@ -5,6 +5,7 @@
 
 import { ARTICLES, REPORT_META, NAV_GROUPS } from './config.js';
 import { AutoSaveManager } from './autosave.js';
+import { PRICING_CONSTANTS, FORMULAS } from './pricing-model.js';
 
 class ReportReader {
     constructor() {
@@ -242,8 +243,8 @@ class ReportReader {
                 this.setupMatrixSpotlight();
                 this.setupPlanHubLinks();
             } else if (article.id === '16') {
-                this.setupMatrixDecisionPanel();
-                this.setupMatrixInterventionLinks();
+                this.renderBudgetSimulator();
+                this.setupBudgetSimulator();
             } else if (article.id === '05') {
                 this.setupCaseFilesTabs();
             } else if (article.id === '15') {
@@ -264,6 +265,140 @@ class ReportReader {
         </div>
       `;
         }
+    }
+
+    /**
+     * Render the interactive budget simulator for Article 16
+     */
+    renderBudgetSimulator() {
+        const root = document.getElementById('budget-simulator-root');
+        if (!root) return;
+
+        const unit = PRICING_CONSTANTS.UNITS.CAJAMAR; // Default unit
+        const interventions = [
+            { id: 'I-01', title: 'Uniformes/EPI (Centralizado)', type: 'OPEX' },
+            { id: 'I-20', title: 'Provisionamento Rescisão', type: 'Aloc.' },
+            { id: 'I-31', title: 'Job Shadow (Onboarding)', type: 'OPEX' },
+            { id: 'I-38', title: 'Fretado (3 Rotas)', type: 'OPEX' },
+            { id: 'I-41', title: 'Ajuste Salarial (Piso Mercado)', type: 'OPEX' }
+        ];
+
+        root.innerHTML = `
+            <div class="budget-simulator-card">
+                <div class="simulator-header">
+                    <div class="unit-selector">
+                        <label>Simular para Unidade:</label>
+                        <select id="sim-unit-select" class="form-select">
+                            ${Object.values(PRICING_CONSTANTS.UNITS).map(u => `
+                                <option value="${u.id}" ${u.id === unit.id ? 'selected' : ''}>${u.name} (HC: ${u.headcount})</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="simulator-body">
+                    <div class="intervention-selection">
+                        <h4>Selecione as Intervenções:</h4>
+                        <div class="selection-grid">
+                            ${interventions.map(int => `
+                                <label class="selection-item">
+                                    <input type="checkbox" class="sim-checkbox" data-id="${int.id}" checked>
+                                    <span class="selection-label">
+                                        <span class="int-id">${int.id}</span>
+                                        <span class="int-title">${int.title}</span>
+                                    </span>
+                                </label>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="simulator-outputs">
+                        <div class="output-card total-investment">
+                            <span class="output-label">Investimento Mensal Total</span>
+                            <span class="output-value" id="sim-total-investment">R$ 0,00</span>
+                        </div>
+                        <div class="output-card turnover-savings">
+                            <span class="output-label">Economia Mensal (Turnover)</span>
+                            <span class="output-value text-success" id="sim-turnover-savings">R$ 0,00</span>
+                        </div>
+                        <div class="output-card net-impact">
+                            <span class="output-label">Impacto Líquido no P&L</span>
+                            <span class="output-value" id="sim-net-impact">R$ 0,00</span>
+                        </div>
+                    </div>
+
+                    <div class="payback-visualization">
+                        <div class="chart-container">
+                            <div class="chart-bar-wrap">
+                                <div class="chart-label">Custo</div>
+                                <div class="chart-bar bg-danger" id="bar-cost" style="width: 0%"></div>
+                            </div>
+                            <div class="chart-bar-wrap">
+                                <div class="chart-label">Economia</div>
+                                <div class="chart-bar bg-success" id="bar-savings" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div id="payback-summary" class="payback-text"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    /**
+     * Setup reactivity for the budget simulator
+     */
+    setupBudgetSimulator() {
+        const update = () => {
+            const unitId = document.getElementById('sim-unit-select')?.value;
+            const unit = Object.values(PRICING_CONSTANTS.UNITS).find(u => u.id === unitId);
+            if (!unit) return;
+
+            const selectedIds = Array.from(document.querySelectorAll('.sim-checkbox:checked')).map(cb => cb.dataset.id);
+            
+            let totalInvestment = 0;
+            if (selectedIds.includes('I-01')) totalInvestment += (unit.headcount * 150) / 12;
+            if (selectedIds.includes('I-20')) totalInvestment += 1436.42; 
+            if (selectedIds.includes('I-31')) totalInvestment += 450; 
+            if (selectedIds.includes('I-38')) totalInvestment += (350 - (unit.valeTransporte || 80)) * unit.headcount;
+            if (selectedIds.includes('I-41')) totalInvestment += FORMULAS.I41(unit, 2100);
+
+            // ROI: Reduction from current turnover to 20%
+            const targetTurnover = 0.20;
+            const savedMonthly = FORMULAS.TURN_SAVINGS(unit, targetTurnover);
+
+            const netImpact = savedMonthly - totalInvestment;
+
+            // Update UI
+            const fmt = (val) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
+            
+            document.getElementById('sim-total-investment').textContent = fmt(totalInvestment);
+            document.getElementById('sim-turnover-savings').textContent = fmt(savedMonthly);
+            document.getElementById('sim-net-impact').textContent = fmt(netImpact);
+            document.getElementById('sim-net-impact').className = `output-value ${netImpact >= 0 ? 'text-success' : 'text-danger'}`;
+
+            // Chart
+            const maxVal = Math.max(totalInvestment, savedMonthly, 1000);
+            const costPct = (totalInvestment / maxVal) * 100;
+            const savePct = (savedMonthly / maxVal) * 100;
+            
+            document.getElementById('bar-cost').style.width = `${costPct}%`;
+            document.getElementById('bar-savings').style.width = `${savePct}%`;
+
+            const summary = document.getElementById('payback-summary');
+            if (netImpact >= 0) {
+                summary.innerHTML = `🚀 <strong>ROI Positivo:</strong> A estratégia se paga no próprio mês através da redução do turnover.`;
+            } else {
+                summary.innerHTML = `⚠️ <strong>Investimento Necessário:</strong> O plano requer um aporte líquido de ${fmt(Math.abs(netImpact))} para estabilizar a operação.`;
+            }
+        };
+
+        // Event Listeners
+        document.getElementById('sim-unit-select')?.addEventListener('change', update);
+        document.querySelectorAll('.sim-checkbox').forEach(cb => cb.addEventListener('change', update));
+
+        // Initial run
+        update();
     }
 
     /**

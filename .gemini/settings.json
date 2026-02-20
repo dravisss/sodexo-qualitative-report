@@ -1,0 +1,8 @@
+{
+  "ui": {
+    "useBackgroundColor": true
+  },
+  "ide": {
+    "enabled": true
+  }
+}

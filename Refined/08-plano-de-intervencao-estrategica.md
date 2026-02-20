@@ -183,13 +183,13 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Descrição:** Estabelecer linha de **Provisionamento Mandatório para Manutenção** no orçamento. A verba deve ser carimbada para conservação predial e equipamentos, blindada de cortes para atingimento de meta de lucro puramente financeiro.
 **Objetivo:** Garantir a conservação do ativo e as condições de trabalho.
 **Impacto:** Ambientes de trabalho funcionais e dignos, reduzindo o estresse operacional causado por infraestrutura quebrada.
-#### I-24 — Gestão Compartilhada (Lead Cook + GU)
+#### I-24 — Substituição de Chefia por Liderança Técnica (Cozinheiro Líder)
 **Tensão:** A estrutura hierárquica atual cria uma camada de supervisão que "fiscaliza" mas não "resolve". Quando a máquina quebra, o Encarregado preenche papel; o Cozinheiro Líder conserta o improviso e dá continuidade à produção.
 **Descrição:** Implementar modelo de **Gestão Compartilhada**: Criar/Fortalecer o papel de **Cozinheiro Líder** que divide a gestão operacional com o GU. Revisar a necessidade do cargo de Encarregado onde este for redundante ou burocrático.
 **Objetivo:** Aproximar a liderança da produção e valorizar a competência técnica.
 **Impacto:** Melhoria na qualidade do serviço (com liderança técnica presente) e otimização da folha de liderança.
 
-#### I-25 — Fim do cargo ASG/OSG faz-tudo
+#### I-25 — Definição de Papéis e Rotina Operacional (Fim do "Faz-Tudo")
 **Tensão:** O cargo de ASG/OSG virou sinônimo de "quem faz o que ninguém quer". Resultado: desgaste físico (LER/DORT), percepção de exploração e turnover acelerado nessa função.
 **Descrição:** Mapear tarefas ASG/OSG e criar 3 subpapéis (Limpeza Pesada, Conservação Rotina, Apoio Reposição). Regra: rodízio semanal obrigatório, registrado em planilha simples. Se alguém ficar >3 dias em "Pesada", abrir ticket de "Subdimensionamento Detectado". Governança: GU audita mensalmente; se não houver rotatividade, perde autonomia de escala.
 **Objetivo:** Organizar a carga de trabalho de ASG para reduzir desgaste físico e aumentar a previsibilidade operacional.
@@ -277,14 +277,14 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 ### Ações de atratividade
 
 #### I-38 — Fretado e escalas competitivas
-**Tensão:** Cajamar/Guarulhos Food ficam a >1h de transporte público das áreas residenciais populares. Competição com Amazon/Mercado Livre (fretado grátis + escala 4x3) torna a vaga Sodexo "invisível" no mercado. Resultado: só se candidata quem está desempregado há meses.
-**Descrição:** Fretado gratuito com 3 pontos de embarque em áreas residenciais (Guarulhos Centro, Cumbica, Jardim São Paulo). Escala 5x2 (vs 6x1 atual). Benchmark: Amazon oferece fretado + escala 4x3 + R$ 200 a mais. Sodexo precisa equiparar ao menos parcialmente.
+**Tensão:** Cajamar/Guarulhos Food ficam a >1h de transporte público das áreas residenciais populares. Competição com Mercado Livre (fretado grátis + escala 4x3) torna a vaga Sodexo "invisível" no mercado. Resultado: só se candidata quem está desempregado há meses.
+**Descrição:** Fretado gratuito com 3 pontos de embarque em áreas residenciais (Guarulhos Centro, Cumbica, Jardim São Paulo). Escala 5x2 (vs 6x1 atual). Benchmark: Mercado Livre oferece fretado + escala 4x3 + R$ 200 a mais. Sodexo precisa equiparar ao menos parcialmente.
 **Objetivo:** Criar um diferencial logístico e de qualidade de vida que torne a vaga desejável.
 **Impacto:** Facilitando o acesso e melhorando a escala, a empresa passa a competir por um pool de talentos que hoje a ignora.
-**Refinamento Tático:** Realizar análise de **Heatmap Geográfico** (CEP candidatos vs Rotas Concorrência) para desenhar linhas que vençam a capilaridade da Amazon.
+**Refinamento Tático:** Realizar análise de **Heatmap Geográfico** (CEP candidatos vs Rotas Concorrência) para desenhar linhas que vençam a capilaridade da concorrência local.
 
 #### I-39 — Novo pacote de benefícios atrativo (saúde + VR)
-**Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Amazon (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
+**Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Mercado Livre (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
 **Descrição:** Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
 **Objetivo:** Posicionar a empresa como opção de estabilidade (família/saúde) contra a precarização dos apps.
 **Impacto:** Atraindo pelo benefício saúde/família, seleciona-se um perfil de colaborador mais estável e focado em longo prazo.
@@ -296,8 +296,8 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Impacto:** Se o futuro é claro e garantido, a ansiedade diminui e a retenção de longo prazo aumenta naturalmente.
 
 #### I-41 — Ajuste salarial ao mercado local
-**Tensão:** Salário-base Sodexo (Aux. Cozinha R$ 1.850, ASG R$ 1.650) vs Amazon/Mercado Livre (Operador Logístico R$ 2.100 + bônus produtividade). Gap nominal de R$ 250-400 torna Sodexo "segunda opção" crônica. Mesmo quem aceita a vaga já está de olho na próxima, gerando turnover estrutural de >100%/ano.
-**Descrição:** Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). **Diferenciação Crítica:** A pesquisa deve segregar "Polo Logístico" de "Restaurante Comum". O concorrente por mão de obra em Cajamar é a Amazon/Mercado Livre, não o restaurante da esquina. Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
+**Tensão:** Salário-base Sodexo (Aux. Cozinha R$ 1.850, ASG R$ 1.650) vs Mercado Livre (Operador Logístico R$ 2.100 + bônus produtividade). Gap nominal de R$ 250-400 torna Sodexo "segunda opção" crônica. Mesmo quem aceita a vaga já está de olho na próxima, gerando turnover estrutural de >100%/ano.
+**Descrição:** Benchmark Territorial (Cajamar/Guarulhos) via pesquisa salarial (Catho/Vagas/CAGED). **Diferenciação Crítica:** A pesquisa deve segregar "Polo Logístico" de "Restaurante Comum". O concorrente por mão de obra em Cajamar é o Mercado Livre, não o restaurante da esquina. Reposicionamento: salário-base competitivo (piso R$ 2.000 para Auxiliar, R$ 1.900 para ASG) + benefícios diferenciados (I-33) + crescimento interno (I-34). Implementação faseada: piloto em Guarulhos FM (onde turnover é crítico), depois escala.
 **Objetivo:** Ajustar a oferta financeira à realidade de mercado da região.
 **Impacto:** Pagando o preço justo de mercado, a empresa volta a ter poder de escolha na seleção, elevando a qualidade técnica da equipe.
 

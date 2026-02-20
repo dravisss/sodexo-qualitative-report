@@ -1,4 +1,4 @@
-# I-25 — Fim do cargo ASG/OSG faz-tudo
+# I-25 — Definição de Papéis e Rotina Operacional (Fim do "Faz-Tudo")
 
 ## Identificação
 
