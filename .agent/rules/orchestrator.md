@@ -1,5 +1,5 @@
 ---
-trigger: always_on
+trigger: manual
 ---
 
 # Orquestrador — Relatório Qualitativo (Sodexo / Turnover Frontline)

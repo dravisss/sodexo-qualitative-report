@@ -7,7 +7,7 @@
 - Unidade(s): Todas
 ## Tese (o que defender)
 
-Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge + 2 filhos sem coparticipação) + VR R$ 25/dia (vs R$ 18 atual) + Fretado/VT, visando reposicionar Sodexo como "porto seguro familiar" vs Amazon (plano odonto + VR R$ 25 + bônus) e iFood (flexibilidade total). Custo: R$ 150/mês/colaborador. ROI: evitar 1 rescisão/ano já paga 16 meses de upgrade.
+Upgrade de Benefícios: Absorção integral da coparticipação do Plano de Saúde (R$ 90,00/evento) + Elevação do VR/VA para R$ 25/dia + Fretado/VT Integral Gratuito. O objetivo é fortalecer a marca empregadora e a retenção em polos críticos (Cajamar/Guarulhos), posicionando a Sodexo como "porto seguro familiar" contra a volatilidade do setor logístico e apps.
 
 - Intervenção: `I-39`
 - Unidade(s): Cajamar | Guarulhos Food | Guarulhos FM
@@ -29,10 +29,13 @@ Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (cônjuge +
 
 ## Tensão / Objetivo / Impacto (doc 08)
 
-- **Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Amazon (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
-- **Descrição:** Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
-- **Objetivo:** Posicionar a empresa como opção de estabilidade (família/saúde) contra a precarização dos apps.
-- **Impacto:** Atraindo pelo benefício saúde/família, seleciona-se um perfil de colaborador mais estável e focado em longo prazo.
+- **Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para o setor logístico (Amazon/Mercado Livre). Colaboradores operacionais evitam usar o plano de saúde por não terem condições de arcar com a **coparticipação (R$ 90/evento)**, resultando em doenças não tratadas, absenteísmo e sensação de desamparo.
+- **Descrição:** Upgrade estratégico de benefícios para polos críticos (Cajamar/Guarulhos):
+  1. **Plano de Saúde "Zero Desembolso":** Absorção integral pela empresa do valor de coparticipação (R$ 90,00) para o colaborador, eliminando a barreira financeira ao cuidado médico.
+  2. **Upgrade de Alimentação:** Elevação do VR/VA para R$ 25/dia (alinhamento com benchmark logístico regional).
+  3. **Mobilidade:** Fretado ou Vale-Transporte integral gratuito.
+- **Objetivo:** Posicionar a Sodexo como uma marca empregadora que cuida da família e da estabilidade, neutralizando a desvantagem salarial perante apps e logística.
+- **Impacto:** Aumento imediato na retenção de veteranos, redução de doenças crônicas não tratadas e fortalecimento da atratividade para perfis estáveis.
 
 ## Descrição (doc 08, com adaptações)
 
@@ -40,7 +43,7 @@ O novo pacote foca em dois pilares de segurança familiar.
 
 Como funciona:
 
-- Upgrade do Plano de Saúde: Redução da coparticipação para o titular e extensão de subsídio para dependentes diretos (modelo "porto seguro").
+- Upgrade do Plano de Saúde: Absorção da coparticipação de R$ 90,00 por uso (consultas/exames). A empresa assume o custo para garantir que o colaborador não adoeça por falta de recursos para o diagnóstico.
 - Reajuste Territorial do VA/VR: Adequar o valor do benefício alimentação ao custo de vida real de polos inflacionados como Cajamar.
 - Comunicação de Valor: Campanhas que mostram o ganho real (salário + benefícios) comparado ao trabalho informal sem rede de proteção.
 

@@ -2,7 +2,7 @@
 
 ## Tese (o que defender)
 
-Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 serviço de rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
+Upgrade de Benefícios: Absorção integral da coparticipação do Plano de Saúde (R$ 90,00/evento) + VR de R$ 25/dia + Vale-Transporte ou Fretado integral gratuito. Custo adicional estimado em R$ 180/mês/colaborador. ROI esperado atraindo veteranos e reduzindo custo de rescisão/treinamento (curva de aprendizado).
 
 ## O que os dados provam
 
@@ -25,7 +25,7 @@ Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cô
 
 ## Respostas (com base em evidências)
 
-- O diagnóstico de inadequação/inacessibilidade está sustentado no campo. O desenho precisa ser territorial, com governança clara e regra de revisão periódica.
+- O diagnóstico de inadequação/inacessibilidade (os R$ 90 de coparticipação "travam" o uso da saúde) está sustentado no campo e na transcrição do War Room. O desenho precisa ser territorial, com foco em polos competitivos como Cajamar.
 
 ## Viabilidade prática
 

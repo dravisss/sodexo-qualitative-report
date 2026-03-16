@@ -284,10 +284,13 @@ Este documento organiza as intervenções em **Frentes de Atuação**.
 **Refinamento Tático:** Realizar análise de **Heatmap Geográfico** (CEP candidatos vs Rotas Concorrência) para desenhar linhas que vençam a capilaridade da concorrência local.
 
 #### I-39 — Novo pacote de benefícios atrativo (saúde + VR)
-**Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para Mercado Livre (plano odonto + VR R$ 25) e até para iFood (flexibilidade total). Resultado: Sodexo vira posição transitória enquanto o profissional busca alternativas.
-**Descrição:** Upgrade de Benefícios: Plano Saúde com cobertura familiar ampliada (inclui cônjuge + 2 filhos sem coparticipação), VR de R$ 25/dia (vs R$ 18 atual), Vale-Transporte ou Fretado grátis. Custo adicional: R$ 150/mês/colaborador (estimativa). ROI estimado: evitar 1 rescisão/ano (R$ 2.500) já paga 16 meses de upgrade.
-**Objetivo:** Posicionar a empresa como opção de estabilidade (família/saúde) contra a precarização dos apps.
-**Impacto:** Atraindo pelo benefício saúde/família, seleciona-se um perfil de colaborador mais estável e focado em longo prazo.
+**Tensão:** Pacote Sodexo atual (plano saúde básico + VR R$ 18/dia) perde para o setor logístico (Amazon/Mercado Livre). Colaboradores operacionais evitam usar o plano de saúde por não terem condições de arcar com a **coparticipação (R$ 90/evento)**, resultando em doenças não tratadas, absenteísmo e sensação de desamparo.
+**Descrição:** Upgrade estratégico de benefícios para polos críticos (Cajamar/Guarulhos):
+1.   Absorção integral pela empresa do valor de coparticipação (R$ 90,00) para o colaborador, eliminando a barreira financeira ao cuidado médico.
+2.  Elevação do VR/VA para R$ 25/dia (alinhamento com benchmark logístico regional).
+3.  Fretado ou Vale-Transporte integral gratuito.
+**Objetivo:** Posicionar a Sodexo como uma marca empregadora que cuida da família e da estabilidade, neutralizando a desvantagem salarial perante apps e logística.
+**Impacto:** Aumento imediato na retenção de veteranos, redução de doenças crônicas não tratadas e fortalecimento da atratividade para perfis estáveis.
 
 #### I-40 — Plano de carreira por tempo de serviço
 **Tensão:** Sem perspectiva clara de crescimento, colaborador veterano (2-3 anos) vê vaga de "coordenador" em loja de varejo (R$ 200 a mais) e pede demissão, mesmo sabendo que o esforço lá é maior. Ele sai pelo "título", não pelo dinheiro. Sodexo perde mentor e reinicia o ciclo de treinamento.
