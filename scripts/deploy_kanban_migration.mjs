@@ -1,7 +1,7 @@
 
 import fs from 'fs';
 
-const MIGRATED_FILE = './backups/kanban/kanban_state_after_migration_preview.json';
+const MIGRATED_FILE = '/tmp/kanban_state_surgical.json';
 const API_URL = 'https://relatoriosdx.netlify.app/.netlify/functions/kanban-state';
 
 async function deploy() {

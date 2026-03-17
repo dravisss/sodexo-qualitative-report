@@ -1,0 +1,684 @@
+{
+  "_columnOrder": {
+    "backlog": [
+      "I-15",
+      "I-16",
+      "I-17",
+      "I-31",
+      "I-33",
+      "I-42"
+    ],
+    "doing": [
+      "I-31",
+      "I-16",
+      "I-33",
+      "I-17",
+      "I-15",
+      "I-13",
+      "I-29",
+      "I-30",
+      "I-12",
+      "I-11",
+      "I-07",
+      "I-19",
+      "I-24",
+      "I-21",
+      "I-23",
+      "I-22",
+      "I-28",
+      "I-26",
+      "I-41",
+      "I-40",
+      "I-38",
+      "I-27",
+      "I-25",
+      "I-09",
+      "I-08",
+      "I-10",
+      "I-04",
+      "I-01",
+      "I-03",
+      "I-02"
+    ],
+    "blocked": [
+      "I-17",
+      "I-42",
+      "I-06",
+      "I-21",
+      "I-20"
+    ],
+    "done": []
+  },
+  "I-01": {
+    "status": "doing",
+    "startDate": "",
+    "endDate": "",
+    "attachments": [],
+    "updatedAt": "2026-02-04T12:27:29.025Z",
+    "responsible": "",
+    "updates": "Hoje nao existe uma estrutura na SDX que conseguiria implementar essa compra e distribui\u00e7\u00e3o centralizada\n\nSe tivermos um CSC seria poss\u00edvel fazer a distribui\u00e7\u00e3o \n\nVerificar PFP das unidades vs Realidade\n\n\u00c9 preciso criar uma estrutura dedicada para operacionalizar isso \n\nDesenvolver um CSC dedicado a abastecimento\n\nSa\u00edda: Mapear datas de admissoa de cajamar e guarulhos e projetar qual deveria ter sido a comrpa\n\n",
+    "tags": [
+      "compras",
+      "esg",
+      "CSC"
+    ],
+    "stakeholders": [
+      {
+        "name": "Manu",
+        "area": "Compras",
+        "contact": ""
+      },
+      {
+        "name": "Heitor",
+        "area": "HSE",
+        "contact": ""
+      },
+      {
+        "name": "James",
+        "area": "Finan\u00e7as",
+        "contact": ""
+      },
+      {
+        "name": "Lilian Raud",
+        "area": "ESG",
+        "contact": ""
+      },
+      {
+        "name": "C\u00ednthia",
+        "area": "Marketing",
+        "contact": ""
+      },
+      {
+        "name": "Claudio",
+        "area": "Compras",
+        "contact": ""
+      }
+    ],
+    "substatus": "todo"
+  },
+  "I-02": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "2026-01-19",
+    "endDate": "2026-02-28",
+    "updates": "- Esse experimento talvez possa ser testado nas duas unidades\n- Provavelmente nao \u00e9 revers\u00edvel \n",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Carla Fanfa",
+        "area": "Saude integral",
+        "contact": ""
+      },
+      {
+        "name": "Edmilson",
+        "area": "Rela\u00e7\u00f5es Sindicais",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:27:30.522Z",
+    "substatus": "todo"
+  },
+  "I-03": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "2026-01-16",
+    "endDate": "2026-03-26",
+    "updates": "H\u00e1 um projeto em andamento de revisao da estrutura de HSE ",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "William Lo",
+        "area": "Compliance",
+        "contact": ""
+      },
+      {
+        "name": "Guilherme Cogo",
+        "area": "Jur\u00eddico",
+        "contact": ""
+      },
+      {
+        "name": "Heitor",
+        "area": "HSE",
+        "contact": ""
+      },
+      {
+        "name": "Pri Pinheiro",
+        "area": "Arquitetos",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:27:33.571Z",
+    "substatus": "todo"
+  },
+  "I-04": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "2026-01-19",
+    "endDate": "2026-02-28",
+    "updates": "Obs: N\u00e3o \u00e9 equipamento, \u00e9 infraestrutura.\n",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Suhene",
+        "area": "Jur\u00eddico",
+        "contact": ""
+      },
+      {
+        "name": "Cogo",
+        "area": "TLR Jur\u00eddico",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:27:37.954Z",
+    "substatus": "todo"
+  },
+  "I-38": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "H\u00e1 um projeto em andamento de fazer um circular da sodexo a nivel nacional \n\n\nHoje unidade que ja tem fretado pode entrar no projeto piloto proque dividir o fretado. Mas a unidade tem que ter fretado pra isso. \n\nVerificar se existe uma pol\u00edtica de fretados. Considera estabelecer pontos fixos. \n\n\n",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Manu",
+        "area": "Compras",
+        "contact": ""
+      },
+      {
+        "name": "Vana Fiorini",
+        "area": "RH",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:28:43.838Z",
+    "substatus": "todo"
+  },
+  "I-17": {
+    "status": "blocked",
+    "updatedAt": "2026-03-16T18:34:11.177Z",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Fernanda Martini",
+        "area": "Estrategia",
+        "contact": ""
+      }
+    ]
+  },
+  "I-10": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Or\u00e7amento focado \u00e9 apenas um caso local, globalmente nao \u00e9 sobre eliminar esfor\u00e7o fisico. \n\n1a acao: Manter manuten\u00e7ao. \n\n2a acao: Olhar para reposicao de equipamentos de como funcionar melhor\n\n3a interven\u00e7\u00e3oe extra: Criar um mecanismo interno de auditoria para visitias tecnicas locais qualitativas para substituir pontos cego dos formularios quantitativos. \n\nsaida: definicao de cargos de GO e GCE. \n",
+    "tags": [
+      "REVIS\u00c3O"
+    ],
+    "stakeholders": [
+      {
+        "name": "Komak",
+        "area": "Manuten\u00e7\u00e3o",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:27:40.583Z",
+    "substatus": "todo"
+  },
+  "I-08": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Nao sabemos e precisamos investigar com a Vana. ",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Vana Fiorini",
+        "area": "Servicos de RH",
+        "contact": ""
+      },
+      {
+        "name": "Carla fanfa",
+        "area": "Servicos de RH",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:27:41.503Z",
+    "substatus": "todo"
+  },
+  "I-06": {
+    "status": "blocked",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "excluir essa interven\u00e7\u00e3o , e adaptar com o que coletamos no audio. a I6 pegou ela. ",
+    "tags": [
+      "REVIS\u00c3O"
+    ],
+    "stakeholders": [],
+    "updatedAt": "2026-02-04T18:05:00.316Z",
+    "relatedInitiatives": "i-6"
+  },
+  "I-09": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Lorena Trintin",
+        "area": "HSE",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:28:18.388Z",
+    "substatus": "todo"
+  },
+  "I-25": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Rotina operacional : padrao para o papel e sub-papeis. ",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Thiago oliveira",
+        "area": "BIGGS",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:28:27.805Z",
+    "substatus": "todo"
+  },
+  "I-40": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Lucia Watanabe",
+        "area": "BP operacoes",
+        "contact": ""
+      },
+      {
+        "name": "Maria claudia silva",
+        "area": "",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:28:45.656Z",
+    "substatus": "todo"
+  },
+  "I-41": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Alexandre Pacheco",
+        "area": "Remunera\u00e7\u00e3o",
+        "contact": ""
+      },
+      {
+        "name": "Lidia Santos",
+        "area": "Remunera\u00e7\u00e3o",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:28:47.339Z",
+    "substatus": "todo"
+  },
+  "I-21": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Pacote de saida , itens falados com alexandre",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Alexandre Pacheco",
+        "area": "Remunera\u00e7\u00e3o",
+        "contact": ""
+      },
+      {
+        "name": "Guilherme Cogo",
+        "area": "juridico",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T13:51:58.777Z",
+    "substatus": "todo"
+  },
+  "I-22": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Entender como os projetos em andamento ja podem ajudar. ",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Thiago Oliveira",
+        "area": "BIGGS",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T13:24:52.042Z",
+    "substatus": "todo"
+  },
+  "I-28": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "2026-02-02",
+    "endDate": "",
+    "updates": "Concatenado com a interven\u00e7\u00e3o de eliminar a puni\u00e7\u00e3o por ",
+    "tags": [],
+    "stakeholders": [],
+    "updatedAt": "2026-02-04T12:28:33.905Z",
+    "substatus": "todo"
+  },
+  "I-27": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Pedir pro alexandre: Quanto estamos pagando de PLR nas unidades? ",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Alexandre Pacheco",
+        "area": "Remunera\u00e7\u00e3o",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T12:47:57.064Z",
+    "substatus": "todo",
+    "relatedInitiatives": ""
+  },
+  "I-20": {
+    "status": "blocked",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Transformar em projeto C-PLAN para tentar um caminho de remo\u00e7\u00e3o do custo de demiss\u00e3o. \n\nSomos hj conservador, sera que estamos Tentando caminhos de acordo com o colaborador?\n\nCOndicionada a existencia dos deflatores e escalonamento",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [],
+    "updatedAt": "2026-02-04T13:15:28.168Z"
+  },
+  "I-23": {
+    "status": "doing",
+    "updatedAt": "2026-02-04T13:40:40.538Z",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Mudar nome para refletir a intervne\u00e7\u00e3o\n\nsatoshi precisa fazer um biz case de como seria:\n\n1- 100% mao de obra contratada sdx\n2- Qual seria o custo para manter empresas contratadas para manutencao corretiva e preventiva em todas unds em um custo central. ",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Satoshi",
+        "area": "Manuten\u00e7ao",
+        "contact": ""
+      }
+    ],
+    "substatus": "todo"
+  },
+  "I-24": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Fernanda Zibordi",
+        "area": "Transformacao de RH",
+        "contact": ""
+      },
+      {
+        "name": "Maria claudia",
+        "area": "BP",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T13:57:38.788Z",
+    "substatus": "todo"
+  },
+  "I-26": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Vamos rever o PLR de ponta-a-ponta . \n\nPri vai enviar todos os docs. ",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Alexandre Pacheco",
+        "area": "Remunera\u00e7\u00e3o",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T13:59:57.383Z",
+    "substatus": "todo"
+  },
+  "I-29": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Coletar estatisticas , e o que a juliana tem feito para amenizar esse casos. Depende 100% do GU , ou existe algo automatizado. \n\nO sla ja existe , o gargalo deve estar em outro lugar possivelmente gu nao repassando os pedidos. ",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Juliana menezes",
+        "area": "RH",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T14:13:05.071Z",
+    "substatus": "todo"
+  },
+  "I-30": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Perguntar pra dea sobre do projeto que busca dar visibilidade do acesso do frontline ao demonstrativo de pagamento. (harmony) \n\nTemos duvida se o papel do GCE/GO pode absorver esse tipo de auditoria. Isso evitaria a auditoria externa \u00e0 unidade. \u00c9 poss\u00edvel? (Fernanda) \n\n(cajamar) Quando que aconteceu a migracao do projeto ponto pra saber se houve algum problema com os dados. (douglas)",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Fernanda Zibord",
+        "area": "Transforma\u00e7\u00e3o de RH",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-03-16T19:09:39.560Z",
+    "substatus": "todo"
+  },
+  "I-31": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Uma campanha de incentivo para padrinhos que forem bem sucedidos em manter o novo colaborador por mais de 3 meses (R$300)\n\nPS: TT conversar com o responsavel pelo processo de onboarding frontline para ajudar com ideias e dados da ponta. (jaqueline)\n",
+    "relatedInitiatives": "",
+    "tags": [
+      "Precifica\u00e7\u00e3o"
+    ],
+    "stakeholders": [
+      {
+        "name": "Jaqueline Camargo",
+        "area": "Gerente de treinamento e desenvolvimento",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-03-16T18:23:29.316Z",
+    "substatus": "todo"
+  },
+  "I-15": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Entrar no manual do GU. \n",
+    "relatedInitiatives": "i-16",
+    "tags": [
+      "Cajamar"
+    ],
+    "stakeholders": [
+      {
+        "name": "Lidiane Kuhnen",
+        "area": "Planejamento",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-03-16T18:40:19.523Z",
+    "substatus": "todo"
+  },
+  "I-19": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Associar com a interven\u00e7\u00e3o de papeis da OSG como instrucao para as GUs de como distribuir as a\u00e7\u00f5es.",
+    "relatedInitiatives": "I-25",
+    "tags": [],
+    "stakeholders": [],
+    "updatedAt": "2026-02-04T14:46:54.619Z",
+    "substatus": "todo"
+  },
+  "I-07": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Associada a I-22. \n\nAvaliar o gargalo do GO sobre auditorias ou se ja temos solucao com os tecnicos de HSE absorvendo nos seus relatorios. ",
+    "relatedInitiatives": "I-22",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Satoshi",
+        "area": "Manuten\u00e7\u00e3o",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T14:47:01.003Z",
+    "substatus": "todo"
+  },
+  "I-11": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Alem destes , rever a cesta de natal. \n\nImplementar politica ja existente de folga. (relatorio de dia livre para impulsionar a utilizacao do beneficio)\n\nGratificacao de 10% para quem completa 1 ano de empresa. ",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Alexandre Pacheco",
+        "area": "Remunera\u00e7\u00e3o",
+        "contact": ""
+      },
+      {
+        "name": "Thais Ribeiro",
+        "area": "Experiencia do colaborador",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-02-04T14:55:56.385Z",
+    "substatus": "todo"
+  },
+  "I-12": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "VAi pro manual \n \n- Pegar hrs extras das unidades piloto (6 meses) Existe descrepancia de hrs extras entre cargos? Como \u00e9 a correla\u00e7\u00e3o de banco de horas, horas extras e cargo? ",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Karlla lima",
+        "area": "Controladoria (chris)",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-03-16T19:26:02.444Z",
+    "substatus": "todo"
+  },
+  "I-13": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "OBS: nao estamos substituindo nada, apenas aproveitar o momento do DDS para incluir assuntos de saude mental. \n\nConsultar a carla para a\u00e7\u00f5es que ela por ventura possa executar nessa frente. ",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Carla fanfa",
+        "area": "Saude integral",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-03-16T18:51:44.441Z",
+    "substatus": "todo"
+  },
+  "I-16": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Entrar no manual do GU. \n\nPre\u00e7o: (com um redimensionamento da equipe , \u00e9 esperado que esse papel consiga ser energizado. POr isso, a precificacao dele \u00e9 consequencia do redimensionamento.)",
+    "relatedInitiatives": "I-15",
+    "tags": [],
+    "stakeholders": [],
+    "updatedAt": "2026-03-16T18:38:30.623Z",
+    "substatus": "todo"
+  },
+  "I-33": {
+    "status": "doing",
+    "responsible": "",
+    "startDate": "",
+    "endDate": "",
+    "updates": "Dentro do D.O. essa frente pretende resolver essa quest\u00e3o. Precisamos monitorar com a fernanda. ",
+    "relatedInitiatives": "",
+    "tags": [],
+    "stakeholders": [
+      {
+        "name": "Fernanda Zibord",
+        "area": "Transforma\u00e7\u00e3o de RH",
+        "contact": ""
+      }
+    ],
+    "updatedAt": "2026-03-16T18:32:30.160Z",
+    "substatus": "todo"
+  },
+  "I-42": {
+    "status": "blocked",
+    "updatedAt": "2026-02-04T17:35:17.329Z"
+  }
+}
