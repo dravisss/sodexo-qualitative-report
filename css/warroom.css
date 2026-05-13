@@ -1323,7 +1323,19 @@
   color: #9a7000;
 }
 
-.wr-drill-table td.wr-heat.bad {
-  background: rgba(255, 112, 112, 0.18);
-  color: var(--color-error);
+  .wr-drill-table td.wr-heat.bad {
+    background: rgba(255, 112, 112, 0.18);
+    color: var(--color-error);
+  }
+
+/* Badge for Eixo */
+.badge-eixo {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-size: 0.75em;
+  font-weight: 600;
+  border-radius: 4px;
+  background: var(--clr-teal-100, #d9edf0);
+  color: var(--clr-teal-700, #2d7d87);
+  white-space: nowrap;
 }

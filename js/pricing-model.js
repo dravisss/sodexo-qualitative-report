@@ -63,9 +63,9 @@ export const FORMULAS = {
         return totalSaved / 12;
     },
 
-    // I-41: Ajuste Salarial Territorial
+    // I-36: Ajuste Salarial Territorial
     // Lógica: (Piso Mercado - Piso Atual) * Multiplicador de Encargos * Headcount
-    I41: (unit, customFloor) => {
+    I36: (unit, customFloor) => {
         const marketFloor = customFloor || PRICING_CONSTANTS.BENCHMARKS.MERCADO_LIVRE_FLOOR;
         const delta = Math.max(0, marketFloor - unit.avgSalary);
         return delta * PRICING_CONSTANTS.ENCARGOS_SOCIAIS * unit.headcount;

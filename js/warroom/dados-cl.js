@@ -115,7 +115,7 @@ function renderNarrative(data) {
 const RELATED_INTERVENTIONS = {
   BR014545: [
     { id: 'I-01', why: 'Custo e disciplina de consumo em EPI/uniformes' },
-    { id: 'I-22', why: 'Manutenção e reparos essenciais como causa de atrito operacional' }
+    { id: 'I-20', why: 'Manutenção e reparos essenciais como causa de atrito operacional' }
   ],
   BR012302: [
     { id: 'I-01', why: 'Custo e disciplina de consumo em EPI/uniformes' }

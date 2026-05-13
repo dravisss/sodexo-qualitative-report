@@ -53,7 +53,7 @@ function normalizeTitle(id, title) {
   return t.replace(pattern, '').trim();
 }
 
-function renderHeader({ id, title, status, units, front, tags, evidence_strength }) {
+function renderHeader({ id, title, status, units, front, tags, evidence_strength, eixo }) {
   const unitsArr = normalizeList(units);
   const tagsArr = normalizeList(tags);
   const cleanTitle = normalizeTitle(id, title);
@@ -61,6 +61,7 @@ function renderHeader({ id, title, status, units, front, tags, evidence_strength
   const badges = [
     renderStatusBadge(status),
     front ? renderBadge(front) : '',
+    eixo ? renderBadge(eixo, 'badge-eixo') : '',
     evidence_strength ? renderBadge(evidence_strength) : '',
     ...unitsArr.map(u => renderBadge(u)),
     ...tagsArr.map(t => renderBadge(t))
@@ -160,7 +161,8 @@ async function main() {
         units: frontmatter.units,
         front: frontmatter.front,
         tags: frontmatter.tags,
-        evidence_strength: frontmatter.evidence_strength
+        evidence_strength: frontmatter.evidence_strength,
+        eixo: frontmatter.eixo
       });
     }
 

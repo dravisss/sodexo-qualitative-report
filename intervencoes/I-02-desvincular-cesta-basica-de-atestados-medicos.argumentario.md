@@ -1,3 +1,10 @@
+---
+eixo: "Benefícios/Incentivos"
+observacao: ""
+tarefas: []
+iniciativas_relacionadas: []
+---
+
 # Argumentário — I-02 — Desvincular cesta básica de atestados médicos
 
 ## Tese (o que defender)

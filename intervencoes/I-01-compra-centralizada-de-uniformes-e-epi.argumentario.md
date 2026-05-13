@@ -1,3 +1,10 @@
+---
+eixo: "Provisionamento"
+observacao: ""
+tarefas: []
+iniciativas_relacionadas: []
+---
+
 # Argumentário — I-01 — Compra centralizada de uniformes e EPI
 
 ## Tese (o que defender)

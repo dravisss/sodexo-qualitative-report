@@ -277,10 +277,10 @@ class ReportReader {
         const unit = PRICING_CONSTANTS.UNITS.CAJAMAR; // Default unit
         const interventions = [
             { id: 'I-01', title: 'Uniformes/EPI (Centralizado)', type: 'OPEX' },
-            { id: 'I-20', title: 'Provisionamento Rescisão', type: 'Aloc.' },
-            { id: 'I-31', title: 'Job Shadow (Onboarding)', type: 'OPEX' },
-            { id: 'I-38', title: 'Fretado (3 Rotas)', type: 'OPEX' },
-            { id: 'I-41', title: 'Ajuste Salarial (Piso Mercado)', type: 'OPEX' }
+            { id: 'I-18', title: 'Provisionamento Rescisão', type: 'Aloc.' },
+            { id: 'I-29', title: 'Job Shadow (Onboarding)', type: 'OPEX' },
+            { id: 'I-33', title: 'Fretado (3 Rotas)', type: 'OPEX' },
+            { id: 'I-36', title: 'Ajuste Salarial (Piso Mercado)', type: 'OPEX' }
         ];
 
         root.innerHTML = `
@@ -358,10 +358,10 @@ class ReportReader {
             
             let totalInvestment = 0;
             if (selectedIds.includes('I-01')) totalInvestment += (unit.headcount * 150) / 12;
-            if (selectedIds.includes('I-20')) totalInvestment += 1436.42; 
-            if (selectedIds.includes('I-31')) totalInvestment += 450; 
-            if (selectedIds.includes('I-38')) totalInvestment += (350 - (unit.valeTransporte || 80)) * unit.headcount;
-            if (selectedIds.includes('I-41')) totalInvestment += FORMULAS.I41(unit, 2100);
+            if (selectedIds.includes('I-18')) totalInvestment += 1436.42; 
+            if (selectedIds.includes('I-29')) totalInvestment += 450; 
+            if (selectedIds.includes('I-33')) totalInvestment += (350 - (unit.valeTransporte || 80)) * unit.headcount;
+            if (selectedIds.includes('I-36')) totalInvestment += FORMULAS.I36(unit, 2100);
 
             // ROI: Reduction from current turnover to 20%
             const targetTurnover = 0.20;
@@ -1593,25 +1593,25 @@ class ReportReader {
                 label: 'Quick Wins',
                 emoji: '💎',
                 desc: 'Alto Impacto / Baixo Esforço',
-                ids: ['I-01', 'I-02', 'I-06', 'I-08', 'I-11', 'I-22', 'I-23', 'I-26', 'I-29', 'I-30', 'I-37']
+                ids: ['I-01', 'I-02', 'I-05', 'I-07', 'I-10', 'I-20', 'I-21', 'I-24', 'I-27', 'I-28']
             },
             transformational: {
                 label: 'Transformacionais',
                 emoji: '🚀',
                 desc: 'Alto Impacto / Alto Esforço',
-                ids: ['I-03', 'I-14', 'I-15', 'I-16', 'I-17', 'I-18', 'I-21', 'I-24', 'I-25', 'I-27', 'I-32', 'I-34', 'I-35']
+                ids: ['I-12', 'I-13', 'I-15', 'I-16', 'I-19', 'I-22', 'I-23', 'I-25', 'I-30', 'I-32']
             },
             tactical: {
                 label: 'Táticas',
                 emoji: '🔧',
                 desc: 'Baixo Impacto / Baixo Esforço',
-                ids: ['I-05', 'I-07', 'I-10', 'I-12', 'I-13', 'I-19', 'I-20', 'I-31', 'I-33']
+                ids: ['I-04', 'I-06', 'I-09', 'I-11', 'I-17', 'I-18', 'I-29', 'I-31']
             },
             complex: {
                 label: 'Ingratas',
                 emoji: '⚠️',
                 desc: 'Baixo Impacto / Alto Esforço',
-                ids: ['I-04', 'I-09', 'I-36']
+                ids: ['I-03', 'I-08']
             }
         };
 

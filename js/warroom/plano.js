@@ -1,4 +1,5 @@
-import { fetchText } from './utils.js';
+import { INTERVENTION_DOSSIERS } from '../interventions.config.js';
+import { fetchText, parseFrontmatter } from './utils.js';
 
 function setupShellInteractions() {
   const sidebar = document.querySelector('.sin-sidebar');
@@ -63,7 +64,7 @@ function parseMarkdown(markdown) {
   return `<pre>${markdown}</pre>`;
 }
 
-function renderWarRoom(html) {
+function renderWarRoom(html, eixoMap = {}) {
   const div = document.createElement('div');
   div.innerHTML = html;
 
@@ -125,6 +126,7 @@ function renderWarRoom(html) {
       phaseData[phaseIndex].interventions.push({
         id: match[1],
         title: match[2],
+        eixo: eixoMap[match[1]] || '',
         ...fields
       });
     }
@@ -161,25 +163,25 @@ function renderWarRoom(html) {
       label: 'Quick Wins',
       emoji: '💎',
       desc: 'Alto Impacto / Baixo Esforço',
-      ids: ['I-01', 'I-02', 'I-06', 'I-08', 'I-11', 'I-22', 'I-23', 'I-26', 'I-29', 'I-30', 'I-37']
+      ids: ['I-01', 'I-02', 'I-05', 'I-07', 'I-10', 'I-20', 'I-21', 'I-24', 'I-27', 'I-28']
     },
     transformational: {
       label: 'Transformacionais',
       emoji: '🚀',
       desc: 'Alto Impacto / Alto Esforço',
-      ids: ['I-03', 'I-14', 'I-15', 'I-16', 'I-17', 'I-18', 'I-21', 'I-24', 'I-25', 'I-27', 'I-32', 'I-34', 'I-35']
+      ids: ['I-12', 'I-13', 'I-15', 'I-16', 'I-19', 'I-22', 'I-23', 'I-25', 'I-30', 'I-32']
     },
     tactical: {
       label: 'Táticas',
       emoji: '🔧',
       desc: 'Baixo Impacto / Baixo Esforço',
-      ids: ['I-05', 'I-07', 'I-10', 'I-12', 'I-13', 'I-19', 'I-20', 'I-31', 'I-33']
+      ids: ['I-04', 'I-06', 'I-09', 'I-11', 'I-17', 'I-18', 'I-29', 'I-31']
     },
     complex: {
       label: 'Ingratas',
       emoji: '⚠️',
       desc: 'Baixo Impacto / Alto Esforço',
-      ids: ['I-04', 'I-09', 'I-36']
+      ids: ['I-03', 'I-08']
     }
   };
 
@@ -256,17 +258,18 @@ function renderWarRoom(html) {
             </div>
             <div class="board-column-content">
               ${phase.interventions.map(int => `
-                <div class="board-card"
-                     data-id="${int.id}"
-                     data-title="${String(int.title).replace(/\"/g, '&quot;')}"
-                     data-phase="${phase.num}"
-                     data-tensao="${String(int.tensao || '').replace(/\"/g, '&quot;')}"
-                     data-descricao="${String(int.descricao || '').replace(/\"/g, '&quot;')}"
-                     data-objetivo="${String(int.objetivo || '').replace(/\"/g, '&quot;')}"
-                     data-impacto="${String(int.impacto || '').replace(/\"/g, '&quot;')}">
-                  <div class="card-id">${int.id}</div>
-                  <div class="card-title">${int.title}</div>
-                </div>
+                 <div class="board-card"
+                      data-id="${int.id}"
+                      data-title="${String(int.title).replace(/\"/g, '&quot;')}"
+                      data-phase="${phase.num}"
+                      data-tensao="${String(int.tensao || '').replace(/\"/g, '&quot;')}"
+                      data-descricao="${String(int.descricao || '').replace(/\"/g, '&quot;')}"
+                      data-objetivo="${String(int.objetivo || '').replace(/\"/g, '&quot;')}"
+                      data-impacto="${String(int.impacto || '').replace(/\"/g, '&quot;')}">
+                   <div class="card-id">${int.id}</div>
+                   <div class="card-title">${int.title}</div>
+                   ${int.eixo ? `<div class="badge badge-eixo">${int.eixo}</div>` : ''}
+                 </div>
               `).join('')}
             </div>
           </div>
@@ -439,10 +442,24 @@ async function init() {
 
   try {
     setupShellInteractions();
-    const md = await fetchText('./Refined/08-plano-de-intervencao-estrategica.md');
+
+    const [md, ...frontmatters] = await Promise.all([
+      fetchText('./Refined/08-plano-de-intervencao-estrategica.md'),
+      ...INTERVENTION_DOSSIERS.map(async d => {
+        const text = await fetchText(d.path);
+        const { frontmatter } = parseFrontmatter(text);
+        return { id: d.id, eixo: frontmatter.eixo || '' };
+      })
+    ]);
+
+    const eixoMap = {};
+    for (const fm of frontmatters) {
+      eixoMap[fm.id] = fm.eixo;
+    }
+
     const html = parseMarkdown(md);
     contentEl.classList.remove('loading');
-    contentEl.innerHTML = renderWarRoom(html);
+    contentEl.innerHTML = renderWarRoom(html, eixoMap);
 
     setupWarRoomModal();
     setupPlanHubLinks(contentEl);
