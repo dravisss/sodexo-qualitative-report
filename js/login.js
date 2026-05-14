@@ -2,22 +2,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const passwordInput = document.getElementById('password');
     const errorMessage = document.getElementById('error-message');
-    const CORRECT_PASSWORD = 'sdx2026';
+    const PASSWORDS = {
+        sdx2026: 'user',
+        admin123: 'admin'
+    };
 
-    // Focus input on load
     passwordInput.focus();
 
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const password = passwordInput.value;
+        const role = PASSWORDS[password];
 
-        if (password === CORRECT_PASSWORD) {
-            // Success
+        if (role) {
             sessionStorage.setItem('sin_authenticated', 'true');
+            sessionStorage.setItem('sin_role', role);
 
-            // Subtle success animation or direct redirect?
-            // Let's redirect immediately but maybe change button state
             const btn = loginForm.querySelector('button');
             btn.textContent = 'Acessando...';
             btn.style.backgroundColor = 'var(--color-success)';
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'index.html';
             }, 300);
         } else {
-            // Error
             showError();
         }
     });

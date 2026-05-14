@@ -40,11 +40,10 @@ class ReportReader {
     renderNavigation() {
         if (!this.navGroupsEl) return;
 
-
-
+        const isAdmin = sessionStorage.getItem('sin_role') === 'admin';
         const byId = new Map(ARTICLES.map(a => [a.id, a]));
         const groupsHtml = NAV_GROUPS.map(group => {
-            const groupArticles = ARTICLES.filter(a => a.group === group.id);
+            const groupArticles = ARTICLES.filter(a => a.group === group.id && (isAdmin || a.id !== '16'));
             if (!groupArticles.length) return '';
 
             const itemsHtml = groupArticles.map(article => `
@@ -91,8 +90,7 @@ class ReportReader {
             `;
         }).join('');
 
-        // Tools Footer (War Room & Kanban)
-        const toolsHtml = `
+        const toolsHtml = isAdmin ? `
             <div class="sidebar-tools">
                 <a href="warroom.html" class="tool-button" title="War Room">
                     <span class="tool-icon">🧭</span>
@@ -103,7 +101,7 @@ class ReportReader {
                     <span class="tool-label">Gestão</span>
                 </a>
             </div>
-        `;
+        ` : '';
 
         this.navGroupsEl.innerHTML = groupsHtml;
 
@@ -203,9 +201,13 @@ class ReportReader {
         const article = ARTICLES.find(a => a.id === hash);
 
         if (article) {
+            const isAdmin = sessionStorage.getItem('sin_role') === 'admin';
+            if (article.id === '16' && !isAdmin) {
+                window.location.hash = '00';
+                return;
+            }
             this.loadArticle(article);
         } else {
-            // Default to first article
             this.loadArticle(ARTICLES[0]);
         }
     }
@@ -1778,25 +1780,27 @@ class ReportReader {
 
                 if (actionsEl) {
                     actionsEl.innerHTML = '';
+                    const isAdmin = sessionStorage.getItem('sin_role') === 'admin';
+                    if (isAdmin) {
+                        const dossier = document.createElement('a');
+                        dossier.className = 'cta-button';
+                        dossier.href = `dossie.html?i=${encodeURIComponent(id)}`;
+                        dossier.textContent = '📄 Dossiê';
 
-                    const dossier = document.createElement('a');
-                    dossier.className = 'cta-button';
-                    dossier.href = `dossie.html?i=${encodeURIComponent(id)}`;
-                    dossier.textContent = '📄 Dossiê';
+                        const arg = document.createElement('a');
+                        arg.className = 'cta-button';
+                        arg.href = `argumentario.html?i=${encodeURIComponent(id)}`;
+                        arg.textContent = '🧾 Argumentário';
 
-                    const arg = document.createElement('a');
-                    arg.className = 'cta-button';
-                    arg.href = `argumentario.html?i=${encodeURIComponent(id)}`;
-                    arg.textContent = '🧾 Argumentário';
+                        const kanban = document.createElement('a');
+                        kanban.className = 'cta-button';
+                        kanban.href = `kanban.html?card=${encodeURIComponent(id)}`;
+                        kanban.textContent = '📋 Kanban';
 
-                    const kanban = document.createElement('a');
-                    kanban.className = 'cta-button';
-                    kanban.href = `kanban.html?card=${encodeURIComponent(id)}`;
-                    kanban.textContent = '📋 Kanban';
-
-                    actionsEl.appendChild(dossier);
-                    actionsEl.appendChild(arg);
-                    actionsEl.appendChild(kanban);
+                        actionsEl.appendChild(dossier);
+                        actionsEl.appendChild(arg);
+                        actionsEl.appendChild(kanban);
+                    }
                 }
 
                 // Set phase class
@@ -2341,6 +2345,9 @@ class ReportReader {
             const existing = h.nextElementSibling;
             if (existing && existing.classList && existing.classList.contains('cta-button-container')) return;
 
+            const isAdmin = sessionStorage.getItem('sin_role') === 'admin';
+            if (!isAdmin) return;
+
             const container = document.createElement('div');
             container.className = 'cta-button-container';
 
@@ -2549,6 +2556,9 @@ class ReportReader {
             const id = m[1];
             const existing = h.nextElementSibling;
             if (existing && existing.classList && existing.classList.contains('cta-button-container')) return;
+
+            const isAdmin = sessionStorage.getItem('sin_role') === 'admin';
+            if (!isAdmin) return;
 
             const container = document.createElement('div');
             container.className = 'cta-button-container';

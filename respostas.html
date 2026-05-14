@@ -5,6 +5,8 @@
     <script>
         if (!sessionStorage.getItem('sin_authenticated')) {
             window.location.href = 'login.html';
+        } else if (sessionStorage.getItem('sin_role') !== 'admin') {
+            window.location.href = 'index.html';
         }
     </script>
     <meta charset="UTF-8">
